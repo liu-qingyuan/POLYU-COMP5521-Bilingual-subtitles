@@ -4,7 +4,7 @@ Hello. Hello. Hello. Okay. Good evening, everyone. So, this is today's lecture. 
 
 1
 00:00:00,000 --> 00:00:23,519
-大家晚上好。今天，我们将一起探讨今天的讲座内容。欢迎各位的到来。
+你好。你好。你好。好的。大家晚上好。所以，这是今天的讲座。那么，欢迎各位参加。
 
 2
 00:00:24,160 --> 00:00:32,719
@@ -12,7 +12,7 @@ thank you for your attendance. Today is the day before the holiday tomorrow. You
 
 2
 00:00:24,160 --> 00:00:32,719
-感谢您的光临。今天就是明天假期的前一天了，您还在这儿呢。
+感谢您的出席。今天是明天的假期的前一天。您还在这里。
 
 3
 00:00:32,719 --> 00:00:40,799
@@ -20,7 +20,7 @@ I'm very glad to see you. Okay. Last time, let's have a brief review about what 
 
 3
 00:00:32,719 --> 00:00:40,799
-我很高兴见到你。好的。上次，让我们简要回顾一下我们学到了什么，这样更自然易懂。
+我很高兴见到你。好的。上次，让我们简要回顾一下我们学到了什么
 
 4
 00:00:40,799 --> 00:00:52,879
@@ -28,7 +28,7 @@ last time about the digital signature. So, in digital signature in part one,
 
 4
 00:00:40,799 --> 00:00:52,879
-上次我们讨论了数字签名，那么在第一部分中，关于数字签名的讨论是这样的，...
+上次关于数字签名。所以，在第一部分关于数字签名的部分，
 
 5
 00:00:52,880 --> 00:01:01,440
@@ -36,7 +36,7 @@ we finished part one about the RSA algorithm, how this one can be used to genera
 
 5
 00:00:52,880 --> 00:01:01,440
-我们完成了关于 RSA 算法的第一部分，介绍了如何使用它来生成 RSA 签名。这一部分内容讲述了 RSA 算法的基本原理及其在生成 RSA 签名中的应用。
+我们完成了关于 RSA 算法的第一部分，介绍了如何使用 RSA 算法生成 RSA 签名。
 
 6
 00:01:02,400 --> 00:01:06,159
@@ -44,7 +44,7 @@ So, we have the signature generation and the signature verification.
 
 6
 00:01:02,400 --> 00:01:06,159
-因此，我们完成了签名生成与验证的过程。
+因此，我们有签名生成和签名验证。
 
 7
 00:01:10,240 --> 00:01:17,439
@@ -52,7 +52,7 @@ So, because we have the public key and the private key in the RSA algorithm,
 
 7
 00:01:10,240 --> 00:01:17,439
-因此，在 RSA 算法中，我们已经拥有了公钥和私钥，所以，
+因此，由于我们在 RSA 算法中拥有公钥和私钥，
 
 8
 00:01:18,079 --> 00:01:26,079
@@ -60,7 +60,7 @@ and the private key can be used to generate the signature, and the public key ca
 
 8
 00:01:18,079 --> 00:01:26,079
-私钥可以用来生成签名，而公钥则可以用来..
+私钥可用于生成签名，公钥则可以被用于
 
 9
 00:01:26,079 --> 00:01:33,519
@@ -68,7 +68,7 @@ receiver to verify the correctness of your signature. So, you can see this proce
 
 9
 00:01:26,079 --> 00:01:33,519
-请接收方核实您的签名正确性。因此，您可以查看这一过程，您可以查看，
+接收者验证您签名的正确性。因此，您可以查看这个过程，您可以看得到。
 
 10
 00:01:35,039 --> 00:01:46,479
@@ -76,7 +76,7 @@ so we use the private key D to generate the signature S, and at the receiver sid
 
 10
 00:01:35,039 --> 00:01:46,479
-我们使用私钥 D 生成签名 S，接收方将，
+因此，我们使用私钥 D 生成签名 S，在接收端，
 
 11
 00:01:47,040 --> 00:01:54,560
@@ -84,7 +84,7 @@ receiver will use the sender's public key to do the verification. So, in this wa
 
 11
 00:01:47,040 --> 00:01:54,560
-接收方将使用发送方的公钥进行验证，这样我们就能确保
+接收者将使用发送者的公钥进行验证。因此，我们以此保证
 
 12
 00:01:55,600 --> 00:02:06,880
@@ -92,7 +92,7 @@ the message is really from the sender like from Alice. So, we have this example 
 
 12
 00:01:55,600 --> 00:02:06,880
-这条信息确实来自发送者，就像来自 Alice 一样。因此，我们提供了一个例子来展示您如何
+信息确实来自发送者，就像来自 Alice。因此，我们举这个例子来展示您如何
 
 13
 00:02:06,880 --> 00:02:15,040
@@ -100,7 +100,7 @@ generate the public key, private key, and how we can generate the signature, and
 
 13
 00:02:06,880 --> 00:02:15,040
-生成公钥、私钥以及如何生成签名，以及我们如何操作
+生成公钥、私钥以及如何生成签名，以及我们如何生成签名
 
 14
 00:02:15,599 --> 00:02:24,000
@@ -108,7 +108,7 @@ apply the Chinese remainder theorem to quickly calculate a large number, but in 
 
 14
 00:02:15,599 --> 00:02:24,000
-应用中国剩余定理快速计算大数，但在生成过程中，
+应用中国剩余定理快速计算大数，但在生成时，
 
 15
 00:02:26,239 --> 00:02:34,239
@@ -116,7 +116,7 @@ in the verification of the signature. So, step three is verification,
 
 15
 00:02:26,239 --> 00:02:34,239
-在验证签名的过程中。所以，第三步就是进行验证，
+在签名验证中。因此，第三步是验证，
 
 16
 00:02:35,919 --> 00:02:37,919
@@ -124,7 +124,7 @@ whether the signature is correct.
 
 16
 00:02:35,919 --> 00:02:37,919
-签名是否正确？
+是否签名正确。
 
 17
 00:02:38,399 --> 00:02:45,039
@@ -132,7 +132,7 @@ Now, we look at part two, and part two is another signature scheme. We call it t
 
 17
 00:02:38,399 --> 00:02:45,039
-现在，让我们来看第二部分，这部分是另一种签名方案。我们将其称为
+现在，我们来看第二部分，第二部分是另一种签名方案。我们称之为
 
 18
 00:02:45,039 --> 00:02:53,679
@@ -140,7 +140,7 @@ ALKMA digital signature. So, this one is based on the DLP problem. So, DLP probl
 
 18
 00:02:45,039 --> 00:02:53,679
-ALKMA 数字签名。因此，这个方案是基于数据泄露防护（DLP）问题。DLP 问题是一个离散的
+ALKMA 数字签名。因此，这个是基于 DLP 问题的。所以，DLP 问题是一个离散的
 
 19
 00:02:53,679 --> 00:02:59,919
@@ -148,7 +148,7 @@ logarithm problem. So, this one is also believed to be very hard to attack.
 
 19
 00:02:53,679 --> 00:02:59,919
-对数问题，因此人们普遍认为它很难被破解。
+对数问题。因此，这也被认为是非常难以攻击的。
 
 20
 00:02:59,919 --> 00:03:07,679
@@ -156,7 +156,7 @@ So, now, first, we look at the discrete logarithm problem, just like, you know,
 
 20
 00:02:59,919 --> 00:03:07,679
-那么，现在，首先，让我们来看看这个离散对数问题，就像你了解的那样，
+因此，现在首先，我们来看离散对数问题，就像，你知道的，
 
 21
 00:03:07,679 --> 00:03:18,239
@@ -164,7 +164,7 @@ abbreviation to be DLP problem. The input for this problem, we have the input. S
 
 21
 00:03:07,679 --> 00:03:18,239
-缩写代表数据泄露问题。该问题的输入已知，因此输入为 ZP 星。
+缩写为 DLP 问题。该问题的输入我们有输入。所以，输入是 ZP 星。
 
 22
 00:03:18,239 --> 00:03:28,479
@@ -172,7 +172,7 @@ So, this is a set. This is a set of DLP problems. So, this is a set of DLP probl
 
 22
 00:03:18,239 --> 00:03:28,479
-因此，这是一个集合。这是 DLP 问题的集合。这是 DLP 问题的集合。因此，
+这是一个集合。这是一个 DLP 问题的集合。所以，这是一个 DLP 问题的集合。所以，
 
 23
 00:03:29,359 --> 00:03:30,159
@@ -188,7 +188,7 @@ with all members from 1, 2, 3, till P must 1, and we assume P is a prime number.
 
 24
 00:03:42,879 --> 00:03:53,199
-从 1, 2, 3，直到 P 的所有成员都必须是 1，我们假设 P 是一个质数。翻译更加自然，易于理解。
+所有来自 1、2、3，直到 P 的成员都必须是 1，并且我们假设 P 是一个质数。
 
 25
 00:03:53,679 --> 00:04:02,560
@@ -196,7 +196,7 @@ So, this set contains all the numbers from 1 to P must 1. And we have another da
 
 25
 00:03:53,679 --> 00:04:02,560
-因此，这个集合包含了从 1 到 P 的所有数字，必须为 1。此外，这个集合中还包含另一个数据 G。
+因此，这个集合包含从 1 到 P 的所有数字必须 1。并且在这个集合中我们还有另一个数据 G。
 
 26
 00:04:03,119 --> 00:04:13,280
@@ -204,7 +204,7 @@ So, G is a generator of ZP star. So, generator, or in some cases, we say it is a
 
 26
 00:04:03,119 --> 00:04:13,280
-因此，G 是 ZP 星的生成器。在某些情况下，我们称之为原根，或者简单地说，它是原根。
+所以，G 是 ZP 星的生成器。所以，生成器，或者在有些情况下，我们称其为原根。
 
 27
 00:04:23,360 --> 00:04:25,680
@@ -212,7 +212,7 @@ So, generator means
 
 27
 00:04:23,360 --> 00:04:25,680
-那么，生成器指的是
+因此，生成器意味着
 
 28
 00:04:35,439 --> 00:04:36,319
@@ -220,7 +220,7 @@ for any i
 
 28
 00:04:35,439 --> 00:04:36,319
-对于任意的 i
+对于任何 i
 
 29
 00:04:39,839 --> 00:04:41,839
@@ -228,7 +228,7 @@ in this ZP star,
 
 29
 00:04:39,839 --> 00:04:41,839
-在这颗 ZP 恒星中，
+在這個 ZP 星
 
 30
 00:04:41,839 --> 00:04:49,119
@@ -244,7 +244,7 @@ G i mod P,
 
 31
 00:04:51,839 --> 00:04:52,719
-G(i) mod P，
+G i 模 P，
 
 32
 00:04:56,319 --> 00:04:59,599
@@ -252,7 +252,7 @@ and these four members
 
 32
 00:04:56,319 --> 00:04:59,599
-这四位成员
+这四个成员
 
 33
 00:05:06,719 --> 00:05:09,919
@@ -260,7 +260,7 @@ in ZP star.
 
 33
 00:05:06,719 --> 00:05:09,919
-在 ZP 型恒星内。
+在 ZP 星
 
 34
 00:05:12,719 --> 00:05:19,359
@@ -268,7 +268,7 @@ Okay, this is a good property for G to be a generator of ZP star. So, what's the
 
 34
 00:05:12,719 --> 00:05:19,359
-好的，这是一个 G 成为 ZP 星生成器的理想属性。那么，这究竟意味着什么？
+好的，这是 G 成为 ZP 星生成器的良好性质。那么，这意味着什么呢？
 
 35
 00:05:20,159 --> 00:05:24,479
@@ -284,7 +284,7 @@ we have table. So, we have the B, the value B, right, can be from 1, 2, 3, 4, 5,
 
 36
 00:05:27,839 --> 00:05:38,159
-我们有表格。因此，B 的值可以是 1 到 6 中的任何一个。
+我们有表格。因此，我们有 B，B 的值，对吧，可以是 1、2、3、4、5、6。
 
 37
 00:05:39,040 --> 00:05:45,520
@@ -292,7 +292,7 @@ So, here P is a prime number to be 7. So, this ZP star
 
 37
 00:05:39,040 --> 00:05:45,520
-因此，这里 P 是一个质数，其值为 7。所以，这颗 ZP 星
+因此，这里 P 是一个质数，取值为 7。因此，这个 ZP 星
 
 38
 00:05:47,920 --> 00:05:59,040
@@ -300,7 +300,7 @@ is this set X. So, X can take any value from 1 to 6. And we look at which B, B i
 
 38
 00:05:47,920 --> 00:05:59,040
-因此，X 可以取 1 到 6 之间的任何数值。接下来，我们关注基数 B。
+这是集合 X。因此，X 可以取从 1 到 6 的任何值。然后我们观察哪个 B，B 是基数，
 
 39
 00:05:59,040 --> 00:06:05,840
@@ -308,7 +308,7 @@ right, B is the base, just like previously the G. So, G i, we look at these two 
 
 39
 00:05:59,040 --> 00:06:05,840
-右边，B 作为基准点，就像之前的 G 一样。因此，我们来看看这两行。
+正确，B 是基，就像之前 G 一样。所以，我们看这两行 G i。
 
 40
 00:06:06,479 --> 00:06:17,759
@@ -316,7 +316,7 @@ When B equals 3 and B equals 5. So, you can see G B i. So, in this example, it i
 
 40
 00:06:06,479 --> 00:06:17,759
-当 B 等于 3 和 5 时。因此，你可以看到 G B i。在这个例子中，就是 B i
+当 B 等于 3 和 B 等于 5 时。因此，你可以看到 G B i。所以，在这个例子中，它是 B i
 
 41
 00:06:21,199 --> 00:06:21,839
@@ -332,7 +332,7 @@ P is 7. So, we look at BX mod 7, and the result can represent
 
 42
 00:06:22,000 --> 00:06:31,919
-P 等于 7，所以查看 BX 除以 7 的余数，这个余数可以表示
+P 是 7。因此，我们查看 BX mod 7，结果可以表示
 
 43
 00:06:33,679 --> 00:06:46,399
@@ -340,7 +340,7 @@ all members in the set X. So, when we take the B to be the value to be 3, so we 
 
 43
 00:06:33,679 --> 00:06:46,399
-集合 X 中包含所有成员。所以，当我们将 B 设为 3 时，可以观察到 B1 对 7 取模的结果。
+所有集合 X 中的成员。因此，当我们取 B 的值为 3 时，我们可以看到 B1 mod 7
 
 44
 00:06:46,399 --> 00:06:59,599
@@ -348,7 +348,7 @@ is 3, right, because B equals 3. And B squared, that's 3 times 3 is 9, 9 mod 7, 
 
 44
 00:06:46,399 --> 00:06:59,599
-因为 B 等于 3，所以 3 的平方是 9，9 除以 7 的余数是 2。
+是 3，对，因为 B 等于 3。B 的平方，即 3 乘以 3 是 9，9 对 7 取模，结果是 2。
 
 45
 00:07:01,199 --> 00:07:14,959
@@ -356,7 +356,7 @@ And B cubed, 2 times 3, that's 6. B to the fourth, that's 6 times 3, that's 18,
 
 45
 00:07:01,199 --> 00:07:14,959
-B 的三次方，2 乘以 3 等于 6。B 的四次方，即 6 乘以 3 等于 18，
+B 的三次方，2 乘以 3，等于 6。B 的四次方，等于 6 乘以 3，等于 18，
 
 46
 00:07:15,919 --> 00:07:27,199
@@ -364,7 +364,7 @@ mod 7, we have 4. So, 4 times 3, that's 12, 12 mod 7, we have 5. 5 times 3, that
 
 46
 00:07:15,919 --> 00:07:27,199
-7 除以余 4，因此 4 乘 3 得 12，12 除以 7 余 5，5 乘 3 得 15，
+模 7，我们有 4。所以，4 乘以 3，那是 12，12 模 7，我们有 5。5 乘以 3，那是 15，
 
 47
 00:07:27,759 --> 00:07:36,639
@@ -372,7 +372,7 @@ mod 7, we have 1. And all the results you can see, we can have all members 1, 2,
 
 47
 00:07:27,759 --> 00:07:36,639
-模 7 运算，我们得到 1。您可以看到所有结果，包括 1，2，3，4，5，6 等所有成员。
+模 7，我们有 1。所有你能看到的结果，我们可以有所有成员 1，2，3，4，5，6，
 
 48
 00:07:36,639 --> 00:07:47,919
@@ -380,7 +380,7 @@ all the members in the set X, right? And thus, we say B equals 3, these two are 
 
 48
 00:07:36,639 --> 00:07:47,919
-集合 X 中所有的成员，对吧？所以，我们说 B 等于 3，这两个就是生成元。
+所有集合 X 中的成员，对吧？因此，我们说 B 等于 3，这两个是生成元。
 
 49
 00:07:47,920 --> 00:07:53,199
@@ -388,7 +388,7 @@ Generators.
 
 49
 00:07:47,920 --> 00:07:53,199
-发电机
+发生器。
 
 50
 00:07:59,759 --> 00:08:06,639
@@ -396,7 +396,7 @@ For B equals 3 or 5, so these two data can be the generators in this example. Fo
 
 50
 00:07:59,759 --> 00:08:06,639
-对于 B 等于 3 或 5，这两个数据可以作为本例的生成器。至于 P
+对于 B 等于 3 或 5，因此这两个数据可以作为本例中的生成器。对于 P
 
 51
 00:08:07,360 --> 00:08:20,959
@@ -404,7 +404,7 @@ equals 7. However, if B equals 2, and the result will be repeated with only
 
 51
 00:08:07,360 --> 00:08:20,959
-等于 7。但是，如果 B 等于 2，结果将会重复，只有
+等于 7。然而，如果 B 等于 2，结果将重复，只有
 
 52
 00:08:22,000 --> 00:08:33,519
@@ -412,7 +412,7 @@ equals 7. However, if B equals 2, and the result will be repeated with only
 
 52
 00:08:22,000 --> 00:08:33,519
-2, 4, 1 以及重复的 2, 4, 1。所以，当 B 值为 2 时，无法获取集合 X 中的全部成员。
+2，4，1，和 2，4，1 重复。因此，当 B 等于 2 时，我们无法得到集合 X 中的所有成员。所以，
 
 53
 00:08:33,519 --> 00:08:47,039
@@ -420,7 +420,7 @@ set X is ZP star, right? In other words, B cannot be 2 or 4 or 6 to be the gener
 
 53
 00:08:33,519 --> 00:08:47,039
-集合 X 是 ZP 星，对吧？换句话说，B 不能取 2、4 或 6 作为生成器。这样的表达更自然、易懂。
+集合 X 是 ZP 星，对吧？换句话说，B 不能是 2 或 4 或 6 作为生成元。
 
 54
 00:08:47,759 --> 00:09:00,399
@@ -428,7 +428,7 @@ We need to guarantee when I take the value from 1 to 6, the result can list all 
 
 54
 00:08:47,759 --> 00:09:00,399
-我们需要确保从 1 到 6 取值时，结果能够列出集合中的所有成员
+我们需要保证当我从 1 取到 6 的值时，结果可以列出集合中的所有成员
 
 55
 00:09:00,399 --> 00:09:10,879
@@ -436,7 +436,7 @@ X. Is that clear? Okay, so this is the definition about the generator. So, in so
 
 55
 00:09:00,399 --> 00:09:10,879
-X.这清楚吗？好的，那么这里是对发生器的定义。在某些情况下，
+X. 这清楚吗？好的，那么这是关于生成器的定义。所以，在某些情况下，
 
 56
 00:09:10,879 --> 00:09:20,959
@@ -444,7 +444,7 @@ we call it to be the primitive root. And given that B is a number in the set ZP 
 
 56
 00:09:10,879 --> 00:09:20,959
-我们称之为原根。并且 B 是集合 ZP 星中的数，
+我们称之为原根。鉴于 B 是集合 ZP 星中的数，
 
 57
 00:09:21,920 --> 00:09:32,720
@@ -452,7 +452,7 @@ and this is create logarithm problem, we'll ask you to find a unique number A. S
 
 57
 00:09:21,920 --> 00:09:32,720
-这是创建对数问题，我们将要求你找到一个唯一的数字 A。这个 A 是这样的
+is 创建对数问题，我们将要求你找到一个唯一的数字 A。所以，这个 A 是
 
 58
 00:09:32,720 --> 00:09:44,879
@@ -460,7 +460,7 @@ smaller than the P, such that G to the A is congruent to B more P. Okay, we want
 
 58
 00:09:32,720 --> 00:09:44,879
-小于 P，使得 G 与 A 的对应等于 B 与 P 的对应。好的，我们要寻找
+小于 P，使得 G 到 A 的对应与 B 到 P 的对应相同。好吧，我们要找到
 
 59
 00:09:44,960 --> 00:09:57,840
@@ -468,7 +468,7 @@ this exponent number A such that G to the A more P equals B. So, we denote this 
 
 59
 00:09:44,960 --> 00:09:57,840
-这是指这样一个指数数 A，即 G 的 A 次方加上 P 等于 B。我们把这个值 A 称作离散值。
+这个指数数 A，使得 G 的 A 次方加 P 等于 B。因此，我们把这个值 A 表示为离散的。
 
 60
 00:09:57,840 --> 00:10:12,399
@@ -476,7 +476,7 @@ log of the number B for the base G more P. So, we have this GP the meaning. So, 
 
 60
 00:09:57,840 --> 00:10:12,399
-以 G 为底，数字 B 的对数加上 P。因此，我们得到 GP 的含义。实际上，如果我们有
+日志中 B 对底数 G 的幂次为 P。因此，我们有了这个 GP 的含义。实际上，如果我们有
 
 61
 00:10:13,360 --> 00:10:24,639
@@ -484,7 +484,7 @@ for A, if we have A, G and P to calculate B, this is easy, right?
 
 61
 00:10:13,360 --> 00:10:24,639
-对于 A 而言，只要我们有 A、G 和 P 这三个条件来计算 B，那就非常简单了，对吧？
+对于 A，如果我们有 A、G 和 P 来计算 B，这很简单，对吧？
 
 62
 00:10:27,600 --> 00:10:40,240
@@ -492,7 +492,7 @@ With the value A, G, P to calculate B, it is easy. However, with the G, with G, 
 
 62
 00:10:27,600 --> 00:10:40,240
-使用 A、G、P 值计算 B 很简单。但是，使用 G 值，以及这个生成器，P 值，情况就不同了。
+使用 A、G、P 的值来计算 B，很容易。然而，对于 G，对于这个生成器，P
 
 63
 00:10:41,200 --> 00:10:51,120
@@ -500,7 +500,7 @@ and B to calculate A, this is very difficult, very difficult.
 
 63
 00:10:41,200 --> 00:10:51,120
-从 B 计算 A 非常困难，这一点非常明确。
+并且用 B 来计算 A，这非常困难，非常困难。
 
 64
 00:10:55,840 --> 00:11:07,759
@@ -508,7 +508,7 @@ So, currently, we do not have a convenient way to get A easily. So, this is actu
 
 64
 00:10:55,840 --> 00:11:07,759
-因此，目前我们还没有便捷途径轻松获取 A。这实际上是一个指数过程
+因此，目前我们还没有一种方便的方法来轻易获得 A。所以，这实际上是一个指数
 
 65
 00:11:07,840 --> 00:11:15,439
@@ -516,7 +516,7 @@ problem where probably we need to try all possibilities. So, we have this assump
 
 65
 00:11:07,840 --> 00:11:15,439
-可能需要尝试所有可能性的问题，因此我们提出了这个假设。
+问题可能需要尝试所有可能性。因此，我们有了这个假设。
 
 66
 00:11:15,439 --> 00:11:23,679
@@ -524,7 +524,7 @@ This assumption is called the DL assumption. So, this assumption says there is n
 
 66
 00:11:15,439 --> 00:11:23,679
-这个假设被称为 DL 假设。也就是说，没有有效的
+这个假设被称为 DL 假设。因此，这个假设表明不存在有效的
 
 67
 00:11:23,679 --> 00:11:33,200
@@ -532,7 +532,7 @@ algorithm in polynomial time. So, non-exponential time to solve DL problem. So, 
 
 67
 00:11:23,679 --> 00:11:33,200
-算法可以在多项式时间内完成。所以，解决深度学习问题的不是指数级时间。因此，这是一个深度学习问题，翻译得更加自然和易于理解。
+多项式时间算法。因此，非指数时间解决DL问题。因此，这是一个DL问题。
 
 68
 00:11:33,200 --> 00:11:49,360
@@ -540,7 +540,7 @@ okay? Given G, P, B to get A, this is the DL problem. Well, today, it is still w
 
 68
 00:11:33,200 --> 00:11:49,360
-给定 G、P、B 得到 A，这就是深度学习问题。嗯，如今，人们仍然普遍认为
+好的？给定 G、P、B 得到 A，这就是DL问题。嗯，今天，人们仍然普遍认为
 
 69
 00:11:49,360 --> 00:11:57,440
@@ -548,7 +548,7 @@ that this assumption holds. It is true, very difficult. So, difficulty is said i
 
 69
 00:11:49,360 --> 00:11:57,440
-这个假设成立。确实，这非常困难。因此，所说的困难是类似的
+这个假设成立。确实，非常困难。因此，所说的困难是相似的。
 
 70
 00:11:58,080 --> 00:12:09,360
@@ -556,7 +556,7 @@ to the RSA algorithm. When you have a big N, you will find P times Q, this facto
 
 70
 00:11:58,080 --> 00:12:09,360
-到 RSA 算法。当 N 很大时，你会找到 P 和 Q 的乘积，这就是因式分解。
+对于 RSA 算法。当你有一个大的 N 时，你会找到 P 乘以 Q，这个因式分解。
 
 71
 00:12:15,360 --> 00:12:22,560
@@ -564,7 +564,7 @@ The difficulty of factorization will be similar to this DL problem, similar diff
 
 71
 00:12:15,360 --> 00:12:22,560
-因子分解的难度与这个深度学习问题相当，难度相似，翻译得更加自然易懂。
+因式分解的难度将与这个DL问题相似，难度相当。
 
 72
 00:12:27,440 --> 00:12:41,040
@@ -572,7 +572,7 @@ Given that just like the P can be very large with a size like to be 1 or 24 bits
 
 72
 00:12:27,440 --> 00:12:41,040
-由于 P 的位数可以非常大，类似于 1 位或 24 位，好吗？非常大
+鉴于 P 可以非常大，大小类似于 1 或 24 位，好吗？非常大
 
 73
 00:12:41,040 --> 00:12:50,400
@@ -580,7 +580,7 @@ number. In that case, it is difficult for you to calculate the A given B.
 
 73
 00:12:41,040 --> 00:12:50,400
-在那种情况下，您很难根据 B 来计算 A。这样的表达更自然、易懂。
+数字。在这种情况下，您很难根据 B 计算 A。
 
 74
 00:12:50,399 --> 00:13:06,240
@@ -588,7 +588,7 @@ So, here we have explained this table, right? Just we list the base B, and when 
 
 74
 00:12:50,399 --> 00:13:06,240
-那么，这里我们已经对这个表格进行了说明，对吧？我们只列出了基础 B，当 B 取 1、2、3、4、5、6 这些值时，
+所以，我们已经解释了这个表格，对吧？我们只列出了基数 B，当 B 等于 1、2、3、4、5、6 时，
 
 75
 00:13:06,879 --> 00:13:17,199
@@ -596,7 +596,7 @@ and B, I, more P, what's the result in this table? And we can see only when B eq
 
 75
 00:13:06,879 --> 00:13:17,199
-并且 B、I、更多 P，这个表格的结果是什么？我们只能看到当 B 等于 3 或 5 时，
+并且 B、I、更多的 P，这个表格中的结果是什么？我们可以看到只有当 B 等于 3 或 5 时，
 
 76
 00:13:18,080 --> 00:13:26,800
@@ -604,7 +604,7 @@ we can get all possible result to make the result to equal the set ZP star.
 
 76
 00:13:18,080 --> 00:13:26,800
-我们可以获取所有可能的结果，使结果与 ZP 星集合相等。
+我们可以得到所有可能的结果，使结果等于集合 ZP 星。
 
 77
 00:13:29,680 --> 00:13:35,120
@@ -612,7 +612,7 @@ So, according to previous table, we look at how can we solve the DLP problem.
 
 77
 00:13:29,680 --> 00:13:35,120
-因此，根据前面的表格，我们来看看如何解决数据泄露问题吧。
+因此，根据前表，我们来看如何解决DLP问题。
 
 78
 00:13:35,759 --> 00:13:54,240
@@ -620,7 +620,7 @@ As we know, if the base equals B or G equals 3. So, G equals 3, 3 squared plus 7
 
 78
 00:13:35,759 --> 00:13:54,240
-我们知道，如果基数是 B 或者 G 等于 3。那么，3 的平方加 7 等于 2。
+如我们所知，如果基数等于 B 或 G 等于 3。因此，G 等于 3，3 的平方加 7 等于 2。
 
 79
 00:13:54,240 --> 00:14:06,720
@@ -628,7 +628,7 @@ So, for this discrete log of 2, we want to get its exponent. So, exponent number
 
 79
 00:13:54,240 --> 00:14:06,720
-因此，对于 2 的这个离散对数，我们想要找到它的指数。这里的指数应该是 2。
+因此，对于 2 的这个离散对数，我们想要得到它的指数。所以，指数数应该是 2。
 
 80
 00:14:07,680 --> 00:14:23,279
@@ -636,7 +636,7 @@ So, the discrete log of 2 for the base 3, this is G mod 7, this is P. The expone
 
 80
 00:14:07,680 --> 00:14:23,279
-因此，2 对 3 的离散对数，即 G 模 7，即 P。在这个例子中，指数为
+所以，以 3 为底 2 的离散对数，这是 G 模 7，这是 P。在这个例子中的指数
 
 81
 00:14:23,279 --> 00:14:38,480
@@ -644,7 +644,7 @@ should be 2. Well, for this example, because 3 cubed plus 7, we have 6. And this
 
 81
 00:14:23,279 --> 00:14:38,480
-应该是 2。嗯，在这个例子中，因为 3 的立方加 7 等于 6，所以 6 的离散对数就是 6，
+应为 2。嗯，在这个例子中，因为 3 的三次方加 7，我们得到 6。这是 6 的离散对数，
 
 82
 00:14:41,839 --> 00:14:52,720
@@ -652,7 +652,7 @@ for the base 3 mod 7, the exponent should be 3. And similarly, this 5, we have t
 
 82
 00:14:41,839 --> 00:14:52,720
-对于基数 3 除以 7，指数应为 3。类似地，对于这个 5，结果应为
+对于底数 3 模 7，指数应该是 3。同样地，这个 5，我们得到的结果是
 
 83
 00:14:54,240 --> 00:15:06,720
@@ -660,7 +660,7 @@ for the base 3 mod 7, the exponent should be 3. And similarly, this 5, we have t
 
 83
 00:14:54,240 --> 00:15:06,720
-那么，这个方案如何？嗯，如果底数是 2，B 等于 4，如果底数是 2
+5. 那么，这个怎么样？嗯，如果基数是 2，B 是 4，如果基数是 2
 
 84
 00:15:08,799 --> 00:15:13,839
@@ -668,7 +668,7 @@ and the result is 4. So, in fact, we can find two cases.
 
 84
 00:15:08,799 --> 00:15:13,839
-结果是 4，实际上我们可以找到两种情况。所以，翻译成中文后，这句话读起来更加自然和易懂。
+结果为 4。因此，实际上我们可以找到两种情况。
 
 85
 00:15:14,480 --> 00:15:25,360
@@ -676,7 +676,7 @@ This is case 1. This is case 2. And this shows that the exponent can be either 2
 
 85
 00:15:14,480 --> 00:15:25,360
-这是案例 1。这是案例 2。由此可见，指数可以是 2 或 5。所以，我们并不
+这是案例 1。这是案例 2。这表明指数可以是 2 或 5。因此，我们不需要
 
 86
 00:15:25,360 --> 00:15:42,639
@@ -684,7 +684,7 @@ have a unique result. The result can be either 2 or 5. But, because the B, G to 
 
 86
 00:15:25,360 --> 00:15:42,639
-结果必须唯一。结果可以是 2 或 5。但是，由于 B 和 G 对 7 取模等于 G 的平方，
+具有独特的结果。结果可以是 2 或 5。但是，因为 B、G 到 G 平方模 7，
 
 87
 00:15:42,799 --> 00:15:48,000
@@ -692,7 +692,7 @@ is 4, and also G to the 5 mod 7, is also 4.
 
 87
 00:15:42,799 --> 00:15:48,000
-它等于 4，同时也是 5 除以 7 的余数，结果仍然是 4。
+是 4，并且 G 模 7 等于 5，也是 4。
 
 88
 00:15:51,759 --> 00:15:58,480
@@ -700,7 +700,7 @@ So, the reason is because G equals 2 is not a generator.
 
 88
 00:15:51,759 --> 00:15:58,480
-因此，原因在于 G 等于 2 并非生成器。这样的表述更为自然易懂。
+因此，原因是 G 等于 2 不是一个生成元。
 
 89
 00:15:58,560 --> 00:16:14,240
@@ -708,7 +708,7 @@ The result will not be unique. So, this is not allowed. We must choose the
 
 89
 00:15:58,560 --> 00:16:14,240
-结果不会唯一，所以这不允许。我们必须做出选择
+结果不会唯一。因此，这是不允许的。我们必须选择
 
 90
 00:16:15,039 --> 00:16:23,360
@@ -716,7 +716,7 @@ the base G to be a generator, such that in this discrete log calculation, the re
 
 90
 00:16:15,039 --> 00:16:23,360
-基础 G 需作为生成器，确保在此离散对数计算中结果唯一，表达更自然易懂。
+基础 G 作为生成元，使得在此离散对数计算中，结果将是唯一的。
 
 91
 00:16:28,639 --> 00:16:39,600
@@ -724,7 +724,7 @@ Okay, based on the DLP problem, we look at how we can construct some of the publ
 
 91
 00:16:28,639 --> 00:16:39,600
-好的，根据数据泄露防护（DLP）问题，我们来探讨如何构建一些公钥和私钥
+好的，基于 DLP 问题，我们探讨如何构建一些公钥和私钥
 
 92
 00:16:39,600 --> 00:16:48,639
@@ -732,7 +732,7 @@ key. And now we look at for this DLP problem, some property for this problem. If
 
 92
 00:16:39,600 --> 00:16:48,639
-key. 现在我们就来分析这个数据泄露问题的一些特性。如果 P 值较小，
+关键。现在我们来看这个 DLP 问题的一些性质。如果 P 很小，
 
 93
 00:16:49,519 --> 00:16:57,279
@@ -740,7 +740,7 @@ discrete log can be found by exhaustive search. Now, we can try all possible of 
 
 93
 00:16:49,519 --> 00:16:57,279
-离散对数可以通过穷举搜索来确定。现在，我们可以尝试所有可能的 i 值。
+离散对数可以通过穷举搜索找到。现在，我们可以尝试所有可能的 i。
 
 94
 00:16:59,279 --> 00:17:04,559
@@ -748,7 +748,7 @@ So, i, we can exhaustive search i in this set,
 
 94
 00:16:59,279 --> 00:17:04,559
-因此，我们可以在该集合中对 i 进行穷举搜索
+因此，我们可以在这个集合中穷举搜索 i
 
 95
 00:17:07,759 --> 00:17:12,559
@@ -756,7 +756,7 @@ JP star, right? From 1, 2, 3,
 
 95
 00:17:07,759 --> 00:17:12,559
-JP 明星，对吧？从一、二、三，
+日星，对吧？从 1、2、3，
 
 96
 00:17:12,559 --> 00:17:42,559
@@ -772,7 +772,7 @@ trial or possibilities to see which exponent to make the result equals the given
 
 97
 00:17:42,559 --> 00:17:53,919
-尝试或探索不同的指数，看看哪个可以使结果等于给定的 p，可以吗？
+试验或寻找哪种指数可以使结果等于给定的 p，好吗？
 
 98
 00:17:58,159 --> 00:18:06,639
@@ -780,7 +780,7 @@ Well, we will make the p to be very large. So the size of prime p for which dl c
 
 98
 00:17:58,159 --> 00:18:06,639
-嗯，我们将把 p 设得非常大。这样，对于可以计算 dl 的素数 p，其大小就会变得很大
+嗯，我们将使 p 变得非常大。因此，对于可以计算 dl 的素数 p 的大小
 
 99
 00:18:07,200 --> 00:18:13,759
@@ -788,7 +788,7 @@ is approximately the same size, the same as the size of integers that can be
 
 99
 00:18:07,200 --> 00:18:13,759
-大约大小相同，与整数的大小相当
+约等于相同大小，与整数的规模相同
 
 100
 00:18:13,759 --> 00:18:21,920
@@ -796,7 +796,7 @@ factored. So normally we will choose the p to be one or 24 bits. At this moment,
 
 100
 00:18:13,759 --> 00:18:21,920
-因子化后，我们通常会选择 p 为 1 位或 24 位。目前，
+因式分解。因此，我们通常会选择 p 为 1 或 24 位。在此时刻，
 
 101
 00:18:23,040 --> 00:18:34,560
@@ -804,7 +804,7 @@ this size is believed to be quite secure. For the deal problem, this is in fact 
 
 101
 00:18:23,040 --> 00:18:34,560
-这个尺寸被认为非常安全。对于交易问题，这实际上是一个例子
+这个尺寸被认为相当安全。对于交易问题，这实际上是一个例子
 
 102
 00:18:34,960 --> 00:18:45,759
@@ -812,7 +812,7 @@ one-way function. So one function means from g, p, and a to get,
 
 102
 00:18:34,960 --> 00:18:45,759
-单向函数，也就是说，一个函数意味着从 g、p 和 a 出发，得到，这样的表述更为自然和易懂。
+单射函数。所以一个函数意味着从 g、p 和 a 得到，
 
 103
 00:18:48,639 --> 00:18:53,039
@@ -820,7 +820,7 @@ or we say x, to get y. So this
 
 103
 00:18:48,639 --> 00:18:53,039
-我们说用 x 来表示，以得到 y。因此，这里是...
+或者我们说 x，以得到 y。所以这个
 
 104
 00:18:54,000 --> 00:19:10,639
@@ -828,7 +828,7 @@ is, this means we can calculate the function g to the x mod p to get y. Finding 
 
 104
 00:18:54,000 --> 00:19:10,639
-这意味着我们可以通过计算函数 g 的 x 模 p 来得到 y。找到 fx 非常简单。
+这是，这意味着我们可以计算函数 g(x) mod p 得到 y。找到 fx，这很简单。
 
 105
 00:19:11,599 --> 00:19:19,839
@@ -836,7 +836,7 @@ However, given y, finding x, to certify this equation, it is hard. In the deal p
 
 105
 00:19:11,599 --> 00:19:19,839
-然而，给定 y 值，要找到 x 值以验证这个等式是困难的。在交易问题中，...
+然而，给定 y，寻找 x，以验证此方程，是困难的。在交易问题中，
 
 106
 00:19:19,839 --> 00:19:31,359
@@ -844,7 +844,7 @@ that means given g, p, y to find x, this is very difficult because you need to g
 
 106
 00:19:19,839 --> 00:19:31,359
-给定 g, p, y 来求解 x，这相当困难，因为需要确保
+这意味着给定 g、p、y 来寻找 x，这非常困难，因为你需要保证
 
 107
 00:19:31,439 --> 00:19:49,519
@@ -852,7 +852,7 @@ p gx mod p equals y. So this is almost impossible, okay? If the p is very large,
 
 107
 00:19:31,439 --> 00:19:49,519
-p gx mod p 等于 y。这几乎是不可能的，如果 p 非常大，那么要得到这个 x 就非常困难了，好吧？
+p gx mod p 等于 y。所以这几乎是不可能的，好吗？如果 p 非常大，要得到这个 x 是
 
 108
 00:19:50,079 --> 00:20:00,319
@@ -860,7 +860,7 @@ almost impossible. So based on this good property, we have the l comma signature
 
 108
 00:19:50,079 --> 00:20:00,319
-几乎不可能实现。基于这一良好特性，我们得到了 l 逗号签名方案。
+几乎不可能。因此，基于这一良好性质，我们得到了 l 逗号签名方案。
 
 109
 00:20:01,359 --> 00:20:08,240
@@ -868,7 +868,7 @@ So you can see different cryptography based on different mathematical problems. 
 
 109
 00:20:01,359 --> 00:20:08,240
-您可以了解到基于不同数学问题的多种密码学。RSA 算法基于
+所以您可以看到基于不同数学问题的不同密码学。RSA 基于
 
 110
 00:20:08,240 --> 00:20:16,959
@@ -876,7 +876,7 @@ on the factorization of a big number, the difficulty. And this one is based on t
 
 110
 00:20:08,240 --> 00:20:16,959
-关于大数分解的难度问题。这个问题基于交易难度
+关于大数分解的难度，以及这个基于交易难度的因素。
 
 111
 00:20:16,959 --> 00:20:26,319
@@ -884,7 +884,7 @@ problem. This scheme is based on the difficulty of computing discrete logarithm 
 
 111
 00:20:16,959 --> 00:20:26,319
-该方案基于在 zp 上计算离散对数的难度，这种表述更为自然易懂
+问题。该方案基于在 zp 上计算离散对数的难度
 
 112
 00:20:26,480 --> 00:20:35,679
@@ -892,7 +892,7 @@ over this set. So p is prime. In this signature scheme, we have the setup and th
 
 112
 00:20:26,480 --> 00:20:35,679
-在这个集合上。所以 p 是素数。在此签名方案中，我们拥有设置阶段和密钥生成过程
+在此集合上。因此 p 是质数。在此签名方案中，我们具有设置和密钥生成
 
 113
 00:20:36,240 --> 00:20:47,439
@@ -900,7 +900,7 @@ step. And suppose Alice is the one to use this scheme. Alice will choose large p
 
 113
 00:20:36,240 --> 00:20:47,439
-步骤。假设爱丽丝采用此方案。她将选择一个大素数 p。
+步骤。假设爱丽丝使用这个方案。爱丽丝将选择大素数 p。
 
 114
 00:20:48,160 --> 00:20:58,160
@@ -908,7 +908,7 @@ Well, so p minus one, p is an odd number. So p minus one is an even number, righ
 
 114
 00:20:48,160 --> 00:20:58,160
-好吧，那么 p 减去 1，p 是一个奇数，所以 p 减去 1 就是一个偶数，对吧？偶数。
+嗯，所以 p 减 1，p 是一个奇数。所以 p 减 1 是一个偶数，对吧？偶数。
 
 115
 00:20:58,160 --> 00:21:05,600
@@ -916,7 +916,7 @@ So seven, if p equals seven, p minus one is six. Six is an even number. So even 
 
 115
 00:20:58,160 --> 00:21:05,600
-因此七，如果 p 等于七，那么 p 减一等于六。六是一个偶数。所以任何偶数都必须
+所以七，如果 p 等于七，p 减一等于六。六是一个偶数。所以偶数必须有
 
 116
 00:21:05,600 --> 00:21:15,440
@@ -924,7 +924,7 @@ some prime factor. And we will require p minus one has a large prime factor. So 
 
 116
 00:21:05,600 --> 00:21:15,440
-一些质因数。我们还需要 p 减一拥有一个大质因数。因此，p 减一就是
+某些质数因子。我们需要 p 减一有一个大的质数因子。所以 p 减一是
 
 117
 00:21:15,840 --> 00:21:21,120
@@ -932,7 +932,7 @@ has a large prime factor. So this is for the security purpose.
 
 117
 00:21:15,840 --> 00:21:21,120
-有一个大质因数，因此这是为了安全考虑。
+具有一个大素数因子。因此这是出于安全目的。
 
 118
 00:21:26,880 --> 00:21:27,759
@@ -940,7 +940,7 @@ Security purpose.
 
 118
 00:21:26,880 --> 00:21:27,759
-安全用途。
+安全目的。
 
 119
 00:21:31,519 --> 00:21:44,559
@@ -948,7 +948,7 @@ Then for the given p, we are able to know which data is a primitive root
 
 119
 00:21:31,519 --> 00:21:44,559
-对于给定的 p，我们可以知道哪些数据是本原根
+然后对于给定的 p，我们能够知道哪些数据是原根
 
 120
 00:21:44,559 --> 00:21:49,839
@@ -956,7 +956,7 @@ or primitive element. So this is the meaning of generator.
 
 120
 00:21:44,559 --> 00:21:49,839
-因此，这就是生成器的意义。
+原始元素。因此，这就是发生器的含义。
 
 121
 00:21:53,039 --> 00:22:02,639
@@ -964,7 +964,7 @@ So we choose one data to be the generator to the prime number p, okay? So given 
 
 121
 00:21:53,039 --> 00:22:02,639
-我们选择一个数据作为生成素数 p 的生成器，好的。既然 p 是素数，那么，对吧？
+因此我们选择一个数据作为素数 p 的生成器，好吗？所以给定的 p 是素数，
 
 122
 00:22:02,639 --> 00:22:09,519
@@ -972,7 +972,7 @@ the multiple number can be the generator. So we choose one. And then Alice will 
 
 122
 00:22:02,639 --> 00:22:09,519
-多个数字都可以作为生成器。因此我们挑选一个，随后爱丽丝将进行选择
+多个数可以作为生成器。所以我们选择一个。然后 Alice 将选择
 
 123
 00:22:10,079 --> 00:22:22,799
@@ -980,7 +980,7 @@ x, small x as her private key and calculate the gx small p to get y. The public 
 
 123
 00:22:10,079 --> 00:22:22,799
-以 x 作为私钥，计算 gx small p 得到 y。公钥为 p、g 和 y。
+x，小 x 作为她的私钥，计算 gx 小 p 得到 y。公钥是 p，g 和 y。
 
 124
 00:22:23,599 --> 00:22:33,039
@@ -988,7 +988,7 @@ The primary key for Alice is this x, right? From x to get y is easy.
 
 124
 00:22:23,599 --> 00:22:33,039
-爱丽丝的主键是这个 x，对吧？从 x 到 y 转换很简单。
+Alice 的主键是这个 x，对吧？从 x 得到 y 很容易。
 
 125
 00:22:33,039 --> 00:22:46,000
@@ -996,7 +996,7 @@ And then to sign a message, this is a big x. Alice needs to choose an integer k.
 
 125
 00:22:33,039 --> 00:22:46,000
-然后进行消息签名，这是一个大 X。Alice 需要选择一个整数 k。因此，这个 k，
+然后要签名一个消息，这是一个大 X。Alice 需要选择一个整数 k。所以这个 k，
 
 126
 00:22:47,839 --> 00:22:55,920
@@ -1004,7 +1004,7 @@ we can say this k is a one-time random key.
 
 126
 00:22:47,839 --> 00:22:55,920
-我们可以这么说，这个 k 是一个一次性随机生成的密钥。
+我们可以称这个 k 为一个一次性随机密钥。
 
 127
 00:23:03,039 --> 00:23:21,119
@@ -1012,7 +1012,7 @@ For one message x, we will choose one key, one different key, k. So this key k s
 
 127
 00:23:03,039 --> 00:23:21,119
-对于消息 x，我们将选择一个密钥，一个不同的密钥 k。那么，这个密钥 k 应当是
+对于消息 x，我们将选择一个密钥，一个不同的密钥 k。因此，这个密钥 k 应该是
 
 128
 00:23:21,119 --> 00:23:28,879
@@ -1020,7 +1020,7 @@ smaller than or equal to p minus one. And also we need to guarantee that the gcd
 
 128
 00:23:21,119 --> 00:23:28,879
-小于等于 p 减一的值。同时，我们还需确保最大公约数 k 与 p 减一
+小于或等于 p 减一。同时，我们还需要保证最大公约数 k 和 p 减一
 
 129
 00:23:28,880 --> 00:23:36,560
@@ -1028,7 +1028,7 @@ is one, the relative prime, because we need to calculate this module inverse. So
 
 129
 00:23:28,880 --> 00:23:36,560
-是一个相对质数，因为我们需要计算这个模逆元。因此，这
+这是一个相对质数，因为我们需要计算这个模逆元。所以这将
 
 130
 00:23:36,560 --> 00:23:57,600
@@ -1036,7 +1036,7 @@ guarantee that we have the k minus one mod p minus one. So there are relatively 
 
 130
 00:23:36,560 --> 00:23:57,600
-保证我们有 k 减一模 p 减一，它们是互质的。这样的表述更为自然易懂。
+保证我们有 k 减一模 p 减一。因此，存在互质的
 
 131
 00:23:57,599 --> 00:24:04,319
@@ -1044,7 +1044,7 @@ and this means we are able to calculate the module inverse of k mod p minus one.
 
 131
 00:23:57,599 --> 00:24:04,319
-这意味着我们可以计算出 k 模 p 减一的模逆，表述更为自然。
+这意味着我们可以计算 k mod p 减一的模逆。
 
 132
 00:24:06,000 --> 00:24:17,439
@@ -1052,7 +1052,7 @@ And then Alice will calculate gk mod p to be r. Well, in this way, r will be the
 
 132
 00:24:06,000 --> 00:24:17,439
-然后，爱丽丝将计算 gk 模 p 得到 r。嗯，这样一来，r 就变成了签名。
+remainder: 然后爱丽丝将计算 gk mod p 得到 r。嗯，这样，r 将成为签名。
 
 133
 00:24:18,080 --> 00:24:28,480
@@ -1060,7 +1060,7 @@ So rs will be the signature. So you can see the k is a one-time random key, righ
 
 133
 00:24:18,080 --> 00:24:28,480
-因此，rs 将是签名。您可以看到 k 是一个一次性随机密钥，对吧？但 gk mod p
+所以 rs 将是签名。所以你可以看到 k 是一个一次性的随机密钥，对吧？但是 gk mod p
 
 134
 00:24:29,200 --> 00:24:43,200
@@ -1068,7 +1068,7 @@ equals r, the r will be no. However, with r, you cannot know the k. So this key 
 
 134
 00:24:29,200 --> 00:24:43,200
-等于 r 时，r 将是编号。但有了 r，你却无法得知 k 的值。所以这个密钥 k 就不会存在。
+等于 r，则 r 将不存在。然而，有了 r，你无法知道 k。因此，这个密钥 k 将不会
 
 135
 00:24:44,160 --> 00:24:54,160
@@ -1076,7 +1076,7 @@ disclosed. The receiver will only get r and s. Now we look at what's s. So s equ
 
 135
 00:24:44,160 --> 00:24:54,160
-揭示信息。接收者只能获得 r 和 s。现在我们来探讨 s 的含义。因此，s 等于
+披露。接收者只能获得 r 和 s。现在我们来看 s 是什么。所以 s 等于
 
 136
 00:24:55,920 --> 00:25:03,680
@@ -1084,7 +1084,7 @@ module inverse of k minus one. Here we mod p minus one. So we have k minus one t
 
 136
 00:24:55,920 --> 00:25:03,680
-模块逆元 k 减 1。在这里我们对 p 减 1 取模，所以得到 k 减 1 乘以，
+模逆元 k 减一。这里我们对 p 减一取模，所以我们有 k 减一乘以，
 
 137
 00:25:03,680 --> 00:25:17,840
@@ -1092,7 +1092,7 @@ this is the message x minus the private key of Alice times r. So r from here, an
 
 137
 00:25:03,680 --> 00:25:17,840
-这是消息 x 减去爱丽丝的私钥与 r 相乘。因此，r 从这里开始，爱丽丝有
+这是消息 x 减去 Alice 的私钥乘以 r。所以从这里开始是 r，Alice 有
 
 138
 00:25:17,840 --> 00:25:27,920
@@ -1100,7 +1100,7 @@ private key, right? So of course Alice is able to calculate the k minus one time
 
 138
 00:25:17,840 --> 00:25:27,920
-私钥，没错吧？因此 Alice 当然可以计算出密文减去 1 倍的值
+私钥，对吧？所以当然 Alice 能够计算出 k 减 1 倍的报文
 
 139
 00:25:27,920 --> 00:25:38,240
@@ -1108,7 +1108,7 @@ minus her private key times r and then mod p minus one to be another signature s
 
 139
 00:25:27,920 --> 00:25:38,240
-私钥 r 乘以 p 减一后取模 p，得到另一个签名 s。
+减去她的私钥乘以 r 然后对 p 减一取模得到另一个签名 s。
 
 140
 00:25:40,720 --> 00:25:54,400
@@ -1116,7 +1116,7 @@ The send message is the message end with the r and s. r and s will be sent along
 
 140
 00:25:40,720 --> 00:25:54,400
-发送的消息是以“r”和“s”结尾的，这些字符将与“x”一同发送。
+发送消息是以 r 和 s 结尾的消息。r 和 s 将与 x 一起发送。
 
 141
 00:25:54,400 --> 00:26:06,960
@@ -1124,7 +1124,7 @@ receiver like Bob. When Bob received this message, Bob will do the signature ver
 
 141
 00:25:54,400 --> 00:26:06,960
-当鲍勃收到这条信息时，他将执行签名验证操作。
+接收者如鲍勃。当鲍勃收到这条消息时，鲍勃将进行签名验证。
 
 142
 00:26:07,759 --> 00:26:20,400
@@ -1132,7 +1132,7 @@ To verify the message, Bob will do the comparison of g to the x and y to the r t
 
 142
 00:26:07,759 --> 00:26:20,400
-为了验证信息，鲍勃将比较 g 与 x，以及 y 与 r 的 r 的 s 次方。这样的表述更加自然易懂。
+为了验证信息，鲍勃将对 g 与 x 以及 y 与 r 乘以 r 的 s 次方进行比较。
 
 143
 00:26:25,120 --> 00:26:26,480
@@ -1140,7 +1140,7 @@ So y is the public key.
 
 143
 00:26:25,120 --> 00:26:26,480
-因此，y 是公钥。
+所以 y 是公钥。
 
 144
 00:26:29,920 --> 00:26:43,280
@@ -1148,7 +1148,7 @@ So these are the public key, public key now g, p, and y to be known by receiver 
 
 144
 00:26:29,920 --> 00:26:43,280
-这些就是公钥，包括 g、p 和 y，接收方鲍勃需要了解这些信息。
+所以这些是公钥，公钥现在为 g、p 和 y，由接收者鲍勃知晓。
 
 145
 00:26:44,240 --> 00:26:57,039
@@ -1156,7 +1156,7 @@ g, p, y is a public key to be known by anyone else. Okay, we want to know why th
 
 145
 00:26:44,240 --> 00:26:57,039
-g, p, y 是一个公开的公钥，任何人都可以知道。那么，这个等式为什么是这样的呢？
+g, p, y 是任何其他人都要知道的公钥。好吧，我们想知道为什么这个等式是
 
 146
 00:26:57,039 --> 00:27:10,079
@@ -1164,7 +1164,7 @@ true. The gx equals yr times rs. That means your signature is correct. So of cou
 
 146
 00:26:57,039 --> 00:27:10,079
-gx 等于 yr 乘以 rs，这说明你的签名是对的。所以当然你能看到
+真。gx 等于 yr 乘以 rs。这意味着您的签名是正确的。所以当然您可以看到
 
 147
 00:27:10,079 --> 00:27:13,359
@@ -1172,7 +1172,7 @@ the receiver will use Alice, the public key,
 
 147
 00:27:10,079 --> 00:27:13,359
-接收者将使用 Alice 的公钥，表达更为自然流畅
+接收者将使用 Alice 的公钥，
 
 148
 00:27:20,240 --> 00:27:28,559
@@ -1180,7 +1180,7 @@ in the verification, right? y is the public key of Alice. So this public key wil
 
 148
 00:27:20,240 --> 00:27:28,559
-在验证过程中，对吧？这个公钥是 Alice 的，将会发送给 Bob。
+在验证中，对吧？y 是 Alice 的公钥。所以这个公钥将被发送给 Bob。
 
 149
 00:27:29,200 --> 00:27:38,480
@@ -1188,7 +1188,7 @@ So Bob will use Alice's public key r in the verification. So in this way Bob wil
 
 149
 00:27:29,200 --> 00:27:38,480
-因此，鲍勃将使用爱丽丝的公钥 r 进行验证，以此确保
+所以 Bob 将使用 Alice 的公钥 r 进行验证。因此，通过这种方式，Bob 将保证
 
 150
 00:27:38,480 --> 00:27:47,679
@@ -1196,7 +1196,7 @@ the message is really from Alice because I'm using your public key y in this ver
 
 150
 00:27:38,480 --> 00:27:47,679
-这条消息确实来自 Alice，因为我正在使用您的公钥 y 进行验证。所以这个 r 非常小，
+信息确实来自 Alice，因为我使用您的公钥 y 进行验证。所以小的 r，
 
 151
 00:27:48,000 --> 00:27:54,320
@@ -1204,7 +1204,7 @@ is really from Alice because I'm using your public key y in this verification.
 
 151
 00:27:48,000 --> 00:27:54,320
-确实是从 Alice 那里来的，因为我正在使用你的公钥 y 进行验证，这是真的。
+实际上是因为我在这次验证中使用了你的公钥 y，所以确实是来自 Alice。
 
 152
 00:27:55,120 --> 00:28:04,400
@@ -1212,7 +1212,7 @@ So small r, small s are the signed signature you sent to me. I use your public k
 
 152
 00:27:55,120 --> 00:28:04,400
-如此微小的 r 和 s 是您发送给我的签名。我使用您的公钥 y 在
+所以小的 r，小的 s 是您发送给我的带符号签名。我使用您的公钥 y 在
 
 153
 00:28:04,400 --> 00:28:12,880
@@ -1220,7 +1220,7 @@ verification. So g is the public key and also I apply the message in the verific
 
 153
 00:28:04,400 --> 00:28:12,880
-验证。因此，g 是公钥，我还将消息用于验证，对吗？
+验证。所以 g 是公钥，并且我在验证中应用了消息，对吧？
 
 154
 00:28:12,960 --> 00:28:23,200
@@ -1228,7 +1228,7 @@ So no one else can fabricate this data because I'm using that message and I'm us
 
 154
 00:28:12,960 --> 00:28:23,200
-没有人能伪造这些数据，因为我在使用这条信息，并且我使用了您的公钥
+因此，没有其他人可以伪造这些数据，因为我使用那条消息，并且我使用了你的公钥
 
 155
 00:28:23,200 --> 00:28:33,280
@@ -1236,7 +1236,7 @@ in this verification. So now we look at why this gx equals y to the r times r to
 
 155
 00:28:23,200 --> 00:28:33,280
-在这个验证中。现在我们来探讨为什么 gx 等于 y 的 r 次方乘以 r 的 s 次方。这个表述更加自然易懂。
+在这项验证中。因此现在我们来看为什么这个 gx 等于 y 的 r 次方乘以 r 的 s 次方。
 
 156
 00:28:34,240 --> 00:28:44,000
@@ -1244,7 +1244,7 @@ So g to the x, this is a x is a capital x is a message. So in fact we look at th
 
 156
 00:28:34,240 --> 00:28:44,000
-因此，g 到 x，这里 x 是大写的 X，代表一个信息。实际上，我们关注第二个方程。
+所以 g 到 x，这是一个 x 是大写 x 是消息。所以实际上我们看第二个方程。
 
 157
 00:28:44,960 --> 00:28:54,559
@@ -1252,7 +1252,7 @@ So second equation means at both sides we can time at both sides with times k, r
 
 157
 00:28:44,960 --> 00:28:54,559
-第二个方程的意思是，我们可以同时对等式的两边乘以 t 的 k 次方，对吧？那么，我们得到
+所以第二个方程意味着我们可以在两边同时乘以时间 k，对吧？因此我们有
 
 158
 00:28:55,119 --> 00:29:03,119
@@ -1260,7 +1260,7 @@ k times s, then the right hand side k times k to the mass one, that's one.
 
 158
 00:28:55,119 --> 00:29:03,119
-k 次 s 相乘，接着右边是 k 次方乘以 m 次方，结果就是 1。
+k 次 s，然后右边 k 次 k 乘以质量 1，那就是 1。
 
 159
 00:29:07,839 --> 00:29:17,599
@@ -1268,7 +1268,7 @@ It's congruent to one mod p mass one, right? So that means this k mass one can b
 
 159
 00:29:07,839 --> 00:29:17,599
-它与模 p 质量 1 相同，对吧？这意味着这个 k 质量 1 可以被消去。
+与模 p 质量一一致，对吧？这意味着这个 k 质量一可以被约掉。
 
 160
 00:29:18,399 --> 00:29:26,079
@@ -1276,7 +1276,7 @@ So that means this k mass one can be cancelled. Then we have x minus x r
 
 160
 00:29:18,399 --> 00:29:26,079
-这意味着这个 k 质量可以相互抵消。因此，我们得到 x 减去 xr
+因此，这意味着这个 k 质量可以被消去。然后我们有 x 减去 x r
 
 161
 00:29:27,679 --> 00:29:37,039
@@ -1284,7 +1284,7 @@ is congruent to x mass minus x r mod p mass one. In other words,
 
 161
 00:29:27,679 --> 00:29:37,039
-等于 x 质量减去 x 乘以 r，模 p 质量一。换句话说，
+同余于 x 质量减去 x r 模 p 质量 1。换句话说，
 
 162
 00:29:37,039 --> 00:29:55,599
@@ -1292,7 +1292,7 @@ this x capital x minus x r, well this is mod p mass one, right? So this can be r
 
 162
 00:29:37,039 --> 00:29:55,599
-这 x 的资本 x 减去 x 的 r，嗯，这是模 p 的质量一，对吧？所以这可以表示为
+这个 x 资本 x 减去 x r，嗯，这是模 p 质量一，对吧？所以这可以表示为
 
 163
 00:29:57,680 --> 00:30:04,720
@@ -1300,7 +1300,7 @@ k times s plus let's say t times p mass one.
 
 163
 00:29:57,680 --> 00:30:04,720
-k 次 s 加上大约 t 次 p 质量 1（更自然地表达）。
+k 次 s 加上比如说 t 次 p 质量一。
 
 164
 00:30:07,759 --> 00:30:14,399
@@ -1308,7 +1308,7 @@ The congruent, that means the difference will be multiple of p mass one.
 
 164
 00:30:07,759 --> 00:30:14,399
-这意味着差值将是 p 质量一的整数倍。
+同余，即差将是 p 的倍数的质量一。
 
 165
 00:30:17,119 --> 00:30:21,920
@@ -1316,7 +1316,7 @@ So both sides we mod p mass one, then we have that equation, right?
 
 165
 00:30:17,119 --> 00:30:21,920
-所以两边取模 p 后质量为 1，那么我们就得到了这个方程，对吗？
+所以两边模 p 质量一，然后我们就有那个等式，对吧？
 
 166
 00:30:24,159 --> 00:30:30,720
@@ -1324,7 +1324,7 @@ The difference will be a multiple of p mass one, multiple we use t to represent 
 
 166
 00:30:24,159 --> 00:30:30,720
-差别的质量将是 p 质量的一个倍数，我们用 t 来表示这个倍数，表达更为自然。
+差异将是 p 质量的一个倍数，我们用 t 来表示这个倍数。
 
 167
 00:30:31,120 --> 00:30:40,319
@@ -1332,7 +1332,7 @@ Okay, this is congruent, but here we have equation, because we use t to represen
 
 167
 00:30:31,120 --> 00:30:40,319
-好的，这很一致，但这里有一个方程，因为我们用 t 来表示差异。这样的表述更自然、易懂。
+好的，这是相容的，但这里有一个方程，因为我们用 t 来表示差值。
 
 168
 00:30:42,160 --> 00:30:56,240
@@ -1340,7 +1340,7 @@ And this implies the capital X equals k times s plus x r times t times p mass on
 
 168
 00:30:42,160 --> 00:30:56,240
-这意味着首字母大写的 X 等于 k 乘以 s 加上 x 乘以 r 乘以 t 乘以 p，即质量 1。
+并且这表示资本 X 等于 k 乘以 s 加上 x 乘以 r 乘以 t 乘以 p 质量一。
 
 169
 00:31:01,360 --> 00:31:22,480
@@ -1348,7 +1348,7 @@ So then the gx, so gx equals g to this part, right? Well, if we mod p,
 
 169
 00:31:01,360 --> 00:31:22,480
-那么，gx 等于 g 的这一部分，对吧？嗯，如果我们对 p 取模，那么，gx 等于 g 的这一部分，对吧？嗯，如果我们对 p 取模，
+那么 gx，所以 gx 等于 g 的这一部分，对吧？嗯，如果我们对 p 取模，
 
 170
 00:31:23,200 --> 00:31:33,360
@@ -1356,7 +1356,7 @@ mod p, according to the Fermat's theorem, we know that g to the t times p mass o
 
 170
 00:31:23,200 --> 00:31:33,360
-根据费马定理，我们知道 g 的 t 次方与 p 的质数同余，即..
+模 p，根据费马定理，我们知道 g 的 t 次方乘以 p 的质数是同余于
 
 171
 00:31:33,360 --> 00:31:47,039
@@ -1364,7 +1364,7 @@ one mod p, because p is a prime number. This is a Fermat's theorem. So this part
 
 171
 00:31:33,360 --> 00:31:47,039
-因为 p 是质数，所以存在一个模 p 的性质。这属于费马定理的内容。因此，这一部分可以删去。
+一模 p，因为 p 是质数。这是费马定理。所以这部分可以删除。
 
 172
 00:31:47,039 --> 00:31:58,960
@@ -1372,7 +1372,7 @@ And thus we have g to the x equals ks from here, xr from here.
 
 172
 00:31:47,039 --> 00:31:58,960
-因此，我们从这里得到 g 到 x 等于 ks，从这里得到 xr。 (此处已为自然、易懂的中文表达，无需进一步修改)
+并且，我们从这里得到 g 到 x 等于 ks，从这里得到 xr。
 
 173
 00:32:06,720 --> 00:32:07,279
@@ -1380,7 +1380,7 @@ Is that clear?
 
 173
 00:32:06,720 --> 00:32:07,279
-那个意思明白吗？
+那是清楚的吗？
 
 174
 00:32:07,279 --> 00:32:24,240
@@ -1388,7 +1388,7 @@ Why we have gx equals gxr plus ks? Because start from the second s generation, s
 
 174
 00:32:07,279 --> 00:32:24,240
-为什么 gx 等于 gxr 加 ks？因为从第二代开始，第二个方程。
+为什么有 gx 等于 gxr 加 ks？因为从第二 s 代开始，第二个方程。
 
 175
 00:32:37,279 --> 00:32:54,399
@@ -1396,7 +1396,7 @@ So from this s, so this explains the whole process again. From this s, this equa
 
 175
 00:32:37,279 --> 00:32:54,399
-因此从这个 s 出发，这又解释了整个过程。这个方程，没错吧？
+因此，这再次解释了整个过程。从这个 s，这个方程，对吧？
 
 176
 00:32:55,599 --> 00:33:04,559
@@ -1404,7 +1404,7 @@ Here, at both sides, we times k, that means we move the k mass one to the left h
 
 176
 00:32:55,599 --> 00:33:04,559
-在这里，我们两边都乘以 k，也就是说，我们将 k 质量向左移动一个单位。
+这里，在两边，我们乘以 k，这意味着我们将 k 质量向左边移动一位。
 
 177
 00:33:05,519 --> 00:33:16,879
@@ -1412,7 +1412,7 @@ So we have ks is congruent to x minus xr mod p minus one. The congruent means th
 
 177
 00:33:05,519 --> 00:33:16,879
-因此，我们有 ks 等于 x 减去 xr 模 p 减一的等价。这里的等价表示 x 减去 xr
+因此，我们有 ks ≡ x - xr (mod p - 1)。这里的≡表示 x - xr
 
 178
 00:33:16,879 --> 00:33:24,639
@@ -1420,7 +1420,7 @@ can be represented as ks plus t times p minus one, because we have mod p minus o
 
 178
 00:33:16,879 --> 00:33:24,639
-可以表示为 ks 加上 t 乘以 p 减一，因为这里我们有模 p 减一的操作。这种表达方式更为自然和易于理解。
+可以表示为 ks 加上 t 乘以 p 减一，因为我们有模 p 减一的运算。
 
 179
 00:33:25,440 --> 00:33:34,480
@@ -1428,7 +1428,7 @@ Then this x, the capital X equals k times s plus xr plus t times p minus one.
 
 179
 00:33:25,440 --> 00:33:34,480
-那么，这个 x，大写 X 等于 k 乘以 s 加上 xr，再加上 t 乘以 p 减一。
+然后这个 x，大写 X 等于 k 乘以 s 加上 xr 加上 t 乘以 p 减一。
 
 180
 00:33:38,400 --> 00:33:49,440
@@ -1436,7 +1436,7 @@ And thus we have the result here, the gx equals g to the xr plus ks. And this is
 
 180
 00:33:38,400 --> 00:33:49,440
-因此，我们在这里得到了结果：gx 等于 g 的 xr 加 ks，这个关系位于指数位置上。
+因此，我们得到了这里的结果，gx 等于 g 的 xr 次方加 ks。这位于指数上。
 
 181
 00:33:49,600 --> 00:33:55,120
@@ -1444,7 +1444,7 @@ we have addition, that can be translated to the multiplication, because this is 
 
 181
 00:33:49,600 --> 00:33:55,120
-我们有加法，可以翻译为乘法，因为这是指数运算
+我们有加法，可以转化为乘法，因为这是指数的
 
 182
 00:33:55,120 --> 00:34:07,920
@@ -1452,7 +1452,7 @@ operation. So this equals g to the xr times g to the ks. g to the x equals y. Th
 
 182
 00:33:55,120 --> 00:34:07,920
-操作。所以这等于 g 的 xr 次方乘以 g 的 ks 次方。g 的 x 次方等于 y。这是小 x，翻译得更加自然和易懂。
+操作。因此，这等于 g 的 xr 次方乘以 g 的 ks 次方。g 的 x 次方等于 y。这是小 x，
 
 183
 00:34:08,240 --> 00:34:16,079
@@ -1460,7 +1460,7 @@ equals y. This is the small x, private key. So g to the x equals y.
 
 183
 00:34:08,240 --> 00:34:16,079
-等于 y。这是小 x 的私钥，所以 g 的 x 次方等于 y。
+等于 y。这是小 x，私钥。所以 g 的 x 次方等于 y。
 
 184
 00:34:18,960 --> 00:34:28,480
@@ -1468,7 +1468,7 @@ And g to the k, k is the one time private key. Well, this equals r.
 
 184
 00:34:18,960 --> 00:34:28,480
-g 映射到 k，k 是单次使用的私钥。嗯，这等于 r。
+g 到 k，k 是一次性私钥。嗯，这等于 r。
 
 185
 00:34:29,440 --> 00:34:40,240
@@ -1476,7 +1476,7 @@ We can see from the first signature generation, g to the k equals r. And thus we
 
 185
 00:34:29,440 --> 00:34:40,240
-从第一次签名生成中可以看出，g 到 k 等于 r。因此，我们得到 y 的 r 次方，
+从第一个签名生成，g 到 k 等于 r。因此，我们有 y 的 r 次方，
 
 186
 00:34:41,360 --> 00:34:50,639
@@ -1484,7 +1484,7 @@ y is the public key of Alice. So Bob can use Alice public key, and this r is the
 
 186
 00:34:41,360 --> 00:34:50,639
-y 是爱丽丝的公钥。因此，鲍勃可以使用爱丽丝的公钥，而 r 是签名的值
+y 是 Alice 的公钥。因此 Bob 可以使用 Alice 的公钥，而这个 r 是签名的
 
 187
 00:34:51,599 --> 00:35:02,159
@@ -1492,7 +1492,7 @@ signature. And r to the s, s is another signed signature. And p is a public key.
 
 187
 00:34:51,599 --> 00:35:02,159
-签名。并且从 r 到 s，s 是另一个已签名的签名。p 是一个公钥。因此，鲍勃
+签名。并且 r 到 s，s 是另一个带符号的签名。p 是一个公钥。因此 Bob
 
 188
 00:35:02,159 --> 00:35:14,400
@@ -1500,7 +1500,7 @@ can verify gx, capital X, equals y to the r times r to the s. If they're equal, 
 
 188
 00:35:02,159 --> 00:35:14,400
-可以验证 gx，大写 X 等于 y 的 r 次方乘以 r 的 s 次方。如果它们相等，那么说明这条信息
+可以验证 gx，大写 X，等于 y 的 r 次方乘以 r 的 s 次方。如果它们相等，这意味着信息
 
 189
 00:35:15,119 --> 00:35:22,639
@@ -1508,7 +1508,7 @@ is signed by Alice. So we have the mathematical
 
 189
 00:35:15,119 --> 00:35:22,639
-由 Alice 签署。因此，我们有数学上的内容
+由 Alice 签署。因此我们得到数学
 
 190
 00:35:25,280 --> 00:35:38,400
@@ -1516,7 +1516,7 @@ the equations, derivation to guarantee. Well, this result is correct to show the
 
 190
 00:35:25,280 --> 00:35:38,400
-这些方程及其推导的正确性得到了保证。嗯，这个结果正确地展示了签名是
+方程式、推导保证。嗯，这个结果是正确的，表明特征值是
 
 191
 00:35:38,400 --> 00:35:47,519
@@ -1524,7 +1524,7 @@ really generated by Alice, because I'm using Alice, the public key here, to do t
 
 191
 00:35:38,400 --> 00:35:47,519
-确实是由 Alice 生成的，因为我正在使用 Alice 公钥进行验证，所以这样做。
+实际上是由 Alice 生成的，因为我正在使用 Alice 的公钥来进行验证。
 
 192
 00:35:52,160 --> 00:35:56,800
@@ -1532,7 +1532,7 @@ Okay, let's look at one example. So in this example,
 
 192
 00:35:52,160 --> 00:35:56,800
-好的，让我们来看一个例子。那么在这个例子中，
+好的，让我们来看一个例子。所以在这个例子中，
 
 193
 00:35:56,800 --> 00:36:04,400
@@ -1540,7 +1540,7 @@ so the public key is 11, p is 11, the base g generator is 2,
 
 193
 00:35:56,800 --> 00:36:04,400
-公钥为 11，p 值为 11，基 g 生成元为 2，
+公钥为 11，p 为 11，基 g 生成元为 2，
 
 194
 00:36:05,920 --> 00:36:13,280
@@ -1548,7 +1548,7 @@ well, 2 is the generator of z11. And public key is, the private key is 3. So pub
 
 194
 00:36:05,920 --> 00:36:13,280
-嗯，2 是 z11 的生成器，公钥是，私钥是 3。因此，公钥是
+嗯，2 是 z11 的生成元。公钥是，私钥是 3。所以公钥是
 
 195
 00:36:13,680 --> 00:36:21,840
@@ -1556,7 +1556,7 @@ And public key is, the private key is 3. So public key is g to the x, 3,
 
 195
 00:36:13,680 --> 00:36:21,840
-公钥是，私钥为 3。因此，公钥表示为 g 的 x 次方乘以 3，
+公钥是，私钥是 3。因此公钥是 g 的 x 次方，3，
 
 196
 00:36:23,760 --> 00:36:35,760
@@ -1564,7 +1564,7 @@ g to the x, that is 2 to the 3 mod 11. That's 8. Suppose the message value is 9,
 
 196
 00:36:23,760 --> 00:36:35,760
-g 到 x，即 2 的三次方对 11 取模，结果是 8。假设消息值为 9，我们选取
+g 到 x，即 2 的 3 次方模 11。结果是 8。假设信息值为 9，我们选择
 
 197
 00:36:36,480 --> 00:36:50,000
@@ -1572,7 +1572,7 @@ the one time key k to be 7. So k, 7, and p minus 1, 10, the relative prime, and 
 
 197
 00:36:36,480 --> 00:36:50,000
-一次密钥 k 设为 7。因为 k、7 和 p-1（即 10）互质，所以我们可以求出 k
+一次密钥 k 为 7。因此 k，7，以及 p 减 1，10，互质，我们可以得到 k
 
 198
 00:36:50,720 --> 00:37:01,200
@@ -1580,7 +1580,7 @@ minus 1. So k minus 1, in this example, I tell you the result is 3. And we calcu
 
 198
 00:36:50,720 --> 00:37:01,200
-减去 1。在这个例子中，结果是 3，我们再来计算一下签名
+减 1。所以 k 减 1，在这个例子中，我告诉你结果是 3。然后我们计算符号
 
 199
 00:37:01,199 --> 00:37:09,839
@@ -1588,7 +1588,7 @@ r to be g to the k. So base is 2 to the 3, 2 to the k is 7.
 
 199
 00:37:01,199 --> 00:37:09,839
-r 到 g 到 k。基数是 2 的三次方，2 的 k 次方等于 7。
+r 等于 g 等于 k。所以基数是 2 的 3 次方，2 的 k 次方是 7。
 
 200
 00:37:09,840 --> 00:37:33,280
@@ -1596,7 +1596,7 @@ The mod p mod 11, the result here is 7. So s will be a value to be k minus 1
 
 200
 00:37:09,840 --> 00:37:33,280
-模 p 模 11 的结果是 7，因此 s 将是 k 减 1 的值
+模 p 模 11，这里的结果是 7。因此 s 将是 k 减 1 的值
 
 201
 00:37:34,240 --> 00:37:43,200
@@ -1604,7 +1604,7 @@ times the message minus the private key x times r mod p minus 1.
 
 201
 00:37:34,240 --> 00:37:43,200
-消息乘以私钥 x 乘以 r 模 p 减 1 后，再减去 1。
+消息次数减去私钥 x 乘以 r 模 p 减 1。
 
 202
 00:37:45,840 --> 00:37:59,040
@@ -1612,7 +1612,7 @@ And the value should be, this is 3 times the message is 9, the private key is 3,
 
 202
 00:37:45,840 --> 00:37:59,040
-值应该是，这是消息的 3 倍，即 9，私钥为 3，r 为 7，
+并且这个值应该是，这是消息的 3 倍，即 9，私钥是 3，r 是 7，
 
 203
 00:38:00,000 --> 00:38:08,480
@@ -1620,7 +1620,7 @@ and this result is 3 times
 
 203
 00:38:00,000 --> 00:38:08,480
-这个结果增加了 3 倍
+这个结果是 3 倍
 
 204
 00:38:11,199 --> 00:38:12,639
@@ -1628,7 +1628,7 @@ minus 12.
 
 204
 00:38:11,199 --> 00:38:12,639
-减去 12 点。
+负 12。
 
 205
 00:38:17,920 --> 00:38:26,559
@@ -1636,7 +1636,7 @@ So this equals minus 36. This is congruent to 4 because we mod 10.
 
 205
 00:38:17,920 --> 00:38:26,559
-因此等于负 36，由于我们对 10 取模，所以与 4 同余。这句话更自然、易懂。
+所以这等于负 36。因为我们对 10 取模，所以它等同于 4。
 
 206
 00:38:26,719 --> 00:38:40,159
@@ -1644,7 +1644,7 @@ And thus the sign message should be, well, the message is 9, with r to be 7, and
 
 206
 00:38:26,719 --> 00:38:40,159
-因此，签名消息应该是这样的：嗯，信息为 9，r 值为 7，s 值为 4。
+因此，签名消息应该是，嗯，消息是 9，r 应该是 7，s 应该是 4。
 
 207
 00:38:45,679 --> 00:38:50,880
@@ -1652,7 +1652,7 @@ In the verification, we compare these two data. The first one is gx.
 
 207
 00:38:45,679 --> 00:38:50,880
-在验证过程中，我们对比这两份数据，其中第一份数据为 gx。
+在验证中，我们比较这两份数据。第一份是 gx。
 
 208
 00:38:50,880 --> 00:39:06,160
@@ -1660,7 +1660,7 @@ The first one is gx. g, the base is 2, message is 9, mod p, p is 11, and this re
 
 208
 00:38:50,880 --> 00:39:06,160
-第一个数是 gx.g，底数为 2，信息为 9，模 11，结果是 6。
+第一个是 gx.g，底数为 2，信息为 9，模 p，p 为 11，这个结果是 6。
 
 209
 00:39:07,119 --> 00:39:18,879
@@ -1668,7 +1668,7 @@ y is the public key, is 8 from here, y is here. r is, this is r, this is s.
 
 209
 00:39:07,119 --> 00:39:18,879
-y 是公钥，从这里开始是 8 位，这里也是 y。这是 r，这是 s。
+y 是公钥，此处为 8，y 在此处。r 是，这是 r，这是 s。
 
 210
 00:39:19,680 --> 00:39:31,599
@@ -1676,7 +1676,7 @@ So r is 7 times, 7 to the s is 4, mod 11. This result is also 6.
 
 210
 00:39:19,680 --> 00:39:31,599
-r 是 7 的倍数，7 的 s 次幂等于 4，对 11 取模后结果为 6。
+所以 r 是 7 倍，7 的 s 次方是 4，模 11。这个结果也是 6。
 
 211
 00:39:32,400 --> 00:39:38,720
@@ -1684,7 +1684,7 @@ The equal, that means the signature is correct.
 
 211
 00:39:32,400 --> 00:39:38,720
-这意味着签名正确，即相等。
+相等，即签名正确。
 
 212
 00:39:48,880 --> 00:40:02,720
@@ -1700,7 +1700,7 @@ Okay, in part three, we talk about another signature, and this one is quite impo
 
 213
 00:40:02,719 --> 00:40:18,079
-好的，在第三部分，我们讨论了另一个非常重要的标志性事件。
+好的，在第三部分，我们讨论另一个标志性概念，这个概念非常重要。
 
 214
 00:40:19,039 --> 00:40:25,679
@@ -1708,7 +1708,7 @@ This is called the bland signature. In some cases, we need to have the bland sig
 
 214
 00:40:19,039 --> 00:40:25,679
-这被称为平淡的签名。在某些情况下，我们则需要保留这种平淡的签名，
+这被称为平淡签名。在某些情况下，我们需要有平淡签名，
 
 215
 00:40:26,399 --> 00:40:35,279
@@ -1716,7 +1716,7 @@ and we look at what's meaning for bland signature. The basic idea is that a send
 
 215
 00:40:26,399 --> 00:40:35,279
-我们来看看“平淡签名”的含义。基本想法是，发送者的
+我们来看看平淡签名的含义。基本思想是，发件人
 
 216
 00:40:36,399 --> 00:40:45,199
@@ -1724,7 +1724,7 @@ makes a sender to send message m without knowing m. Therefore, blandly,
 
 216
 00:40:36,399 --> 00:40:45,199
-使得发送者发送消息 m 却不知情。因此，简单地说，
+使发送者发送消息 m 而不知道 m。因此，简单地来说，
 
 217
 00:40:46,319 --> 00:40:49,440
@@ -1732,7 +1732,7 @@ this is needed in some e-commerce applications.
 
 217
 00:40:46,319 --> 00:40:49,440
-这在一些电子商务应用中是必要的。
+这在某些电子商务应用中是必要的。
 
 218
 00:40:50,400 --> 00:40:58,320
@@ -1740,7 +1740,7 @@ In another application, just like in the voting scenario, what's your vote?
 
 218
 00:40:50,400 --> 00:40:58,320
-在另一个应用程序中，就像在投票场景中一样，你会怎么投票？
+在另一个应用中，就像在投票场景中一样，你投谁的票？
 
 219
 00:40:59,280 --> 00:41:08,960
@@ -1748,7 +1748,7 @@ You don't want to disclose your voting result to some officer. The officer needs
 
 219
 00:40:59,280 --> 00:41:08,960
-你不想向某些官员透露你的投票结果，官员需要签字确认。
+您不想向某些官员透露您的投票结果。官员需要签署他的
 
 220
 00:41:09,920 --> 00:41:19,840
@@ -1756,7 +1756,7 @@ signature on your form. So this is another case. Well, when you guarantee that, 
 
 220
 00:41:09,920 --> 00:41:19,840
-您表单上的签名。这又是一个案例。嗯，当您确保这一点时，嗯，
+您的表格签名。所以这是另一个案例。嗯，当你保证这一点时，嗯，
 
 221
 00:41:19,840 --> 00:41:28,159
@@ -1764,7 +1764,7 @@ the form contains the correct signature from the officer. However, the officer w
 
 221
 00:41:19,840 --> 00:41:28,159
-表单中包含了官员的正确签名，但官员可能不会意识到这一点。
+该表格包含官员的正确签名。然而，官员将不知道
 
 222
 00:41:28,879 --> 00:41:33,839
@@ -1772,7 +1772,7 @@ your voting form, your voted result.
 
 222
 00:41:28,879 --> 00:41:33,839
-你的投票表格，你的投票结果。
+您的投票表，您的投票结果。
 
 223
 00:41:36,239 --> 00:41:45,519
@@ -1780,7 +1780,7 @@ So this is a bland signature, just like, well, this is a scenario. Someone can s
 
 223
 00:41:36,239 --> 00:41:45,519
-这只是一个平淡无奇的签名，就像，嗯，这是一个场景。任何人都可以签字
+因此这是一个平淡的签名，就像，嗯，这是一个场景。某人可以签名
 
 224
 00:41:46,239 --> 00:41:52,480
@@ -1788,7 +1788,7 @@ the signature. Well, in this hard copy, that's fine.
 
 224
 00:41:46,239 --> 00:41:52,480
-这就是签名。嗯，在这份纸质副本里，这样挺好的。
+签名。嗯，在这份纸质副本中，这样是可以的。
 
 225
 00:41:53,280 --> 00:42:01,760
@@ -1796,7 +1796,7 @@ Bland, her eyes will not see your content, but can generate the signature. And w
 
 225
 00:41:53,280 --> 00:42:01,760
-平淡无奇，她的目光无法洞察你的内容，却能生成签名。而且我们也不会
+布兰德，她的眼睛不会看到你的内容，但可以生成签名。而我们不会
 
 226
 00:42:03,039 --> 00:42:07,840
@@ -1804,7 +1804,7 @@ the same process in the e-commerce in two parties.
 
 226
 00:42:03,039 --> 00:42:07,840
-电子商务中双方遵循的相同流程，表述更为自然流畅。
+电子商务中双方相同的流程。
 
 227
 00:42:12,320 --> 00:42:18,159
@@ -1812,7 +1812,7 @@ So bland signature can be generated in the following procedures.
 
 227
 00:42:12,320 --> 00:42:18,159
-可以按照以下步骤生成如此平淡的签名（使翻译更加自然和易懂）。
+因此，可以通过以下步骤生成平淡的签名。
 
 228
 00:42:19,119 --> 00:42:28,239
@@ -1820,7 +1820,7 @@ So we assume that, well, the original message is m. Of course, we sent something
 
 228
 00:42:19,119 --> 00:42:28,239
-我们假设，嗯，原始信息是 m。当然，我们发送了不同的内容，这里更自然、更易于理解的说法是：我们假设原始信息是 m，但当然，我们发送了不同的内容。
+因此，我们假设原始信息是 m。当然，我们发送了不同的内容
 
 229
 00:42:29,119 --> 00:42:37,119
@@ -1828,7 +1828,7 @@ to the sender, right? So it cannot be m. That means from m, we generate m prime.
 
 229
 00:42:29,119 --> 00:42:37,119
-给发件人，对吗？所以不能是 m。这意味着从 m 生成 m'。
+给发送者，对吧？所以它不能是 m。这意味着从 m，我们生成 m'。
 
 230
 00:42:37,119 --> 00:42:48,799
@@ -1836,7 +1836,7 @@ m prime is different. So m prime will not disclose your data information.
 
 230
 00:42:37,119 --> 00:42:48,799
-m prime 与 m 不同，所以不会泄露您的数据信息。
+m'不同。因此，m'不会泄露您的数据信息。
 
 231
 00:42:51,440 --> 00:42:58,960
@@ -1844,7 +1844,7 @@ m cannot be obtained by the sender, and m prime will be signed by sender. So sen
 
 231
 00:42:51,440 --> 00:42:58,960
-m 无法由发送者获取，m'将由发送者进行签名。因此，发送者将进行签名操作。
+m 无法由发送者获得，而 m'将由发送者签名。因此，发送者将签名
 
 232
 00:42:59,519 --> 00:43:05,199
@@ -1852,7 +1852,7 @@ m prime to get a signature s prime. So for m prime,
 
 232
 00:42:59,519 --> 00:43:05,199
-m' 获取签名 s'。因此对于 m'，所以...
+m' 获取一个特征 s'。因此对于 m'，
 
 233
 00:43:06,880 --> 00:43:15,280
@@ -1860,7 +1860,7 @@ we'll assume that we are using the RSA algorithm. So m prime to get signature s 
 
 233
 00:43:06,880 --> 00:43:15,280
-我们假设正在使用 RSA 算法。因此，m 是素数，以获取签名 s。
+我们假设使用 RSA 算法。因此，用 m 的质数来获取签名 s 的质数。
 
 234
 00:43:17,519 --> 00:43:24,559
@@ -1868,7 +1868,7 @@ To generate signature, that means we will use the private key to generate the si
 
 234
 00:43:17,519 --> 00:43:24,559
-生成签名，即使用私钥进行签名操作。
+为了生成签名，这意味着我们将使用私钥来生成签名。
 
 235
 00:43:25,519 --> 00:43:31,360
@@ -1876,7 +1876,7 @@ D mod n, we have the signature. But
 
 235
 00:43:25,519 --> 00:43:31,360
-D mod n，我们得到了特征值，但是
+D mod n，我们得到特征标。但
 
 236
 00:43:33,920 --> 00:43:40,079
@@ -1884,7 +1884,7 @@ in the RSA, suppose in the RSA, this signature generation algorithm,
 
 236
 00:43:33,920 --> 00:43:40,079
-在 RSA 中，假设我们讨论的是这个签名生成算法，
+在 RSA 中，假设在 RSA 中，这个签名生成算法，
 
 237
 00:43:41,440 --> 00:43:48,079
@@ -1892,7 +1892,7 @@ the message, I'm using my private key, we generate the signature s prime.
 
 237
 00:43:41,440 --> 00:43:48,079
-消息是：我正在使用我的私钥，我们生成了 s'签名。
+消息，我使用我的私钥，我们生成签名 s'。
 
 238
 00:43:48,480 --> 00:43:57,199
@@ -1900,7 +1900,7 @@ Okay, this s prime will be returned to the sender. So sender now can compute the
 
 238
 00:43:48,480 --> 00:43:57,199
-好的，这个质数将退还给发送方。因此，发送方现在可以计算发送方的信息了。
+好的，这个 s prime 将返回给发送者。因此发送者现在可以计算发送者的
 
 239
 00:43:57,199 --> 00:44:10,239
@@ -1908,7 +1908,7 @@ signature s of m. That means at the sender side, sender will try to generate s f
 
 239
 00:43:57,199 --> 00:44:10,239
-签名 s 的 m。也就是说，在发送方，发送者将尝试从 s 原始值生成 s。
+签名 s of m。这意味着在发送端，发送者将尝试从 s'生成 s。
 
 240
 00:44:10,719 --> 00:44:19,599
@@ -1916,7 +1916,7 @@ This is the arm blinding procedure. So this is called the blinding procedure.
 
 240
 00:44:10,719 --> 00:44:19,599
-这是手臂失明操作。所以，我们称之为失明程序。
+这是手臂盲法程序。因此，这被称为盲法程序。
 
 241
 00:44:19,599 --> 00:44:41,679
@@ -1924,7 +1924,7 @@ Now this is the arm blinding procedure. And this s, well, the generation s shoul
 
 241
 00:44:19,599 --> 00:44:41,679
-现在是手臂失明程序。嗯，这个生成器的值应该是
+现在这是手臂失明程序。而这个，嗯，生成 s 应该等于
 
 242
 00:44:41,759 --> 00:45:00,799
@@ -1932,7 +1932,7 @@ m to the d mod n equals s. We need to guarantee s. Okay, this s contains to be t
 
 242
 00:44:41,759 --> 00:45:00,799
-m 除以 d 模 n 等于 s。我们必须确保 s 是正确的。好的，这个 s 应该包含正确的部分
+m 除以 d 模 n 等于 s。我们需要保证 s。好的，这个 s 需要是正确的
 
 243
 00:45:00,880 --> 00:45:11,920
@@ -1940,7 +1940,7 @@ signal from the sender. That means it equals the m to the d mod n. So d is the p
 
 243
 00:45:00,880 --> 00:45:11,920
-发送者的信号。这意味着它等于 m 模 n 的 d。因此，d 是私钥。
+信号来自发送者。这意味着它等于 m 模 n 的 d。因此，d 是私钥。
 
 244
 00:45:11,920 --> 00:45:23,200
@@ -1948,7 +1948,7 @@ sender. So it looks to be quite just like a magic, magical trick, right? I do no
 
 244
 00:45:11,920 --> 00:45:23,200
-发送者说，这看起来就像一个神奇的魔术，对吧？我没有你的信息
+发送者。所以这看起来就像是一个神奇的魔术，对吧？我并没有你的
 
 245
 00:45:23,199 --> 00:45:33,919
@@ -1956,7 +1956,7 @@ private key, but somehow I will generate this s. It contains, it equals the mess
 
 245
 00:45:23,199 --> 00:45:33,919
-私钥，但不知为何我会生成这个 s。它包含的内容，等同于消息 m
+私钥，但不知何故我会生成这个 s。它包含，它等于消息 m
 
 246
 00:45:34,639 --> 00:45:42,559
@@ -1964,7 +1964,7 @@ to the d mod n. d is the sender's private key. I don't have it, but I can genera
 
 246
 00:45:34,639 --> 00:45:42,559
-到 d 模 n。d 是发送者的私钥。我没有，但我可以生成 s。
+对 d mod n。d 是发送者的私钥。我没有它，但我可以生成 s。
 
 247
 00:45:43,199 --> 00:45:56,320
@@ -1972,7 +1972,7 @@ The process can be viewed in this diagram. Well, this is Alice and this is Bob. 
 
 247
 00:45:43,199 --> 00:45:56,320
-该过程可在此图中查看。嗯，这是爱丽丝，这是鲍勃。爱丽丝是发送方。这样的表述更符合中文习惯。
+该过程可在此图中查看。嗯，这是爱丽丝，这是鲍勃。爱丽丝是发送者。
 
 248
 00:46:00,559 --> 00:46:02,639
@@ -1980,7 +1980,7 @@ Bob is the sender.
 
 248
 00:46:00,559 --> 00:46:02,639
-Bob 是信息的发送者。
+鲍勃是发送者。
 
 249
 00:46:02,639 --> 00:46:13,359
@@ -1988,7 +1988,7 @@ So what we've done in this process is, in the blinding process, we will multiply
 
 249
 00:46:02,639 --> 00:46:13,359
-在这个过程中，我们做了这样一件事：在盲法阶段，我们会将 m 与另一个数相乘
+在此过程中，我们所做的是在盲法过程中，将 m 与另一个数相乘
 
 250
 00:46:13,440 --> 00:46:29,840
@@ -1996,7 +1996,7 @@ key. In the blinding process, in the blinding process, we will multiply m with a
 
 250
 00:46:13,440 --> 00:46:29,840
-在遮蔽过程中，我们会将 m 与另一份数据相乘。
+关键。在盲法过程中，在盲法过程中，我们将 m 与另一份数据相乘。
 
 251
 00:46:30,559 --> 00:46:33,680
@@ -2004,7 +2004,7 @@ And this data r is called the one-time key.
 
 251
 00:46:30,559 --> 00:46:33,680
-这组数据被称为一次性密钥，意思是指仅使用一次的密钥。
+此数据 r 称为一次性密钥。
 
 252
 00:46:33,919 --> 00:46:48,879
@@ -2012,7 +2012,7 @@ r is a one-time key, random key. So this r, we will, in fact, Alice will choose 
 
 252
 00:46:33,919 --> 00:46:48,879
-r 是一个一次性随机密钥。实际上，Alice 会选择数据 r。
+r 是一个一次性密钥，随机密钥。因此，这个 r，实际上是由 Alice 选择数据 r。
 
 253
 00:46:48,879 --> 00:46:56,079
@@ -2020,7 +2020,7 @@ one-time key. And m will times r to the e, and then mod p.
 
 253
 00:46:48,879 --> 00:46:56,079
-一次性密钥。将 m 乘以 r 的 e 次方，然后对 p 取模。这句话经过调整，使其在简体中文中更加自然易懂。
+一次性密钥。然后计算 m 乘以 r 的 e 次方，再对 p 取模。
 
 254
 00:46:57,039 --> 00:47:06,799
@@ -2028,7 +2028,7 @@ And m will times r to the e, and then mod p. So this m prime will be sent to Bob
 
 254
 00:46:57,039 --> 00:47:06,799
-然后将 m 乘以 r 的 e 次方，再对 p 取模。这样得到的 m' 将被发送给 Bob。
+m 乘以 r 的 e 次方，然后对 p 取模。因此，这个 m' 将被发送给 Bob。
 
 255
 00:47:09,199 --> 00:47:19,440
@@ -2036,7 +2036,7 @@ Alice will choose this r. This r is unknown to Bob. And in this way, m prime wil
 
 255
 00:47:09,199 --> 00:47:19,440
-爱丽丝将选择这个 r。这个 r 对鲍勃来说是未知的。这样，m 的质数就会是
+爱丽丝将选择这个 r。这个 r 对鲍勃来说是未知的。并且以这种方式，m 的质数将会
 
 256
 00:47:20,400 --> 00:47:26,559
@@ -2044,7 +2044,7 @@ can conceal the original message m. Is this right?
 
 256
 00:47:20,400 --> 00:47:26,559
-可以隐藏原始信息 m，这样做是否正确？
+可以隐藏原始信息 m。这样做正确吗？
 
 257
 00:47:30,000 --> 00:47:35,760
@@ -2052,7 +2052,7 @@ The m prime will be sent to Bob. This message contains some random number r.
 
 257
 00:47:30,000 --> 00:47:35,760
-m'将被发送给鲍勃。此消息包含一个随机数 r。
+m' 将发送给 Bob。此消息包含一些随机数 r。
 
 258
 00:47:37,119 --> 00:47:45,599
@@ -2060,7 +2060,7 @@ Bob has no idea about r. Thus, Bob cannot get any information from m.
 
 258
 00:47:37,119 --> 00:47:45,599
-没有关于 r 的了解，因此 Bob 无法从 m 中获取任何信息。
+鲍勃对 r 一无所知。因此，鲍勃无法从 m 中获取任何信息。
 
 259
 00:47:46,480 --> 00:47:55,839
@@ -2068,7 +2068,7 @@ So Bob will do this signing process. The signing is quite simple to Bob. So Bob 
 
 259
 00:47:46,480 --> 00:47:55,839
-所以鲍勃将执行这个签字流程。对鲍勃来说，这个过程很简单。因此，鲍勃将执行他的
+所以鲍勃将执行这个签名流程。对鲍勃来说，签名过程非常简单。因此鲍勃将应用他的
 
 260
 00:47:55,839 --> 00:48:06,559
@@ -2076,7 +2076,7 @@ private key d to sign to generate the signature s prime. The s prime will be ret
 
 260
 00:47:55,839 --> 00:48:06,559
-私钥 d 用于生成签名 s'，该签名将返回给 Alice。
+私钥 d 用于签名以生成签名 s'。s'将被返回给 Alice。
 
 261
 00:48:06,639 --> 00:48:18,799
@@ -2084,7 +2084,7 @@ So let's see, s prime equals m prime to the d mod p. So m prime equals m times r
 
 261
 00:48:06,639 --> 00:48:18,799
-好吧，让我们看看，s' 等于 m' 的 d 模 p。因此，m' 等于 m 乘以 r 的 e，这样的表述更为自然和易懂。
+所以，我们来看，s' 等于 m' 模 p 的 d 次方。因此，m' 等于 m 乘以 r 的 e 次方。
 
 262
 00:48:20,480 --> 00:48:34,559
@@ -2092,7 +2092,7 @@ this to the d mod p. This equals m to the d times r mod p.
 
 262
 00:48:20,480 --> 00:48:34,559
-这等于 m 的 d 次方模 p。
+这等于 m 的 d 次方乘以 r 模 p。
 
 263
 00:48:37,119 --> 00:48:40,960
@@ -2100,7 +2100,7 @@ To the e d mod p.
 
 263
 00:48:37,119 --> 00:48:40,960
-到 e d 模 p。
+至于 e d mod p。
 
 264
 00:48:44,159 --> 00:48:50,799
@@ -2108,7 +2108,7 @@ Right? Well, according to RSA algorithm, RSA, we know that
 
 264
 00:48:44,159 --> 00:48:50,799
-嗯？好吧，根据 RSA 算法，我们了解到
+对吧？嗯，根据 RSA 算法，RSA，我们知道
 
 265
 00:48:52,239 --> 00:49:04,719
@@ -2116,7 +2116,7 @@ r to the e d is congruent to 1 mod p, or previously with mod n. But here we simp
 
 265
 00:48:52,239 --> 00:49:04,719
-r 到 e d 同余于 1 模 p，之前用模 n 表示。但在此处，我们直接使用 p。
+r 到 e 的 d 同余于 1 模 p，或者之前用模 n。但这里我们简单地使用 p。
 
 266
 00:49:05,359 --> 00:49:06,399
@@ -2124,7 +2124,7 @@ That's the same thing, right?
 
 266
 00:49:05,359 --> 00:49:06,399
-这不是同一个问题吗？
+那也是一回事，对吧？
 
 267
 00:49:09,839 --> 00:49:17,839
@@ -2132,7 +2132,7 @@ So you can refresh your memory. m to the e d is congruent to n mod n.
 
 267
 00:49:09,839 --> 00:49:17,839
-你可以回忆一下，m 的 e 次方 d 与 n 模 n 同余。
+所以你可以刷新你的记忆。m 到 e 的 d 与 n 模 n 同余。
 
 268
 00:49:20,559 --> 00:49:29,839
@@ -2140,7 +2140,7 @@ And we apply the public key e, apply the private key d again. We can get the ori
 
 268
 00:49:20,559 --> 00:49:29,839
-我们首先使用公钥 e 进行加密，然后使用私钥 d 进行解密，从而恢复出原始信息 m
+并且我们应用公钥 e，再次应用私钥 d。我们可以得到原始信息 m
 
 269
 00:49:30,800 --> 00:49:42,880
@@ -2148,7 +2148,7 @@ in the RSA algorithm. So here, the r e d will get back to r, that one time key a
 
 269
 00:49:30,800 --> 00:49:42,880
-在 RSA 算法中。因此，这里的红色会回到 r，即那个一次性密钥。
+在 RSA 算法中。因此，这里的红色将返回到 r，那个一次性密钥再次，
 
 270
 00:49:44,000 --> 00:49:56,160
@@ -2156,7 +2156,7 @@ in the RSA algorithm. So here, the r e d will get back to r, that one time key a
 
 270
 00:49:44,000 --> 00:49:56,160
-1 模 p。因此，这个会生成，即等于 m 乘以 d 再模 p 的结果。
+1 模 p。因此，这个将生成，这个等于 m d 次 r 模 p。
 
 271
 00:49:56,159 --> 00:50:02,079
@@ -2164,7 +2164,7 @@ So this is the s prime. Is that clear?
 
 271
 00:49:56,159 --> 00:50:02,079
-这就是 s 的质数。您明白了吗？
+这是 s 的素数。清楚了吗？
 
 272
 00:50:05,440 --> 00:50:09,679
@@ -2172,7 +2172,7 @@ Okay, this s prime will be obtained by Alice.
 
 272
 00:50:05,440 --> 00:50:09,679
-好的，这个素数将由 Alice 得到。
+好的，这个 s 素数将由 Alice 获得。
 
 273
 00:50:12,000 --> 00:50:22,319
@@ -2180,7 +2180,7 @@ So Alice got s prime. From s prime, Alice will divide this s prime by r
 
 273
 00:50:12,000 --> 00:50:22,319
-因此，爱丽丝得到了 s 的质数。然后，她将这个质数 s 除以 r
+所以 Alice 得到了 s 的质数。从 s 的质数开始，Alice 将这个 s 的质数除以 r
 
 274
 00:50:26,799 --> 00:50:42,319
@@ -2188,7 +2188,7 @@ So she will get m to the d times r divided by r mod p. And this equals m d mod p
 
 274
 00:50:26,799 --> 00:50:42,319
-因此，她将得到 m 乘以 d 除以 r 再除以 r 模 p。这等于 m 除以 p 的 d 次方余数。
+所以她将得到 m 乘以 d 乘以 r 除以 r 模 p。这等于 m 乘以 d 模 p。
 
 275
 00:50:45,599 --> 00:50:52,399
@@ -2196,7 +2196,7 @@ s prime divided by r equals s prime times r minus 1.
 
 275
 00:50:45,599 --> 00:50:52,399
-s 倍数除以 r 等于 s 倍数乘以 r 减 1（更自然地表达）。
+s'除以 r 等于 s'乘以 r 减 1。
 
 276
 00:50:52,400 --> 00:50:58,320
@@ -2204,7 +2204,7 @@ The times r minus 1, that's a module inverse.
 
 276
 00:50:52,400 --> 00:50:58,320
-时间是 r 减 1，那是一个模逆。这个表达更自然，易于理解。
+t = r - 1，这是一个模逆元。
 
 277
 00:51:04,240 --> 00:51:13,680
@@ -2212,7 +2212,7 @@ So you see, s prime times r equals s prime times r minus 1.
 
 277
 00:51:04,240 --> 00:51:13,680
-你看，s'乘以 r 等于 s'乘以 r 减 1。
+所以你看，s'乘以 r 等于 s'乘以 r 减 1。
 
 278
 00:51:14,480 --> 00:51:29,599
@@ -2220,7 +2220,7 @@ Not because if both sides, we times r, we times r, we mod p, of course this can 
 
 278
 00:51:14,480 --> 00:51:29,599
-因为如果两边都乘以 r，再乘以 r，然后对 p 取模，自然可以约掉，对吧？
+不是因为我们两边都有，我们乘以 r，我们乘以 r，我们取模 p，当然可以约掉，对吧？
 
 279
 00:51:29,599 --> 00:51:40,079
@@ -2228,7 +2228,7 @@ This is prime. And according to definition, r minus 1 times r, this is 1 mod p.
 
 279
 00:51:29,599 --> 00:51:40,079
-这是素数。根据定义，r 减 1 乘以 r，等于 1 模 p。
+这是素数。根据定义，r 减 1 乘以 r，这是 1 模 p。
 
 280
 00:51:44,079 --> 00:51:54,559
@@ -2236,7 +2236,7 @@ So of course, with this s prime divided by r, in fact equals s prime times r min
 
 280
 00:51:44,079 --> 00:51:54,559
-当然，用这个 s'除以 r，实际上等于 s'乘以 r 减 1。这样的表达更符合中文的表达习惯。
+当然，这个 s'除以 r 实际上等于 s'乘以 r 减 1。
 
 281
 00:51:54,559 --> 00:52:00,559
@@ -2244,7 +2244,7 @@ r minus 1 is a module inverse. So how can we do the division operation?
 
 281
 00:51:54,559 --> 00:52:00,559
-r 减 1 是模逆，那么我们该如何进行除法操作呢？
+r-1 是模逆。那么我们如何进行除法运算？
 
 282
 00:52:01,759 --> 00:52:07,199
@@ -2252,7 +2252,7 @@ Division can be translated to the multiplication of the modular inverse.
 
 282
 00:52:01,759 --> 00:52:07,199
-除法可以理解为模逆乘积的表示。
+除法可以翻译为模逆元的乘法。
 
 283
 00:52:07,919 --> 00:52:14,159
@@ -2260,7 +2260,7 @@ Okay, so in nature 2, we studied the modular inverse.
 
 283
 00:52:07,919 --> 00:52:14,159
-好的，那么在自然 2 中，我们学习了模逆的概念。
+好的，所以在自然 2 中，我们研究了模逆。
 
 284
 00:52:15,279 --> 00:52:21,599
@@ -2268,7 +2268,7 @@ We just guarantee modular inverse times the r mod p equals 1. That's a requireme
 
 284
 00:52:15,279 --> 00:52:21,599
-我们确保模逆乘以 r 模 p 等于 1，这是必须满足的条件。
+我们仅保证模逆元乘以 r 模 p 等于 1。这是要求。
 
 285
 00:52:21,599 --> 00:52:36,960
@@ -2276,7 +2276,7 @@ The eyes can get s prime from Bob. So eyes will divide s prime by r.
 
 285
 00:52:21,599 --> 00:52:36,960
-眼睛能从 Bob 那里获得 s prime，因此会将 s prime 除以 r。
+眼睛可以从 Bob 那里得到 s'。因此，眼睛会将 s'除以 r。
 
 286
 00:52:36,960 --> 00:52:44,719
@@ -2284,7 +2284,7 @@ Or we say s prime times r to the minus 1. Then we can get this is s.
 
 286
 00:52:36,960 --> 00:52:44,719
-我们说 s 倍的 r 的负一次方，那么就可以得到这是 s。
+或者我们说 s 的导数乘以 r 的负一次方。然后我们可以得到这是 s。
 
 287
 00:52:44,799 --> 00:52:56,879
@@ -2292,7 +2292,7 @@ For message m, it's signature to be signed by Bob. This signature is m to the d 
 
 287
 00:52:44,799 --> 00:52:56,879
-对于消息 m，其签名应由 Bob 签署。该签名是 m 对 p 取模后的结果。
+消息 m 的签名应由 Bob 签署。此签名是 m 模 p 的 d 次方。
 
 288
 00:52:57,519 --> 00:53:16,000
@@ -2300,7 +2300,7 @@ So this for Bob, the public key is e p. This is the public key. And private key
 
 288
 00:52:57,519 --> 00:53:16,000
-这是对 Bob 的，公钥是 e p。这是公钥。私钥
+因此，这是给 Bob 的，公钥是 e p。这是公钥。私钥
 
 289
 00:53:16,000 --> 00:53:33,280
@@ -2308,7 +2308,7 @@ is d, right? For Bob. Then you can see this is indeed
 
 289
 00:53:16,000 --> 00:53:33,280
-是的，对 Bob 来说没错。然后你可以看到这确实是对的
+是的，对 Bob 来说。然后你可以看到这确实
 
 290
 00:53:36,239 --> 00:53:43,199
@@ -2316,7 +2316,7 @@ is generated by using Bob's private key based on the original message m.
 
 290
 00:53:36,239 --> 00:53:43,199
-该内容是通过使用基于原始消息 m 的 Bob 的私钥生成的。翻译更加自然，易于理解。
+由 Bob 的私钥基于原始消息 m 生成。
 
 291
 00:53:43,279 --> 00:53:51,759
@@ -2324,7 +2324,7 @@ We have this signature. Although Alice has no idea of Bob's private key,
 
 291
 00:53:43,279 --> 00:53:51,759
-我们有这个签名。尽管爱丽丝对鲍勃的私钥一无所知，
+我们有这个签名。尽管爱丽丝不知道鲍勃的私钥，
 
 292
 00:53:52,319 --> 00:54:01,359
@@ -2332,7 +2332,7 @@ but she can successfully generate the signature s. In this signing process,
 
 292
 00:53:52,319 --> 00:54:01,359
-但是她能够成功生成签名 s。在签名过程中，
+但她可以成功生成签名 s。在此签名过程中，
 
 293
 00:54:01,359 --> 00:54:11,119
@@ -2340,7 +2340,7 @@ Bob has no idea of the original message m. So eyes can know this r.
 
 293
 00:54:01,359 --> 00:54:11,119
-没有了解原始信息 m，因此眼睛可以看出这个 r。
+鲍勃不知道原始信息 m。因此眼睛可以知道这个 r。
 
 294
 00:54:13,519 --> 00:54:25,839
@@ -2348,7 +2348,7 @@ Of course, eyes can calculate r minus 1. When eyes obtain s prime from Bob,
 
 294
 00:54:13,519 --> 00:54:25,839
-当然，眼睛可以计算出 r 减 1。当眼睛从 Bob 那里得到 s' 后，
+当然，眼睛可以计算 r 减 1。当眼睛从 Bob 那里获得 s'时，
 
 295
 00:54:26,639 --> 00:54:35,119
@@ -2356,7 +2356,7 @@ so eyes can calculate s prime times r minus 1 mod p, then this equals the signat
 
 295
 00:54:26,639 --> 00:54:35,119
-可以计算 s 的素数倍减 1 模 p，那么这个结果就是签名 s（使翻译更自然、易懂）。
+因此，眼睛可以计算 s 的素数次方乘以 r 减 1 模 p，那么这等于签名 s。
 
 296
 00:54:35,119 --> 00:54:50,639
@@ -2364,7 +2364,7 @@ So this is the blind signature generation process.
 
 296
 00:54:35,119 --> 00:54:50,639
-这就是盲签名生成过程的描述。
+这是盲签名生成过程。
 
 297
 00:54:50,639 --> 00:55:14,159
@@ -2372,7 +2372,7 @@ We have the charms plus signature scheme. This scheme is exactly the process ill
 
 297
 00:54:50,639 --> 00:55:14,159
-我们拥有魅力加签名方案。这正是本页所展示的过程，翻译更加自然易懂。
+我们有魅力加签名方案。此方案正是本页所展示的过程。
 
 298
 00:55:21,440 --> 00:55:32,559
@@ -2380,7 +2380,7 @@ So you can see in this transplant signature, we assume that we're using the RSA 
 
 298
 00:55:21,440 --> 00:55:32,559
-因此，您可以从这次移植签名中看出，我们假定使用了 RSA 算法。
+因此，您可以看到在这项移植签名中，我们假设我们正在使用 RSA 算法。
 
 299
 00:55:33,519 --> 00:55:44,480
@@ -2388,7 +2388,7 @@ And suppose Bob's public key is n and e. His private key is d. The message is m.
 
 299
 00:55:33,519 --> 00:55:44,480
-假设鲍勃的公钥为 n 和 e，私钥为 d，信息为 m。
+假设鲍勃的公钥是 n 和 e，他的私钥是 d。信息是 m。
 
 300
 00:55:44,480 --> 00:55:50,639
@@ -2396,7 +2396,7 @@ m should be smaller than n. And Alice chooses a one-time key k.
 
 300
 00:55:44,480 --> 00:55:50,639
-m 应该小于 n，Alice 选择一个一次性密钥 k。
+m 应该小于 n。并且 Alice 选择一个一次性密钥 k。
 
 301
 00:55:51,760 --> 00:55:58,719
@@ -2404,7 +2404,7 @@ k should be in the range from 0 to n. We will guarantee that gcd n k is 1.
 
 301
 00:55:51,760 --> 00:55:58,719
-k 应该位于 0 到 n 的区间内。我们保证 n 和 k 的最大公约数为 1。
+k 应在 0 到 n 的范围内。我们将保证 gcd(n, k) = 1。
 
 302
 00:55:59,679 --> 00:56:06,159
@@ -2412,7 +2412,7 @@ So this will guarantee that we have the k must 1 mod n.
 
 302
 00:55:59,679 --> 00:56:06,159
-这将确保我们拥有满足 1 模 n 的 k。
+所以这将保证我们有 k 必须 1 mod n。
 
 303
 00:56:06,159 --> 00:56:13,039
@@ -2420,7 +2420,7 @@ k is a randomly chosen number. This is called the blinding factor.
 
 303
 00:56:06,159 --> 00:56:13,039
-k 是一个随机选取的数字，被称为盲化因子。
+k 是随机选取的数字。这被称为盲化因子。
 
 304
 00:56:16,799 --> 00:56:27,199
@@ -2428,7 +2428,7 @@ In the blinding process, Alice will compute n times k to the e. Alice knows k.
 
 304
 00:56:16,799 --> 00:56:27,199
-在曝光过程中，Alice 需要计算 n 次 k 的 e 次方。她已知 k 的值。
+在盲化过程中，爱丽丝将计算 n 乘以 k 的 e 次方。爱丽丝知道 k。
 
 305
 00:56:27,279 --> 00:56:37,279
@@ -2436,7 +2436,7 @@ And in this blinding process, well, when Bob applied his signature, applied his 
 
 305
 00:56:27,279 --> 00:56:37,279
-在这个令人眼花缭乱的流程中，鲍勃应用了他的签名和私钥 d，嗯，是这样的
+在这令人眼花缭乱的进程中，当鲍勃应用他的签名，应用他的私钥 d，
 
 306
 00:56:37,519 --> 00:56:51,120
@@ -2444,7 +2444,7 @@ and this m prime d equals this one.
 
 306
 00:56:37,519 --> 00:56:51,120
-这 m 的导数等于这个（更自然的翻译）。
+并且这个 m' d 等于这个一个。
 
 307
 00:56:53,440 --> 00:56:59,840
@@ -2452,7 +2452,7 @@ m to the d times k times e d.
 
 307
 00:56:53,440 --> 00:56:59,840
-m 乘以 d，再乘以 k，最后是 e 的 d 次方。这样的表达更符合中文习惯。
+m^d × k × e^d
 
 308
 00:57:00,160 --> 00:57:11,200
@@ -2460,7 +2460,7 @@ Well, in this way, the random number k with an exponent d can be actually can be
 
 308
 00:57:00,160 --> 00:57:11,200
-嗯，这样就可以实际上取消掉具有指数 d 的随机数 k 了。
+嗯，这样，具有指数 d 的随机数 k 实际上可以被消除。
 
 309
 00:57:11,279 --> 00:57:23,039
@@ -2468,7 +2468,7 @@ We already put the exponent part with a value of e. So e times d mod n. Actually
 
 309
 00:57:11,279 --> 00:57:23,039
-我们已经将指数部分赋值为 e，即 e 乘以 d 再对 n 取模。实际上，这个结果等于 1。
+我们已将指数部分赋值为 e。所以 e 乘以 d 模 n。实际上，这等于 1。
 
 310
 00:57:24,319 --> 00:57:35,039
@@ -2476,7 +2476,7 @@ So in the on-branded case, we have a random number k with an exponent d.
 
 310
 00:57:24,319 --> 00:57:35,039
-在品牌未使用的情况下，存在一个随机数 k 和指数 d。
+所以，在自有品牌的情况下，我们有一个指数为 d 的随机数 k。
 
 311
 00:57:35,759 --> 00:57:45,840
@@ -2484,7 +2484,7 @@ Actually, this equals 1. So in the on-branding, the message we want to get from 
 
 311
 00:57:35,759 --> 00:57:45,840
-实际上，这等于 1。所以在品牌推广中，我们希望从 s'传达给 s 的信息。
+实际上，这等于 1。所以在品牌推广中，我们希望从 s'到 s 得到的信息。
 
 312
 00:57:46,719 --> 00:57:59,840
@@ -2492,7 +2492,7 @@ So s prime is the signature obtained by Alice. So Alice can get
 
 312
 00:57:46,719 --> 00:57:59,840
-因此，S'是 Alice 获得的签名。因此，Alice 可以获取到...（此处根据上下文补充具体内容）
+所以 s 的导数是 Alice 获得的特征值。因此 Alice 可以得到
 
 313
 00:57:59,840 --> 00:58:10,720
@@ -2500,7 +2500,7 @@ s prime times the k must 1. So this will get the original signature.
 
 313
 00:57:59,840 --> 00:58:10,720
-s 乘以 k 必须等于 1，所以这将获取原始签名。
+s' 乘以 k 必须等于 1。因此这将得到原始签名。
 
 314
 00:58:12,480 --> 00:58:16,640
@@ -2508,7 +2508,7 @@ The reason is because s prime, this is s prime.
 
 314
 00:58:12,480 --> 00:58:16,640
-原因在于 s 是一个素数，这正是 s 的特性。
+原因是 s 的素数，这就是 s 的素数。
 
 315
 00:58:16,639 --> 00:58:31,440
@@ -2516,7 +2516,7 @@ So s prime equals m d is equal to m d times k mod n. So from s prime to s,
 
 315
 00:58:16,639 --> 00:58:31,440
-因此，s' 等于 m d，等于 m d 乘以 k 模 n。从 s' 到 s，
+所以 s'的模 m 等于 md 等于 md 乘以 k 模 n。因此从 s'到 s，
 
 316
 00:58:32,400 --> 00:58:39,839
@@ -2524,7 +2524,7 @@ we can simply multiply s prime by k must 1. This will generate the signature s.
 
 316
 00:58:32,400 --> 00:58:39,839
-我们只需将 s'乘以 k（必须为 1），就能生成签名 s。
+我们可以简单地用 k 乘以 s'，必须 1。这将生成签名 s。
 
 317
 00:58:47,279 --> 00:59:01,199
@@ -2532,7 +2532,7 @@ So this is the whole process. You can see this is the m prime. m prime to d, we 
 
 317
 00:58:47,279 --> 00:59:01,199
-这就是整个流程。你可以看到这是 m 的导数。从 m 导数到 d，我们有 md，这是 s，这是 k。
+所以这就是整个过程。您可以看到这是 m 的导数。从 m 导数到 d，我们有 md，这是 s，这是 k。
 
 318
 00:59:01,199 --> 00:59:12,559
@@ -2540,7 +2540,7 @@ You have mod n, e d.
 
 318
 00:59:01,199 --> 00:59:12,559
-您有模数 n，e d。
+您有模 n，e d。
 
 319
 00:59:14,879 --> 00:59:26,480
@@ -2548,7 +2548,7 @@ In our RSA algorithm, e d, we choose e d such that it equals, it is congruent to
 
 319
 00:59:14,879 --> 00:59:26,480
-在我们的 RSA 算法中，我们选择 e 和 d，使得它们与φ同余 1。这样的选择使得 e 和 d 更加自然且易于理解。
+在 RSA 算法中，我们选择 e 和 d，使得 e 和 d 等于，与φ同余 1。
 
 320
 00:59:27,199 --> 00:59:35,599
@@ -2556,7 +2556,7 @@ This is a guarantee that k e d mod n equals k.
 
 320
 00:59:27,199 --> 00:59:35,599
-这是一种保证，即 k 除以 n 的余数等于 k。
+这是 k e d mod n 等于 k 的保证。
 
 321
 00:59:39,119 --> 00:59:44,159
@@ -2564,7 +2564,7 @@ So thus, we can get the s. This is the signature.
 
 321
 00:59:39,119 --> 00:59:44,159
-因此，我们可以得到这个 s。这便是签名。
+因此，我们可以得到 s。这就是签名。
 
 322
 00:59:49,280 --> 00:59:53,599
@@ -2572,7 +2572,7 @@ And this signature equals this part
 
 322
 00:59:49,280 --> 00:59:53,599
-这个签名等同于这一部分
+这个签名等于这部分
 
 323
 00:59:57,440 --> 00:59:59,599
@@ -2580,7 +2580,7 @@ is s prime.
 
 323
 00:59:57,440 --> 00:59:59,599
-它是质数吗？
+是素数。
 
 324
 01:00:10,800 --> 01:00:18,639
@@ -2588,7 +2588,7 @@ Okay, now we look at this exercise. Suppose we have the copy key to be
 
 324
 01:00:10,800 --> 01:00:18,639
-好的，现在我们来分析这个练习。假设我们拥有复制键为
+好的，现在我们来看这个练习。假设我们拥有复制键。
 
 325
 01:00:18,719 --> 01:00:26,879
@@ -2596,7 +2596,7 @@ e equals 5, n is 1, 1, 9. So 1, 1, 9 equals 7 times 17, right?
 
 325
 01:00:18,719 --> 01:00:26,879
-e 等于 5，n 分别为 1、1、9，那么 1、1、9 就是 7 乘以 17，对吧？
+e 等于 5，n 为 1，1，9。所以 1，1，9 等于 7 乘以 17，对吧？
 
 326
 01:00:28,480 --> 01:00:38,480
@@ -2604,7 +2604,7 @@ This p to be 7, q to be 17. The requester wants a signature on the message m equ
 
 326
 01:00:28,480 --> 01:00:38,480
-这 p 等于 7，q 等于 17。请求者在消息 m 上要求签名。
+此 p 为 7，q 为 17。请求者在消息 m 上需要签名。
 
 327
 01:00:39,440 --> 01:00:50,320
@@ -2612,7 +2612,7 @@ This p to be 7, q to be 17. The requester wants a signature on the message m equ
 
 327
 01:00:39,440 --> 01:00:50,320
-37. 假设他随机选取一个混合因子 R 为 29，因此需要保证 gcd
+37. 假设他选择一个随机的混合因子 R 为 29。因此我们需要保证 g c d
 
 328
 01:00:51,440 --> 01:01:01,039
@@ -2620,7 +2620,7 @@ R n is 1. In this way, we can calculate our must 1 mod n.
 
 328
 01:00:51,440 --> 01:01:01,039
-Rn 等于 1，这样我们就可以计算 1 对 n 的模了。
+R n 为 1。这样，我们可以计算出我们的必须 1 模 n。
 
 329
 01:01:01,199 --> 01:01:10,400
@@ -2628,7 +2628,9 @@ So what's the private key of Sonar? We have the public key, e and n. We are able
 
 329
 01:01:01,199 --> 01:01:10,400
-那么，Sonar 的私钥是什么？我们已经有了公钥 e 和 n，能够计算出
+So what's the private key of Sonar? We have the public key, e and n. We are able to calculate
+
+那么 Sonar 的私钥是什么？我们有了公钥 e 和 n。我们能够计算出
 
 330
 01:01:11,199 --> 01:01:18,320
@@ -2636,7 +2638,7 @@ the Sonar's private key. And then we should apply the blending phase.
 
 330
 01:01:11,199 --> 01:01:18,320
-这是声纳的私钥，接下来应进行混合处理阶段。
+声纳的私钥。然后我们应该应用混合阶段。
 
 331
 01:01:18,720 --> 01:01:28,640
@@ -2644,7 +2646,7 @@ So suppose this step 1, step 2, blending phase, step 3, signing phase, step 4 on
 
 331
 01:01:18,720 --> 01:01:28,640
-假设这一步骤包括 1、2、混合阶段、3、签署阶段、4 在混合阶段。
+所以假设这一步 1，步骤 2，混合阶段，步骤 3，签署阶段，步骤 4 在混合阶段。
 
 332
 01:01:29,600 --> 01:01:39,600
@@ -2652,7 +2654,7 @@ In the blending phase, that means the message m times R is one time key. We appl
 
 332
 01:01:29,600 --> 01:01:39,600
-在混合阶段，这意味着消息 m 乘以 R 是一次密钥。我们采用相同的处理方式。
+在混合阶段，这意味着消息 m 乘以 R 是一次密钥。我们应用相同的
 
 333
 01:01:39,599 --> 01:01:53,679
@@ -2660,7 +2662,7 @@ message m times R is one time key. We apply the public key of the Sonar, right?
 
 333
 01:01:39,599 --> 01:01:53,679
-消息 m 次 R 对应一个密钥。我们使用 Sonar 的公钥，对吗？
+消息 m 次 R 是一次密钥。我们使用 Sonar 的公钥，对吧？
 
 334
 01:01:56,319 --> 01:02:02,960
@@ -2676,7 +2678,7 @@ this is quite simple. The Sonar will apply his private key to do the signing. Th
 
 335
 01:02:02,960 --> 01:02:13,599
-这非常简单。Sonar 会使用其私钥进行签名，这就是 m 的质数
+这很简单。Sonar 将应用其私钥进行签名。这就是 m 的质数
 
 336
 01:02:15,199 --> 01:02:26,000
@@ -2684,7 +2686,7 @@ to apply the private key d to generate the s prime. In the on-blending phase, it
 
 336
 01:02:15,199 --> 01:02:26,000
-将私钥 d 应用于生成 s'。在混合阶段，它用于...
+将私钥 d 应用于生成 s 素数。在混合阶段，它是
 
 337
 01:02:26,000 --> 01:02:41,119
@@ -2692,7 +2694,7 @@ done by the requester. He will get the signature s from s prime times R one time
 
 337
 01:02:26,000 --> 01:02:41,119
-由请求者完成。他将获得从 s'乘以 R 一次密钥得到的签名，表达更为自然。
+由请求者完成。他将获得 s 从 s'乘以 R 一次密钥的签名 s。
 
 338
 01:02:42,559 --> 01:02:47,440
@@ -2700,7 +2702,7 @@ the module inverse of this R mod n.
 
 338
 01:02:42,559 --> 01:02:47,440
-这个 R 模 n 的逆元模块（经过润色）。
+该 R 模 n 的模逆元
 
 339
 01:02:47,440 --> 01:02:54,720
@@ -2708,7 +2710,7 @@ OK, so this is an exercise. Let's have a break for 10 minutes. So in 10 minutes,
 
 339
 01:02:47,440 --> 01:02:54,720
-好的，这是一个练习。那么我们先休息 10 分钟吧。再过 10 分钟，
+好的，这是一个练习。让我们休息 10 分钟。那么，10 分钟后，
 
 340
 01:02:55,760 --> 01:03:04,480
@@ -2716,5 +2718,5 @@ you can try to solve this exercise. OK, so let's have a break for 10 minutes.
 
 340
 01:02:55,760 --> 01:03:04,480
-你可以尝试完成这个练习。好的，让我们休息 10 分钟。
+您可以尝试解决这个练习。好的，那么我们休息 10 分钟。
 
