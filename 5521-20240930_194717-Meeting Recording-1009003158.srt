@@ -1,0 +1,1188 @@
+1
+00:00:00,000 --> 00:00:15,200
+Okay, now let's look at the result for this problem.
+
+2
+00:00:15,199 --> 00:00:30,320
+The first step is to calculate the private key D for the given E and N value.
+
+3
+00:00:30,320 --> 00:00:38,320
+So here because E is quite small, it's 5, when E equals 5, 3, you can try this way to
+
+4
+00:00:38,320 --> 00:00:41,480
+calculate the private key D.
+
+5
+00:00:41,479 --> 00:00:49,559
+So previously we have said because in the RSA algorithm, we will make sure E D is congruent
+
+6
+00:00:49,559 --> 00:00:56,619
+to 1 mod phi n.
+
+7
+00:00:56,619 --> 00:01:06,560
+So this implies E D can be represented as k times phi n plus 1.
+
+8
+00:01:06,560 --> 00:01:16,320
+So this implies D can be represented as k times phi n plus 1 divided by E.
+
+9
+00:01:16,320 --> 00:01:28,480
+In this example, n is 1, 1, 9, so phi n is 6 times 16, that's 96.
+
+10
+00:01:28,480 --> 00:01:39,560
+So this equals k times 96 plus 1 divided by 5, and you can try k equals 1 whether we
+
+11
+00:01:39,560 --> 00:01:43,600
+can find an integer or not.
+
+12
+00:01:43,600 --> 00:01:54,120
+So k equals 1 we cannot, k equals 2 we cannot, k equals 3 we cannot, k equals 4, okay.
+
+13
+00:01:54,120 --> 00:02:10,120
+If k equals 4 and then we have this D is 4 times 96 plus 1 divided by 5, that is 77.
+
+14
+00:02:10,120 --> 00:02:20,879
+Now of course you can apply the extended Euclidean algorithm to get D, that will be fine as well,
+
+15
+00:02:20,879 --> 00:02:23,599
+but the result will be same to be 77.
+
+16
+00:02:23,599 --> 00:02:25,319
+That's step one.
+
+17
+00:02:25,319 --> 00:02:34,439
+So step two is m prime equals n times R E mod n.
+
+18
+00:02:34,439 --> 00:02:47,000
+So this equals m is 37 times R, 29, E is 5, mod n is 1, 1, 9.
+
+19
+00:02:47,000 --> 00:03:01,439
+You apply all the numbers here, you will get m prime to be, to be line.
+
+20
+00:03:01,439 --> 00:03:14,759
+So step three, the signing process is simple, s prime equals m prime to the D mod n, m prime
+
+21
+00:03:14,759 --> 00:03:36,159
+is 9, D is the private key 77, mod 1, 1, 9, you will get the result to be 25.
+
+22
+00:03:36,159 --> 00:03:43,879
+Step four, you need to get all mass ones first, mod n.
+
+23
+00:03:43,879 --> 00:03:46,560
+So how can you calculate all mass one?
+
+24
+00:03:46,560 --> 00:03:51,539
+You have R to be 29 and to be 1, 1, 9.
+
+25
+00:03:51,539 --> 00:03:58,000
+So you need to use the extended Euclidean algorithm to get all mass one here.
+
+26
+00:03:58,000 --> 00:04:01,120
+I will not repeat that process.
+
+27
+00:04:01,120 --> 00:04:09,759
+The result is all mass one is 78 in this example.
+
+28
+00:04:09,759 --> 00:04:18,279
+So you will get s equals s prime times all mass one, mod n.
+
+29
+00:04:18,279 --> 00:04:33,360
+So here s prime is 25 times all mass one is 78, mod n is 1, 1, 9.
+
+30
+00:04:33,360 --> 00:04:41,439
+So this result is 46.
+
+31
+00:04:41,439 --> 00:04:49,480
+So this 46 of course will equal m to the D mod n.
+
+32
+00:04:49,480 --> 00:05:03,160
+In this example, m is 37, D is 77, mod 1, 1, 9.
+
+33
+00:05:03,160 --> 00:05:08,720
+You can double check it, so I will not check it here.
+
+34
+00:05:08,720 --> 00:05:19,440
+And this is the four steps to have the whole process to finish the blank signing and to
+
+35
+00:05:19,440 --> 00:05:32,400
+get the signature by the requester in this example.
+
+36
+00:05:32,399 --> 00:05:38,439
+So we have some left exercises for you.
+
+37
+00:05:38,439 --> 00:05:44,219
+You can try to solve this problem by yourself first.
+
+38
+00:05:44,219 --> 00:05:49,479
+And before your mid-term test, we have the mid-term review and I will show you the whole
+
+39
+00:05:49,479 --> 00:05:59,639
+process how to get the correct solutions to these questions.
+
+40
+00:05:59,639 --> 00:06:05,240
+So that's for the lecture four about the digital signature.
+
+41
+00:06:29,639 --> 00:06:53,120
+Well, in this subject, we have the topic about e-payment, right?
+
+42
+00:06:53,120 --> 00:06:58,519
+In the first class, we have the brief introduction about e-payment.
+
+43
+00:06:58,519 --> 00:07:04,039
+So now we look at the specific protocols used in the e-payment.
+
+44
+00:07:04,039 --> 00:07:11,159
+In today's lecture five, we'll talk about the SET, this e-payment protocol, what's
+
+45
+00:07:11,159 --> 00:07:25,079
+the meaning, what's the steps to be used for the message check in this e-payment protocol.
+
+46
+00:07:25,120 --> 00:07:30,039
+So part one is about the SET architecture and dual signature.
+
+47
+00:07:30,039 --> 00:07:36,000
+So you can see the signature part is very important because in the payment, we need
+
+48
+00:07:36,000 --> 00:07:38,919
+to do the user authentication.
+
+49
+00:07:38,919 --> 00:07:40,919
+How can we do the authentication?
+
+50
+00:07:40,919 --> 00:07:46,799
+That means you need to show your correct signature.
+
+51
+00:07:46,799 --> 00:07:54,360
+In the SET protocol, this is a protocol designed to secure bank card transactions initiated
+
+52
+00:07:54,360 --> 00:08:01,800
+on open networks, open networks just like in today's internet, wireless internet, right?
+
+53
+00:08:01,800 --> 00:08:05,879
+SET means secure electronic transaction.
+
+54
+00:08:05,879 --> 00:08:15,120
+The SET specifications cover the roles like the following, like we have the cardholder,
+
+55
+00:08:15,120 --> 00:08:20,639
+you are the cardholder, you're the customer, we have the merchant, just like you're doing
+
+56
+00:08:20,639 --> 00:08:22,840
+the online shopping, right?
+
+57
+00:08:22,879 --> 00:08:29,000
+Online is some store, online shops, and we have payment gateway.
+
+58
+00:08:29,000 --> 00:08:36,559
+So you will see this one, the role later, and we have certification authority.
+
+59
+00:08:36,559 --> 00:08:39,120
+Certification authority is CA.
+
+60
+00:08:39,159 --> 00:09:05,720
+The purpose of CA is for everyone to get a valid certificate containing
+
+61
+00:09:05,720 --> 00:09:09,440
+your public key.
+
+62
+00:09:12,920 --> 00:09:24,160
+So in this SET protocol, we have the cardholder, we have the merchant, we have the cardholder's bank,
+
+63
+00:09:24,160 --> 00:09:26,360
+we have the merchant's bank.
+
+64
+00:09:26,360 --> 00:09:28,720
+So at least we have four parties, right?
+
+65
+00:09:28,720 --> 00:09:30,200
+We have four parties.
+
+66
+00:09:30,240 --> 00:09:37,879
+That means for their complications, they need to generate signatures for those indications.
+
+67
+00:09:37,879 --> 00:09:44,680
+We guarantee I'm talking to the one, you're the right person, I communicate with you.
+
+68
+00:09:44,680 --> 00:09:47,240
+And how can we guarantee you're the right person?
+
+69
+00:09:47,240 --> 00:09:49,120
+I need to check your signature.
+
+70
+00:09:49,120 --> 00:09:52,920
+How can we make sure your signature is correct?
+
+71
+00:09:52,920 --> 00:09:59,800
+You must show me your public key to be verified by this CA center.
+
+72
+00:09:59,799 --> 00:10:05,839
+So we assume CA is a trusted third party.
+
+73
+00:10:05,839 --> 00:10:08,039
+So you have your certificate.
+
+74
+00:10:08,039 --> 00:10:13,039
+That certificate is authorized by the third party.
+
+75
+00:10:13,039 --> 00:10:16,519
+Just like you're holding the polio's degree, right?
+
+76
+00:10:16,519 --> 00:10:23,240
+In that certificate, it contains polio's authorization, some message, approval.
+
+77
+00:10:23,240 --> 00:10:25,759
+This is your degree.
+
+78
+00:10:25,799 --> 00:10:27,159
+And same thing here.
+
+79
+00:10:27,159 --> 00:10:32,600
+The certificate will contain your public key to be issued by the CA.
+
+80
+00:10:32,600 --> 00:10:38,120
+So when you show the certificate to the receiver, you see, this is my public key.
+
+81
+00:10:38,120 --> 00:10:44,200
+You can trust my public key because it is issued by polio.
+
+82
+00:10:44,200 --> 00:10:49,639
+So you use this public key to check my signature.
+
+83
+00:10:49,639 --> 00:10:53,960
+So you show your public key to the receiver.
+
+84
+00:10:53,960 --> 00:10:56,400
+Receiver will trust that certificate.
+
+85
+00:10:56,400 --> 00:11:04,639
+Because that certificate finally will contain the certification, the CS signature.
+
+86
+00:11:04,639 --> 00:11:13,400
+Just like your polio degree contains polio's signature, like here.
+
+87
+00:11:13,400 --> 00:11:19,320
+So people will verify whether your polio degree is true, is valid, or not.
+
+88
+00:11:19,320 --> 00:11:28,760
+So other people will use polio's public key to verify the signature in your degree.
+
+89
+00:11:28,760 --> 00:11:33,280
+So this is the logic.
+
+90
+00:11:33,280 --> 00:11:35,879
+OK, we look at the state architecture.
+
+91
+00:11:35,879 --> 00:11:39,560
+We have different participants.
+
+92
+00:11:39,560 --> 00:11:42,120
+Like, we are called holder.
+
+93
+00:11:42,120 --> 00:11:42,800
+This is the customer.
+
+94
+00:11:42,799 --> 00:11:47,479
+We are called holder's bank, customer's bank.
+
+95
+00:11:47,479 --> 00:11:58,639
+Just like your credit card bank, we have merchant, and also we have merchant's bank.
+
+96
+00:11:58,639 --> 00:12:08,559
+And also we have merchant's bank.
+
+97
+00:12:08,559 --> 00:12:13,559
+Always say this is a quire institution.
+
+98
+00:12:13,559 --> 00:12:19,840
+And well, the card holder, just like you, your customer, you can browse the internet.
+
+99
+00:12:19,840 --> 00:12:22,679
+You can place online order, right?
+
+100
+00:12:22,759 --> 00:12:28,639
+So through customer and merchant, we have the internet.
+
+101
+00:12:28,639 --> 00:12:33,159
+Internet is an open network.
+
+102
+00:12:33,159 --> 00:12:35,479
+We have the communications there.
+
+103
+00:12:35,479 --> 00:12:39,439
+They can browse the internet and place order.
+
+104
+00:12:39,439 --> 00:12:44,439
+The order information will be sent to you.
+
+105
+00:12:44,439 --> 00:12:47,199
+Now you have order information.
+
+106
+00:12:47,199 --> 00:12:49,799
+You want to order some TV.
+
+107
+00:12:49,799 --> 00:12:51,479
+That's order information.
+
+108
+00:12:51,480 --> 00:13:03,480
+And also you will place your payment information, your card information.
+
+109
+00:13:03,480 --> 00:13:08,240
+Your card information will be sent to the payment gateway.
+
+110
+00:13:08,240 --> 00:13:12,960
+And the order information will be verified by the merchant.
+
+111
+00:13:12,960 --> 00:13:18,399
+Merchant will know you're placing an order to buy a TV.
+
+112
+00:13:18,439 --> 00:13:22,879
+So your card information is a token, actually will be encrypted.
+
+113
+00:13:22,879 --> 00:13:26,559
+So the card information will be sent to the payment gateway.
+
+114
+00:13:26,559 --> 00:13:33,600
+And payment gateway will connect to a closed network between like the credit card company
+
+115
+00:13:33,600 --> 00:13:36,319
+and the merchant's bank.
+
+116
+00:13:36,319 --> 00:13:38,519
+So this one is a closed network.
+
+117
+00:13:38,519 --> 00:13:49,240
+For example, you can use SWIFT system to settle down all the transactions between different
+
+118
+00:13:49,240 --> 00:13:51,439
+banks.
+
+119
+00:13:51,439 --> 00:13:59,319
+Your card information will go through payment gateway, will be sent to your credit card
+
+120
+00:13:59,319 --> 00:14:06,039
+company to get approval.
+
+121
+00:14:06,039 --> 00:14:13,519
+Once your transaction request is approved, that means your credit card company will check
+
+122
+00:14:13,519 --> 00:14:22,839
+your signature to guarantee this is a real request from that card number, that holder.
+
+123
+00:14:22,839 --> 00:14:30,679
+And then if your signature is correct and your credit card still has the balance to
+
+124
+00:14:30,679 --> 00:14:35,079
+pay this order, then your request can be approved.
+
+125
+00:14:35,080 --> 00:14:45,400
+The approved information will be returned back to the merchant, the approval.
+
+126
+00:14:45,400 --> 00:14:52,080
+Approval just like there will be a token, contains this credit card's signature.
+
+127
+00:14:52,080 --> 00:15:02,960
+And later on, the token from the approval, the token will be used by the merchant to
+
+128
+00:15:03,200 --> 00:15:06,560
+claim the credit.
+
+129
+00:15:06,560 --> 00:15:11,759
+And the merchant will know from this approval message, this transaction request has been
+
+130
+00:15:11,759 --> 00:15:14,920
+approved and this transaction is approved.
+
+131
+00:15:14,920 --> 00:15:22,000
+That means, well, the request has been approved and this transaction is done, finished.
+
+132
+00:15:22,000 --> 00:15:27,560
+At the same time, you're the customer, you will receive a message from your credit card
+
+133
+00:15:27,560 --> 00:15:30,879
+company, just like this transaction is approved.
+
+134
+00:15:31,200 --> 00:15:39,159
+Later on, you need to pay this bill to your credit card company.
+
+135
+00:15:39,159 --> 00:15:46,559
+Okay, the merchant can use token to get credit from his bank.
+
+136
+00:15:46,559 --> 00:15:59,679
+And this bank will use token, same token, to settle down transactions between the bank
+
+137
+00:15:59,919 --> 00:16:00,399
+system.
+
+138
+00:16:07,839 --> 00:16:10,879
+Okay, in this architecture, we can look at some description here.
+
+139
+00:16:11,519 --> 00:16:17,919
+We have the card holder, customer, merchant, the CA center.
+
+140
+00:16:17,919 --> 00:16:20,799
+CA center is a trusted third party.
+
+141
+00:16:20,799 --> 00:16:39,919
+We trust this one to get a valid certificate.
+
+142
+00:16:40,959 --> 00:16:44,399
+And we have the payment gateway or all connected by the internet.
+
+143
+00:16:45,039 --> 00:16:49,919
+Each participant has a certificate from a set CA center.
+
+144
+00:16:52,959 --> 00:16:59,759
+So the certificate will have your certified public key.
+
+145
+00:17:03,600 --> 00:17:07,279
+As a customer, you will have your private key locally.
+
+146
+00:17:07,839 --> 00:17:12,079
+No one else knows your private key, right?
+
+147
+00:17:12,720 --> 00:17:17,839
+So you will generate your private key and it will be owned by you,
+
+148
+00:17:18,559 --> 00:17:23,199
+but you can have your public key to be certified by the CA center.
+
+149
+00:17:25,599 --> 00:17:31,919
+So the issuer and the acquirer institutions are linked by a closed and secure bank network,
+
+150
+00:17:31,919 --> 00:17:33,759
+just like the SWIFT system.
+
+151
+00:17:34,480 --> 00:17:39,679
+And the payment gateway bridges the open and closed network.
+
+152
+00:17:39,680 --> 00:17:46,080
+We have the payment gateway stand between the open and the closed network,
+
+153
+00:17:46,080 --> 00:17:50,560
+can transmit some message between these two systems.
+
+154
+00:17:53,680 --> 00:18:00,560
+Before we have the transaction, the first step is that we should have the registration
+
+155
+00:18:00,560 --> 00:18:04,320
+of the card holders and the merchants with a CA center.
+
+156
+00:18:04,799 --> 00:18:13,439
+Your registration will guarantee that you will have a certificate to be issued by the CA
+
+157
+00:18:13,439 --> 00:18:15,759
+and you will get the certificate.
+
+158
+00:18:18,240 --> 00:18:23,359
+This certificate will be sent to you, to the card holder and the merchants.
+
+159
+00:18:24,159 --> 00:18:32,240
+And then all the transactions, all transactions, we should guarantee the following properties,
+
+160
+00:18:32,400 --> 00:18:38,400
+like the authentication, confidentiality, and integrity for every transaction.
+
+161
+00:18:40,160 --> 00:18:45,839
+Transaction can be your order, it can be your payment request.
+
+162
+00:18:47,200 --> 00:18:51,039
+So authentication, how can we guarantee the authentication, the message?
+
+163
+00:18:51,039 --> 00:18:55,039
+Every transaction can be regarded as a message, right?
+
+164
+00:18:55,119 --> 00:19:02,399
+So message, when you guarantee the authentication, the message,
+
+165
+00:19:02,399 --> 00:19:06,079
+authentication means this message is really from Alice.
+
+166
+00:19:13,519 --> 00:19:20,319
+So what we should do is, normally we have H, M, the message, we take the hash function.
+
+167
+00:19:20,720 --> 00:19:28,639
+The message, we take the hash function, and based on the hash function, we use Alice,
+
+168
+00:19:29,439 --> 00:19:32,799
+private key, to generate the signature.
+
+169
+00:19:34,480 --> 00:19:35,359
+The private key,
+
+170
+00:19:35,919 --> 00:19:38,879
+the private key of Alice,
+
+171
+00:19:45,759 --> 00:19:48,879
+the private key of Alice,
+
+172
+00:19:56,719 --> 00:19:59,359
+the private key of Alice,
+
+173
+00:20:05,359 --> 00:20:07,359
+the public key of Alice,
+
+174
+00:20:18,159 --> 00:20:23,839
+so in this way, this is signature and the receiver will use Alice public key,
+
+175
+00:20:25,039 --> 00:20:26,079
+because public key
+
+176
+00:20:29,039 --> 00:20:30,879
+is given in this certificate.
+
+177
+00:20:35,359 --> 00:20:36,399
+POP of Alice.
+
+178
+00:20:41,199 --> 00:20:47,679
+Well, along with your message, you will also show your certificate to the receiver.
+
+179
+00:20:48,559 --> 00:20:53,359
+So this certificate contains your public key, and the receiver can use your public key in the
+
+180
+00:20:53,359 --> 00:21:01,439
+certificate to verify your signature is correct or not, to guarantee the authentication of the
+
+181
+00:21:01,440 --> 00:21:08,640
+message. Okay, we have the signature verification. Confidentiality means, well,
+
+182
+00:21:11,279 --> 00:21:14,000
+normally we use the symmetric encryption.
+
+183
+00:21:14,000 --> 00:21:32,640
+We have the symmetric encryption to encrypt the message, even though the message is transmitted
+
+184
+00:21:32,640 --> 00:21:41,680
+in the open network, in the internet, and in fact, no one can open this message, because
+
+185
+00:21:44,079 --> 00:21:51,039
+no one has this symmetric key K. Unless you send the key K to the receiver,
+
+186
+00:21:51,039 --> 00:21:58,960
+the right receiver can open this message. And integrity means, well, it is not modified.
+
+187
+00:22:03,440 --> 00:22:10,240
+And we said that the correct signature will guarantee the integrity of the message, right?
+
+188
+00:22:11,039 --> 00:22:14,079
+Because if a message becomes N prime,
+
+189
+00:22:16,559 --> 00:22:26,319
+N prime will have a different S prime. So this S prime cannot equal the S, the signature,
+
+190
+00:22:26,319 --> 00:22:34,319
+along with the message. That means your signature will guarantee both authentication and integrity.
+
+191
+00:22:34,319 --> 00:22:38,240
+The data, the message, the content will not be modified.
+
+192
+00:22:40,640 --> 00:22:47,519
+And we have the payment authorization. This will be done by your credit card company.
+
+193
+00:22:57,759 --> 00:23:05,039
+So once you provide your credit card number and you have your correct, your number,
+
+194
+00:23:05,759 --> 00:23:12,399
+credit card number, plus your valid signature,
+
+195
+00:23:15,599 --> 00:23:24,399
+then your request can be approved by your credit card company. So your credit card company has your
+
+196
+00:23:24,399 --> 00:23:33,359
+public key and you can generate the correct signature. Then you can get approval or you
+
+197
+00:23:33,359 --> 00:23:41,679
+can get the payment authorization from your credit card company. So later on, the payment,
+
+198
+00:23:43,119 --> 00:23:50,719
+once this transaction is done, the payment capture can initiate the request for
+
+199
+00:23:50,719 --> 00:23:55,759
+financial clearance on behalf of the merchant. So this means merchant
+
+200
+00:23:55,759 --> 00:24:07,359
+and claim credit from the transaction.
+
+201
+00:24:11,519 --> 00:24:19,519
+Of course, just like this payment authorization is a token, this token will be
+
+202
+00:24:19,599 --> 00:24:29,279
+sent to the merchant. So merchant has this token, and later on, this token will also be sent by the
+
+203
+00:24:29,279 --> 00:24:38,639
+credit card company. So the merchant can use this token to claim the credit, just like he sold
+
+204
+00:24:38,639 --> 00:24:42,720
+a TV to the customer and then he can get the credit.
+
+205
+00:24:42,720 --> 00:24:50,880
+Okay, we look at the message. How will the message be a clear message? This message can be
+
+206
+00:24:50,880 --> 00:24:58,319
+the order request and payment information. How this message will be processed in this payment
+
+207
+00:24:58,319 --> 00:25:06,319
+system. And how can we guarantee the authentication, confidentiality, and integrity?
+
+208
+00:25:06,480 --> 00:25:12,480
+And how can we guarantee the authentication, confidentiality, and integrity?
+
+209
+00:25:14,079 --> 00:25:20,399
+The message, we have the hash function, we get the digest, H, M.
+
+210
+00:25:25,279 --> 00:25:34,720
+So we use the sender's private key, we generate the signature, and suppose we are using the RSA
+
+211
+00:25:36,960 --> 00:25:50,240
+algorithm. So signature S equals H, M, to the D mod M, right? We have the signature. And signature
+
+212
+00:25:50,240 --> 00:25:59,839
+plus M will be the original, well, the whole message. And this message, we apply the symmetric
+
+213
+00:25:59,839 --> 00:26:10,480
+encryption. That means S plus M, we use a symmetric key K to do the encryption.
+
+214
+00:26:11,759 --> 00:26:25,919
+This key K is one-time symmetric key K. So this key K will be put in some, well,
+
+215
+00:26:26,480 --> 00:26:34,960
+as some loss for security purpose, we add some padding information. So this key K will be put here.
+
+216
+00:26:36,640 --> 00:26:47,840
+And then we use the receiver's public key to do the encryption. So this key K will be encrypted
+
+217
+00:26:47,839 --> 00:26:58,399
+by using the public key of the receiver, recipient.
+
+218
+00:27:03,119 --> 00:27:11,679
+Okay, then these two parts will be put together to become the transmitted message to be sent
+
+219
+00:27:11,680 --> 00:27:19,440
+to the receiver. So the receiver can get two parts, both the encrypted message and also the
+
+220
+00:27:19,440 --> 00:27:32,000
+encrypted secret key. So you can see, well, without key K, no one can get the original message M and
+
+221
+00:27:32,000 --> 00:27:38,160
+S, right? Or who can open the key K? Only the recipient.
+
+222
+00:27:44,240 --> 00:27:54,160
+Recipient will use, well, the key K, suppose we're using the RSA algorithm. So this key K,
+
+223
+00:27:55,120 --> 00:28:18,080
+this is like D1, key K, we use the recipient, we have the E2, N2, and D2, N2 to be his RSA key pair.
+
+224
+00:28:18,879 --> 00:28:25,279
+And this key K will be encrypted by using the receiver's public key.
+
+225
+00:28:26,879 --> 00:28:40,079
+So this is key K to the E, mod E2, mod N2. So this will be received by recipient. And recipient can
+
+226
+00:28:40,079 --> 00:28:54,240
+use his private key D2 to decrypt the key K. So this key K, E2, and he will use his private key D2,
+
+227
+00:28:56,399 --> 00:29:02,879
+mod N2 to get key K. And this key K can be used to
+
+228
+00:29:02,880 --> 00:29:16,080
+decrypt this message. And last, the recipient can open the encrypted message to get S signature
+
+229
+00:29:16,080 --> 00:29:24,240
+and the message M. Of course, the receiver will double check the signature is correct or not to
+
+230
+00:29:24,240 --> 00:29:32,480
+guarantee it is really from the customer or from the credit card company. Like that. Is that clear?
+
+231
+00:29:33,840 --> 00:29:39,360
+So we have signature to guarantee authentication,
+
+232
+00:29:45,120 --> 00:29:48,560
+to guarantee the message integrity.
+
+233
+00:29:49,440 --> 00:29:57,839
+And we have the symmetry encryption and the public key scheme here to guarantee
+
+234
+00:29:58,879 --> 00:30:00,879
+the message confidentiality.
+
+235
+00:30:01,520 --> 00:30:08,160
+But we guarantee authentication, confidentiality, and integrity of every transaction.
+
+236
+00:30:10,240 --> 00:30:15,680
+So encrypted means we guarantee the message is not discussed. Yeah. Any question?
+
+237
+00:30:20,080 --> 00:30:27,280
+So this is key K to the E, mod E2, mod N2. So this is key K to the E2, mod N2.
+
+238
+00:30:27,279 --> 00:30:50,319
+You mean the hash, right? Hash power, right? Okay. This is a good question. Well, the hash,
+
+239
+00:30:51,279 --> 00:30:59,119
+actually, this is necessary step. You will see without hash, there could be some attack.
+
+240
+00:31:00,240 --> 00:31:07,119
+The hash is a good property, one-way function. It's one-way function. You cannot fabricate a message.
+
+241
+00:31:10,240 --> 00:31:18,000
+But without hash, you can fabricate some signature. So you will see in this nature 5,
+
+242
+00:31:18,000 --> 00:31:27,920
+in nature 4, there is one exercise we call the signature forgery attack without hash function.
+
+243
+00:31:29,200 --> 00:31:35,680
+So here we just have hash function. You'll see when you try to solve that problem.
+
+244
+00:31:35,680 --> 00:31:52,000
+Yeah. Yeah, that's right. Yeah. So the hash function, just like we apply the public key
+
+245
+00:31:52,000 --> 00:32:02,240
+null hash function, shot, turn it, and the 56. And this encryption, just like we use AES,
+
+246
+00:32:03,200 --> 00:32:12,079
+the encryption, decryption algorithm, or the public key null, what are null is the private key. Okay.
+
+247
+00:32:14,720 --> 00:32:15,279
+Like here.
+
+248
+00:32:23,359 --> 00:32:31,599
+Just like here, the RSA algorithm is well known. What you don't know is only the private key,
+
+249
+00:32:31,759 --> 00:32:41,519
+like here. All the process, like the hashing, encryption, decryption, all the
+
+250
+00:32:42,879 --> 00:32:49,839
+these mechanisms are well known. The unknown part is only the private key.
+
+251
+00:32:54,159 --> 00:33:00,639
+Okay. We look at the previous slide, how the previous slide can be translated in a real
+
+252
+00:33:01,919 --> 00:33:10,319
+implementation. Suppose this is a clear text M, the M
+
+253
+00:33:14,719 --> 00:33:25,359
+after the next hash function shot 256, we get HM. So based on the HM, we have the detail signature.
+
+254
+00:33:26,319 --> 00:33:33,119
+Now this signature equals HM. Suppose we're using
+
+255
+00:33:39,519 --> 00:33:48,319
+the public key of the Alice, we can generate the signature. So the message M plus the signature S
+
+256
+00:33:49,039 --> 00:34:01,519
+and also Alice will provide her sunny certificate. So this sunny certificate contains E1 and E1.
+
+257
+00:34:04,159 --> 00:34:13,119
+Alice will use D1 to be her sunny private key. So this certificate will be sent to the receiver.
+
+258
+00:34:13,599 --> 00:34:19,839
+And then all the messages will be decrypted by using a one-time key K.
+
+259
+00:34:21,039 --> 00:34:30,000
+M plus S will be encrypted by the key K. And this key K will be put in an envelope plus
+
+260
+00:34:31,039 --> 00:34:40,239
+here just adding some padding bits to make it even more secure. And then the envelope
+
+261
+00:34:41,199 --> 00:34:44,799
+will be encrypted by using the public key of the recipient.
+
+262
+00:34:45,839 --> 00:34:56,719
+So this key K will be encrypted by using the recipient. Suppose we have the E2, N2,
+
+263
+00:34:57,839 --> 00:35:05,599
+and D2 will be the private key of the recipient. And the sender will use the E2
+
+264
+00:35:06,000 --> 00:35:19,360
+as the encryption key to generate the message to be sent along with the symmetric key encrypted
+
+265
+00:35:19,360 --> 00:35:23,199
+message. So all the messages will be sent to the receiver.
+
+266
+00:35:35,679 --> 00:35:44,239
+Okay, so this is how the message will be processed in the SET protocol. So in SET protocol,
+
+267
+00:35:44,239 --> 00:35:53,360
+another very important concept is called the dual signature. Dual signature can link elements of two
+
+268
+00:35:53,360 --> 00:36:00,719
+encrypted messages, each sent to a different recipient with the same signature. The dual
+
+269
+00:36:00,719 --> 00:36:09,119
+each sent to a different recipient with the same signature. We use the same signature, but
+
+270
+00:36:10,480 --> 00:36:18,079
+this signature can serve two purposes because it can link two encrypted messages.
+
+271
+00:36:19,279 --> 00:36:28,319
+Just like we have the message M1. So M1 is the order information.
+
+272
+00:36:31,679 --> 00:36:37,839
+Your order information is like you place an order to BioTV. And you have M2.
+
+273
+00:36:41,359 --> 00:36:43,839
+M2 is your account information.
+
+274
+00:36:47,679 --> 00:36:58,079
+So you will use your account to pay this order, right? Two messages. M1 will be sent to merchant.
+
+275
+00:37:01,679 --> 00:37:09,519
+M2, your account information will be sent to the payment gateway and will be sent to, finally,
+
+276
+00:37:09,519 --> 00:37:27,679
+to your credit card company. Your account information will not be known by your, by the merchant.
+
+277
+00:37:28,399 --> 00:37:38,799
+So we have two encrypted messages, but we will have one signature. So these two messages
+
+278
+00:37:40,079 --> 00:37:49,199
+will generate a single signature. So this will be sent together to the merchant
+
+279
+00:37:53,599 --> 00:37:54,960
+and to the payment gateway.
+
+280
+00:37:57,679 --> 00:38:08,000
+We have two receivers. So two messages, but we have a single signature. This single signature
+
+281
+00:38:08,000 --> 00:38:20,159
+is called the dual signature. Okay. And thus we can vote on this three signature, more signature
+
+282
+00:38:20,159 --> 00:38:27,599
+generation to be sent back and forth among different parties. So we have two receivers.
+
+283
+00:38:28,159 --> 00:38:35,039
+Okay. So in this procedure, a customer sends the purchase order to the merchant
+
+284
+00:38:36,879 --> 00:38:46,319
+to the M1 information and the payment instruction to the buyer's bank. So this is the M2 information.
+
+285
+00:38:48,559 --> 00:38:55,119
+The payment instructions are executed only after the merchant has accepted the purchase order.
+
+286
+00:38:55,279 --> 00:39:04,480
+The purchase order is M1. Merchant will guarantee M1 information is correct. However, merchant
+
+287
+00:39:04,480 --> 00:39:18,480
+cannot know the buyer's account number. M2 is not disclosed to the merchant. So M2 is revealed
+
+288
+00:39:18,880 --> 00:39:21,440
+revealed to the bank only.
+
+289
+00:39:24,639 --> 00:39:25,760
+And this is a requirement.
+
+290
+00:39:28,639 --> 00:39:34,400
+Well, at the same time, the bank processes the transaction without knowing the nature of the
+
+291
+00:39:34,400 --> 00:39:42,159
+purchase. So bank no idea about M1, no information.
+
+292
+00:39:42,159 --> 00:39:55,279
+Okay. We have two messages. So each will be sent to different destination. They will be encrypted,
+
+293
+00:39:57,519 --> 00:39:59,839
+but we have one signature.
+
+294
+00:40:12,719 --> 00:40:18,719
+Okay. For the detailed information about your signature, we will discuss it in the next class.
+
+295
+00:40:19,440 --> 00:40:25,759
+So today I stop here. We still have the project instruction today. So TA is here and then we will
+
+296
+00:40:25,759 --> 00:40:31,679
+start the project instruction five minutes later. Okay. So you can have a break. Thank you. So we
+
+297
+00:40:31,679 --> 00:40:34,480
+shall have a good holiday tomorrow.
+

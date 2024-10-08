@@ -1,0 +1,1304 @@
+1
+00:00:00,000 --> 00:00:13,519
+Okay, it's very good that some of you have some questions and that shows you're thinking
+
+2
+00:00:13,519 --> 00:00:18,719
+you will try to answer more from the slides.
+
+3
+00:00:18,719 --> 00:00:20,199
+That's very good.
+
+4
+00:00:20,199 --> 00:00:25,800
+Okay, let's continue with our lecture 6.
+
+5
+00:00:25,800 --> 00:00:32,439
+So lecture 6 is about another protocol for ePayment, it is 3D.
+
+6
+00:00:32,439 --> 00:00:35,640
+So this one is still used today.
+
+7
+00:00:35,640 --> 00:00:41,799
+And let's see how it works, the 3D protocol.
+
+8
+00:00:41,799 --> 00:00:51,880
+Okay, so 3D protocol is very useful, still used today to support today's online transaction,
+
+9
+00:00:51,880 --> 00:00:52,880
+right?
+
+10
+00:00:52,880 --> 00:00:58,920
+Online shopping, so Steve Jobs will say, you see, our smartphone is so secure because we
+
+11
+00:00:58,920 --> 00:01:01,880
+have this 3D secure protocol.
+
+12
+00:01:01,880 --> 00:01:10,800
+Okay, so one case is just like today, if you go online shopping, and suppose you have the
+
+13
+00:01:10,800 --> 00:01:15,359
+online shopping, just like you're doing the online shopping through your desktop, then
+
+14
+00:01:15,480 --> 00:01:23,760
+your desktop, there will be a proper window to ask you to input some one-time password.
+
+15
+00:01:23,760 --> 00:01:29,480
+So we call this one is a PIN number, this one-time password will be sent to your smartphone
+
+16
+00:01:29,480 --> 00:01:30,480
+independently.
+
+17
+00:01:30,480 --> 00:01:37,159
+Okay, you have your smartphone, and today we assume your smartphone, just your personal
+
+18
+00:01:37,159 --> 00:01:40,960
+belongings will not be stolen by someone else.
+
+19
+00:01:40,959 --> 00:01:47,199
+You have your smartphone, because that smartphone, the smartphone number is registered to your
+
+20
+00:01:47,199 --> 00:01:49,199
+credit card company.
+
+21
+00:01:49,199 --> 00:01:56,000
+So credit card company will send this PIN number separately, okay?
+
+22
+00:01:56,000 --> 00:02:03,000
+And once you have this PIN number, you can input the PIN number into this proper window
+
+23
+00:02:03,000 --> 00:02:08,439
+to finish this payment process.
+
+24
+00:02:08,439 --> 00:02:18,159
+So this is required, if you cannot provide this password, then your transaction cannot
+
+25
+00:02:18,159 --> 00:02:22,039
+be approved.
+
+26
+00:02:22,039 --> 00:02:29,840
+And today it is still used, it is very efficient and very secure, and we say, well, it is very
+
+27
+00:02:29,840 --> 00:02:36,240
+useful, so we'll try to understand what's behind it, what's the logic, why it can provide
+
+28
+00:02:36,320 --> 00:02:39,120
+the security here.
+
+29
+00:02:39,120 --> 00:02:47,800
+The 3D secure is a solution that Visa introduced in 2001 to prevent three main sources of fraud
+
+30
+00:02:47,800 --> 00:02:51,760
+in the credit card online transaction.
+
+31
+00:02:51,760 --> 00:03:00,719
+For example, well, someone may use an unauthenticated card, well, you will have unauthenticated cards,
+
+32
+00:03:00,759 --> 00:03:08,879
+you cannot pass this 3D secure protocol, or your card has been stolen, but someone else
+
+33
+00:03:08,879 --> 00:03:17,599
+will try to use your credit card to do the online shopping, or some ASICL merchant may
+
+34
+00:03:17,599 --> 00:03:22,280
+make some fraudulent claims.
+
+35
+00:03:22,319 --> 00:03:30,560
+So all this kind of fraudulence can be prevented if we have this 3D secure protocols in the
+
+36
+00:03:30,560 --> 00:03:32,719
+online shopping.
+
+37
+00:03:32,719 --> 00:03:38,520
+The goal is to facilitate remote card payments, just like we have in online shopping.
+
+38
+00:03:38,520 --> 00:03:46,599
+The solution requires users to register, you should first register with your credit card,
+
+39
+00:03:46,599 --> 00:03:54,359
+your credit card company will register, your account, your card can support this 3D protocols.
+
+40
+00:03:54,359 --> 00:04:05,759
+And also in the payment process, it establishes a PIN number with their card issuer for authentication
+
+41
+00:04:05,759 --> 00:04:12,000
+during an online transaction.
+
+42
+00:04:12,000 --> 00:04:16,959
+We call it to be 3D, 3D means we have three domains.
+
+43
+00:04:16,959 --> 00:04:23,439
+We have the issuer domain, acquired domain, and in between we have the interoperability
+
+44
+00:04:23,439 --> 00:04:27,759
+domain through the Visa payment networks.
+
+45
+00:04:27,759 --> 00:04:38,060
+So within the issuer domain, we have the access control server.
+
+46
+00:04:38,060 --> 00:04:47,500
+So this server is maintained by the card issuer, the issuer bank, to support the card authentication.
+
+47
+00:04:47,500 --> 00:04:55,300
+And also we have the Visa directory, so this directory you can treat this one to be a server.
+
+48
+00:04:55,300 --> 00:04:59,180
+This server resides in the middle domain.
+
+49
+00:04:59,180 --> 00:05:05,399
+So this middle domain means the interoperability domain, and it mediates the communication
+
+50
+00:05:05,399 --> 00:05:09,159
+between the merchant and the issuer.
+
+51
+00:05:09,159 --> 00:05:16,560
+Okay, we look at the architecture for this 3D, 3D, three domains.
+
+52
+00:05:16,560 --> 00:05:23,159
+We have issuer domain, so you're the card holder, we have the issuer bank here, right?
+
+53
+00:05:23,159 --> 00:05:25,039
+So this is one domain.
+
+54
+00:05:25,039 --> 00:05:30,819
+The second domain is acquired domain, acquired domain, we have the merchant, we have the
+
+55
+00:05:30,899 --> 00:05:36,540
+acquired bank, that's a merchant's bank.
+
+56
+00:05:36,540 --> 00:05:43,019
+In between these two domains, we have some interoperability domain.
+
+57
+00:05:43,019 --> 00:05:45,620
+It includes the Visa directory.
+
+58
+00:05:45,620 --> 00:05:47,980
+This is a server.
+
+59
+00:05:47,980 --> 00:05:48,980
+This is server.
+
+60
+00:05:48,980 --> 00:05:58,579
+So this server, the main function is to check whether your card is valid.
+
+61
+00:05:58,579 --> 00:06:07,539
+So for these three domains, their communication will use the SSL communications.
+
+62
+00:06:07,539 --> 00:06:26,620
+So SSL is a secure socket layer, secure socket layer.
+
+63
+00:06:26,620 --> 00:06:34,500
+And TLS is transport layer security.
+
+64
+00:06:34,500 --> 00:06:43,500
+Well, in this architecture, we have five point-to-point SSL connections to connect the buyer, the
+
+65
+00:06:43,500 --> 00:06:51,500
+merchant, and the access control server for their secure communications, just like we
+
+66
+00:06:51,500 --> 00:07:01,660
+We can use your public key to negotiate, or session, secret key, right, or key K, to
+
+67
+00:07:01,660 --> 00:07:07,600
+be used for the future session, secure communications, use your public key scheme.
+
+68
+00:07:07,600 --> 00:07:15,139
+So later on, there could be multiple rounds, so we can talk secretly by using that secret
+
+69
+00:07:15,139 --> 00:07:16,779
+key K.
+
+70
+00:07:16,779 --> 00:07:21,839
+So this can be done in the SSL, this connection.
+
+71
+00:07:21,839 --> 00:07:28,699
+For these five point-to-point connections, the first one is from cardholder between the
+
+72
+00:07:28,699 --> 00:07:31,799
+cardholder and the merchant.
+
+73
+00:07:31,799 --> 00:07:38,939
+So this first one between the cardholder and the merchant.
+
+74
+00:07:38,939 --> 00:07:46,619
+In this connection, for example, the cardholder can place the order information.
+
+75
+00:07:46,620 --> 00:07:54,699
+We want to order a TV from this merchant, right?
+
+76
+00:07:54,699 --> 00:07:59,459
+And second connection is between the merchant and the visa directory.
+
+77
+00:07:59,459 --> 00:08:02,459
+You can see this number two.
+
+78
+00:08:02,459 --> 00:08:07,040
+Merchant will talk with the visa directory.
+
+79
+00:08:07,040 --> 00:08:12,180
+When you place your order, you will also provide your account information, your credit card
+
+80
+00:08:12,180 --> 00:08:13,319
+number.
+
+81
+00:08:13,319 --> 00:08:16,920
+So this credit card number will be obtained by merchant.
+
+82
+00:08:16,920 --> 00:08:26,680
+So merchant will talk with the visa directory to say, well, how about, is this card account
+
+83
+00:08:26,680 --> 00:08:37,860
+valid or number valid?
+
+84
+00:08:37,860 --> 00:08:44,800
+So the merchant will talk with the visa directory whether your card number is valid.
+
+85
+00:08:44,800 --> 00:08:52,519
+If it is valid, the visa directory, this server, will have another connection, another communication
+
+86
+00:08:52,519 --> 00:08:55,060
+channel with ACS.
+
+87
+00:08:55,060 --> 00:09:00,740
+So ACS is the access control server reside at the issuer bank, just like your credit
+
+88
+00:09:00,740 --> 00:09:02,620
+card company.
+
+89
+00:09:02,639 --> 00:09:12,620
+And the visa directory will construct this SSL connection with ACS to check whether your
+
+90
+00:09:12,620 --> 00:09:27,620
+card support, your card number, this card support 3D services.
+
+91
+00:09:33,120 --> 00:09:40,580
+Once the visa directory gets your credit card number, he will contact your visa company
+
+92
+00:09:40,580 --> 00:09:48,860
+or your master card company to check whether this one can be done in 3D protocols.
+
+93
+00:09:48,860 --> 00:09:59,980
+If it can be done in 3D protocols, then he will continue to forward the message through
+
+94
+00:09:59,980 --> 00:10:02,500
+this connection.
+
+95
+00:10:02,500 --> 00:10:13,720
+So message will be sent back to the card holder, just like you need to input a PIN number.
+
+96
+00:10:13,720 --> 00:10:19,899
+So the message will be go through from the merchant, sent to the card holder, just like
+
+97
+00:10:19,899 --> 00:10:27,899
+in this online shopping, there will be a pop-up window to ask you to input your PIN number.
+
+98
+00:10:27,899 --> 00:10:34,620
+That PIN number, that message will be sent to another connection between the card holder
+
+99
+00:10:34,620 --> 00:10:38,000
+and the access control server.
+
+100
+00:10:38,000 --> 00:10:43,419
+Your PIN number will be checked by the access server.
+
+101
+00:10:43,419 --> 00:10:52,299
+So this PIN number actually will be given to your smartphone from the issuer bank.
+
+102
+00:10:52,299 --> 00:11:05,779
+So issuer bank will deliver the PIN to your smartphone.
+
+103
+00:11:05,779 --> 00:11:12,699
+And you can get this PIN number from your smartphone and input this PIN number into
+
+104
+00:11:12,700 --> 00:11:22,780
+the pop-up window in your webpage to finish this transaction.
+
+105
+00:11:22,780 --> 00:11:27,259
+So this PIN number finally will arrive at the access server.
+
+106
+00:11:27,259 --> 00:11:32,020
+So access server of course knows the PIN number.
+
+107
+00:11:32,020 --> 00:11:34,860
+So we double check this PIN number is correct.
+
+108
+00:11:34,860 --> 00:11:42,220
+If it is correct, the issuer bank will have another connection with the merchant.
+
+109
+00:11:42,220 --> 00:11:52,540
+So from the issuer bank and the message will be sent to the merchant to notify this transaction
+
+110
+00:11:52,540 --> 00:11:59,860
+is approved, approval.
+
+111
+00:11:59,860 --> 00:12:05,740
+This transaction is approved from the issuer bank will notify the merchant that well this
+
+112
+00:12:05,740 --> 00:12:07,639
+transaction is approved.
+
+113
+00:12:07,639 --> 00:12:12,720
+So in this approved information, it contains some token.
+
+114
+00:12:12,720 --> 00:12:19,139
+So this token of course contains the issuer bank's signature and also contains just like
+
+115
+00:12:19,139 --> 00:12:22,439
+how much for this transaction.
+
+116
+00:12:22,439 --> 00:12:34,519
+And later on, the merchant can use this token to claim the credit from his bank.
+
+117
+00:12:34,519 --> 00:12:36,439
+The same idea, right?
+
+118
+00:12:36,440 --> 00:12:40,480
+So you can see, well, we have five connections.
+
+119
+00:12:40,480 --> 00:12:45,080
+Number one is between the merchant, between the cardholder and the merchant.
+
+120
+00:12:45,080 --> 00:12:50,880
+That's all the information, card information.
+
+121
+00:12:50,880 --> 00:12:57,080
+Number two is between the Visa directory and the merchant will check whether this credit
+
+122
+00:12:57,080 --> 00:12:59,400
+card number is valid.
+
+123
+00:12:59,400 --> 00:13:04,480
+Number three is here.
+
+124
+00:13:05,480 --> 00:13:10,480
+This is number four.
+
+125
+00:13:10,480 --> 00:13:13,240
+This is number three.
+
+126
+00:13:13,240 --> 00:13:18,279
+Between the cardholder and the access control server, the cardholder will provide a valid
+
+127
+00:13:18,279 --> 00:13:25,080
+PIN and this PIN information will be sent to the access server.
+
+128
+00:13:25,080 --> 00:13:31,879
+And number four is between the Visa directory and the access control server.
+
+129
+00:13:31,879 --> 00:13:40,519
+So this communication will answer whether the card can support 3D protocols.
+
+130
+00:13:40,519 --> 00:13:44,960
+And number five is between the merchant and access control server.
+
+131
+00:13:44,960 --> 00:13:52,159
+That means the issuer bank will finally notify the merchant whether this transaction is approved
+
+132
+00:13:52,159 --> 00:13:56,200
+or not.
+
+133
+00:13:56,200 --> 00:14:02,400
+So this is number five.
+
+134
+00:14:02,400 --> 00:14:09,600
+And the use of SSAL provides the service of confidentiality because all the messages will
+
+135
+00:14:09,600 --> 00:14:15,080
+be encrypted.
+
+136
+00:14:15,080 --> 00:14:22,040
+As we said before, the secret key, K, will be used to encrypt the message.
+
+137
+00:14:22,279 --> 00:14:30,679
+This key, K, for the encryption will be used for encryption and only that two participants
+
+138
+00:14:30,679 --> 00:14:35,360
+in the SSAL channel can know the key, K.
+
+139
+00:14:35,360 --> 00:14:39,039
+Of course, we will guarantee the integrity.
+
+140
+00:14:39,039 --> 00:14:47,959
+So the message integrity and authentication will be guaranteed by the signature.
+
+141
+00:14:47,959 --> 00:14:50,360
+We verify your signature.
+
+142
+00:14:50,360 --> 00:14:56,639
+We check your signature validity, we guarantee that this is really from us, not from Bob,
+
+143
+00:14:56,639 --> 00:15:03,720
+and also the message is not modified.
+
+144
+00:15:03,720 --> 00:15:13,240
+So before the 3D protocols, both the issuer and the acquired banks provide their bank
+
+145
+00:15:13,240 --> 00:15:20,600
+identification numbers and the URL addresses of their respective servers.
+
+146
+00:15:20,600 --> 00:15:29,120
+This URL is required because the message just like from the merchant sent to cardholder
+
+147
+00:15:29,120 --> 00:15:36,919
+and that message should contain the access information because later on the cardholder
+
+148
+00:15:36,919 --> 00:15:42,779
+need to forward the PIN number to that access address.
+
+149
+00:15:42,779 --> 00:15:50,939
+So both servers need to provide their URL information such that others can contact
+
+150
+00:15:50,939 --> 00:15:54,439
+your server.
+
+151
+00:15:54,439 --> 00:16:01,500
+So cardholder authentication mechanism is left to the issuer, cardholder can provide
+
+152
+00:16:01,500 --> 00:16:03,480
+the PIN number.
+
+153
+00:16:03,480 --> 00:16:07,699
+So today should be a PIN, right?
+
+154
+00:16:07,700 --> 00:16:14,780
+Or you can use your biometric just like your facial recognition, your smartphone sometimes
+
+155
+00:16:14,780 --> 00:16:23,259
+can recognize your face, your facial recognition or in some cases your fingerprint can do the
+
+156
+00:16:23,259 --> 00:16:29,980
+authentication purpose or you need to use your PIN number.
+
+157
+00:16:29,980 --> 00:16:36,780
+The default is a password that the user chooses as enrollment or we can use one-time password
+
+158
+00:16:36,860 --> 00:16:43,539
+to your smartphone today.
+
+159
+00:16:43,539 --> 00:16:50,179
+So now we look at in a 3D protocols, in a purchase, in a payment, what are the steps
+
+160
+00:16:50,179 --> 00:16:56,179
+there?
+
+161
+00:16:56,179 --> 00:17:02,779
+So very important we should have the payment authentication, well you can see we list totally
+
+162
+00:17:02,779 --> 00:17:07,899
+from step one to step twelve.
+
+163
+00:17:07,899 --> 00:17:17,779
+So let's see in each step what happens.
+
+164
+00:17:17,779 --> 00:17:26,899
+So first step, step one is the buyer should first indicate an intention to buy by clicking
+
+165
+00:17:26,899 --> 00:17:30,059
+on the corresponding buy button.
+
+166
+00:17:30,059 --> 00:17:39,700
+Step one means the cardholder will place the purchase order and the payment information,
+
+167
+00:17:39,700 --> 00:17:41,579
+right?
+
+168
+00:17:41,579 --> 00:17:49,339
+Will place the order information and transmit the payment information to the merchant.
+
+169
+00:17:49,339 --> 00:17:56,899
+That's step one, step one, sending your card information to the merchant.
+
+170
+00:17:56,900 --> 00:18:07,540
+And then in step two, in step two, the merchant's plug-in MPI, just like the merchant server,
+
+171
+00:18:07,540 --> 00:18:15,820
+request the list of participating card ranges from the Visa's 3D security directory with
+
+172
+00:18:15,820 --> 00:18:18,100
+the card range request message.
+
+173
+00:18:26,900 --> 00:18:42,060
+So step two is, okay, the merchant want to know whether this credit card number is valid
+
+174
+00:18:42,060 --> 00:18:49,500
+or not.
+
+175
+00:18:49,500 --> 00:18:58,940
+The merchant in step two is from here, in step two, the merchant wants to know whether
+
+176
+00:18:58,940 --> 00:19:08,259
+the account provided by the cardholder is valid or not, the credit card number account
+
+177
+00:19:08,259 --> 00:19:12,059
+valid or not.
+
+178
+00:19:12,059 --> 00:19:18,940
+So this Visa directory server will check the provided credit card number is valid or not
+
+179
+00:19:19,100 --> 00:19:23,860
+and give the response to the merchant server.
+
+180
+00:19:23,860 --> 00:19:26,380
+So that's step three.
+
+181
+00:19:26,380 --> 00:19:34,640
+So step three is a credit card card range response.
+
+182
+00:19:34,640 --> 00:19:45,360
+So in step two, the Visa directory will verify the PAN number provided by the customer is
+
+183
+00:19:45,439 --> 00:19:49,279
+within the range of participating cards.
+
+184
+00:19:49,279 --> 00:19:51,679
+So your account is valid.
+
+185
+00:19:51,679 --> 00:20:00,479
+Then in step three, the directory response is in the message card range response.
+
+186
+00:20:00,479 --> 00:20:08,919
+So step three is to reply the server, the merchant server, that this credit card is
+
+187
+00:20:08,919 --> 00:20:09,919
+valid.
+
+188
+00:20:10,320 --> 00:20:18,279
+Then in step four, the MPI, the server, the merchant server sends the verify enrollment
+
+189
+00:20:18,279 --> 00:20:29,240
+request message to the Visa directory to determine if 3D service is available for this number.
+
+190
+00:20:29,240 --> 00:20:32,640
+So step four and five.
+
+191
+00:20:32,640 --> 00:20:50,759
+So step four is this PAN number support 3D in this request.
+
+192
+00:20:50,759 --> 00:20:51,759
+Step four.
+
+193
+00:20:52,559 --> 00:21:03,559
+Of course, the server may need to contact the Israel Bank in the ACS.
+
+194
+00:21:03,559 --> 00:21:11,720
+The Israel Bank has this access control server, so this question will be forwarded to the
+
+195
+00:21:11,720 --> 00:21:17,759
+Israel Bank's access control server in step five.
+
+196
+00:21:17,759 --> 00:21:27,519
+And then if the credit card, just like your Visa card, can support this 3D protocols,
+
+197
+00:21:27,519 --> 00:21:39,460
+then the ACS server will reply a message in step six by giving this VES, VEE response.
+
+198
+00:21:39,460 --> 00:21:46,359
+So VEE means Verify Enrollment Response.
+
+199
+00:21:46,359 --> 00:21:53,279
+The VEE response message from the access control server of the Israel Bank indicates whether
+
+200
+00:21:53,279 --> 00:21:57,959
+the holder is registered in a 3D secure program.
+
+201
+00:21:57,959 --> 00:22:02,359
+So it contains the URL address.
+
+202
+00:22:02,359 --> 00:22:05,199
+This is the ACS address.
+
+203
+00:22:05,199 --> 00:22:12,179
+Toward this ACS server, the card holder browser will post the data.
+
+204
+00:22:12,180 --> 00:22:16,840
+So later on, the card holder browser, you're the card holder.
+
+205
+00:22:16,840 --> 00:22:21,420
+You need to input your PIN number, right?
+
+206
+00:22:21,420 --> 00:22:24,019
+In this browser, you can input your PIN number.
+
+207
+00:22:24,019 --> 00:22:32,880
+And this PIN number will be sent to this URL address.
+
+208
+00:22:32,880 --> 00:22:42,580
+So in step seven, you see, just like the merchant will get the response that this card number
+
+209
+00:22:42,580 --> 00:22:47,380
+support 3D service.
+
+210
+00:22:47,380 --> 00:22:58,500
+Then in step eight, the NPI sends a payer authentication request to the Israel Access
+
+211
+00:22:58,500 --> 00:23:06,299
+Control Server using the URL obtained in step seven.
+
+212
+00:23:06,299 --> 00:23:12,140
+So the information may appear to the buyer in a secondary pop-up window.
+
+213
+00:23:12,140 --> 00:23:23,420
+And then in step eight, the Israel Access Control Server establishes an SSL session
+
+214
+00:23:24,420 --> 00:23:35,180
+terminal and display the details of the transaction.
+
+215
+00:23:35,180 --> 00:23:41,380
+So in this step eight, between the card holder, because in a message in step eight, the message
+
+216
+00:23:41,380 --> 00:23:52,140
+will be sent from the merchant to the card holder in your online shopping, internet browser.
+
+217
+00:23:52,140 --> 00:23:57,620
+This browser will get the address of your access.
+
+218
+00:23:57,620 --> 00:24:08,620
+So in this pop-up window, there'll be a PIN number to also to input.
+
+219
+00:24:08,620 --> 00:24:15,300
+So this PIN information will be sent to the access server or the message will be exchanged
+
+220
+00:24:15,300 --> 00:24:19,940
+in the SSL connections.
+
+221
+00:24:19,940 --> 00:24:26,740
+So that's a job in the step eight.
+
+222
+00:24:26,740 --> 00:24:35,180
+So this will implement the authentication function, ask the holder for an identifier
+
+223
+00:24:35,180 --> 00:24:42,220
+can be a PIN or through biometric means, just like your fingerprint, your face, your facial
+
+224
+00:24:42,220 --> 00:24:47,320
+recognition for approval of the purchase.
+
+225
+00:24:47,319 --> 00:24:56,720
+So this access links the PIN request with a VE response message, because previously
+
+226
+00:24:56,720 --> 00:25:06,799
+in step seven, in step six, the merchant wants to know whether this card supports 3D, right?
+
+227
+00:25:06,799 --> 00:25:13,559
+If it supports 3D, then a message will be sent to the card holder asking you to input
+
+228
+00:25:13,559 --> 00:25:15,019
+the PIN.
+
+229
+00:25:15,019 --> 00:25:22,579
+So finally, in this request, you need to, as a customer, you need to input your PIN.
+
+230
+00:25:22,579 --> 00:25:28,900
+This PIN number will be sent to the access.
+
+231
+00:25:28,900 --> 00:25:36,440
+So after the holder has been authenticated, the access builds a card holder authentication
+
+232
+00:25:36,440 --> 00:25:43,960
+verification value of 20 octets.
+
+233
+00:25:43,960 --> 00:25:50,180
+And then this message will be sent back to the merchant in the step line.
+
+234
+00:25:50,180 --> 00:25:59,620
+So the CFVV is sent to the MPI merchant in the Payer Authentication Response message
+
+235
+00:25:59,620 --> 00:26:04,059
+is self-signed with the issuer's signature key.
+
+236
+00:26:04,059 --> 00:26:09,420
+So this one contains the issuer's signature key.
+
+237
+00:26:09,420 --> 00:26:14,259
+You can regard this one to be a token will be sent back to the merchant.
+
+238
+00:26:14,259 --> 00:26:22,360
+It contains the approval from the issuer bank.
+
+239
+00:26:22,360 --> 00:26:32,680
+So step line is the approval information.
+
+240
+00:26:32,680 --> 00:26:42,080
+In step line, the merchant finally will get the token CAV information, right?
+
+241
+00:26:42,080 --> 00:26:48,880
+How much the transaction, and also it contains the issuer bank's signature.
+
+242
+00:26:48,880 --> 00:27:01,279
+And later on, in step 10-12, step 10-11, that's archival purpose.
+
+243
+00:27:01,279 --> 00:27:11,039
+So that means this Payer Authentication Transaction request will be recorded in this authentication
+
+244
+00:27:11,039 --> 00:27:24,119
+HATERY server for archival purpose, just to have a block have some HATERY of this transaction.
+
+245
+00:27:24,119 --> 00:27:30,240
+And this is a response in step 11.
+
+246
+00:27:30,240 --> 00:27:42,079
+So step 10-12, we have a transaction PA, the payment authentication.
+
+247
+00:27:42,079 --> 00:27:46,839
+So PA means Payer Authentication Request.
+
+248
+00:27:46,839 --> 00:27:50,839
+We have the Payer Authentication Transaction Request.
+
+249
+00:27:50,839 --> 00:28:04,039
+This just like we have a record in your ACS server to have the HATERY.
+
+250
+00:28:04,039 --> 00:28:09,079
+The response is sent to the authentication HATERY server for archival within the Payer
+
+251
+00:28:09,079 --> 00:28:12,639
+Authentication Transaction Request message in step 10.
+
+252
+00:28:12,639 --> 00:28:20,159
+So step 11, just to response you, well, this message has been written into the block like
+
+253
+00:28:20,160 --> 00:28:21,160
+that.
+
+254
+00:28:21,160 --> 00:28:22,160
+It is successful.
+
+255
+00:28:22,160 --> 00:28:28,160
+This is the confirmation of the archival in step 11.
+
+256
+00:28:28,160 --> 00:28:39,880
+And step 12, for the merchant to get the credit, the merchant server verifies the signature
+
+257
+00:28:39,880 --> 00:28:48,000
+just like in the CVV, this message, before he or she submits a settlement required to
+
+258
+00:28:48,000 --> 00:28:50,120
+the acquired bank.
+
+259
+00:28:50,119 --> 00:28:55,279
+In step 12, the merchant can make a capture request.
+
+260
+00:28:55,279 --> 00:29:10,159
+So step 12 is to claim credit by the merchant.
+
+261
+00:29:10,159 --> 00:29:19,799
+Merchant now has the token from the issuer bank.
+
+262
+00:29:19,799 --> 00:29:29,359
+So this is step 12 for merchant to get credit.
+
+263
+00:29:29,359 --> 00:29:36,480
+So finally, the merchant can have his bank account with some balance increased because
+
+264
+00:29:36,480 --> 00:29:54,200
+of this transaction.
+
+265
+00:29:54,200 --> 00:29:58,880
+We do not have very detailed message structure.
+
+266
+00:29:58,880 --> 00:30:04,200
+No, we don't need to repeat those detailed structure.
+
+267
+00:30:04,200 --> 00:30:11,000
+Just to give you some idea, what's the whole logic, how many steps involved, and what's
+
+268
+00:30:11,000 --> 00:30:18,360
+the role for each participant.
+
+269
+00:30:18,360 --> 00:30:30,680
+So for security purpose, they need to communicate and to get what kind of information or verification
+
+270
+00:30:30,680 --> 00:30:32,680
+to do authentication.
+
+271
+00:30:32,680 --> 00:30:37,940
+So most important part is to guarantee that your credit card can support this service.
+
+272
+00:30:37,940 --> 00:30:45,400
+And then in your online shopping browser, there will be a purple window also to input
+
+273
+00:30:45,400 --> 00:30:49,440
+to authenticate this request.
+
+274
+00:30:49,440 --> 00:30:56,080
+Either you can do the authentication through a fingerprint, your face recognition, or you
+
+275
+00:30:56,080 --> 00:30:59,299
+need to input the PIN number.
+
+276
+00:30:59,299 --> 00:31:04,259
+So this PIN number will be sent from your issuer bank to your smartphone in a different
+
+277
+00:31:04,259 --> 00:31:07,539
+channel.
+
+278
+00:31:07,539 --> 00:31:19,859
+So in this way, we'll guarantee that you're the real customer to who has initiated, who
+
+279
+00:31:19,859 --> 00:31:27,899
+has launched this transaction, launched this transaction request.
+
+280
+00:31:27,900 --> 00:31:30,880
+So this is the whole process.
+
+281
+00:31:30,880 --> 00:31:37,100
+Any part not clear?
+
+282
+00:31:37,100 --> 00:31:41,220
+Also to the authentication, we have the signature checking.
+
+283
+00:31:41,220 --> 00:31:45,060
+And here besides the signature, we have the PIN number.
+
+284
+00:31:45,060 --> 00:31:47,740
+PIN number is sent to your smartphone.
+
+285
+00:31:47,740 --> 00:32:01,700
+This can be regarded as a double checking, okay?
+
+286
+00:32:01,700 --> 00:32:08,460
+Basically in the 3D protocols, it can be categorized to four phases.
+
+287
+00:32:08,460 --> 00:32:17,180
+The first one is step two or three, we update of the merchant's cash with a range of value
+
+288
+00:32:17,180 --> 00:32:18,180
+accounts.
+
+289
+00:32:18,180 --> 00:32:27,620
+Well, so just like this communication between the merchant and the VISA directory, in step
+
+290
+00:32:27,620 --> 00:32:36,519
+two and step three, the merchant will know whether this credit card is valid or not.
+
+291
+00:32:36,519 --> 00:32:48,559
+And then in step one, we have the customer to provide his card number.
+
+292
+00:32:48,559 --> 00:32:57,940
+And in step four, seven, we'll do the verification with this card number to support 3D service.
+
+293
+00:32:57,940 --> 00:33:05,799
+And then in step eight, this is the most important part to provide the PIN number to do the authentication.
+
+294
+00:33:05,799 --> 00:33:13,359
+Double check, you should have this PIN number through your smartphone, right?
+
+295
+00:33:13,359 --> 00:33:20,480
+To input this PIN number to finish this online transaction.
+
+296
+00:33:20,480 --> 00:33:26,079
+In step nine, it is a verification of the integrity of the payment information with
+
+297
+00:33:26,079 --> 00:33:29,200
+a signature of the issuer.
+
+298
+00:33:29,200 --> 00:33:35,960
+So this is the approval.
+
+299
+00:33:35,960 --> 00:33:43,319
+Your PIN number is correct and your issuer bank will approve, authorize this transaction
+
+300
+00:33:43,319 --> 00:33:47,120
+request.
+
+301
+00:33:47,120 --> 00:33:56,880
+The step 10 to 11 is for the purpose of the authentication attempts.
+
+302
+00:33:56,880 --> 00:34:17,360
+So step 12 is for a credit claim by the merchant.
+
+303
+00:34:17,360 --> 00:34:22,720
+So this is a rough classification of all steps into four phases.
+
+304
+00:34:23,719 --> 00:34:30,239
+Well, you can see here the table shows four different messages.
+
+305
+00:34:30,239 --> 00:34:37,359
+It involves which participants and what's the direction, right?
+
+306
+00:34:37,359 --> 00:34:48,719
+First one is for credit card request from merchant to VITA directory.
+
+307
+00:34:48,719 --> 00:35:03,919
+And we see from here the purchase request, the payer authentication authorization request,
+
+308
+00:35:03,919 --> 00:35:09,639
+this from merchant to the issuer, and this message will go through the card holder's
+
+309
+00:35:10,639 --> 00:35:21,079
+So encoded request to authenticate the payer protected against inadvertent change by the
+
+310
+00:35:21,079 --> 00:35:22,759
+browser.
+
+311
+00:35:22,759 --> 00:35:31,119
+So at this step, you should provide your PIN number.
+
+312
+00:35:31,119 --> 00:35:37,159
+Another one I want to mention here is about the PA response.
+
+313
+00:35:37,159 --> 00:35:42,420
+This is from issuer to the merchant and also via card holder browser.
+
+314
+00:35:42,420 --> 00:35:49,139
+So this is a response to the PA request sent by the issuer access control server.
+
+315
+00:35:49,139 --> 00:35:59,719
+It contains the CAV information and also just as some token indicating the transaction amount
+
+316
+00:35:59,719 --> 00:36:03,399
+and also contains the ACS signature.
+
+317
+00:36:08,159 --> 00:36:14,199
+Okay, so here I finished the discussion about the 3D protocols.
+
+318
+00:36:14,199 --> 00:36:26,319
+So you should be clear about this figure, three domains, and we have totally like 12
+
+319
+00:36:26,319 --> 00:36:27,319
+steps.
+
+320
+00:36:27,319 --> 00:36:31,159
+So what's the purpose for each step?
+
+321
+00:36:31,159 --> 00:36:37,119
+What kind of function provided in each step and how this one can provide security, right?
+
+322
+00:36:37,119 --> 00:36:42,319
+This one can provide the authentication, it's different from the, what's the difference
+
+323
+00:36:42,319 --> 00:36:47,199
+between this one and the previous set protocols.
+
+324
+00:36:47,199 --> 00:36:54,559
+Okay, so I stop here and today we still have the lab.
+
+325
+00:36:54,559 --> 00:37:01,279
+So we have a five-minute break for the TA to set up the presentation.
+
+326
+00:37:01,279 --> 00:37:05,359
+So I will still be here, if you have any question, you can ask me, thank you.
+

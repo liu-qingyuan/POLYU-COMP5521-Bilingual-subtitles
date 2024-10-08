@@ -1,0 +1,1368 @@
+1
+00:00:00,000 --> 00:00:19,000
+Well, wait, it's long.
+
+2
+00:00:19,000 --> 00:00:42,000
+Okay, it looks like the transcription is turned off for the meeting organizer by organizing policy.
+
+3
+00:00:42,000 --> 00:00:47,000
+Okay, I suppose the recording has no problem.
+
+4
+00:00:47,000 --> 00:00:58,000
+Previously, I can see the transcript to guarantee the recording is on, but today I cannot.
+
+5
+00:00:58,000 --> 00:01:10,000
+So I suppose the recording is on and it can record my voice.
+
+6
+00:01:10,000 --> 00:01:19,000
+But there's no transcript.
+
+7
+00:01:19,000 --> 00:01:25,000
+Stop.
+
+8
+00:01:25,000 --> 00:01:40,000
+Stop.
+
+9
+00:01:40,000 --> 00:01:43,000
+Turn on.
+
+10
+00:01:43,000 --> 00:01:45,000
+Do it here.
+
+11
+00:01:45,000 --> 00:02:12,000
+Start.
+
+12
+00:02:12,000 --> 00:02:16,000
+Okay, I suppose the recording is fine, okay?
+
+13
+00:02:16,000 --> 00:02:27,000
+Because the mic here is on, although I cannot see the transcript.
+
+14
+00:02:27,000 --> 00:02:32,000
+Okay, anyway, the recording isn't on.
+
+15
+00:02:32,000 --> 00:02:36,000
+Sure.
+
+16
+00:02:36,000 --> 00:02:51,000
+Here is start recording.
+
+17
+00:02:51,000 --> 00:03:01,000
+Start recording.
+
+18
+00:03:01,000 --> 00:03:11,000
+Okay, so we start.
+
+19
+00:03:11,000 --> 00:03:16,000
+Okay, last time we talked about the lecture three about cryptography.
+
+20
+00:03:16,000 --> 00:03:31,000
+So we finished part one about the summation encryption.
+
+21
+00:03:31,000 --> 00:03:38,000
+In summation encryption, we have the idea that both the sender and the receiver, they share the same key, K.
+
+22
+00:03:38,000 --> 00:03:43,000
+Key K will be used for both encryption and decryption.
+
+23
+00:03:43,000 --> 00:03:48,000
+And we have the common null encryption algorithm and decryption algorithm.
+
+24
+00:03:48,000 --> 00:03:53,000
+Just like in this example, we use AES.
+
+25
+00:03:53,000 --> 00:03:57,000
+Well, in this summation encryption, only the key K will be secret.
+
+26
+00:03:57,000 --> 00:04:07,000
+Others, like the encryption algorithm and decryption algorithm, will know to everyone.
+
+27
+00:04:07,000 --> 00:04:13,000
+So this model, and we talked about the SIDA CIFR.
+
+28
+00:04:13,000 --> 00:04:20,000
+So SIDA CIFR is easy to be attacked because we can try all possible cases, right?
+
+29
+00:04:20,000 --> 00:04:24,000
+Just like in this example, we can use a brute force attack.
+
+30
+00:04:24,000 --> 00:04:32,000
+The key K can be tested from 1 to 25.
+
+31
+00:04:32,000 --> 00:04:35,000
+Then we talk about the one-time path.
+
+32
+00:04:35,000 --> 00:04:43,000
+The one-time path is only null, perfect, secrecy scheme.
+
+33
+00:04:43,000 --> 00:04:50,000
+However, one-time path is quite difficult to be applied in the reality, in the real world.
+
+34
+00:04:50,000 --> 00:04:54,000
+Because one-time path requires the key length.
+
+35
+00:04:54,000 --> 00:05:01,000
+The key length will be the same as your plaintext.
+
+36
+00:05:01,000 --> 00:05:05,000
+In part two, we talked about the public key scheme.
+
+37
+00:05:05,000 --> 00:05:10,000
+Particularly, we talked about the RSA algorithm.
+
+38
+00:05:10,000 --> 00:05:14,000
+So in this RSA algorithm, we show the mechanism.
+
+39
+00:05:14,000 --> 00:05:17,000
+Why do we have the RSA algorithm?
+
+40
+00:05:17,000 --> 00:05:26,000
+From the Euler's theorem, how we can generate the public key and the private key here.
+
+41
+00:05:26,000 --> 00:05:34,000
+So according to our previous knowledge in the module inverse Euclidean algorithm,
+
+42
+00:05:34,000 --> 00:05:46,000
+we can derive the public key and private key to make sure that the ED and DNE, the module inverse, mod phi n.
+
+43
+00:05:46,000 --> 00:05:54,000
+So we know what's the meaning for phi n.
+
+44
+00:05:54,000 --> 00:06:03,000
+So this is a real example to see how we can, based on the given PQ value, we have the n value.
+
+45
+00:06:03,000 --> 00:06:06,000
+n is a product of P and Q.
+
+46
+00:06:06,000 --> 00:06:14,000
+And because n is a product of two primes, so phi n equals P minus 1 times Q minus 1.
+
+47
+00:06:14,000 --> 00:06:20,000
+Once we know the phi n, and also we know the public key E to be 5 here,
+
+48
+00:06:20,000 --> 00:06:26,000
+we are able to calculate the module inverse of E to be D.
+
+49
+00:06:26,000 --> 00:06:31,000
+So D is the private key.
+
+50
+00:06:31,000 --> 00:06:43,000
+With public key and private key, we can apply the RSA algorithm to calculate the subtext C from the original message M.
+
+51
+00:06:43,000 --> 00:06:48,000
+So M to the E mod n is C.
+
+52
+00:06:48,000 --> 00:06:57,000
+And from C, we can get back to its original message M to apply C to the D mod n.
+
+53
+00:06:57,000 --> 00:07:06,000
+And also we can see we can use CRT, this theorem, to accelerate our calculation of the big numbers.
+
+54
+00:07:07,000 --> 00:07:11,000
+Their exponential operation mod big number n.
+
+55
+00:07:11,000 --> 00:07:20,000
+So this can allow us to quickly get the result for this mod operation.
+
+56
+00:07:20,000 --> 00:07:25,000
+In part three, we took about another very important concept.
+
+57
+00:07:26,000 --> 00:07:29,000
+It is a Diffie-Hellman algorithm.
+
+58
+00:07:29,000 --> 00:07:37,000
+So this one will allow two parties to calculate the secret key K.
+
+59
+00:07:37,000 --> 00:07:50,000
+So they can share this key K, KKA equals KB, to guarantee that they have the same symmetric key K for the future complications.
+
+60
+00:07:50,000 --> 00:08:01,000
+So the security is guaranteed that we took about the discrete log algorithm.
+
+61
+00:08:01,000 --> 00:08:13,000
+So in the next lecture, in this exponential operation, just like Alice chooses A, Bob chooses B,
+
+62
+00:08:13,000 --> 00:08:19,000
+Alice will calculate small x from GA mod P.
+
+63
+00:08:19,000 --> 00:08:23,000
+But even this x is sent to anyone else.
+
+64
+00:08:23,000 --> 00:08:28,000
+So no one will know the chosen A by Alice.
+
+65
+00:08:28,000 --> 00:08:33,000
+The reason is because this is a discrete log problem.
+
+66
+00:08:33,000 --> 00:08:36,000
+So actually it is very hard.
+
+67
+00:08:36,000 --> 00:08:51,000
+Without knowing the A, only with the value of x, it is impossible to calculate the small a in this Diffie-Hellman algorithm.
+
+68
+00:08:51,000 --> 00:09:09,000
+The Diffie-Hellman algorithm will allow two people to get the same symmetric key K to be used in the symmetric encryption.
+
+69
+00:09:09,000 --> 00:09:13,000
+So now we look at part four.
+
+70
+00:09:13,000 --> 00:09:27,000
+So part four will provide you some knowledge about the public key cryptography, what's the requirement, and how we can look at their security for the RSA algorithm.
+
+71
+00:09:27,000 --> 00:09:36,000
+So for RSA algorithm, its security is guaranteed by the factorization of a big number.
+
+72
+00:09:36,000 --> 00:09:46,000
+To factorize, we say factorization is to factorize n to be the product of P and Q.
+
+73
+00:09:46,000 --> 00:09:56,000
+So this process is very difficult, given n to be a very large number, to be like 1024 bits.
+
+74
+00:09:56,000 --> 00:10:03,000
+If you want to get its corresponding P and Q, that would be very difficult.
+
+75
+00:10:07,000 --> 00:10:13,000
+So suppose n is one of 24 bits.
+
+76
+00:10:13,000 --> 00:10:20,000
+What's the size for P and Q?
+
+77
+00:10:20,000 --> 00:10:25,000
+P and Q, the size will be what?
+
+78
+00:10:25,000 --> 00:10:34,000
+How many bits for P and Q?
+
+79
+00:10:34,000 --> 00:10:37,000
+How many bits for P and Q?
+
+80
+00:10:37,000 --> 00:10:43,000
+If we suppose n is 1024 bits.
+
+81
+00:10:43,000 --> 00:10:47,000
+Any idea?
+
+82
+00:10:47,000 --> 00:10:55,000
+If it's 512, should be what?
+
+83
+00:10:55,000 --> 00:10:59,000
+So P and Q will be similar size to n, right?
+
+84
+00:10:59,000 --> 00:11:02,000
+Should be similar size.
+
+85
+00:11:08,000 --> 00:11:17,000
+Okay, we look at in the public key cryptography, we have different ways to apply the private key and public key.
+
+86
+00:11:17,000 --> 00:11:26,000
+So you can use public key in the encryption, or you can use the private key in the encryption.
+
+87
+00:11:26,000 --> 00:11:33,000
+So first we look at the first scheme, we use the public key in the encryption.
+
+88
+00:11:33,000 --> 00:11:39,000
+Just like support Bob is the sender and Alice is the receiver.
+
+89
+00:11:39,000 --> 00:11:44,000
+So support Bob wants to send a message n to Alice.
+
+90
+00:11:44,000 --> 00:11:47,000
+So this message x.
+
+91
+00:11:47,000 --> 00:11:55,000
+And well, Bob can use Alice's public key to do the encryption, right, to do the encryption.
+
+92
+00:11:55,000 --> 00:12:01,000
+Then the subtext y will be sent to Alice.
+
+93
+00:12:01,000 --> 00:12:08,000
+So this y is encrypted by using Alice's public key.
+
+94
+00:12:08,000 --> 00:12:16,000
+So only Alice has a private key, so other than Alice, no one else can do the decryption.
+
+95
+00:12:16,000 --> 00:12:24,000
+So Alice can use her private key to do the decryption and get back the original message x.
+
+96
+00:12:24,000 --> 00:12:34,000
+So this y in the RSA algorithm, we know that the public key is e and n, right?
+
+97
+00:12:34,000 --> 00:12:36,000
+And private key is d.
+
+98
+00:12:36,000 --> 00:12:44,000
+So this y equals x to the e mod n.
+
+99
+00:12:44,000 --> 00:12:50,000
+And to do the decryption, Alice will apply her private key.
+
+100
+00:12:50,000 --> 00:13:00,000
+So to get back x equals the subtext y to the private key d mod n.
+
+101
+00:13:00,000 --> 00:13:06,000
+OK, so this is the encryption and the decryption process.
+
+102
+00:13:06,000 --> 00:13:15,000
+Of course, someone can apply the second case using the private key to do the encryption.
+
+103
+00:13:16,000 --> 00:13:21,000
+So Bob will use his private key to do the encryption.
+
+104
+00:13:21,000 --> 00:13:30,000
+So this y equals x to the d mod n, right?
+
+105
+00:13:30,000 --> 00:13:36,000
+Well, using your private key, you can do decryption.
+
+106
+00:13:36,000 --> 00:13:42,000
+But anyone else can use your public key to do the decryption.
+
+107
+00:13:42,000 --> 00:13:47,000
+Your public key is publicly known by everyone.
+
+108
+00:13:47,000 --> 00:13:52,000
+So Alice can use Bob's public key to do the decryption.
+
+109
+00:13:52,000 --> 00:14:03,000
+So Alice can obtain the plaintext by applying y to the e mod n.
+
+110
+00:14:03,000 --> 00:14:13,000
+OK, so because, well, you can see this y equals x to the d e mod n.
+
+111
+00:14:13,000 --> 00:14:19,000
+This is x to the e d mod n.
+
+112
+00:14:19,000 --> 00:14:29,000
+So e d, in fact, equals x to the k times 5 plus 1 mod n, right?
+
+113
+00:14:29,000 --> 00:14:42,000
+Because we will choose e d is congruent to 1 mod phi n.
+
+114
+00:14:42,000 --> 00:14:53,000
+So according to the Euler's theorem, well, this mod n in the exponent part phi n, this one can be cancelled.
+
+115
+00:14:53,000 --> 00:14:59,000
+OK, normally we apply the second scheme to generate the signature.
+
+116
+00:14:59,000 --> 00:15:04,000
+Somehow this is not a standard way to generate the signature.
+
+117
+00:15:04,000 --> 00:15:07,000
+But the idea is the same.
+
+118
+00:15:07,000 --> 00:15:11,000
+You will use your private key to generate your signature.
+
+119
+00:15:11,000 --> 00:15:17,000
+And others will use your public key to do the signature verification, right?
+
+120
+00:15:17,000 --> 00:15:22,000
+Because only you have that unique private key.
+
+121
+00:15:22,000 --> 00:15:25,000
+So others can use your public key to do verification.
+
+122
+00:15:25,000 --> 00:15:40,000
+That message is really from Alice because the receiver is using Alice public key to do the verification.
+
+123
+00:15:40,000 --> 00:15:50,000
+Well, for the public key crypto systems, well, this can solve two important problems.
+
+124
+00:15:51,000 --> 00:16:04,000
+The concept of public key cryptography evolved from an attempt to solve two of the most difficult problems associated with the symmetric encryption.
+
+125
+00:16:04,000 --> 00:16:17,000
+So that means in symmetric encryption, it is very hard to get key distribution and very hard to generate the digital signatures.
+
+126
+00:16:17,000 --> 00:16:24,000
+Well, in the symmetric encryption, both the sender and the receiver, they should have the same key.
+
+127
+00:16:24,000 --> 00:16:29,000
+So before they can do encryption, decryption, they should have the same key.
+
+128
+00:16:29,000 --> 00:16:33,000
+How to get the same key for both sender and receiver?
+
+129
+00:16:33,000 --> 00:16:37,000
+We said this is a key distribution problem, right?
+
+130
+00:16:37,000 --> 00:16:40,000
+So in fact, it is difficult.
+
+131
+00:16:40,000 --> 00:16:51,000
+Well, in the public key scheme, we can use Diffie-Hellman, DH, this algorithm to provide the key distribution.
+
+132
+00:16:51,000 --> 00:16:59,000
+Both sides, they can, after some calculation, they can get the same key for the encryption and decryption.
+
+133
+00:16:59,000 --> 00:17:09,000
+So key distribution means how to have secure communications in general without having to trust.
+
+134
+00:17:09,000 --> 00:17:22,000
+So this is a key, the key distribution center with your key, without a trusted third party.
+
+135
+00:17:22,000 --> 00:17:25,000
+The second problem is called the digital signature.
+
+136
+00:17:25,000 --> 00:17:32,000
+So this means how to verify that a message comes intact from the claimed sender.
+
+137
+00:17:32,000 --> 00:17:44,000
+Well, in the public key scheme, we can use the private key of sender to do the encryption to generate the signature.
+
+138
+00:17:45,000 --> 00:17:59,000
+So we can use private key D of the sender to generate signature.
+
+139
+00:17:59,000 --> 00:18:02,000
+OK.
+
+140
+00:18:02,000 --> 00:18:18,000
+So the withfield Diffie and Martin Hellman from Stanford University achieved a breakthrough in 1976 by coming up with a method that addressed the key distribution problem.
+
+141
+00:18:18,000 --> 00:18:34,000
+So this DH algorithm will allow Alice and Bob to generate the same TK to be used in the symmetric encryption scheme.
+
+142
+00:18:34,000 --> 00:18:41,000
+And RSA algorithm can be used for both purposes.
+
+143
+00:18:41,000 --> 00:18:49,000
+Because RSA algorithm, the original message M can be used as the key.
+
+144
+00:18:49,000 --> 00:18:55,000
+M can be used as a key.
+
+145
+00:18:56,000 --> 00:19:04,000
+So this M can be generated by sender and will be decrypted, received by the receiver secretly.
+
+146
+00:19:04,000 --> 00:19:09,000
+So this key, this M can be regarded to be the key.
+
+147
+00:19:09,000 --> 00:19:27,000
+And also in previous slide, well, in the second case, in case B, well, the sender like Bob can use his private key to generate the signature.
+
+148
+00:19:27,000 --> 00:19:36,000
+So this is a way to generate a signature to be verified by the receiver Alice.
+
+149
+00:19:36,000 --> 00:19:42,000
+OK, we have talked about this one previously for the public key cryptosystem.
+
+150
+00:19:42,000 --> 00:20:02,000
+If the sender use the public key of the receiver, like this is A, this is B, A can use B's public key to do the encryption.
+
+151
+00:20:02,000 --> 00:20:10,000
+And send the self-text Y, then only the receiver B can do the decryption.
+
+152
+00:20:10,000 --> 00:20:17,000
+So in this way, we'll guarantee that the secrecy, this property is achieved.
+
+153
+00:20:17,000 --> 00:20:24,000
+But even this self-text can be obtained by some cryptoanalyst.
+
+154
+00:20:24,000 --> 00:20:35,000
+Well, the attacker in the middle, the attacker cannot guess, cannot calculate the private key.
+
+155
+00:20:35,000 --> 00:20:45,000
+And not the attacker cannot decrypt the message, cannot get the original message X.
+
+156
+00:20:45,000 --> 00:20:56,000
+So only B with his private key can do the decryption to get the original message X.
+
+157
+00:20:56,000 --> 00:21:10,000
+Well, the second method is to apply the sender's private key to generate, somehow to generate a signature.
+
+158
+00:21:10,000 --> 00:21:24,000
+So this signature will be verified by receiver B because B will use A's public key to do verification.
+
+159
+00:21:24,000 --> 00:21:35,000
+The public key of A to decrypt the message and to verify that the message is really from X, from A.
+
+160
+00:21:35,000 --> 00:21:40,000
+And we call this the process for authentication.
+
+161
+00:21:40,000 --> 00:21:56,000
+So authentication means the message is really from someone like from A, right from Alice.
+
+162
+00:21:56,000 --> 00:22:03,000
+Well, for receiver, I will use Alice's public key to do the verification.
+
+163
+00:22:03,000 --> 00:22:08,000
+So that means the message must be sent from Alice.
+
+164
+00:22:08,000 --> 00:22:14,000
+Only Alice has her private key.
+
+165
+00:22:14,000 --> 00:22:19,000
+Of course, you can use both, but you can combine them together.
+
+166
+00:22:19,000 --> 00:22:28,000
+Well, first, you can use your private key, A's private key, to do the encryption.
+
+167
+00:22:29,000 --> 00:22:35,000
+That means somehow you can regard this one to be, you generate the signature.
+
+168
+00:22:35,000 --> 00:22:42,000
+Then you use the receiver's public key to do the encryption again.
+
+169
+00:22:42,000 --> 00:22:57,000
+So this one will, to guarantee the secrecy, the message cannot be decrypted by anyone else, cannot be disclosed, be known by any others.
+
+170
+00:22:57,000 --> 00:23:15,000
+So at the destination part, the receiver can use corresponding decryption algorithm to get back the original message X.
+
+171
+00:23:15,000 --> 00:23:24,000
+When we apply the public key system, the public key scheme, we can achieve the following three functions.
+
+172
+00:23:24,000 --> 00:23:27,000
+The first one is for encryption and decryption.
+
+173
+00:23:27,000 --> 00:23:35,000
+So that means the sender can encrypt a message with a recipient's public key, right?
+
+174
+00:23:35,000 --> 00:23:42,000
+So that means the generated message Y can be transmitted in a public channel.
+
+175
+00:23:42,000 --> 00:23:59,000
+So this Y equals original message, or we call it to be C subtext, equals N to the E mod N.
+
+176
+00:23:59,000 --> 00:24:03,000
+So this is the encryption process.
+
+177
+00:24:03,000 --> 00:24:10,000
+We get the subtext and only the receiver with a private key can do the decryption.
+
+178
+00:24:10,000 --> 00:24:13,000
+So this is the encryption, decryption.
+
+179
+00:24:13,000 --> 00:24:19,000
+Or the sender can sign a message with its private key.
+
+180
+00:24:19,000 --> 00:24:29,000
+We say this signature will be generated by M to the D mod N.
+
+181
+00:24:29,000 --> 00:24:41,000
+Okay, you generate your signature and signature can be verified by receiver using your public key.
+
+182
+00:24:41,000 --> 00:24:48,000
+Of course, we can use the public key scheme to do the key exchange.
+
+183
+00:24:48,000 --> 00:24:55,000
+Just like two sides can cooperate to exchange a session key, KAB, right?
+
+184
+00:24:55,000 --> 00:24:59,000
+KAB in the Diffie-Hellman algorithm.
+
+185
+00:24:59,000 --> 00:25:12,000
+So both sides will get a key KAB equals G AB mod P, okay?
+
+186
+00:25:12,000 --> 00:25:17,000
+So Alice and Bob can locally choose the private data A and B.
+
+187
+00:25:17,000 --> 00:25:25,000
+After some data exchange, they will locally get the same key KAB.
+
+188
+00:25:25,000 --> 00:25:35,000
+This key KAB can be used for future message encryption in the symmetric encryption algorithm.
+
+189
+00:25:35,000 --> 00:25:40,000
+Some public key algorithms are suitable for all three applications.
+
+190
+00:25:40,000 --> 00:25:46,000
+Some can be used for only one or two.
+
+191
+00:25:46,000 --> 00:25:49,000
+So RSA can be used for all three, right?
+
+192
+00:25:49,000 --> 00:25:53,000
+Encryption, decryption, digital signature.
+
+193
+00:25:53,000 --> 00:25:57,000
+So this is like a message to the E.
+
+194
+00:25:57,000 --> 00:26:05,000
+Digital signature can be generated by message to the D and key exchange.
+
+195
+00:26:05,000 --> 00:26:17,000
+Key exchange means will the M to C to M, this M can be regarded as a key, okay?
+
+196
+00:26:17,000 --> 00:26:25,000
+So both sender, receiver, they know the M to be the key to be used by both sides.
+
+197
+00:26:25,000 --> 00:26:34,000
+Elliptic curve, similarly, well, this one requires some mathematical background.
+
+198
+00:26:34,000 --> 00:26:38,000
+Well, so we don't talk about it.
+
+199
+00:26:38,000 --> 00:26:45,000
+Elliptic curve is more efficient compared to the RSA.
+
+200
+00:26:45,000 --> 00:26:52,000
+More efficient.
+
+201
+00:26:52,000 --> 00:26:58,000
+Now RSA, so they can achieve all three functions.
+
+202
+00:26:58,000 --> 00:27:05,000
+Elliptic curve, this kind of public key scheme.
+
+203
+00:27:05,000 --> 00:27:12,000
+The Diffie-Hellman is used only for DH, is only used for key exchange.
+
+204
+00:27:12,000 --> 00:27:17,000
+And DSS is digital signature standard.
+
+205
+00:27:17,000 --> 00:27:27,000
+So this one is proposed by the United States.
+
+206
+00:27:27,000 --> 00:27:34,000
+This one is used only for digital signature generation and verification.
+
+207
+00:27:34,000 --> 00:27:47,000
+So this is a digital signature standard.
+
+208
+00:27:47,000 --> 00:27:53,000
+For the public key, this kind of scheme, it has some requirements.
+
+209
+00:27:53,000 --> 00:27:59,000
+The public key algorithms must fulfill the following three requirements.
+
+210
+00:27:59,000 --> 00:28:09,000
+The first requirement means that, well, it is computationally easy for party B to generate a pair of keys, right?
+
+211
+00:28:09,000 --> 00:28:14,000
+To generate the key is not difficult.
+
+212
+00:28:14,000 --> 00:28:22,000
+So public key, like in RSA algorithm, where public key
+
+213
+00:28:22,000 --> 00:28:35,000
+E and N, so we know the process, right? Once we know N equals P times Q, then we know phi N.
+
+214
+00:28:35,000 --> 00:28:44,000
+So from phi N we choose E, then we are able to calculate D easily.
+
+215
+00:28:44,000 --> 00:28:48,000
+So D is a private key.
+
+216
+00:28:48,000 --> 00:28:56,000
+So this process is not difficult. So once you have very large P and Q, two prime numbers,
+
+217
+00:28:56,000 --> 00:29:04,000
+then you can follow this process to generate the public key and the private key.
+
+218
+00:29:04,000 --> 00:29:15,000
+It is also computationally easy for sender A knowing the public key and the message to be encrypted to generate the corresponding subtext.
+
+219
+00:29:15,000 --> 00:29:23,000
+So C equals M to the E mod N. This is not that difficult.
+
+220
+00:29:23,000 --> 00:29:31,000
+And also for the receiver B to do the decryption, this process is not difficult.
+
+221
+00:29:31,000 --> 00:29:43,000
+So that means to calculate M equals C to the D mod N, well, this is computationally achievable.
+
+222
+00:29:43,000 --> 00:29:59,000
+However, it is computationally infeasible that for an adversary knowing the public key from E and N to determine the private key,
+
+223
+00:29:59,000 --> 00:30:06,000
+this is infeasible.
+
+224
+00:30:06,000 --> 00:30:17,000
+Well, the only way is to derive the private key is you should guess N equals the product of P and Q.
+
+225
+00:30:17,000 --> 00:30:24,000
+How to get this P and Q? Well, this is infeasible at this moment.
+
+226
+00:30:24,000 --> 00:30:34,000
+So we can choose P and Q to be very large.
+
+227
+00:30:34,000 --> 00:30:48,000
+And also for an adversary, it is computationally infeasible from public key and subtext
+
+228
+00:30:48,000 --> 00:30:52,000
+to recover the original message M.
+
+229
+00:30:52,000 --> 00:31:11,000
+Because original message M equals C to the D mod N. Without this D, you cannot derive the original message M.
+
+230
+00:31:11,000 --> 00:31:19,000
+Without D, you cannot get the original message M.
+
+231
+00:31:19,000 --> 00:31:25,000
+Well, in the public key scheme, the two keys can be applied in other order.
+
+232
+00:31:25,000 --> 00:31:36,000
+Well, we can do the encryption like M to the D mod N or M to the C mod N.
+
+233
+00:31:36,000 --> 00:31:49,000
+So the second line means we want to achieve secrecy, confidentiality.
+
+234
+00:31:49,000 --> 00:32:02,000
+Secrecy. The first line means we want to achieve the signature authentication.
+
+235
+00:32:02,000 --> 00:32:07,000
+Use your private key where you can generate your signature.
+
+236
+00:32:07,000 --> 00:32:21,000
+Use your public key where you can conceal your message M.
+
+237
+00:32:21,000 --> 00:32:29,000
+So in this design, in this RSA algorithm, we call it.
+
+238
+00:32:29,000 --> 00:32:43,000
+So in this RSA algorithm, in the encryption-decryption process, we say, well, in fact, it provides some trapped one-way function.
+
+239
+00:32:43,000 --> 00:32:47,000
+First, we look at the meaning of one-way function.
+
+240
+00:32:47,000 --> 00:32:59,000
+So a one-way function means this function maps a domain into a range.
+
+241
+00:32:59,000 --> 00:33:07,000
+So from domain X, capital X, to a range Y. So that means it defines a mapping.
+
+242
+00:33:07,000 --> 00:33:13,000
+A mapping from X to Y.
+
+243
+00:33:13,000 --> 00:33:18,000
+This is a function. A mapping from X to Y.
+
+244
+00:33:18,000 --> 00:33:28,000
+So this function, given an input, given an input X belong to X.
+
+245
+00:33:28,000 --> 00:33:36,000
+So FX equals some Y. And this small y belong to the range.
+
+246
+00:33:36,000 --> 00:33:45,000
+From an X, we have a unique Y.
+
+247
+00:33:45,000 --> 00:33:55,000
+So this one-way means, well, from X to Y, it is this direction. It is easy.
+
+248
+00:33:55,000 --> 00:34:04,000
+From X, given the input, we follow the function calculation. We get a Y. It is easy.
+
+249
+00:34:04,000 --> 00:34:09,000
+However, the inverse way is impossible.
+
+250
+00:34:09,000 --> 00:34:20,000
+So from Y to get the original X, this is infeasible. Not possible.
+
+251
+00:34:20,000 --> 00:34:27,000
+So we can see for the hash function, like the MD5, the SHA256.
+
+252
+00:34:27,000 --> 00:34:43,000
+From the input X to the SHA256, with input X, we get its output, H.
+
+253
+00:34:43,000 --> 00:34:55,000
+This is easy. However, from H, if we want to guess what's the original input X, this is not possible.
+
+254
+00:34:55,000 --> 00:35:00,000
+Well, based on the one-way function, we have the trapdoor one-way function.
+
+255
+00:35:00,000 --> 00:35:06,000
+The trapdoor one-way function is a family of invertible function FK.
+
+256
+00:35:06,000 --> 00:35:17,000
+Such that, well, with a K and with X input, we calculate the Y. It is easy.
+
+257
+00:35:17,000 --> 00:35:31,000
+And also, with Y and the K, we get its inverse, reverse way. In the reverse way, we get original X. It is also easy.
+
+258
+00:35:31,000 --> 00:35:40,000
+However, if we don't know the K, well, to calculate the original input X, it is infeasible.
+
+259
+00:35:40,000 --> 00:35:57,000
+So that means just like in our RSA algorithm, we have from, well, with the original message M,
+
+260
+00:35:57,000 --> 00:36:14,000
+and we use the public key E, we use public key E, we mod N, we get the C. So this is easy.
+
+261
+00:36:14,000 --> 00:36:26,000
+We see C is Y, right? And once we have the D, we mod N, we get M. This is easy.
+
+262
+00:36:26,000 --> 00:36:42,000
+However, without D, we send N to get M and no D, this is impossible.
+
+263
+00:36:42,000 --> 00:36:57,000
+That means the D is a key K here. No D to get back the original message M, this is infeasible.
+
+264
+00:36:57,000 --> 00:37:06,000
+So that means a practical public key scheme depends on a suitable trapdoor one-way function.
+
+265
+00:37:06,000 --> 00:37:21,000
+We should have the public key to do the decryption such that we can get the original message M from the self-text C.
+
+266
+00:37:21,000 --> 00:37:33,000
+Okay, we can see for the RSA algorithm, before the application of the public key crypto system, each participant must generate a pair of keys.
+
+267
+00:37:33,000 --> 00:37:46,000
+This pair of keys is E and D, right? E is a public key, D is a corresponding private key.
+
+268
+00:37:46,000 --> 00:37:56,000
+To generate E and D, first we should choose two prime numbers, P and Q, secretly.
+
+269
+00:37:56,000 --> 00:38:08,000
+You cannot disclose these two big numbers, otherwise people will generate your private key easily.
+
+270
+00:38:08,000 --> 00:38:21,000
+So once you choose P and Q, normally you will select E and then you will calculate D as your private key.
+
+271
+00:38:21,000 --> 00:38:32,000
+So because the value N equals P times Q will be, this N will be known to any potential adversary.
+
+272
+00:38:32,000 --> 00:38:45,000
+The primes must be chosen from a sufficiently large set. So primes P, Q, you should choose these two to be very large, right?
+
+273
+00:38:51,000 --> 00:39:03,000
+Okay, the method used for finding large primes, well, this method should be reasonably efficient.
+
+274
+00:39:03,000 --> 00:39:13,000
+To attack the RSA algorithm, we called this problem is a factoring problem.
+
+275
+00:39:13,000 --> 00:39:29,000
+The reason is because once you can factor N into its two prime factors P and Q, so once you can get N equals P times Q,
+
+276
+00:39:29,000 --> 00:39:39,000
+then you will be able to calculate its corresponding potential function phi, right?
+
+277
+00:39:39,000 --> 00:39:52,000
+Once you can do that factorization, just like suppose N equals 1, 1, 9, so what's P and Q?
+
+278
+00:39:52,000 --> 00:39:55,000
+P equals Q equals
+
+279
+00:40:01,000 --> 00:40:09,000
+Okay, 7, 17, right? So then, well, because this number is very small, right?
+
+280
+00:40:09,000 --> 00:40:19,000
+You can do the factorization quickly and then you'll be able to calculate the phi to be 96, right?
+
+281
+00:40:19,000 --> 00:40:29,000
+In our previous example, and then you will be able to suppose E is any number.
+
+282
+00:40:29,000 --> 00:40:39,000
+Can E be like, suppose E is 7, right?
+
+283
+00:40:39,000 --> 00:40:44,000
+Can we choose E to be 10?
+
+284
+00:40:44,000 --> 00:40:47,000
+Not possible, why not?
+
+285
+00:40:53,000 --> 00:40:58,000
+Not really prime to phi, right?
+
+286
+00:40:58,000 --> 00:41:06,000
+So when you guarantee that DCT E and phi should be 1, so this one is not okay.
+
+287
+00:41:06,000 --> 00:41:17,000
+Saving is fine. Well, given we know phi N, we know E, we will be able to generate the D.
+
+288
+00:41:17,000 --> 00:41:23,000
+So D equals actually is coming to
+
+289
+00:41:26,000 --> 00:41:31,000
+So D is E must 1 mod phi N.
+
+290
+00:41:31,000 --> 00:41:45,000
+To get the modular inverse value, we can use the extended Euclidean algorithm, but we can quickly calculate D from E and phi.
+
+291
+00:41:45,000 --> 00:41:55,000
+So once we can do the factorization problem, we can solve the factorization of N and E is null.
+
+292
+00:41:55,000 --> 00:42:01,000
+So we will be able to calculate the private key D.
+
+293
+00:42:01,000 --> 00:42:10,000
+And we can see the history to do this factorization problem, the challenge.
+
+294
+00:42:10,000 --> 00:42:20,000
+In December 2000 online, well, we can factor rising the N.
+
+295
+00:42:20,000 --> 00:42:25,000
+So this N is the number of bits.
+
+296
+00:42:25,000 --> 00:42:38,000
+To be 768 bits, corresponds to the number of decimal digits to be 232 decimal digits.
+
+297
+00:42:38,000 --> 00:42:42,000
+The recent progress is in 2020.
+
+298
+00:42:42,000 --> 00:42:55,000
+Well, a group of people showed that we are able to factorize big N with the 829 bits.
+
+299
+00:42:55,000 --> 00:43:03,000
+The length for N to be over 800 is not secure anymore.
+
+300
+00:43:04,000 --> 00:43:16,000
+So it is suggested that we should at least choose the N to be 1 or 24 bits today.
+
+301
+00:43:16,000 --> 00:43:26,000
+Or to be more secure, to be 2 or 48 bits.
+
+302
+00:43:26,000 --> 00:43:34,000
+For your N to generate your public key and private key in your application.
+
+303
+00:43:38,000 --> 00:43:44,000
+Okay, so let's have an overview about the encryption.
+
+304
+00:43:44,000 --> 00:43:50,000
+So we can use either the symmetric encryption.
+
+305
+00:43:50,000 --> 00:43:56,000
+So symmetric encryption means we assume we can achieve confidentiality.
+
+306
+00:43:56,000 --> 00:44:03,000
+That means the message will be kept to be a secret.
+
+307
+00:44:03,000 --> 00:44:17,000
+Will only be known by the sender and the receiver.
+
+308
+00:44:17,000 --> 00:44:22,000
+Because both the sender and the receiver, they have the key K.
+
+309
+00:44:22,000 --> 00:44:36,000
+And this key K can be used in both the encryption and the decryption algorithm, like the AES algorithm.
+
+310
+00:44:37,000 --> 00:44:47,000
+So in this symmetric scheme, we can achieve the message confidentiality.
+
+311
+00:44:47,000 --> 00:44:49,000
+Not known by others.
+
+312
+00:44:49,000 --> 00:44:53,000
+So the message cannot be known by others.
+
+313
+00:44:53,000 --> 00:44:57,000
+If we apply the public key encryption,
+
+314
+00:44:57,000 --> 00:45:06,000
+Once we use the public key of the receiver B,
+
+315
+00:45:06,000 --> 00:45:12,000
+And then we can achieve the message confidentiality.
+
+316
+00:45:12,000 --> 00:45:18,000
+The reason is because only the receiver can do the decryption.
+
+317
+00:45:19,000 --> 00:45:28,000
+Or we can use AES public key to do the encryption.
+
+318
+00:45:28,000 --> 00:45:35,000
+Then we can generate the signature along with the message.
+
+319
+00:45:35,000 --> 00:45:41,000
+So this signature will be verified by the receiver B.
+
+320
+00:45:41,000 --> 00:45:56,000
+So B will use the sender's public key for verification.
+
+321
+00:45:56,000 --> 00:46:13,000
+So B as the receiver will guarantee that the message is really from Alice.
+
+322
+00:46:13,000 --> 00:46:22,000
+Because the B is using Alice's public key to do the decryption.
+
+323
+00:46:22,000 --> 00:46:33,000
+Of course, we can use both the private key and public key at both the sender side and the receiver side.
+
+324
+00:46:33,000 --> 00:46:45,000
+So private key for signature generation and public key for the message confidentiality.
+
+325
+00:46:45,000 --> 00:46:56,000
+To achieve message confidentiality, to guarantee the message is encrypted and not known by others.
+
+326
+00:46:56,000 --> 00:47:02,000
+So in the decryption side, the receiver side, we can do the decryption.
+
+327
+00:47:02,000 --> 00:47:10,000
+First use the receiver's private key to do the decryption and then to do the verification.
+
+328
+00:47:10,000 --> 00:47:21,000
+So public key of Alice to do the signature verification.
+
+329
+00:47:21,000 --> 00:47:26,000
+Authentication and signature actually should be the same meaning.
+
+330
+00:47:26,000 --> 00:47:33,000
+We verify your signature will guarantee this real sender.
+
+331
+00:47:33,000 --> 00:47:36,000
+So we guarantee this real sender.
+
+332
+00:47:36,000 --> 00:47:41,000
+The real sender means this authentication will authorize.
+
+333
+00:47:41,000 --> 00:47:51,000
+You're authorized because you can provide a correct signature.
+
+334
+00:47:51,000 --> 00:47:58,000
+So then we finish our lecture three.
+
+335
+00:47:58,000 --> 00:48:04,000
+And we have the TECOM exercises for your practice.
+
+336
+00:48:04,000 --> 00:48:13,000
+So exercise four is for RSA and exercise five is for Diffie-Hellman algorithm.
+
+337
+00:48:13,000 --> 00:48:18,000
+OK, so we finish and let's have a stop, have a break, 10 minutes.
+
+338
+00:48:18,000 --> 00:48:22,000
+OK, then after break, we continue with lecture four.
+
+339
+00:48:22,000 --> 00:48:23,000
+Thank you.
+
+340
+00:48:34,000 --> 00:48:35,000
+Thank you.
+
+341
+00:49:04,000 --> 00:49:05,000
+Thank you.
+
+342
+00:49:34,000 --> 00:49:36,000
+Thank you.
+

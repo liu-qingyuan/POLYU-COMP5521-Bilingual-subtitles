@@ -1,0 +1,4289 @@
+1
+00:00:00,000 --> 00:00:15,160
+Okay, good evening.
+
+1
+00:00:00,000 --> 00:00:15,160
+好的，晚上好。
+
+2
+00:00:15,160 --> 00:00:23,480
+So let's start with today's lecture.
+
+2
+00:00:15,160 --> 00:00:23,480
+那么，我们就从今天的讲座开始吧。
+
+3
+00:00:23,480 --> 00:00:28,679
+Today we will continue with our lecture three about cryptography.
+
+3
+00:00:23,480 --> 00:00:28,679
+今天，我们将继续进行第三讲，主题是密码学。
+
+4
+00:00:28,679 --> 00:00:31,199
+Last time we talked about the number theory, right?
+
+4
+00:00:28,679 --> 00:00:31,199
+上次我们讨论了数论，您还记得吗？
+
+5
+00:00:31,199 --> 00:00:36,039
+So we know like the Euler's theorem.
+
+5
+00:00:31,199 --> 00:00:36,039
+我们知道像欧拉定理这样的知识。
+
+6
+00:00:36,039 --> 00:00:45,920
+So today we will start with like the symmetric encryption.
+
+6
+00:00:36,039 --> 00:00:45,920
+今天，我们将从对称加密开始讲解。
+
+7
+00:00:45,920 --> 00:00:51,760
+So part one is about the symmetric encryption, part two is about isometric encryption, that's
+
+7
+00:00:45,920 --> 00:00:51,760
+第一部分讲述的是对称加密，第二部分则是等距加密，简单来说就是
+
+8
+00:00:51,760 --> 00:00:53,519
+a public key scheme.
+
+8
+00:00:51,760 --> 00:00:53,519
+公钥方案。
+
+9
+00:00:54,520 --> 00:01:00,640
+Public key scheme, public encryption is based on the number theory.
+
+9
+00:00:54,520 --> 00:01:00,640
+公钥方案，基于数论的公钥加密。
+
+10
+00:01:00,640 --> 00:01:06,400
+So from the Euler's theorem, we will have today's RSA algorithm.
+
+10
+00:01:00,640 --> 00:01:06,400
+从欧拉定理出发，今天我们来讲解 RSA 算法。
+
+11
+00:01:06,400 --> 00:01:10,800
+Today, first, we look at the part one about symmetric encryption.
+
+11
+00:01:06,400 --> 00:01:10,800
+今天，首先，让我们来探讨对称加密的第一部分。
+
+12
+00:01:23,519 --> 00:01:46,239
+Here is the diagram to show that in the symmetric encryption, we have the plaintext as an input
+
+12
+00:01:23,519 --> 00:01:46,239
+这里是展示在对称加密中，我们以明文作为输入的图表（经过润色）
+
+13
+00:01:46,239 --> 00:01:52,920
+and as output, we also want to get the plaintext, the same plaintext.
+
+13
+00:01:46,239 --> 00:01:52,920
+作为输出，我们同样希望获取相同的明文。（已优化，使翻译更自然易懂）
+
+14
+00:01:52,920 --> 00:02:04,760
+So at the left hand side, we say we have the sender, right hand side, we have the receiver.
+
+14
+00:01:52,920 --> 00:02:04,760
+在左侧，我们称之为发送方，在右侧则是接收方。这样的表述更为自然易懂。
+
+15
+00:02:04,760 --> 00:02:10,520
+In the middle, we have a channel and we assume that the channel may not be reliable.
+
+15
+00:02:04,760 --> 00:02:10,520
+中间有一个频道，我们假定这个频道可能不太可靠。
+
+16
+00:02:10,520 --> 00:02:19,120
+So in the channel, we want to send the transmitted self-text.
+
+16
+00:02:10,520 --> 00:02:19,120
+因此，在频道中，我们希望发送传输的文本内容。
+
+17
+00:02:19,120 --> 00:02:22,159
+This self-text should be encrypted.
+
+17
+00:02:19,120 --> 00:02:22,159
+此段自文本应加密，以确保安全。
+
+18
+00:02:22,159 --> 00:02:30,800
+In this symmetric encryption, the plaintext, we denote the plaintext to be x.
+
+18
+00:02:22,159 --> 00:02:30,800
+在这种对称加密中，我们将其明文表示为 x。
+
+19
+00:02:30,800 --> 00:02:35,919
+So x, we first go through an encryption algorithm.
+
+19
+00:02:30,800 --> 00:02:35,919
+因此，我们首先进行加密算法的处理。
+
+20
+00:02:35,919 --> 00:02:38,519
+For example, here is AES.
+
+20
+00:02:35,919 --> 00:02:38,519
+例如，这里展示的是高级加密标准（AES）。
+
+21
+00:02:38,519 --> 00:02:43,599
+So AES is an advanced encryption standard.
+
+21
+00:02:38,519 --> 00:02:43,599
+AES 是一种高级加密标准，这是一种更自然、更易于理解的表述。
+
+22
+00:02:44,560 --> 00:02:53,199
+When the x goes through this encryption algorithm, normally we will have a key k.
+
+22
+00:02:44,560 --> 00:02:53,199
+当 x 通过这个加密算法时，我们通常会得到一个密钥 k。这种说法比较直接，为了使翻译更加自然易懂，可以稍作调整。以下是调整后的翻译：
+    当 x 经过这个加密算法时，我们通常会得到一个密钥 k。
+
+23
+00:02:53,199 --> 00:03:00,519
+We can use this key k to encrypt the plaintext x.
+
+23
+00:02:53,199 --> 00:03:00,519
+我们可以使用这个密钥 k 来加密明文 x。使其更加自然易懂。
+
+24
+00:03:00,519 --> 00:03:12,079
+Then we get the self-text y and y equals this function, encryption function, we call it the encryption function.
+
+24
+00:03:00,519 --> 00:03:12,079
+然后，我们得到自文本 y，y 等于这个加密函数，我们称之为加密函数。这个翻译更加自然和易于理解。
+
+25
+00:03:12,160 --> 00:03:21,200
+With the input to be x and the key k, so this key k is a secret.
+
+25
+00:03:12,160 --> 00:03:21,200
+输入为 x，密钥 k 是保密的，因此这个密钥 k 是保密的。
+
+26
+00:03:21,200 --> 00:03:28,120
+At the receiver side, so this part is the sender side, this part is the receiver side.
+
+26
+00:03:21,200 --> 00:03:28,120
+在接收端，因此这部分代表发送方，另一部分代表接收方。
+
+27
+00:03:28,120 --> 00:03:34,480
+And receiver will use the same key k to do the decryption.
+
+27
+00:03:28,120 --> 00:03:34,480
+接收者将使用相同的密钥 k 进行解密。这个操作将确保解密的一致性。
+
+28
+00:03:34,560 --> 00:03:43,120
+And we have the decryption algorithm, that's the reverse process of the encryption algorithm.
+
+28
+00:03:34,560 --> 00:03:43,120
+我们拥有解密算法，这是加密算法的逆向过程。翻译更加自然，易于理解。
+
+29
+00:03:43,120 --> 00:03:54,280
+So the AES, normally we have some character substitution, some shifting with some block replaced by another block.
+
+29
+00:03:43,120 --> 00:03:54,280
+因此，AES 通常会有字符替换、位移，以及某些块被其他块替换。这样的描述更为自然易懂。
+
+30
+00:03:54,280 --> 00:04:01,319
+So this kind of operations, based on the key k, we do shifting, do permutation.
+
+30
+00:03:54,280 --> 00:04:01,319
+基于键 k，我们进行移位和排列操作，这类操作是这样的。为了使翻译更加自然易懂，可以稍作调整：基于键 k，我们执行移位和排列操作，这类操作是这样的。
+
+31
+00:04:01,359 --> 00:04:06,000
+So lots of steps to get to the subtext.
+
+31
+00:04:01,359 --> 00:04:06,000
+要到达文本的深层含义，需要经过许多步骤。
+
+32
+00:04:06,000 --> 00:04:12,359
+And then at the receiver side, we do the reverse process.
+
+32
+00:04:06,000 --> 00:04:12,359
+然后在接收端，我们进行逆向操作。这样表达更自然、易懂。
+
+33
+00:04:12,359 --> 00:04:17,279
+Once you have the key k, and then you can do the decryption.
+
+33
+00:04:12,359 --> 00:04:17,279
+一旦你拥有了密钥 k，就可以进行解密了。
+
+34
+00:04:17,279 --> 00:04:22,759
+So this decryption function is also known, that's the AES.
+
+34
+00:04:17,279 --> 00:04:22,759
+这个解密函数也被称为 AES，也就是高级加密标准。
+
+35
+00:04:22,759 --> 00:04:32,839
+So both AES are in encryption, decryption, the process is publicly known.
+
+35
+00:04:22,759 --> 00:04:32,839
+因此，这两个 AES 加密和解密的过程都是公开的，表述更为自然。
+
+36
+00:04:32,839 --> 00:04:36,839
+Only the key k is the secret.
+
+36
+00:04:32,839 --> 00:04:36,839
+只有密钥 k 才是秘密。
+
+37
+00:04:36,839 --> 00:04:50,120
+So once the receiver and the sender, they share the same key k, then the receiver can use the key k to do the decryption.
+
+37
+00:04:36,839 --> 00:04:50,120
+因此，一旦接收者和发送者拥有相同的密钥 k，接收者便可以使用该密钥进行解密。
+
+38
+00:04:50,120 --> 00:04:59,759
+So the decryption function, we have two inputs, one is the key k, one is the subtext y.
+
+38
+00:04:50,120 --> 00:04:59,759
+因此，解密函数有两个输入：密钥 k 和密文 y。
+
+39
+00:04:59,759 --> 00:05:05,639
+So in the decryption, we can get the original plaintext x.
+
+39
+00:04:59,759 --> 00:05:05,639
+在解密过程中，我们可以还原出原始明文 x。
+
+40
+00:05:08,840 --> 00:05:16,280
+So this is the model for symmetry encryption and decryption.
+
+40
+00:05:08,840 --> 00:05:16,280
+这是对称加密和解密模型的描述。
+
+41
+00:05:16,279 --> 00:05:26,199
+The critical part here is you should have the symmetric key k to be obtained by both the sender and receiver.
+
+41
+00:05:16,279 --> 00:05:26,199
+这里关键是要确保发送者和接收者都能获得对称密钥 k，这一点至关重要。
+
+42
+00:05:26,199 --> 00:05:27,199
+Is that clear?
+
+42
+00:05:26,199 --> 00:05:27,199
+那个意思明白吗？
+
+43
+00:05:31,679 --> 00:05:39,879
+Well, in a symmetric server model, we have two requirements for secure use of conventional encryption.
+
+43
+00:05:31,679 --> 00:05:39,879
+好吧，在对称服务器模型中，为确保传统加密的安全使用，我们需要满足以下两个条件。
+
+44
+00:05:39,879 --> 00:05:44,319
+First one is we should have a strong encryption algorithm.
+
+44
+00:05:39,879 --> 00:05:44,319
+我们应当采用一个强大的加密算法。
+
+45
+00:05:44,319 --> 00:05:46,480
+So today we use AES.
+
+45
+00:05:44,319 --> 00:05:46,480
+今天我们使用 AES 加密技术。
+
+46
+00:05:49,000 --> 00:05:53,719
+So this one is believed to be very secure, very secure at this moment.
+
+46
+00:05:49,000 --> 00:05:53,719
+目前认为这个非常安全，安全性极高。
+
+47
+00:05:53,720 --> 00:06:21,000
+Okay, the second requirement is that the sender receiver must have obtained copies of the secret key k.
+
+47
+00:05:53,720 --> 00:06:21,000
+好的，第二个要求是发送方和接收方必须已经获取了密钥 k 的副本。这个要求是为了确保双方都拥有密钥 k 的副本。
+
+48
+00:06:23,720 --> 00:06:27,680
+In a secure fashion, must keep the key secure.
+
+48
+00:06:23,720 --> 00:06:27,680
+以安全的方式存储密钥，必须保证其安全性。
+
+49
+00:06:27,680 --> 00:06:37,160
+If the key is not secure, anyone else has a key can do the decryption and will know your plaintext.
+
+49
+00:06:27,680 --> 00:06:37,160
+如果密钥不安全，任何人只要拥有密钥就能解密，从而得知你的明文。
+
+50
+00:06:37,160 --> 00:06:43,240
+Okay, so this key k should be your secret, not known by others.
+
+50
+00:06:37,160 --> 00:06:43,240
+好的，所以这个密钥 k 应该是你的秘密，不要让别人知道。这样的表达更自然、更易于理解。
+
+51
+00:06:43,240 --> 00:07:03,319
+Oh, you can see, well, for this symmetry encryption, the key k, we should have some way to make sure the key k will be shared, will be obtained by both the sender and receiver.
+
+51
+00:06:43,240 --> 00:07:03,319
+哦，您可以看到，嗯，对于这种对称加密，密钥 k，我们需要确保密钥 k 能够被发送方和接收方共享和获取。
+
+52
+00:07:03,319 --> 00:07:04,319
+Right.
+
+52
+00:07:03,319 --> 00:07:04,319
+正确的。
+
+53
+00:07:04,319 --> 00:07:11,879
+So how to implement this secure channel for key distribution?
+
+53
+00:07:04,319 --> 00:07:11,879
+那么如何实现这个安全通道进行密钥分发呢？
+
+54
+00:07:11,879 --> 00:07:14,199
+This one is a challenge.
+
+54
+00:07:11,879 --> 00:07:14,199
+这一项是一个挑战
+
+55
+00:07:19,639 --> 00:07:26,719
+So it is a challenge to distribute the key k to the receiver and to the sender.
+
+55
+00:07:19,639 --> 00:07:26,719
+因此，将密钥 k 分发给接收者和发送者是一项挑战。
+
+56
+00:07:26,719 --> 00:07:39,399
+Okay, so we'll see later how we can do the key distribution or the key to be obtained by both the sender and the receiver.
+
+56
+00:07:26,719 --> 00:07:39,399
+好的，我们稍后详细探讨如何进行密钥分配，或者发送者和接收者如何获取密钥。
+
+57
+00:07:39,399 --> 00:07:45,879
+They can use some way, like to use the asymmetric encryption to attain this purpose.
+
+57
+00:07:39,399 --> 00:07:45,879
+他们可以采用某种方法，例如使用非对称加密技术来达到这一目的。
+
+58
+00:07:47,879 --> 00:08:01,239
+Well, in the channel, for this channel, the channel part or the message will go through like the internet or the public transmission in the air.
+
+58
+00:07:47,879 --> 00:08:01,239
+嗯，在这个频道里，信息或消息的传输方式就像互联网或空中公共传输一样。
+
+59
+00:08:01,239 --> 00:08:08,359
+Right. Today we have like 6G or the message from your smartphone to access point.
+
+59
+00:08:01,239 --> 00:08:08,359
+今天我们有了 6G 技术，或者说是从智能手机到接入点的通信消息。
+
+60
+00:08:08,360 --> 00:08:24,120
+So between the access point and your smartphone, we regard this is a public channel and anyone can hear your transmitted message and your message can be analyzed by some attacker.
+
+60
+00:08:08,360 --> 00:08:24,120
+因此，接入点和您的智能手机之间，我们将其视为公共频道，任何人都可以听到您传输的消息，攻击者也可能分析您的消息。这样的表述更加自然易懂。
+
+61
+00:08:24,120 --> 00:08:29,560
+So those attackers, we call them to be the crypto analyst.
+
+61
+00:08:24,120 --> 00:08:29,560
+那些攻击者，我们把他们称为加密分析师。这样的说法更自然、易懂。
+
+62
+00:08:29,560 --> 00:08:35,519
+For attacker, they will try to decrypt your message.
+
+62
+00:08:29,560 --> 00:08:35,519
+对于攻击者来说，他们会试图解密你的信息。
+
+63
+00:08:35,519 --> 00:08:41,279
+Okay, so they will get your subtext.
+
+63
+00:08:35,519 --> 00:08:41,279
+好的，所以他们能领会你的言外之意。
+
+64
+00:08:41,279 --> 00:08:46,960
+However, the attacker has no idea of your private key.
+
+64
+00:08:41,279 --> 00:08:46,960
+然而，攻击者根本不知道你的私钥。
+
+65
+00:08:46,960 --> 00:08:48,519
+So normally no key.
+
+65
+00:08:46,960 --> 00:08:48,519
+通常没有键。
+
+66
+00:08:48,519 --> 00:08:55,600
+That means the attacker cannot get your plain text, cannot do the decryption.
+
+66
+00:08:48,519 --> 00:08:55,600
+这意味着攻击者无法获取您的明文，无法进行解密。这确保了您的数据安全，攻击者无法轻易破解。
+
+67
+00:08:55,600 --> 00:09:08,680
+That means the attacker will try to guess or attack your message to get the private key, the symmetric key with a key.
+
+67
+00:08:55,600 --> 00:09:08,680
+这意味着攻击者会试图猜测或攻击您的消息，以获取带有密钥的私钥和对称密钥。
+
+68
+00:09:08,680 --> 00:09:15,639
+Then the crypto analyst will be able to generate the original plain text.
+
+68
+00:09:08,680 --> 00:09:15,639
+然后加密分析师将能够生成原始的纯文本。这使得内容更加自然易懂。
+
+69
+00:09:15,639 --> 00:09:16,639
+But this is difficult.
+
+69
+00:09:15,639 --> 00:09:16,639
+但这真的很困难。
+
+70
+00:09:16,679 --> 00:09:26,159
+Okay, we'll make it to be difficult to be attacked for your subtext.
+
+70
+00:09:16,679 --> 00:09:26,159
+好吧，我们会让你的潜台词变得难以被攻击，使其更加自然易懂。
+
+71
+00:09:26,159 --> 00:09:29,639
+So we look at one example for the symmetry encryption.
+
+71
+00:09:26,159 --> 00:09:29,639
+我们来看一个关于对称加密的例子。
+
+72
+00:09:29,639 --> 00:09:33,000
+And this one is called the Caesar cipher.
+
+72
+00:09:29,639 --> 00:09:33,000
+这一个叫做凯撒密码。
+
+73
+00:09:33,000 --> 00:09:34,879
+And this one is very famous.
+
+73
+00:09:33,000 --> 00:09:34,879
+这个非常出名。
+
+74
+00:09:34,879 --> 00:09:43,319
+It is the simplest and the earliest known use of substitution cipher.
+
+74
+00:09:34,879 --> 00:09:43,319
+这是最早且最简单的替换密码使用方式。
+
+75
+00:09:43,320 --> 00:09:54,120
+And he said that this cipher is created by Julius Caesar to be used in the war against some of his enemies.
+
+75
+00:09:43,320 --> 00:09:54,120
+他表示，这个密码是由凯撒为对抗一些敌人而创造的，用以在战争中使用。
+
+76
+00:09:54,120 --> 00:10:05,680
+This cipher involves replacing each letter of the alphabet with a letter standing three places further down the alphabet.
+
+76
+00:09:54,120 --> 00:10:05,680
+这种密码通过将字母表中的每个字母替换为比它大三个位置的字母来实现。
+
+77
+00:10:05,680 --> 00:10:12,920
+And we assume that the alphabet is wrapped around so that the letter following z is a.
+
+77
+00:10:05,680 --> 00:10:12,920
+我们假设字母表是循环的，因此字母 z 之后是字母 a。这样的表述更符合中文的表达习惯。
+
+78
+00:10:12,919 --> 00:10:16,079
+So wrap around means what?
+
+78
+00:10:12,919 --> 00:10:16,079
+那么“环绕”指的是什么呢？
+
+79
+00:10:16,079 --> 00:10:22,039
+Well, we can regard this one as a mod operation.
+
+79
+00:10:16,079 --> 00:10:22,039
+好的，我们可以将这个看作是模运算的例子。
+
+80
+00:10:22,039 --> 00:10:27,319
+And totally we have 26 letters, right, characters.
+
+80
+00:10:22,039 --> 00:10:27,319
+我们总共有 26 个字母，没错，是字符。
+
+81
+00:10:27,319 --> 00:10:31,959
+So wrap around means we take the mod operation.
+
+81
+00:10:27,319 --> 00:10:31,959
+因此，所谓的环绕就是进行模运算的意思。
+
+82
+00:10:31,959 --> 00:10:39,079
+Suppose we have the original plain text to be meet me after the toga party.
+
+82
+00:10:31,959 --> 00:10:39,079
+假设我们要见面的原始文本是：袍子派对后见。
+
+83
+00:10:39,080 --> 00:10:44,759
+Then the subtext will be for every letter with plus three.
+
+83
+00:10:39,080 --> 00:10:44,759
+然后每个字母的子文本将增加三个（使翻译更自然和易懂）。
+
+84
+00:10:44,759 --> 00:10:47,520
+So we plus three.
+
+84
+00:10:44,759 --> 00:10:47,520
+我们加三。
+
+85
+00:10:47,520 --> 00:10:51,360
+And after M, we have M.
+
+85
+00:10:47,520 --> 00:10:51,360
+在 M 之后，紧接着又是 M。
+
+86
+00:10:51,360 --> 00:10:53,040
+And.
+
+86
+00:10:51,360 --> 00:10:53,040
+并且
+
+87
+00:10:53,040 --> 00:10:55,600
+Oh, P.
+
+87
+00:10:53,040 --> 00:10:55,600
+哎，P。
+
+88
+00:10:55,600 --> 00:11:02,680
+So M plus three is P here, but M is P.
+
+88
+00:10:55,600 --> 00:11:02,680
+因此，M 加 3 等于这里的 P，而 M 本身也等于 P。
+
+89
+00:11:02,679 --> 00:11:12,319
+And similarly, every letter we count three positions further down will get a corresponding letter.
+
+89
+00:11:02,679 --> 00:11:12,319
+同样地，我们将每个字母向下数三个位置，就能得到相应的字母。这样的翻译更加自然易懂。
+
+90
+00:11:12,319 --> 00:11:16,359
+So E is H, E is H, T is W.
+
+90
+00:11:12,319 --> 00:11:16,359
+因此 E 代表 H，E 代表 H，T 代表 W。
+
+91
+00:11:16,359 --> 00:11:23,199
+That means we have this lower line to be the subtext.
+
+91
+00:11:16,359 --> 00:11:23,199
+这意味着我们将这条下划线作为子文本。这样的表述更为自然和易懂。
+
+92
+00:11:23,199 --> 00:11:26,519
+OK, very simple.
+
+92
+00:11:23,199 --> 00:11:26,519
+好的，非常简单。
+
+93
+00:11:26,519 --> 00:11:31,240
+So, of course, your enemy obtained this sentence.
+
+93
+00:11:26,519 --> 00:11:31,240
+当然，这句话已经被你的敌人得到了。
+
+94
+00:11:31,240 --> 00:11:38,480
+We have no idea about the original meaning of the sentence.
+
+94
+00:11:31,240 --> 00:11:38,480
+我们对这句话的原始含义一无所知。
+
+95
+00:11:38,480 --> 00:11:46,120
+However, once we know it is a SIDA cipher to the decryption, it is not difficult.
+
+95
+00:11:38,480 --> 00:11:46,120
+然而，一旦我们得知这是用于解密的 SIDA 密码，那就不会很难解。
+
+96
+00:11:46,120 --> 00:11:51,039
+The reason is because we can take the brute force attack.
+
+96
+00:11:46,120 --> 00:11:51,039
+原因在于我们可以采取暴力攻击方式。
+
+97
+00:11:51,039 --> 00:12:00,879
+So once we know, well, it is SIDA cipher, and then we can do the brute force attack and we can try different keys.
+
+97
+00:11:51,039 --> 00:12:00,879
+因此一旦我们确认这是 SIDA 加密，接下来就可以进行暴力破解，并尝试不同的密钥。
+
+98
+00:12:00,919 --> 00:12:10,000
+For example, if keys one from this subtext, this is subtext C.
+
+98
+00:12:00,919 --> 00:12:10,000
+例如，如果从这个子文本中提取第一个键，那么这就是子文本 C。
+
+99
+00:12:10,000 --> 00:12:12,720
+That's a text.
+
+99
+00:12:10,000 --> 00:12:12,720
+这是一段文字。
+
+100
+00:12:12,720 --> 00:12:19,600
+If keys one, that means original data, the letter, we must one.
+
+100
+00:12:12,720 --> 00:12:19,600
+如果键名为“一”，则表示这是原始数据，“一”这个字，我们必须有一个。
+
+101
+00:12:19,600 --> 00:12:22,080
+So from P, we have O, right?
+
+101
+00:12:19,600 --> 00:12:22,080
+从 P 出发，我们得到 O，没错吧？
+
+102
+00:12:30,879 --> 00:12:47,360
+From P, we have O, from H, we have G.
+
+102
+00:12:30,879 --> 00:12:47,360
+从 P 点得到 O，从 H 点得到 G。
+
+103
+00:12:47,360 --> 00:12:52,960
+So this is the first trial for the key equals one.
+
+103
+00:12:47,360 --> 00:12:52,960
+这就是针对键值为一的第一次试验。
+
+104
+00:12:52,960 --> 00:12:58,759
+Of course, this one, we have no idea about the original print text.
+
+104
+00:12:52,960 --> 00:12:58,759
+当然，这个嘛，我们根本不清楚原始印刷文本的内容。
+
+105
+00:12:58,840 --> 00:13:08,319
+If we continue, the key equals two and key equals three, and then we can get the original print text.
+
+105
+00:12:58,840 --> 00:13:08,319
+如果我们继续操作，键值分别为二和三，随后即可获取原始打印内容。
+
+106
+00:13:08,319 --> 00:13:13,840
+Very easy to get the original print text.
+
+106
+00:13:08,319 --> 00:13:13,840
+非常容易获取原始打印文本。（经过润色）
+
+107
+00:13:13,840 --> 00:13:21,679
+Well, in this brute force attack, we can see, at most, we try 25 times, right?
+
+107
+00:13:13,840 --> 00:13:21,679
+嗯，在这个暴力破解攻击中，我们最多尝试 25 次，没错吧？
+
+108
+00:13:21,679 --> 00:13:25,679
+Because we can list all possible cases.
+
+108
+00:13:21,679 --> 00:13:25,679
+因为我们能够列出所有可能的情况
+
+109
+00:13:25,679 --> 00:13:28,719
+The key can be from one to 25.
+
+109
+00:13:25,679 --> 00:13:28,719
+密钥可以是 1 到 25 之间的任意一个。
+
+110
+00:13:28,719 --> 00:13:32,919
+Totally, we have 26 characters.
+
+110
+00:13:28,719 --> 00:13:32,919
+当然，我们总共有 26 个字符。
+
+111
+00:13:32,919 --> 00:13:42,159
+So not many times can we find the print text in this brute force attack.
+
+111
+00:13:32,919 --> 00:13:42,159
+因此，在这场暴力破解攻击中，我们很少能找到打印出来的文本。这样的表述更为自然和易懂。
+
+112
+00:13:42,159 --> 00:13:49,759
+So in this SIDA cipher algorithm, we can define the transformation as from every letter,
+
+112
+00:13:42,159 --> 00:13:49,759
+在这个 SIDA 密码算法中，我们可以将变换定义为从每个字母，
+
+113
+00:13:49,759 --> 00:13:58,960
+we get several texts later, three positions later in the alphabet position.
+
+113
+00:13:49,759 --> 00:13:58,960
+我们稍后获得几个文本，位于字母表中的三个位置之后，翻译得更加自然和易懂。
+
+114
+00:13:58,960 --> 00:14:07,720
+So we can assign each letter a number, just A to be zero, B to be one, C to be two.
+
+114
+00:13:58,960 --> 00:14:07,720
+因此我们可以给每个字母分配一个数字，A 为 0，B 为 1，C 为 2，这样更自然易懂。
+
+115
+00:14:07,720 --> 00:14:13,080
+And this algorithm can be expressed as encryption.
+
+115
+00:14:07,720 --> 00:14:13,080
+这个算法可以表示为加密算法。
+
+116
+00:14:13,080 --> 00:14:18,840
+The P's original print text, this three is a key.
+
+116
+00:14:13,080 --> 00:14:18,840
+P 的原版印刷文本，其中这个三是至关重要的。
+
+117
+00:14:18,879 --> 00:14:28,680
+So the encryption is P plus three mod 26.
+
+117
+00:14:18,879 --> 00:14:28,680
+因此，加密算法是 P 加 3 再对 26 取模。
+
+118
+00:14:28,680 --> 00:14:35,000
+So we get the subtext C here.
+
+118
+00:14:28,680 --> 00:14:35,000
+因此，我们得到了这里的子文本 C。
+
+119
+00:14:35,000 --> 00:14:39,759
+So of course, a shift, this example is three.
+
+119
+00:14:35,000 --> 00:14:39,759
+当然，这是一个转变，这个例子是三个。
+
+120
+00:14:39,759 --> 00:14:43,800
+A shift can be of any amount.
+
+120
+00:14:39,759 --> 00:14:43,800
+转换可以有任何数量的变动。
+
+121
+00:14:43,839 --> 00:14:50,719
+So the general SIDA algorithm is for any key to be K.
+
+121
+00:14:43,839 --> 00:14:50,719
+因此，通用的 SIDA 算法是任何密钥都等于 K。
+
+122
+00:14:50,719 --> 00:15:00,479
+So we have P plus K mod 26 to get the subtext C.
+
+122
+00:14:50,719 --> 00:15:00,479
+因此，我们通过 P 加 K 模 26 来获取子文本 C。
+
+123
+00:15:00,479 --> 00:15:08,279
+And this key K can take a value in the range from one to 25.
+
+123
+00:15:00,479 --> 00:15:08,279
+这把钥匙 K 的取值范围是一到 25。
+
+124
+00:15:08,279 --> 00:15:14,839
+The decryption process is the reverse way.
+
+124
+00:15:08,279 --> 00:15:14,839
+解密过程是反向进行的。
+
+125
+00:15:14,839 --> 00:15:21,199
+The encryption is P plus three, so the decryption is minus three.
+
+125
+00:15:14,839 --> 00:15:21,199
+加密是 P 加 3，解密则是减去 3，这样的表述更符合中文习惯。
+
+126
+00:15:21,199 --> 00:15:29,639
+So this decryption is C minus K with mod 26.
+
+126
+00:15:21,199 --> 00:15:29,639
+这段解密是 C 减去 K，取模 26。翻译得更加自然和易懂。
+
+127
+00:15:29,639 --> 00:15:35,799
+Then we can get the original print text.
+
+127
+00:15:29,639 --> 00:15:35,799
+我们就可以获取原始打印文本。（经过润色）
+
+128
+00:15:35,799 --> 00:15:38,120
+OK, this is quite simple.
+
+128
+00:15:35,799 --> 00:15:38,120
+好的，这真的很简单。
+
+129
+00:15:38,120 --> 00:15:43,440
+So here is another example from the movie, The Imitation Game.
+
+129
+00:15:38,120 --> 00:15:43,440
+这里是电影《模仿游戏》的另一个例子。（经过润色）
+
+130
+00:15:43,440 --> 00:15:50,679
+So this movie is about the story of the father of modern computer science, Alan Turing.
+
+130
+00:15:43,440 --> 00:15:50,679
+这部电影讲述了现代计算机科学奠基人艾伦·图灵的故事。
+
+131
+00:15:50,679 --> 00:16:05,519
+So in that movie, Turing gave his friend one subtext, W-I-I-C-S-Y, Mr. M-R.
+
+131
+00:15:50,679 --> 00:16:05,519
+在那部电影里，图灵给他的朋友透露了一个暗号，W-I-I-C-S-Y，M-R 先生。
+
+132
+00:16:05,519 --> 00:16:12,240
+So can I try to get the print text?
+
+132
+00:16:05,519 --> 00:16:12,240
+我可以尝试获取打印的文本吗？
+
+133
+00:16:12,240 --> 00:16:27,240
+What's a print text? You can try.
+
+133
+00:16:12,240 --> 00:16:27,240
+什么是打印文本？您可以试一试，这样的表达更自然。
+
+134
+00:16:27,240 --> 00:16:32,600
+What's a print text?
+
+134
+00:16:27,240 --> 00:16:32,600
+什么是打印文本？
+
+135
+00:16:32,680 --> 00:16:37,680
+So what's the meaning of the first word?
+
+135
+00:16:32,680 --> 00:16:37,680
+那第一个词是什么意思呢？
+
+136
+00:16:37,680 --> 00:16:39,639
+C. Good.
+
+136
+00:16:37,680 --> 00:16:39,639
+C.好。
+
+137
+00:16:39,639 --> 00:16:43,840
+So actually, you can try all the key K.
+
+137
+00:16:39,639 --> 00:16:43,840
+实际上，您可以尝试所有关键键 K。
+
+138
+00:16:43,840 --> 00:16:46,680
+Well, you have K equals one.
+
+138
+00:16:43,840 --> 00:16:46,680
+嗯，你的 K 值是一。
+
+139
+00:16:46,680 --> 00:16:51,759
+So before W, we have U, V, W, right?
+
+139
+00:16:46,680 --> 00:16:51,759
+在 W 之前，我们先有 U 和 V，然后才是 W，对吗？
+
+140
+00:16:51,759 --> 00:16:58,720
+That's V. I is H. H. Well, this is not a word.
+
+140
+00:16:51,759 --> 00:16:58,720
+这是 V，I 是 H.H. 嗯，这根本不是一个词。
+
+141
+00:16:58,720 --> 00:17:04,839
+If K equals two, we have V. Before we had U, GG.
+
+141
+00:16:58,720 --> 00:17:04,839
+如果 K 等于 2，那么就有 V。在 U 出现之前，是 GG。
+
+142
+00:17:04,839 --> 00:17:16,319
+So K equals three, we have T, F, F. K equals four, we have S, E, E.
+
+142
+00:17:04,839 --> 00:17:16,319
+因此 K 等于 3 时，我们有 T、F、F。K 等于 4 时，我们有 S、E、E。
+
+143
+00:17:16,319 --> 00:17:25,160
+So easily, we find the key K to be four in this example.
+
+143
+00:17:16,319 --> 00:17:25,160
+在这个例子中，我们很容易发现密钥 K 是 4。
+
+144
+00:17:28,720 --> 00:17:44,759
+So another very famous symmetry encryption is the technique called one-time pad.
+
+144
+00:17:28,720 --> 00:17:44,759
+另有一种非常著名的对称加密技术，被称为一次性密码。这种技术因其独特性而备受关注。
+
+145
+00:17:44,759 --> 00:17:53,240
+So this one-time pad here, a pad actually contains the code to do the encryption and
+
+145
+00:17:44,759 --> 00:17:53,240
+这里有一个一次性密码垫，实际上它包含了加密所需的代码
+
+146
+00:17:53,240 --> 00:17:57,120
+decryption, this pad.
+
+146
+00:17:53,240 --> 00:17:57,120
+解密，这个垫子。
+
+147
+00:17:57,119 --> 00:18:03,919
+And this one-time pad is an improvement to the Verlamp Cypher and is proposed by an army
+
+147
+00:17:57,119 --> 00:18:03,919
+这一次性密码是对 Verlamp 密码的改进，由军队提出，是一种提升加密安全性的方法
+
+148
+00:18:03,919 --> 00:18:12,119
+signal cop officer Joseph.
+
+148
+00:18:03,919 --> 00:18:12,119
+信号警察官员约瑟夫（更自然地表达）。
+
+149
+00:18:12,119 --> 00:18:22,719
+The key in this one-time pad is a random string that is a list as long as the print text.
+
+149
+00:18:12,119 --> 00:18:22,719
+这一次性密码的密钥是一个随机字符串，其长度与打印文本一致。
+
+150
+00:18:22,720 --> 00:18:30,600
+So when you have a very long sentence, you have the same length of key to do the encryption
+
+150
+00:18:22,720 --> 00:18:30,600
+当你面对一个特别长的句子时，你需要使用同样长度的密钥来进行加密处理
+
+151
+00:18:30,600 --> 00:18:32,160
+and to do the decryption.
+
+151
+00:18:30,600 --> 00:18:32,160
+进行解密。
+
+152
+00:18:32,160 --> 00:18:39,880
+Well, because it's a one-time pad and the string is totally random, and we require that
+
+152
+00:18:32,160 --> 00:18:39,880
+嗯，因为这是一次性密码，字符串完全随机，所以我们要求
+
+153
+00:18:39,880 --> 00:18:43,759
+the key will not be repeated.
+
+153
+00:18:39,880 --> 00:18:43,759
+关键字不会重复，表述更自然。
+
+154
+00:18:43,759 --> 00:18:49,400
+So each new message requires a new key.
+
+154
+00:18:43,759 --> 00:18:49,400
+每发送一条新消息，就需要一个新的密钥。
+
+155
+00:18:50,240 --> 00:18:59,600
+So this one-time pad, this scheme is unbreakable.
+
+155
+00:18:50,240 --> 00:18:59,600
+这一次性密码方案，是不可破解的。
+
+156
+00:18:59,600 --> 00:19:06,400
+The reason is because the self-text is a random output.
+
+156
+00:18:59,600 --> 00:19:06,400
+原因是自我文本是随机生成的。这样的表述更为自然易懂。
+
+157
+00:19:06,400 --> 00:19:14,440
+Because your key is totally random, this will make your self-text to be totally random.
+
+157
+00:19:06,400 --> 00:19:14,440
+因为你的密钥完全随机，所以你的自我文本也会变得完全随机，这样的设置更符合随机性原则。
+
+158
+00:19:14,480 --> 00:19:20,360
+The self-text contains no information whatsoever about the print text.
+
+158
+00:19:14,480 --> 00:19:20,360
+自文本完全没有提供有关印刷文本的任何信息。
+
+159
+00:19:20,360 --> 00:19:27,720
+So this is the reason why we have no way to break the code.
+
+159
+00:19:20,360 --> 00:19:27,720
+这正是我们无法破解代码的原因所在。
+
+160
+00:19:27,720 --> 00:19:31,840
+So encryption, we use the one-time pad, the key.
+
+160
+00:19:27,720 --> 00:19:31,840
+因此，我们使用一次性密码，也就是密钥。这样的表述更加自然易懂。
+
+161
+00:19:31,840 --> 00:19:36,640
+So decryption, we use the same key.
+
+161
+00:19:31,840 --> 00:19:36,640
+解密时，我们使用相同的密钥。这个翻译更加自然易懂。
+
+162
+00:19:36,640 --> 00:19:41,480
+This encryption is similar to the shift cypher.
+
+162
+00:19:36,640 --> 00:19:41,480
+这种加密方式与移位密码相似。
+
+163
+00:19:41,480 --> 00:19:50,599
+So we look at the general form for this one-time pad and support that Zn is a set to represent
+
+163
+00:19:41,480 --> 00:19:50,599
+因此，我们研究这种一次性密码的通用形式，并支持 Zn 是一个集合
+
+164
+00:19:50,599 --> 00:19:52,880
+the alphabet.
+
+164
+00:19:50,599 --> 00:19:52,880
+英文字母表。
+
+165
+00:19:52,880 --> 00:19:59,799
+So alphabet number from 0 to n must 1, n must 1.
+
+165
+00:19:52,880 --> 00:19:59,799
+从 0 到 n 的字母数字必须为 1，n 也必须为 1。这样的表述更为自然和易懂。
+
+166
+00:19:59,799 --> 00:20:07,640
+And the print text space equals the self-text space, that's a key space.
+
+166
+00:19:59,799 --> 00:20:07,640
+打印文本空间与自文本空间相等，这是一个关键空间。翻译更加自然，易于理解。
+
+167
+00:20:07,640 --> 00:20:21,520
+That means, well, we can have, suppose the length of the print text is n, just like here.
+
+167
+00:20:07,640 --> 00:20:21,520
+这意味着，嗯，假设这里的打印文本长度为 n。这样的表述更为自然易懂。
+
+168
+00:20:21,520 --> 00:20:26,440
+And the print text, we have n characters.
+
+168
+00:20:21,520 --> 00:20:26,440
+打印文本，我们共有 n 个字符。
+
+169
+00:20:26,440 --> 00:20:35,720
+The key, the same length, so key, we have same n keys.
+
+169
+00:20:26,440 --> 00:20:35,720
+钥匙长度一致，因此我们拥有相同数量的 n 把钥匙。
+
+170
+00:20:35,799 --> 00:20:40,839
+The self-text can be the same length.
+
+170
+00:20:35,799 --> 00:20:40,839
+自文本长度可以一致。
+
+171
+00:20:40,839 --> 00:20:53,920
+For the encryption, so every character is in this range from 0 to n must 1, n must 1.
+
+171
+00:20:40,839 --> 00:20:53,920
+为了加密，每个字符都必须位于 0 到 n 的范围内，且 n 必须为 1。
+
+172
+00:20:53,920 --> 00:21:10,120
+So this m is the length of the print text.
+
+172
+00:20:53,920 --> 00:21:10,120
+这里的 m 表示打印文本的长度。
+
+173
+00:21:10,120 --> 00:21:18,039
+Zn is every character belong to the Zn, that set.
+
+173
+00:21:10,120 --> 00:21:18,039
+Zn 集合中的每个字符都属于 Zn。
+
+174
+00:21:18,159 --> 00:21:34,920
+For encryption, we can get the self-text yi to be xi plus ki.
+
+174
+00:21:18,159 --> 00:21:34,920
+对于加密，我们可以将自文本 yi 转换为 xi 并加上密钥 ki。
+
+175
+00:21:34,920 --> 00:21:40,240
+We take mod m.
+
+175
+00:21:34,920 --> 00:21:40,240
+我们取模数 m。
+
+176
+00:21:40,440 --> 00:21:52,440
+This is yi, because totally we have m, the number, to be the total number of alphabet.
+
+176
+00:21:40,440 --> 00:21:52,440
+这是“一”，因为总共的字母数量用“m”来表示。
+
+177
+00:21:52,440 --> 00:22:05,359
+So you can see, this is the encryption process for the given print text and the key.
+
+177
+00:21:52,440 --> 00:22:05,359
+因此您可以看，这是给定打印文本和密钥的加密过程。翻译得更加自然和易于理解。
+
+178
+00:22:05,359 --> 00:22:08,759
+For the decryption, that's a reverse part.
+
+178
+00:22:05,359 --> 00:22:08,759
+解密时，这是一个反向的部分。
+
+179
+00:22:08,759 --> 00:22:23,759
+So reverse means, well, for every given yi, with minus ki, with mod m, then we can get
+
+179
+00:22:08,759 --> 00:22:23,759
+所以，逆运算的意思是，对于每一个给定的 yi，减去 ki，再对 m 取模，这样我们就可以得到
+
+180
+00:22:23,759 --> 00:22:30,559
+the print text xi.
+
+180
+00:22:23,759 --> 00:22:30,559
+打印文本 xi。
+
+181
+00:22:30,559 --> 00:22:45,359
+So here you can see, the y2 minus k2, mod m, we get the original x2.
+
+181
+00:22:30,559 --> 00:22:45,359
+因此，在这里你可以看到，y2 减去 k2，对 m 取模，就能得到原始的 x2。
+
+182
+00:22:45,359 --> 00:22:49,359
+So this one is y2, OK?
+
+182
+00:22:45,359 --> 00:22:49,359
+好的，这个是 y2，没问题？
+
+183
+00:22:50,159 --> 00:23:03,159
+So now we look at a particular case for the one-time pad.
+
+183
+00:22:50,159 --> 00:23:03,159
+现在我们来具体分析一次性密码的一个案例。
+
+184
+00:23:03,159 --> 00:23:06,879
+It is a binary version.
+
+184
+00:23:03,159 --> 00:23:06,879
+这是一个二进制版本。
+
+185
+00:23:06,879 --> 00:23:17,519
+So binary version means every code should be either 0 or 1, should be a bit with two
+
+185
+00:23:06,879 --> 00:23:17,519
+二进制版本意味着每个代码都应该要么是 0 要么是 1，应该是一个二进制位，由两个数字组成
+
+186
+00:23:17,680 --> 00:23:24,680
+values, 0 or 1, and the key should be chosen randomly.
+
+186
+00:23:17,680 --> 00:23:24,680
+值应为 0 或 1，键需要随机选择。
+
+187
+00:23:24,680 --> 00:23:36,680
+For example, if the print text is 1101, 1111, suppose we have a key, and this key is here.
+
+187
+00:23:24,680 --> 00:23:36,680
+例如，如果打印的文本是 1101 或 1111，假设我们有一个密钥，这个密钥就在此处。
+
+188
+00:23:36,680 --> 00:23:45,480
+Well, the key has the same length as the print text, and then we do the add operation, right?
+
+188
+00:23:36,680 --> 00:23:45,480
+嗯，密钥长度与打印文本相同，然后进行加法操作，对吗？
+
+189
+00:23:45,480 --> 00:23:55,079
+We add them together, and well, m here is 2, because we have only two values for every
+
+189
+00:23:45,480 --> 00:23:55,079
+我们将它们相加，嗯，这里的 m 是 2，因为每个值只有两个
+
+190
+00:23:55,079 --> 00:23:58,680
+letter, for every character.
+
+190
+00:23:55,079 --> 00:23:58,680
+每个字符都写一封信。
+
+191
+00:23:58,680 --> 00:24:08,240
+So we add them together, then we take the mod 2 operation, and we look at the subtext
+
+191
+00:23:58,680 --> 00:24:08,240
+我们将它们相加，然后进行模 2 运算，再观察其子文本
+
+192
+00:24:08,240 --> 00:24:13,799
+should be 1 plus 0 is 1, 1 plus 1 is 2.
+
+192
+00:24:08,240 --> 00:24:13,799
+应该是 1 加 0 等于 1，1 加 1 等于 2（更自然、更易理解的表达）。
+
+193
+00:24:13,799 --> 00:24:19,359
+So 2 mod 2 is 0, right?
+
+193
+00:24:13,799 --> 00:24:19,359
+所以 2 除以 2 等于 0，没错吧？
+
+194
+00:24:19,359 --> 00:24:26,759
+And then we have 1, 1, this is 0, 0, 1, 0.
+
+194
+00:24:19,359 --> 00:24:26,759
+然后我们来看，这里有 1, 1，那边是 0, 0，再过去是 1, 0。
+
+195
+00:24:26,759 --> 00:24:31,759
+OK, this is a subtext.
+
+195
+00:24:26,759 --> 00:24:31,759
+好的，这是一个子文本。（经过润色，使其更自然易懂）
+
+196
+00:24:31,759 --> 00:24:47,160
+So from a subtext, how can we get the print text?
+
+196
+00:24:31,759 --> 00:24:47,160
+从副文本中，我们如何提取打印文本？
+
+197
+00:24:47,160 --> 00:24:55,599
+Here is plus, according to our previous slide operation, which was minus, right?
+
+197
+00:24:47,160 --> 00:24:55,599
+这里是加号，根据我们之前的操作，应该是减号，对吧？
+
+198
+00:24:55,599 --> 00:24:57,839
+Minus here.
+
+198
+00:24:55,599 --> 00:24:57,839
+这里减去。 (更自然地表达)
+
+199
+00:24:58,720 --> 00:25:14,359
+Then we use the same key k, 0, 1, 1, 0, 1, 0, 0, 1, with minus the key k, and then we
+
+199
+00:24:58,720 --> 00:25:14,359
+然后我们使用相同的密钥 k，0，1，1，0，1，0，0，1，并减去该密钥 k，接着..
+
+200
+00:25:14,359 --> 00:25:21,879
+have the same mod 2 operation, mod 2.
+
+200
+00:25:14,359 --> 00:25:21,879
+具有相同的模 2 运算特性，即模 2。
+
+201
+00:25:21,920 --> 00:25:37,800
+OK, well, 1 minus 0 is 1, 0 minus 1 is 1, mod 2 is 1, 0 minus 1 is 1, 1 minus 2 is 1.
+
+201
+00:25:21,920 --> 00:25:37,800
+好吧，1 减去 0 等于 1，0 减去 1 等于 1，取模 2 等于 1，0 减去 1 等于 1，1 减去 2 等于 1。
+
+202
+00:25:37,800 --> 00:25:50,000
+So 1, 1 is 0, 1 minus 0 is 1, 0 minus 1 is 1, 1 minus 0 is 1, oh sorry, this is 0 minus
+
+202
+00:25:37,800 --> 00:25:50,000
+所以 1，1 等于 0，1 减 0 等于 1，0 减 1 等于 1，1 减 0 等于 1，哦不好意思，这是 0 减
+
+203
+00:25:50,000 --> 00:25:55,400
+0 is 0, 1 minus 0 is 1, 0 minus 1 is 1.
+
+203
+00:25:50,000 --> 00:25:55,400
+0 等于 0，1 减去 0 等于 1，0 减去 1 也等于 1。
+
+204
+00:25:55,400 --> 00:26:02,319
+So this is exactly the original print text.
+
+204
+00:25:55,400 --> 00:26:02,319
+这正是原始打印文本的内容，翻译如下：
+
+205
+00:26:06,319 --> 00:26:13,839
+For bit operation, in fact, we have different functions available.
+
+205
+00:26:06,319 --> 00:26:13,839
+对于位运算来说，实际上我们提供了多种函数。以下是对其的更自然和易于理解的翻译：实际上，位运算有多种函数可供选择。
+
+206
+00:26:13,839 --> 00:26:24,359
+So for bit, we can do AND operation, this is AND, like 0 is 0, 0 and 1 is 0, 1, 0 is
+
+206
+00:26:13,839 --> 00:26:24,359
+对于位运算，我们可以进行 AND 操作，即 0 与 0 为 0，0 与 1 为 0，1 与 0 为 0
+
+207
+00:26:24,359 --> 00:26:33,839
+0, 1, 1 is 1, and we have the bit operation to be OR, OR means either one is 1, then the
+
+207
+00:26:24,359 --> 00:26:33,839
+0, 1, 1 等于 1，而且我们使用位或运算，位或运算表示任一为 1 即可
+
+208
+00:26:33,839 --> 00:26:36,039
+result will be 1.
+
+208
+00:26:33,839 --> 00:26:36,039
+结果将是 1
+
+209
+00:26:36,039 --> 00:26:39,439
+And also we have the addition mod 2.
+
+209
+00:26:36,039 --> 00:26:39,439
+我们还增加了模 2 的加法操作。
+
+210
+00:26:39,440 --> 00:26:46,080
+So this is also known as bit, exclusive OR operation.
+
+210
+00:26:39,440 --> 00:26:46,080
+这也称作比特，也就是我们常说的异或运算。
+
+211
+00:26:46,080 --> 00:26:57,920
+Exclusive OR means the same will be 0, the different inputs will have the result to be 1.
+
+211
+00:26:46,080 --> 00:26:57,920
+“异或运算表示相同输入结果为 0，不同输入结果为 1。”
+
+212
+00:26:57,920 --> 00:27:11,880
+And this is addition, just like previously, or subtraction mod 2, addition mod 2 is same
+
+212
+00:26:57,920 --> 00:27:11,880
+就像之前一样，这里是加法，或者是模 2 的减法，加法对 2 取模的结果是一样的
+
+213
+00:27:11,880 --> 00:27:15,600
+as exclusive OR operation.
+
+213
+00:27:11,880 --> 00:27:15,600
+作为异或运算，表达更为自然。
+
+214
+00:27:15,600 --> 00:27:22,960
+So previously you can see we have addition mod 2, addition mod 2, and this subtraction
+
+214
+00:27:15,600 --> 00:27:22,960
+之前可以看到，这里进行了加法模 2、加法模 2 和减法操作
+
+215
+00:27:23,000 --> 00:27:31,200
+mod 2 is same as addition mod 2.
+
+215
+00:27:23,000 --> 00:27:31,200
+模 2 运算等同于加法模 2 运算。
+
+216
+00:27:31,200 --> 00:27:38,720
+Now we have this question, can we use operators other than bit XOR for binary version of one-time
+
+216
+00:27:31,200 --> 00:27:38,720
+现在我们有一个问题，能否使用除位异或以外的运算符来表示一次一密算法的二进制形式
+
+217
+00:27:38,720 --> 00:27:39,720
+pad?
+
+217
+00:27:38,720 --> 00:27:39,720
+填空？
+
+218
+00:27:39,720 --> 00:27:51,240
+In other words, can we use the AND operation here for these two bit strings?
+
+218
+00:27:39,720 --> 00:27:51,240
+换句话说，我们能否在这里对这两个位字符串进行 AND 运算？
+
+219
+00:27:51,240 --> 00:27:56,480
+Yes or no?
+
+219
+00:27:51,240 --> 00:27:56,480
+是吗？还是不是？
+
+220
+00:27:56,480 --> 00:28:01,079
+So here, previously we used addition mod 2, right?
+
+220
+00:27:56,480 --> 00:28:01,079
+那么，之前我们用的是模 2 加法，没错吧？
+
+221
+00:28:01,079 --> 00:28:06,440
+Addition mod 2 means exclusive OR, so how about can we use AND?
+
+221
+00:28:01,079 --> 00:28:06,440
+加法模 2 相当于异或运算，那么我们能否考虑使用与运算呢？
+
+222
+00:28:06,440 --> 00:28:07,440
+Yes or no?
+
+222
+00:28:06,440 --> 00:28:07,440
+是吗？还是不是？
+
+223
+00:28:07,440 --> 00:28:12,839
+Can we use AND to do the encryption?
+
+223
+00:28:07,440 --> 00:28:12,839
+我们能否使用 AND 进行加密？
+
+224
+00:28:12,839 --> 00:28:14,720
+No?
+
+224
+00:28:12,839 --> 00:28:14,720
+不吗？
+
+225
+00:28:14,720 --> 00:28:16,559
+So we can try, right?
+
+225
+00:28:14,720 --> 00:28:16,559
+我们可以试试，没错吧？
+
+226
+00:28:16,559 --> 00:28:25,920
+Just like the first four bits, 1, 1, 0, 1, 0, 1, 1, 0, we'll do AND operation.
+
+226
+00:28:16,559 --> 00:28:25,920
+就像前四个比特位那样，1, 1, 0, 1, 0, 1, 1, 0，我们将执行 AND 运算。
+
+227
+00:28:25,920 --> 00:28:31,440
+If we have AND, that means both of them to be 1, the result is 1, otherwise the result
+
+227
+00:28:25,920 --> 00:28:31,440
+如果我们使用 AND 逻辑运算符，那么只有当两个条件都为真时，结果才为真，否则结果为假
+
+228
+00:28:31,440 --> 00:28:32,440
+is 0.
+
+228
+00:28:31,440 --> 00:28:32,440
+是零。
+
+229
+00:28:32,440 --> 00:28:37,360
+So this 0, 1, 0, 0.
+
+229
+00:28:32,440 --> 00:28:37,360
+这就是 0、1、0、0。
+
+230
+00:28:37,359 --> 00:28:49,199
+And for this one actually, even we have the key K, the key, this is the key, we will use
+
+230
+00:28:37,359 --> 00:28:49,199
+对于这个，即便我们有密钥 K，这个密钥，也就是我们要使用的密钥
+
+231
+00:28:49,199 --> 00:29:02,559
+same key to be 0, 1, 1, 0, and how can we get back the original message?
+
+231
+00:28:49,199 --> 00:29:02,559
+相同的键分别为 0、1、1、0，如何找回原始信息？
+
+232
+00:29:02,559 --> 00:29:12,200
+If we take the AND operation again, this will get 0, 1, 0, 0.
+
+232
+00:29:02,559 --> 00:29:12,200
+如果再次执行 AND 运算，结果将是 0，1，0，0。
+
+233
+00:29:12,200 --> 00:29:18,220
+So this one does not equal to the P, right?
+
+233
+00:29:12,200 --> 00:29:18,220
+这个不等于 P，对吧？
+
+234
+00:29:18,220 --> 00:29:30,519
+So that means AND cannot be adopted in this kind of encryption and decryption.
+
+234
+00:29:18,220 --> 00:29:30,519
+这意味着在这种加密解密过程中不能使用 AND 运算。
+
+235
+00:29:30,519 --> 00:29:36,200
+And to the OR operation, so the answer here is no.
+
+235
+00:29:30,519 --> 00:29:36,200
+对于或运算来说，这里的答案是否定的，表达得更加自然。
+
+236
+00:29:36,200 --> 00:29:45,759
+What we can do is we use the addition mod 2, just like the bit XOR in this encryption
+
+236
+00:29:36,200 --> 00:29:45,759
+我们可以使用模 2 加法，就像在这次加密中使用的位异或操作一样，这是一种可行的方法
+
+237
+00:29:45,759 --> 00:29:46,759
+and decryption.
+
+237
+00:29:45,759 --> 00:29:46,759
+加密与解密。
+
+238
+00:29:46,759 --> 00:29:47,759
+That would be fine.
+
+238
+00:29:46,759 --> 00:29:47,759
+没问题。
+
+239
+00:29:47,759 --> 00:29:55,639
+Otherwise, the answer would be no.
+
+239
+00:29:47,759 --> 00:29:55,639
+否则，答案就是不行。这样的表达更符合中文习惯。
+
+240
+00:29:55,640 --> 00:30:07,200
+So one time part, why do we say it is perfect, it is the perfect solution?
+
+240
+00:29:55,640 --> 00:30:07,200
+以前有一次，我们为什么会说它是完美的呢？因为它真的是一个完美的解决方案！
+
+241
+00:30:07,200 --> 00:30:09,840
+So this one is perfect security.
+
+241
+00:30:07,200 --> 00:30:09,840
+这个非常安全。
+
+242
+00:30:09,840 --> 00:30:15,860
+The reason is because the key is totally random.
+
+242
+00:30:09,840 --> 00:30:15,860
+原因是，这个键完全是随机的，所以...
+
+243
+00:30:15,860 --> 00:30:18,320
+So we look at this example.
+
+243
+00:30:15,860 --> 00:30:18,320
+我们来看看这个例子。
+
+244
+00:30:18,319 --> 00:30:25,319
+This is the subtext here.
+
+244
+00:30:18,319 --> 00:30:25,319
+这是这里的子文本（经过润色，使其更自然易懂）。
+
+245
+00:30:25,319 --> 00:30:36,500
+We can have the exhaustive search of all possible keys, and it is possible that we can get many
+
+245
+00:30:25,319 --> 00:30:36,500
+我们可以对所有可能的键进行全面搜索，可能会得到大量结果
+
+246
+00:30:36,500 --> 00:30:40,240
+legible plaintext.
+
+246
+00:30:36,500 --> 00:30:40,240
+可读的纯文本。
+
+247
+00:30:40,240 --> 00:30:46,379
+So we have no way to know which one was intended plaintext.
+
+247
+00:30:40,240 --> 00:30:46,379
+因此我们无法确定哪一个是预期的明文。
+
+248
+00:30:46,380 --> 00:30:50,140
+So one example is we have this subtext.
+
+248
+00:30:46,380 --> 00:30:50,140
+举个例子，我们这里有一个这样的子文本。
+
+249
+00:30:50,140 --> 00:30:55,500
+And we'll suppose we have the key K, K1 to be here.
+
+249
+00:30:50,140 --> 00:30:55,500
+我们假设这里有一个密钥 K，K1。
+
+250
+00:30:55,500 --> 00:31:02,460
+Your key K can be any characters, one time part, right?
+
+250
+00:30:55,500 --> 00:31:02,460
+您的密钥 K 可以是任意字符，这是单次使用的部分，对吧？
+
+251
+00:31:02,460 --> 00:31:07,180
+The key will not be repeated, and you don't know what the key K is.
+
+251
+00:31:02,460 --> 00:31:07,180
+密钥不会被重复使用，而且您并不知道密钥 K 的具体内容。
+
+252
+00:31:07,180 --> 00:31:12,860
+So the key K1 is here, then we have the plaintext to be this sentence.
+
+252
+00:31:07,180 --> 00:31:12,860
+因此，这里找到了密钥 K1，接下来是这个句子的明文内容。
+
+253
+00:31:12,859 --> 00:31:17,099
+The sentence has some meaning.
+
+253
+00:31:12,859 --> 00:31:17,099
+这句话有某种含义。
+
+254
+00:31:17,099 --> 00:31:27,059
+If we use another key K2, then we will get another plaintext P2.
+
+254
+00:31:17,099 --> 00:31:27,059
+如果我们使用另一个密钥 K2，那么我们会得到另一段明文 P2。这样的表述更加自然和易于理解。
+
+255
+00:31:27,059 --> 00:31:41,219
+So either P1, P2 actually, they contain some meaning.
+
+255
+00:31:27,059 --> 00:31:41,219
+因此，要么是 P1，要么是 P2，实际上它们都含有一定的意义。
+
+256
+00:31:41,220 --> 00:31:47,460
+So in this way, you can see, in fact, because the key can be totally random, and thus we
+
+256
+00:31:41,220 --> 00:31:47,460
+因此，你可以看到，实际上，由于密钥可以完全随机，所以
+
+257
+00:31:47,460 --> 00:31:55,299
+cannot know what's the original plaintext, unless you have the key K.
+
+257
+00:31:47,460 --> 00:31:55,299
+无法得知原文内容，除非您拥有密钥 K。
+
+258
+00:31:55,299 --> 00:32:03,019
+If you have the key K, then you will know what's the original plaintext.
+
+258
+00:31:55,299 --> 00:32:03,019
+如果您拥有密钥 K，那么您将知道原始明文的内容。
+
+259
+00:32:04,019 --> 00:32:12,420
+However, one time part, we say it is a perfect solution.
+
+259
+00:32:04,019 --> 00:32:12,420
+然而，有次我们称其为完美解决方案。
+
+260
+00:32:12,420 --> 00:32:25,859
+However, in practice, when we apply this technique, it has two fundamental difficulties.
+
+260
+00:32:12,420 --> 00:32:25,859
+然而，实际上应用这项技术时，存在两个根本性的难题。
+
+261
+00:32:25,859 --> 00:32:31,059
+So there is a practical problem of making large quantities of random key.
+
+261
+00:32:25,859 --> 00:32:31,059
+因此，制作大量随机密钥确实存在一个实际问题。
+
+262
+00:32:31,099 --> 00:32:39,859
+This is the first difficulty, because if your original message is very long, you need to
+
+262
+00:32:31,099 --> 00:32:39,859
+这是第一个难点，因为如果您的原始信息过长，您就需要
+
+263
+00:32:39,859 --> 00:32:43,259
+generate the same length of the key.
+
+263
+00:32:39,859 --> 00:32:43,259
+生成与密钥相同长度的内容（优化版）。
+
+264
+00:32:43,259 --> 00:32:52,980
+So that means your key will be very long, and it can be millions of random characters
+
+264
+00:32:43,259 --> 00:32:52,980
+这意味着您的密钥会非常长，可能包含数百万个随机字符，请确保记住它
+
+265
+00:32:52,980 --> 00:32:55,419
+on a regular basis.
+
+265
+00:32:52,980 --> 00:32:55,419
+定期
+
+266
+00:32:55,419 --> 00:32:57,460
+So this is difficult.
+
+266
+00:32:55,419 --> 00:32:57,460
+这真的很困难。
+
+267
+00:32:57,460 --> 00:33:04,539
+The first difficulty is to generate large quantities of random keys.
+
+267
+00:32:57,460 --> 00:33:04,539
+首先的挑战在于生成大量随机密钥。
+
+268
+00:33:04,539 --> 00:33:14,059
+The second difficulty is, once you have the key, how can you send the key to the receiver?
+
+268
+00:33:04,539 --> 00:33:14,059
+第二个难题在于，一旦你掌握了密钥，如何将密钥安全地传递给接收方？
+
+269
+00:33:14,059 --> 00:33:21,900
+So we call this one the key distribution problem.
+
+269
+00:33:14,059 --> 00:33:21,900
+我们将其称作密钥分发问题
+
+270
+00:33:21,900 --> 00:33:24,460
+You have the key, that's fine.
+
+270
+00:33:21,900 --> 00:33:24,460
+你有钥匙，这挺好的。
+
+271
+00:33:24,460 --> 00:33:33,019
+How can you let your receiver to have the same key as you?
+
+271
+00:33:24,460 --> 00:33:33,019
+你怎么能让你的接收者使用和你相同的密钥呢？
+
+272
+00:33:33,019 --> 00:33:38,819
+So because of these difficulties, the one time part is of limited utility.
+
+272
+00:33:33,019 --> 00:33:38,819
+因此，鉴于这些困难，一次性方案的作用相对有限，表述更为自然。
+
+273
+00:33:38,819 --> 00:33:47,740
+So to use primer relief for low bandwidth channels, that requires very high security.
+
+273
+00:33:38,819 --> 00:33:47,740
+因此，要在低带宽通道中使用引言缓解，必须确保极高的安全性。
+
+274
+00:33:47,740 --> 00:33:57,019
+So this key distribution problem is, you see, you will send the key to your receiver.
+
+274
+00:33:47,740 --> 00:33:57,019
+这个密钥分发问题是这样的，你需要把密钥发给你的接收者。这样的表述更自然、易懂。
+
+275
+00:33:57,019 --> 00:34:06,660
+However, before the sending, you should send the key K to the receiver.
+
+275
+00:33:57,019 --> 00:34:06,660
+然而，在发送之前，您应先将密钥 K 发送给接收方。
+
+276
+00:34:06,660 --> 00:34:13,139
+The key K has the same length as your plaintext.
+
+276
+00:34:06,660 --> 00:34:13,139
+密钥 K 的长度与您的明文长度一致。
+
+277
+00:34:13,139 --> 00:34:28,500
+If you can send the key K, why not directly send the plaintext P, right?
+
+277
+00:34:13,139 --> 00:34:28,500
+如果你能够发送密钥 K，为何不直接发送明文 P 呢？
+
+278
+00:34:28,500 --> 00:34:32,619
+So we talked about the one time part.
+
+278
+00:34:28,500 --> 00:34:32,619
+我们曾经讨论过那次的部分内容。
+
+279
+00:34:32,619 --> 00:34:39,900
+The purpose is to let you know this one time part solution is the only crypto system that
+
+279
+00:34:32,619 --> 00:34:39,900
+目的是让您知道，这个一次性解决方案是唯一的加密系统，目的是让您了解这一点
+
+280
+00:34:39,900 --> 00:34:44,059
+exhibits perfect secrecy.
+
+280
+00:34:39,900 --> 00:34:44,059
+展现出极致的保密性。
+
+281
+00:34:44,059 --> 00:34:53,260
+The only solution, that's AES, the submission encryption, the public key scheme, or those
+
+281
+00:34:44,059 --> 00:34:53,260
+唯一可行的解决方案是 AES 加密、公钥方案等
+
+282
+00:34:53,260 --> 00:35:06,700
+or other cryptography, those schemes are not perfect, cannot provide perfect security.
+
+282
+00:34:53,260 --> 00:35:06,700
+或其他密码学方案并不完美，无法提供绝对的安全性。这样的方案并不完美，不能提供绝对的安全保障。
+
+283
+00:35:06,699 --> 00:35:11,699
+So this is the only one that can show the perfect secrecy.
+
+283
+00:35:06,699 --> 00:35:11,699
+这就是唯一一个能够展示完美保密性的例子。
+
+284
+00:35:17,699 --> 00:35:19,699
+Okay, any questions?
+
+284
+00:35:17,699 --> 00:35:19,699
+好的，有什么问题吗？
+
+285
+00:35:19,699 --> 00:35:24,699
+So part one is about the submission encryption.
+
+285
+00:35:19,699 --> 00:35:24,699
+第一部分主要讲述提交加密的内容。
+
+286
+00:35:24,699 --> 00:35:27,699
+Well, not difficult, right?
+
+286
+00:35:24,699 --> 00:35:27,699
+嗯，这不难，对吧？
+
+287
+00:35:27,699 --> 00:35:35,500
+And now we go to the part two about the RSA algorithm.
+
+287
+00:35:27,699 --> 00:35:35,500
+现在我们来详细讲解 RSA 算法的第二部分。
+
+288
+00:35:35,500 --> 00:35:47,539
+So RSA algorithm was invented by these three guys, Rivest, Shamir, and Edelman, so developed
+
+288
+00:35:35,500 --> 00:35:47,539
+所以 RSA 算法是由这三个大牛——Rivest、Shamir 和 Edelman——发明的，因此得到了发展
+
+289
+00:35:47,539 --> 00:35:50,699
+in 1977.
+
+289
+00:35:47,539 --> 00:35:50,699
+1977 年。
+
+290
+00:35:50,699 --> 00:35:59,139
+So this RSA algorithm is the most widely used general purpose approach to the public key
+
+290
+00:35:50,699 --> 00:35:59,139
+因此，这个 RSA 算法是最广泛使用的通用公钥加密方法
+
+291
+00:35:59,139 --> 00:36:01,820
+encryption.
+
+291
+00:35:59,139 --> 00:36:01,820
+加密
+
+292
+00:36:01,820 --> 00:36:13,539
+So in this algorithm, we will assume that the cipher, so this is the cipher in which
+
+292
+00:36:01,820 --> 00:36:13,539
+因此，在这个算法中，我们假设使用这种密文，下面我们将进行相关操作
+
+293
+00:36:13,539 --> 00:36:25,019
+the plaintext and the ciphertext are integers between 0 and M-1 for some n.
+
+293
+00:36:13,539 --> 00:36:25,019
+明文和密文是介于 0 和 M-1 之间的整数，对于某个 n 值。
+
+294
+00:36:25,219 --> 00:36:35,340
+A table size for n is 1024 bits or 309 decimal digits.
+
+294
+00:36:25,219 --> 00:36:35,340
+n 的大小为 1024 位，相当于 309 个十进制数字。
+
+295
+00:36:35,340 --> 00:36:50,219
+So we'll assume that while you encrypt your original message, M should be, well, the M,
+
+295
+00:36:35,340 --> 00:36:50,219
+因此，我们假设在您加密原始信息时，M 应该就是那个 M
+
+296
+00:36:50,219 --> 00:37:02,819
+the length is the same as the, well, almost to be this same size as n.
+
+296
+00:36:50,219 --> 00:37:02,819
+长度几乎与 n 的大小相同。
+
+297
+00:37:02,819 --> 00:37:05,219
+So n is 1024 bits.
+
+297
+00:37:02,819 --> 00:37:05,219
+n 的位数是 1024 位。
+
+298
+00:37:05,219 --> 00:37:17,139
+So n, the size also is, yeah, should be almost 1024 bits.
+
+298
+00:37:05,219 --> 00:37:17,139
+所以，大小也是，没错，应该是接近 1024 位。
+
+299
+00:37:17,139 --> 00:37:18,559
+This is the plaintext.
+
+299
+00:37:17,139 --> 00:37:18,559
+这是经过润色的中文翻译，使其更自然易懂。
+
+300
+00:37:18,559 --> 00:37:22,360
+The plaintext should be smaller than your chosen n.
+
+300
+00:37:18,559 --> 00:37:22,360
+明文应小于您所选的 n 值。
+
+301
+00:37:27,360 --> 00:37:36,119
+We look at how we can get the RSA algorithm from our studied Euler's theorem.
+
+301
+00:37:27,360 --> 00:37:36,119
+我们探讨如何从研究过的欧拉定理中提取 RSA 算法，表述更为自然易懂。
+
+302
+00:37:36,119 --> 00:37:43,199
+So Euler's theorem tells you that for every n and n, that are relative prime.
+
+302
+00:37:36,119 --> 00:37:43,199
+欧拉定理指出，对于任意两个互质的数 n 和 n，这表明...
+
+303
+00:37:43,199 --> 00:37:57,699
+So relative prime is the gcd, n, n is 1, the relative prime.
+
+303
+00:37:43,199 --> 00:37:57,699
+因此，互质就是指最大公约数为 1，即两个数互质。
+
+304
+00:37:57,699 --> 00:38:06,899
+Then we have this function, a to the phi n is congruent to 1 mod n.
+
+304
+00:37:57,699 --> 00:38:06,899
+然后我们有一个这样的函数，a 除以 n 的余数等于φ(n)。
+
+305
+00:38:06,900 --> 00:38:26,400
+So phi means the number of data that are relative prime to n.
+
+305
+00:38:06,900 --> 00:38:26,400
+因此φ表示与 n 互质的数的数量。
+
+306
+00:38:26,400 --> 00:38:34,400
+The total number of those data to be relative prime to n.
+
+306
+00:38:26,400 --> 00:38:34,400
+与 n 互质的这些数据总数。
+
+307
+00:38:34,400 --> 00:38:40,900
+And those data should be in the range from 1 to a mass 1.
+
+307
+00:38:34,400 --> 00:38:40,900
+这些数据应位于 1 至质量 1 的范围内。
+
+308
+00:38:40,900 --> 00:38:52,500
+Well, if both sides with times a, we have the a to the phi n plus 1 is congruent to
+
+308
+00:38:40,900 --> 00:38:52,500
+好吧，如果两边都乘以时间 a，那么 a 的φn 加 1 就等于..
+
+309
+00:38:52,500 --> 00:38:55,260
+a mod n.
+
+309
+00:38:52,500 --> 00:38:55,260
+模 n
+
+310
+00:38:55,260 --> 00:39:08,260
+Of course, we know a general form is, from this one we have a phi n to the k's.
+
+310
+00:38:55,260 --> 00:39:08,260
+当然，我们知道一般形式是这样的，从这个中我们可以得到一个从φ n 到 k 的。
+
+311
+00:39:08,260 --> 00:39:11,960
+This is congruent to 1 to the k.
+
+311
+00:39:08,260 --> 00:39:11,960
+这与 k 的 1 同构，表达得更为自然。
+
+312
+00:39:11,960 --> 00:39:18,260
+This is congruent to 1 mod n, right?
+
+312
+00:39:11,960 --> 00:39:18,260
+这是对 n 取模结果为 1，您说得对吧？
+
+313
+00:39:19,260 --> 00:39:32,260
+Well, for this one, so this one actually equals a to the k times phi n is congruent to 1 mod
+
+313
+00:39:19,260 --> 00:39:32,260
+好吧，这个实际上等于 a 的 k 次方乘以 phi n 同余 1 模
+
+314
+00:39:32,260 --> 00:39:33,260
+n.
+
+314
+00:39:32,260 --> 00:39:33,260
+点
+
+315
+00:39:34,260 --> 00:39:48,260
+Both sides with times a, we have a to the k times phi n plus 1 is congruent to a mod
+
+315
+00:39:34,260 --> 00:39:48,260
+两边同时乘以 a，得到 a 的 k 次方乘以φ(n)加 1 与 a 模同余
+
+316
+00:39:48,260 --> 00:39:53,760
+n.
+
+316
+00:39:48,260 --> 00:39:53,760
+点
+
+317
+00:39:53,760 --> 00:39:59,260
+So from a to a, that means a is the plaintext.
+
+317
+00:39:53,760 --> 00:39:59,260
+从 a 到 a，这表示 a 是明文。
+
+318
+00:40:00,260 --> 00:40:09,260
+So that means somehow from a, we can get a subtext c.
+
+318
+00:40:00,260 --> 00:40:09,260
+这意味着从 a 中，我们可以以某种方式得到子文本 c。
+
+319
+00:40:09,260 --> 00:40:17,260
+From c, after some operation, we get back to the original plaintext a again.
+
+319
+00:40:09,260 --> 00:40:17,260
+从 C 语言进行一些操作后，我们重新得到了原始明文 a。
+
+320
+00:40:18,260 --> 00:40:31,260
+In the RSA algorithm, we assume that, how about we use some t as the public key and
+
+320
+00:40:18,260 --> 00:40:31,260
+在 RSA 算法中，我们假设，那么我们使用某个 t 作为公钥如何呢？
+
+321
+00:40:31,260 --> 00:40:35,260
+private key to do the encryption-decryption.
+
+321
+00:40:31,260 --> 00:40:35,260
+加密解密所用的私钥
+
+322
+00:40:35,260 --> 00:40:47,260
+So suppose a, we apply the public key, then we get it's congruent to the subtext c when
+
+322
+00:40:35,260 --> 00:40:47,260
+假设有一个 a，应用公钥后，我们得到它与子文本 c 同余
+
+323
+00:40:47,260 --> 00:40:50,260
+it takes mod n operation.
+
+323
+00:40:47,260 --> 00:40:50,260
+对 n 取模运算。
+
+324
+00:40:50,260 --> 00:40:52,260
+This is fine, right?
+
+324
+00:40:50,260 --> 00:40:52,260
+这挺好的，没错
+
+325
+00:40:52,260 --> 00:41:01,260
+a with some exponential operation, mod n we get a subtext c.
+
+325
+00:40:52,260 --> 00:41:01,260
+对 a 进行指数运算后模 n，得到子文本 c。
+
+326
+00:41:01,260 --> 00:41:11,260
+So c, after some exponential operation, c to the d, we require to get the original plaintext
+
+326
+00:41:01,260 --> 00:41:11,260
+因此，经过一些指数运算后，我们需要还原出原始明文
+
+327
+00:41:11,260 --> 00:41:16,260
+a mod n.
+
+327
+00:41:11,260 --> 00:41:16,260
+模 n
+
+328
+00:41:21,260 --> 00:41:27,260
+The left-hand side is encryption, the right-hand side is decryption.
+
+328
+00:41:21,260 --> 00:41:27,260
+左边是加密，右边是解密。这个翻译已经比较自然和易懂了。
+
+329
+00:41:27,260 --> 00:41:36,260
+Okay, we substitute this ae to c.
+
+329
+00:41:27,260 --> 00:41:36,260
+好的，我们把这里的 ae 替换成 c。
+
+330
+00:41:36,260 --> 00:41:46,260
+So that means we have a to the e to the d is congruent to a mod n.
+
+330
+00:41:36,260 --> 00:41:46,260
+这意味着 a 到 e 到 d 与 a mod n 同余，换句话说。
+
+331
+00:41:46,260 --> 00:42:00,260
+Then we have a to the e to the d is congruent to a mod n.
+
+331
+00:41:46,260 --> 00:42:00,260
+然后我们有 e 到 d 与 a 模 n 同余。这个表述可以更自然地翻译为：然后我们有 e 到 d 与 a 模 n 相等。
+
+332
+00:42:00,260 --> 00:42:09,260
+Okay, if we compare these two, right?
+
+332
+00:42:00,260 --> 00:42:09,260
+好吧，如果我们来比较这两者，行吗？
+
+333
+00:42:09,260 --> 00:42:23,260
+So these two implies, how about we let e times d equals k times phi n plus 1.
+
+333
+00:42:09,260 --> 00:42:23,260
+这两个条件意味着，我们让 e 乘以 d 等于 k 乘以 phi n 加 1，你觉得如何？
+
+334
+00:42:23,260 --> 00:42:30,260
+Then we can attain this purpose.
+
+334
+00:42:23,260 --> 00:42:30,260
+我们就能实现这个目标，表达更为自然。
+
+335
+00:42:30,260 --> 00:42:38,260
+So we find one e such that ed equals k times phi n plus 1.
+
+335
+00:42:30,260 --> 00:42:38,260
+因此，我们找到一个 e，使得 ed 等于 k 乘以φn 加 1。这个表达更符合中文的表达习惯。
+
+336
+00:42:38,260 --> 00:42:44,260
+Then we use a to the e mod n, we get a subtext c.
+
+336
+00:42:38,260 --> 00:42:44,260
+然后我们使用 a 的 e 模 n，得到子文本 c。
+
+337
+00:42:44,260 --> 00:43:00,260
+So using d, c to the d mod n, we get back to the original message a again, right?
+
+337
+00:42:44,260 --> 00:43:00,260
+用 d 和 c 进行模 n 运算，就能回到原始信息 a，对吧？这样的表述更自然易懂
+
+338
+00:43:00,260 --> 00:43:09,260
+Okay, ed equals k times phi n, k can be an integer.
+
+338
+00:43:00,260 --> 00:43:09,260
+好吧，ed 等于 k 乘以 phi n，其中 k 是一个整数。这句话翻译得更加自然和易懂。
+
+339
+00:43:09,260 --> 00:43:21,260
+In this mod operation, in fact, in this mod operation, that means e times d is congruent to 1.
+
+339
+00:43:09,260 --> 00:43:21,260
+在这个模运算中，实际上，e 乘以 d 同余于 1，也就是说。
+
+340
+00:43:21,260 --> 00:43:28,260
+We have mod phi n operation.
+
+340
+00:43:21,260 --> 00:43:28,260
+我们进行了模φn 运算。
+
+341
+00:43:28,260 --> 00:43:43,260
+And this d is called module inverse of e mod phi n, right?
+
+341
+00:43:28,260 --> 00:43:43,260
+这里的 d 被称为 e 在模 phi n 下的逆元，对吗？
+
+342
+00:43:43,260 --> 00:43:50,260
+e times d is congruent to 1, so d is a module inverse,
+
+342
+00:43:43,260 --> 00:43:50,260
+e 乘 d 同余 1，所以 d 是模逆元，表达更为自然流畅
+
+343
+00:43:50,260 --> 00:43:56,260
+a multiplicative module inverse of e mod phi n.
+
+343
+00:43:50,260 --> 00:43:56,260
+e 模 phi n 的乘法逆元
+
+344
+00:43:56,260 --> 00:44:04,260
+So last time we studied the module inverse, we studied the Euler's theorem, right?
+
+344
+00:43:56,260 --> 00:44:04,260
+上次我们学习了模逆元，还学习了欧拉定理，没错吧？
+
+345
+00:44:04,260 --> 00:44:14,260
+And we study how to calculate the phi n given an n, given an integer n.
+
+345
+00:44:04,260 --> 00:44:14,260
+我们研究如何计算给定整数 n 的φ(n)，具体过程如下：
+
+346
+00:44:14,260 --> 00:44:27,260
+In the RSA algorithm, normally we will choose n to be the product of two very large prime numbers, p and q.
+
+346
+00:44:14,260 --> 00:44:27,260
+在 RSA 算法中，我们通常会选择两个非常大的质数 p 和 q 的乘积作为 n。这样的表述更为自然和易懂。
+
+347
+00:44:27,260 --> 00:44:33,260
+So n will be a product of two primes.
+
+347
+00:44:27,260 --> 00:44:33,260
+n 将是两个质数的乘积，表达更为自然。
+
+348
+00:44:33,260 --> 00:44:46,260
+So n equals p times q, this implies the phi n equals p must 1 times q must 1.
+
+348
+00:44:33,260 --> 00:44:46,260
+因此，n 等于 p 与 q 的乘积，这表明 φ(n) 必须等于 1，q 也必须等于 1。
+
+349
+00:44:46,260 --> 00:44:54,260
+So you can choose very large two prime number p and q, then you will get the phi n.
+
+349
+00:44:46,260 --> 00:44:54,260
+因此，你可以选择两个非常大的质数 p 和 q，这样你就能得到φ(n)的值。
+
+350
+00:44:54,260 --> 00:45:01,260
+So the next step you can choose an e.
+
+350
+00:44:54,260 --> 00:45:01,260
+因此，接下来的步骤你可以选择一个 e。
+
+351
+00:45:01,260 --> 00:45:04,260
+So this e should be a prime number.
+
+351
+00:45:01,260 --> 00:45:04,260
+因此，这个 e 应该是一个质数。
+
+352
+00:45:04,260 --> 00:45:14,260
+For example, t is 61.
+
+352
+00:45:04,260 --> 00:45:14,260
+例如，t 等于 61。
+
+353
+00:45:34,260 --> 00:45:44,260
+Anyway, in our test, normally we choose the e to be a prime number, just like 17.
+
+353
+00:45:34,260 --> 00:45:44,260
+在我们的测试中，我们通常会选择 e 作为质数，例如 17。
+
+354
+00:45:44,260 --> 00:45:55,260
+So because it is a prime number, we'll make sure the GCD e and phi n is 1.
+
+354
+00:45:44,260 --> 00:45:55,260
+因为它是一个质数，所以我们要确保 e 和 n 的欧拉函数的最大公约数是 1。
+
+355
+00:45:55,260 --> 00:46:08,260
+If these two are relative prime to each other, their GCD value is 1, then we can get the module inverse.
+
+355
+00:45:55,260 --> 00:46:08,260
+如果这两个数互质，那么它们的最大公约数就是 1，这时我们可以求出它们的模逆。这句话经过润色后更加自然易懂。
+
+356
+00:46:08,260 --> 00:46:28,260
+We get this d is module inverse of e mod phi n.
+
+356
+00:46:08,260 --> 00:46:28,260
+我们得到这个 d 是 e 模φn 的逆元。
+
+357
+00:46:28,260 --> 00:46:35,260
+So we get the private key kd here.
+
+357
+00:46:28,260 --> 00:46:35,260
+因此，我们在这里得到了私钥 kd。
+
+358
+00:46:35,260 --> 00:46:48,260
+So this is the process in the RSA algorithm, how you can get the public key, the private key.
+
+358
+00:46:35,260 --> 00:46:48,260
+这就是 RSA 算法的过程，您如何获取公钥和私钥。
+
+359
+00:46:48,260 --> 00:46:52,260
+So you will generate your public key and private key.
+
+359
+00:46:48,260 --> 00:46:52,260
+因此您将生成您的公钥和私钥。
+
+360
+00:46:52,260 --> 00:46:59,260
+The first step is you choose two very large prime numbers, p and q.
+
+360
+00:46:52,260 --> 00:46:59,260
+第一步，选择两个非常大的质数 p 和 q。
+
+361
+00:46:59,260 --> 00:47:09,260
+You know those p and q, then you can calculate the phi n value, phi equals p must 1 times q must 1.
+
+361
+00:46:59,260 --> 00:47:09,260
+你知道那些 p 和 q，然后你可以计算出 phi n 的值，即 phi 等于 p 乘以 1，q 乘以 1。
+
+362
+00:47:09,260 --> 00:47:14,260
+Then you can choose the public key e.
+
+362
+00:47:09,260 --> 00:47:14,260
+您可以选择公钥 e。
+
+363
+00:47:14,260 --> 00:47:30,260
+e is a public key.
+
+363
+00:47:14,260 --> 00:47:30,260
+e 是一个公钥。
+
+364
+00:47:30,260 --> 00:47:41,260
+And then because this e normally will be a prime number, of course you will guarantee e and phi n will be relative prime.
+
+364
+00:47:30,260 --> 00:47:41,260
+然后因为 e 通常是一个质数，所以你可以确保 e 和 phi n 是互质的。这样的表述更自然、易懂。
+
+365
+00:47:41,260 --> 00:47:46,260
+So you will be able to calculate the module inverse of e mod phi n.
+
+365
+00:47:41,260 --> 00:47:46,260
+因此您将能够计算 e 模 phi n 的模逆，表述更为自然易懂。
+
+366
+00:47:46,260 --> 00:47:50,260
+How to calculate this one?
+
+366
+00:47:46,260 --> 00:47:50,260
+如何计算这个？
+
+367
+00:47:50,260 --> 00:47:57,260
+You can use the extended Euclidean algorithm.
+
+367
+00:47:50,260 --> 00:47:57,260
+你可以运用扩展欧几里得算法。
+
+368
+00:47:57,260 --> 00:48:11,260
+So we taught last time how we can use the extended Euclidean algorithm based on the phi n and e to derive the multiplicative inverse of e.
+
+368
+00:47:57,260 --> 00:48:11,260
+我们上次讲解了如何利用基于φ(n)和 e 的欧几里得扩展算法来推导 e 的乘法逆元。以下是对该过程的讲解。
+
+369
+00:48:11,260 --> 00:48:17,260
+So this module inverse of e mod phi n, that's d.
+
+369
+00:48:11,260 --> 00:48:17,260
+因此，这个模块是 e 模 phi n 的逆元，也就是 d。
+
+370
+00:48:17,260 --> 00:48:26,260
+So d is a private key.
+
+370
+00:48:17,260 --> 00:48:26,260
+因此，d 是一个私钥。
+
+371
+00:48:26,260 --> 00:48:41,260
+So once you select this e and d, you will guarantee that, well, a to the e, a to the e, you will get the subtext.
+
+371
+00:48:26,260 --> 00:48:41,260
+因此一旦你选择了这个 e 和 d，你就能确保，嗯，从 a 到 e，从 a 到 e，你会得到子文本。
+
+372
+00:48:41,260 --> 00:48:48,260
+So this is called encryption.
+
+372
+00:48:41,260 --> 00:48:48,260
+这就是所说的加密，翻译得更加自然易懂。
+
+373
+00:48:48,260 --> 00:49:02,260
+Everyone can know your public key e, so everyone else can use your public key to do that encryption and get the subtext c.
+
+373
+00:48:48,260 --> 00:49:02,260
+每个人都可以知道你的公钥 e，其他人可以用它来加密信息，从而得到密文 c。
+
+374
+00:49:02,260 --> 00:49:10,260
+This c will be sent to you because only you have the private key.
+
+374
+00:49:02,260 --> 00:49:10,260
+这份文件将发送给您，因为只有您拥有私钥。
+
+375
+00:49:10,260 --> 00:49:19,260
+You can use a private key to do the decryption.
+
+375
+00:49:10,260 --> 00:49:19,260
+您可以使用私钥进行解密。 (更自然、更易理解的翻译)
+
+376
+00:49:19,260 --> 00:49:24,260
+Only you have the d value.
+
+376
+00:49:19,260 --> 00:49:24,260
+只有您拥有这个 d 值。
+
+377
+00:49:24,260 --> 00:49:31,260
+So that means anyone else cannot do the decryption except you.
+
+377
+00:49:24,260 --> 00:49:31,260
+这意味着只有你能解密，其他人都不行。
+
+378
+00:49:31,260 --> 00:49:44,260
+So from the subtext d or from subtext c, you can apply your private key d and then you will get the original message a from the sender.
+
+378
+00:49:31,260 --> 00:49:44,260
+从子文本 d 或子文本 c 中，你可以使用你的私钥 d 进行操作，随后就能获取发送者的原始信息 a。
+
+379
+00:49:44,260 --> 00:49:54,260
+You are the receiver.
+
+379
+00:49:44,260 --> 00:49:54,260
+您是接收方。
+
+380
+00:49:54,260 --> 00:50:01,260
+So this RSA algorithm, well, you can see some properties about this one.
+
+380
+00:49:54,260 --> 00:50:01,260
+这就是 RSA 算法，嗯，你可以看到它的一些性质。
+
+381
+00:50:01,260 --> 00:50:06,260
+So RSA makes use of an expression with its polynomials.
+
+381
+00:50:01,260 --> 00:50:06,260
+因此 RSA 利用了与其多项式相关的一个表达式。这样的表述更为自然和易懂。
+
+382
+00:50:07,260 --> 00:50:16,260
+From m, here is the original message m, m to the e mod n, we get the subtext c.
+
+382
+00:50:07,260 --> 00:50:16,260
+从 m 开始，这里是原始消息 m，对 m 取模 n，得到子文本 c。
+
+383
+00:50:16,260 --> 00:50:25,260
+From subtext c to the d mod n, we get back the original message m.
+
+383
+00:50:16,260 --> 00:50:25,260
+从子文本 c 到模 n 的 d，我们又能还原出原始信息 m。
+
+384
+00:50:25,260 --> 00:50:31,260
+In this algorithm, the plaintext is encrypted in blocks.
+
+384
+00:50:25,260 --> 00:50:31,260
+在此算法中，明文以块为单位进行加密，翻译更加自然和易懂。
+
+385
+00:50:31,260 --> 00:50:38,260
+And each block having a binary value less than some number n.
+
+385
+00:50:31,260 --> 00:50:38,260
+每个二进制值小于某个数 n 的块（优化版：每个块的二进制值均小于某个数 n）。
+
+386
+00:50:38,260 --> 00:50:45,260
+Suppose we will choose the n to be very large to be 124 bits, right?
+
+386
+00:50:38,260 --> 00:50:45,260
+假设我们要选择一个非常大的 n 值，为 124 位，对吧？
+
+387
+00:50:45,260 --> 00:50:54,260
+So you will guarantee that each block with a size should be equal or smaller than 124 bits.
+
+387
+00:50:45,260 --> 00:50:54,260
+因此您需确保每个块的大小不超过 124 位，以保证其相等或更小。
+
+388
+00:50:54,260 --> 00:51:00,260
+An encryption and decryption of the following form for some plaintext block m.
+
+388
+00:50:54,260 --> 00:51:00,260
+对以下形式的明文块 m 进行加密与解密。
+
+389
+00:51:00,260 --> 00:51:04,260
+So m is smaller than n.
+
+389
+00:51:00,260 --> 00:51:04,260
+m 比 n 小。
+
+390
+00:51:04,260 --> 00:51:17,260
+So this e and d will guarantee that e times d equals k times phi n plus 1.
+
+390
+00:51:04,260 --> 00:51:17,260
+因此，e 和 d 将确保 e 乘以 d 等于 k 乘以 φn 加 1，这样的表述更为自然易懂。
+
+391
+00:51:17,260 --> 00:51:24,260
+We choose e, d to satisfy this requirement.
+
+391
+00:51:17,260 --> 00:51:24,260
+我们选择 e 和 d 来满足这一要求，使表达更自然易懂。
+
+392
+00:51:24,260 --> 00:51:41,260
+Because we guarantee that this m, e, d, then this m, e, d equals m to the k times phi n plus 1.
+
+392
+00:51:24,260 --> 00:51:41,260
+因为我们可以保证这个公式成立，所以这个 m，e，d 等于 m 的 k 次方乘以 phi 的 n 加 1。
+
+393
+00:51:41,260 --> 00:51:48,260
+We take the mod n operation.
+
+393
+00:51:41,260 --> 00:51:48,260
+我们进行模 n 运算。
+
+394
+00:51:48,260 --> 00:51:59,260
+m with some e operation, then with d operation, then we get back its original message m.
+
+394
+00:51:48,260 --> 00:51:59,260
+m 经过一系列 e 操作和 d 操作后，最终恢复为原始信息 m。
+
+395
+00:51:59,260 --> 00:52:09,260
+So while this one is correct, you can refer to the previous slide.
+
+395
+00:51:59,260 --> 00:52:09,260
+虽然这个是对的，但你可以参考上一页幻灯片。
+
+396
+00:52:09,260 --> 00:52:26,260
+Now this one, this equation is correct because we have the orders theorem.
+
+396
+00:52:09,260 --> 00:52:26,260
+现在这个方程是正确的，因为根据顺序定理，这个方程是对的。
+
+397
+00:52:26,260 --> 00:52:32,260
+That you can see here, a to the k times phi n plus 1 is coming to a mod n.
+
+397
+00:52:26,260 --> 00:52:32,260
+你可以在这里看到，a 乘以 k 次方 phi n 加 1 对 n 取模的结果。
+
+398
+00:52:32,260 --> 00:52:42,260
+So this one is correct. We can derive it from the orders theorem.
+
+398
+00:52:32,260 --> 00:52:42,260
+这个是对的，我们可以从订单定理中推导出这个结论。
+
+399
+00:52:42,260 --> 00:52:49,260
+Well, in the RSA algorithm, the e n will be the public key.
+
+399
+00:52:42,260 --> 00:52:49,260
+好吧，在 RSA 算法中，e 和 n 就是公钥。
+
+400
+00:52:49,260 --> 00:52:58,260
+The private key actually is the d, the small letter d.
+
+400
+00:52:49,260 --> 00:52:58,260
+私钥实际上就是小写的 d，这个表述更为自然易懂。
+
+401
+00:52:58,260 --> 00:53:05,260
+So you can see, suppose Alice is a receiver.
+
+401
+00:52:58,260 --> 00:53:05,260
+因此您可以明白，假设爱丽丝是接收者。
+
+402
+00:53:05,260 --> 00:53:10,260
+So Alice first will generate the pair of keys.
+
+402
+00:53:05,260 --> 00:53:10,260
+爱丽丝首先会生成一对密钥。
+
+403
+00:53:10,260 --> 00:53:13,260
+The generation process is here.
+
+403
+00:53:10,260 --> 00:53:13,260
+生成过程就在这里，表述得更加自然易懂。
+
+404
+00:53:13,260 --> 00:53:19,260
+First, Alice will select the two very large prime numbers, p and q.
+
+404
+00:53:13,260 --> 00:53:19,260
+首先，Alice 将挑选出两个非常大的质数，p 和 q。这样的表述更加自然和易于理解。
+
+405
+00:53:19,260 --> 00:53:24,260
+They're not equal to the calculation of n product.
+
+405
+00:53:19,260 --> 00:53:24,260
+它们并不等同于 n 乘积的计算结果。
+
+406
+00:53:24,260 --> 00:53:27,260
+Then we have the phi n value.
+
+406
+00:53:24,260 --> 00:53:27,260
+我们有φn 值。
+
+407
+00:53:27,260 --> 00:53:33,260
+So Alice will choose the integer e, make sure gcd phi n e will be 1.
+
+407
+00:53:27,260 --> 00:53:33,260
+因此，爱丽丝将选择一个整数 e，并确保它与 n 的最大公约数φ(n)为 1。
+
+408
+00:53:33,260 --> 00:53:40,260
+And in this way, we can generate the module inverse of e, mod phi n.
+
+408
+00:53:33,260 --> 00:53:40,260
+以这种方式，我们可以生成 e 模 phi n 的逆元。这样的表述更为自然和易懂。
+
+409
+00:53:40,260 --> 00:53:46,260
+So public key is e n, private key is d and n.
+
+409
+00:53:40,260 --> 00:53:46,260
+公钥为 e 和 n，私钥为 d 和 n。
+
+410
+00:53:46,260 --> 00:53:51,260
+In the encryption, so encryption by Bob.
+
+410
+00:53:46,260 --> 00:53:51,260
+在加密过程中，加密操作由 Bob 完成。
+
+411
+00:53:51,260 --> 00:53:55,260
+Bob is the sender.
+
+411
+00:53:51,260 --> 00:53:55,260
+Bob 是信息的发送者。
+
+412
+00:53:55,260 --> 00:54:00,260
+Bob will use Alice's public key to do the encryption.
+
+412
+00:53:55,260 --> 00:54:00,260
+Bob 将利用 Alice 的公钥进行加密操作。
+
+413
+00:54:00,260 --> 00:54:05,260
+So subtext c equals m to the e mod n.
+
+413
+00:54:00,260 --> 00:54:05,260
+因此，子文本 c 等于 m 的 e 次方对 n 取模
+
+414
+00:54:05,260 --> 00:54:11,260
+And then Alice is the receiver.
+
+414
+00:54:05,260 --> 00:54:11,260
+然后爱丽丝成为了接收者。
+
+415
+00:54:11,260 --> 00:54:16,260
+Alice will use her private key to do the decryption.
+
+415
+00:54:11,260 --> 00:54:16,260
+爱丽丝将使用她的私钥进行解密。这个操作是为了保护数据的安全性。
+
+416
+00:54:16,260 --> 00:54:22,260
+So only Alice knows the private key d.
+
+416
+00:54:16,260 --> 00:54:22,260
+只有爱丽丝知道私钥 d，这个信息只有她知道。
+
+417
+00:54:22,260 --> 00:54:40,260
+So she will apply c to the d mod n to get back the original plaintext message m sent from Bob.
+
+417
+00:54:22,260 --> 00:54:40,260
+因此，她将对 d 模 n 应用 c，以恢复 Bob 发送的原始明文消息 m。
+
+418
+00:54:40,260 --> 00:54:42,260
+Here is one example.
+
+418
+00:54:40,260 --> 00:54:42,260
+这里有一个示例。
+
+419
+00:54:42,260 --> 00:54:47,260
+Suppose the plaintext is 88.
+
+419
+00:54:42,260 --> 00:54:47,260
+假设原文是 88。
+
+420
+00:54:47,260 --> 00:54:52,260
+In this example, we assume we have the public key to be 7.
+
+420
+00:54:47,260 --> 00:54:52,260
+在本例中，我们假设公钥是 7。
+
+421
+00:54:52,260 --> 00:55:00,260
+And this is n value and this is e public key to be 7.
+
+421
+00:54:52,260 --> 00:55:00,260
+这是 n 值，这是编号为 7 的公钥。
+
+422
+00:55:00,260 --> 00:55:05,260
+And private key d will be 23.
+
+422
+00:55:00,260 --> 00:55:05,260
+私钥 d 将是 23。
+
+423
+00:55:05,260 --> 00:55:18,260
+In the encryption, you can see original message m, this is m to the e mod n equals subtext c.
+
+423
+00:55:05,260 --> 00:55:18,260
+在加密过程中，你可以看到原始信息 m，即 m 的 e 次方对 n 取模等于密文 c。这句话经过润色，使其在简体中文中更加自然易懂。
+
+424
+00:55:18,260 --> 00:55:25,260
+c is 11 will be sent in the channel, in the internet.
+
+424
+00:55:18,260 --> 00:55:25,260
+c 是 11 的信息将通过该频道发送到互联网上。
+
+425
+00:55:25,260 --> 00:55:30,260
+And receiver will obtain this subtext c.
+
+425
+00:55:25,260 --> 00:55:30,260
+发送方将获得此子文本 c。
+
+426
+00:55:30,260 --> 00:55:49,260
+Receiver will use his private key d, c to the d mod n to get back original message m to be 88.
+
+426
+00:55:30,260 --> 00:55:49,260
+接收者将使用其私钥 d 和 c，通过 d 模 n 运算来恢复原始消息 m，该消息内容为 88。
+
+427
+00:55:49,260 --> 00:55:57,260
+So this is RSA algorithm. Is that clear?
+
+427
+00:55:49,260 --> 00:55:57,260
+这就是 RSA 算法。您明白了吗？
+
+428
+00:55:57,260 --> 00:56:13,260
+Any question, difficulty here?
+
+428
+00:55:57,260 --> 00:56:13,260
+任何问题，这里的难度是怎样的？
+
+429
+00:56:13,260 --> 00:56:18,260
+Well, it seems to be okay to you.
+
+429
+00:56:13,260 --> 00:56:18,260
+嗯，看起来一切正常。
+
+430
+00:56:18,260 --> 00:56:22,260
+So then let's try to solve this question.
+
+430
+00:56:18,260 --> 00:56:22,260
+那就让我们来尝试解答这个问题吧。
+
+431
+00:56:22,260 --> 00:56:32,260
+The question asks you to use the extended Euclidean algorithm to calculate the private key from the public key in the previous slide.
+
+431
+00:56:22,260 --> 00:56:32,260
+问题要求您使用扩展欧几里得算法，从前一页的公钥中计算出私钥。请按照以下步骤操作：
+
+432
+00:56:32,260 --> 00:56:46,260
+So in previous slide we have
+
+432
+00:56:32,260 --> 00:56:46,260
+在上一页幻灯片中，我们提到
+
+433
+00:56:46,260 --> 00:56:58,260
+the public key to be 7 and 87.
+
+433
+00:56:46,260 --> 00:56:58,260
+要被 7 和 87 指定的公钥。
+
+434
+00:56:58,260 --> 00:57:06,260
+So this is e, this is m, the private key is d.
+
+434
+00:56:58,260 --> 00:57:06,260
+这就是 e，这就是 m，私钥是 d。（经过润色）
+
+435
+00:57:06,260 --> 00:57:13,260
+So d equals 23.
+
+435
+00:57:06,260 --> 00:57:13,260
+因此 d 等于 23。
+
+436
+00:57:13,260 --> 00:57:19,260
+You can use the extended Euclidean algorithm to get the private key d.
+
+436
+00:57:13,260 --> 00:57:19,260
+您可以使用扩展欧几里得算法来获取私钥 d。 (此翻译已是最自然的表达形式，无需进一步修改)
+
+437
+00:57:19,260 --> 00:57:23,260
+How can you get it?
+
+437
+00:57:19,260 --> 00:57:23,260
+你怎么获得它？
+
+438
+00:57:23,260 --> 00:57:27,260
+You can follow this slide.
+
+438
+00:57:23,260 --> 00:57:27,260
+您可以参考这个幻灯片。
+
+439
+00:57:27,260 --> 00:57:31,260
+d is the module inverse of e.
+
+439
+00:57:27,260 --> 00:57:31,260
+d 是 e 的模逆，表述更为自然易懂
+
+440
+00:57:31,260 --> 00:57:38,260
+So to get the module inverse, you should use the extended Euclidean algorithm.
+
+440
+00:57:31,260 --> 00:57:38,260
+要获取模块的逆元，应使用扩展欧几里得算法。这样的表述更为自然易懂。
+
+441
+00:57:38,260 --> 00:57:41,260
+Okay, can I try?
+
+441
+00:57:38,260 --> 00:57:41,260
+好的，我可以试试看吗？
+
+442
+00:57:41,260 --> 00:57:44,260
+I give you five minutes to try it.
+
+442
+00:57:41,260 --> 00:57:44,260
+我给你五分钟来试试看。
+
+443
+01:01:39,260 --> 01:01:43,260
+Some of you have finished the process.
+
+443
+01:01:39,260 --> 01:01:43,260
+你们中的一些人已经完成了这个过程。（更自然、更易理解的翻译）
+
+444
+01:01:43,260 --> 01:01:48,260
+So let's see how we can derive the private key.
+
+444
+01:01:43,260 --> 01:01:48,260
+现在让我们看看如何推导出私钥。
+
+445
+01:01:48,260 --> 01:01:55,260
+To get the private key, first we need to get from n to phi n.
+
+445
+01:01:48,260 --> 01:01:55,260
+获取私钥，首先需要从 n 计算到 phi n。
+
+446
+01:01:55,260 --> 01:01:59,260
+So this n equals 187.
+
+446
+01:01:55,260 --> 01:01:59,260
+因此，这个 n 等于 187。
+
+447
+01:01:59,260 --> 01:02:05,260
+You should factor this number to be two primes, the product.
+
+447
+01:01:59,260 --> 01:02:05,260
+你应该把这个数分解成两个质数的乘积。这样表达更自然、易懂。
+
+448
+01:02:05,260 --> 01:02:10,260
+And this one actually equals 11 times 17.
+
+448
+01:02:05,260 --> 01:02:10,260
+这个实际上等于 11 乘以 17。
+
+449
+01:02:10,260 --> 01:02:16,260
+This implies the phi n equals 10 times 16.
+
+449
+01:02:10,260 --> 01:02:16,260
+这表示φn 等于 16 乘以 10。
+
+450
+01:02:16,260 --> 01:02:19,260
+And this is 160.
+
+450
+01:02:16,260 --> 01:02:19,260
+这就是 160。
+
+451
+01:02:19,260 --> 01:02:22,260
+Okay, fine.
+
+451
+01:02:19,260 --> 01:02:22,260
+好吧，没关系。
+
+452
+01:02:22,260 --> 01:02:27,260
+Then you have the e and gcd.
+
+452
+01:02:22,260 --> 01:02:27,260
+你有 e 和最大公约数。
+
+453
+01:02:27,260 --> 01:02:32,260
+You will guarantee that e and phi n to be one.
+
+453
+01:02:27,260 --> 01:02:32,260
+你将保证 e 和 φn 为一体。
+
+454
+01:02:32,260 --> 01:02:38,260
+To get the gcd value, you can follow the Euclidean algorithm.
+
+454
+01:02:32,260 --> 01:02:38,260
+要获取最大公约数值，您可以按照欧几里得算法进行操作。
+
+455
+01:02:38,260 --> 01:02:43,260
+In the traceback, you will get the extended Euclidean algorithm.
+
+455
+01:02:38,260 --> 01:02:43,260
+在跟踪信息中，您将看到扩展欧几里得算法的详细内容。
+
+456
+01:02:43,260 --> 01:02:47,260
+Then you will get the private key d.
+
+456
+01:02:43,260 --> 01:02:47,260
+然后，你将获得私钥 d。
+
+457
+01:02:47,260 --> 01:03:01,260
+So this process is from 160 equals 7 times 22 plus 6.
+
+457
+01:02:47,260 --> 01:03:01,260
+这个过程是从 160 等于 7 乘以 22 加 6 开始的，这个过程是这样的。
+
+458
+01:03:01,260 --> 01:03:05,260
+So then 7 equals 6 plus 1.
+
+458
+01:03:01,260 --> 01:03:05,260
+那么说，7 等于 6 加 1。
+
+459
+01:03:05,260 --> 01:03:11,260
+And this one is the gcd value.
+
+459
+01:03:05,260 --> 01:03:11,260
+这一个就是最大公约数值。
+
+460
+01:03:11,260 --> 01:03:17,260
+When we trace back, 1 equals 7 minus 6.
+
+460
+01:03:11,260 --> 01:03:17,260
+追溯一下，1 就是 7 减去 6。
+
+461
+01:03:17,260 --> 01:03:22,260
+And this 6 can be represented as...
+
+461
+01:03:17,260 --> 01:03:22,260
+这 6 可以表示为...（更自然的翻译）
+
+462
+01:03:28,260 --> 01:03:37,260
+7 minus 6. 6 can be represented as 160 minus 7 times 22.
+
+462
+01:03:28,260 --> 01:03:37,260
+7 减 6，6 可以表示成 160 减去 7 乘以 22。这样的表达更自然易懂。
+
+463
+01:03:37,260 --> 01:03:44,260
+So this is 23 times 7 minus 160.
+
+463
+01:03:37,260 --> 01:03:44,260
+这就是 23 乘以 7 再减去 160。
+
+464
+01:03:49,260 --> 01:03:52,260
+Okay, well, this is one.
+
+464
+01:03:49,260 --> 01:03:52,260
+好吧，这算是一个。
+
+465
+01:03:52,260 --> 01:03:58,260
+Of course, you can see this is phi n.
+
+465
+01:03:52,260 --> 01:03:58,260
+当然，你可以看到这是φ。
+
+466
+01:03:58,260 --> 01:04:04,260
+And this is a private key e.
+
+466
+01:03:58,260 --> 01:04:04,260
+这是一段私钥内容
+
+467
+01:04:04,260 --> 01:04:07,260
+And this one is d.
+
+467
+01:04:04,260 --> 01:04:07,260
+这一个就是 D。
+
+468
+01:04:12,260 --> 01:04:17,260
+So we have the private key d to be 23 in this example.
+
+468
+01:04:12,260 --> 01:04:17,260
+本例中，我们的私钥 d 为 23。
+
+469
+01:04:29,260 --> 01:04:35,260
+Okay, now we look at the general form.
+
+469
+01:04:29,260 --> 01:04:35,260
+好的，现在我们来了解一下一般的形式。
+
+470
+01:04:35,260 --> 01:04:39,260
+Suppose we have a sentence from the center side.
+
+470
+01:04:35,260 --> 01:04:39,260
+假设我们有一个来自中间部分的句子。
+
+471
+01:04:39,260 --> 01:04:41,260
+Like, how are you?
+
+471
+01:04:39,260 --> 01:04:41,260
+像这样的，您最近怎么样？
+
+472
+01:04:41,260 --> 01:04:46,260
+And each character, we can decode a character.
+
+472
+01:04:41,260 --> 01:04:46,260
+每个字符，我们都能解码出来。
+
+473
+01:04:46,260 --> 01:04:50,260
+h to be some data, 33.
+
+473
+01:04:46,260 --> 01:04:50,260
+h 成为某些数据，33。
+
+474
+01:04:50,260 --> 01:04:53,260
+o to be 1, 4.
+
+474
+01:04:50,260 --> 01:04:53,260
+从 1 到 4，o 需要变成 1。
+
+475
+01:04:53,260 --> 01:04:55,260
+w to be 22.
+
+475
+01:04:53,260 --> 01:04:55,260
+w 达到 22。
+
+476
+01:04:55,260 --> 01:04:58,260
+space to be 62, so on and so forth, right?
+
+476
+01:04:55,260 --> 01:04:58,260
+空格应该是 62，诸如此类，对吧？
+
+477
+01:04:58,260 --> 01:05:02,260
+So one sentence can be represented by some data.
+
+477
+01:04:58,260 --> 01:05:02,260
+一句话可以由一些数据来表示，这样的表达方式。
+
+478
+01:05:02,260 --> 01:05:07,260
+And well, in this encoding-decoding,
+
+478
+01:05:02,260 --> 01:05:07,260
+嗯，在这个编码解码过程中，嗯，说起来，
+
+479
+01:05:07,260 --> 01:05:17,260
+each block will contain 3, should contain 4 digits.
+
+479
+01:05:07,260 --> 01:05:17,260
+每个区块应包含 3 个元素，实际应包含 4 位数字。
+
+480
+01:05:17,260 --> 01:05:19,260
+So every block.
+
+480
+01:05:17,260 --> 01:05:19,260
+因此，每个块。
+
+481
+01:05:19,260 --> 01:05:24,260
+We assume that block 1 contains 33, 1, 4, 4 digits.
+
+481
+01:05:19,260 --> 01:05:24,260
+我们认为第 1 块包含 33、1、4、4 位数字。
+
+482
+01:05:24,260 --> 01:05:30,260
+And block 2 contains 22, 62, right, 4 digits.
+
+482
+01:05:24,260 --> 01:05:30,260
+块 2 中包含 22、62、正确，以及 4 位数字。
+
+483
+01:05:30,260 --> 01:05:35,260
+Well, after this encoding, from character to some data,
+
+483
+01:05:30,260 --> 01:05:35,260
+嗯，经过这次编码后，字符转换成了某些数据，
+
+484
+01:05:35,260 --> 01:05:37,260
+then we do transmission.
+
+484
+01:05:35,260 --> 01:05:37,260
+我们进行传输。
+
+485
+01:05:37,260 --> 01:05:41,260
+So in the transmission, the receiver and sender,
+
+485
+01:05:37,260 --> 01:05:41,260
+在传输过程中，接收方和发送方，
+
+486
+01:05:41,260 --> 01:05:48,260
+suppose this sender, sender will first obtain the receiver's
+
+486
+01:05:41,260 --> 01:05:48,260
+假设这个发件人，他会首先获取收件人的信息
+
+487
+01:05:48,260 --> 01:05:50,260
+the public key.
+
+487
+01:05:48,260 --> 01:05:50,260
+公钥
+
+488
+01:05:50,260 --> 01:05:54,260
+So this is the receiver.
+
+488
+01:05:50,260 --> 01:05:54,260
+这就是接收者。（经过润色）
+
+489
+01:05:54,260 --> 01:06:04,260
+Receiver set will first generate the public key.
+
+489
+01:05:54,260 --> 01:06:04,260
+接收器将首先生成公钥。
+
+490
+01:06:04,260 --> 01:06:08,260
+Receiver will generate the public key and the private key.
+
+490
+01:06:04,260 --> 01:06:08,260
+接收者将生成公钥和私钥。这一过程将确保安全通信。
+
+491
+01:06:08,260 --> 01:06:15,260
+Suppose receiver will use the 2 prime numbers to be p, 73,
+
+491
+01:06:08,260 --> 01:06:15,260
+假设接收者将使用两个质数作为 p，73，以供使用
+
+492
+01:06:15,260 --> 01:06:20,260
+and q to be 151, and e to be 11.
+
+492
+01:06:15,260 --> 01:06:20,260
+并且 q 等于 151，e 等于 11。
+
+493
+01:06:20,260 --> 01:06:26,260
+Then this is the n value, and this one is phi n.
+
+493
+01:06:20,260 --> 01:06:26,260
+这就是 n 值，而这是φn。
+
+494
+01:06:26,260 --> 01:06:32,260
+According to the module inverse calculation,
+
+494
+01:06:26,260 --> 01:06:32,260
+根据模块逆运算结果，
+
+495
+01:06:32,260 --> 01:06:37,260
+and this one is value d.
+
+495
+01:06:32,260 --> 01:06:37,260
+这个值的描述是 d。
+
+496
+01:06:37,260 --> 01:06:43,260
+e equals module inverse of e mod phi n.
+
+496
+01:06:37,260 --> 01:06:43,260
+e 等于模 n 下 e 的逆元。
+
+497
+01:06:43,260 --> 01:06:51,260
+So receiver will generate the private key d to be 5891.
+
+497
+01:06:43,260 --> 01:06:51,260
+接收器将生成私钥 d，其值为 5891。这个翻译已经比较自然和易懂。
+
+498
+01:06:51,260 --> 01:06:55,260
+And public key is e and n.
+
+498
+01:06:51,260 --> 01:06:55,260
+公钥为 e 和 n。
+
+499
+01:06:55,260 --> 01:06:57,260
+This is a public key.
+
+499
+01:06:55,260 --> 01:06:57,260
+这是一个公钥。
+
+500
+01:06:57,260 --> 01:07:01,260
+And public key can be obtained by the sender.
+
+500
+01:06:57,260 --> 01:07:01,260
+发送者可以获取公钥。
+
+501
+01:07:01,260 --> 01:07:07,260
+And sender will apply the public key for each block.
+
+501
+01:07:01,260 --> 01:07:07,260
+发送者将针对每个区块应用公钥。
+
+502
+01:07:07,260 --> 01:07:14,260
+First of all, p1, 3314 to the e mod n.
+
+502
+01:07:07,260 --> 01:07:14,260
+首先，p1，3314 模 e。
+
+503
+01:07:14,260 --> 01:07:18,260
+That's a c1, self-text c1.
+
+503
+01:07:14,260 --> 01:07:18,260
+那是一个 c1，这是自我文本 c1。
+
+504
+01:07:18,260 --> 01:07:21,260
+So first we have c2, c3.
+
+504
+01:07:18,260 --> 01:07:21,260
+首先我们来看 c2 和 c3。
+
+505
+01:07:21,260 --> 01:07:26,260
+So this c1, c2 will be obtained by receiver.
+
+505
+01:07:21,260 --> 01:07:26,260
+因此，接收者将获得 c1 和 c2。
+
+506
+01:07:26,260 --> 01:07:35,260
+And c1, for c1, the receiver can apply his private key d
+
+506
+01:07:26,260 --> 01:07:35,260
+对于 c1，接收者可以使用其私钥 d
+
+507
+01:07:35,260 --> 01:07:37,260
+to do the decryption.
+
+507
+01:07:35,260 --> 01:07:37,260
+执行解密任务。
+
+508
+01:07:37,260 --> 01:07:42,260
+So c1 to the d value mod n.
+
+508
+01:07:37,260 --> 01:07:42,260
+因此，c1 的值对 n 取模后等于 d。
+
+509
+01:07:42,260 --> 01:07:47,260
+Then the receiver can get p1, 3314.
+
+509
+01:07:42,260 --> 01:07:47,260
+然后接收者可以获取到 p1 和 3314。
+
+510
+01:07:47,260 --> 01:07:52,260
+And 3314 represents h0.
+
+510
+01:07:47,260 --> 01:07:52,260
+3314 代表 h0。
+
+511
+01:07:52,260 --> 01:07:58,260
+So this is an encryption and decryption process
+
+511
+01:07:52,260 --> 01:07:58,260
+这就是一个加密和解密的流程
+
+512
+01:07:58,260 --> 01:08:03,260
+for a sequence of characters for a long sentence.
+
+512
+01:07:58,260 --> 01:08:03,260
+对于一串字符，对于一句长句。
+
+513
+01:08:03,260 --> 01:08:07,260
+Divide sentence into blocks to make sure every block
+
+513
+01:08:03,260 --> 01:08:07,260
+将句子分成段落以确保每段内容清晰
+
+514
+01:08:07,260 --> 01:08:11,260
+is smaller than the given value n.
+
+514
+01:08:07,260 --> 01:08:11,260
+小于给定的数值 n。
+
+515
+01:08:13,260 --> 01:08:18,260
+So before transmission, the receiver should generate
+
+515
+01:08:13,260 --> 01:08:18,260
+在传输之前，接收器应当生成
+
+516
+01:08:18,260 --> 01:08:21,260
+its public key and private key.
+
+516
+01:08:18,260 --> 01:08:21,260
+它的公钥与私钥。
+
+517
+01:08:21,260 --> 01:08:24,260
+The public key will be long by sender.
+
+517
+01:08:21,260 --> 01:08:24,260
+发送者的公钥将会很长。
+
+518
+01:08:24,260 --> 01:08:28,260
+Sender can use receiver's public key to do the encryption.
+
+518
+01:08:24,260 --> 01:08:28,260
+发送者可以使用接收者的公钥进行加密。这种加密方式既安全又方便。
+
+519
+01:08:28,260 --> 01:08:33,260
+Receiver can use his private key to do the decryption.
+
+519
+01:08:28,260 --> 01:08:33,260
+接收者可以用自己的私钥进行解密，表达更自然。
+
+520
+01:08:39,260 --> 01:08:41,260
+Let's look at another example.
+
+520
+01:08:39,260 --> 01:08:41,260
+让我们来看一个不同的例子。
+
+521
+01:08:41,260 --> 01:08:46,260
+So assume that, well, in this case,
+
+521
+01:08:41,260 --> 01:08:46,260
+假设，嗯，在这种情况下，请这样想，嗯，是这样的
+
+522
+01:08:46,260 --> 01:08:52,260
+we have p, q to be 7 and 17, respectively.
+
+522
+01:08:46,260 --> 01:08:52,260
+我们有 p 和 q，分别等于 7 和 17。
+
+523
+01:08:53,260 --> 01:08:56,260
+So n equals p times q.
+
+523
+01:08:53,260 --> 01:08:56,260
+n 等于 p 和 q 的乘积。
+
+524
+01:08:56,260 --> 01:09:02,260
+And phi equals p1, p must 1 times q must 1.
+
+524
+01:08:56,260 --> 01:09:02,260
+且φ等于 p1，p 必须乘以 q 一次。
+
+525
+01:09:02,260 --> 01:09:07,260
+And assume that we choose the e to be 5.
+
+525
+01:09:02,260 --> 01:09:07,260
+假设我们选取 e 等于 5。
+
+526
+01:09:07,260 --> 01:09:15,260
+And assume that we want to encrypt the message m equals 8.
+
+526
+01:09:07,260 --> 01:09:15,260
+假设我们要加密消息 m 等于 8。
+
+527
+01:09:15,260 --> 01:09:21,260
+So the first step is we should generate the private key d
+
+527
+01:09:15,260 --> 01:09:21,260
+第一步应该是生成私钥 d
+
+528
+01:09:22,260 --> 01:09:26,260
+and then use the private key d.
+
+528
+01:09:22,260 --> 01:09:26,260
+然后使用私钥 d。
+
+529
+01:09:26,260 --> 01:09:36,260
+We can get the subtext c equals m to the e mod n.
+
+529
+01:09:26,260 --> 01:09:36,260
+我们可以得到子文本 c 等于 m 除以 n 的余数。
+
+530
+01:09:36,260 --> 01:09:41,260
+So the second step is to calculate the subtext c.
+
+530
+01:09:36,260 --> 01:09:41,260
+因此，第二步是计算子文本 c。
+
+531
+01:09:41,260 --> 01:09:50,260
+From c, we can derive the m equals c to the d mod n.
+
+531
+01:09:41,260 --> 01:09:50,260
+从 C 中，我们可以推导出 m 等于 c 对 n 取模。这使得表达更加自然易懂。
+
+532
+01:09:52,260 --> 01:09:57,260
+So let's have a break of 10 minutes.
+
+532
+01:09:52,260 --> 01:09:57,260
+那么，我们先休息 10 分钟怎么样？
+
+533
+01:09:57,260 --> 01:10:00,260
+So in this break, you can do this practice.
+
+533
+01:09:57,260 --> 01:10:00,260
+在这个休息时间，您可以进行这项练习。
+
+534
+01:10:00,260 --> 01:10:06,260
+Try to get the d and the c, the subtext.
+
+534
+01:10:00,260 --> 01:10:06,260
+尝试获取 d 和 c，子文本（更自然、更易理解的表达）。
+
+535
+01:10:06,260 --> 01:10:08,260
+So let's have a break of 10 minutes.
+
+535
+01:10:06,260 --> 01:10:08,260
+那么，我们先休息 10 分钟怎么样？
+
+536
+01:10:08,260 --> 01:10:09,260
+Thank you.
+
+536
+01:10:08,260 --> 01:10:09,260
+谢谢您。
+

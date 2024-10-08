@@ -1,0 +1,2608 @@
+1
+00:00:00,000 --> 00:00:13,519
+Okay, it's very good that some of you have some questions and that shows you're thinking
+
+1
+00:00:00,000 --> 00:00:13,519
+好的，很高兴看到大家都有一些疑问，这说明大家都在积极思考
+
+2
+00:00:13,519 --> 00:00:18,719
+you will try to answer more from the slides.
+
+2
+00:00:13,519 --> 00:00:18,719
+你将尝试从幻灯片中回答更多内容（更自然、更易理解的表达）。
+
+3
+00:00:18,719 --> 00:00:20,199
+That's very good.
+
+3
+00:00:18,719 --> 00:00:20,199
+这真是太好了。
+
+4
+00:00:20,199 --> 00:00:25,800
+Okay, let's continue with our lecture 6.
+
+4
+00:00:20,199 --> 00:00:25,800
+好的，咱们继续上第六课吧。
+
+5
+00:00:25,800 --> 00:00:32,439
+So lecture 6 is about another protocol for ePayment, it is 3D.
+
+5
+00:00:25,800 --> 00:00:32,439
+第 6 课讲解了电子支付领域的一种新协议——3D 安全协议，让我们来了解一下。
+
+6
+00:00:32,439 --> 00:00:35,640
+So this one is still used today.
+
+6
+00:00:32,439 --> 00:00:35,640
+这个至今仍在使用。
+
+7
+00:00:35,640 --> 00:00:41,799
+And let's see how it works, the 3D protocol.
+
+7
+00:00:35,640 --> 00:00:41,799
+让我们看看这个 3D 协议是如何运作的。
+
+8
+00:00:41,799 --> 00:00:51,880
+Okay, so 3D protocol is very useful, still used today to support today's online transaction,
+
+8
+00:00:41,799 --> 00:00:51,880
+好吧，3D 协议确实非常有用，至今仍在支持当前的在线交易，
+
+9
+00:00:51,880 --> 00:00:52,880
+right?
+
+9
+00:00:51,880 --> 00:00:52,880
+对不起，我刚才没听清，您能再说一遍吗？
+
+10
+00:00:52,880 --> 00:00:58,920
+Online shopping, so Steve Jobs will say, you see, our smartphone is so secure because we
+
+10
+00:00:52,880 --> 00:00:58,920
+在线购物，史蒂夫·乔布斯曾经说过：“你看，我们的智能手机之所以安全，那是因为……”
+
+11
+00:00:58,920 --> 00:01:01,880
+have this 3D secure protocol.
+
+11
+00:00:58,920 --> 00:01:01,880
+拥有此 3D 安全协议（优化翻译）
+
+12
+00:01:01,880 --> 00:01:10,800
+Okay, so one case is just like today, if you go online shopping, and suppose you have the
+
+12
+00:01:01,880 --> 00:01:10,800
+好吧，今天这种情况就像这样，如果你在网上购物，假设你
+
+13
+00:01:10,800 --> 00:01:15,359
+online shopping, just like you're doing the online shopping through your desktop, then
+
+13
+00:01:10,800 --> 00:01:15,359
+在线购物，就像您现在在电脑上进行的在线购物一样，非常方便
+
+14
+00:01:15,480 --> 00:01:23,760
+your desktop, there will be a proper window to ask you to input some one-time password.
+
+14
+00:01:15,480 --> 00:01:23,760
+在您的桌面上，将弹出一个窗口，提示您输入一次性密码。
+
+15
+00:01:23,760 --> 00:01:29,480
+So we call this one is a PIN number, this one-time password will be sent to your smartphone
+
+15
+00:01:23,760 --> 00:01:29,480
+我们把这个称为 PIN 号码，这个一次性密码会发送到您的手机上
+
+16
+00:01:29,480 --> 00:01:30,480
+independently.
+
+16
+00:01:29,480 --> 00:01:30,480
+独立地（更自然地表达）
+
+17
+00:01:30,480 --> 00:01:37,159
+Okay, you have your smartphone, and today we assume your smartphone, just your personal
+
+17
+00:01:30,480 --> 00:01:37,159
+好的，你已经拥有了你的智能手机，今天我们假设这只是一部属于你个人的手机
+
+18
+00:01:37,159 --> 00:01:40,960
+belongings will not be stolen by someone else.
+
+18
+00:01:37,159 --> 00:01:40,960
+财物不会被人偷走，表述更自然。
+
+19
+00:01:40,959 --> 00:01:47,199
+You have your smartphone, because that smartphone, the smartphone number is registered to your
+
+19
+00:01:40,959 --> 00:01:47,199
+你拥有你的智能手机，因为那部手机号码已经登记在你的名下，这是很自然的
+
+20
+00:01:47,199 --> 00:01:49,199
+credit card company.
+
+20
+00:01:47,199 --> 00:01:49,199
+信用卡公司
+
+21
+00:01:49,199 --> 00:01:56,000
+So credit card company will send this PIN number separately, okay?
+
+21
+00:01:49,199 --> 00:01:56,000
+信用卡公司将单独发送这个 PIN 码，好的吗？
+
+22
+00:01:56,000 --> 00:02:03,000
+And once you have this PIN number, you can input the PIN number into this proper window
+
+22
+00:01:56,000 --> 00:02:03,000
+一旦您获得了这个 PIN 码，就可以将其输入到相应的窗口中
+
+23
+00:02:03,000 --> 00:02:08,439
+to finish this payment process.
+
+23
+00:02:03,000 --> 00:02:08,439
+请完成此付款流程。
+
+24
+00:02:08,439 --> 00:02:18,159
+So this is required, if you cannot provide this password, then your transaction cannot
+
+24
+00:02:08,439 --> 00:02:18,159
+因此这项是必须的，若您无法提供该密码，您的交易将无法完成
+
+25
+00:02:18,159 --> 00:02:22,039
+be approved.
+
+25
+00:02:18,159 --> 00:02:22,039
+获得批准。
+
+26
+00:02:22,039 --> 00:02:29,840
+And today it is still used, it is very efficient and very secure, and we say, well, it is very
+
+26
+00:02:22,039 --> 00:02:29,840
+今天它依然在使用，效率极高，安全性也很强，我们常说，嗯，它真的很不错
+
+27
+00:02:29,840 --> 00:02:36,240
+useful, so we'll try to understand what's behind it, what's the logic, why it can provide
+
+27
+00:02:29,840 --> 00:02:36,240
+有用，所以我们会尝试弄清楚其背后的逻辑，以及它为何能够提供
+
+28
+00:02:36,320 --> 00:02:39,120
+the security here.
+
+28
+00:02:36,320 --> 00:02:39,120
+这里的安全保障措施。
+
+29
+00:02:39,120 --> 00:02:47,800
+The 3D secure is a solution that Visa introduced in 2001 to prevent three main sources of fraud
+
+29
+00:02:39,120 --> 00:02:47,800
+Visa 于 2001 年推出的一种解决方案，旨在防止三种主要欺诈手段
+
+30
+00:02:47,800 --> 00:02:51,760
+in the credit card online transaction.
+
+30
+00:02:47,800 --> 00:02:51,760
+在信用卡线上交易中。
+
+31
+00:02:51,760 --> 00:03:00,719
+For example, well, someone may use an unauthenticated card, well, you will have unauthenticated cards,
+
+31
+00:02:51,760 --> 00:03:00,719
+例如，嗯，有人可能会使用一张未认证的卡，嗯，你将会有未认证的卡，
+
+32
+00:03:00,759 --> 00:03:08,879
+you cannot pass this 3D secure protocol, or your card has been stolen, but someone else
+
+32
+00:03:00,759 --> 00:03:08,879
+您无法通过此 3D 安全协议，或者您的卡片可能被盗，他人正在使用
+
+33
+00:03:08,879 --> 00:03:17,599
+will try to use your credit card to do the online shopping, or some ASICL merchant may
+
+33
+00:03:08,879 --> 00:03:17,599
+尝试使用您的信用卡进行在线购物，或者某些商家可能会这样做
+
+34
+00:03:17,599 --> 00:03:22,280
+make some fraudulent claims.
+
+34
+00:03:17,599 --> 00:03:22,280
+制造欺诈性声明的行为。
+
+35
+00:03:22,319 --> 00:03:30,560
+So all this kind of fraudulence can be prevented if we have this 3D secure protocols in the
+
+35
+00:03:22,319 --> 00:03:30,560
+如果我们采用这种 3D 安全协议，那么就可以有效预防此类欺诈行为
+
+36
+00:03:30,560 --> 00:03:32,719
+online shopping.
+
+36
+00:03:30,560 --> 00:03:32,719
+在线购物
+
+37
+00:03:32,719 --> 00:03:38,520
+The goal is to facilitate remote card payments, just like we have in online shopping.
+
+37
+00:03:32,719 --> 00:03:38,520
+目标是简化远程卡支付流程，就像我们在网上购物那样方便。
+
+38
+00:03:38,520 --> 00:03:46,599
+The solution requires users to register, you should first register with your credit card,
+
+38
+00:03:38,520 --> 00:03:46,599
+解决方案需要用户注册，您应首先使用信用卡进行注册，
+
+39
+00:03:46,599 --> 00:03:54,359
+your credit card company will register, your account, your card can support this 3D protocols.
+
+39
+00:03:46,599 --> 00:03:54,359
+您的信用卡公司将为您注册账户，您的卡片支持这些 3D 安全协议。
+
+40
+00:03:54,359 --> 00:04:05,759
+And also in the payment process, it establishes a PIN number with their card issuer for authentication
+
+40
+00:03:54,359 --> 00:04:05,759
+在支付过程中，用户会与发卡机构设置一个 PIN 码以进行身份验证
+
+41
+00:04:05,759 --> 00:04:12,000
+during an online transaction.
+
+41
+00:04:05,759 --> 00:04:12,000
+在进行在线交易时。
+
+42
+00:04:12,000 --> 00:04:16,959
+We call it to be 3D, 3D means we have three domains.
+
+42
+00:04:12,000 --> 00:04:16,959
+我们把它称为 3D，3D 代表我们拥有三个维度。
+
+43
+00:04:16,959 --> 00:04:23,439
+We have the issuer domain, acquired domain, and in between we have the interoperability
+
+43
+00:04:16,959 --> 00:04:23,439
+我们拥有发行者域名和获取的域名，两者之间实现了互操作性
+
+44
+00:04:23,439 --> 00:04:27,759
+domain through the Visa payment networks.
+
+44
+00:04:23,439 --> 00:04:27,759
+通过 Visa 支付网络进行的域名（经过优化）。
+
+45
+00:04:27,759 --> 00:04:38,060
+So within the issuer domain, we have the access control server.
+
+45
+00:04:27,759 --> 00:04:38,060
+因此，在发行者域内，我们设置了访问控制服务器。
+
+46
+00:04:38,060 --> 00:04:47,500
+So this server is maintained by the card issuer, the issuer bank, to support the card authentication.
+
+46
+00:04:38,060 --> 00:04:47,500
+因此，这个服务器由发卡机构，即发行银行维护，目的是为了支持卡片认证。
+
+47
+00:04:47,500 --> 00:04:55,300
+And also we have the Visa directory, so this directory you can treat this one to be a server.
+
+47
+00:04:47,500 --> 00:04:55,300
+我们拥有 Visa 目录，您可以将其视为服务器使用。
+
+48
+00:04:55,300 --> 00:04:59,180
+This server resides in the middle domain.
+
+48
+00:04:55,300 --> 00:04:59,180
+服务器位于中间域，表述更为自然。
+
+49
+00:04:59,180 --> 00:05:05,399
+So this middle domain means the interoperability domain, and it mediates the communication
+
+49
+00:04:59,180 --> 00:05:05,399
+这意味着中间域代表互操作性域，它负责协调通信过程
+
+50
+00:05:05,399 --> 00:05:09,159
+between the merchant and the issuer.
+
+50
+00:05:05,399 --> 00:05:09,159
+商家和发行者之间。
+
+51
+00:05:09,159 --> 00:05:16,560
+Okay, we look at the architecture for this 3D, 3D, three domains.
+
+51
+00:05:09,159 --> 00:05:16,560
+好的，我们来了解一下这个 3D、3D、三个维度的架构。
+
+52
+00:05:16,560 --> 00:05:23,159
+We have issuer domain, so you're the card holder, we have the issuer bank here, right?
+
+52
+00:05:16,560 --> 00:05:23,159
+我们有发行者域名，因此您是持卡人，这里就是发行银行，没错吧？
+
+53
+00:05:23,159 --> 00:05:25,039
+So this is one domain.
+
+53
+00:05:23,159 --> 00:05:25,039
+这就是一个域名。
+
+54
+00:05:25,039 --> 00:05:30,819
+The second domain is acquired domain, acquired domain, we have the merchant, we have the
+
+54
+00:05:25,039 --> 00:05:30,819
+第二个域名是收购来的，我们拥有商家，我们拥有
+
+55
+00:05:30,899 --> 00:05:36,540
+acquired bank, that's a merchant's bank.
+
+55
+00:05:30,899 --> 00:05:36,540
+购得的银行，那是一家商户银行。
+
+56
+00:05:36,540 --> 00:05:43,019
+In between these two domains, we have some interoperability domain.
+
+56
+00:05:36,540 --> 00:05:43,019
+在这两个领域之间，存在一个互操作域。
+
+57
+00:05:43,019 --> 00:05:45,620
+It includes the Visa directory.
+
+57
+00:05:43,019 --> 00:05:45,620
+它包含签证目录信息。
+
+58
+00:05:45,620 --> 00:05:47,980
+This is a server.
+
+58
+00:05:45,620 --> 00:05:47,980
+这是一台服务器。
+
+59
+00:05:47,980 --> 00:05:48,980
+This is server.
+
+59
+00:05:47,980 --> 00:05:48,980
+这是服务器。
+
+60
+00:05:48,980 --> 00:05:58,579
+So this server, the main function is to check whether your card is valid.
+
+60
+00:05:48,980 --> 00:05:58,579
+因此，这个服务器的主要功能是验证您的卡片是否有效。
+
+61
+00:05:58,579 --> 00:06:07,539
+So for these three domains, their communication will use the SSL communications.
+
+61
+00:05:58,579 --> 00:06:07,539
+因此，这三个域之间的通信将采用 SSL 加密通信，表述更为自然。
+
+62
+00:06:07,539 --> 00:06:26,620
+So SSL is a secure socket layer, secure socket layer.
+
+62
+00:06:07,539 --> 00:06:26,620
+SSL，即安全套接字层，是一种安全的数据传输协议。
+
+63
+00:06:26,620 --> 00:06:34,500
+And TLS is transport layer security.
+
+63
+00:06:26,620 --> 00:06:34,500
+TLS 是传输层安全，这是一种安全协议。
+
+64
+00:06:34,500 --> 00:06:43,500
+Well, in this architecture, we have five point-to-point SSL connections to connect the buyer, the
+
+64
+00:06:34,500 --> 00:06:43,500
+嗯，在这个架构中，我们建立了五个点对点的 SSL 连接，用于连接买家，
+
+65
+00:06:43,500 --> 00:06:51,500
+merchant, and the access control server for their secure communications, just like we
+
+65
+00:06:43,500 --> 00:06:51,500
+商户及其安全通信的访问控制服务器，就像我们一样，这样的描述更为自然易懂
+
+66
+00:06:51,500 --> 00:07:01,660
+We can use your public key to negotiate, or session, secret key, right, or key K, to
+
+66
+00:06:51,500 --> 00:07:01,660
+我们可以使用您的公钥来协商会话密钥，或者称为密钥 K，对吧？
+
+67
+00:07:01,660 --> 00:07:07,600
+be used for the future session, secure communications, use your public key scheme.
+
+67
+00:07:01,660 --> 00:07:07,600
+用于未来会话、安全通信，请使用您的公钥方案。
+
+68
+00:07:07,600 --> 00:07:15,139
+So later on, there could be multiple rounds, so we can talk secretly by using that secret
+
+68
+00:07:07,600 --> 00:07:15,139
+因此后来可能会有多轮秘密交谈，我们可以利用这个秘密悄悄地沟通
+
+69
+00:07:15,139 --> 00:07:16,779
+key K.
+
+69
+00:07:15,139 --> 00:07:16,779
+关键词 K.（优化翻译）
+
+70
+00:07:16,779 --> 00:07:21,839
+So this can be done in the SSL, this connection.
+
+70
+00:07:16,779 --> 00:07:21,839
+因此，可以在 SSL 中进行此连接，这样的表述更为自然易懂。
+
+71
+00:07:21,839 --> 00:07:28,699
+For these five point-to-point connections, the first one is from cardholder between the
+
+71
+00:07:21,839 --> 00:07:28,699
+对于这五个点对点连接，第一个连接是持卡人之间的
+
+72
+00:07:28,699 --> 00:07:31,799
+cardholder and the merchant.
+
+72
+00:07:28,699 --> 00:07:31,799
+信用卡持卡人与商家。
+
+73
+00:07:31,799 --> 00:07:38,939
+So this first one between the cardholder and the merchant.
+
+73
+00:07:31,799 --> 00:07:38,939
+这第一个是在持卡人和商家之间，意思是在他们之间讨论的第一个问题。
+
+74
+00:07:38,939 --> 00:07:46,619
+In this connection, for example, the cardholder can place the order information.
+
+74
+00:07:38,939 --> 00:07:46,619
+在此连接中，例如，持卡人可以输入订单信息。
+
+75
+00:07:46,620 --> 00:07:54,699
+We want to order a TV from this merchant, right?
+
+75
+00:07:46,620 --> 00:07:54,699
+我们想从这个商家买一台电视，您觉得怎么样？
+
+76
+00:07:54,699 --> 00:07:59,459
+And second connection is between the merchant and the visa directory.
+
+76
+00:07:54,699 --> 00:07:59,459
+第二个连接是商家与维萨目录之间的连接。
+
+77
+00:07:59,459 --> 00:08:02,459
+You can see this number two.
+
+77
+00:07:59,459 --> 00:08:02,459
+你可以看到这个数字 2。
+
+78
+00:08:02,459 --> 00:08:07,040
+Merchant will talk with the visa directory.
+
+78
+00:08:02,459 --> 00:08:07,040
+商家将与维萨目录进行沟通。
+
+79
+00:08:07,040 --> 00:08:12,180
+When you place your order, you will also provide your account information, your credit card
+
+79
+00:08:07,040 --> 00:08:12,180
+当您下单时，您需要提供您的账户信息和信用卡信息
+
+80
+00:08:12,180 --> 00:08:13,319
+number.
+
+80
+00:08:12,180 --> 00:08:13,319
+数字。
+
+81
+00:08:13,319 --> 00:08:16,920
+So this credit card number will be obtained by merchant.
+
+81
+00:08:13,319 --> 00:08:16,920
+这张信用卡号码将由商家获取，表述更加自然。
+
+82
+00:08:16,920 --> 00:08:26,680
+So merchant will talk with the visa directory to say, well, how about, is this card account
+
+82
+00:08:16,920 --> 00:08:26,680
+因此商家将向 visa 目录询问，嗯，这个卡账户怎么样
+
+83
+00:08:26,680 --> 00:08:37,860
+valid or number valid?
+
+83
+00:08:26,680 --> 00:08:37,860
+有效或数字有效？
+
+84
+00:08:37,860 --> 00:08:44,800
+So the merchant will talk with the visa directory whether your card number is valid.
+
+84
+00:08:37,860 --> 00:08:44,800
+因此商家会与 visa 目录联系，确认您的卡号是否有效。
+
+85
+00:08:44,800 --> 00:08:52,519
+If it is valid, the visa directory, this server, will have another connection, another communication
+
+85
+00:08:44,800 --> 00:08:52,519
+如果有效，那么这个服务器上的签证目录将会有一个新的连接和通讯
+
+86
+00:08:52,519 --> 00:08:55,060
+channel with ACS.
+
+86
+00:08:52,519 --> 00:08:55,060
+带有 ACS 功能的频道
+
+87
+00:08:55,060 --> 00:09:00,740
+So ACS is the access control server reside at the issuer bank, just like your credit
+
+87
+00:08:55,060 --> 00:09:00,740
+ACS 是位于发行银行上的访问控制服务器，就像您的信用卡一样
+
+88
+00:09:00,740 --> 00:09:02,620
+card company.
+
+88
+00:09:00,740 --> 00:09:02,620
+卡片公司
+
+89
+00:09:02,639 --> 00:09:12,620
+And the visa directory will construct this SSL connection with ACS to check whether your
+
+89
+00:09:02,639 --> 00:09:12,620
+签证目录将与 ACS 建立此 SSL 连接，以验证您的
+
+90
+00:09:12,620 --> 00:09:27,620
+card support, your card number, this card support 3D services.
+
+90
+00:09:12,620 --> 00:09:27,620
+卡片支持服务，您的卡片号码，该卡片支持 3D 服务。
+
+91
+00:09:33,120 --> 00:09:40,580
+Once the visa directory gets your credit card number, he will contact your visa company
+
+91
+00:09:33,120 --> 00:09:40,580
+一旦签证目录获取了您的信用卡信息，他会联系您的签证机构
+
+92
+00:09:40,580 --> 00:09:48,860
+or your master card company to check whether this one can be done in 3D protocols.
+
+92
+00:09:40,580 --> 00:09:48,860
+请向您的信用卡公司核实，看是否能够通过 3D 协议完成这项操作。
+
+93
+00:09:48,860 --> 00:09:59,980
+If it can be done in 3D protocols, then he will continue to forward the message through
+
+93
+00:09:48,860 --> 00:09:59,980
+如果可以在 3D 协议中实现，那么他将继续通过消息进行转发
+
+94
+00:09:59,980 --> 00:10:02,500
+this connection.
+
+94
+00:09:59,980 --> 00:10:02,500
+这条连接。
+
+95
+00:10:02,500 --> 00:10:13,720
+So message will be sent back to the card holder, just like you need to input a PIN number.
+
+95
+00:10:02,500 --> 00:10:13,720
+消息将被退回给持卡人，就像您需要输入 PIN 码那样。
+
+96
+00:10:13,720 --> 00:10:19,899
+So the message will be go through from the merchant, sent to the card holder, just like
+
+96
+00:10:13,720 --> 00:10:19,899
+因此，消息将从商家发出，发送给持卡人，就像..
+
+97
+00:10:19,899 --> 00:10:27,899
+in this online shopping, there will be a pop-up window to ask you to input your PIN number.
+
+97
+00:10:19,899 --> 00:10:27,899
+在此在线购物过程中，会弹出一个窗口，提示您输入您的 PIN 码。
+
+98
+00:10:27,899 --> 00:10:34,620
+That PIN number, that message will be sent to another connection between the card holder
+
+98
+00:10:27,899 --> 00:10:34,620
+那个 PIN 号码，该信息将发送至持卡人之间的另一条连接，翻译更加自然流畅
+
+99
+00:10:34,620 --> 00:10:38,000
+and the access control server.
+
+99
+00:10:34,620 --> 00:10:38,000
+并且这是访问控制服务器。
+
+100
+00:10:38,000 --> 00:10:43,419
+Your PIN number will be checked by the access server.
+
+100
+00:10:38,000 --> 00:10:43,419
+您的 PIN 码将被访问服务器验证。
+
+101
+00:10:43,419 --> 00:10:52,299
+So this PIN number actually will be given to your smartphone from the issuer bank.
+
+101
+00:10:43,419 --> 00:10:52,299
+因此，这个 PIN 码将由发卡银行直接发送到您的手机上。
+
+102
+00:10:52,299 --> 00:11:05,779
+So issuer bank will deliver the PIN to your smartphone.
+
+102
+00:10:52,299 --> 00:11:05,779
+发卡行会将 PIN 码发送至您的手机。
+
+103
+00:11:05,779 --> 00:11:12,699
+And you can get this PIN number from your smartphone and input this PIN number into
+
+103
+00:11:05,779 --> 00:11:12,699
+您可以从智能手机中获取此 PIN 码，并将其输入
+
+104
+00:11:12,700 --> 00:11:22,780
+the pop-up window in your webpage to finish this transaction.
+
+104
+00:11:12,700 --> 00:11:22,780
+页面中的弹出窗口，用于完成这笔交易。
+
+105
+00:11:22,780 --> 00:11:27,259
+So this PIN number finally will arrive at the access server.
+
+105
+00:11:22,780 --> 00:11:27,259
+因此，这个 PIN 号码最终会到达访问服务器。
+
+106
+00:11:27,259 --> 00:11:32,020
+So access server of course knows the PIN number.
+
+106
+00:11:27,259 --> 00:11:32,020
+当然，访问服务器知道这个 PIN 码。
+
+107
+00:11:32,020 --> 00:11:34,860
+So we double check this PIN number is correct.
+
+107
+00:11:32,020 --> 00:11:34,860
+因此我们再次核实这个 PIN 号码是否正确。
+
+108
+00:11:34,860 --> 00:11:42,220
+If it is correct, the issuer bank will have another connection with the merchant.
+
+108
+00:11:34,860 --> 00:11:42,220
+如果正确，发行银行将和商家有另一层联系。
+
+109
+00:11:42,220 --> 00:11:52,540
+So from the issuer bank and the message will be sent to the merchant to notify this transaction
+
+109
+00:11:42,220 --> 00:11:52,540
+因此，消息将从发行银行发送给商户，以通知这笔交易
+
+110
+00:11:52,540 --> 00:11:59,860
+is approved, approval.
+
+110
+00:11:52,540 --> 00:11:59,860
+已批准，批准。
+
+111
+00:11:59,860 --> 00:12:05,740
+This transaction is approved from the issuer bank will notify the merchant that well this
+
+111
+00:11:59,860 --> 00:12:05,740
+这笔交易已获发卡行批准，并将通知商户，嗯，是这样的
+
+112
+00:12:05,740 --> 00:12:07,639
+transaction is approved.
+
+112
+00:12:05,740 --> 00:12:07,639
+交易已获批准。
+
+113
+00:12:07,639 --> 00:12:12,720
+So in this approved information, it contains some token.
+
+113
+00:12:07,639 --> 00:12:12,720
+在这个经过批准的信息中，它包含了一些标记。
+
+114
+00:12:12,720 --> 00:12:19,139
+So this token of course contains the issuer bank's signature and also contains just like
+
+114
+00:12:12,720 --> 00:12:19,139
+当然，这个令牌中包含了发行银行的签名，同时也包含类似的内容
+
+115
+00:12:19,139 --> 00:12:22,439
+how much for this transaction.
+
+115
+00:12:19,139 --> 00:12:22,439
+这笔交易的费用是多少
+
+116
+00:12:22,439 --> 00:12:34,519
+And later on, the merchant can use this token to claim the credit from his bank.
+
+116
+00:12:22,439 --> 00:12:34,519
+之后，商人可以用这个令牌向自己的银行提取信用，表达更为自然。
+
+117
+00:12:34,519 --> 00:12:36,439
+The same idea, right?
+
+117
+00:12:34,519 --> 00:12:36,439
+这个想法是不是一样的呢？
+
+118
+00:12:36,440 --> 00:12:40,480
+So you can see, well, we have five connections.
+
+118
+00:12:36,440 --> 00:12:40,480
+您可以看到，嗯，我们共有五个连接。
+
+119
+00:12:40,480 --> 00:12:45,080
+Number one is between the merchant, between the cardholder and the merchant.
+
+119
+00:12:40,480 --> 00:12:45,080
+第一个数字位于商家与持卡人之间。
+
+120
+00:12:45,080 --> 00:12:50,880
+That's all the information, card information.
+
+120
+00:12:45,080 --> 00:12:50,880
+这就是所有信息，卡片信息。（已优化）
+
+121
+00:12:50,880 --> 00:12:57,080
+Number two is between the Visa directory and the merchant will check whether this credit
+
+121
+00:12:50,880 --> 00:12:57,080
+第二个数字位于 Visa 目录与商户之间，商户将检查这笔信用额度
+
+122
+00:12:57,080 --> 00:12:59,400
+card number is valid.
+
+122
+00:12:57,080 --> 00:12:59,400
+卡号有效，无误。
+
+123
+00:12:59,400 --> 00:13:04,480
+Number three is here.
+
+123
+00:12:59,400 --> 00:13:04,480
+三号就在这里。
+
+124
+00:13:05,480 --> 00:13:10,480
+This is number four.
+
+124
+00:13:05,480 --> 00:13:10,480
+这是第四个。
+
+125
+00:13:10,480 --> 00:13:13,240
+This is number three.
+
+125
+00:13:10,480 --> 00:13:13,240
+这是第三个数字。
+
+126
+00:13:13,240 --> 00:13:18,279
+Between the cardholder and the access control server, the cardholder will provide a valid
+
+126
+00:13:13,240 --> 00:13:18,279
+信用卡持卡人与访问控制服务器之间，持卡人需提供有效信息
+
+127
+00:13:18,279 --> 00:13:25,080
+PIN and this PIN information will be sent to the access server.
+
+127
+00:13:18,279 --> 00:13:25,080
+PIN 信息及相应信息将发送至访问服务器。
+
+128
+00:13:25,080 --> 00:13:31,879
+And number four is between the Visa directory and the access control server.
+
+128
+00:13:25,080 --> 00:13:31,879
+第四个元素位于 Visa 目录与访问控制服务器之间。
+
+129
+00:13:31,879 --> 00:13:40,519
+So this communication will answer whether the card can support 3D protocols.
+
+129
+00:13:31,879 --> 00:13:40,519
+因此，这次通讯将回答这张卡是否支持 3D 协议。
+
+130
+00:13:40,519 --> 00:13:44,960
+And number five is between the merchant and access control server.
+
+130
+00:13:40,519 --> 00:13:44,960
+第五个元素位于商家与访问控制服务器之间。
+
+131
+00:13:44,960 --> 00:13:52,159
+That means the issuer bank will finally notify the merchant whether this transaction is approved
+
+131
+00:13:44,960 --> 00:13:52,159
+这意味着发行银行最终会通知商户这笔交易是否获得批准
+
+132
+00:13:52,159 --> 00:13:56,200
+or not.
+
+132
+00:13:52,159 --> 00:13:56,200
+或者不，这样的表达更自然。
+
+133
+00:13:56,200 --> 00:14:02,400
+So this is number five.
+
+133
+00:13:56,200 --> 00:14:02,400
+这就是第五个，简单来说。
+
+134
+00:14:02,400 --> 00:14:09,600
+And the use of SSAL provides the service of confidentiality because all the messages will
+
+134
+00:14:02,400 --> 00:14:09,600
+使用 SSAL 提供保密服务，因为所有消息都将得到保护，从而确保信息的安全性
+
+135
+00:14:09,600 --> 00:14:15,080
+be encrypted.
+
+135
+00:14:09,600 --> 00:14:15,080
+加密（经过润色）
+
+136
+00:14:15,080 --> 00:14:22,040
+As we said before, the secret key, K, will be used to encrypt the message.
+
+136
+00:14:15,080 --> 00:14:22,040
+我们之前提到过，密钥 K 将被用于加密消息。
+
+137
+00:14:22,279 --> 00:14:30,679
+This key, K, for the encryption will be used for encryption and only that two participants
+
+137
+00:14:22,279 --> 00:14:30,679
+这个用于加密的密钥 K 将仅用于两个参与者
+
+138
+00:14:30,679 --> 00:14:35,360
+in the SSAL channel can know the key, K.
+
+138
+00:14:30,679 --> 00:14:35,360
+在 SSAL 通道中可以得知密钥 K。
+
+139
+00:14:35,360 --> 00:14:39,039
+Of course, we will guarantee the integrity.
+
+139
+00:14:35,360 --> 00:14:39,039
+当然，我们保证内容完整无误。
+
+140
+00:14:39,039 --> 00:14:47,959
+So the message integrity and authentication will be guaranteed by the signature.
+
+140
+00:14:39,039 --> 00:14:47,959
+因此，消息的完整性和认证将通过签名得到保证。
+
+141
+00:14:47,959 --> 00:14:50,360
+We verify your signature.
+
+141
+00:14:47,959 --> 00:14:50,360
+我们核实您的签名。
+
+142
+00:14:50,360 --> 00:14:56,639
+We check your signature validity, we guarantee that this is really from us, not from Bob,
+
+142
+00:14:50,360 --> 00:14:56,639
+我们检查您的签名有效性，我们保证这确实是我们发出的，不是 Bob 发出的，
+
+143
+00:14:56,639 --> 00:15:03,720
+and also the message is not modified.
+
+143
+00:14:56,639 --> 00:15:03,720
+消息未被修改，表述更加自然。
+
+144
+00:15:03,720 --> 00:15:13,240
+So before the 3D protocols, both the issuer and the acquired banks provide their bank
+
+144
+00:15:03,720 --> 00:15:13,240
+在 3D 协议之前，发行行和收购行都提供各自的银行信息
+
+145
+00:15:13,240 --> 00:15:20,600
+identification numbers and the URL addresses of their respective servers.
+
+145
+00:15:13,240 --> 00:15:20,600
+识别号码及其对应服务器的网址。
+
+146
+00:15:20,600 --> 00:15:29,120
+This URL is required because the message just like from the merchant sent to cardholder
+
+146
+00:15:20,600 --> 00:15:29,120
+此 URL 是必需的，因为消息内容就像商家发送给持卡人一样
+
+147
+00:15:29,120 --> 00:15:36,919
+and that message should contain the access information because later on the cardholder
+
+147
+00:15:29,120 --> 00:15:36,919
+此消息应包含访问信息，因为稍后持卡人将需要这些信息
+
+148
+00:15:36,919 --> 00:15:42,779
+need to forward the PIN number to that access address.
+
+148
+00:15:36,919 --> 00:15:42,779
+需要将 PIN 号码转发至该访问地址。
+
+149
+00:15:42,779 --> 00:15:50,939
+So both servers need to provide their URL information such that others can contact
+
+149
+00:15:42,779 --> 00:15:50,939
+因此，这两个服务器必须提供它们的 URL 信息，以便其他人能够联系到它们
+
+150
+00:15:50,939 --> 00:15:54,439
+your server.
+
+150
+00:15:50,939 --> 00:15:54,439
+您的服务器
+
+151
+00:15:54,439 --> 00:16:01,500
+So cardholder authentication mechanism is left to the issuer, cardholder can provide
+
+151
+00:15:54,439 --> 00:16:01,500
+信用卡持卡人认证机制由发卡行负责，持卡人可以提供
+
+152
+00:16:01,500 --> 00:16:03,480
+the PIN number.
+
+152
+00:16:01,500 --> 00:16:03,480
+这是 PIN 号码。
+
+153
+00:16:03,480 --> 00:16:07,699
+So today should be a PIN, right?
+
+153
+00:16:03,480 --> 00:16:07,699
+今天应该是 PIN，没错吧？
+
+154
+00:16:07,700 --> 00:16:14,780
+Or you can use your biometric just like your facial recognition, your smartphone sometimes
+
+154
+00:16:07,700 --> 00:16:14,780
+你可以像使用面部识别一样使用生物识别技术，有时甚至可以直接用你的智能手机
+
+155
+00:16:14,780 --> 00:16:23,259
+can recognize your face, your facial recognition or in some cases your fingerprint can do the
+
+155
+00:16:14,780 --> 00:16:23,259
+可以识别您的面部，在有些情况下，您的面部识别或指纹识别也能做到
+
+156
+00:16:23,259 --> 00:16:29,980
+authentication purpose or you need to use your PIN number.
+
+156
+00:16:23,259 --> 00:16:29,980
+验证身份目的，或者您需要输入您的 PIN 码。
+
+157
+00:16:29,980 --> 00:16:36,780
+The default is a password that the user chooses as enrollment or we can use one-time password
+
+157
+00:16:29,980 --> 00:16:36,780
+默认密码由用户在注册时选择，或者使用一次性密码更合适
+
+158
+00:16:36,860 --> 00:16:43,539
+to your smartphone today.
+
+158
+00:16:36,860 --> 00:16:43,539
+立即发送到您的手机上。
+
+159
+00:16:43,539 --> 00:16:50,179
+So now we look at in a 3D protocols, in a purchase, in a payment, what are the steps
+
+159
+00:16:43,539 --> 00:16:50,179
+现在我们来详细看看在 3D 协议、购买和支付过程中，具体需要经历哪些步骤
+
+160
+00:16:50,179 --> 00:16:56,179
+there?
+
+160
+00:16:50,179 --> 00:16:56,179
+你好？
+
+161
+00:16:56,179 --> 00:17:02,779
+So very important we should have the payment authentication, well you can see we list totally
+
+161
+00:16:56,179 --> 00:17:02,779
+非常重要，我们必须进行支付验证，您可以看到我们列得非常全面
+
+162
+00:17:02,779 --> 00:17:07,899
+from step one to step twelve.
+
+162
+00:17:02,779 --> 00:17:07,899
+从第一步到第十二步（更自然、更易理解的翻译）
+
+163
+00:17:07,899 --> 00:17:17,779
+So let's see in each step what happens.
+
+163
+00:17:07,899 --> 00:17:17,779
+让我们一步一步来看会发生什么。
+
+164
+00:17:17,779 --> 00:17:26,899
+So first step, step one is the buyer should first indicate an intention to buy by clicking
+
+164
+00:17:17,779 --> 00:17:26,899
+首先的步骤，第一步是买家应先通过点击来表示购买意愿
+
+165
+00:17:26,899 --> 00:17:30,059
+on the corresponding buy button.
+
+165
+00:17:26,899 --> 00:17:30,059
+在对应的购买按钮上。
+
+166
+00:17:30,059 --> 00:17:39,700
+Step one means the cardholder will place the purchase order and the payment information,
+
+166
+00:17:30,059 --> 00:17:39,700
+第一步是指持卡人将下单并输入支付信息，表述更为自然易懂
+
+167
+00:17:39,700 --> 00:17:41,579
+right?
+
+167
+00:17:39,700 --> 00:17:41,579
+对不起，我刚才没听清，您能再说一遍吗？
+
+168
+00:17:41,579 --> 00:17:49,339
+Will place the order information and transmit the payment information to the merchant.
+
+168
+00:17:41,579 --> 00:17:49,339
+将订单信息放置并传输支付信息给商家。
+
+169
+00:17:49,339 --> 00:17:56,899
+That's step one, step one, sending your card information to the merchant.
+
+169
+00:17:49,339 --> 00:17:56,899
+这是第一步：将您的卡信息发送给商家。
+
+170
+00:17:56,900 --> 00:18:07,540
+And then in step two, in step two, the merchant's plug-in MPI, just like the merchant server,
+
+170
+00:17:56,900 --> 00:18:07,540
+然后在第二步，商家的插件 MPI，就像商家服务器一样，
+
+171
+00:18:07,540 --> 00:18:15,820
+request the list of participating card ranges from the Visa's 3D security directory with
+
+171
+00:18:07,540 --> 00:18:15,820
+从 Visa 的 3D 安全目录中请求参与卡片范围的列表
+
+172
+00:18:15,820 --> 00:18:18,100
+the card range request message.
+
+172
+00:18:15,820 --> 00:18:18,100
+卡范围请求信息
+
+173
+00:18:26,900 --> 00:18:42,060
+So step two is, okay, the merchant want to know whether this credit card number is valid
+
+173
+00:18:26,900 --> 00:18:42,060
+第二步是，商家想确认这张信用卡号是否有效
+
+174
+00:18:42,060 --> 00:18:49,500
+or not.
+
+174
+00:18:42,060 --> 00:18:49,500
+或者不，这样的表达更自然。
+
+175
+00:18:49,500 --> 00:18:58,940
+The merchant in step two is from here, in step two, the merchant wants to know whether
+
+175
+00:18:49,500 --> 00:18:58,940
+第二步的商人来自这里，在第二步，商人想了解
+
+176
+00:18:58,940 --> 00:19:08,259
+the account provided by the cardholder is valid or not, the credit card number account
+
+176
+00:18:58,940 --> 00:19:08,259
+卡持卡人提供的账户是否有效，信用卡账号信息
+
+177
+00:19:08,259 --> 00:19:12,059
+valid or not.
+
+177
+00:19:08,259 --> 00:19:12,059
+有效与否。
+
+178
+00:19:12,059 --> 00:19:18,940
+So this Visa directory server will check the provided credit card number is valid or not
+
+178
+00:19:12,059 --> 00:19:18,940
+因此，这个 Visa 目录服务器将检查所提供的信用卡号是否有效
+
+179
+00:19:19,100 --> 00:19:23,860
+and give the response to the merchant server.
+
+179
+00:19:19,100 --> 00:19:23,860
+请向商家服务器做出响应。
+
+180
+00:19:23,860 --> 00:19:26,380
+So that's step three.
+
+180
+00:19:23,860 --> 00:19:26,380
+那就是第三步，简单来说。
+
+181
+00:19:26,380 --> 00:19:34,640
+So step three is a credit card card range response.
+
+181
+00:19:26,380 --> 00:19:34,640
+第三步是关于信用卡卡号范围的响应。
+
+182
+00:19:34,640 --> 00:19:45,360
+So in step two, the Visa directory will verify the PAN number provided by the customer is
+
+182
+00:19:34,640 --> 00:19:45,360
+因此在第二步，Visa 目录将验证客户提供的 PAN 号码，确保其有效性
+
+183
+00:19:45,439 --> 00:19:49,279
+within the range of participating cards.
+
+183
+00:19:45,439 --> 00:19:49,279
+在参与卡片的有效范围内。
+
+184
+00:19:49,279 --> 00:19:51,679
+So your account is valid.
+
+184
+00:19:49,279 --> 00:19:51,679
+您的账户验证有效。
+
+185
+00:19:51,679 --> 00:20:00,479
+Then in step three, the directory response is in the message card range response.
+
+185
+00:19:51,679 --> 00:20:00,479
+在第三步中，目录响应位于消息卡片响应范围内。翻译更加自然和易于理解。
+
+186
+00:20:00,479 --> 00:20:08,919
+So step three is to reply the server, the merchant server, that this credit card is
+
+186
+00:20:00,479 --> 00:20:08,919
+第三个步骤是回复服务器——商家服务器——确认这张信用卡
+
+187
+00:20:08,919 --> 00:20:09,919
+valid.
+
+187
+00:20:08,919 --> 00:20:09,919
+有效的。
+
+188
+00:20:10,320 --> 00:20:18,279
+Then in step four, the MPI, the server, the merchant server sends the verify enrollment
+
+188
+00:20:10,320 --> 00:20:18,279
+在第四步，MPI、服务器和商户服务器发送验证注册信息
+
+189
+00:20:18,279 --> 00:20:29,240
+request message to the Visa directory to determine if 3D service is available for this number.
+
+189
+00:20:18,279 --> 00:20:29,240
+向 Visa 目录请求，确认该号码是否支持 3D 安全服务。
+
+190
+00:20:29,240 --> 00:20:32,640
+So step four and five.
+
+190
+00:20:29,240 --> 00:20:32,640
+第 4 步和第 5 步。（更自然、更易理解的翻译）
+
+191
+00:20:32,640 --> 00:20:50,759
+So step four is this PAN number support 3D in this request.
+
+191
+00:20:32,640 --> 00:20:50,759
+第四步是支持在此请求中使用 PAN 号码进行 3D 验证。
+
+192
+00:20:50,759 --> 00:20:51,759
+Step four.
+
+192
+00:20:50,759 --> 00:20:51,759
+第四步。
+
+193
+00:20:52,559 --> 00:21:03,559
+Of course, the server may need to contact the Israel Bank in the ACS.
+
+193
+00:20:52,559 --> 00:21:03,559
+当然，服务器可能需要通过 ACS 与以色列银行取得联系。这样的表达更自然、易懂。
+
+194
+00:21:03,559 --> 00:21:11,720
+The Israel Bank has this access control server, so this question will be forwarded to the
+
+194
+00:21:03,559 --> 00:21:11,720
+以色列银行拥有该访问控制服务器，因此这个问题将被转交处理
+
+195
+00:21:11,720 --> 00:21:17,759
+Israel Bank's access control server in step five.
+
+195
+00:21:11,720 --> 00:21:17,759
+以色列银行第五步的访问控制服务器（经过优化）。
+
+196
+00:21:17,759 --> 00:21:27,519
+And then if the credit card, just like your Visa card, can support this 3D protocols,
+
+196
+00:21:17,759 --> 00:21:27,519
+然后如果您的信用卡，比如 Visa 卡，能够支持这个 3D 安全协议，
+
+197
+00:21:27,519 --> 00:21:39,460
+then the ACS server will reply a message in step six by giving this VES, VEE response.
+
+197
+00:21:27,519 --> 00:21:39,460
+ACS 服务器将在第六步回复一条消息，通过提供这个 VES、VEE 响应。翻译更加自然，易于理解。
+
+198
+00:21:39,460 --> 00:21:46,359
+So VEE means Verify Enrollment Response.
+
+198
+00:21:39,460 --> 00:21:46,359
+因此，VEE 代表验证注册响应。
+
+199
+00:21:46,359 --> 00:21:53,279
+The VEE response message from the access control server of the Israel Bank indicates whether
+
+199
+00:21:46,359 --> 00:21:53,279
+以色列银行访问控制服务器发出的 VEE 响应消息表明
+
+200
+00:21:53,279 --> 00:21:57,959
+the holder is registered in a 3D secure program.
+
+200
+00:21:53,279 --> 00:21:57,959
+持卡人已加入 3D 安全认证计划。
+
+201
+00:21:57,959 --> 00:22:02,359
+So it contains the URL address.
+
+201
+00:21:57,959 --> 00:22:02,359
+因此，它包含了 URL 地址。
+
+202
+00:22:02,359 --> 00:22:05,199
+This is the ACS address.
+
+202
+00:22:02,359 --> 00:22:05,199
+这是 ACS 地址。
+
+203
+00:22:05,199 --> 00:22:12,179
+Toward this ACS server, the card holder browser will post the data.
+
+203
+00:22:05,199 --> 00:22:12,179
+针对该 ACS 服务器，持卡人浏览器将发送数据。
+
+204
+00:22:12,180 --> 00:22:16,840
+So later on, the card holder browser, you're the card holder.
+
+204
+00:22:12,180 --> 00:22:16,840
+因此后来，持卡人浏览器，您就是持卡人。
+
+205
+00:22:16,840 --> 00:22:21,420
+You need to input your PIN number, right?
+
+205
+00:22:16,840 --> 00:22:21,420
+您需要输入您的 PIN 码，对吗？
+
+206
+00:22:21,420 --> 00:22:24,019
+In this browser, you can input your PIN number.
+
+206
+00:22:21,420 --> 00:22:24,019
+在这个浏览器中，您可以输入您的 PIN 码。 (已优化)
+
+207
+00:22:24,019 --> 00:22:32,880
+And this PIN number will be sent to this URL address.
+
+207
+00:22:24,019 --> 00:22:32,880
+这个 PIN 码将被发送到指定的 URL 地址。
+
+208
+00:22:32,880 --> 00:22:42,580
+So in step seven, you see, just like the merchant will get the response that this card number
+
+208
+00:22:32,880 --> 00:22:42,580
+在第七步中，您会发现，正如商家会收到这样的响应：这张卡号
+
+209
+00:22:42,580 --> 00:22:47,380
+support 3D service.
+
+209
+00:22:42,580 --> 00:22:47,380
+提供支持 3D 服务
+
+210
+00:22:47,380 --> 00:22:58,500
+Then in step eight, the NPI sends a payer authentication request to the Israel Access
+
+210
+00:22:47,380 --> 00:22:58,500
+在第八步，NPI 向以色列接入发送了付款人身份验证请求。这一步骤是为了确保交易的安全性
+
+211
+00:22:58,500 --> 00:23:06,299
+Control Server using the URL obtained in step seven.
+
+211
+00:22:58,500 --> 00:23:06,299
+使用第七步获取的 URL 控制服务器。
+
+212
+00:23:06,299 --> 00:23:12,140
+So the information may appear to the buyer in a secondary pop-up window.
+
+212
+00:23:06,299 --> 00:23:12,140
+因此，信息可能以次要弹出窗口的形式呈现给买家。
+
+213
+00:23:12,140 --> 00:23:23,420
+And then in step eight, the Israel Access Control Server establishes an SSL session
+
+213
+00:23:12,140 --> 00:23:23,420
+然后在第八步，以色列访问控制服务器建立了 SSL 会话，表述更为自然流畅。
+
+214
+00:23:24,420 --> 00:23:35,180
+terminal and display the details of the transaction.
+
+214
+00:23:24,420 --> 00:23:35,180
+显示终端并展示交易详情。
+
+215
+00:23:35,180 --> 00:23:41,380
+So in this step eight, between the card holder, because in a message in step eight, the message
+
+215
+00:23:35,180 --> 00:23:41,380
+在这一步八，持卡人之间，因为在这一步的信息
+
+216
+00:23:41,380 --> 00:23:52,140
+will be sent from the merchant to the card holder in your online shopping, internet browser.
+
+216
+00:23:41,380 --> 00:23:52,140
+商家将信息发送至您的在线购物页面或网络浏览器中的持卡人。
+
+217
+00:23:52,140 --> 00:23:57,620
+This browser will get the address of your access.
+
+217
+00:23:52,140 --> 00:23:57,620
+此浏览器将获取您的访问地址。 (此为初始翻译，已为简化中文语言进行了调整，无需进一步修改)
+
+218
+00:23:57,620 --> 00:24:08,620
+So in this pop-up window, there'll be a PIN number to also to input.
+
+218
+00:23:57,620 --> 00:24:08,620
+因此，在这个弹出窗口中，您需要输入一个 PIN 码。
+
+219
+00:24:08,620 --> 00:24:15,300
+So this PIN information will be sent to the access server or the message will be exchanged
+
+219
+00:24:08,620 --> 00:24:15,300
+因此，这些 PIN 信息将被发送至访问服务器，或者进行消息交换
+
+220
+00:24:15,300 --> 00:24:19,940
+in the SSL connections.
+
+220
+00:24:15,300 --> 00:24:19,940
+在 SSL 连接中。
+
+221
+00:24:19,940 --> 00:24:26,740
+So that's a job in the step eight.
+
+221
+00:24:19,940 --> 00:24:26,740
+那就是在第八步的一个工作，意思就是...
+
+222
+00:24:26,740 --> 00:24:35,180
+So this will implement the authentication function, ask the holder for an identifier
+
+222
+00:24:26,740 --> 00:24:35,180
+因此，这将实现身份验证功能，需要持证人提供标识符
+
+223
+00:24:35,180 --> 00:24:42,220
+can be a PIN or through biometric means, just like your fingerprint, your face, your facial
+
+223
+00:24:35,180 --> 00:24:42,220
+可以是 PIN 码或通过生物识别方式，例如指纹、面部或面部特征，就像您的一样
+
+224
+00:24:42,220 --> 00:24:47,320
+recognition for approval of the purchase.
+
+224
+00:24:42,220 --> 00:24:47,320
+采购批准的认可
+
+225
+00:24:47,319 --> 00:24:56,720
+So this access links the PIN request with a VE response message, because previously
+
+225
+00:24:47,319 --> 00:24:56,720
+因此，这种访问方式将 PIN 请求与 VE 响应消息联系起来，因为之前
+
+226
+00:24:56,720 --> 00:25:06,799
+in step seven, in step six, the merchant wants to know whether this card supports 3D, right?
+
+226
+00:24:56,720 --> 00:25:06,799
+在第七步和第六步，商家想了解这张卡是否支持 3D 支付，您说是吗？
+
+227
+00:25:06,799 --> 00:25:13,559
+If it supports 3D, then a message will be sent to the card holder asking you to input
+
+227
+00:25:06,799 --> 00:25:13,559
+如果该系统支持 3D 功能，系统将向持卡人发送消息，提示您进行输入
+
+228
+00:25:13,559 --> 00:25:15,019
+the PIN.
+
+228
+00:25:13,559 --> 00:25:15,019
+这是该 PIN。
+
+229
+00:25:15,019 --> 00:25:22,579
+So finally, in this request, you need to, as a customer, you need to input your PIN.
+
+229
+00:25:15,019 --> 00:25:22,579
+最后，在这个请求中，您需要作为客户输入您的 PIN 码。
+
+230
+00:25:22,579 --> 00:25:28,900
+This PIN number will be sent to the access.
+
+230
+00:25:22,579 --> 00:25:28,900
+此 PIN 码将被发送至访问点。
+
+231
+00:25:28,900 --> 00:25:36,440
+So after the holder has been authenticated, the access builds a card holder authentication
+
+231
+00:25:28,900 --> 00:25:36,440
+在验证持卡人身份后，系统将建立持卡人认证流程
+
+232
+00:25:36,440 --> 00:25:43,960
+verification value of 20 octets.
+
+232
+00:25:36,440 --> 00:25:43,960
+20 个字节的验证值（更自然、更易理解的表达）。
+
+233
+00:25:43,960 --> 00:25:50,180
+And then this message will be sent back to the merchant in the step line.
+
+233
+00:25:43,960 --> 00:25:50,180
+然后这条信息将被发送回商家，步骤行中显示。
+
+234
+00:25:50,180 --> 00:25:59,620
+So the CFVV is sent to the MPI merchant in the Payer Authentication Response message
+
+234
+00:25:50,180 --> 00:25:59,620
+因此，CFVV 将在付款方身份验证响应消息中发送给 MPI 商户，表述更为自然流畅
+
+235
+00:25:59,620 --> 00:26:04,059
+is self-signed with the issuer's signature key.
+
+235
+00:25:59,620 --> 00:26:04,059
+该证书由发行者使用其签名密钥自签发。
+
+236
+00:26:04,059 --> 00:26:09,420
+So this one contains the issuer's signature key.
+
+236
+00:26:04,059 --> 00:26:09,420
+这个包含发行者的签名密钥。
+
+237
+00:26:09,420 --> 00:26:14,259
+You can regard this one to be a token will be sent back to the merchant.
+
+237
+00:26:09,420 --> 00:26:14,259
+您可以将此视为一个令牌，该令牌将被发送回商家。这样的表述更为自然易懂。
+
+238
+00:26:14,259 --> 00:26:22,360
+It contains the approval from the issuer bank.
+
+238
+00:26:14,259 --> 00:26:22,360
+它包含发行银行的批准信息。
+
+239
+00:26:22,360 --> 00:26:32,680
+So step line is the approval information.
+
+239
+00:26:22,360 --> 00:26:32,680
+步骤行表示审批信息。
+
+240
+00:26:32,680 --> 00:26:42,080
+In step line, the merchant finally will get the token CAV information, right?
+
+240
+00:26:32,680 --> 00:26:42,080
+在直线步骤中，商家最终会获取 CAV 令牌信息，对吗？
+
+241
+00:26:42,080 --> 00:26:48,880
+How much the transaction, and also it contains the issuer bank's signature.
+
+241
+00:26:42,080 --> 00:26:48,880
+交易金额是多少，其中还包含发行银行的签名信息。
+
+242
+00:26:48,880 --> 00:27:01,279
+And later on, in step 10-12, step 10-11, that's archival purpose.
+
+242
+00:26:48,880 --> 00:27:01,279
+之后在步骤 10-11 和步骤 10-12，这是出于存档的目的。
+
+243
+00:27:01,279 --> 00:27:11,039
+So that means this Payer Authentication Transaction request will be recorded in this authentication
+
+243
+00:27:01,279 --> 00:27:11,039
+这意味着这笔付款方身份验证交易请求将被记录在此身份验证中，表述更为自然流畅
+
+244
+00:27:11,039 --> 00:27:24,119
+HATERY server for archival purpose, just to have a block have some HATERY of this transaction.
+
+244
+00:27:11,039 --> 00:27:24,119
+HATERY 服务器用于存档，仅为了保留这笔交易的相关信息。
+
+245
+00:27:24,119 --> 00:27:30,240
+And this is a response in step 11.
+
+245
+00:27:24,119 --> 00:27:30,240
+这是在第 11 步的一个响应。（经过润色）
+
+246
+00:27:30,240 --> 00:27:42,079
+So step 10-12, we have a transaction PA, the payment authentication.
+
+246
+00:27:30,240 --> 00:27:42,079
+第 10-12 步，这里是支付认证交易 PA。
+
+247
+00:27:42,079 --> 00:27:46,839
+So PA means Payer Authentication Request.
+
+247
+00:27:42,079 --> 00:27:46,839
+因此，PA 表示付款方身份验证请求。
+
+248
+00:27:46,839 --> 00:27:50,839
+We have the Payer Authentication Transaction Request.
+
+248
+00:27:46,839 --> 00:27:50,839
+我们已收到付款方身份验证交易请求。
+
+249
+00:27:50,839 --> 00:28:04,039
+This just like we have a record in your ACS server to have the HATERY.
+
+249
+00:27:50,839 --> 00:28:04,039
+这就像在我们的 ACS 服务器上已经记录了您拥有 HATERY 一样。
+
+250
+00:28:04,039 --> 00:28:09,079
+The response is sent to the authentication HATERY server for archival within the Payer
+
+250
+00:28:04,039 --> 00:28:09,079
+响应被发送至认证 HATERY 服务器进行存档，该服务器位于付款方处
+
+251
+00:28:09,079 --> 00:28:12,639
+Authentication Transaction Request message in step 10.
+
+251
+00:28:09,079 --> 00:28:12,639
+第 10 步中的认证事务请求消息
+
+252
+00:28:12,639 --> 00:28:20,159
+So step 11, just to response you, well, this message has been written into the block like
+
+252
+00:28:12,639 --> 00:28:20,159
+所以第 11 步，为了回应您，嗯，这条消息已经被写入到了区块中，就像
+
+253
+00:28:20,160 --> 00:28:21,160
+that.
+
+253
+00:28:20,160 --> 00:28:21,160
+这。
+
+254
+00:28:21,160 --> 00:28:22,160
+It is successful.
+
+254
+00:28:21,160 --> 00:28:22,160
+它成功了。
+
+255
+00:28:22,160 --> 00:28:28,160
+This is the confirmation of the archival in step 11.
+
+255
+00:28:22,160 --> 00:28:28,160
+这是第 11 步存档确认的内容（经过润色，更自然易懂）。
+
+256
+00:28:28,160 --> 00:28:39,880
+And step 12, for the merchant to get the credit, the merchant server verifies the signature
+
+256
+00:28:28,160 --> 00:28:39,880
+第 12 步，商家服务器验证签名以确保商家获得信用
+
+257
+00:28:39,880 --> 00:28:48,000
+just like in the CVV, this message, before he or she submits a settlement required to
+
+257
+00:28:39,880 --> 00:28:48,000
+就像在 CVV 中那样，这条信息，在提交和解要求之前
+
+258
+00:28:48,000 --> 00:28:50,120
+the acquired bank.
+
+258
+00:28:48,000 --> 00:28:50,120
+被收购的银行
+
+259
+00:28:50,119 --> 00:28:55,279
+In step 12, the merchant can make a capture request.
+
+259
+00:28:50,119 --> 00:28:55,279
+在第 12 步，商家可以发起取款操作。
+
+260
+00:28:55,279 --> 00:29:10,159
+So step 12 is to claim credit by the merchant.
+
+260
+00:28:55,279 --> 00:29:10,159
+第 12 步是商家申请信用。这个步骤可以这样表达：请商家进行信用申请。
+
+261
+00:29:10,159 --> 00:29:19,799
+Merchant now has the token from the issuer bank.
+
+261
+00:29:10,159 --> 00:29:19,799
+商户现已从发行银行获取了令牌。
+
+262
+00:29:19,799 --> 00:29:29,359
+So this is step 12 for merchant to get credit.
+
+262
+00:29:19,799 --> 00:29:29,359
+这就是商家获取信用的第 12 步。这样表述更自然、易懂。
+
+263
+00:29:29,359 --> 00:29:36,480
+So finally, the merchant can have his bank account with some balance increased because
+
+263
+00:29:29,359 --> 00:29:36,480
+最终，商家银行账户的余额有所增加，因为
+
+264
+00:29:36,480 --> 00:29:54,200
+of this transaction.
+
+264
+00:29:36,480 --> 00:29:54,200
+关于这笔交易的内容（经过润色）。
+
+265
+00:29:54,200 --> 00:29:58,880
+We do not have very detailed message structure.
+
+265
+00:29:54,200 --> 00:29:58,880
+我们的消息结构描述不够详细。
+
+266
+00:29:58,880 --> 00:30:04,200
+No, we don't need to repeat those detailed structure.
+
+266
+00:29:58,880 --> 00:30:04,200
+不，我们无需重复那些详细结构。
+
+267
+00:30:04,200 --> 00:30:11,000
+Just to give you some idea, what's the whole logic, how many steps involved, and what's
+
+267
+00:30:04,200 --> 00:30:11,000
+只是为了给您一个大致的了解，整个逻辑是怎样的，包含多少步骤
+
+268
+00:30:11,000 --> 00:30:18,360
+the role for each participant.
+
+268
+00:30:11,000 --> 00:30:18,360
+每位参与者的角色。
+
+269
+00:30:18,360 --> 00:30:30,680
+So for security purpose, they need to communicate and to get what kind of information or verification
+
+269
+00:30:18,360 --> 00:30:30,680
+为了安全考虑，他们需要沟通并获取何种信息或验证
+
+270
+00:30:30,680 --> 00:30:32,680
+to do authentication.
+
+270
+00:30:30,680 --> 00:30:32,680
+进行身份验证。
+
+271
+00:30:32,680 --> 00:30:37,940
+So most important part is to guarantee that your credit card can support this service.
+
+271
+00:30:32,680 --> 00:30:37,940
+最关键的是要保证您的信用卡能够支持这项服务。
+
+272
+00:30:37,940 --> 00:30:45,400
+And then in your online shopping browser, there will be a purple window also to input
+
+272
+00:30:37,940 --> 00:30:45,400
+然后在您的在线购物浏览器中，会出现一个紫色窗口，用于输入信息
+
+273
+00:30:45,400 --> 00:30:49,440
+to authenticate this request.
+
+273
+00:30:45,400 --> 00:30:49,440
+验证此请求。
+
+274
+00:30:49,440 --> 00:30:56,080
+Either you can do the authentication through a fingerprint, your face recognition, or you
+
+274
+00:30:49,440 --> 00:30:56,080
+您可以选择通过指纹、面部识别等方式进行身份验证，
+
+275
+00:30:56,080 --> 00:30:59,299
+need to input the PIN number.
+
+275
+00:30:56,080 --> 00:30:59,299
+请输入 PIN 码。
+
+276
+00:30:59,299 --> 00:31:04,259
+So this PIN number will be sent from your issuer bank to your smartphone in a different
+
+276
+00:30:59,299 --> 00:31:04,259
+因此，这个 PIN 号码会以不同的方式从您的发卡银行发送到您的智能手机上
+
+277
+00:31:04,259 --> 00:31:07,539
+channel.
+
+277
+00:31:04,259 --> 00:31:07,539
+频道
+
+278
+00:31:07,539 --> 00:31:19,859
+So in this way, we'll guarantee that you're the real customer to who has initiated, who
+
+278
+00:31:07,539 --> 00:31:19,859
+因此，我们将确保您是真正发起请求的客户，这样我们就能保证您的身份真实无误
+
+279
+00:31:19,859 --> 00:31:27,899
+has launched this transaction, launched this transaction request.
+
+279
+00:31:19,859 --> 00:31:27,899
+已启动这笔交易，已发起这笔交易请求。
+
+280
+00:31:27,900 --> 00:31:30,880
+So this is the whole process.
+
+280
+00:31:27,900 --> 00:31:30,880
+这就是整个过程的全部内容。
+
+281
+00:31:30,880 --> 00:31:37,100
+Any part not clear?
+
+281
+00:31:30,880 --> 00:31:37,100
+任何部分您看不懂吗？
+
+282
+00:31:37,100 --> 00:31:41,220
+Also to the authentication, we have the signature checking.
+
+282
+00:31:37,100 --> 00:31:41,220
+也对认证进行了签名验证。这样表达更自然、易懂。
+
+283
+00:31:41,220 --> 00:31:45,060
+And here besides the signature, we have the PIN number.
+
+283
+00:31:41,220 --> 00:31:45,060
+这里除了签名外，还标注了 PIN 码。
+
+284
+00:31:45,060 --> 00:31:47,740
+PIN number is sent to your smartphone.
+
+284
+00:31:45,060 --> 00:31:47,740
+验证码已发送到您的手机上。
+
+285
+00:31:47,740 --> 00:32:01,700
+This can be regarded as a double checking, okay?
+
+285
+00:31:47,740 --> 00:32:01,700
+这可以理解为双重确认，可以吗？
+
+286
+00:32:01,700 --> 00:32:08,460
+Basically in the 3D protocols, it can be categorized to four phases.
+
+286
+00:32:01,700 --> 00:32:08,460
+在 3D 协议中，可以将其分为四个阶段。
+
+287
+00:32:08,460 --> 00:32:17,180
+The first one is step two or three, we update of the merchant's cash with a range of value
+
+287
+00:32:08,460 --> 00:32:17,180
+第一步是第二步或第三步，我们更新商家现金的范围值，使其更加自然易懂
+
+288
+00:32:17,180 --> 00:32:18,180
+accounts.
+
+288
+00:32:17,180 --> 00:32:18,180
+账户
+
+289
+00:32:18,180 --> 00:32:27,620
+Well, so just like this communication between the merchant and the VISA directory, in step
+
+289
+00:32:18,180 --> 00:32:27,620
+好吧，就像商家与 VISA 目录之间的这种沟通，在以下步骤中
+
+290
+00:32:27,620 --> 00:32:36,519
+two and step three, the merchant will know whether this credit card is valid or not.
+
+290
+00:32:27,620 --> 00:32:36,519
+两个步骤三，商家将知道这张信用卡是否有效。翻译更加自然，易于理解。
+
+291
+00:32:36,519 --> 00:32:48,559
+And then in step one, we have the customer to provide his card number.
+
+291
+00:32:36,519 --> 00:32:48,559
+然后在第一步，请客户提供他们的卡号。
+
+292
+00:32:48,559 --> 00:32:57,940
+And in step four, seven, we'll do the verification with this card number to support 3D service.
+
+292
+00:32:48,559 --> 00:32:57,940
+在第四步和第七步，我们将使用这张卡号进行验证，以支持 3D 服务。
+
+293
+00:32:57,940 --> 00:33:05,799
+And then in step eight, this is the most important part to provide the PIN number to do the authentication.
+
+293
+00:32:57,940 --> 00:33:05,799
+在第八步，提供 PIN 码进行身份验证是至关重要的环节。
+
+294
+00:33:05,799 --> 00:33:13,359
+Double check, you should have this PIN number through your smartphone, right?
+
+294
+00:33:05,799 --> 00:33:13,359
+请再次核实，您应该已经通过手机收到这个 PIN 码了，没错吧？
+
+295
+00:33:13,359 --> 00:33:20,480
+To input this PIN number to finish this online transaction.
+
+295
+00:33:13,359 --> 00:33:20,480
+请输入此 PIN 码以完成在线交易。（更自然、更易理解的翻译）
+
+296
+00:33:20,480 --> 00:33:26,079
+In step nine, it is a verification of the integrity of the payment information with
+
+296
+00:33:20,480 --> 00:33:26,079
+在第九步，验证支付信息的完整性
+
+297
+00:33:26,079 --> 00:33:29,200
+a signature of the issuer.
+
+297
+00:33:26,079 --> 00:33:29,200
+发行人签名标识
+
+298
+00:33:29,200 --> 00:33:35,960
+So this is the approval.
+
+298
+00:33:29,200 --> 00:33:35,960
+这就是批准的内容。（经过润色）
+
+299
+00:33:35,960 --> 00:33:43,319
+Your PIN number is correct and your issuer bank will approve, authorize this transaction
+
+299
+00:33:35,960 --> 00:33:43,319
+您的 PIN 码正确，发行银行将批准并授权此交易
+
+300
+00:33:43,319 --> 00:33:47,120
+request.
+
+300
+00:33:43,319 --> 00:33:47,120
+请求。
+
+301
+00:33:47,120 --> 00:33:56,880
+The step 10 to 11 is for the purpose of the authentication attempts.
+
+301
+00:33:47,120 --> 00:33:56,880
+第 10 步到第 11 步是为了进行身份验证尝试。
+
+302
+00:33:56,880 --> 00:34:17,360
+So step 12 is for a credit claim by the merchant.
+
+302
+00:33:56,880 --> 00:34:17,360
+第 12 步是商家进行信用索赔。这一步的具体操作是...
+
+303
+00:34:17,360 --> 00:34:22,720
+So this is a rough classification of all steps into four phases.
+
+303
+00:34:17,360 --> 00:34:22,720
+这是对所有步骤进行粗略分类为四个阶段的描述。
+
+304
+00:34:23,719 --> 00:34:30,239
+Well, you can see here the table shows four different messages.
+
+304
+00:34:23,719 --> 00:34:30,239
+嗯，您可以看到这里表格展示了四条不同的信息。
+
+305
+00:34:30,239 --> 00:34:37,359
+It involves which participants and what's the direction, right?
+
+305
+00:34:30,239 --> 00:34:37,359
+这涉及哪些参与者以及方向如何，对吧？
+
+306
+00:34:37,359 --> 00:34:48,719
+First one is for credit card request from merchant to VITA directory.
+
+306
+00:34:37,359 --> 00:34:48,719
+第一条是商户向 VITA 目录申请信用卡的请求。经过润色，使其在简体中文中更加自然易懂。
+
+307
+00:34:48,719 --> 00:35:03,919
+And we see from here the purchase request, the payer authentication authorization request,
+
+307
+00:34:48,719 --> 00:35:03,919
+我们从这里可以看到采购请求以及付款人的身份验证和授权请求，翻译得更加自然易懂
+
+308
+00:35:03,919 --> 00:35:09,639
+this from merchant to the issuer, and this message will go through the card holder's
+
+308
+00:35:03,919 --> 00:35:09,639
+这是从商家发送给发卡行的信息，该消息将通过持卡人传递
+
+309
+00:35:10,639 --> 00:35:21,079
+So encoded request to authenticate the payer protected against inadvertent change by the
+
+309
+00:35:10,639 --> 00:35:21,079
+对用于验证付款人的编码请求进行了保护，以防意外更改，翻译更加自然流畅
+
+310
+00:35:21,079 --> 00:35:22,759
+browser.
+
+310
+00:35:21,079 --> 00:35:22,759
+浏览器。
+
+311
+00:35:22,759 --> 00:35:31,119
+So at this step, you should provide your PIN number.
+
+311
+00:35:22,759 --> 00:35:31,119
+在这一步，您需要输入您的 PIN 码。
+
+312
+00:35:31,119 --> 00:35:37,159
+Another one I want to mention here is about the PA response.
+
+312
+00:35:31,119 --> 00:35:37,159
+这里我想提一下关于 PA 回应的另一个问题。
+
+313
+00:35:37,159 --> 00:35:42,420
+This is from issuer to the merchant and also via card holder browser.
+
+313
+00:35:37,159 --> 00:35:42,420
+这是从发行方发送给商家，同时也通过持卡人浏览器进行的内容。
+
+314
+00:35:42,420 --> 00:35:49,139
+So this is a response to the PA request sent by the issuer access control server.
+
+314
+00:35:42,420 --> 00:35:49,139
+这是对发行方访问控制服务器发送的 PA 请求的响应。这是一个回复。
+
+315
+00:35:49,139 --> 00:35:59,719
+It contains the CAV information and also just as some token indicating the transaction amount
+
+315
+00:35:49,139 --> 00:35:59,719
+它包含 CAV 信息，同时也是表示交易金额的标记
+
+316
+00:35:59,719 --> 00:36:03,399
+and also contains the ACS signature.
+
+316
+00:35:59,719 --> 00:36:03,399
+也包含 ACS 签名（更自然地表达）。
+
+317
+00:36:08,159 --> 00:36:14,199
+Okay, so here I finished the discussion about the 3D protocols.
+
+317
+00:36:08,159 --> 00:36:14,199
+好的，那么我在这里完成了关于 3D 协议的讨论。
+
+318
+00:36:14,199 --> 00:36:26,319
+So you should be clear about this figure, three domains, and we have totally like 12
+
+318
+00:36:14,199 --> 00:36:26,319
+因此您应该对这个数字、三个领域有清晰的认识，我们总共有大约 12 个
+
+319
+00:36:26,319 --> 00:36:27,319
+steps.
+
+319
+00:36:26,319 --> 00:36:27,319
+步骤。
+
+320
+00:36:27,319 --> 00:36:31,159
+So what's the purpose for each step?
+
+320
+00:36:27,319 --> 00:36:31,159
+那每一步的目的究竟是什么？
+
+321
+00:36:31,159 --> 00:36:37,119
+What kind of function provided in each step and how this one can provide security, right?
+
+321
+00:36:31,159 --> 00:36:37,119
+每一步都提供了什么类型的函数，以及这个函数是如何保障安全的，对吗？
+
+322
+00:36:37,119 --> 00:36:42,319
+This one can provide the authentication, it's different from the, what's the difference
+
+322
+00:36:37,119 --> 00:36:42,319
+这个可以提供认证，它与那个不同，具体有什么区别
+
+323
+00:36:42,319 --> 00:36:47,199
+between this one and the previous set protocols.
+
+323
+00:36:42,319 --> 00:36:47,199
+在这一组和上一组协议之间。
+
+324
+00:36:47,199 --> 00:36:54,559
+Okay, so I stop here and today we still have the lab.
+
+324
+00:36:47,199 --> 00:36:54,559
+好吧，那我就停在这里，今天我们还有实验室。
+
+325
+00:36:54,559 --> 00:37:01,279
+So we have a five-minute break for the TA to set up the presentation.
+
+325
+00:36:54,559 --> 00:37:01,279
+我们有一个五分钟的休息时间，让助教来准备演示。
+
+326
+00:37:01,279 --> 00:37:05,359
+So I will still be here, if you have any question, you can ask me, thank you.
+
+326
+00:37:01,279 --> 00:37:05,359
+所以我还会留在这里，如果您有任何疑问，可以随时向我提问，谢谢。
+

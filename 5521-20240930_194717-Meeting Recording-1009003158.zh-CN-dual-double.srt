@@ -1,0 +1,2376 @@
+1
+00:00:00,000 --> 00:00:15,200
+Okay, now let's look at the result for this problem.
+
+1
+00:00:00,000 --> 00:00:15,200
+好的，现在我们来查看这个问题的结果。
+
+2
+00:00:15,199 --> 00:00:30,320
+The first step is to calculate the private key D for the given E and N value.
+
+2
+00:00:15,199 --> 00:00:30,320
+首先需要计算给定 E 和 N 值的私钥 D（优化后的翻译）
+
+3
+00:00:30,320 --> 00:00:38,320
+So here because E is quite small, it's 5, when E equals 5, 3, you can try this way to
+
+3
+00:00:30,320 --> 00:00:38,320
+因此这里因为 E 非常小，它是 5，当 E 等于 5 或 3 时，你可以尝试这样做
+
+4
+00:00:38,320 --> 00:00:41,480
+calculate the private key D.
+
+4
+00:00:38,320 --> 00:00:41,480
+计算私钥 D。
+
+5
+00:00:41,479 --> 00:00:49,559
+So previously we have said because in the RSA algorithm, we will make sure E D is congruent
+
+5
+00:00:41,479 --> 00:00:49,559
+因此，我们之前提到，在 RSA 算法中，我们要确保 E 和 D 是同余的，使其更加自然易懂
+
+6
+00:00:49,559 --> 00:00:56,619
+to 1 mod phi n.
+
+6
+00:00:49,559 --> 00:00:56,619
+到 1 模糊 n 的转换
+
+7
+00:00:56,619 --> 00:01:06,560
+So this implies E D can be represented as k times phi n plus 1.
+
+7
+00:00:56,619 --> 00:01:06,560
+这表明 E D 可以表示为 k 倍的 phi n 加 1，这样的表述更为自然易懂。
+
+8
+00:01:06,560 --> 00:01:16,320
+So this implies D can be represented as k times phi n plus 1 divided by E.
+
+8
+00:01:06,560 --> 00:01:16,320
+这表明 D 可以表示为 k 倍的 phi n 加 1 除以 E。
+
+9
+00:01:16,320 --> 00:01:28,480
+In this example, n is 1, 1, 9, so phi n is 6 times 16, that's 96.
+
+9
+00:01:16,320 --> 00:01:28,480
+在这个例子中，n 的值为 1、1、9，因此 φn 等于 6 乘以 16，也就是 96。
+
+10
+00:01:28,480 --> 00:01:39,560
+So this equals k times 96 plus 1 divided by 5, and you can try k equals 1 whether we
+
+10
+00:01:28,480 --> 00:01:39,560
+因此这等于 k 乘以 96 加 1 除以 5，你可以试试看 k 取 1 的情况
+
+11
+00:01:39,560 --> 00:01:43,600
+can find an integer or not.
+
+11
+00:01:39,560 --> 00:01:43,600
+可以找到一个整数吗？
+
+12
+00:01:43,600 --> 00:01:54,120
+So k equals 1 we cannot, k equals 2 we cannot, k equals 3 we cannot, k equals 4, okay.
+
+12
+00:01:43,600 --> 00:01:54,120
+因此，k 等于 1 不行，k 等于 2 不行，k 等于 3 不行，k 等于 4 就行。
+
+13
+00:01:54,120 --> 00:02:10,120
+If k equals 4 and then we have this D is 4 times 96 plus 1 divided by 5, that is 77.
+
+13
+00:01:54,120 --> 00:02:10,120
+如果 k 等于 4，那么 D 就等于 4 乘以 96 再加 1，然后除以 5，结果是 77。
+
+14
+00:02:10,120 --> 00:02:20,879
+Now of course you can apply the extended Euclidean algorithm to get D, that will be fine as well,
+
+14
+00:02:10,120 --> 00:02:20,879
+当然，您可以使用扩展欧几里得算法来计算 D，这同样可行，
+
+15
+00:02:20,879 --> 00:02:23,599
+but the result will be same to be 77.
+
+15
+00:02:20,879 --> 00:02:23,599
+但结果都会是 77，表达更自然。
+
+16
+00:02:23,599 --> 00:02:25,319
+That's step one.
+
+16
+00:02:23,599 --> 00:02:25,319
+这是第一步（改进版）。
+
+17
+00:02:25,319 --> 00:02:34,439
+So step two is m prime equals n times R E mod n.
+
+17
+00:02:25,319 --> 00:02:34,439
+第二步是：m' 等于 n 乘以 R，再对 n 取模。这样的表述更符合中文的表达习惯。
+
+18
+00:02:34,439 --> 00:02:47,000
+So this equals m is 37 times R, 29, E is 5, mod n is 1, 1, 9.
+
+18
+00:02:34,439 --> 00:02:47,000
+因此这个等于 m 是 37 倍的 R，29，E 等于 5，模 n 等于 1，1，9。
+
+19
+00:02:47,000 --> 00:03:01,439
+You apply all the numbers here, you will get m prime to be, to be line.
+
+19
+00:02:47,000 --> 00:03:01,439
+你在这里应用所有数字，就能得到一个质数，形成一行。
+
+20
+00:03:01,439 --> 00:03:14,759
+So step three, the signing process is simple, s prime equals m prime to the D mod n, m prime
+
+20
+00:03:01,439 --> 00:03:14,759
+第三个步骤，签名过程非常简单，s' 等于 m' 的 D 次方模 n，m'
+
+21
+00:03:14,759 --> 00:03:36,159
+is 9, D is the private key 77, mod 1, 1, 9, you will get the result to be 25.
+
+21
+00:03:14,759 --> 00:03:36,159
+是 9，D 作为私钥 77，对 1，1，9 取模，得到的结果是 25。
+
+22
+00:03:36,159 --> 00:03:43,879
+Step four, you need to get all mass ones first, mod n.
+
+22
+00:03:36,159 --> 00:03:43,879
+第四步，首先需要获取所有能被 n 整除的数。
+
+23
+00:03:43,879 --> 00:03:46,560
+So how can you calculate all mass one?
+
+23
+00:03:43,879 --> 00:03:46,560
+那您是如何计算所有质量的呢？
+
+24
+00:03:46,560 --> 00:03:51,539
+You have R to be 29 and to be 1, 1, 9.
+
+24
+00:03:46,560 --> 00:03:51,539
+你有 R 等于 29，以及 1、1、9。
+
+25
+00:03:51,539 --> 00:03:58,000
+So you need to use the extended Euclidean algorithm to get all mass one here.
+
+25
+00:03:51,539 --> 00:03:58,000
+因此你需要使用扩展欧几里得算法来获取这里所有的质量一。这使得翻译更加自然易懂。
+
+26
+00:03:58,000 --> 00:04:01,120
+I will not repeat that process.
+
+26
+00:03:58,000 --> 00:04:01,120
+我不会重复进行那个过程。
+
+27
+00:04:01,120 --> 00:04:09,759
+The result is all mass one is 78 in this example.
+
+27
+00:04:01,120 --> 00:04:09,759
+在这个例子中，结果显示所有物体的质量均为 78。
+
+28
+00:04:09,759 --> 00:04:18,279
+So you will get s equals s prime times all mass one, mod n.
+
+28
+00:04:09,759 --> 00:04:18,279
+因此，s 等于 s' 乘以所有质量一，再对 n 取模。这样的表述更为自然易懂。
+
+29
+00:04:18,279 --> 00:04:33,360
+So here s prime is 25 times all mass one is 78, mod n is 1, 1, 9.
+
+29
+00:04:18,279 --> 00:04:33,360
+因此，这里的质数是 25 倍于所有质量之一，模 n 为 1，1，9。这样的表述更为自然易懂。
+
+30
+00:04:33,360 --> 00:04:41,439
+So this result is 46.
+
+30
+00:04:33,360 --> 00:04:41,439
+这个结果为 46。
+
+31
+00:04:41,439 --> 00:04:49,480
+So this 46 of course will equal m to the D mod n.
+
+31
+00:04:41,439 --> 00:04:49,480
+当然，这个 46 等于 m 除以 n 的余数的 m 次方。
+
+32
+00:04:49,480 --> 00:05:03,160
+In this example, m is 37, D is 77, mod 1, 1, 9.
+
+32
+00:04:49,480 --> 00:05:03,160
+本例中，m 等于 37，D 等于 77，对 1，1，9 取模。
+
+33
+00:05:03,160 --> 00:05:08,720
+You can double check it, so I will not check it here.
+
+33
+00:05:03,160 --> 00:05:08,720
+你可以再核实一下，因此这里我就不再进行检查了。
+
+34
+00:05:08,720 --> 00:05:19,440
+And this is the four steps to have the whole process to finish the blank signing and to
+
+34
+00:05:08,720 --> 00:05:19,440
+这是完成整个空白签署过程的四个步骤（使翻译更加自然和易懂）
+
+35
+00:05:19,440 --> 00:05:32,400
+get the signature by the requester in this example.
+
+35
+00:05:19,440 --> 00:05:32,400
+通过请求者获取签名，例如在本例中。
+
+36
+00:05:32,399 --> 00:05:38,439
+So we have some left exercises for you.
+
+36
+00:05:32,399 --> 00:05:38,439
+我们还剩下一些练习等你们去做。
+
+37
+00:05:38,439 --> 00:05:44,219
+You can try to solve this problem by yourself first.
+
+37
+00:05:38,439 --> 00:05:44,219
+你可以先尝试自己解决这个问题，这样更有助于理解。
+
+38
+00:05:44,219 --> 00:05:49,479
+And before your mid-term test, we have the mid-term review and I will show you the whole
+
+38
+00:05:44,219 --> 00:05:49,479
+在期中考试之前，我们将进行期中复习，届时我会向大家展示整个内容
+
+39
+00:05:49,479 --> 00:05:59,639
+process how to get the correct solutions to these questions.
+
+39
+00:05:49,479 --> 00:05:59,639
+如何获取这些问题的正确答案的处理过程（优化版）：
+
+40
+00:05:59,639 --> 00:06:05,240
+So that's for the lecture four about the digital signature.
+
+40
+00:05:59,639 --> 00:06:05,240
+那就是关于第四讲数字签名的，简单来说。
+
+41
+00:06:29,639 --> 00:06:53,120
+Well, in this subject, we have the topic about e-payment, right?
+
+41
+00:06:29,639 --> 00:06:53,120
+好吧，关于这个主题，我们讨论了电子支付这个话题，您同意吗？
+
+42
+00:06:53,120 --> 00:06:58,519
+In the first class, we have the brief introduction about e-payment.
+
+42
+00:06:53,120 --> 00:06:58,519
+在第一节课中，我们简要介绍了电子支付的相关知识。
+
+43
+00:06:58,519 --> 00:07:04,039
+So now we look at the specific protocols used in the e-payment.
+
+43
+00:06:58,519 --> 00:07:04,039
+现在让我们具体看看电子支付中使用的协议。
+
+44
+00:07:04,039 --> 00:07:11,159
+In today's lecture five, we'll talk about the SET, this e-payment protocol, what's
+
+44
+00:07:04,039 --> 00:07:11,159
+今天第五讲，我们将讨论 SET 电子支付协议，它究竟是什么
+
+45
+00:07:11,159 --> 00:07:25,079
+the meaning, what's the steps to be used for the message check in this e-payment protocol.
+
+45
+00:07:11,159 --> 00:07:25,079
+这条消息的检查步骤是怎样的，其含义是什么？
+
+46
+00:07:25,120 --> 00:07:30,039
+So part one is about the SET architecture and dual signature.
+
+46
+00:07:25,120 --> 00:07:30,039
+第一部分主要介绍 SET 架构和双签名技术。
+
+47
+00:07:30,039 --> 00:07:36,000
+So you can see the signature part is very important because in the payment, we need
+
+47
+00:07:30,039 --> 00:07:36,000
+因此您可以明显看出，签名部分至关重要，因为在支付过程中我们确实需要
+
+48
+00:07:36,000 --> 00:07:38,919
+to do the user authentication.
+
+48
+00:07:36,000 --> 00:07:38,919
+执行用户认证。
+
+49
+00:07:38,919 --> 00:07:40,919
+How can we do the authentication?
+
+49
+00:07:38,919 --> 00:07:40,919
+我们该如何进行认证呢？
+
+50
+00:07:40,919 --> 00:07:46,799
+That means you need to show your correct signature.
+
+50
+00:07:40,919 --> 00:07:46,799
+这意味着您必须出示您的有效签名。
+
+51
+00:07:46,799 --> 00:07:54,360
+In the SET protocol, this is a protocol designed to secure bank card transactions initiated
+
+51
+00:07:46,799 --> 00:07:54,360
+在 SET 协议中，这是一种专为保障银行卡交易发起而设计的协议
+
+52
+00:07:54,360 --> 00:08:01,800
+on open networks, open networks just like in today's internet, wireless internet, right?
+
+52
+00:07:54,360 --> 00:08:01,800
+在开放的网络上，就像我们今天使用的互联网和无线互联网一样，对吧？
+
+53
+00:08:01,800 --> 00:08:05,879
+SET means secure electronic transaction.
+
+53
+00:08:01,800 --> 00:08:05,879
+SET 是指安全电子交易。
+
+54
+00:08:05,879 --> 00:08:15,120
+The SET specifications cover the roles like the following, like we have the cardholder,
+
+54
+00:08:05,879 --> 00:08:15,120
+SET 规范涵盖了以下角色，例如持卡人等，具体如下：
+
+55
+00:08:15,120 --> 00:08:20,639
+you are the cardholder, you're the customer, we have the merchant, just like you're doing
+
+55
+00:08:15,120 --> 00:08:20,639
+您是持卡人，您是客户，我们这边有商家，这就像您现在所做的一样
+
+56
+00:08:20,639 --> 00:08:22,840
+the online shopping, right?
+
+56
+00:08:20,639 --> 00:08:22,840
+网上购物，没错吧？
+
+57
+00:08:22,879 --> 00:08:29,000
+Online is some store, online shops, and we have payment gateway.
+
+57
+00:08:22,879 --> 00:08:29,000
+线上购物，网店众多，我们提供自家的支付通道。
+
+58
+00:08:29,000 --> 00:08:36,559
+So you will see this one, the role later, and we have certification authority.
+
+58
+00:08:29,000 --> 00:08:36,559
+因此您会看到这个角色，稍后我们还有认证机构。这使得翻译更加自然易懂。
+
+59
+00:08:36,559 --> 00:08:39,120
+Certification authority is CA.
+
+59
+00:08:36,559 --> 00:08:39,120
+认证机构是 CA。
+
+60
+00:08:39,159 --> 00:09:05,720
+The purpose of CA is for everyone to get a valid certificate containing
+
+60
+00:08:39,159 --> 00:09:05,720
+CA 的目的是让每个人都能获得一个有效的证书
+
+61
+00:09:05,720 --> 00:09:09,440
+your public key.
+
+61
+00:09:05,720 --> 00:09:09,440
+您的公钥。
+
+62
+00:09:12,920 --> 00:09:24,160
+So in this SET protocol, we have the cardholder, we have the merchant, we have the cardholder's bank,
+
+62
+00:09:12,920 --> 00:09:24,160
+因此，在这个 SET 协议中，我们有持卡人、商家以及持卡人的银行，
+
+63
+00:09:24,160 --> 00:09:26,360
+we have the merchant's bank.
+
+63
+00:09:24,160 --> 00:09:26,360
+我们有商家的银行账户。
+
+64
+00:09:26,360 --> 00:09:28,720
+So at least we have four parties, right?
+
+64
+00:09:26,360 --> 00:09:28,720
+至少我们有四个政党，对吧？
+
+65
+00:09:28,720 --> 00:09:30,200
+We have four parties.
+
+65
+00:09:28,720 --> 00:09:30,200
+我们有四个政党。
+
+66
+00:09:30,240 --> 00:09:37,879
+That means for their complications, they need to generate signatures for those indications.
+
+66
+00:09:30,240 --> 00:09:37,879
+这意味着由于它们的复杂性，他们需要为这些指示生成签名。这使得过程更加复杂。
+
+67
+00:09:37,879 --> 00:09:44,680
+We guarantee I'm talking to the one, you're the right person, I communicate with you.
+
+67
+00:09:37,879 --> 00:09:44,680
+我们保证我正在与那个人交谈，你就是正确的人，我在与你沟通。这是我们的承诺，确保你是我要找的那个人，我们之间的沟通顺畅无阻。
+
+68
+00:09:44,680 --> 00:09:47,240
+And how can we guarantee you're the right person?
+
+68
+00:09:44,680 --> 00:09:47,240
+我们如何确保您是合适的人选？
+
+69
+00:09:47,240 --> 00:09:49,120
+I need to check your signature.
+
+69
+00:09:47,240 --> 00:09:49,120
+我需要核对您的签名。
+
+70
+00:09:49,120 --> 00:09:52,920
+How can we make sure your signature is correct?
+
+70
+00:09:49,120 --> 00:09:52,920
+我们如何确保您的签名准确无误？
+
+71
+00:09:52,920 --> 00:09:59,800
+You must show me your public key to be verified by this CA center.
+
+71
+00:09:52,920 --> 00:09:59,800
+您需要向该 CA 中心出示您的公钥以供验证。
+
+72
+00:09:59,799 --> 00:10:05,839
+So we assume CA is a trusted third party.
+
+72
+00:09:59,799 --> 00:10:05,839
+因此，我们假定 CA 是一个值得信赖的第三方。
+
+73
+00:10:05,839 --> 00:10:08,039
+So you have your certificate.
+
+73
+00:10:05,839 --> 00:10:08,039
+您已经成功获得了您的证书。
+
+74
+00:10:08,039 --> 00:10:13,039
+That certificate is authorized by the third party.
+
+74
+00:10:08,039 --> 00:10:13,039
+该证书由第三方授权，表述更自然。
+
+75
+00:10:13,039 --> 00:10:16,519
+Just like you're holding the polio's degree, right?
+
+75
+00:10:13,039 --> 00:10:16,519
+就像你拿着脊髓灰质炎学位证书一样，对吧？
+
+76
+00:10:16,519 --> 00:10:23,240
+In that certificate, it contains polio's authorization, some message, approval.
+
+76
+00:10:16,519 --> 00:10:23,240
+在那份证书中，它包含了脊髓灰质炎的授权信息，以及相应的批准。
+
+77
+00:10:23,240 --> 00:10:25,759
+This is your degree.
+
+77
+00:10:23,240 --> 00:10:25,759
+这是您的学位。
+
+78
+00:10:25,799 --> 00:10:27,159
+And same thing here.
+
+78
+00:10:25,799 --> 00:10:27,159
+这里也是同样的事情。
+
+79
+00:10:27,159 --> 00:10:32,600
+The certificate will contain your public key to be issued by the CA.
+
+79
+00:10:27,159 --> 00:10:32,600
+证书中将包含由证书颁发机构（CA）签发的您的公钥。
+
+80
+00:10:32,600 --> 00:10:38,120
+So when you show the certificate to the receiver, you see, this is my public key.
+
+80
+00:10:32,600 --> 00:10:38,120
+当你向接收者出示证书时，你会看到，这是我的公钥。
+
+81
+00:10:38,120 --> 00:10:44,200
+You can trust my public key because it is issued by polio.
+
+81
+00:10:38,120 --> 00:10:44,200
+你可以放心使用我的公钥，因为它是由脊髓灰质炎机构签发的。
+
+82
+00:10:44,200 --> 00:10:49,639
+So you use this public key to check my signature.
+
+82
+00:10:44,200 --> 00:10:49,639
+您用这个公钥来检查我的签名。
+
+83
+00:10:49,639 --> 00:10:53,960
+So you show your public key to the receiver.
+
+83
+00:10:49,639 --> 00:10:53,960
+你向接收者展示你的公钥。
+
+84
+00:10:53,960 --> 00:10:56,400
+Receiver will trust that certificate.
+
+84
+00:10:53,960 --> 00:10:56,400
+接收者将相信该证书。
+
+85
+00:10:56,400 --> 00:11:04,639
+Because that certificate finally will contain the certification, the CS signature.
+
+85
+00:10:56,400 --> 00:11:04,639
+因为这张证书最终将包含认证信息，以及 CS 签名。
+
+86
+00:11:04,639 --> 00:11:13,400
+Just like your polio degree contains polio's signature, like here.
+
+86
+00:11:04,639 --> 00:11:13,400
+就像你的脊髓灰质炎学位里包含了脊髓灰质炎的标志性特征一样，这里也是这样。
+
+87
+00:11:13,400 --> 00:11:19,320
+So people will verify whether your polio degree is true, is valid, or not.
+
+87
+00:11:13,400 --> 00:11:19,320
+因此人们会验证你的脊髓灰质炎学位是否真实有效，或者是否无效。
+
+88
+00:11:19,320 --> 00:11:28,760
+So other people will use polio's public key to verify the signature in your degree.
+
+88
+00:11:19,320 --> 00:11:28,760
+因此，其他人会使用小儿麻痹症的公钥来验证你的学位签名。这样的表述更为自然和易懂。
+
+89
+00:11:28,760 --> 00:11:33,280
+So this is the logic.
+
+89
+00:11:28,760 --> 00:11:33,280
+这就是这样一种逻辑，表述得比较直接。
+
+90
+00:11:33,280 --> 00:11:35,879
+OK, we look at the state architecture.
+
+90
+00:11:33,280 --> 00:11:35,879
+好的，我们来看看状态架构的设计。
+
+91
+00:11:35,879 --> 00:11:39,560
+We have different participants.
+
+91
+00:11:35,879 --> 00:11:39,560
+我们有来自不同背景的参与者。
+
+92
+00:11:39,560 --> 00:11:42,120
+Like, we are called holder.
+
+92
+00:11:39,560 --> 00:11:42,120
+好像我们这类人被称作持有者。
+
+93
+00:11:42,120 --> 00:11:42,800
+This is the customer.
+
+93
+00:11:42,120 --> 00:11:42,800
+这是客户。（经过润色）
+
+94
+00:11:42,799 --> 00:11:47,479
+We are called holder's bank, customer's bank.
+
+94
+00:11:42,799 --> 00:11:47,479
+我们被称为持牌银行，客户银行。
+
+95
+00:11:47,479 --> 00:11:58,639
+Just like your credit card bank, we have merchant, and also we have merchant's bank.
+
+95
+00:11:47,479 --> 00:11:58,639
+就像您的信用卡银行一样，我们不仅拥有商家，还拥有商家的银行。这样的表述更加自然易懂。
+
+96
+00:11:58,639 --> 00:12:08,559
+And also we have merchant's bank.
+
+96
+00:11:58,639 --> 00:12:08,559
+我们还设有商户银行。
+
+97
+00:12:08,559 --> 00:12:13,559
+Always say this is a quire institution.
+
+97
+00:12:08,559 --> 00:12:13,559
+总是说这是一所院校，表达更为自然。
+
+98
+00:12:13,559 --> 00:12:19,840
+And well, the card holder, just like you, your customer, you can browse the internet.
+
+98
+00:12:13,559 --> 00:12:19,840
+嗯，持卡人，就像您一样，您的客户可以上网浏览。
+
+99
+00:12:19,840 --> 00:12:22,679
+You can place online order, right?
+
+99
+00:12:19,840 --> 00:12:22,679
+您可以在线下单，没错吧？
+
+100
+00:12:22,759 --> 00:12:28,639
+So through customer and merchant, we have the internet.
+
+100
+00:12:22,759 --> 00:12:28,639
+通过顾客和商家，我们拥有了互联网。
+
+101
+00:12:28,639 --> 00:12:33,159
+Internet is an open network.
+
+101
+00:12:28,639 --> 00:12:33,159
+互联网是一个开放的网络系统。
+
+102
+00:12:33,159 --> 00:12:35,479
+We have the communications there.
+
+102
+00:12:33,159 --> 00:12:35,479
+我们在那里有通讯设施。
+
+103
+00:12:35,479 --> 00:12:39,439
+They can browse the internet and place order.
+
+103
+00:12:35,479 --> 00:12:39,439
+他们可以上网浏览并下单。
+
+104
+00:12:39,439 --> 00:12:44,439
+The order information will be sent to you.
+
+104
+00:12:39,439 --> 00:12:44,439
+订单信息将发送给您，请您注意查收。
+
+105
+00:12:44,439 --> 00:12:47,199
+Now you have order information.
+
+105
+00:12:44,439 --> 00:12:47,199
+现在您已经获得了订单信息。
+
+106
+00:12:47,199 --> 00:12:49,799
+You want to order some TV.
+
+106
+00:12:47,199 --> 00:12:49,799
+您想订购一些电视。
+
+107
+00:12:49,799 --> 00:12:51,479
+That's order information.
+
+107
+00:12:49,799 --> 00:12:51,479
+这是订单信息。（经过润色）
+
+108
+00:12:51,480 --> 00:13:03,480
+And also you will place your payment information, your card information.
+
+108
+00:12:51,480 --> 00:13:03,480
+您需要输入您的支付信息以及您的卡信息。
+
+109
+00:13:03,480 --> 00:13:08,240
+Your card information will be sent to the payment gateway.
+
+109
+00:13:03,480 --> 00:13:08,240
+您的卡信息将被发送至支付网关。
+
+110
+00:13:08,240 --> 00:13:12,960
+And the order information will be verified by the merchant.
+
+110
+00:13:08,240 --> 00:13:12,960
+订单信息将由商家进行核实，表述更为自然。
+
+111
+00:13:12,960 --> 00:13:18,399
+Merchant will know you're placing an order to buy a TV.
+
+111
+00:13:12,960 --> 00:13:18,399
+商家会知道您正在订购一台电视。
+
+112
+00:13:18,439 --> 00:13:22,879
+So your card information is a token, actually will be encrypted.
+
+112
+00:13:18,439 --> 00:13:22,879
+您的卡信息实际上是一个令牌，将会被加密。实际上，这是为了确保您的信息安全。
+
+113
+00:13:22,879 --> 00:13:26,559
+So the card information will be sent to the payment gateway.
+
+113
+00:13:22,879 --> 00:13:26,559
+因此，卡信息将被发送至支付网关。这样表达更为自然。
+
+114
+00:13:26,559 --> 00:13:33,600
+And payment gateway will connect to a closed network between like the credit card company
+
+114
+00:13:26,559 --> 00:13:33,600
+支付网关将连接到一个封闭的网络，就像信用卡公司那样
+
+115
+00:13:33,600 --> 00:13:36,319
+and the merchant's bank.
+
+115
+00:13:33,600 --> 00:13:36,319
+以及商家的银行。
+
+116
+00:13:36,319 --> 00:13:38,519
+So this one is a closed network.
+
+116
+00:13:36,319 --> 00:13:38,519
+这一个网络是封闭的。
+
+117
+00:13:38,519 --> 00:13:49,240
+For example, you can use SWIFT system to settle down all the transactions between different
+
+117
+00:13:38,519 --> 00:13:49,240
+例如，您可以使用 SWIFT 系统来处理不同银行之间的所有交易，这样可以使交易结算更加便捷
+
+118
+00:13:49,240 --> 00:13:51,439
+banks.
+
+118
+00:13:49,240 --> 00:13:51,439
+银行
+
+119
+00:13:51,439 --> 00:13:59,319
+Your card information will go through payment gateway, will be sent to your credit card
+
+119
+00:13:51,439 --> 00:13:59,319
+您的卡信息将经过支付网关处理，随后发送至您的信用卡
+
+120
+00:13:59,319 --> 00:14:06,039
+company to get approval.
+
+120
+00:13:59,319 --> 00:14:06,039
+获取批准的公司信息。
+
+121
+00:14:06,039 --> 00:14:13,519
+Once your transaction request is approved, that means your credit card company will check
+
+121
+00:14:06,039 --> 00:14:13,519
+一旦您的交易请求获得批准，这就意味着您的信用卡公司将进行核实
+
+122
+00:14:13,519 --> 00:14:22,839
+your signature to guarantee this is a real request from that card number, that holder.
+
+122
+00:14:13,519 --> 00:14:22,839
+请在此处签名以证明这是从该卡号发出的真实请求，并由持卡人本人签署。
+
+123
+00:14:22,839 --> 00:14:30,679
+And then if your signature is correct and your credit card still has the balance to
+
+123
+00:14:22,839 --> 00:14:30,679
+然后如果您的签名正确，并且信用卡上还有余额
+
+124
+00:14:30,679 --> 00:14:35,079
+pay this order, then your request can be approved.
+
+124
+00:14:30,679 --> 00:14:35,079
+请先支付此订单，您的请求随后即可得到批准。
+
+125
+00:14:35,080 --> 00:14:45,400
+The approved information will be returned back to the merchant, the approval.
+
+125
+00:14:35,080 --> 00:14:45,400
+经批准的信息将返回给商家，审批已通过。
+
+126
+00:14:45,400 --> 00:14:52,080
+Approval just like there will be a token, contains this credit card's signature.
+
+126
+00:14:45,400 --> 00:14:52,080
+审批就像会有令牌一样，其中包含这张信用卡的签名。这样的表述更为自然易懂。
+
+127
+00:14:52,080 --> 00:15:02,960
+And later on, the token from the approval, the token will be used by the merchant to
+
+127
+00:14:52,080 --> 00:15:02,960
+之后，商家将使用审批中的令牌
+
+128
+00:15:03,200 --> 00:15:06,560
+claim the credit.
+
+128
+00:15:03,200 --> 00:15:06,560
+声明并索取信用
+
+129
+00:15:06,560 --> 00:15:11,759
+And the merchant will know from this approval message, this transaction request has been
+
+129
+00:15:06,560 --> 00:15:11,759
+商家将根据此批准消息得知，该交易请求已被
+
+130
+00:15:11,759 --> 00:15:14,920
+approved and this transaction is approved.
+
+130
+00:15:11,759 --> 00:15:14,920
+该交易已获批准，此交易已获批准。
+
+131
+00:15:14,920 --> 00:15:22,000
+That means, well, the request has been approved and this transaction is done, finished.
+
+131
+00:15:14,920 --> 00:15:22,000
+这意味着，嗯，请求已经获得批准，这笔交易已经完成，结束了。
+
+132
+00:15:22,000 --> 00:15:27,560
+At the same time, you're the customer, you will receive a message from your credit card
+
+132
+00:15:22,000 --> 00:15:27,560
+同时，作为客户，您会收到来自信用卡的短信
+
+133
+00:15:27,560 --> 00:15:30,879
+company, just like this transaction is approved.
+
+133
+00:15:27,560 --> 00:15:30,879
+公司，就像这笔交易已经获批准了一样。
+
+134
+00:15:31,200 --> 00:15:39,159
+Later on, you need to pay this bill to your credit card company.
+
+134
+00:15:31,200 --> 00:15:39,159
+之后，您需要将这笔账单支付给您的信用卡公司。
+
+135
+00:15:39,159 --> 00:15:46,559
+Okay, the merchant can use token to get credit from his bank.
+
+135
+00:15:39,159 --> 00:15:46,559
+好的，商家可以用令牌从自己的银行获取信用。这样的表述更自然、易懂。
+
+136
+00:15:46,559 --> 00:15:59,679
+And this bank will use token, same token, to settle down transactions between the bank
+
+136
+00:15:46,559 --> 00:15:59,679
+这家银行将使用相同的令牌进行银行间交易结算
+
+137
+00:15:59,919 --> 00:16:00,399
+system.
+
+137
+00:15:59,919 --> 00:16:00,399
+系统来源（经过润色）
+
+138
+00:16:07,839 --> 00:16:10,879
+Okay, in this architecture, we can look at some description here.
+
+138
+00:16:07,839 --> 00:16:10,879
+好的，在这个架构中，我们可以看看这里的描述。以下是具体内容：
+
+139
+00:16:11,519 --> 00:16:17,919
+We have the card holder, customer, merchant, the CA center.
+
+139
+00:16:11,519 --> 00:16:17,919
+我们拥有持卡人、客户、商家以及 CA 中心。
+
+140
+00:16:17,919 --> 00:16:20,799
+CA center is a trusted third party.
+
+140
+00:16:17,919 --> 00:16:20,799
+加拿大中心作为一家值得信赖的第三方机构。
+
+141
+00:16:20,799 --> 00:16:39,919
+We trust this one to get a valid certificate.
+
+141
+00:16:20,799 --> 00:16:39,919
+我们相信这个可以成功获取有效证书。
+
+142
+00:16:40,959 --> 00:16:44,399
+And we have the payment gateway or all connected by the internet.
+
+142
+00:16:40,959 --> 00:16:44,399
+我们拥有支付网关，或者所有设备都通过互联网连接。
+
+143
+00:16:45,039 --> 00:16:49,919
+Each participant has a certificate from a set CA center.
+
+143
+00:16:45,039 --> 00:16:49,919
+每位参与者都持有由一组认证中心颁发的证书。
+
+144
+00:16:52,959 --> 00:16:59,759
+So the certificate will have your certified public key.
+
+144
+00:16:52,959 --> 00:16:59,759
+因此，证书将包含您的认证公钥。
+
+145
+00:17:03,600 --> 00:17:07,279
+As a customer, you will have your private key locally.
+
+145
+00:17:03,600 --> 00:17:07,279
+作为客户，您将可以在本地拥有您的私钥。这样的表述更加自然和易于理解。
+
+146
+00:17:07,839 --> 00:17:12,079
+No one else knows your private key, right?
+
+146
+00:17:07,839 --> 00:17:12,079
+没有人知道你的私钥，您确定吗？
+
+147
+00:17:12,720 --> 00:17:17,839
+So you will generate your private key and it will be owned by you,
+
+147
+00:17:12,720 --> 00:17:17,839
+因此您将生成您的私钥，它将完全由您拥有，表达更为自然
+
+148
+00:17:18,559 --> 00:17:23,199
+but you can have your public key to be certified by the CA center.
+
+148
+00:17:18,559 --> 00:17:23,199
+您可以获取由 CA 中心认证的公钥。
+
+149
+00:17:25,599 --> 00:17:31,919
+So the issuer and the acquirer institutions are linked by a closed and secure bank network,
+
+149
+00:17:25,599 --> 00:17:31,919
+因此，发卡行和收单行通过一个封闭且安全的银行网络相连，这种说法更为自然和易懂
+
+150
+00:17:31,919 --> 00:17:33,759
+just like the SWIFT system.
+
+150
+00:17:31,919 --> 00:17:33,759
+就像 SWIFT 系统那样。
+
+151
+00:17:34,480 --> 00:17:39,679
+And the payment gateway bridges the open and closed network.
+
+151
+00:17:34,480 --> 00:17:39,679
+并且支付网关架起了开放网络与封闭网络之间的桥梁。
+
+152
+00:17:39,680 --> 00:17:46,080
+We have the payment gateway stand between the open and the closed network,
+
+152
+00:17:39,680 --> 00:17:46,080
+我们在开放网络和封闭网络之间设置了支付网关，
+
+153
+00:17:46,080 --> 00:17:50,560
+can transmit some message between these two systems.
+
+153
+00:17:46,080 --> 00:17:50,560
+可以在这两个系统之间传输信息。
+
+154
+00:17:53,680 --> 00:18:00,560
+Before we have the transaction, the first step is that we should have the registration
+
+154
+00:17:53,680 --> 00:18:00,560
+在进行交易之前，首先我们需要完成注册手续
+
+155
+00:18:00,560 --> 00:18:04,320
+of the card holders and the merchants with a CA center.
+
+155
+00:18:00,560 --> 00:18:04,320
+信用卡持卡人与商户的 CA 中心。
+
+156
+00:18:04,799 --> 00:18:13,439
+Your registration will guarantee that you will have a certificate to be issued by the CA
+
+156
+00:18:04,799 --> 00:18:13,439
+您的注册将确保您将获得由证书颁发机构（CA）颁发的证书
+
+157
+00:18:13,439 --> 00:18:15,759
+and you will get the certificate.
+
+157
+00:18:13,439 --> 00:18:15,759
+你将获得证书。
+
+158
+00:18:18,240 --> 00:18:23,359
+This certificate will be sent to you, to the card holder and the merchants.
+
+158
+00:18:18,240 --> 00:18:23,359
+此证书将发送给您、持卡人及商家。
+
+159
+00:18:24,159 --> 00:18:32,240
+And then all the transactions, all transactions, we should guarantee the following properties,
+
+159
+00:18:24,159 --> 00:18:32,240
+然后所有交易，所有交易，我们应确保以下特性，
+
+160
+00:18:32,400 --> 00:18:38,400
+like the authentication, confidentiality, and integrity for every transaction.
+
+160
+00:18:32,400 --> 00:18:38,400
+交易必须确保认证、保密性和完整性。
+
+161
+00:18:40,160 --> 00:18:45,839
+Transaction can be your order, it can be your payment request.
+
+161
+00:18:40,160 --> 00:18:45,839
+交易可能是您的订单，也可能是您的付款申请。
+
+162
+00:18:47,200 --> 00:18:51,039
+So authentication, how can we guarantee the authentication, the message?
+
+162
+00:18:47,200 --> 00:18:51,039
+因此，如何确保认证，以及这条信息？
+
+163
+00:18:51,039 --> 00:18:55,039
+Every transaction can be regarded as a message, right?
+
+163
+00:18:51,039 --> 00:18:55,039
+每笔交易都可以看作是一条信息，您觉得呢？
+
+164
+00:18:55,119 --> 00:19:02,399
+So message, when you guarantee the authentication, the message,
+
+164
+00:18:55,119 --> 00:19:02,399
+因此，在确保认证后，这条消息，
+
+165
+00:19:02,399 --> 00:19:06,079
+authentication means this message is really from Alice.
+
+165
+00:19:02,399 --> 00:19:06,079
+认证表明这条信息确实是 Alice 发的。
+
+166
+00:19:13,519 --> 00:19:20,319
+So what we should do is, normally we have H, M, the message, we take the hash function.
+
+166
+00:19:13,519 --> 00:19:20,319
+我们通常应该这样做：通常我们有 H、M 和消息，然后我们使用哈希函数。
+
+167
+00:19:20,720 --> 00:19:28,639
+The message, we take the hash function, and based on the hash function, we use Alice,
+
+167
+00:19:20,720 --> 00:19:28,639
+我们采用消息，然后利用哈希函数，基于此，我们使用 Alice，翻译更加自然流畅
+
+168
+00:19:29,439 --> 00:19:32,799
+private key, to generate the signature.
+
+168
+00:19:29,439 --> 00:19:32,799
+私钥，用于生成签名（优化版）。
+
+169
+00:19:34,480 --> 00:19:35,359
+The private key,
+
+169
+00:19:34,480 --> 00:19:35,359
+私钥，
+
+170
+00:19:35,919 --> 00:19:38,879
+the private key of Alice,
+
+170
+00:19:35,919 --> 00:19:38,879
+爱丽丝的私钥，
+
+171
+00:19:45,759 --> 00:19:48,879
+the private key of Alice,
+
+171
+00:19:45,759 --> 00:19:48,879
+爱丽丝的私钥，
+
+172
+00:19:56,719 --> 00:19:59,359
+the private key of Alice,
+
+172
+00:19:56,719 --> 00:19:59,359
+爱丽丝的私钥，
+
+173
+00:20:05,359 --> 00:20:07,359
+the public key of Alice,
+
+173
+00:20:05,359 --> 00:20:07,359
+爱丽丝的公钥，
+
+174
+00:20:18,159 --> 00:20:23,839
+so in this way, this is signature and the receiver will use Alice public key,
+
+174
+00:20:18,159 --> 00:20:23,839
+因此这样，这是签名，接收者将使用 Alice 的公钥，表达更为自然流畅
+
+175
+00:20:25,039 --> 00:20:26,079
+because public key
+
+175
+00:20:25,039 --> 00:20:26,079
+因为是公钥
+
+176
+00:20:29,039 --> 00:20:30,879
+is given in this certificate.
+
+176
+00:20:29,039 --> 00:20:30,879
+证书中注明。
+
+177
+00:20:35,359 --> 00:20:36,399
+POP of Alice.
+
+177
+00:20:35,359 --> 00:20:36,399
+爱丽丝的流行度（经过润色）
+
+178
+00:20:41,199 --> 00:20:47,679
+Well, along with your message, you will also show your certificate to the receiver.
+
+178
+00:20:41,199 --> 00:20:47,679
+嗯，除了你的消息，你还需要向接收者出示你的证书。这样做既方便又安全。
+
+179
+00:20:48,559 --> 00:20:53,359
+So this certificate contains your public key, and the receiver can use your public key in the
+
+179
+00:20:48,559 --> 00:20:53,359
+这份证书包含了您的公钥，接收者可以使用您的公钥进行
+
+180
+00:20:53,359 --> 00:21:01,439
+certificate to verify your signature is correct or not, to guarantee the authentication of the
+
+180
+00:20:53,359 --> 00:21:01,439
+验证您的签名是否正确，以确保身份验证的有效性
+
+181
+00:21:01,440 --> 00:21:08,640
+message. Okay, we have the signature verification. Confidentiality means, well,
+
+181
+00:21:01,440 --> 00:21:08,640
+好的，我们已经完成了签名验证。保密性，也就是说，
+
+182
+00:21:11,279 --> 00:21:14,000
+normally we use the symmetric encryption.
+
+182
+00:21:11,279 --> 00:21:14,000
+我们一般采用对称加密方式。
+
+183
+00:21:14,000 --> 00:21:32,640
+We have the symmetric encryption to encrypt the message, even though the message is transmitted
+
+183
+00:21:14,000 --> 00:21:32,640
+我们拥有对称加密技术来加密信息，即便信息正在传输过程中
+
+184
+00:21:32,640 --> 00:21:41,680
+in the open network, in the internet, and in fact, no one can open this message, because
+
+184
+00:21:32,640 --> 00:21:41,680
+在公开网络和互联网上，实际上没有人能够打开这条信息，因为
+
+185
+00:21:44,079 --> 00:21:51,039
+no one has this symmetric key K. Unless you send the key K to the receiver,
+
+185
+00:21:44,079 --> 00:21:51,039
+没有人拥有这个对称密钥 K。除非你把密钥 K 发给接收方，
+
+186
+00:21:51,039 --> 00:21:58,960
+the right receiver can open this message. And integrity means, well, it is not modified.
+
+186
+00:21:51,039 --> 00:21:58,960
+正确的接收者可以打开这条消息。完整性是指，嗯，消息内容没有被篡改。
+
+187
+00:22:03,440 --> 00:22:10,240
+And we said that the correct signature will guarantee the integrity of the message, right?
+
+187
+00:22:03,440 --> 00:22:10,240
+我们说，正确的签名能确保信息的完整性，没错吧？
+
+188
+00:22:11,039 --> 00:22:14,079
+Because if a message becomes N prime,
+
+188
+00:22:11,039 --> 00:22:14,079
+因为如果一条信息是 N 个质数的倍数，
+
+189
+00:22:16,559 --> 00:22:26,319
+N prime will have a different S prime. So this S prime cannot equal the S, the signature,
+
+189
+00:22:16,559 --> 00:22:26,319
+N 的素数会有一个不同的 S 素数，所以这个 S 素数不能等同于 S，也就是签名，
+
+190
+00:22:26,319 --> 00:22:34,319
+along with the message. That means your signature will guarantee both authentication and integrity.
+
+190
+00:22:26,319 --> 00:22:34,319
+沿着消息一起。这意味着您的签名将确保认证和完整性。
+
+191
+00:22:34,319 --> 00:22:38,240
+The data, the message, the content will not be modified.
+
+191
+00:22:34,319 --> 00:22:38,240
+数据、信息、内容均不会发生变更。
+
+192
+00:22:40,640 --> 00:22:47,519
+And we have the payment authorization. This will be done by your credit card company.
+
+192
+00:22:40,640 --> 00:22:47,519
+我们已经获得了支付授权，这项操作将由您的信用卡公司负责完成。
+
+193
+00:22:57,759 --> 00:23:05,039
+So once you provide your credit card number and you have your correct, your number,
+
+193
+00:22:57,759 --> 00:23:05,039
+因此一旦你提供了你的信用卡号码，并且号码准确无误，
+
+194
+00:23:05,759 --> 00:23:12,399
+credit card number, plus your valid signature,
+
+194
+00:23:05,759 --> 00:23:12,399
+信用卡号码，加上您的有效签名，
+
+195
+00:23:15,599 --> 00:23:24,399
+then your request can be approved by your credit card company. So your credit card company has your
+
+195
+00:23:15,599 --> 00:23:24,399
+您的请求可以由您的信用卡公司批准。因此，您的信用卡公司掌握了您的信息。
+
+196
+00:23:24,399 --> 00:23:33,359
+public key and you can generate the correct signature. Then you can get approval or you
+
+196
+00:23:24,399 --> 00:23:33,359
+公钥，生成正确的签名后，您可以获得批准或
+
+197
+00:23:33,359 --> 00:23:41,679
+can get the payment authorization from your credit card company. So later on, the payment,
+
+197
+00:23:33,359 --> 00:23:41,679
+您可以从信用卡公司获取支付授权，因此之后支付
+
+198
+00:23:43,119 --> 00:23:50,719
+once this transaction is done, the payment capture can initiate the request for
+
+198
+00:23:43,119 --> 00:23:50,719
+交易完成后，支付捕获即可启动请求流程
+
+199
+00:23:50,719 --> 00:23:55,759
+financial clearance on behalf of the merchant. So this means merchant
+
+199
+00:23:50,719 --> 00:23:55,759
+代表商家进行的财务清算，也就是说这是商家的清算操作。
+
+200
+00:23:55,759 --> 00:24:07,359
+and claim credit from the transaction.
+
+200
+00:23:55,759 --> 00:24:07,359
+从交易中索要信用款
+
+201
+00:24:11,519 --> 00:24:19,519
+Of course, just like this payment authorization is a token, this token will be
+
+201
+00:24:11,519 --> 00:24:19,519
+当然，就像这笔付款授权是一个令牌一样，这个令牌也将是，当然如此
+
+202
+00:24:19,599 --> 00:24:29,279
+sent to the merchant. So merchant has this token, and later on, this token will also be sent by the
+
+202
+00:24:19,599 --> 00:24:29,279
+发送给商家。因此商家拥有这个令牌，稍后该令牌也将被发送给商家
+
+203
+00:24:29,279 --> 00:24:38,639
+credit card company. So the merchant can use this token to claim the credit, just like he sold
+
+203
+00:24:29,279 --> 00:24:38,639
+信用卡公司。因此，商家可以用这个令牌来主张信用，就像他进行销售一样
+
+204
+00:24:38,639 --> 00:24:42,720
+a TV to the customer and then he can get the credit.
+
+204
+00:24:38,639 --> 00:24:42,720
+向客户提供一个电视，他就可以获得信用贷款。
+
+205
+00:24:42,720 --> 00:24:50,880
+Okay, we look at the message. How will the message be a clear message? This message can be
+
+205
+00:24:42,720 --> 00:24:50,880
+好的，我们来查看这条信息。怎样才能使这条信息清晰易懂呢？这样的信息可以是
+
+206
+00:24:50,880 --> 00:24:58,319
+the order request and payment information. How this message will be processed in this payment
+
+206
+00:24:50,880 --> 00:24:58,319
+订单请求及支付信息。该信息将如何在本笔支付中处理
+
+207
+00:24:58,319 --> 00:25:06,319
+system. And how can we guarantee the authentication, confidentiality, and integrity?
+
+207
+00:24:58,319 --> 00:25:06,319
+系统如何确保认证、保密和完整性的？
+
+208
+00:25:06,480 --> 00:25:12,480
+And how can we guarantee the authentication, confidentiality, and integrity?
+
+208
+00:25:06,480 --> 00:25:12,480
+我们如何确保认证、保密和完整性的保障？
+
+209
+00:25:14,079 --> 00:25:20,399
+The message, we have the hash function, we get the digest, H, M.
+
+209
+00:25:14,079 --> 00:25:20,399
+我们拥有哈希函数，从而获得摘要 H，M。
+
+210
+00:25:25,279 --> 00:25:34,720
+So we use the sender's private key, we generate the signature, and suppose we are using the RSA
+
+210
+00:25:25,279 --> 00:25:34,720
+因此我们使用发送者的私钥来生成签名，假设我们使用的是 RSA 算法
+
+211
+00:25:36,960 --> 00:25:50,240
+algorithm. So signature S equals H, M, to the D mod M, right? We have the signature. And signature
+
+211
+00:25:36,960 --> 00:25:50,240
+算法。因此，签名 S 等于 H(M^D) mod M，对吗？我们已经得到了这个签名。并且签名
+
+212
+00:25:50,240 --> 00:25:59,839
+plus M will be the original, well, the whole message. And this message, we apply the symmetric
+
+212
+00:25:50,240 --> 00:25:59,839
+plus M 将是原文，嗯，整个消息。这条消息，我们采用了对称加密方式
+
+213
+00:25:59,839 --> 00:26:10,480
+encryption. That means S plus M, we use a symmetric key K to do the encryption.
+
+213
+00:25:59,839 --> 00:26:10,480
+加密。也就是说，S 加上 M，我们使用对称密钥 K 进行加密。
+
+214
+00:26:11,759 --> 00:26:25,919
+This key K is one-time symmetric key K. So this key K will be put in some, well,
+
+214
+00:26:11,759 --> 00:26:25,919
+这把密钥 K 是一次性对称密钥。因此，这把密钥 K 将被放置在某个地方，嗯，
+
+215
+00:26:26,480 --> 00:26:34,960
+as some loss for security purpose, we add some padding information. So this key K will be put here.
+
+215
+00:26:26,480 --> 00:26:34,960
+为了安全考虑，我们添加了一些填充信息，所以这个密钥 K 将被放置在这里。
+
+216
+00:26:36,640 --> 00:26:47,840
+And then we use the receiver's public key to do the encryption. So this key K will be encrypted
+
+216
+00:26:36,640 --> 00:26:47,840
+然后我们使用接收者的公钥进行加密，所以这个密钥 K 会被加密
+
+217
+00:26:47,839 --> 00:26:58,399
+by using the public key of the receiver, recipient.
+
+217
+00:26:47,839 --> 00:26:58,399
+使用接收者的公钥进行接收。
+
+218
+00:27:03,119 --> 00:27:11,679
+Okay, then these two parts will be put together to become the transmitted message to be sent
+
+218
+00:27:03,119 --> 00:27:11,679
+好吧，那么这两部分将被合并，形成要发送的传输信息
+
+219
+00:27:11,680 --> 00:27:19,440
+to the receiver. So the receiver can get two parts, both the encrypted message and also the
+
+219
+00:27:11,680 --> 00:27:19,440
+送给接收者。这样接收者就能同时获得两部分内容，即加密信息本身以及相关信息。
+
+220
+00:27:19,440 --> 00:27:32,000
+encrypted secret key. So you can see, well, without key K, no one can get the original message M and
+
+220
+00:27:19,440 --> 00:27:32,000
+加密密钥。因此，您可以看到，没有密钥 K，任何人都无法获取原始消息 M
+
+221
+00:27:32,000 --> 00:27:38,160
+S, right? Or who can open the key K? Only the recipient.
+
+221
+00:27:32,000 --> 00:27:38,160
+S，对吧？或者谁能打开钥匙 K？只有收件人才能做到。
+
+222
+00:27:44,240 --> 00:27:54,160
+Recipient will use, well, the key K, suppose we're using the RSA algorithm. So this key K,
+
+222
+00:27:44,240 --> 00:27:54,160
+收件人将使用，嗯，密钥 K，假设我们使用 RSA 算法。那么这个密钥 K，
+
+223
+00:27:55,120 --> 00:28:18,080
+this is like D1, key K, we use the recipient, we have the E2, N2, and D2, N2 to be his RSA key pair.
+
+223
+00:27:55,120 --> 00:28:18,080
+这就像 D1，键 K，我们使用接收者，我们拥有 E2、N2 和 D2、N2，这是他的 RSA 密钥对。
+
+224
+00:28:18,879 --> 00:28:25,279
+And this key K will be encrypted by using the receiver's public key.
+
+224
+00:28:18,879 --> 00:28:25,279
+这把密钥 K 将使用接收者的公钥进行加密。
+
+225
+00:28:26,879 --> 00:28:40,079
+So this is key K to the E, mod E2, mod N2. So this will be received by recipient. And recipient can
+
+225
+00:28:26,879 --> 00:28:40,079
+因此这是 E 的关键 K，E2 模 N2 模。这将由收件人接收。收件人可以
+
+226
+00:28:40,079 --> 00:28:54,240
+use his private key D2 to decrypt the key K. So this key K, E2, and he will use his private key D2,
+
+226
+00:28:40,079 --> 00:28:54,240
+使用他的私钥 D2 解密密钥 K，因此这个密钥 K 和 E2，他都会使用他的私钥 D2
+
+227
+00:28:56,399 --> 00:29:02,879
+mod N2 to get key K. And this key K can be used to
+
+227
+00:28:56,399 --> 00:29:02,879
+将模 N2 得到密钥 K，该密钥可用于
+
+228
+00:29:02,880 --> 00:29:16,080
+decrypt this message. And last, the recipient can open the encrypted message to get S signature
+
+228
+00:29:02,880 --> 00:29:16,080
+解密这条信息。最后，收件人可以打开加密信息获取 S 签名
+
+229
+00:29:16,080 --> 00:29:24,240
+and the message M. Of course, the receiver will double check the signature is correct or not to
+
+229
+00:29:16,080 --> 00:29:24,240
+当然，接收者会仔细核对签名是否正确无误。
+
+230
+00:29:24,240 --> 00:29:32,480
+guarantee it is really from the customer or from the credit card company. Like that. Is that clear?
+
+230
+00:29:24,240 --> 00:29:32,480
+确保信息确实来自客户或信用卡公司。明白了吗？
+
+231
+00:29:33,840 --> 00:29:39,360
+So we have signature to guarantee authentication,
+
+231
+00:29:33,840 --> 00:29:39,360
+我们有签名来确保认证，表达更为自然流畅
+
+232
+00:29:45,120 --> 00:29:48,560
+to guarantee the message integrity.
+
+232
+00:29:45,120 --> 00:29:48,560
+确保消息的完整性，表达更自然。
+
+233
+00:29:49,440 --> 00:29:57,839
+And we have the symmetry encryption and the public key scheme here to guarantee
+
+233
+00:29:49,440 --> 00:29:57,839
+我们在这里采用了对称加密和公钥方案以确保
+
+234
+00:29:58,879 --> 00:30:00,879
+the message confidentiality.
+
+234
+00:29:58,879 --> 00:30:00,879
+消息保密性。
+
+235
+00:30:01,520 --> 00:30:08,160
+But we guarantee authentication, confidentiality, and integrity of every transaction.
+
+235
+00:30:01,520 --> 00:30:08,160
+我们保证每一笔交易都经过身份验证，保密且完整，让您更放心。
+
+236
+00:30:10,240 --> 00:30:15,680
+So encrypted means we guarantee the message is not discussed. Yeah. Any question?
+
+236
+00:30:10,240 --> 00:30:15,680
+加密意味着我们保证消息不会被讨论。没错。有什么问题吗？
+
+237
+00:30:20,080 --> 00:30:27,280
+So this is key K to the E, mod E2, mod N2. So this is key K to the E2, mod N2.
+
+237
+00:30:20,080 --> 00:30:27,280
+这就是 E、E2、N2 的密钥 K，表述得更加自然和易懂。
+
+238
+00:30:27,279 --> 00:30:50,319
+You mean the hash, right? Hash power, right? Okay. This is a good question. Well, the hash,
+
+238
+00:30:27,279 --> 00:30:50,319
+您是指哈希值吧？哈希算力，对吧？嗯，这是个很好的问题。嗯，关于这个哈希，
+
+239
+00:30:51,279 --> 00:30:59,119
+actually, this is necessary step. You will see without hash, there could be some attack.
+
+239
+00:30:51,279 --> 00:30:59,119
+实际上，这一步是必要的。没有散列的话，可能会遭受攻击。
+
+240
+00:31:00,240 --> 00:31:07,119
+The hash is a good property, one-way function. It's one-way function. You cannot fabricate a message.
+
+240
+00:31:00,240 --> 00:31:07,119
+哈希函数具有单向性，是一个很好的特性。一旦生成，就无法伪造消息。
+
+241
+00:31:10,240 --> 00:31:18,000
+But without hash, you can fabricate some signature. So you will see in this nature 5,
+
+241
+00:31:10,240 --> 00:31:18,000
+但没有哈希值，你可以伪造一些签名。因此，你会在自然界中看到 5 个这样的例子，翻译更加自然易懂。
+
+242
+00:31:18,000 --> 00:31:27,920
+in nature 4, there is one exercise we call the signature forgery attack without hash function.
+
+242
+00:31:18,000 --> 00:31:27,920
+在自然 4 中，有一个名为“无哈希函数签名伪造攻击”的练习。
+
+243
+00:31:29,200 --> 00:31:35,680
+So here we just have hash function. You'll see when you try to solve that problem.
+
+243
+00:31:29,200 --> 00:31:35,680
+这里我们只讨论哈希函数。尝试解决这个问题后，你就会明白了。
+
+244
+00:31:35,680 --> 00:31:52,000
+Yeah. Yeah, that's right. Yeah. So the hash function, just like we apply the public key
+
+244
+00:31:35,680 --> 00:31:52,000
+嗯，没错。所以哈希函数，就像我们使用公钥那样
+
+245
+00:31:52,000 --> 00:32:02,240
+null hash function, shot, turn it, and the 56. And this encryption, just like we use AES,
+
+245
+00:31:52,000 --> 00:32:02,240
+空哈希函数，射击，转动它，然后是 56。这种加密方式与我们所使用的 AES 加密类似，翻译得更加自然和易懂。
+
+246
+00:32:03,200 --> 00:32:12,079
+the encryption, decryption algorithm, or the public key null, what are null is the private key. Okay.
+
+246
+00:32:03,200 --> 00:32:12,079
+加密、解密算法或公钥为空，所谓的空就是私钥。好的。
+
+247
+00:32:14,720 --> 00:32:15,279
+Like here.
+
+247
+00:32:14,720 --> 00:32:15,279
+就像这里一样。
+
+248
+00:32:23,359 --> 00:32:31,599
+Just like here, the RSA algorithm is well known. What you don't know is only the private key,
+
+248
+00:32:23,359 --> 00:32:31,599
+就像在这里，RSA 算法广为人知。唯一未知的是私钥，
+
+249
+00:32:31,759 --> 00:32:41,519
+like here. All the process, like the hashing, encryption, decryption, all the
+
+249
+00:32:31,759 --> 00:32:41,519
+像这里一样。整个过程，包括哈希、加密和解密等，全部
+
+250
+00:32:42,879 --> 00:32:49,839
+these mechanisms are well known. The unknown part is only the private key.
+
+250
+00:32:42,879 --> 00:32:49,839
+这些机制大家都很熟悉，唯一未知的是私钥。
+
+251
+00:32:54,159 --> 00:33:00,639
+Okay. We look at the previous slide, how the previous slide can be translated in a real
+
+251
+00:32:54,159 --> 00:33:00,639
+好的。我们来看看上一张幻灯片，它是如何进行实际翻译的
+
+252
+00:33:01,919 --> 00:33:10,319
+implementation. Suppose this is a clear text M, the M
+
+252
+00:33:01,919 --> 00:33:10,319
+实施方案。假设这是一个清晰的文本 M，M（经过润色）
+
+253
+00:33:14,719 --> 00:33:25,359
+after the next hash function shot 256, we get HM. So based on the HM, we have the detail signature.
+
+253
+00:33:14,719 --> 00:33:25,359
+在下一个哈希函数射击 256 次后，我们得到 HM。根据 HM，我们有了详细签名。
+
+254
+00:33:26,319 --> 00:33:33,119
+Now this signature equals HM. Suppose we're using
+
+254
+00:33:26,319 --> 00:33:33,119
+现在这个签名等于 HM。假设我们正在使用...（此处省略了完整的句子，因为原文并未提供完整的翻译）
+
+255
+00:33:39,519 --> 00:33:48,319
+the public key of the Alice, we can generate the signature. So the message M plus the signature S
+
+255
+00:33:39,519 --> 00:33:48,319
+爱丽丝的公钥，我们可以利用它生成签名。因此，消息 M 和签名 S 一起使用
+
+256
+00:33:49,039 --> 00:34:01,519
+and also Alice will provide her sunny certificate. So this sunny certificate contains E1 and E1.
+
+256
+00:33:49,039 --> 00:34:01,519
+Alice 也会提供她的阳光证书。这份证书里包含了 E1 和 E1。
+
+257
+00:34:04,159 --> 00:34:13,119
+Alice will use D1 to be her sunny private key. So this certificate will be sent to the receiver.
+
+257
+00:34:04,159 --> 00:34:13,119
+Alice 将 D1 用作她的阳光私钥。该证书将被发送给接收方。
+
+258
+00:34:13,599 --> 00:34:19,839
+And then all the messages will be decrypted by using a one-time key K.
+
+258
+00:34:13,599 --> 00:34:19,839
+然后所有消息都将使用一次性密钥 K 进行解密。这个翻译更加自然和易于理解。
+
+259
+00:34:21,039 --> 00:34:30,000
+M plus S will be encrypted by the key K. And this key K will be put in an envelope plus
+
+259
+00:34:21,039 --> 00:34:30,000
+M 加 S 将使用密钥 K 进行加密，该密钥 K 将被封装在一个信封里。
+
+260
+00:34:31,039 --> 00:34:40,239
+here just adding some padding bits to make it even more secure. And then the envelope
+
+260
+00:34:31,039 --> 00:34:40,239
+这里只是添加了一些填充位，以增强安全性。然后是信封
+
+261
+00:34:41,199 --> 00:34:44,799
+will be encrypted by using the public key of the recipient.
+
+261
+00:34:41,199 --> 00:34:44,799
+将使用接收者的公钥进行加密。翻译更加自然，易于理解。
+
+262
+00:34:45,839 --> 00:34:56,719
+So this key K will be encrypted by using the recipient. Suppose we have the E2, N2,
+
+262
+00:34:45,839 --> 00:34:56,719
+因此，这个密钥 K 将由接收者进行加密。假设我们拥有 E2 和 N2，
+
+263
+00:34:57,839 --> 00:35:05,599
+and D2 will be the private key of the recipient. And the sender will use the E2
+
+263
+00:34:57,839 --> 00:35:05,599
+D2 将是接收者的私钥，发送者将使用 E2
+
+264
+00:35:06,000 --> 00:35:19,360
+as the encryption key to generate the message to be sent along with the symmetric key encrypted
+
+264
+00:35:06,000 --> 00:35:19,360
+将作为生成要发送的消息的加密密钥，与对称密钥一起加密
+
+265
+00:35:19,360 --> 00:35:23,199
+message. So all the messages will be sent to the receiver.
+
+265
+00:35:19,360 --> 00:35:23,199
+因此，所有消息都会发送给接收者。
+
+266
+00:35:35,679 --> 00:35:44,239
+Okay, so this is how the message will be processed in the SET protocol. So in SET protocol,
+
+266
+00:35:35,679 --> 00:35:44,239
+好的，这就是 SET 协议中消息的处理方式。那么在 SET 协议中，
+
+267
+00:35:44,239 --> 00:35:53,360
+another very important concept is called the dual signature. Dual signature can link elements of two
+
+267
+00:35:44,239 --> 00:35:53,360
+另一个非常重要的概念被称为双重签名。双重签名能够将两个元素相连接
+
+268
+00:35:53,360 --> 00:36:00,719
+encrypted messages, each sent to a different recipient with the same signature. The dual
+
+268
+00:35:53,360 --> 00:36:00,719
+加密信息，每个发送给不同的收件人，均带有相同的签名。这种双重特性...
+
+269
+00:36:00,719 --> 00:36:09,119
+each sent to a different recipient with the same signature. We use the same signature, but
+
+269
+00:36:00,719 --> 00:36:09,119
+每份都发送给不同的收件人，使用相同的签名，但我们使用相同的签名，但
+
+270
+00:36:10,480 --> 00:36:18,079
+this signature can serve two purposes because it can link two encrypted messages.
+
+270
+00:36:10,480 --> 00:36:18,079
+这份签名可以同时实现两个目的，因为它能够连接两条加密消息。
+
+271
+00:36:19,279 --> 00:36:28,319
+Just like we have the message M1. So M1 is the order information.
+
+271
+00:36:19,279 --> 00:36:28,319
+就像我们拥有消息 M1 一样。因此，M1 代表订单信息。
+
+272
+00:36:31,679 --> 00:36:37,839
+Your order information is like you place an order to BioTV. And you have M2.
+
+272
+00:36:31,679 --> 00:36:37,839
+您的订单信息就像您在 BioTV 下订单，您拥有 M2。
+
+273
+00:36:41,359 --> 00:36:43,839
+M2 is your account information.
+
+273
+00:36:41,359 --> 00:36:43,839
+M2 是您的账户信息。
+
+274
+00:36:47,679 --> 00:36:58,079
+So you will use your account to pay this order, right? Two messages. M1 will be sent to merchant.
+
+274
+00:36:47,679 --> 00:36:58,079
+你会用你的账户来支付这笔订单，对吧？我们会发送两条消息，其中 M1 会发送给商家。
+
+275
+00:37:01,679 --> 00:37:09,519
+M2, your account information will be sent to the payment gateway and will be sent to, finally,
+
+275
+00:37:01,679 --> 00:37:09,519
+M2，您的账户信息将被发送至支付网关，最终发送，
+
+276
+00:37:09,519 --> 00:37:27,679
+to your credit card company. Your account information will not be known by your, by the merchant.
+
+276
+00:37:09,519 --> 00:37:27,679
+请向您的信用卡公司反映。您的账户信息不会被商家得知。
+
+277
+00:37:28,399 --> 00:37:38,799
+So we have two encrypted messages, but we will have one signature. So these two messages
+
+277
+00:37:28,399 --> 00:37:38,799
+因此我们有两个加密信息，但我们将只有一个签名。所以这两个信息
+
+278
+00:37:40,079 --> 00:37:49,199
+will generate a single signature. So this will be sent together to the merchant
+
+278
+00:37:40,079 --> 00:37:49,199
+将生成单个签名。所以，这将被一起发送给商家
+
+279
+00:37:53,599 --> 00:37:54,960
+and to the payment gateway.
+
+279
+00:37:53,599 --> 00:37:54,960
+并且前往支付网关。
+
+280
+00:37:57,679 --> 00:38:08,000
+We have two receivers. So two messages, but we have a single signature. This single signature
+
+280
+00:37:57,679 --> 00:38:08,000
+我们有两个接收器，因此有两个消息，但只有一个签名。
+
+281
+00:38:08,000 --> 00:38:20,159
+is called the dual signature. Okay. And thus we can vote on this three signature, more signature
+
+281
+00:38:08,000 --> 00:38:20,159
+被称作双重签名。好的，因此我们可以对这三个或更多的签名进行投票
+
+282
+00:38:20,159 --> 00:38:27,599
+generation to be sent back and forth among different parties. So we have two receivers.
+
+282
+00:38:20,159 --> 00:38:27,599
+需要在不同各方之间来回发送的内容。所以有两个接收方。
+
+283
+00:38:28,159 --> 00:38:35,039
+Okay. So in this procedure, a customer sends the purchase order to the merchant
+
+283
+00:38:28,159 --> 00:38:35,039
+好的。因此，在这个流程中，客户会将采购订单发送给商家
+
+284
+00:38:36,879 --> 00:38:46,319
+to the M1 information and the payment instruction to the buyer's bank. So this is the M2 information.
+
+284
+00:38:36,879 --> 00:38:46,319
+到 M1 信息及向买方银行发出付款指示。这即是 M2 信息。
+
+285
+00:38:48,559 --> 00:38:55,119
+The payment instructions are executed only after the merchant has accepted the purchase order.
+
+285
+00:38:48,559 --> 00:38:55,119
+付款指令只有在商家确认购买订单后才会执行。
+
+286
+00:38:55,279 --> 00:39:04,480
+The purchase order is M1. Merchant will guarantee M1 information is correct. However, merchant
+
+286
+00:38:55,279 --> 00:39:04,480
+采购订单号为 M1。商家保证 M1 信息准确无误。然而，商家
+
+287
+00:39:04,480 --> 00:39:18,480
+cannot know the buyer's account number. M2 is not disclosed to the merchant. So M2 is revealed
+
+287
+00:39:04,480 --> 00:39:18,480
+无法得知买家的账户信息。M2 信息未向商家透露。所以 M2 被公开了
+
+288
+00:39:18,880 --> 00:39:21,440
+revealed to the bank only.
+
+288
+00:39:18,880 --> 00:39:21,440
+仅向银行透露。
+
+289
+00:39:24,639 --> 00:39:25,760
+And this is a requirement.
+
+289
+00:39:24,639 --> 00:39:25,760
+这是一项要求，表述得更加自然易懂。
+
+290
+00:39:28,639 --> 00:39:34,400
+Well, at the same time, the bank processes the transaction without knowing the nature of the
+
+290
+00:39:28,639 --> 00:39:34,400
+嗯，与此同时，银行在不知交易性质的情况下处理这笔交易
+
+291
+00:39:34,400 --> 00:39:42,159
+purchase. So bank no idea about M1, no information.
+
+291
+00:39:34,400 --> 00:39:42,159
+采购方面，银行对 M1 的情况一无所知，没有任何信息。
+
+292
+00:39:42,159 --> 00:39:55,279
+Okay. We have two messages. So each will be sent to different destination. They will be encrypted,
+
+292
+00:39:42,159 --> 00:39:55,279
+好的。我们有两个消息，每个消息将被发送到不同的目的地进行加密，这样可以确保信息的安全性。
+
+293
+00:39:57,519 --> 00:39:59,839
+but we have one signature.
+
+293
+00:39:57,519 --> 00:39:59,839
+我们这里有一个签名。
+
+294
+00:40:12,719 --> 00:40:18,719
+Okay. For the detailed information about your signature, we will discuss it in the next class.
+
+294
+00:40:12,719 --> 00:40:18,719
+好的。关于您的签名详细信息，我们将在下一节课上进行讨论。
+
+295
+00:40:19,440 --> 00:40:25,759
+So today I stop here. We still have the project instruction today. So TA is here and then we will
+
+295
+00:40:19,440 --> 00:40:25,759
+今天我就先说到这里。今天我们还有项目说明，所以助教在这里，然后我们继续。
+
+296
+00:40:25,759 --> 00:40:31,679
+start the project instruction five minutes later. Okay. So you can have a break. Thank you. So we
+
+296
+00:40:25,759 --> 00:40:31,679
+五分钟后开始项目指令。好的，那么您可以休息一下。谢谢，接下来我们继续。
+
+297
+00:40:31,679 --> 00:40:34,480
+shall have a good holiday tomorrow.
+
+297
+00:40:31,679 --> 00:40:34,480
+明天将度过一个愉快的假期。
+

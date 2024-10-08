@@ -1,0 +1,1448 @@
+1
+00:00:00,000 --> 00:00:14,120
+Okay, let's continue.
+
+1
+00:00:00,000 --> 00:00:14,120
+好的，咱们接着来。
+
+2
+00:00:14,120 --> 00:00:20,160
+So I'm glad some of you come here and ask me some questions, and some questions are
+
+2
+00:00:14,120 --> 00:00:20,160
+所以我很高兴看到你们中有一些人来到这里向我提出问题，这些问题是
+
+3
+00:00:20,160 --> 00:00:21,160
+really good.
+
+3
+00:00:20,160 --> 00:00:21,160
+真心不错。
+
+4
+00:00:21,160 --> 00:00:22,160
+Okay.
+
+4
+00:00:21,160 --> 00:00:22,160
+好吧。
+
+5
+00:00:22,160 --> 00:00:31,960
+Well, I will review some answers later, just like why this RSA acronym is difficult for
+
+5
+00:00:22,160 --> 00:00:31,960
+嗯，我稍后会对一些答案进行回顾，就像为什么 RSA 这个缩写那么难理解一样
+
+6
+00:00:31,960 --> 00:00:36,759
+some attacker to know the private key.
+
+6
+00:00:31,960 --> 00:00:36,759
+一些攻击者知道私钥。
+
+7
+00:00:36,759 --> 00:00:44,920
+And also some still ask me, can we apply the CRT, the Chinese remanded that theorem in
+
+7
+00:00:36,759 --> 00:00:44,920
+也有人问我，我们能否应用 CRT，中国人对那个定理有过研究
+
+8
+00:00:44,920 --> 00:00:45,920
+this calculation?
+
+8
+00:00:44,920 --> 00:00:45,920
+这个计算是什么？
+
+9
+00:00:45,920 --> 00:00:49,560
+Of course, we can apply it here.
+
+9
+00:00:45,920 --> 00:00:49,560
+当然可以在这里应用这个。
+
+10
+00:00:50,160 --> 00:00:53,840
+Well, let's look at this exercise.
+
+10
+00:00:50,160 --> 00:00:53,840
+好的，让我们来分析一下这个练习。
+
+11
+00:00:53,840 --> 00:00:54,840
+What's the D value?
+
+11
+00:00:53,840 --> 00:00:54,840
+D 值是什么？
+
+12
+00:00:54,840 --> 00:00:59,960
+Can you tell me what's the D value?
+
+12
+00:00:54,840 --> 00:00:59,960
+你能告诉我 D 值是多少呢？
+
+13
+00:00:59,960 --> 00:01:02,960
+Anyone got the answer?
+
+13
+00:00:59,960 --> 00:01:02,960
+谁能提供答案？
+
+14
+00:01:02,960 --> 00:01:05,000
+D is 77.
+
+14
+00:01:02,960 --> 00:01:05,000
+D 等于 77。
+
+15
+00:01:05,000 --> 00:01:07,079
+Okay, that's right.
+
+15
+00:01:05,000 --> 00:01:07,079
+好的，确实如此。
+
+16
+00:01:07,079 --> 00:01:11,359
+So let's have a quick calculation here.
+
+16
+00:01:07,079 --> 00:01:11,359
+那么，我们来快速算一下。
+
+17
+00:01:11,359 --> 00:01:20,239
+The phi n equals p must 1 times q must 1.
+
+17
+00:01:11,359 --> 00:01:20,239
+φn 等于 p，q 必须等于 1。
+
+18
+00:01:20,239 --> 00:01:25,200
+This is 6 times 16, that's 96.
+
+18
+00:01:20,239 --> 00:01:25,200
+这是 6 乘以 16，即 96。
+
+19
+00:01:25,200 --> 00:01:30,400
+Okay, well, we have e equals 5.
+
+19
+00:01:25,200 --> 00:01:30,400
+好吧，嗯，我们得到 e 等于 5。这个结果看起来很合理。
+
+20
+00:01:30,400 --> 00:01:37,039
+And we should guarantee that GCD e phi n is 1.
+
+20
+00:01:30,400 --> 00:01:37,039
+我们应确保 GCD(e, phi(n)) 等于 1。
+
+21
+00:01:37,040 --> 00:01:43,320
+This is the process to get the, we apply the Euclidean algorithm.
+
+21
+00:01:37,040 --> 00:01:43,320
+这是获取过程，我们应用欧几里得算法。（已优化，使翻译更自然易懂）
+
+22
+00:01:43,320 --> 00:01:50,640
+And this is 96 equals 5 times 19 plus 1, very easy, right?
+
+22
+00:01:43,320 --> 00:01:50,640
+这很简单，96 等于 5 乘以 19 再加 1，没错吧？
+
+23
+00:01:50,640 --> 00:01:53,360
+1 is the GCD value.
+
+23
+00:01:50,640 --> 00:01:53,360
+1 是最大公约数值。
+
+24
+00:01:53,360 --> 00:02:06,240
+So 1 equals 96 minus 5 times 19, 96 is phi n, and 5 is e.
+
+24
+00:01:53,360 --> 00:02:06,240
+因此 1 等于 96 减去 5 乘以 19，其中 96 代表φn，5 代表 e。
+
+25
+00:02:06,239 --> 00:02:18,879
+So that means D is congruent to minus 19, is congruent to phi n, phi n is 96.
+
+25
+00:02:06,239 --> 00:02:18,879
+这意味着 D 与-19 同余，即与φn 同余，φn 等于 96。
+
+26
+00:02:18,879 --> 00:02:31,680
+So 96 minus 19, this is 77 mod phi n, okay?
+
+26
+00:02:18,879 --> 00:02:31,680
+因此，96 减去 19 等于 77，这是对 phi n 取模的结果，明白吗？
+
+27
+00:02:31,680 --> 00:02:37,280
+We should have the party integer as the private key.
+
+27
+00:02:31,680 --> 00:02:37,280
+我们应将派对整数设为私钥。
+
+28
+00:02:37,280 --> 00:02:40,680
+Next slide, we should get the C value.
+
+28
+00:02:37,280 --> 00:02:40,680
+下一个幻灯片，我们应获取 C 值。
+
+29
+00:02:40,680 --> 00:02:50,400
+So anyone of you get the C value?
+
+29
+00:02:40,680 --> 00:02:50,400
+你们当中有人拿到 C 值了吗？
+
+30
+00:02:50,400 --> 00:02:53,640
+What's C?
+
+30
+00:02:50,400 --> 00:02:53,640
+什么是 C 语言？
+
+31
+00:02:53,639 --> 00:03:14,439
+C value is m to the e mod n, and m is small, is 8, e is 5, n is 1, 1, 9, right?
+
+31
+00:02:53,639 --> 00:03:14,439
+C 值是 m 的 e 次方对 n 取模，其中 m 较小，m 等于 8，e 等于 5，n 分别为 1、1、9，是这样吗？
+
+32
+00:03:14,439 --> 00:03:22,459
+So n equals p times q, 1, 1, 9.
+
+32
+00:03:14,439 --> 00:03:22,459
+因此 n 等于 p 和 q 的乘积，1，1，9。
+
+33
+00:03:22,460 --> 00:03:30,580
+So this value is 43, okay?
+
+33
+00:03:22,460 --> 00:03:30,580
+这个值是 43，没问题吧？
+
+34
+00:03:30,580 --> 00:03:33,340
+Quite easy to get.
+
+34
+00:03:30,580 --> 00:03:33,340
+非常简单就能得到。
+
+35
+00:03:33,340 --> 00:03:44,060
+The next step is we should get the original message m from C. So m equals C to the D
+
+35
+00:03:33,340 --> 00:03:44,060
+下一步是获取 C 中的原始消息 m。因此，m 等于 C 的 D 次方
+
+36
+00:03:44,060 --> 00:03:53,659
+mod n, so C is 43, D is 77, mod 1, 1, 9.
+
+36
+00:03:44,060 --> 00:03:53,659
+模 n，因此 C 为 43，D 为 77，模数为 1，1，9。
+
+37
+00:03:53,659 --> 00:03:56,900
+Okay, here the data is quite large.
+
+37
+00:03:53,659 --> 00:03:56,900
+好的，这里数据量相当大。
+
+38
+00:03:56,900 --> 00:04:03,060
+So now we can apply the CRT theorem.
+
+38
+00:03:56,900 --> 00:04:03,060
+现在我们可以应用 CRT 定理了，表述更为自然。
+
+39
+00:04:03,060 --> 00:04:12,620
+We studied the part four in lecture two, so we see, well, the CRT can really reduce the
+
+39
+00:04:03,060 --> 00:04:12,620
+在第二讲中，我们学习了第四部分的内容，因此我们可以看到，阴极射线管（CRT）确实能够显著降低
+
+40
+00:04:12,659 --> 00:04:19,980
+computation time for us to quickly get the result.
+
+40
+00:04:12,659 --> 00:04:19,980
+我们快速得到结果所需的时间（更自然、更易理解的表达）。
+
+41
+00:04:19,980 --> 00:04:30,500
+This one, suppose the value is x, x equals 43 to the 77 mod 1, 1, 9.
+
+41
+00:04:19,980 --> 00:04:30,500
+这个值假设为 x，x 等于 43 的 77 次方除以 1，1，9 的余数。
+
+42
+00:04:30,500 --> 00:04:39,660
+So we know n equals p times q equals 7 times 17.
+
+42
+00:04:30,500 --> 00:04:39,660
+因此我们知道 n 等于 7 乘以 17，即 p 乘以 q。
+
+43
+00:04:39,660 --> 00:04:52,780
+So when we apply the CRT algorithm, that means we should first get 43 to the 77 mod 7, we
+
+43
+00:04:39,660 --> 00:04:52,780
+当我们应用 CRT 算法时，首先需要计算 43 的 77 次方对 7 取模的结果
+
+44
+00:04:52,780 --> 00:05:01,660
+get x1, 43 to the 77 mod 17, we get x2.
+
+44
+00:04:52,780 --> 00:05:01,660
+将 43 到 77 的数对 17 取模，得到 x2。
+
+45
+00:05:01,660 --> 00:05:07,100
+From this x, y, x2, we will be able to get x.
+
+45
+00:05:01,660 --> 00:05:07,100
+从这个 x, y, x2 出发，我们可以计算出 x。
+
+46
+00:05:07,100 --> 00:05:19,939
+We have a unique x, a unique one.
+
+46
+00:05:07,100 --> 00:05:19,939
+我们有一个独一无二的 x。
+
+47
+00:05:19,939 --> 00:05:25,700
+This one is smaller than 1, 1, 9, smaller than n value.
+
+47
+00:05:19,939 --> 00:05:25,700
+这个比 1、1、9 都要小，n 值更小。
+
+48
+00:05:25,700 --> 00:05:33,660
+So this is the conclusion from the CRT theorem, right?
+
+48
+00:05:25,700 --> 00:05:33,660
+这正是 CRT 定理得出的结论，没错吧？
+
+49
+00:05:33,660 --> 00:05:44,860
+So instead of mod 1, 1, 9, so 1, 1, 9 is very large, because 1, 1, 9 equals 7 times 17, a part of 2 prime number.
+
+49
+00:05:33,660 --> 00:05:44,860
+因此，不是对 1、1、9 取模，因为 1、1、9 的数值非常大，1、1、9 等于 7 乘以 17，是 2 的质数因子之一。
+
+50
+00:05:44,860 --> 00:05:52,220
+So we can calculate that big number, mod 7, we get x1, mod 17, we get x2.
+
+50
+00:05:44,860 --> 00:05:52,220
+因此，我们可以计算出这个大数除以 7 的余数是 x1，除以 17 的余数是 x2。
+
+51
+00:05:52,220 --> 00:05:58,580
+From these two equations, we are able to get a unique x.
+
+51
+00:05:52,220 --> 00:05:58,580
+从这两个方程中，我们可以得到一个唯一的 x。这使得翻译更加自然和易于理解。
+
+52
+00:05:58,580 --> 00:06:02,420
+This x is smaller than 1, 1, 9, a unique one.
+
+52
+00:05:58,580 --> 00:06:02,420
+这个 x 比 1，1，9 都要小，是一个独一无二的。
+
+53
+00:06:02,420 --> 00:06:09,460
+So this x equals this x, that's n.
+
+53
+00:06:02,420 --> 00:06:09,460
+因此，这个 x 等于那个 x，这就是 n。
+
+54
+00:06:09,460 --> 00:06:15,060
+This y, last time we introduced CRT.
+
+54
+00:06:09,460 --> 00:06:15,060
+上次我们介绍了 CRT，这次我们来聊聊。
+
+55
+00:06:15,060 --> 00:06:19,460
+So here is actually we can quickly get x1.
+
+55
+00:06:15,060 --> 00:06:19,460
+实际上这里我们可以快速获取 x1。
+
+56
+00:06:19,460 --> 00:06:24,620
+What we have is 7 is a prime number, right?
+
+56
+00:06:19,460 --> 00:06:24,620
+我们知道 7 是质数，没错吧？
+
+57
+00:06:24,620 --> 00:06:54,259
+So this one, first we look at 43 to the 77, this equals 43 equals 7 times 6 plus 1 to the 77, mod 7, right?
+
+57
+00:06:24,620 --> 00:06:54,259
+因此我们先来看 43 到 77 这一段，这等于 43 等于 7 乘以 6 加 1，然后对 7 取模，对吧？
+
+58
+00:06:55,139 --> 00:06:58,980
+Mod 7, this part is 0.
+
+58
+00:06:55,139 --> 00:06:58,980
+第 7 模块，这部分为 0。
+
+59
+00:06:58,980 --> 00:07:07,659
+OK, 1, mod 7, this equals 1.
+
+59
+00:06:58,980 --> 00:07:07,659
+好的，1 除以 7 余 1，结果为 1。
+
+60
+00:07:07,659 --> 00:07:13,219
+So this is x1, very fast, right?
+
+60
+00:07:07,659 --> 00:07:13,219
+这就是 x1，速度极快，没错吧？
+
+61
+00:07:13,220 --> 00:07:29,540
+OK, we look at second part, 43 to the 77 in terms of 17, so 17 times 2 plus 9.
+
+61
+00:07:13,220 --> 00:07:29,540
+好的，我们来看第二部分，从 43 到 77，以 17 为基准，即 17 乘以 2 再加 9。
+
+62
+00:07:29,540 --> 00:07:35,500
+And in the exponent part, we can apply the Fermat's theorem.
+
+62
+00:07:29,540 --> 00:07:35,500
+在指数部分，我们可以运用费马定理，使其表达更自然易懂。
+
+63
+00:07:35,540 --> 00:07:43,860
+Fermat's theorem, that means we mod p, in the exponent part, we should get the p-mass-1.
+
+63
+00:07:35,540 --> 00:07:43,860
+费马定理，即对 p 取模运算，在指数部分，我们应得到 p 减 1 的质数。
+
+64
+00:07:43,860 --> 00:08:00,540
+So p-mass-1, that's 16 times 4 plus 17, well, mod 17.
+
+64
+00:07:43,860 --> 00:08:00,540
+因此，p-mass-1 的值是 16 乘以 4 加 17，取模 17。
+
+65
+00:08:00,580 --> 00:08:10,460
+So in the Fermat's theorem, we have a to the p-mass-1 is congruent to 1 mod p, OK?
+
+65
+00:08:00,580 --> 00:08:10,460
+在费马大定理中，我们知道 a 的 p 次幂减 1 与 p 同余 1，明白吗？
+
+66
+00:08:10,460 --> 00:08:14,900
+This is relationship p, here we have p-mass-1.
+
+66
+00:08:10,460 --> 00:08:14,900
+这是关系 p，此处为 p 质量 1。
+
+67
+00:08:14,900 --> 00:08:19,300
+So that's the reason we have 16 here.
+
+67
+00:08:14,900 --> 00:08:19,300
+这就是为什么这里有 16 个的原因，原因很简单。
+
+68
+00:08:19,300 --> 00:08:28,379
+So this part is 0, and this part 16 actually is congruent to 1, also can be removed.
+
+68
+00:08:19,300 --> 00:08:28,379
+这一部分是 0，而实际上这部分 16 与 1 同余，可以删除，这样的表述更为自然。
+
+69
+00:08:28,379 --> 00:08:40,620
+And well, so this one is congruent to 9 to the 13, mod 17.
+
+69
+00:08:28,379 --> 00:08:40,620
+好吧，这个数和 9 的 13 次方对 17 取模是同余的。
+
+70
+00:08:40,620 --> 00:08:48,539
+And this number is not very large, so we directly get the result to be 8.
+
+70
+00:08:40,620 --> 00:08:48,539
+这个数字不大，因此我们直接得到结果是 8。
+
+71
+00:08:48,539 --> 00:08:54,179
+This is x2, very quick.
+
+71
+00:08:48,539 --> 00:08:54,179
+这 x2 非常快，非常迅速。
+
+72
+00:08:54,179 --> 00:09:07,139
+So now from the x1, x2, we will get the unique x in the range from 0 to 1, 1, 9.
+
+72
+00:08:54,179 --> 00:09:07,139
+现在从 x1 和 x2 中，我们将得到 0 到 1、1、9 范围内的唯一值 x。
+
+73
+00:09:07,139 --> 00:09:27,740
+So that means x mod 7 equals 1, x mod 17 equals 8, right?
+
+73
+00:09:07,139 --> 00:09:27,740
+这就是说 x 除以 7 的余数是 1，除以 17 的余数是 8，对吗？
+
+74
+00:09:27,740 --> 00:09:50,899
+By applying the CRT, so we can get x equals 17 t plus 8.
+
+74
+00:09:27,740 --> 00:09:50,899
+通过应用 CRT，我们得到 x 等于 17t 加 8。
+
+75
+00:09:50,899 --> 00:10:17,019
+We substitute x to be in the first equation, so this we have 2 times 7 plus 3 t plus 7
+
+75
+00:09:50,899 --> 00:10:17,019
+我们将 x 代入第一个方程，因此得到 2 乘以 7 加上 3t 再加 7（经过润色，使翻译更自然、易懂）
+
+76
+00:10:17,019 --> 00:10:24,980
+plus 1 is congruent to 1 mod 7.
+
+76
+00:10:17,019 --> 00:10:24,980
+1 加 1 在模 7 的情况下与 1 同余
+
+77
+00:10:24,980 --> 00:10:41,059
+So times 7 is 0, times 7 is 0, so this implies 3 t plus 1 congruent to 1 mod 7.
+
+77
+00:10:24,980 --> 00:10:41,059
+7 乘以某个数是 0，7 乘以另一个数也是 0，因此可以推出 3t 加 1 与 1 模 7 同余。
+
+78
+00:10:41,059 --> 00:10:58,939
+So you can see this one can be cancelled, this implies t is congruent to 0 mod 7.
+
+78
+00:10:41,059 --> 00:10:58,939
+因此您可以知道这一项是可以被取消的，这表明 t 与 7 同余 0。
+
+79
+00:10:58,939 --> 00:11:05,019
+We can simply let t to be 0.
+
+79
+00:10:58,939 --> 00:11:05,019
+我们可以简单地设 t 为 0。
+
+80
+00:11:05,019 --> 00:11:19,379
+If t is 0, then x is 8.
+
+80
+00:11:05,019 --> 00:11:19,379
+如果 t 等于 0，那么 x 就是 8。
+
+81
+00:11:19,379 --> 00:11:28,299
+So t is 0, that means t can take 0, then x is 8.
+
+81
+00:11:19,379 --> 00:11:28,299
+因此 t 等于 0，这意味着 t 可以取 0，那么 x 的值就是 8。
+
+82
+00:11:28,299 --> 00:11:44,579
+So we get the original message m to be 8.
+
+82
+00:11:28,299 --> 00:11:44,579
+因此，我们得到原始消息 m 的值为 8。
+
+83
+00:11:58,299 --> 00:12:04,099
+Is that clear?
+
+83
+00:11:58,299 --> 00:12:04,099
+那个意思明白吗？
+
+84
+00:12:04,099 --> 00:12:11,859
+So we apply the CRT theorem here, and you should be able to apply CRT, this theorem
+
+84
+00:12:04,099 --> 00:12:11,859
+因此我们在这里应用 CRT 定理，你应该能够运用这个定理
+
+85
+00:12:11,859 --> 00:12:14,979
+in your calculation.
+
+85
+00:12:11,859 --> 00:12:14,979
+在您的计算中。
+
+86
+00:12:14,979 --> 00:12:22,059
+It could be required in your midterm test.
+
+86
+00:12:14,979 --> 00:12:22,059
+这可能在你的期中考试中被要求。
+
+87
+00:12:22,059 --> 00:12:27,819
+So of course I will try to design the number to be not that large, just like in this example,
+
+87
+00:12:22,059 --> 00:12:27,819
+当然我会尽量设计这个数字不要太大，就像这个例子那样，
+
+88
+00:12:27,820 --> 00:12:34,660
+you can well quickly cancel some data and get the result to make the calculator to
+
+88
+00:12:27,820 --> 00:12:34,660
+您可以快速删除部分数据，以便计算器得到结果
+
+89
+00:12:34,660 --> 00:12:56,700
+be smaller, and then you can use your calculator to quickly get like x, y, x2, any questions?
+
+89
+00:12:34,660 --> 00:12:56,700
+比较小，然后用计算器快速计算出 x、y、x²等结果，有疑问吗？
+
+90
+00:12:56,700 --> 00:13:00,500
+Okay, so now we move to our part 3.
+
+90
+00:12:56,700 --> 00:13:00,500
+好的，那么我们现在进入第三部分。
+
+91
+00:13:00,500 --> 00:13:07,259
+Part 3 is about Diffie-Hellman algorithm, and this one is also very important.
+
+91
+00:13:00,500 --> 00:13:07,259
+第 3 部分讲述了迪菲-赫尔曼算法，这一点同样非常重要。
+
+92
+00:13:07,259 --> 00:13:12,500
+So in mining cryptography, we talk about RSA, we talk about the Diffie-Hellman.
+
+92
+00:13:07,259 --> 00:13:12,500
+在加密采矿领域，我们讨论 RSA 算法，也讨论 Diffie-Hellman 密钥交换。
+
+93
+00:13:12,500 --> 00:13:17,379
+This algorithm is principle, very important.
+
+93
+00:13:12,500 --> 00:13:17,379
+该算法原则性极强，至关重要。
+
+94
+00:13:17,379 --> 00:13:24,180
+So in the Diffie-Hellman algorithm, we should have two very large numbers.
+
+94
+00:13:17,379 --> 00:13:24,180
+在 Diffie-Hellman 算法中，我们需要选取两个非常大的数。
+
+95
+00:13:24,179 --> 00:13:33,819
+So y is p, and so y is primitive root g, or p.
+
+95
+00:13:24,179 --> 00:13:33,819
+因此 y 是 p，所以 y 是原根 g，或者是 p。这个表述更加自然易懂。
+
+96
+00:13:33,819 --> 00:13:45,699
+So primitive root, in some cases, we call it to be generator.
+
+96
+00:13:33,819 --> 00:13:45,699
+这是一种非常原始的根，在有些情况下，我们称之为生成元。
+
+97
+00:13:45,700 --> 00:13:58,780
+And both p and g are public null, and p should be at least 112 bits, p is very large.
+
+97
+00:13:45,700 --> 00:13:58,780
+p 和 g 均为公开的空值，p 的长度至少应为 112 位，且 p 非常长。
+
+98
+00:13:58,780 --> 00:14:02,940
+Suppose we have two users, Alice and Bob.
+
+98
+00:13:58,780 --> 00:14:02,940
+假设有两位用户，爱丽丝和鲍勃。
+
+99
+00:14:02,940 --> 00:14:12,180
+So Alice will choose a private value a, and Bob will choose a private data b.
+
+99
+00:14:02,940 --> 00:14:12,180
+因此，爱丽丝将选择一个私有值 a，而鲍勃将选择一个私有数据 b。
+
+100
+00:14:12,179 --> 00:14:17,779
+And locally, each user will do the calculation.
+
+100
+00:14:12,179 --> 00:14:17,779
+本地，每位用户都会进行计算。
+
+101
+00:14:17,779 --> 00:14:28,739
+So Alice will do the calculation based on the generator g, g to the a, a is a private
+
+101
+00:14:17,779 --> 00:14:28,739
+因此，爱丽丝将基于生成器 g 进行计算，其中 g 的 a 次方，a 是一个私有数
+
+102
+00:14:28,739 --> 00:14:30,699
+data.
+
+102
+00:14:28,739 --> 00:14:30,699
+数据。
+
+103
+00:14:30,699 --> 00:14:35,179
+So Alice can calculate g to the a mod p.
+
+103
+00:14:30,699 --> 00:14:35,179
+因此 Alice 可以计算 g 的 a 模 p。
+
+104
+00:14:35,179 --> 00:14:44,979
+So gp or polynomial.
+
+104
+00:14:35,179 --> 00:14:44,979
+因此，gp 或多项式。
+
+105
+00:14:44,979 --> 00:14:53,939
+And Bob will locally calculate small y, y equals g to the b mod p.
+
+105
+00:14:44,979 --> 00:14:53,939
+Bob 将在本地计算一个小数 y，即 g 的 b 次方对 p 取模。
+
+106
+00:14:53,939 --> 00:15:01,259
+Then these two values, x, y will be exchanged, so that means x will be sent to Bob, y will
+
+106
+00:14:53,939 --> 00:15:01,259
+这两个值 x 和 y 将被交换，因此 x 将被发送给 Bob，而 y 将被..
+
+107
+00:15:01,340 --> 00:15:05,899
+be sent to Alice.
+
+107
+00:15:01,340 --> 00:15:05,899
+被发送给 Alice。
+
+108
+00:15:05,899 --> 00:15:12,620
+And well, then Alice and Bob will do the following calculation.
+
+108
+00:15:05,899 --> 00:15:12,620
+嗯，那么爱丽丝和鲍勃将要进行以下计算。
+
+109
+00:15:12,620 --> 00:15:26,659
+So Alice get y from Bob, and she will use y to the a mod p to get the key a.
+
+109
+00:15:12,620 --> 00:15:26,659
+因此，爱丽丝从鲍勃那里获得了 y，她将利用 y 对 a 进行模 p 运算以获取密钥 a。
+
+110
+00:15:26,659 --> 00:15:41,419
+So this key a, in fact, equals y is g to the b, that's what, value.
+
+110
+00:15:26,659 --> 00:15:41,419
+因此，这个键 a 实际上等于 y 的 b 次方 g，这就是它的值。
+
+111
+00:15:41,419 --> 00:15:47,299
+So y is g to the b, mod p, g to the b.
+
+111
+00:15:41,419 --> 00:15:47,299
+因此，y 等于 g 的 b 次方，模 p，再求 g 的 b 次方。
+
+112
+00:15:47,299 --> 00:15:54,139
+And then we have the exponent a here, mod p.
+
+112
+00:15:47,299 --> 00:15:54,139
+然后这里有一个指数 a，对 p 取模。
+
+113
+00:15:54,139 --> 00:16:00,699
+And this equals g to the a times b, mod p.
+
+113
+00:15:54,139 --> 00:16:00,699
+这等于模 p 下 g 的 a 次方。
+
+114
+00:16:00,699 --> 00:16:07,579
+And similarly, Bob will do this calculation, x to the b mod p.
+
+114
+00:16:00,699 --> 00:16:07,579
+同样地，鲍勃将执行这个计算：x 的 b 次方对 p 取模。
+
+115
+00:16:07,579 --> 00:16:14,699
+x is obtained from Alice, x equals g to the a.
+
+115
+00:16:07,579 --> 00:16:14,699
+x 由 Alice 提供，等于 g 的 a 次幂。
+
+116
+00:16:14,700 --> 00:16:22,780
+So this part is x, this part is small y, mod p.
+
+116
+00:16:14,700 --> 00:16:22,780
+这一部分是 x，那一部分是微小的 y，模 p。
+
+117
+00:16:22,780 --> 00:16:30,420
+This one also equals g to the a times b, mod p.
+
+117
+00:16:22,780 --> 00:16:30,420
+这一个同样等于 g 的 a 次方乘以 b，模 p。
+
+118
+00:16:30,420 --> 00:16:36,980
+So algebraically, it can be shown that ka equals kb.
+
+118
+00:16:30,420 --> 00:16:36,980
+因此，从代数上可以证明 ka 等于 kb。这样的表述更为自然易懂。
+
+119
+00:16:36,980 --> 00:16:44,899
+So in this way, Alice and Bob now have a symmetric key for communications.
+
+119
+00:16:36,980 --> 00:16:44,899
+因此，爱丽丝和鲍勃现在共享了一个用于通信的对称密钥。
+
+120
+00:16:44,899 --> 00:16:52,340
+In a symmetric communication, in a symmetric key scheme, both users, like in the AES, they
+
+120
+00:16:44,899 --> 00:16:52,340
+在对称通信中，使用对称密钥方案时，就像 AES 一样，两个用户之间
+
+121
+00:16:52,340 --> 00:16:57,019
+should have a secret key k.
+
+121
+00:16:52,340 --> 00:16:57,019
+应该包含一个密钥 k。
+
+122
+00:16:57,019 --> 00:17:10,099
+And Diffie-Hellman algorithm can allow them to calculate this key k for the communication.
+
+122
+00:16:57,019 --> 00:17:10,099
+安德·迪菲-赫尔曼算法可以让他们计算出用于通信的密钥 k。这使得翻译更加自然和易于理解。
+
+123
+00:17:10,099 --> 00:17:18,819
+So this process, based on Diffie-Hellman algorithm, Alice will locally choose gp to be known,
+
+123
+00:17:10,099 --> 00:17:18,819
+因此，这个基于 Diffie-Hellman 算法的过程，爱丽丝将本地选择 gp 作为已知，这样的表述更为自然和易懂
+
+124
+00:17:18,819 --> 00:17:23,220
+and this one will only be known by small a.
+
+124
+00:17:18,819 --> 00:17:23,220
+这个只有小 a 知道的。
+
+125
+00:17:23,220 --> 00:17:26,859
+So Alice will calculate the big a.
+
+125
+00:17:23,220 --> 00:17:26,859
+因此，爱丽丝将计算这个大 a。
+
+126
+00:17:26,859 --> 00:17:30,419
+These three data will be sent to Bob.
+
+126
+00:17:26,859 --> 00:17:30,419
+这三个数据将被发送给鲍勃。
+
+127
+00:17:30,419 --> 00:17:41,179
+Bob will use his locally chosen data b, a secret to Bob, to calculate gb.
+
+127
+00:17:30,419 --> 00:17:41,179
+Bob 将利用他私下选定的数据 b，这对 Bob 来说是个秘密，以此来计算 gb。
+
+128
+00:17:41,179 --> 00:17:49,299
+So Bob will get k, the same key k, equals a to the b mod p.
+
+128
+00:17:41,179 --> 00:17:49,299
+因此鲍勃将得到 k，这个密钥 k 与 a 的 b 次方模 p 相同。
+
+129
+00:17:49,299 --> 00:17:55,259
+And Alice will calculate this b obtained from Bob.
+
+129
+00:17:49,299 --> 00:17:55,259
+爱丽丝将计算从鲍勃那里获得的这个 b。
+
+130
+00:17:55,259 --> 00:18:01,640
+So Alice will get the same k to be b to the a mod p.
+
+130
+00:17:55,259 --> 00:18:01,640
+因此 Alice 将得到相同的 k 值，即 b 的 a 次方对 p 取模等于 k。
+
+131
+00:18:01,640 --> 00:18:09,460
+And this key k is the same.
+
+131
+00:18:01,640 --> 00:18:09,460
+这把钥匙 k 完全一样。
+
+132
+00:18:09,460 --> 00:18:19,579
+So later, Alice and Bob can do the encryption-decryption using the same key k in their communicated
+
+132
+00:18:09,460 --> 00:18:19,579
+因此，稍后 Alice 和 Bob 可以使用相同的密钥 k 进行加密解密，以便进行通信
+
+133
+00:18:19,579 --> 00:18:21,379
+messages.
+
+133
+00:18:19,579 --> 00:18:21,379
+消息
+
+134
+00:18:21,379 --> 00:18:30,659
+Is that clear?
+
+134
+00:18:21,379 --> 00:18:30,659
+那个意思明白吗？
+
+135
+00:18:30,659 --> 00:18:43,299
+So they only have the g is a primitive root, p is a very large prime number.
+
+135
+00:18:30,659 --> 00:18:43,299
+因此，g 是一个原根，p 是一个非常大的质数。这样的表述更为自然易懂。
+
+136
+00:18:43,299 --> 00:18:57,460
+We look at this example, suppose Alice and Bob get public numbers p to be 23 and g to
+
+136
+00:18:43,299 --> 00:18:57,460
+我们来看这个例子，假设 Alice 和 Bob 得到了公钥 p 为 23 和 g 为，然后...
+
+137
+00:18:57,460 --> 00:19:01,200
+be 9.
+
+137
+00:18:57,460 --> 00:19:01,200
+被 9。
+
+138
+00:19:01,200 --> 00:19:07,980
+So suppose Alice chooses the private data to be 4 and Bob chooses the private data to
+
+138
+00:19:01,200 --> 00:19:07,980
+假设爱丽丝选择了 4 作为私有数据，而鲍勃选择了私有数据为
+
+139
+00:19:07,980 --> 00:19:10,460
+be 3.
+
+139
+00:19:07,980 --> 00:19:10,460
+被 3。
+
+140
+00:19:10,460 --> 00:19:16,860
+And they will compute x, y locally.
+
+140
+00:19:10,460 --> 00:19:16,860
+他们将在本地计算 x 和 y。
+
+141
+00:19:16,860 --> 00:19:25,539
+Alice will calculate x, Bob will calculate y using the public number p and g.
+
+141
+00:19:16,860 --> 00:19:25,539
+爱丽丝将计算 x，鲍勃将利用公钥 p 和 g 来计算 y。
+
+142
+00:19:25,539 --> 00:19:35,500
+So in this example, x equals 9 to the 4th mod 23.
+
+142
+00:19:25,539 --> 00:19:35,500
+在这个例子中，x 等于 9 的四次方除以 23 的余数。
+
+143
+00:19:35,500 --> 00:19:49,940
+And this is the value to be 6561 mod 23, this is 6.
+
+143
+00:19:35,500 --> 00:19:49,940
+这是需要计算 6561 除以 23 的值，即 6。
+
+144
+00:19:49,940 --> 00:19:57,700
+And Bob will calculate line to the cube mod 23.
+
+144
+00:19:49,940 --> 00:19:57,700
+安德·鲍勃将要计算一个数模 23 的立方值。
+
+145
+00:19:57,700 --> 00:20:04,180
+And this is 7 to line mod 23.
+
+145
+00:19:57,700 --> 00:20:04,180
+这就是 7 除以 23 得到的余数，翻译得更加自然易懂。
+
+146
+00:20:04,180 --> 00:20:08,740
+This is 16.
+
+146
+00:20:04,180 --> 00:20:08,740
+这是 16。
+
+147
+00:20:08,740 --> 00:20:22,539
+And this 6 will be sent to Bob and 16 will be sent to Alice.
+
+147
+00:20:08,740 --> 00:20:22,539
+这 6 个物品将寄给 Bob，16 个物品将寄给 Alice。
+
+148
+00:20:22,539 --> 00:20:27,779
+So Alice will do the calculation to get the symmetric key.
+
+148
+00:20:22,539 --> 00:20:27,779
+因此，爱丽丝将进行计算以获取对称密钥。
+
+149
+00:20:27,779 --> 00:20:32,180
+And previously, we can see Alice will get 16.
+
+149
+00:20:27,779 --> 00:20:32,180
+之前我们可以看到，爱丽丝将得到 16。
+
+150
+00:20:32,180 --> 00:20:44,180
+16 to the local data to be 4 mod p.
+
+150
+00:20:32,180 --> 00:20:44,180
+将 16 对本地数据进行 4 模 p 运算。
+
+151
+00:20:44,180 --> 00:20:48,660
+So p is 23.
+
+151
+00:20:44,180 --> 00:20:48,660
+因此 p 等于 23。
+
+152
+00:20:48,660 --> 00:20:51,380
+And this value is 9.
+
+152
+00:20:48,660 --> 00:20:51,380
+这个值是 9。
+
+153
+00:20:51,380 --> 00:20:57,539
+Bob will get x from Alice.
+
+153
+00:20:51,380 --> 00:20:57,539
+鲍勃将从爱丽丝那里获得 x。
+
+154
+00:20:57,539 --> 00:21:02,220
+So Bob will get 6.
+
+154
+00:20:57,539 --> 00:21:02,220
+因此鲍勃将得到 6。
+
+155
+00:21:02,220 --> 00:21:16,339
+So this 6 to his local data of 3 mod p again.
+
+155
+00:21:02,220 --> 00:21:16,339
+因此，这是他对本地数据 3 模 p 的第 6 次操作。
+
+156
+00:21:16,339 --> 00:21:19,359
+And this value is also 9.
+
+156
+00:21:16,339 --> 00:21:19,359
+这个值同样是 9。
+
+157
+00:21:19,359 --> 00:21:26,960
+So Alice and Bob now have the symmetric key line.
+
+157
+00:21:19,359 --> 00:21:26,960
+因此，爱丽丝和鲍勃现在已经拥有了对称密钥行。
+
+158
+00:21:26,960 --> 00:21:40,920
+So this key k can be used for encryption and decryption in a symmetric encryption scheme.
+
+158
+00:21:26,960 --> 00:21:40,920
+因此，这个密钥 k 可以用于对称加密方案中的加密和解密。这种表述更加自然，易于理解。
+
+159
+00:21:56,960 --> 00:22:07,920
+Any questions?
+
+159
+00:21:56,960 --> 00:22:07,920
+您有什么问题吗？
+
+160
+00:22:07,920 --> 00:22:24,779
+Okay if no question, can you use 5 minutes to solve this exercise?
+
+160
+00:22:07,920 --> 00:22:24,779
+如果没有问题，您可以花 5 分钟来解决这个问题吗？
+
+161
+00:22:24,779 --> 00:22:30,599
+So in this exercise, you should be able to calculate the same key obtained by Alice and Bob.
+
+161
+00:22:24,779 --> 00:22:30,599
+在这个练习中，你应该能够计算出 Alice 和 Bob 得到相同的关键字。
+
+162
+00:25:24,779 --> 00:25:50,639
+Okay, some of you have finished, so I can share with you the result here.
+
+162
+00:25:24,779 --> 00:25:50,639
+好的，有些人已经完成了任务，因此我可以在这里向大家公布结果。
+
+163
+00:25:50,640 --> 00:25:55,100
+In this example, we have the public key here to be p and g.
+
+163
+00:25:50,640 --> 00:25:55,100
+本例中，我们这里有了公钥 p 和 g。
+
+164
+00:25:55,100 --> 00:26:03,580
+So p is 23, that's p and g, the generator is 5.
+
+164
+00:25:55,100 --> 00:26:03,580
+因此 p 等于 23，这是 p 和 g，生成器为 5。
+
+165
+00:26:03,580 --> 00:26:09,460
+Well Alice chose the secret integer a equals 4, b is 3.
+
+165
+00:26:03,580 --> 00:26:09,460
+爱丽丝选择了秘密整数 a 为 4，b 为 3。
+
+166
+00:26:09,460 --> 00:26:25,960
+So Alice will calculate x is g to the a mod p, 5 to the 4 mod p is 23.
+
+166
+00:26:09,460 --> 00:26:25,960
+因此，爱丽丝将计算 x 等于 g 的 a 次方对 p 取模，5 的 4 次方对 p 取模等于 23。
+
+167
+00:26:25,960 --> 00:26:29,600
+This x is 4.
+
+167
+00:26:25,960 --> 00:26:29,600
+这个 x 等于 4。
+
+168
+00:26:29,599 --> 00:26:44,659
+So Bob will calculate y, g to the b mod p is g to the 3 mod 23.
+
+168
+00:26:29,599 --> 00:26:44,659
+因此鲍勃将计算 y，其中 g 的 b 次方对 p 取模等于 g 的 3 次方对 23 取模。
+
+169
+00:26:44,659 --> 00:26:52,559
+This is 10.
+
+169
+00:26:44,659 --> 00:26:52,559
+这是 10。
+
+170
+00:26:52,559 --> 00:26:57,480
+Because here we ask you to show the key exchange process, right?
+
+170
+00:26:52,559 --> 00:26:57,480
+因为这里要求您展示密钥交换过程，您看对吧？
+
+171
+00:26:57,480 --> 00:27:05,420
+So you should show this intermediate result and this x will be sent to Bob and y will be sent to Alice.
+
+171
+00:26:57,480 --> 00:27:05,420
+因此，你应该展示这个中间结果，并将这个 x 发送给 Bob，y 发送给 Alice。
+
+172
+00:27:05,420 --> 00:27:25,839
+So finally the key k equals x to the a again, sorry, x to the b, this is a calculation just like Bob, x to the b mod p.
+
+172
+00:27:05,420 --> 00:27:25,839
+终于，关键 k 等于 x 的 b 次方，这是一个类似于 Bob 的计算，即 x 的 b 次方模 p
+
+173
+00:27:25,839 --> 00:27:33,119
+In fact, this equals g to the a b mod p.
+
+173
+00:27:25,839 --> 00:27:33,119
+事实上，这等于 g 关于 a 和 b 模 p 的结果。
+
+174
+00:27:33,119 --> 00:27:52,000
+So x to the b is 10 to the b is 3, mod 23, this is 18.
+
+174
+00:27:33,119 --> 00:27:52,000
+因此，x 的 b 次方等于 10 的 b 次方等于 3，对 23 取模后得到 18。
+
+175
+00:27:52,000 --> 00:28:14,799
+Similarly, Alice can get the key k equals y from Bob to the a mod p, y is 10, a is 4, mod p is 23, this is also 18.
+
+175
+00:27:52,000 --> 00:28:14,799
+同样，Alice 可以从 Bob 那里得到密钥 k 等于 y，即 a 模 p，其中 y 为 10，a 为 4，模 p 为 23，这同样是 18。
+
+176
+00:28:14,799 --> 00:28:27,599
+So this is equals the g a b, g is 5, a times b is 4 times 3, mod p 23, this is 18.
+
+176
+00:28:14,799 --> 00:28:27,599
+因此这个等于 g a b，其中 g 为 5，a 与 b 的乘积为 4 乘以 3，模 p 23 的结果为 18。
+
+177
+00:28:45,599 --> 00:28:51,599
+Okay, so we finished this part two about the Diffie-Hellman algorithm, part three.
+
+177
+00:28:45,599 --> 00:28:51,599
+好的，这部分关于迪菲-赫尔曼算法的内容我们已经完成了，接下来是第三部分。
+
+178
+00:28:51,599 --> 00:28:57,599
+So any question, comments?
+
+178
+00:28:51,599 --> 00:28:57,599
+任何问题或评论都可以提一下吗？
+
+179
+00:28:57,599 --> 00:29:09,599
+For this lecture time, we stop here. Today we have the lab one and T is here, so we have a break probably five minutes for the sit-up of your lab.
+
+179
+00:28:57,599 --> 00:29:09,599
+这次讲座时间，我们就此结束。今天实验室一和 T 在场，因此我们可能休息大约五分钟，进行实验室的坐姿练习。
+
+180
+00:29:09,599 --> 00:29:12,599
+So we finish here, thank you.
+
+180
+00:29:09,599 --> 00:29:12,599
+我们在这里结束，感谢大家的参与。
+
+181
+00:29:14,799 --> 00:29:16,599
+Thank you.
+
+181
+00:29:14,799 --> 00:29:16,599
+谢谢您。
+

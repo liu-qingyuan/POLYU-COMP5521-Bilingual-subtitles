@@ -1,0 +1,2569 @@
+1
+00:00:00,000 --> 00:00:25,640
+Okay, let's continue with our second part of today's lecture.
+
+1
+00:00:00,000 --> 00:00:25,640
+好的，让我们继续今天的讲座第二部分。好的，那我们就接着讲今天的课程第二部分吧。
+
+2
+00:00:25,640 --> 00:00:29,640
+Now we go to our lecture for about digital signature.
+
+2
+00:00:25,640 --> 00:00:29,640
+现在我们去参加关于数字签名的讲座。
+
+3
+00:00:29,800 --> 00:00:37,799
+We mentioned that the public scheme can be used to signature generation.
+
+3
+00:00:29,800 --> 00:00:37,799
+我们提到，公共方案可用于签名生成，表述更为自然。
+
+4
+00:00:37,799 --> 00:00:40,600
+So signature can be used for authentication.
+
+4
+00:00:37,799 --> 00:00:40,600
+因此，签名可以用于身份验证，表达更为自然。
+
+5
+00:00:40,600 --> 00:00:41,960
+That's very important, right?
+
+5
+00:00:40,600 --> 00:00:41,960
+这真的很重要，您同意吗？
+
+6
+00:00:41,960 --> 00:00:51,240
+When you do the online shopping, the server, your critical server will guarantee you're the real one to do the online shopping.
+
+6
+00:00:41,960 --> 00:00:51,240
+当您进行在线购物时，您的关键服务器将确保您是进行购物的真实用户。
+
+7
+00:00:52,200 --> 00:00:54,679
+So this process is called authentication.
+
+7
+00:00:52,200 --> 00:00:54,679
+这个过程被称为认证，意思是要进行身份验证。
+
+8
+00:00:55,399 --> 00:00:57,240
+Authentication is satisfied.
+
+8
+00:00:55,399 --> 00:00:57,240
+认证已通过。
+
+9
+00:00:58,119 --> 00:01:06,120
+Then your critical company will authorize that transaction, that payment request.
+
+9
+00:00:58,119 --> 00:01:06,120
+然后您的关键公司会批准这笔交易，这笔付款请求。
+
+10
+00:01:06,920 --> 00:01:09,719
+Then you can continue with the online payment.
+
+10
+00:01:06,920 --> 00:01:09,719
+您可以继续进行在线支付。 (已为中文语境优化)
+
+11
+00:01:09,719 --> 00:01:13,239
+Otherwise, your payment request will be denied.
+
+11
+00:01:09,719 --> 00:01:13,239
+否则，您的付款请求将被拒绝。请确保您的信息准确无误。
+
+12
+00:01:14,200 --> 00:01:16,920
+So authentication is very important.
+
+12
+00:01:14,200 --> 00:01:16,920
+因此，认证非常重要。
+
+13
+00:01:16,920 --> 00:01:18,680
+How can we do the authentication?
+
+13
+00:01:16,920 --> 00:01:18,680
+我们该如何进行认证呢？
+
+14
+00:01:18,680 --> 00:01:22,280
+That means you should generate a valid signature.
+
+14
+00:01:18,680 --> 00:01:22,280
+这意味着您需要生成一个有效的签名。
+
+15
+00:01:24,680 --> 00:01:36,200
+Okay, first we look at part one about signature generation and verification.
+
+15
+00:01:24,680 --> 00:01:36,200
+好的，我们首先来看关于签名生成和验证的第一部分。这是对内容的初步翻译，以下是对其进行润色后的版本：
+    好的，我们先来看第一部分，内容涉及签名生成与验证。
+
+16
+00:01:36,200 --> 00:01:40,680
+And we use the RSA algorithm for this explanation.
+
+16
+00:01:36,200 --> 00:01:40,680
+我们在这个解释中使用了 RSA 算法进行说明。
+
+17
+00:01:42,760 --> 00:01:46,360
+So we have the authentication problem just like in the internet.
+
+17
+00:01:42,760 --> 00:01:46,360
+我们遇到了与互联网相似的认证问题。
+
+18
+00:01:46,360 --> 00:01:51,080
+Suppose Bob gets a message from Alice.
+
+18
+00:01:46,360 --> 00:01:51,080
+假设鲍勃收到了爱丽丝的短信。
+
+19
+00:01:51,959 --> 00:01:57,159
+Well, Bob will ask whether he can trust this information.
+
+19
+00:01:51,959 --> 00:01:57,159
+嗯，鲍勃会询问自己能否相信这条信息。
+
+20
+00:01:57,159 --> 00:01:59,319
+Is this information really from Alice?
+
+20
+00:01:57,159 --> 00:01:59,319
+这信息真的是爱丽丝提供的吗？
+
+21
+00:01:59,879 --> 00:02:07,319
+Just like Alice sent a payment request to Bob, asked Bob to authorize that payment request, right?
+
+21
+00:01:59,879 --> 00:02:07,319
+就像爱丽丝向鲍勃发送付款请求，并要求鲍勃批准这笔付款，对吗？
+
+22
+00:02:07,319 --> 00:02:12,599
+So then Bob needs to guarantee this is a real request from Alice.
+
+22
+00:02:07,319 --> 00:02:12,599
+然后鲍勃必须确保这是爱丽丝的真实请求。
+
+23
+00:02:12,599 --> 00:02:16,520
+Otherwise, Bob cannot approve that request.
+
+23
+00:02:12,599 --> 00:02:16,520
+否则，鲍勃无法批准那个请求。
+
+24
+00:02:17,400 --> 00:02:23,160
+However, you know, in the internet, a message can be modified by others.
+
+24
+00:02:17,400 --> 00:02:23,160
+然而，您知道，在互联网上，信息可能会被他人篡改。这样的表述更符合中文的表达习惯。
+
+25
+00:02:24,120 --> 00:02:28,200
+So how can you guarantee, well, the message is not modified?
+
+25
+00:02:24,120 --> 00:02:28,200
+那么，您如何确保信息未被篡改呢？
+
+26
+00:02:28,200 --> 00:02:32,920
+Or the message is not fabricated by someone else?
+
+26
+00:02:28,200 --> 00:02:32,920
+消息难道不是别人编造的吗？
+
+27
+00:02:32,920 --> 00:02:36,920
+Just that the message is not from someone else, if...
+
+27
+00:02:32,920 --> 00:02:36,920
+就连这条消息不是别人发的，如果是这样...（更自然、更易理解的翻译）
+
+28
+00:02:38,600 --> 00:02:41,800
+This is not a message from Alice, but from if, right?
+
+28
+00:02:38,600 --> 00:02:41,800
+这不是爱丽丝发的消息，而是 if 发的，对吧？
+
+29
+00:02:41,800 --> 00:02:44,200
+How can you prevent this case to happen?
+
+29
+00:02:41,800 --> 00:02:44,200
+你该如何避免这种情况再次发生？
+
+30
+00:02:46,520 --> 00:02:56,520
+Well, then we need to use the digital signature.
+
+30
+00:02:46,520 --> 00:02:56,520
+好的，那么我们就需要使用数字签名。这样的表达更自然、易懂。
+
+31
+00:02:56,520 --> 00:03:01,320
+And suppose we have an electronic document to be sent from Alice to Bob.
+
+31
+00:02:56,520 --> 00:03:01,320
+假设我们有一份电子文档需要从爱丽丝发送给鲍勃。
+
+32
+00:03:02,360 --> 00:03:08,200
+The question is, is there a functional equivalent to a handwritten signature?
+
+32
+00:03:02,360 --> 00:03:08,200
+那么，有没有一种功能上可以替代手写签名的方案呢？
+
+33
+00:03:08,920 --> 00:03:15,160
+And this signature is easy for Alice to sign on the document, but hard for anyone else to forge.
+
+33
+00:03:08,920 --> 00:03:15,160
+这份签名对 Alice 来说签字方便，其他人却难以伪造。
+
+34
+00:03:16,120 --> 00:03:23,800
+The Alice signature, and also it is easy for Bob or anyone else to verify.
+
+34
+00:03:16,120 --> 00:03:23,800
+爱丽丝的签名，而且对鲍勃或其他人来说验证起来都很简单。
+
+35
+00:03:23,800 --> 00:03:27,960
+Well, this is really the signature from Alice.
+
+35
+00:03:23,800 --> 00:03:27,960
+嗯，这确实是爱丽丝的签名。（经过润色，使翻译更加自然易懂）
+
+36
+00:03:28,840 --> 00:03:30,519
+And today we have the solution.
+
+36
+00:03:28,840 --> 00:03:30,519
+今天我们找到了解决方案。
+
+37
+00:03:30,519 --> 00:03:32,039
+This is a digital signature.
+
+37
+00:03:30,519 --> 00:03:32,039
+这是一份数字签名。
+
+38
+00:03:32,599 --> 00:03:39,400
+And we use Alice, the private key, to generate the digital signature.
+
+38
+00:03:32,599 --> 00:03:39,400
+我们使用 Alice 私钥来生成数字签名。
+
+39
+00:03:45,799 --> 00:03:53,000
+And anyone else can use Alice's public key to do the signature verification.
+
+39
+00:03:45,799 --> 00:03:53,000
+任何人都可以使用 Alice 的公钥来验证签名，表达更为自然。
+
+40
+00:03:54,519 --> 00:04:00,199
+So we verify the signature by using Alice's public key.
+
+40
+00:03:54,519 --> 00:04:00,199
+我们通过使用 Alice 的公钥来验证签名，确保其有效性。
+
+41
+00:04:04,359 --> 00:04:10,599
+Oh, well, this is a process, just like you have a message, then you can use your private key.
+
+41
+00:04:04,359 --> 00:04:10,599
+哎，这只是一个过程，就像收到一条消息后，你可以用你的私钥一样。
+
+42
+00:04:16,120 --> 00:04:21,959
+To generate the signature, and this signature will be sent to the receiver.
+
+42
+00:04:16,120 --> 00:04:21,959
+生成签名并发送给接收者，表述更为自然流畅。
+
+43
+00:04:22,680 --> 00:04:29,399
+At the receiver side, well, the receiver will get the message and also the signature.
+
+43
+00:04:22,680 --> 00:04:29,399
+在接收端，嗯，接收者将收到消息和签名。
+
+44
+00:04:30,199 --> 00:04:35,480
+So the receiver will use the sender's public key to do the verification.
+
+44
+00:04:30,199 --> 00:04:35,480
+因此，接收者将使用发送者的公钥进行验证。这样的表述更加自然易懂。
+
+45
+00:04:36,040 --> 00:04:41,399
+So the receiver will check whether this signature equals what.
+
+45
+00:04:36,040 --> 00:04:41,399
+因此，接收者将检查这个签名是否与预期相符。
+
+46
+00:04:45,640 --> 00:04:50,600
+Equals M to D. Is this a verification?
+
+46
+00:04:45,640 --> 00:04:50,600
+等于 M 到 D。这是进行验证吗？
+
+47
+00:04:55,880 --> 00:04:56,439
+Yes or no?
+
+47
+00:04:55,880 --> 00:04:56,439
+是吗？还是不是？
+
+48
+00:05:04,200 --> 00:05:08,120
+So to do the verification, we have the words here.
+
+48
+00:05:04,200 --> 00:05:08,120
+因此，为了进行验证，这里有一些单词。
+
+49
+00:05:08,120 --> 00:05:10,360
+We should use the public key, not private key, right?
+
+49
+00:05:08,120 --> 00:05:10,360
+我们应该使用公钥，不应该用私钥，对吧？
+
+50
+00:05:11,160 --> 00:05:13,720
+Because the receiver has no idea about the D.
+
+50
+00:05:11,160 --> 00:05:13,720
+因为接收者对 D 的情况一无所知。
+
+51
+00:05:15,160 --> 00:05:16,760
+So this is not right.
+
+51
+00:05:15,160 --> 00:05:16,760
+这显然是不正确的。
+
+52
+00:05:16,760 --> 00:05:18,360
+We should use the public key.
+
+52
+00:05:16,760 --> 00:05:18,360
+我们应当使用公钥。
+
+53
+00:05:19,000 --> 00:05:20,439
+So how can we use public key?
+
+53
+00:05:19,000 --> 00:05:20,439
+我们该如何使用公钥呢？
+
+54
+00:05:22,280 --> 00:05:33,320
+Because according to the RSA algorithm, S to the E equals M to the E to the D, right?
+
+54
+00:05:22,280 --> 00:05:33,320
+因为按照 RSA 算法，S 的 E 次方等于 M 的 E 次方再对 D 次方开方，对吗？
+
+55
+00:05:34,200 --> 00:05:37,080
+Because, you see, S equals M to the D.
+
+55
+00:05:34,200 --> 00:05:37,080
+因为，你看，S 等于 M 的 D 次方。
+
+56
+00:05:37,800 --> 00:05:40,200
+So S to E equals M to the E to the D.
+
+56
+00:05:37,800 --> 00:05:40,200
+从 S 到 E 等于从 M 到 E 的 D 次方（更自然、更易理解的翻译）
+
+57
+00:05:41,159 --> 00:05:46,199
+This is congruent to M mod M.
+
+57
+00:05:41,159 --> 00:05:46,199
+这与 M 模 M 相等，表述更为自然。
+
+58
+00:05:47,240 --> 00:05:51,639
+So that means in the verification, we have the signature.
+
+58
+00:05:47,240 --> 00:05:51,639
+这就是说，在验证过程中，我们拥有签名。
+
+59
+00:05:52,199 --> 00:05:58,120
+We apply the public key here, E, and we will do this calculation.
+
+59
+00:05:52,199 --> 00:05:58,120
+我们在这里应用公钥 E，然后进行这一计算。
+
+60
+00:05:58,120 --> 00:06:03,560
+Whether S to the E mod M equals the message M.
+
+60
+00:05:58,120 --> 00:06:03,560
+S 到 E 模 M 是否等于消息 M？
+
+61
+00:06:04,759 --> 00:06:05,480
+M is here.
+
+61
+00:06:04,759 --> 00:06:05,480
+M 就在这里。
+
+62
+00:06:05,480 --> 00:06:11,640
+If this equation is true, we say it is valid.
+
+62
+00:06:05,480 --> 00:06:11,640
+如果这个等式成立，我们就称其为有效。
+
+63
+00:06:12,439 --> 00:06:13,640
+This is a valid signature.
+
+63
+00:06:12,439 --> 00:06:13,640
+这是一个有效的签名。
+
+64
+00:06:13,640 --> 00:06:17,080
+Otherwise, we say the signature is not correct.
+
+64
+00:06:13,640 --> 00:06:17,080
+否则，我们说这个签名是不对的。
+
+65
+00:06:18,600 --> 00:06:19,319
+Is that clear?
+
+65
+00:06:18,600 --> 00:06:19,319
+那个意思明白吗？
+
+66
+00:06:26,360 --> 00:06:33,000
+So one example here is Alice sent the message, hello Bob, to Bob.
+
+66
+00:06:26,360 --> 00:06:33,000
+这里有一个例子，爱丽丝给鲍勃发了一条消息：“你好，鲍勃。”（这个翻译已经比较自然，无需进一步修改）
+
+67
+00:06:33,000 --> 00:06:40,279
+Alice wants to sign this message by using her private key.
+
+67
+00:06:33,000 --> 00:06:40,279
+爱丽丝想用自己的私钥来签署这条信息。
+
+68
+00:06:42,040 --> 00:06:47,000
+Well, this is a message M, and this part is a signature S.
+
+68
+00:06:42,040 --> 00:06:47,000
+嗯，这则消息是 M，下面是签名 S。
+
+69
+00:06:47,639 --> 00:06:53,800
+So S equals M to the D mod M, okay?
+
+69
+00:06:47,639 --> 00:06:53,800
+S 等于 M 的 D 次方对 M 取模，好吗？（更自然地表达）
+
+70
+00:06:55,399 --> 00:07:02,040
+So both message and signature will be received by Bob.
+
+70
+00:06:55,399 --> 00:07:02,040
+因此，消息和签名都将被鲍勃接收，翻译更加自然流畅。
+
+71
+00:07:02,120 --> 00:07:05,720
+So Bob will use Alice's private key to do the verification.
+
+71
+00:07:02,120 --> 00:07:05,720
+因此鲍勃将使用爱丽丝的私钥进行验证。
+
+72
+00:07:06,360 --> 00:07:12,200
+So the verification process is, well, S to the E.
+
+72
+00:07:06,360 --> 00:07:12,200
+验证过程是这样的，嗯，从 S 到 E。说得简单明了一些。
+
+73
+00:07:13,560 --> 00:07:19,879
+Well, this S to the E equals M D to the E.
+
+73
+00:07:13,560 --> 00:07:19,879
+嗯，这个 S 乘以 E 等于 M 乘以 D。
+
+74
+00:07:19,879 --> 00:07:22,120
+This is M E D.
+
+74
+00:07:19,879 --> 00:07:22,120
+这是 M E D。
+
+75
+00:07:23,480 --> 00:07:28,680
+This is congruent to M mod M, right?
+
+75
+00:07:23,480 --> 00:07:28,680
+这与 M 模 M 相等，没错吧？
+
+76
+00:07:32,040 --> 00:07:43,720
+Well, if this equation is correct, then Bob can guarantee that the message is really from Alice.
+
+76
+00:07:32,040 --> 00:07:43,720
+好吧，如果这个等式正确，那么鲍勃就能确保这条消息确实是爱丽丝发的。
+
+77
+00:07:44,439 --> 00:07:54,439
+Okay, so because Bob will use Alice's private key, this one, to do the verification.
+
+77
+00:07:44,439 --> 00:07:54,439
+好吧，因此鲍勃将使用爱丽丝的私钥，这个，来进行验证。这句话听起来更自然，更易于理解。
+
+78
+00:07:55,399 --> 00:08:03,000
+So in this way, Bob can verify that Alice sent the message, and that the message has not been modified.
+
+78
+00:07:55,399 --> 00:08:03,000
+因此，鲍勃可以确认爱丽丝发送了这条消息，并且这条消息没有被篡改过。
+
+79
+00:08:04,040 --> 00:08:17,079
+Well, if the message is modified to be another one, if M becomes M prime, then will this M prime,
+
+79
+00:08:04,040 --> 00:08:17,079
+好吧，如果信息被修改成另一个信息，那么当 M 变成 M'时，这个 M'将会...（使句子更加通顺和易于理解）
+
+80
+00:08:17,319 --> 00:08:18,439
+this M prime,
+
+80
+00:08:17,319 --> 00:08:18,439
+这是 M 的质数
+
+81
+00:08:20,839 --> 00:08:25,800
+the from S to the E, we only get M.
+
+81
+00:08:20,839 --> 00:08:25,800
+从 S 到 E，我们只能获得 M。
+
+82
+00:08:26,839 --> 00:08:30,120
+So this M does not equal to M prime.
+
+82
+00:08:26,839 --> 00:08:30,120
+因此，M 不等于 M'（这里 M'表示 M 的某个特定形式或变化）。
+
+83
+00:08:31,879 --> 00:08:40,360
+But so that means, well, the message cannot be modified in this because we have both the message
+
+83
+00:08:31,879 --> 00:08:40,360
+但是这意味着，嗯，由于我们已经有了消息，所以无法修改这条消息
+
+84
+00:08:41,000 --> 00:08:42,360
+and signature.
+
+84
+00:08:41,000 --> 00:08:42,360
+并附上签名。
+
+85
+00:08:43,080 --> 00:08:47,960
+From signature, we only get M but not M prime.
+
+85
+00:08:43,080 --> 00:08:47,960
+从签名中，我们只能获得 M，无法获得 M 的导数。这样的表述更为自然和易懂。
+
+86
+00:08:50,360 --> 00:09:03,879
+In other words, if the Bob got M prime and S, so Bob will verify S to the E mod M,
+
+86
+00:08:50,360 --> 00:09:03,879
+换句话说，如果鲍勃获得了 M 的质数和 S，那么他将验证 S 对 M 的 E 次方取模的结果
+
+87
+00:09:04,759 --> 00:09:07,000
+then Bob will get M.
+
+87
+00:09:04,759 --> 00:09:07,000
+然后，鲍勃将会得到 M。
+
+88
+00:09:07,960 --> 00:09:12,039
+So this M does not equal to M prime here.
+
+88
+00:09:07,960 --> 00:09:12,039
+因此，这里的 M 不等于 M'。
+
+89
+00:09:12,919 --> 00:09:17,080
+So Bob will know the message has been modified.
+
+89
+00:09:12,919 --> 00:09:17,080
+因此鲍勃会知道这条消息已被修改。
+
+90
+00:09:17,639 --> 00:09:18,200
+Is that clear?
+
+90
+00:09:17,639 --> 00:09:18,200
+那个意思明白吗？
+
+91
+00:09:28,280 --> 00:09:32,600
+Well, in a generic model, we should follow this procedure.
+
+91
+00:09:28,280 --> 00:09:32,600
+嗯，在通用模型中，我们应该遵循这个流程。
+
+92
+00:09:33,800 --> 00:09:38,920
+Well, the original message supports the sender is Bob, Alice is the receiver.
+
+92
+00:09:33,800 --> 00:09:38,920
+原始消息表明发送者是 Bob，接收者是 Alice。
+
+93
+00:09:40,520 --> 00:09:43,879
+The message first will apply the hash function.
+
+93
+00:09:40,520 --> 00:09:43,879
+消息首先会应用哈希函数。
+
+94
+00:09:44,840 --> 00:09:45,879
+No matter
+
+94
+00:09:44,840 --> 00:09:45,879
+无论
+
+95
+00:10:01,559 --> 00:10:09,399
+we've run into a server error, some function might not work right now.
+
+95
+00:10:01,559 --> 00:10:09,399
+我们遇到了服务器错误，可能有些功能现在无法正常使用。
+
+96
+00:10:13,879 --> 00:10:21,399
+Yeah.
+
+96
+00:10:13,879 --> 00:10:21,399
+嗯，是的。
+
+97
+00:10:21,399 --> 00:10:44,600
+Well, in this generic model, the message first will go through a hash function.
+
+97
+00:10:21,399 --> 00:10:44,600
+嗯，在这个通用模型中，消息首先会经过一个哈希函数处理。
+
+98
+00:10:45,560 --> 00:10:51,000
+No matter how large of the original message of the hash function we have,
+
+98
+00:10:45,560 --> 00:10:51,000
+无论原始消息的哈希函数有多大，无论其大小如何，
+
+99
+00:10:51,000 --> 00:10:54,840
+we have a fixed output, the hash result.
+
+99
+00:10:51,000 --> 00:10:54,840
+我们有一个固定的输出，即哈希值。
+
+100
+00:10:54,840 --> 00:11:04,040
+So normally the hash result can be just like, if you apply the SHA 256 of original message M,
+
+100
+00:10:54,840 --> 00:11:04,040
+通常情况下，对原始消息 M 进行 SHA 256 哈希处理后，结果可以是这样：
+
+101
+00:11:04,680 --> 00:11:06,440
+you will get this edge.
+
+101
+00:11:04,680 --> 00:11:06,440
+你将获得这项优势。
+
+102
+00:11:06,440 --> 00:11:12,360
+So this edge is 256 bits long.
+
+102
+00:11:06,440 --> 00:11:12,360
+这个边缘长度为 256 位，翻译得更加自然易懂。
+
+103
+00:11:13,320 --> 00:11:18,680
+256 bits means, well, this edge is 32 bytes.
+
+103
+00:11:13,320 --> 00:11:18,680
+256 位意味着，也就是说，这个边缘相当于 32 字节。
+
+104
+00:11:22,360 --> 00:11:28,519
+So no matter how large of your original message, you will have this edge result
+
+104
+00:11:22,360 --> 00:11:28,519
+无论原始信息有多长，你都会得到这个边缘结果
+
+105
+00:11:29,720 --> 00:11:31,000
+of a hash function.
+
+105
+00:11:29,720 --> 00:11:31,000
+一个哈希函数的定义（优化版）。
+
+106
+00:11:31,000 --> 00:11:32,680
+The output will be 32 bytes.
+
+106
+00:11:31,000 --> 00:11:32,680
+输出将是 32 字节。
+
+107
+00:11:33,399 --> 00:11:37,320
+So then you will do your signature based on this hash result.
+
+107
+00:11:33,399 --> 00:11:37,320
+因此您将根据这个哈希结果进行签名。这使得签名过程更加安全可靠。
+
+108
+00:11:38,120 --> 00:11:45,160
+So this is hash of M and you will generate your signature based on this hash result.
+
+108
+00:11:38,120 --> 00:11:45,160
+这就是 M 的哈希值，您将根据这个哈希结果生成您的签名。（经过润色，使翻译更加自然易懂）
+
+109
+00:11:45,720 --> 00:11:50,120
+That means your S equals your hash result.
+
+109
+00:11:45,720 --> 00:11:50,120
+这意味着您的 S 值等于您的哈希值。
+
+110
+00:11:51,000 --> 00:11:54,920
+Suppose we're using the RSA algorithm.
+
+110
+00:11:51,000 --> 00:11:54,920
+假设我们正在使用 RSA 算法。
+
+111
+00:11:54,920 --> 00:12:05,000
+So this one, we apply the private key to generate the signature.
+
+111
+00:11:54,920 --> 00:12:05,000
+因此这个，我们使用私钥来生成签名。
+
+112
+00:12:05,879 --> 00:12:11,480
+The original message M and S, the signature will be sent to Alice.
+
+112
+00:12:05,879 --> 00:12:11,480
+原始消息 M 和 S，签名将被发送给 Alice。
+
+113
+00:12:12,600 --> 00:12:16,039
+So this is M plus S will be sent to Alice.
+
+113
+00:12:12,600 --> 00:12:16,039
+这就是 M 加 S 将被发送给 Alice。 (已优化)
+
+114
+00:12:16,600 --> 00:12:24,039
+So Alice will obtain both M and S. Alice will apply the same hash function.
+
+114
+00:12:16,600 --> 00:12:24,039
+因此，爱丽丝将同时获得 M 和 S，并使用相同的哈希函数。
+
+115
+00:12:25,639 --> 00:12:31,879
+So M, after the hash function, we have the same output, H.
+
+115
+00:12:25,639 --> 00:12:31,879
+经过哈希函数后，我们得到相同的输出 H。这个翻译更加自然和易于理解。
+
+116
+00:12:32,519 --> 00:12:34,840
+Suppose this M is not modified.
+
+116
+00:12:32,519 --> 00:12:34,840
+假设这个 M 没有被修改，这样的表述更为自然易懂。
+
+117
+00:12:35,399 --> 00:12:38,840
+So this output is H, M.
+
+117
+00:12:35,399 --> 00:12:38,840
+这输出的结果是 H，M。
+
+118
+00:12:39,799 --> 00:12:42,360
+Small h equals this one, right?
+
+118
+00:12:39,799 --> 00:12:42,360
+这个小的 h 等于，对吧？
+
+119
+00:12:46,439 --> 00:12:49,320
+This H, M, we can apply.
+
+119
+00:12:46,439 --> 00:12:49,320
+这次 H、M，我们可以使用。
+
+120
+00:12:52,679 --> 00:12:59,240
+This H, M, based on the S message, we can apply the public key.
+
+120
+00:12:52,679 --> 00:12:59,240
+根据 S 消息，我们可以应用公钥。
+
+121
+00:13:00,200 --> 00:13:06,279
+Bob's public key, so S, signature will apply the public key E.
+
+121
+00:13:00,200 --> 00:13:06,279
+Bob 的公钥，因此 S，签名将使用公钥 E。
+
+122
+00:13:07,159 --> 00:13:14,919
+This equals H, M, D, E again.
+
+122
+00:13:07,159 --> 00:13:14,919
+这等于 H、M、D、E，再次。
+
+123
+00:13:15,480 --> 00:13:23,399
+So this is H, M, E, D.
+
+123
+00:13:15,480 --> 00:13:23,399
+这就是 H、M、E、D（这是对 H、M、E、D 的描述）。
+
+124
+00:13:23,399 --> 00:13:29,000
+Mod M, well, E, D can be cancelled.
+
+124
+00:13:23,399 --> 00:13:29,000
+模块 M，嗯，E 和 D 都可以取消。
+
+125
+00:13:29,959 --> 00:13:32,439
+This is H, M.
+
+125
+00:13:29,959 --> 00:13:32,439
+这是 H 和 M。
+
+126
+00:13:33,480 --> 00:13:35,319
+So the result here is H, M.
+
+126
+00:13:33,480 --> 00:13:35,319
+因此这里的结果是 H、M。
+
+127
+00:13:35,879 --> 00:13:41,480
+We will compare these two, whether these two are the same or not.
+
+127
+00:13:35,879 --> 00:13:41,480
+我们将比较这两个，看看它们是否相同。
+
+128
+00:13:42,519 --> 00:13:48,439
+If they are the same, that means the message and the signature are both correct.
+
+128
+00:13:42,519 --> 00:13:48,439
+如果它们相同，则表示消息和签名均正确。
+
+129
+00:13:54,360 --> 00:13:59,240
+And this is a normal procedure for signature generation and verification.
+
+129
+00:13:54,360 --> 00:13:59,240
+这是一项关于签名生成和验证的常规程序。
+
+130
+00:14:00,919 --> 00:14:01,959
+Any questions?
+
+130
+00:14:00,919 --> 00:14:01,959
+您有什么问题吗？
+
+131
+00:14:09,159 --> 00:14:12,759
+Well, we can see using this digital signature,
+
+131
+00:14:09,159 --> 00:14:12,759
+好的，我们可以通过这个数字签名看到，
+
+132
+00:14:16,279 --> 00:14:20,600
+we can provide authentication of digital messages or documents.
+
+132
+00:14:16,279 --> 00:14:20,600
+我们可以提供数字消息或文件的认证服务。
+
+133
+00:14:21,480 --> 00:14:29,960
+Well, the signature, because the signature, we use your public key to do the verification.
+
+133
+00:14:21,480 --> 00:14:29,960
+嗯，关于签名，我们使用您的公钥来进行验证。
+
+134
+00:14:32,360 --> 00:14:32,840
+We use
+
+134
+00:14:32,360 --> 00:14:32,840
+我们使用
+
+135
+00:14:36,120 --> 00:14:43,320
+Alice public key in verification.
+
+135
+00:14:36,120 --> 00:14:43,320
+Alice 的公钥用于验证。
+
+136
+00:14:43,320 --> 00:14:57,560
+So we say this message is really from Alice.
+
+136
+00:14:43,320 --> 00:14:57,560
+我们这么说，这条信息确实来自爱丽丝。
+
+137
+00:14:59,800 --> 00:15:01,560
+This is the meaning of authentication.
+
+137
+00:14:59,800 --> 00:15:01,560
+这就是认证的意义。
+
+138
+00:15:02,840 --> 00:15:05,480
+The request is really from Alice.
+
+138
+00:15:02,840 --> 00:15:05,480
+请求确实是爱丽丝发起的。
+
+139
+00:15:08,280 --> 00:15:11,080
+And also, it provides long repudiation.
+
+139
+00:15:08,280 --> 00:15:11,080
+此外，它还提供了详尽的否认。
+
+140
+00:15:11,560 --> 00:15:16,120
+So long repudiation means the signer, just like Alice,
+
+140
+00:15:11,560 --> 00:15:16,120
+长久的否认意味着签署者，就像爱丽丝一样，这表示..
+
+141
+00:15:18,759 --> 00:15:27,160
+cannot successfully claim she did not send a message while also claiming her private key
+
+141
+00:15:18,759 --> 00:15:27,160
+无法同时声称自己没有发送消息，又声称自己的私钥
+
+142
+00:15:29,240 --> 00:15:30,200
+remains secret.
+
+142
+00:15:29,240 --> 00:15:30,200
+保密内容。
+
+143
+00:15:30,759 --> 00:15:39,240
+So either your private key is lost, someone else has your private key and can fabricate
+
+143
+00:15:30,759 --> 00:15:39,240
+因此，可能是你的私钥丢失了，也可能是别人掌握了你的私钥并能够伪造
+
+144
+00:15:39,240 --> 00:15:40,120
+your signature.
+
+144
+00:15:39,240 --> 00:15:40,120
+您的签名
+
+145
+00:15:40,840 --> 00:15:47,639
+Or if your secret key is secure, then your signature must be signed by you.
+
+145
+00:15:40,840 --> 00:15:47,639
+如果你的密钥安全，那么你的签名必须由你亲自签署。
+
+146
+00:15:48,279 --> 00:15:52,120
+You cannot deny your signature.
+
+146
+00:15:48,279 --> 00:15:52,120
+你不能否认你签过名。
+
+147
+00:15:52,840 --> 00:15:56,200
+So long repudiation means you can't
+
+147
+00:15:52,840 --> 00:15:56,200
+长期否定意味着您无法
+
+148
+00:15:59,159 --> 00:16:04,360
+deny the message is sent from you.
+
+148
+00:15:59,159 --> 00:16:04,360
+拒绝该消息是由你发送的。
+
+149
+00:16:04,360 --> 00:16:04,600
+Okay.
+
+149
+00:16:04,360 --> 00:16:04,600
+好吧。
+
+150
+00:16:06,600 --> 00:16:14,200
+Otherwise, on this, well, you say your secret, your secret key is lost.
+
+150
+00:16:06,600 --> 00:16:14,200
+否则，关于这一点，你透露了你的秘密，你的密钥就丢失了。
+
+151
+00:16:17,240 --> 00:16:20,919
+And also we say the digital signature provides integrity.
+
+151
+00:16:17,240 --> 00:16:20,919
+我们还表示，数字签名确保了数据的完整性。
+
+152
+00:16:21,639 --> 00:16:25,560
+So integrity means M is not modified.
+
+152
+00:16:21,639 --> 00:16:25,560
+因此，完整性意味着 M 未被修改，这样的表述更为自然易懂。
+
+153
+00:16:27,080 --> 00:16:28,519
+M is not modified.
+
+153
+00:16:27,080 --> 00:16:28,519
+M 未被修改。
+
+154
+00:16:29,159 --> 00:16:37,879
+Well, if a message is digitally sent, any change in the message of the signature invalidates
+
+154
+00:16:29,159 --> 00:16:37,879
+嗯，如果一条信息以数字形式发送，任何对信息或签名的修改都将使签名失效
+
+155
+00:16:37,879 --> 00:16:38,679
+the signature.
+
+155
+00:16:37,879 --> 00:16:38,679
+签名。
+
+156
+00:16:39,559 --> 00:16:45,000
+The reason is because M will be sent along with your signature.
+
+156
+00:16:39,559 --> 00:16:45,000
+原因是 M 将与您的签名一同发送，这样的表述更为自然易懂。
+
+157
+00:16:45,879 --> 00:16:46,360
+Okay.
+
+157
+00:16:45,879 --> 00:16:46,360
+好吧。
+
+158
+00:16:47,159 --> 00:16:52,600
+And your signature equals the hash result of M
+
+158
+00:16:47,159 --> 00:16:52,600
+你的签名等同于 M 的哈希值
+
+159
+00:16:53,320 --> 00:16:57,320
+to the private key.
+
+159
+00:16:53,320 --> 00:16:57,320
+到私钥。
+
+160
+00:17:00,200 --> 00:17:05,640
+So S equals the hash result to your private key mod M.
+
+160
+00:17:00,200 --> 00:17:05,640
+S 等于您的私钥对 M 取模后的哈希值。
+
+161
+00:17:06,360 --> 00:17:13,000
+Well, if you have another M prime with this signature,
+
+161
+00:17:06,360 --> 00:17:13,000
+嗯，如果您还有另一个带有这个签名的 M'，
+
+162
+00:17:13,160 --> 00:17:19,400
+well, if you have another M prime with this signature,
+
+162
+00:17:13,160 --> 00:17:19,400
+嗯，如果您还有另一个带有这个签名的 M'，
+
+163
+00:17:20,680 --> 00:17:23,720
+it's about M is modified to be M prime.
+
+163
+00:17:20,680 --> 00:17:23,720
+它关于 M 被修改成 M'。
+
+164
+00:17:24,519 --> 00:17:38,200
+Then you apply S to the E mod M and this will generate the HM.
+
+164
+00:17:24,519 --> 00:17:38,200
+然后将 S 应用于 E 模 M，这样就会生成 HM。这个翻译更加自然和易懂。
+
+165
+00:17:38,680 --> 00:17:45,559
+So this, this HM does not equal to HM prime.
+
+165
+00:17:38,680 --> 00:17:45,559
+因此，这个 HM 并不等于 HM'。
+
+166
+00:17:48,519 --> 00:17:57,799
+But in other words, well, once you have a correct signature S, this will guarantee your
+
+166
+00:17:48,519 --> 00:17:57,799
+换句话说，一旦你拥有了正确的签名 S，那么这就能保证你的
+
+167
+00:17:57,799 --> 00:18:00,759
+message M is not modified.
+
+167
+00:17:57,799 --> 00:18:00,759
+消息 M 没有被修改。
+
+168
+00:18:00,920 --> 00:18:12,200
+Otherwise, it cannot pass the signature verification process, right?
+
+168
+00:18:00,920 --> 00:18:12,200
+否则，它就无法通过签名验证，对吧？这样的表述更自然、易懂
+
+169
+00:18:15,879 --> 00:18:19,400
+Only the correct M can match your signature.
+
+169
+00:18:15,879 --> 00:18:19,400
+只有正确的 M 才能匹配您的签名。（经过润色，使翻译更加自然易懂）
+
+170
+00:18:20,360 --> 00:18:20,759
+Okay.
+
+170
+00:18:20,360 --> 00:18:20,759
+好吧。
+
+171
+00:18:20,759 --> 00:18:24,440
+Now we look at the RSA, the signature scheme.
+
+171
+00:18:20,759 --> 00:18:24,440
+现在我们来探讨 RSA 签名方案。
+
+172
+00:18:24,759 --> 00:18:32,360
+We said that RSA algorithm can be applied to encryption, decryption, key exchange, and
+
+172
+00:18:24,759 --> 00:18:32,360
+我们提到，RSA 算法可用于加密、解密、密钥交换等功能
+
+173
+00:18:32,360 --> 00:18:35,400
+also to be applied in this signature generation.
+
+173
+00:18:32,360 --> 00:18:35,400
+也适用于此签名生成（更自然、更易理解的表达）。
+
+174
+00:18:37,720 --> 00:18:45,800
+In the setup, just like in the RSA algorithm, we have the add-on, add-on, add-on, add-on,
+
+174
+00:18:37,720 --> 00:18:45,800
+在设置过程中，与 RSA 算法类似，我们添加了附加组件、附加组件、附加组件、附加组件，
+
+175
+00:18:45,799 --> 00:18:52,759
+just like in the RSA algorithm, we have the N to be the product of two prime numbers.
+
+175
+00:18:45,799 --> 00:18:52,759
+就像在 RSA 算法中那样，N 是两个质数的乘积。这样的表述更为自然易懂。
+
+176
+00:18:55,000 --> 00:18:59,879
+So PQR large primes will each to be 124 bits long.
+
+176
+00:18:55,000 --> 00:18:59,879
+因此，PQR 的大质数每个都将有 124 位长。
+
+177
+00:19:00,680 --> 00:19:08,599
+And we choose the E, then we can generate the private key to be D.
+
+177
+00:19:00,680 --> 00:19:08,599
+我们选择 E，然后可以生成私钥 D。（已优化）
+
+178
+00:19:09,319 --> 00:19:11,879
+D will be used in the signing process.
+
+178
+00:19:09,319 --> 00:19:11,879
+D 将在签名过程中被使用。这样的表述更为自然和易懂。
+
+179
+00:19:12,520 --> 00:19:18,520
+And public key EN will be used for the signature verification.
+
+179
+00:19:12,520 --> 00:19:18,520
+将使用公钥 EN 进行签名验证。
+
+180
+00:19:20,360 --> 00:19:23,640
+So in signature generation, we apply the message M.
+
+180
+00:19:20,360 --> 00:19:23,640
+在签名生成过程中，我们首先应用消息 M。
+
+181
+00:19:24,760 --> 00:19:27,800
+At this moment, we don't consider the hash function, okay?
+
+181
+00:19:24,760 --> 00:19:27,800
+目前我们不考虑哈希函数，可以吗？
+
+182
+00:19:28,920 --> 00:19:34,040
+So M to D mod N, it is the signature S.
+
+182
+00:19:28,920 --> 00:19:34,040
+所以，M 到 D 模 N，它是签名 S。
+
+183
+00:19:35,000 --> 00:19:42,119
+So we say S is the generated signature for the message M.
+
+183
+00:19:35,000 --> 00:19:42,119
+我们说，S 是消息 M 生成的签名。
+
+184
+00:19:43,639 --> 00:19:46,599
+So M is the message to be signed.
+
+184
+00:19:43,639 --> 00:19:46,599
+M 是待签名的消息。
+
+185
+00:19:47,639 --> 00:19:55,159
+In the verification, we apply the public key to the S mod N.
+
+185
+00:19:47,639 --> 00:19:55,159
+在验证过程中，我们使用公钥对 S mod N 进行操作。
+
+186
+00:19:55,159 --> 00:19:59,480
+Then we calculate whether the result equals M or not.
+
+186
+00:19:55,159 --> 00:19:59,480
+我们计算结果是否等于 M，表达更为自然。
+
+187
+00:20:00,440 --> 00:20:05,640
+If it equals, we say the signature is valid.
+
+187
+00:20:00,440 --> 00:20:05,640
+如果等于，我们就说这个签名是有效的。
+
+188
+00:20:05,640 --> 00:20:09,640
+Otherwise, we output invalid signature.
+
+188
+00:20:05,640 --> 00:20:09,640
+否则，我们输出无效的签名。
+
+189
+00:20:12,839 --> 00:20:14,680
+Okay, now we look at this example.
+
+189
+00:20:12,839 --> 00:20:14,680
+好的，现在我们来看看这个例子。
+
+190
+00:20:14,680 --> 00:20:20,599
+Suppose we choose two primes, P to be 47 and Q to be 71.
+
+190
+00:20:14,680 --> 00:20:20,599
+假设我们选取两个质数，P 为 47，Q 为 71。这样的表述更为自然和易懂。
+
+191
+00:20:21,559 --> 00:20:26,440
+So N equals P times Q equals 3337.
+
+191
+00:20:21,559 --> 00:20:26,440
+因此，N 等于 P 乘以 Q，等于 3337。
+
+192
+00:20:26,440 --> 00:20:31,160
+We choose E such that it is relative prime to phi.
+
+192
+00:20:26,440 --> 00:20:31,160
+我们选择 E，使其与φ互质。
+
+193
+00:20:32,039 --> 00:20:37,799
+So phi equals P minus 1 times Q minus 1.
+
+193
+00:20:32,039 --> 00:20:37,799
+因此φ等于 P 减 1 乘以 Q 减 1。
+
+194
+00:20:38,600 --> 00:20:41,400
+So this is 3220.
+
+194
+00:20:38,600 --> 00:20:41,400
+这就是 3220。
+
+195
+00:20:43,080 --> 00:20:47,320
+Suppose we choose E to be plus 1019.
+
+195
+00:20:43,080 --> 00:20:47,320
+假设我们选取 E 为加 1019。
+
+196
+00:20:48,759 --> 00:20:55,960
+Then we compute the private key D using the extended Euclidean algorithm.
+
+196
+00:20:48,759 --> 00:20:55,960
+我们使用扩展欧几里得算法来计算私钥 D。
+
+197
+00:20:55,960 --> 00:20:59,079
+So D can be calculated to be 79.
+
+197
+00:20:55,960 --> 00:20:59,079
+因此，D 可以计算得出为 79。
+
+198
+00:21:00,039 --> 00:21:05,480
+So public key, in this example, it is E and N.
+
+198
+00:21:00,039 --> 00:21:05,480
+本例中，它代表的是公钥 E 和 N。
+
+199
+00:21:07,240 --> 00:21:10,039
+E is 101 line.
+
+199
+00:21:07,240 --> 00:21:10,039
+E 位于第 101 行。
+
+200
+00:21:10,759 --> 00:21:13,079
+N is 3337.
+
+200
+00:21:10,759 --> 00:21:13,079
+N 等于 3337。
+
+201
+00:21:14,120 --> 00:21:16,519
+The private key is 79.
+
+201
+00:21:14,120 --> 00:21:16,519
+私钥为 79。
+
+202
+00:21:19,400 --> 00:21:25,400
+So in this example, suppose the message is 688.
+
+202
+00:21:19,400 --> 00:21:25,400
+在这个例子中，我们假设信息内容为 688。
+
+203
+00:21:26,120 --> 00:21:34,039
+So signature can be generated by the M to the D mod N.
+
+203
+00:21:26,120 --> 00:21:34,039
+因此可以通过对 D 进行 M 取模操作来生成签名。
+
+204
+00:21:35,079 --> 00:21:40,600
+This is 1570 to be a signature.
+
+204
+00:21:35,079 --> 00:21:40,600
+这是 1570 年要成为标志的。
+
+205
+00:21:42,120 --> 00:21:46,440
+The message and signature will be sent to the receiver.
+
+205
+00:21:42,120 --> 00:21:46,440
+消息及签名将被发送给接收方。
+
+206
+00:21:46,440 --> 00:21:50,920
+So receiver will do the verification and receiver will check if
+
+206
+00:21:46,440 --> 00:21:50,920
+因此接收方将执行验证，并检查是否符合
+
+207
+00:21:51,880 --> 00:22:02,600
+S to the public key E mod N equals the message itself or not.
+
+207
+00:21:51,880 --> 00:22:02,600
+S 到公钥 E 模 N 是否等于该消息
+
+208
+00:22:04,279 --> 00:22:10,759
+So of course, well, S to E should equal M itself, right?
+
+208
+00:22:04,279 --> 00:22:10,759
+当然了，嗯，S 到 E 应该等于 M，对吧？
+
+209
+00:22:20,920 --> 00:22:37,080
+In the RSA algorithm, we choose E, D such that M, E, D mod N equals M itself.
+
+209
+00:22:20,920 --> 00:22:37,080
+在 RSA 算法中，我们选择 E 和 D，使得 M、E、D 除以 N 的余数等于 M。
+
+210
+00:22:37,960 --> 00:22:44,039
+So this makes them to generate the public key and private key.
+
+210
+00:22:37,960 --> 00:22:44,039
+因此，它们会生成公钥和私钥。这使得它们生成公钥和私钥。
+
+211
+00:22:44,680 --> 00:22:50,600
+And because of this property, we guarantee in this signature verification process,
+
+211
+00:22:44,680 --> 00:22:50,600
+由于这个特性，我们在此签名验证过程中保证，
+
+212
+00:22:51,880 --> 00:22:57,160
+S to the E mod N, it is, it equals M.
+
+212
+00:22:51,880 --> 00:22:57,160
+S 到 E 模 N，即等于 M。
+
+213
+00:23:00,519 --> 00:23:07,880
+Okay, in this exercise, suppose we use some small number and also to redo the previous example.
+
+213
+00:23:00,519 --> 00:23:07,880
+好的，在这个练习中，我们假设使用一些较小的数字，并且重新做之前的例子。
+
+214
+00:23:09,400 --> 00:23:14,840
+From E, well, equal three is small number and first step, you should calculate
+
+214
+00:23:09,400 --> 00:23:14,840
+从 E 开始，嗯，等于三是个小数，第一步，你应该进行计算
+
+215
+00:23:14,839 --> 00:23:19,159
+the private key D, right?
+
+215
+00:23:14,839 --> 00:23:19,159
+私钥 D，您说得对
+
+216
+00:23:20,039 --> 00:23:31,720
+From private key D, the signature equals M to the D mod N.
+
+216
+00:23:20,039 --> 00:23:31,720
+从私钥 D 出发，签名等于 M 模 N。
+
+217
+00:23:35,000 --> 00:23:42,199
+Then you'll check whether M equals S to the E mod N.
+
+217
+00:23:35,000 --> 00:23:42,199
+你将检查 M 是否等于 S 到 E 模 N（更自然地表达）。
+
+218
+00:23:45,000 --> 00:23:49,399
+So three steps. First step, calculate the private key D.
+
+218
+00:23:45,000 --> 00:23:49,399
+前三步。第一步，计算私钥 D。
+
+219
+00:23:51,799 --> 00:23:58,919
+Second step, to generate the signature. Third step, to do the signature verification.
+
+219
+00:23:51,799 --> 00:23:58,919
+第二步：生成签名。第三步：进行签名验证。
+
+220
+00:24:00,439 --> 00:24:07,639
+Step one, step two, step three. So this is signature
+
+220
+00:24:00,439 --> 00:24:07,639
+第一步，第二步，第三步。这就是签名
+
+221
+00:24:08,120 --> 00:24:08,920
+generation.
+
+221
+00:24:08,120 --> 00:24:08,920
+生成。
+
+222
+00:24:11,960 --> 00:24:13,960
+This step three is signature
+
+222
+00:24:11,960 --> 00:24:13,960
+这第三步是签名
+
+223
+00:24:16,200 --> 00:24:17,240
+verification.
+
+223
+00:24:16,200 --> 00:24:17,240
+验证。
+
+224
+00:24:22,280 --> 00:24:26,280
+Okay, can you use probably five to 10 minutes to do this calculation?
+
+224
+00:24:22,280 --> 00:24:26,280
+好的，你能用五到十分钟的时间来做这个计算吗？
+
+225
+00:28:07,640 --> 00:28:37,080
+Okay, some of you have finished
+
+225
+00:28:07,640 --> 00:28:37,080
+好的，大家中有些人已经完成了
+
+226
+00:28:37,079 --> 00:28:45,879
+the calculation step one, right? To get the private key D. Well, the D, what's the D value?
+
+226
+00:28:37,079 --> 00:28:45,879
+这是计算的第一步，对吧？我们要获取私钥 D。那么，D 的值是多少呢？
+
+227
+00:28:49,159 --> 00:28:56,759
+D equals two, one, four, seven, right?
+
+227
+00:28:49,159 --> 00:28:56,759
+等于二、一、四、七，没错吧？
+
+228
+00:28:59,000 --> 00:29:04,359
+Well, in this example, because the public key E is three and the N is
+
+228
+00:28:59,000 --> 00:29:04,359
+好吧，在这个例子中，因为公钥 E 为 3，N 为
+
+229
+00:29:07,879 --> 00:29:13,480
+three, three, three, seven. Five N is
+
+229
+00:29:07,879 --> 00:29:13,480
+三个，三个，三个，七个。这里的“五 N”需要进一步明确其含义。
+
+230
+00:29:17,559 --> 00:29:18,919
+three, two, two, zero.
+
+230
+00:29:17,559 --> 00:29:18,919
+三、二、二、零
+
+231
+00:29:25,960 --> 00:29:34,119
+So five N is here, is two, three thousand, two hundred and twenty.
+
+231
+00:29:25,960 --> 00:29:34,119
+五个 N 在这里，是二千二百二十。
+
+232
+00:29:34,519 --> 00:29:42,119
+Well, because E is a small data, in fact, we can calculate. What we know is
+
+232
+00:29:34,519 --> 00:29:42,119
+好吧，因为 E 的数据量不大，实际上我们可以进行计算。我们知道的是
+
+233
+00:29:43,239 --> 00:29:53,159
+E times D equals K times five N plus one, is that right? Because E D
+
+233
+00:29:43,239 --> 00:29:53,159
+E 乘 D 等于 K 乘以 5N 加 1，这是正确的吧？因为 E 和 D
+
+234
+00:29:56,039 --> 00:29:58,119
+is coming to one, mod five.
+
+234
+00:29:56,039 --> 00:29:58,119
+即将来到一，除以五（更自然地表达）。
+
+235
+00:29:58,759 --> 00:30:04,759
+Mod five. So in other words, we calculate D equals
+
+235
+00:29:58,759 --> 00:30:04,759
+五模运算，换句话说，我们计算 D 等于
+
+236
+00:30:07,479 --> 00:30:15,799
+K times five N plus one divided by E. Here E is small number equals three.
+
+236
+00:30:07,479 --> 00:30:15,799
+K 乘以 5N 加 1，除以等于 3 的小数 E。
+
+237
+00:30:21,719 --> 00:30:26,439
+K times five N is three, two, two, zero plus one.
+
+237
+00:30:21,719 --> 00:30:26,439
+K 乘以 5N 等于三二二零加一（更自然地表达）。
+
+238
+00:30:28,119 --> 00:30:40,839
+So you can try K equals one. If K equals one, well, D is not an integer. How about
+
+238
+00:30:28,119 --> 00:30:40,839
+因此您可以尝试将 K 设为 1。如果 K 等于 1，那么 D 就不是整数了，您觉得呢？
+
+239
+00:30:40,839 --> 00:30:51,479
+K equals two? If K equals two, we get D to be two times three, two, two, zero plus one
+
+239
+00:30:40,839 --> 00:30:51,479
+如果 K 等于 2，那么 D 就是 2 乘以 3，再乘以 2，2，0 加 1
+
+240
+00:30:51,480 --> 00:31:00,839
+divided by three. This equals two one forty seven.
+
+240
+00:30:51,480 --> 00:31:00,839
+除以三等于二一四七。
+
+241
+00:31:03,799 --> 00:31:14,120
+OK, so this way is also fine. You don't need to apply the extended Euclidean algorithm.
+
+241
+00:31:03,799 --> 00:31:14,120
+好吧，这样做也可以。您不必使用扩展欧几里得算法。
+
+242
+00:31:14,120 --> 00:31:19,720
+Of course, because E is small, applying the extended Euclidean algorithm is also
+
+242
+00:31:14,120 --> 00:31:19,720
+当然，由于 E 的值较小，使用扩展欧几里得算法也是
+
+243
+00:31:20,440 --> 00:31:28,519
+very fast. But when E is five, three, so you can apply this method.
+
+243
+00:31:20,440 --> 00:31:28,519
+非常快。但当 E 等于 5 或 3 时，你可以使用这种方法。
+
+244
+00:31:32,839 --> 00:31:39,240
+OK, the first step, we get the private key D to be two thousand and two thousand one hundred
+
+244
+00:31:32,839 --> 00:31:39,240
+好的，第一步，我们得到私钥 D 为两千零二十一
+
+245
+00:31:39,240 --> 00:31:45,160
+and four seven, this large number. For the second step, well, we want to calculate the signature.
+
+245
+00:31:39,240 --> 00:31:45,160
+二十七，这是一个大数。接下来，我们要计算这个签名的值。
+
+246
+00:31:46,040 --> 00:31:47,960
+So S equals M is.
+
+246
+00:31:46,040 --> 00:31:47,960
+因此，S 等于 M。
+
+247
+00:31:53,000 --> 00:31:56,600
+So M is six hundred and eighty eight.
+
+247
+00:31:53,000 --> 00:31:56,600
+M 等于六百八十八。
+
+248
+00:31:59,880 --> 00:32:10,600
+To the two one four seven mod N, N is three three three seven. Of course, this is a
+
+248
+00:31:59,880 --> 00:32:10,600
+对两个一四七取模 N，N 等于三三三七。当然，这只是一个
+
+249
+00:32:11,240 --> 00:32:15,240
+big number. So if it is very big,
+
+249
+00:32:11,240 --> 00:32:15,240
+大数。如果它非常巨大，那么，
+
+250
+00:32:17,719 --> 00:32:27,079
+well, in fact, you still can solve it. So how to solve it? You can use the CRT, right?
+
+250
+00:32:17,719 --> 00:32:27,079
+嗯，实际上这个问题你还是有办法解决的。那应该怎么解决呢？你可以试试 CRT，对吧？
+
+251
+00:32:27,319 --> 00:32:45,240
+CRT, that means because N is three three three seven equals P is forty seven times seventy one.
+
+251
+00:32:27,319 --> 00:32:45,240
+CRT，也就是说，因为 N 等于 3337，所以 P 等于 47 乘以 71。
+
+252
+00:32:46,119 --> 00:32:55,960
+So that means you want to suppose this is big number. This one, we use this one to be
+
+252
+00:32:46,119 --> 00:32:55,960
+这意味着您想假设这是一个大数。我们用这个数
+
+253
+00:32:57,079 --> 00:33:26,519
+a big number T. So we want to calculate T mod, this P, this Q, P, this is S1,
+
+253
+00:32:57,079 --> 00:33:26,519
+一个大数 T，因此我们需要计算 T 对 P 和 Q 取模，即 S1，
+
+254
+00:33:27,639 --> 00:33:42,519
+T mod Q is S2. For S1, S2, we will be able to generate S quickly. So in fact, T mod
+
+254
+00:33:27,639 --> 00:33:42,519
+T 模 Q 等于 S2。对于 S1 和 S2，我们能够快速生成 S。因此实际上，T 模
+
+255
+00:33:42,519 --> 00:33:59,879
+P, this equals six hundred and eighty eight to the two one forty seven mod P,
+
+255
+00:33:42,519 --> 00:33:59,879
+P，这等于 688 除以 2147 对 P 取模，表达得更为自然和易懂
+
+256
+00:34:01,400 --> 00:34:10,039
+forty seven. So in fact, this is not that difficult. Well, you can do some calculation to get the
+
+256
+00:34:01,400 --> 00:34:10,039
+四十七，实际上这并不难。嗯，你可以进行一些计算来得出
+
+257
+00:34:10,039 --> 00:34:23,320
+remainder forty seven. This is fourteen times forty seven plus thirty. In the exponent part,
+
+257
+00:34:10,039 --> 00:34:23,320
+剩余四十七，即十四乘四十七加三十。在指数部分，
+
+258
+00:34:23,400 --> 00:34:32,200
+you should have forty six times forty six plus
+
+258
+00:34:23,400 --> 00:34:32,200
+你应该有四十六乘以四十六，然后加上
+
+259
+00:34:37,480 --> 00:34:45,559
+thirty one mod forty seven. OK, so this part is zero. This part can be canceled.
+
+259
+00:34:37,480 --> 00:34:45,559
+三十一除以四十七，这部分为零。这部分可以约去，说得比较自然。
+
+260
+00:34:53,559 --> 00:35:09,320
+This is congruent to thirty to the thirty one mod forty seven. So this number is not that large.
+
+260
+00:34:53,559 --> 00:35:09,320
+这与三十一除以四十七同余三十，所以这个数并不算大。
+
+261
+00:35:09,320 --> 00:35:17,800
+Of course, you can make it to be smaller to do some factorization.
+
+261
+00:35:09,320 --> 00:35:17,800
+当然可以缩小它，以便进行因式分解。这样的表述更自然、易懂。
+
+262
+00:35:23,320 --> 00:35:37,720
+If this one is too big, right, you can factorize it. You can represent it to be like thirty
+
+262
+00:35:23,320 --> 00:35:37,720
+如果这个数太大，可以分解它。可以把它表示为三十
+
+263
+00:35:38,840 --> 00:35:49,080
+to the five to six times thirty mod forty seven. You can first calculate the inside.
+
+263
+00:35:38,840 --> 00:35:49,080
+到五到六乘以三十除以四十七，里面的部分可以先计算一下。
+
+264
+00:35:49,319 --> 00:35:59,799
+So this one is thirteen. Thirty to the fifth mod forty seven is thirteen. Thirteen to the sixth
+
+264
+00:35:49,319 --> 00:35:59,799
+这一个数是十三。30 的 5 次方除以 47 的余数是十三。13 的 6 次方
+
+265
+00:36:01,319 --> 00:36:11,880
+times thirty. This is congruent to forty three mod forty seven. So we have S1 to be forty three.
+
+265
+00:36:01,319 --> 00:36:11,880
+30 倍，相当于 43 除以 47 的余数。所以 S1 就是 43。
+
+266
+00:36:12,119 --> 00:36:12,840
+Forty three.
+
+266
+00:36:12,119 --> 00:36:12,840
+四十三
+
+267
+00:36:15,960 --> 00:36:23,960
+OK, step by step, use your calculator or use your computer. You will be able to get S1.
+
+267
+00:36:15,960 --> 00:36:23,960
+好的，一步一步来，用计算器或电脑操作。你就能得到 S1。
+
+268
+00:36:25,079 --> 00:36:27,160
+And similarly, you can get S2.
+
+268
+00:36:25,079 --> 00:36:27,160
+同样，您也可以获取 S2。
+
+269
+00:36:27,159 --> 00:36:37,399
+P is seventy one.
+
+269
+00:36:27,159 --> 00:36:37,399
+P 是 71。
+
+270
+00:36:40,119 --> 00:36:52,440
+So seventy one.
+
+270
+00:36:40,119 --> 00:36:52,440
+七十一
+
+271
+00:36:57,159 --> 00:37:08,839
+OK, well, you can apply the same idea as we calculate S1. You will get S2. I give you the result
+
+271
+00:36:57,159 --> 00:37:08,839
+好吧，你可以用我们在计算 S1 时用的那个想法。这样你就能得到 S2 了，结果我已经给你了
+
+272
+00:37:09,559 --> 00:37:20,440
+directly to be here to be sixteen. So you have S2 to be sixteen.
+
+272
+00:37:09,559 --> 00:37:20,440
+直接到这里，就是十六岁。所以你有 S2 到十六岁。
+
+273
+00:37:27,159 --> 00:37:44,440
+Mod Q is sixteen. Well, so we can let
+
+273
+00:37:27,159 --> 00:37:44,440
+模拟 Q 十六岁了。嗯，那么我们可以让它
+
+274
+00:37:46,920 --> 00:37:50,440
+from this equation, we let S equals
+
+274
+00:37:46,920 --> 00:37:50,440
+从这个方程出发，我们设 S 等于
+
+275
+00:37:50,440 --> 00:37:58,679
+Q is seventy one times small t.
+
+275
+00:37:50,440 --> 00:37:58,679
+Q 是 t 的 71 分之一小，表达得更加自然易懂。
+
+276
+00:38:03,320 --> 00:38:07,240
+We use x plus sixteen.
+
+276
+00:38:03,320 --> 00:38:07,240
+我们使用 x 加十六。
+
+277
+00:38:07,959 --> 00:38:20,599
+Because the S is small number, S mod Q, Q is seventy one
+
+277
+00:38:07,959 --> 00:38:20,599
+因为 S 是一个较小的数字，所以 S 除以 Q 的余数，Q 等于 71
+
+278
+00:38:24,839 --> 00:38:32,119
+equals sixteen. So S can be represented as seventy one times x plus sixteen.
+
+278
+00:38:24,839 --> 00:38:32,119
+等于十六，所以 S 可以表示为 71 倍的 x 加 16。这样的表达更自然易懂。
+
+279
+00:38:33,079 --> 00:38:42,920
+So we substitute this one to be the first equation. So in other words, seventy one x
+
+279
+00:38:33,079 --> 00:38:42,920
+因此，我们将这个替换成第一个方程。换句话说，71 乘以
+
+280
+00:38:43,960 --> 00:38:57,319
+sixteen mod forty three. No, mod P is forty seven equals forty three.
+
+280
+00:38:43,960 --> 00:38:57,319
+十六除以四十三，不，P 模等于四十七，也就是四十三。
+
+281
+00:39:02,119 --> 00:39:28,599
+OK, this equation you can get, you can derive from seventy one, you get twenty four.
+
+281
+00:39:02,119 --> 00:39:28,599
+好的，这个等式你可以推导出来，从七十一可以得出二十四。
+
+282
+00:39:28,599 --> 00:39:39,079
+OK, you can derive twenty four t is congruent to twenty seven mod forty seven.
+
+282
+00:39:28,599 --> 00:39:39,079
+好的，你可以推导出 24t 与 47 除以 27 的余数相等。
+
+283
+00:39:40,519 --> 00:39:50,279
+So now you can try, because now the number is not very large, you can try t equals one, two, three.
+
+283
+00:39:40,519 --> 00:39:50,279
+现在你可以尝试了，因为数字不大，可以尝试 t 取一、二、三。
+
+284
+00:39:50,279 --> 00:39:57,079
+Each one can satisfy this equation until you can try the result is seven.
+
+284
+00:39:50,279 --> 00:39:57,079
+每个人都可以解这个方程，直到你尝试的结果是七。
+
+285
+00:39:57,319 --> 00:40:07,719
+The result is seven. So seven times twenty four mod forty seven equals twenty seven.
+
+285
+00:39:57,319 --> 00:40:07,719
+结果是七，所以七乘二十四除以四十七的余数是二十七。
+
+286
+00:40:10,599 --> 00:40:20,360
+So that means here is not x, here should be x. Anyway, we translate here to be t.
+
+286
+00:40:10,599 --> 00:40:20,360
+这意味着这里不应该有 x，而应该是 x。无论如何，我们在这里将其翻译为 t。
+
+287
+00:40:20,360 --> 00:40:41,640
+So t can be seven. In other words, this t can meet, satisfy this equation. OK, and then we let t to be seven.
+
+287
+00:40:20,360 --> 00:40:41,640
+因此，t 可以取 7。换句话说，这个 t 可以满足这个方程。好的，那么我们就让 t 等于 7。
+
+288
+00:40:41,639 --> 00:40:56,279
+So this will derive t equals seven. S equals seventy one times seven or sixteen. This is the signature.
+
+288
+00:40:41,639 --> 00:40:56,279
+因此这将导出 t 等于七。S 等于七十一乘以七，也就是十六。这是签名。
+
+289
+00:40:58,039 --> 00:41:08,920
+So signature is five one three.
+
+289
+00:40:58,039 --> 00:41:08,920
+签名是 513。
+
+290
+00:41:08,920 --> 00:41:29,400
+Or in step three, it is quite easy because well, you apply the s to the e. This is five one three to the three to start.
+
+290
+00:41:08,920 --> 00:41:29,400
+在第三步中，这很简单，因为，嗯，你把 s 加到 e 上。这就是五一一三到三开始的步骤。
+
+291
+00:41:29,400 --> 00:41:42,920
+Mod mod and this, of course, will equal the message itself.
+
+291
+00:41:29,400 --> 00:41:42,920
+当然，这等于消息本身。当然，这等于消息本身。
+
+292
+00:41:42,920 --> 00:42:07,880
+Well, here I write all the procedure. Well, to show that how you can use different method to calculate the private key d in the step one.
+
+292
+00:41:42,920 --> 00:42:07,880
+好吧，这里详细记录了所有步骤。此外，我还展示了在第一步中如何使用不同的方法来计算私钥 d。
+
+293
+00:42:08,039 --> 00:42:17,160
+OK, if e, if the given public key e is small, then you can use that equation to calculate the private key d.
+
+293
+00:42:08,039 --> 00:42:17,160
+如果给定的公钥 e 较小，则可以使用该方程来计算私钥 d，翻译更加自然和易懂。
+
+294
+00:42:17,160 --> 00:42:23,880
+Otherwise, you should use the extended Euclidean algorithm to calculate the module inverse.
+
+294
+00:42:17,160 --> 00:42:23,880
+否则，您应该使用扩展欧几里得算法来计算模逆。这样的表述更为自然和易懂。
+
+295
+00:42:23,880 --> 00:42:31,079
+Then in step two, to generate the signature, you can apply the Chinese remainder theorem.
+
+295
+00:42:23,880 --> 00:42:31,079
+在第二步中，为了生成签名，您可以应用中国剩余定理。
+
+296
+00:42:31,079 --> 00:42:39,400
+So here the data is quite large. Well, in your midterm test, I will try to make the number to be small.
+
+296
+00:42:31,079 --> 00:42:39,400
+这里数据量很大。嗯，在您的期中考试中，我会尽量把数字缩小。
+
+297
+00:42:39,400 --> 00:42:55,239
+Don't need to worry. However, you need to guarantee you need to master this CRT technique to, well, to apply this CRT process to generate the result.
+
+297
+00:42:39,400 --> 00:42:55,239
+不必担心。不过，您必须确保掌握这项 CRT 技术，以便能够应用 CRT 流程来生成结果。
+
+298
+00:42:55,319 --> 00:43:05,319
+Like here. So that means just like in this example, this big number mod n can be translated to big number mod p.
+
+298
+00:42:55,319 --> 00:43:05,319
+像这里一样。也就是说，就像这个例子中那样，大数对 n 取模可以转化为对 p 取模。
+
+299
+00:43:05,319 --> 00:43:15,479
+We have s1, big number mod q. We have s2. Then from these two equations, we can calculate the original small s.
+
+299
+00:43:05,319 --> 00:43:15,479
+我们有 s1 和大数模 q。另外还有 s2。通过这两个方程，我们可以计算出原始的小 s。
+
+300
+00:43:25,959 --> 00:43:33,799
+Well, in RSA algorithm, the key length actually is critical for the security purpose.
+
+300
+00:43:25,959 --> 00:43:33,799
+在 RSA 算法中，密钥长度对于安全至关重要，这一点非常重要。
+
+301
+00:43:33,799 --> 00:43:44,279
+RSA algorithm is not efficient because it gains strength slowly. The RSA, when we choose n,
+
+301
+00:43:33,799 --> 00:43:44,279
+RSA 算法效率不高，因为其强度增长缓慢。选择 n 时，RSA 算法，
+
+302
+00:43:45,240 --> 00:43:56,519
+the length to be 1024 bits, the security is equivalent to an 80-bit symmetry key, just like in the AES.
+
+302
+00:43:45,240 --> 00:43:56,519
+长度应为 1024 位，其安全性等同于 80 位对称密钥，与 AES 相同。
+
+303
+00:43:56,519 --> 00:44:09,080
+In the AES, the key length will to be 80 bits, and AES can achieve the same security level as RSA.
+
+303
+00:43:56,519 --> 00:44:09,080
+在 AES 中，密钥长度为 80 位，其安全性可与 RSA 相当。
+
+304
+00:44:09,639 --> 00:44:15,719
+When we use the RSA, the key length to be 1024 bits.
+
+304
+00:44:09,639 --> 00:44:15,719
+使用 RSA 时，密钥长度应为 1024 位。这样的表述更为自然易懂。
+
+305
+00:44:16,920 --> 00:44:26,279
+And if we increase the n to be 248 bits, this is equivalent to a 112-bit key.
+
+305
+00:44:16,920 --> 00:44:26,279
+如果我们将 n 增加到 248 位，那么这相当于 112 位的密钥。这样的表述更为自然和易懂。
+
+306
+00:44:29,079 --> 00:44:35,559
+So of course, this is not AES. AES requires the key length to be much longer.
+
+306
+00:44:29,079 --> 00:44:35,559
+当然这不符合 AES 的要求。AES 需要更长的密钥长度。
+
+307
+00:44:35,559 --> 00:44:45,559
+So we can continue to increase the RSA key length. But you can see, well, when we apply the symmetry key,
+
+307
+00:44:35,559 --> 00:44:45,559
+因此我们可以继续增加 RSA 密钥长度。但您可以看到，嗯，当我们使用对称密钥时，
+
+308
+00:44:45,559 --> 00:44:59,799
+that's much more efficient. When the large size n to be applied in RSA, the performance is terrible.
+
+308
+00:44:45,559 --> 00:44:59,799
+这要高效得多。在 RSA 中使用较大的 n 值时，性能极差。
+
+309
+00:45:00,519 --> 00:45:09,400
+Because n is very large, you need to do the exponential operation and mod n. That's terrible.
+
+309
+00:45:00,519 --> 00:45:09,400
+因为 n 非常大，所以需要进行指数运算并取模 n，这确实很麻烦。
+
+310
+00:45:12,120 --> 00:45:17,240
+So because the computation time required for large keys increases rapidly,
+
+310
+00:45:12,120 --> 00:45:17,240
+因此，大键所需的计算时间会迅速增加，所以……
+
+311
+00:45:18,680 --> 00:45:28,280
+well, if we increase the key length from 124 to 248, the key length doubled.
+
+311
+00:45:18,680 --> 00:45:28,280
+嗯，将密钥长度从 124 位增加到 248 位，密钥长度就翻了一倍。这样的表述更符合中文习惯。
+
+312
+00:45:29,080 --> 00:45:38,360
+But the operation is eight times. Eight times. The reason is because you can see
+
+312
+00:45:29,080 --> 00:45:38,360
+但是操作是八倍。八倍。原因在于你可以看到
+
+313
+00:45:39,640 --> 00:45:52,120
+message to the e mod n. When this n doubled, your e, your n message to the e mod this n.
+
+313
+00:45:39,640 --> 00:45:52,120
+当这个数 n 翻倍时，你的 e 值，你的 n 消息模这个 n。
+
+314
+00:45:52,680 --> 00:45:54,760
+This calculation will be eight times.
+
+314
+00:45:52,680 --> 00:45:54,760
+这个计算结果是八倍。
+
+315
+00:45:55,080 --> 00:46:03,080
+Compared to, well, let's just half the key length. So that means, well, RSA, the algorithm can be
+
+315
+00:45:55,080 --> 00:46:03,080
+与之相比，只需将密钥长度减半即可。这意味着，嗯，RSA 算法就可以...
+
+316
+00:46:03,080 --> 00:46:12,440
+used in very limited cases. For the large document encryption-decryption, we should use the
+
+316
+00:46:03,080 --> 00:46:12,440
+在极少数情况下使用。对于大文档的加密解密，建议使用
+
+317
+00:46:13,320 --> 00:46:20,680
+symmetry key scheme. But we can use RSA for the key distribution. Is that clear?
+
+317
+00:46:13,320 --> 00:46:20,680
+对称密钥方案，但我们可以使用 RSA 进行密钥分发。这样明白了吗？
+
+318
+00:46:21,079 --> 00:46:36,039
+The key can be large. Well, we use RSA to encrypt that key. That key can be sent to the
+
+318
+00:46:21,079 --> 00:46:36,039
+密钥可能很大。因此，我们采用 RSA 算法对其进行加密。该密钥可以发送给对方
+
+319
+00:46:37,000 --> 00:46:43,719
+receiver. And then both sender and receiver can use that key to encrypt a large file.
+
+319
+00:46:37,000 --> 00:46:43,719
+接收方。然后发送方和接收方都可以使用这个密钥来加密大文件。翻译更加自然，易于理解。
+
+320
+00:46:43,719 --> 00:46:54,199
+Okay. Today I stop here. Well, today we still have the project introduction. So let's have
+
+320
+00:46:43,719 --> 00:46:54,199
+好的。今天就聊到这里。对了，今天我们还有项目介绍环节。那么，我们开始吧。
+
+321
+00:46:54,199 --> 00:47:07,559
+a break. After five minutes, we start with today's project introduction. Thank you.
+
+321
+00:46:54,199 --> 00:47:07,559
+休息片刻。五分钟后，我们开始介绍今天的项目。感谢大家的参与。
+

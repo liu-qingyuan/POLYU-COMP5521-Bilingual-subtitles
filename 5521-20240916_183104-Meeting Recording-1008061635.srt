@@ -1,0 +1,2144 @@
+1
+00:00:00,000 --> 00:00:15,160
+Okay, good evening.
+
+2
+00:00:15,160 --> 00:00:23,480
+So let's start with today's lecture.
+
+3
+00:00:23,480 --> 00:00:28,679
+Today we will continue with our lecture three about cryptography.
+
+4
+00:00:28,679 --> 00:00:31,199
+Last time we talked about the number theory, right?
+
+5
+00:00:31,199 --> 00:00:36,039
+So we know like the Euler's theorem.
+
+6
+00:00:36,039 --> 00:00:45,920
+So today we will start with like the symmetric encryption.
+
+7
+00:00:45,920 --> 00:00:51,760
+So part one is about the symmetric encryption, part two is about isometric encryption, that's
+
+8
+00:00:51,760 --> 00:00:53,519
+a public key scheme.
+
+9
+00:00:54,520 --> 00:01:00,640
+Public key scheme, public encryption is based on the number theory.
+
+10
+00:01:00,640 --> 00:01:06,400
+So from the Euler's theorem, we will have today's RSA algorithm.
+
+11
+00:01:06,400 --> 00:01:10,800
+Today, first, we look at the part one about symmetric encryption.
+
+12
+00:01:23,519 --> 00:01:46,239
+Here is the diagram to show that in the symmetric encryption, we have the plaintext as an input
+
+13
+00:01:46,239 --> 00:01:52,920
+and as output, we also want to get the plaintext, the same plaintext.
+
+14
+00:01:52,920 --> 00:02:04,760
+So at the left hand side, we say we have the sender, right hand side, we have the receiver.
+
+15
+00:02:04,760 --> 00:02:10,520
+In the middle, we have a channel and we assume that the channel may not be reliable.
+
+16
+00:02:10,520 --> 00:02:19,120
+So in the channel, we want to send the transmitted self-text.
+
+17
+00:02:19,120 --> 00:02:22,159
+This self-text should be encrypted.
+
+18
+00:02:22,159 --> 00:02:30,800
+In this symmetric encryption, the plaintext, we denote the plaintext to be x.
+
+19
+00:02:30,800 --> 00:02:35,919
+So x, we first go through an encryption algorithm.
+
+20
+00:02:35,919 --> 00:02:38,519
+For example, here is AES.
+
+21
+00:02:38,519 --> 00:02:43,599
+So AES is an advanced encryption standard.
+
+22
+00:02:44,560 --> 00:02:53,199
+When the x goes through this encryption algorithm, normally we will have a key k.
+
+23
+00:02:53,199 --> 00:03:00,519
+We can use this key k to encrypt the plaintext x.
+
+24
+00:03:00,519 --> 00:03:12,079
+Then we get the self-text y and y equals this function, encryption function, we call it the encryption function.
+
+25
+00:03:12,160 --> 00:03:21,200
+With the input to be x and the key k, so this key k is a secret.
+
+26
+00:03:21,200 --> 00:03:28,120
+At the receiver side, so this part is the sender side, this part is the receiver side.
+
+27
+00:03:28,120 --> 00:03:34,480
+And receiver will use the same key k to do the decryption.
+
+28
+00:03:34,560 --> 00:03:43,120
+And we have the decryption algorithm, that's the reverse process of the encryption algorithm.
+
+29
+00:03:43,120 --> 00:03:54,280
+So the AES, normally we have some character substitution, some shifting with some block replaced by another block.
+
+30
+00:03:54,280 --> 00:04:01,319
+So this kind of operations, based on the key k, we do shifting, do permutation.
+
+31
+00:04:01,359 --> 00:04:06,000
+So lots of steps to get to the subtext.
+
+32
+00:04:06,000 --> 00:04:12,359
+And then at the receiver side, we do the reverse process.
+
+33
+00:04:12,359 --> 00:04:17,279
+Once you have the key k, and then you can do the decryption.
+
+34
+00:04:17,279 --> 00:04:22,759
+So this decryption function is also known, that's the AES.
+
+35
+00:04:22,759 --> 00:04:32,839
+So both AES are in encryption, decryption, the process is publicly known.
+
+36
+00:04:32,839 --> 00:04:36,839
+Only the key k is the secret.
+
+37
+00:04:36,839 --> 00:04:50,120
+So once the receiver and the sender, they share the same key k, then the receiver can use the key k to do the decryption.
+
+38
+00:04:50,120 --> 00:04:59,759
+So the decryption function, we have two inputs, one is the key k, one is the subtext y.
+
+39
+00:04:59,759 --> 00:05:05,639
+So in the decryption, we can get the original plaintext x.
+
+40
+00:05:08,840 --> 00:05:16,280
+So this is the model for symmetry encryption and decryption.
+
+41
+00:05:16,279 --> 00:05:26,199
+The critical part here is you should have the symmetric key k to be obtained by both the sender and receiver.
+
+42
+00:05:26,199 --> 00:05:27,199
+Is that clear?
+
+43
+00:05:31,679 --> 00:05:39,879
+Well, in a symmetric server model, we have two requirements for secure use of conventional encryption.
+
+44
+00:05:39,879 --> 00:05:44,319
+First one is we should have a strong encryption algorithm.
+
+45
+00:05:44,319 --> 00:05:46,480
+So today we use AES.
+
+46
+00:05:49,000 --> 00:05:53,719
+So this one is believed to be very secure, very secure at this moment.
+
+47
+00:05:53,720 --> 00:06:21,000
+Okay, the second requirement is that the sender receiver must have obtained copies of the secret key k.
+
+48
+00:06:23,720 --> 00:06:27,680
+In a secure fashion, must keep the key secure.
+
+49
+00:06:27,680 --> 00:06:37,160
+If the key is not secure, anyone else has a key can do the decryption and will know your plaintext.
+
+50
+00:06:37,160 --> 00:06:43,240
+Okay, so this key k should be your secret, not known by others.
+
+51
+00:06:43,240 --> 00:07:03,319
+Oh, you can see, well, for this symmetry encryption, the key k, we should have some way to make sure the key k will be shared, will be obtained by both the sender and receiver.
+
+52
+00:07:03,319 --> 00:07:04,319
+Right.
+
+53
+00:07:04,319 --> 00:07:11,879
+So how to implement this secure channel for key distribution?
+
+54
+00:07:11,879 --> 00:07:14,199
+This one is a challenge.
+
+55
+00:07:19,639 --> 00:07:26,719
+So it is a challenge to distribute the key k to the receiver and to the sender.
+
+56
+00:07:26,719 --> 00:07:39,399
+Okay, so we'll see later how we can do the key distribution or the key to be obtained by both the sender and the receiver.
+
+57
+00:07:39,399 --> 00:07:45,879
+They can use some way, like to use the asymmetric encryption to attain this purpose.
+
+58
+00:07:47,879 --> 00:08:01,239
+Well, in the channel, for this channel, the channel part or the message will go through like the internet or the public transmission in the air.
+
+59
+00:08:01,239 --> 00:08:08,359
+Right. Today we have like 6G or the message from your smartphone to access point.
+
+60
+00:08:08,360 --> 00:08:24,120
+So between the access point and your smartphone, we regard this is a public channel and anyone can hear your transmitted message and your message can be analyzed by some attacker.
+
+61
+00:08:24,120 --> 00:08:29,560
+So those attackers, we call them to be the crypto analyst.
+
+62
+00:08:29,560 --> 00:08:35,519
+For attacker, they will try to decrypt your message.
+
+63
+00:08:35,519 --> 00:08:41,279
+Okay, so they will get your subtext.
+
+64
+00:08:41,279 --> 00:08:46,960
+However, the attacker has no idea of your private key.
+
+65
+00:08:46,960 --> 00:08:48,519
+So normally no key.
+
+66
+00:08:48,519 --> 00:08:55,600
+That means the attacker cannot get your plain text, cannot do the decryption.
+
+67
+00:08:55,600 --> 00:09:08,680
+That means the attacker will try to guess or attack your message to get the private key, the symmetric key with a key.
+
+68
+00:09:08,680 --> 00:09:15,639
+Then the crypto analyst will be able to generate the original plain text.
+
+69
+00:09:15,639 --> 00:09:16,639
+But this is difficult.
+
+70
+00:09:16,679 --> 00:09:26,159
+Okay, we'll make it to be difficult to be attacked for your subtext.
+
+71
+00:09:26,159 --> 00:09:29,639
+So we look at one example for the symmetry encryption.
+
+72
+00:09:29,639 --> 00:09:33,000
+And this one is called the Caesar cipher.
+
+73
+00:09:33,000 --> 00:09:34,879
+And this one is very famous.
+
+74
+00:09:34,879 --> 00:09:43,319
+It is the simplest and the earliest known use of substitution cipher.
+
+75
+00:09:43,320 --> 00:09:54,120
+And he said that this cipher is created by Julius Caesar to be used in the war against some of his enemies.
+
+76
+00:09:54,120 --> 00:10:05,680
+This cipher involves replacing each letter of the alphabet with a letter standing three places further down the alphabet.
+
+77
+00:10:05,680 --> 00:10:12,920
+And we assume that the alphabet is wrapped around so that the letter following z is a.
+
+78
+00:10:12,919 --> 00:10:16,079
+So wrap around means what?
+
+79
+00:10:16,079 --> 00:10:22,039
+Well, we can regard this one as a mod operation.
+
+80
+00:10:22,039 --> 00:10:27,319
+And totally we have 26 letters, right, characters.
+
+81
+00:10:27,319 --> 00:10:31,959
+So wrap around means we take the mod operation.
+
+82
+00:10:31,959 --> 00:10:39,079
+Suppose we have the original plain text to be meet me after the toga party.
+
+83
+00:10:39,080 --> 00:10:44,759
+Then the subtext will be for every letter with plus three.
+
+84
+00:10:44,759 --> 00:10:47,520
+So we plus three.
+
+85
+00:10:47,520 --> 00:10:51,360
+And after M, we have M.
+
+86
+00:10:51,360 --> 00:10:53,040
+And.
+
+87
+00:10:53,040 --> 00:10:55,600
+Oh, P.
+
+88
+00:10:55,600 --> 00:11:02,680
+So M plus three is P here, but M is P.
+
+89
+00:11:02,679 --> 00:11:12,319
+And similarly, every letter we count three positions further down will get a corresponding letter.
+
+90
+00:11:12,319 --> 00:11:16,359
+So E is H, E is H, T is W.
+
+91
+00:11:16,359 --> 00:11:23,199
+That means we have this lower line to be the subtext.
+
+92
+00:11:23,199 --> 00:11:26,519
+OK, very simple.
+
+93
+00:11:26,519 --> 00:11:31,240
+So, of course, your enemy obtained this sentence.
+
+94
+00:11:31,240 --> 00:11:38,480
+We have no idea about the original meaning of the sentence.
+
+95
+00:11:38,480 --> 00:11:46,120
+However, once we know it is a SIDA cipher to the decryption, it is not difficult.
+
+96
+00:11:46,120 --> 00:11:51,039
+The reason is because we can take the brute force attack.
+
+97
+00:11:51,039 --> 00:12:00,879
+So once we know, well, it is SIDA cipher, and then we can do the brute force attack and we can try different keys.
+
+98
+00:12:00,919 --> 00:12:10,000
+For example, if keys one from this subtext, this is subtext C.
+
+99
+00:12:10,000 --> 00:12:12,720
+That's a text.
+
+100
+00:12:12,720 --> 00:12:19,600
+If keys one, that means original data, the letter, we must one.
+
+101
+00:12:19,600 --> 00:12:22,080
+So from P, we have O, right?
+
+102
+00:12:30,879 --> 00:12:47,360
+From P, we have O, from H, we have G.
+
+103
+00:12:47,360 --> 00:12:52,960
+So this is the first trial for the key equals one.
+
+104
+00:12:52,960 --> 00:12:58,759
+Of course, this one, we have no idea about the original print text.
+
+105
+00:12:58,840 --> 00:13:08,319
+If we continue, the key equals two and key equals three, and then we can get the original print text.
+
+106
+00:13:08,319 --> 00:13:13,840
+Very easy to get the original print text.
+
+107
+00:13:13,840 --> 00:13:21,679
+Well, in this brute force attack, we can see, at most, we try 25 times, right?
+
+108
+00:13:21,679 --> 00:13:25,679
+Because we can list all possible cases.
+
+109
+00:13:25,679 --> 00:13:28,719
+The key can be from one to 25.
+
+110
+00:13:28,719 --> 00:13:32,919
+Totally, we have 26 characters.
+
+111
+00:13:32,919 --> 00:13:42,159
+So not many times can we find the print text in this brute force attack.
+
+112
+00:13:42,159 --> 00:13:49,759
+So in this SIDA cipher algorithm, we can define the transformation as from every letter,
+
+113
+00:13:49,759 --> 00:13:58,960
+we get several texts later, three positions later in the alphabet position.
+
+114
+00:13:58,960 --> 00:14:07,720
+So we can assign each letter a number, just A to be zero, B to be one, C to be two.
+
+115
+00:14:07,720 --> 00:14:13,080
+And this algorithm can be expressed as encryption.
+
+116
+00:14:13,080 --> 00:14:18,840
+The P's original print text, this three is a key.
+
+117
+00:14:18,879 --> 00:14:28,680
+So the encryption is P plus three mod 26.
+
+118
+00:14:28,680 --> 00:14:35,000
+So we get the subtext C here.
+
+119
+00:14:35,000 --> 00:14:39,759
+So of course, a shift, this example is three.
+
+120
+00:14:39,759 --> 00:14:43,800
+A shift can be of any amount.
+
+121
+00:14:43,839 --> 00:14:50,719
+So the general SIDA algorithm is for any key to be K.
+
+122
+00:14:50,719 --> 00:15:00,479
+So we have P plus K mod 26 to get the subtext C.
+
+123
+00:15:00,479 --> 00:15:08,279
+And this key K can take a value in the range from one to 25.
+
+124
+00:15:08,279 --> 00:15:14,839
+The decryption process is the reverse way.
+
+125
+00:15:14,839 --> 00:15:21,199
+The encryption is P plus three, so the decryption is minus three.
+
+126
+00:15:21,199 --> 00:15:29,639
+So this decryption is C minus K with mod 26.
+
+127
+00:15:29,639 --> 00:15:35,799
+Then we can get the original print text.
+
+128
+00:15:35,799 --> 00:15:38,120
+OK, this is quite simple.
+
+129
+00:15:38,120 --> 00:15:43,440
+So here is another example from the movie, The Imitation Game.
+
+130
+00:15:43,440 --> 00:15:50,679
+So this movie is about the story of the father of modern computer science, Alan Turing.
+
+131
+00:15:50,679 --> 00:16:05,519
+So in that movie, Turing gave his friend one subtext, W-I-I-C-S-Y, Mr. M-R.
+
+132
+00:16:05,519 --> 00:16:12,240
+So can I try to get the print text?
+
+133
+00:16:12,240 --> 00:16:27,240
+What's a print text? You can try.
+
+134
+00:16:27,240 --> 00:16:32,600
+What's a print text?
+
+135
+00:16:32,680 --> 00:16:37,680
+So what's the meaning of the first word?
+
+136
+00:16:37,680 --> 00:16:39,639
+C. Good.
+
+137
+00:16:39,639 --> 00:16:43,840
+So actually, you can try all the key K.
+
+138
+00:16:43,840 --> 00:16:46,680
+Well, you have K equals one.
+
+139
+00:16:46,680 --> 00:16:51,759
+So before W, we have U, V, W, right?
+
+140
+00:16:51,759 --> 00:16:58,720
+That's V. I is H. H. Well, this is not a word.
+
+141
+00:16:58,720 --> 00:17:04,839
+If K equals two, we have V. Before we had U, GG.
+
+142
+00:17:04,839 --> 00:17:16,319
+So K equals three, we have T, F, F. K equals four, we have S, E, E.
+
+143
+00:17:16,319 --> 00:17:25,160
+So easily, we find the key K to be four in this example.
+
+144
+00:17:28,720 --> 00:17:44,759
+So another very famous symmetry encryption is the technique called one-time pad.
+
+145
+00:17:44,759 --> 00:17:53,240
+So this one-time pad here, a pad actually contains the code to do the encryption and
+
+146
+00:17:53,240 --> 00:17:57,120
+decryption, this pad.
+
+147
+00:17:57,119 --> 00:18:03,919
+And this one-time pad is an improvement to the Verlamp Cypher and is proposed by an army
+
+148
+00:18:03,919 --> 00:18:12,119
+signal cop officer Joseph.
+
+149
+00:18:12,119 --> 00:18:22,719
+The key in this one-time pad is a random string that is a list as long as the print text.
+
+150
+00:18:22,720 --> 00:18:30,600
+So when you have a very long sentence, you have the same length of key to do the encryption
+
+151
+00:18:30,600 --> 00:18:32,160
+and to do the decryption.
+
+152
+00:18:32,160 --> 00:18:39,880
+Well, because it's a one-time pad and the string is totally random, and we require that
+
+153
+00:18:39,880 --> 00:18:43,759
+the key will not be repeated.
+
+154
+00:18:43,759 --> 00:18:49,400
+So each new message requires a new key.
+
+155
+00:18:50,240 --> 00:18:59,600
+So this one-time pad, this scheme is unbreakable.
+
+156
+00:18:59,600 --> 00:19:06,400
+The reason is because the self-text is a random output.
+
+157
+00:19:06,400 --> 00:19:14,440
+Because your key is totally random, this will make your self-text to be totally random.
+
+158
+00:19:14,480 --> 00:19:20,360
+The self-text contains no information whatsoever about the print text.
+
+159
+00:19:20,360 --> 00:19:27,720
+So this is the reason why we have no way to break the code.
+
+160
+00:19:27,720 --> 00:19:31,840
+So encryption, we use the one-time pad, the key.
+
+161
+00:19:31,840 --> 00:19:36,640
+So decryption, we use the same key.
+
+162
+00:19:36,640 --> 00:19:41,480
+This encryption is similar to the shift cypher.
+
+163
+00:19:41,480 --> 00:19:50,599
+So we look at the general form for this one-time pad and support that Zn is a set to represent
+
+164
+00:19:50,599 --> 00:19:52,880
+the alphabet.
+
+165
+00:19:52,880 --> 00:19:59,799
+So alphabet number from 0 to n must 1, n must 1.
+
+166
+00:19:59,799 --> 00:20:07,640
+And the print text space equals the self-text space, that's a key space.
+
+167
+00:20:07,640 --> 00:20:21,520
+That means, well, we can have, suppose the length of the print text is n, just like here.
+
+168
+00:20:21,520 --> 00:20:26,440
+And the print text, we have n characters.
+
+169
+00:20:26,440 --> 00:20:35,720
+The key, the same length, so key, we have same n keys.
+
+170
+00:20:35,799 --> 00:20:40,839
+The self-text can be the same length.
+
+171
+00:20:40,839 --> 00:20:53,920
+For the encryption, so every character is in this range from 0 to n must 1, n must 1.
+
+172
+00:20:53,920 --> 00:21:10,120
+So this m is the length of the print text.
+
+173
+00:21:10,120 --> 00:21:18,039
+Zn is every character belong to the Zn, that set.
+
+174
+00:21:18,159 --> 00:21:34,920
+For encryption, we can get the self-text yi to be xi plus ki.
+
+175
+00:21:34,920 --> 00:21:40,240
+We take mod m.
+
+176
+00:21:40,440 --> 00:21:52,440
+This is yi, because totally we have m, the number, to be the total number of alphabet.
+
+177
+00:21:52,440 --> 00:22:05,359
+So you can see, this is the encryption process for the given print text and the key.
+
+178
+00:22:05,359 --> 00:22:08,759
+For the decryption, that's a reverse part.
+
+179
+00:22:08,759 --> 00:22:23,759
+So reverse means, well, for every given yi, with minus ki, with mod m, then we can get
+
+180
+00:22:23,759 --> 00:22:30,559
+the print text xi.
+
+181
+00:22:30,559 --> 00:22:45,359
+So here you can see, the y2 minus k2, mod m, we get the original x2.
+
+182
+00:22:45,359 --> 00:22:49,359
+So this one is y2, OK?
+
+183
+00:22:50,159 --> 00:23:03,159
+So now we look at a particular case for the one-time pad.
+
+184
+00:23:03,159 --> 00:23:06,879
+It is a binary version.
+
+185
+00:23:06,879 --> 00:23:17,519
+So binary version means every code should be either 0 or 1, should be a bit with two
+
+186
+00:23:17,680 --> 00:23:24,680
+values, 0 or 1, and the key should be chosen randomly.
+
+187
+00:23:24,680 --> 00:23:36,680
+For example, if the print text is 1101, 1111, suppose we have a key, and this key is here.
+
+188
+00:23:36,680 --> 00:23:45,480
+Well, the key has the same length as the print text, and then we do the add operation, right?
+
+189
+00:23:45,480 --> 00:23:55,079
+We add them together, and well, m here is 2, because we have only two values for every
+
+190
+00:23:55,079 --> 00:23:58,680
+letter, for every character.
+
+191
+00:23:58,680 --> 00:24:08,240
+So we add them together, then we take the mod 2 operation, and we look at the subtext
+
+192
+00:24:08,240 --> 00:24:13,799
+should be 1 plus 0 is 1, 1 plus 1 is 2.
+
+193
+00:24:13,799 --> 00:24:19,359
+So 2 mod 2 is 0, right?
+
+194
+00:24:19,359 --> 00:24:26,759
+And then we have 1, 1, this is 0, 0, 1, 0.
+
+195
+00:24:26,759 --> 00:24:31,759
+OK, this is a subtext.
+
+196
+00:24:31,759 --> 00:24:47,160
+So from a subtext, how can we get the print text?
+
+197
+00:24:47,160 --> 00:24:55,599
+Here is plus, according to our previous slide operation, which was minus, right?
+
+198
+00:24:55,599 --> 00:24:57,839
+Minus here.
+
+199
+00:24:58,720 --> 00:25:14,359
+Then we use the same key k, 0, 1, 1, 0, 1, 0, 0, 1, with minus the key k, and then we
+
+200
+00:25:14,359 --> 00:25:21,879
+have the same mod 2 operation, mod 2.
+
+201
+00:25:21,920 --> 00:25:37,800
+OK, well, 1 minus 0 is 1, 0 minus 1 is 1, mod 2 is 1, 0 minus 1 is 1, 1 minus 2 is 1.
+
+202
+00:25:37,800 --> 00:25:50,000
+So 1, 1 is 0, 1 minus 0 is 1, 0 minus 1 is 1, 1 minus 0 is 1, oh sorry, this is 0 minus
+
+203
+00:25:50,000 --> 00:25:55,400
+0 is 0, 1 minus 0 is 1, 0 minus 1 is 1.
+
+204
+00:25:55,400 --> 00:26:02,319
+So this is exactly the original print text.
+
+205
+00:26:06,319 --> 00:26:13,839
+For bit operation, in fact, we have different functions available.
+
+206
+00:26:13,839 --> 00:26:24,359
+So for bit, we can do AND operation, this is AND, like 0 is 0, 0 and 1 is 0, 1, 0 is
+
+207
+00:26:24,359 --> 00:26:33,839
+0, 1, 1 is 1, and we have the bit operation to be OR, OR means either one is 1, then the
+
+208
+00:26:33,839 --> 00:26:36,039
+result will be 1.
+
+209
+00:26:36,039 --> 00:26:39,439
+And also we have the addition mod 2.
+
+210
+00:26:39,440 --> 00:26:46,080
+So this is also known as bit, exclusive OR operation.
+
+211
+00:26:46,080 --> 00:26:57,920
+Exclusive OR means the same will be 0, the different inputs will have the result to be 1.
+
+212
+00:26:57,920 --> 00:27:11,880
+And this is addition, just like previously, or subtraction mod 2, addition mod 2 is same
+
+213
+00:27:11,880 --> 00:27:15,600
+as exclusive OR operation.
+
+214
+00:27:15,600 --> 00:27:22,960
+So previously you can see we have addition mod 2, addition mod 2, and this subtraction
+
+215
+00:27:23,000 --> 00:27:31,200
+mod 2 is same as addition mod 2.
+
+216
+00:27:31,200 --> 00:27:38,720
+Now we have this question, can we use operators other than bit XOR for binary version of one-time
+
+217
+00:27:38,720 --> 00:27:39,720
+pad?
+
+218
+00:27:39,720 --> 00:27:51,240
+In other words, can we use the AND operation here for these two bit strings?
+
+219
+00:27:51,240 --> 00:27:56,480
+Yes or no?
+
+220
+00:27:56,480 --> 00:28:01,079
+So here, previously we used addition mod 2, right?
+
+221
+00:28:01,079 --> 00:28:06,440
+Addition mod 2 means exclusive OR, so how about can we use AND?
+
+222
+00:28:06,440 --> 00:28:07,440
+Yes or no?
+
+223
+00:28:07,440 --> 00:28:12,839
+Can we use AND to do the encryption?
+
+224
+00:28:12,839 --> 00:28:14,720
+No?
+
+225
+00:28:14,720 --> 00:28:16,559
+So we can try, right?
+
+226
+00:28:16,559 --> 00:28:25,920
+Just like the first four bits, 1, 1, 0, 1, 0, 1, 1, 0, we'll do AND operation.
+
+227
+00:28:25,920 --> 00:28:31,440
+If we have AND, that means both of them to be 1, the result is 1, otherwise the result
+
+228
+00:28:31,440 --> 00:28:32,440
+is 0.
+
+229
+00:28:32,440 --> 00:28:37,360
+So this 0, 1, 0, 0.
+
+230
+00:28:37,359 --> 00:28:49,199
+And for this one actually, even we have the key K, the key, this is the key, we will use
+
+231
+00:28:49,199 --> 00:29:02,559
+same key to be 0, 1, 1, 0, and how can we get back the original message?
+
+232
+00:29:02,559 --> 00:29:12,200
+If we take the AND operation again, this will get 0, 1, 0, 0.
+
+233
+00:29:12,200 --> 00:29:18,220
+So this one does not equal to the P, right?
+
+234
+00:29:18,220 --> 00:29:30,519
+So that means AND cannot be adopted in this kind of encryption and decryption.
+
+235
+00:29:30,519 --> 00:29:36,200
+And to the OR operation, so the answer here is no.
+
+236
+00:29:36,200 --> 00:29:45,759
+What we can do is we use the addition mod 2, just like the bit XOR in this encryption
+
+237
+00:29:45,759 --> 00:29:46,759
+and decryption.
+
+238
+00:29:46,759 --> 00:29:47,759
+That would be fine.
+
+239
+00:29:47,759 --> 00:29:55,639
+Otherwise, the answer would be no.
+
+240
+00:29:55,640 --> 00:30:07,200
+So one time part, why do we say it is perfect, it is the perfect solution?
+
+241
+00:30:07,200 --> 00:30:09,840
+So this one is perfect security.
+
+242
+00:30:09,840 --> 00:30:15,860
+The reason is because the key is totally random.
+
+243
+00:30:15,860 --> 00:30:18,320
+So we look at this example.
+
+244
+00:30:18,319 --> 00:30:25,319
+This is the subtext here.
+
+245
+00:30:25,319 --> 00:30:36,500
+We can have the exhaustive search of all possible keys, and it is possible that we can get many
+
+246
+00:30:36,500 --> 00:30:40,240
+legible plaintext.
+
+247
+00:30:40,240 --> 00:30:46,379
+So we have no way to know which one was intended plaintext.
+
+248
+00:30:46,380 --> 00:30:50,140
+So one example is we have this subtext.
+
+249
+00:30:50,140 --> 00:30:55,500
+And we'll suppose we have the key K, K1 to be here.
+
+250
+00:30:55,500 --> 00:31:02,460
+Your key K can be any characters, one time part, right?
+
+251
+00:31:02,460 --> 00:31:07,180
+The key will not be repeated, and you don't know what the key K is.
+
+252
+00:31:07,180 --> 00:31:12,860
+So the key K1 is here, then we have the plaintext to be this sentence.
+
+253
+00:31:12,859 --> 00:31:17,099
+The sentence has some meaning.
+
+254
+00:31:17,099 --> 00:31:27,059
+If we use another key K2, then we will get another plaintext P2.
+
+255
+00:31:27,059 --> 00:31:41,219
+So either P1, P2 actually, they contain some meaning.
+
+256
+00:31:41,220 --> 00:31:47,460
+So in this way, you can see, in fact, because the key can be totally random, and thus we
+
+257
+00:31:47,460 --> 00:31:55,299
+cannot know what's the original plaintext, unless you have the key K.
+
+258
+00:31:55,299 --> 00:32:03,019
+If you have the key K, then you will know what's the original plaintext.
+
+259
+00:32:04,019 --> 00:32:12,420
+However, one time part, we say it is a perfect solution.
+
+260
+00:32:12,420 --> 00:32:25,859
+However, in practice, when we apply this technique, it has two fundamental difficulties.
+
+261
+00:32:25,859 --> 00:32:31,059
+So there is a practical problem of making large quantities of random key.
+
+262
+00:32:31,099 --> 00:32:39,859
+This is the first difficulty, because if your original message is very long, you need to
+
+263
+00:32:39,859 --> 00:32:43,259
+generate the same length of the key.
+
+264
+00:32:43,259 --> 00:32:52,980
+So that means your key will be very long, and it can be millions of random characters
+
+265
+00:32:52,980 --> 00:32:55,419
+on a regular basis.
+
+266
+00:32:55,419 --> 00:32:57,460
+So this is difficult.
+
+267
+00:32:57,460 --> 00:33:04,539
+The first difficulty is to generate large quantities of random keys.
+
+268
+00:33:04,539 --> 00:33:14,059
+The second difficulty is, once you have the key, how can you send the key to the receiver?
+
+269
+00:33:14,059 --> 00:33:21,900
+So we call this one the key distribution problem.
+
+270
+00:33:21,900 --> 00:33:24,460
+You have the key, that's fine.
+
+271
+00:33:24,460 --> 00:33:33,019
+How can you let your receiver to have the same key as you?
+
+272
+00:33:33,019 --> 00:33:38,819
+So because of these difficulties, the one time part is of limited utility.
+
+273
+00:33:38,819 --> 00:33:47,740
+So to use primer relief for low bandwidth channels, that requires very high security.
+
+274
+00:33:47,740 --> 00:33:57,019
+So this key distribution problem is, you see, you will send the key to your receiver.
+
+275
+00:33:57,019 --> 00:34:06,660
+However, before the sending, you should send the key K to the receiver.
+
+276
+00:34:06,660 --> 00:34:13,139
+The key K has the same length as your plaintext.
+
+277
+00:34:13,139 --> 00:34:28,500
+If you can send the key K, why not directly send the plaintext P, right?
+
+278
+00:34:28,500 --> 00:34:32,619
+So we talked about the one time part.
+
+279
+00:34:32,619 --> 00:34:39,900
+The purpose is to let you know this one time part solution is the only crypto system that
+
+280
+00:34:39,900 --> 00:34:44,059
+exhibits perfect secrecy.
+
+281
+00:34:44,059 --> 00:34:53,260
+The only solution, that's AES, the submission encryption, the public key scheme, or those
+
+282
+00:34:53,260 --> 00:35:06,700
+or other cryptography, those schemes are not perfect, cannot provide perfect security.
+
+283
+00:35:06,699 --> 00:35:11,699
+So this is the only one that can show the perfect secrecy.
+
+284
+00:35:17,699 --> 00:35:19,699
+Okay, any questions?
+
+285
+00:35:19,699 --> 00:35:24,699
+So part one is about the submission encryption.
+
+286
+00:35:24,699 --> 00:35:27,699
+Well, not difficult, right?
+
+287
+00:35:27,699 --> 00:35:35,500
+And now we go to the part two about the RSA algorithm.
+
+288
+00:35:35,500 --> 00:35:47,539
+So RSA algorithm was invented by these three guys, Rivest, Shamir, and Edelman, so developed
+
+289
+00:35:47,539 --> 00:35:50,699
+in 1977.
+
+290
+00:35:50,699 --> 00:35:59,139
+So this RSA algorithm is the most widely used general purpose approach to the public key
+
+291
+00:35:59,139 --> 00:36:01,820
+encryption.
+
+292
+00:36:01,820 --> 00:36:13,539
+So in this algorithm, we will assume that the cipher, so this is the cipher in which
+
+293
+00:36:13,539 --> 00:36:25,019
+the plaintext and the ciphertext are integers between 0 and M-1 for some n.
+
+294
+00:36:25,219 --> 00:36:35,340
+A table size for n is 1024 bits or 309 decimal digits.
+
+295
+00:36:35,340 --> 00:36:50,219
+So we'll assume that while you encrypt your original message, M should be, well, the M,
+
+296
+00:36:50,219 --> 00:37:02,819
+the length is the same as the, well, almost to be this same size as n.
+
+297
+00:37:02,819 --> 00:37:05,219
+So n is 1024 bits.
+
+298
+00:37:05,219 --> 00:37:17,139
+So n, the size also is, yeah, should be almost 1024 bits.
+
+299
+00:37:17,139 --> 00:37:18,559
+This is the plaintext.
+
+300
+00:37:18,559 --> 00:37:22,360
+The plaintext should be smaller than your chosen n.
+
+301
+00:37:27,360 --> 00:37:36,119
+We look at how we can get the RSA algorithm from our studied Euler's theorem.
+
+302
+00:37:36,119 --> 00:37:43,199
+So Euler's theorem tells you that for every n and n, that are relative prime.
+
+303
+00:37:43,199 --> 00:37:57,699
+So relative prime is the gcd, n, n is 1, the relative prime.
+
+304
+00:37:57,699 --> 00:38:06,899
+Then we have this function, a to the phi n is congruent to 1 mod n.
+
+305
+00:38:06,900 --> 00:38:26,400
+So phi means the number of data that are relative prime to n.
+
+306
+00:38:26,400 --> 00:38:34,400
+The total number of those data to be relative prime to n.
+
+307
+00:38:34,400 --> 00:38:40,900
+And those data should be in the range from 1 to a mass 1.
+
+308
+00:38:40,900 --> 00:38:52,500
+Well, if both sides with times a, we have the a to the phi n plus 1 is congruent to
+
+309
+00:38:52,500 --> 00:38:55,260
+a mod n.
+
+310
+00:38:55,260 --> 00:39:08,260
+Of course, we know a general form is, from this one we have a phi n to the k's.
+
+311
+00:39:08,260 --> 00:39:11,960
+This is congruent to 1 to the k.
+
+312
+00:39:11,960 --> 00:39:18,260
+This is congruent to 1 mod n, right?
+
+313
+00:39:19,260 --> 00:39:32,260
+Well, for this one, so this one actually equals a to the k times phi n is congruent to 1 mod
+
+314
+00:39:32,260 --> 00:39:33,260
+n.
+
+315
+00:39:34,260 --> 00:39:48,260
+Both sides with times a, we have a to the k times phi n plus 1 is congruent to a mod
+
+316
+00:39:48,260 --> 00:39:53,760
+n.
+
+317
+00:39:53,760 --> 00:39:59,260
+So from a to a, that means a is the plaintext.
+
+318
+00:40:00,260 --> 00:40:09,260
+So that means somehow from a, we can get a subtext c.
+
+319
+00:40:09,260 --> 00:40:17,260
+From c, after some operation, we get back to the original plaintext a again.
+
+320
+00:40:18,260 --> 00:40:31,260
+In the RSA algorithm, we assume that, how about we use some t as the public key and
+
+321
+00:40:31,260 --> 00:40:35,260
+private key to do the encryption-decryption.
+
+322
+00:40:35,260 --> 00:40:47,260
+So suppose a, we apply the public key, then we get it's congruent to the subtext c when
+
+323
+00:40:47,260 --> 00:40:50,260
+it takes mod n operation.
+
+324
+00:40:50,260 --> 00:40:52,260
+This is fine, right?
+
+325
+00:40:52,260 --> 00:41:01,260
+a with some exponential operation, mod n we get a subtext c.
+
+326
+00:41:01,260 --> 00:41:11,260
+So c, after some exponential operation, c to the d, we require to get the original plaintext
+
+327
+00:41:11,260 --> 00:41:16,260
+a mod n.
+
+328
+00:41:21,260 --> 00:41:27,260
+The left-hand side is encryption, the right-hand side is decryption.
+
+329
+00:41:27,260 --> 00:41:36,260
+Okay, we substitute this ae to c.
+
+330
+00:41:36,260 --> 00:41:46,260
+So that means we have a to the e to the d is congruent to a mod n.
+
+331
+00:41:46,260 --> 00:42:00,260
+Then we have a to the e to the d is congruent to a mod n.
+
+332
+00:42:00,260 --> 00:42:09,260
+Okay, if we compare these two, right?
+
+333
+00:42:09,260 --> 00:42:23,260
+So these two implies, how about we let e times d equals k times phi n plus 1.
+
+334
+00:42:23,260 --> 00:42:30,260
+Then we can attain this purpose.
+
+335
+00:42:30,260 --> 00:42:38,260
+So we find one e such that ed equals k times phi n plus 1.
+
+336
+00:42:38,260 --> 00:42:44,260
+Then we use a to the e mod n, we get a subtext c.
+
+337
+00:42:44,260 --> 00:43:00,260
+So using d, c to the d mod n, we get back to the original message a again, right?
+
+338
+00:43:00,260 --> 00:43:09,260
+Okay, ed equals k times phi n, k can be an integer.
+
+339
+00:43:09,260 --> 00:43:21,260
+In this mod operation, in fact, in this mod operation, that means e times d is congruent to 1.
+
+340
+00:43:21,260 --> 00:43:28,260
+We have mod phi n operation.
+
+341
+00:43:28,260 --> 00:43:43,260
+And this d is called module inverse of e mod phi n, right?
+
+342
+00:43:43,260 --> 00:43:50,260
+e times d is congruent to 1, so d is a module inverse,
+
+343
+00:43:50,260 --> 00:43:56,260
+a multiplicative module inverse of e mod phi n.
+
+344
+00:43:56,260 --> 00:44:04,260
+So last time we studied the module inverse, we studied the Euler's theorem, right?
+
+345
+00:44:04,260 --> 00:44:14,260
+And we study how to calculate the phi n given an n, given an integer n.
+
+346
+00:44:14,260 --> 00:44:27,260
+In the RSA algorithm, normally we will choose n to be the product of two very large prime numbers, p and q.
+
+347
+00:44:27,260 --> 00:44:33,260
+So n will be a product of two primes.
+
+348
+00:44:33,260 --> 00:44:46,260
+So n equals p times q, this implies the phi n equals p must 1 times q must 1.
+
+349
+00:44:46,260 --> 00:44:54,260
+So you can choose very large two prime number p and q, then you will get the phi n.
+
+350
+00:44:54,260 --> 00:45:01,260
+So the next step you can choose an e.
+
+351
+00:45:01,260 --> 00:45:04,260
+So this e should be a prime number.
+
+352
+00:45:04,260 --> 00:45:14,260
+For example, t is 61.
+
+353
+00:45:34,260 --> 00:45:44,260
+Anyway, in our test, normally we choose the e to be a prime number, just like 17.
+
+354
+00:45:44,260 --> 00:45:55,260
+So because it is a prime number, we'll make sure the GCD e and phi n is 1.
+
+355
+00:45:55,260 --> 00:46:08,260
+If these two are relative prime to each other, their GCD value is 1, then we can get the module inverse.
+
+356
+00:46:08,260 --> 00:46:28,260
+We get this d is module inverse of e mod phi n.
+
+357
+00:46:28,260 --> 00:46:35,260
+So we get the private key kd here.
+
+358
+00:46:35,260 --> 00:46:48,260
+So this is the process in the RSA algorithm, how you can get the public key, the private key.
+
+359
+00:46:48,260 --> 00:46:52,260
+So you will generate your public key and private key.
+
+360
+00:46:52,260 --> 00:46:59,260
+The first step is you choose two very large prime numbers, p and q.
+
+361
+00:46:59,260 --> 00:47:09,260
+You know those p and q, then you can calculate the phi n value, phi equals p must 1 times q must 1.
+
+362
+00:47:09,260 --> 00:47:14,260
+Then you can choose the public key e.
+
+363
+00:47:14,260 --> 00:47:30,260
+e is a public key.
+
+364
+00:47:30,260 --> 00:47:41,260
+And then because this e normally will be a prime number, of course you will guarantee e and phi n will be relative prime.
+
+365
+00:47:41,260 --> 00:47:46,260
+So you will be able to calculate the module inverse of e mod phi n.
+
+366
+00:47:46,260 --> 00:47:50,260
+How to calculate this one?
+
+367
+00:47:50,260 --> 00:47:57,260
+You can use the extended Euclidean algorithm.
+
+368
+00:47:57,260 --> 00:48:11,260
+So we taught last time how we can use the extended Euclidean algorithm based on the phi n and e to derive the multiplicative inverse of e.
+
+369
+00:48:11,260 --> 00:48:17,260
+So this module inverse of e mod phi n, that's d.
+
+370
+00:48:17,260 --> 00:48:26,260
+So d is a private key.
+
+371
+00:48:26,260 --> 00:48:41,260
+So once you select this e and d, you will guarantee that, well, a to the e, a to the e, you will get the subtext.
+
+372
+00:48:41,260 --> 00:48:48,260
+So this is called encryption.
+
+373
+00:48:48,260 --> 00:49:02,260
+Everyone can know your public key e, so everyone else can use your public key to do that encryption and get the subtext c.
+
+374
+00:49:02,260 --> 00:49:10,260
+This c will be sent to you because only you have the private key.
+
+375
+00:49:10,260 --> 00:49:19,260
+You can use a private key to do the decryption.
+
+376
+00:49:19,260 --> 00:49:24,260
+Only you have the d value.
+
+377
+00:49:24,260 --> 00:49:31,260
+So that means anyone else cannot do the decryption except you.
+
+378
+00:49:31,260 --> 00:49:44,260
+So from the subtext d or from subtext c, you can apply your private key d and then you will get the original message a from the sender.
+
+379
+00:49:44,260 --> 00:49:54,260
+You are the receiver.
+
+380
+00:49:54,260 --> 00:50:01,260
+So this RSA algorithm, well, you can see some properties about this one.
+
+381
+00:50:01,260 --> 00:50:06,260
+So RSA makes use of an expression with its polynomials.
+
+382
+00:50:07,260 --> 00:50:16,260
+From m, here is the original message m, m to the e mod n, we get the subtext c.
+
+383
+00:50:16,260 --> 00:50:25,260
+From subtext c to the d mod n, we get back the original message m.
+
+384
+00:50:25,260 --> 00:50:31,260
+In this algorithm, the plaintext is encrypted in blocks.
+
+385
+00:50:31,260 --> 00:50:38,260
+And each block having a binary value less than some number n.
+
+386
+00:50:38,260 --> 00:50:45,260
+Suppose we will choose the n to be very large to be 124 bits, right?
+
+387
+00:50:45,260 --> 00:50:54,260
+So you will guarantee that each block with a size should be equal or smaller than 124 bits.
+
+388
+00:50:54,260 --> 00:51:00,260
+An encryption and decryption of the following form for some plaintext block m.
+
+389
+00:51:00,260 --> 00:51:04,260
+So m is smaller than n.
+
+390
+00:51:04,260 --> 00:51:17,260
+So this e and d will guarantee that e times d equals k times phi n plus 1.
+
+391
+00:51:17,260 --> 00:51:24,260
+We choose e, d to satisfy this requirement.
+
+392
+00:51:24,260 --> 00:51:41,260
+Because we guarantee that this m, e, d, then this m, e, d equals m to the k times phi n plus 1.
+
+393
+00:51:41,260 --> 00:51:48,260
+We take the mod n operation.
+
+394
+00:51:48,260 --> 00:51:59,260
+m with some e operation, then with d operation, then we get back its original message m.
+
+395
+00:51:59,260 --> 00:52:09,260
+So while this one is correct, you can refer to the previous slide.
+
+396
+00:52:09,260 --> 00:52:26,260
+Now this one, this equation is correct because we have the orders theorem.
+
+397
+00:52:26,260 --> 00:52:32,260
+That you can see here, a to the k times phi n plus 1 is coming to a mod n.
+
+398
+00:52:32,260 --> 00:52:42,260
+So this one is correct. We can derive it from the orders theorem.
+
+399
+00:52:42,260 --> 00:52:49,260
+Well, in the RSA algorithm, the e n will be the public key.
+
+400
+00:52:49,260 --> 00:52:58,260
+The private key actually is the d, the small letter d.
+
+401
+00:52:58,260 --> 00:53:05,260
+So you can see, suppose Alice is a receiver.
+
+402
+00:53:05,260 --> 00:53:10,260
+So Alice first will generate the pair of keys.
+
+403
+00:53:10,260 --> 00:53:13,260
+The generation process is here.
+
+404
+00:53:13,260 --> 00:53:19,260
+First, Alice will select the two very large prime numbers, p and q.
+
+405
+00:53:19,260 --> 00:53:24,260
+They're not equal to the calculation of n product.
+
+406
+00:53:24,260 --> 00:53:27,260
+Then we have the phi n value.
+
+407
+00:53:27,260 --> 00:53:33,260
+So Alice will choose the integer e, make sure gcd phi n e will be 1.
+
+408
+00:53:33,260 --> 00:53:40,260
+And in this way, we can generate the module inverse of e, mod phi n.
+
+409
+00:53:40,260 --> 00:53:46,260
+So public key is e n, private key is d and n.
+
+410
+00:53:46,260 --> 00:53:51,260
+In the encryption, so encryption by Bob.
+
+411
+00:53:51,260 --> 00:53:55,260
+Bob is the sender.
+
+412
+00:53:55,260 --> 00:54:00,260
+Bob will use Alice's public key to do the encryption.
+
+413
+00:54:00,260 --> 00:54:05,260
+So subtext c equals m to the e mod n.
+
+414
+00:54:05,260 --> 00:54:11,260
+And then Alice is the receiver.
+
+415
+00:54:11,260 --> 00:54:16,260
+Alice will use her private key to do the decryption.
+
+416
+00:54:16,260 --> 00:54:22,260
+So only Alice knows the private key d.
+
+417
+00:54:22,260 --> 00:54:40,260
+So she will apply c to the d mod n to get back the original plaintext message m sent from Bob.
+
+418
+00:54:40,260 --> 00:54:42,260
+Here is one example.
+
+419
+00:54:42,260 --> 00:54:47,260
+Suppose the plaintext is 88.
+
+420
+00:54:47,260 --> 00:54:52,260
+In this example, we assume we have the public key to be 7.
+
+421
+00:54:52,260 --> 00:55:00,260
+And this is n value and this is e public key to be 7.
+
+422
+00:55:00,260 --> 00:55:05,260
+And private key d will be 23.
+
+423
+00:55:05,260 --> 00:55:18,260
+In the encryption, you can see original message m, this is m to the e mod n equals subtext c.
+
+424
+00:55:18,260 --> 00:55:25,260
+c is 11 will be sent in the channel, in the internet.
+
+425
+00:55:25,260 --> 00:55:30,260
+And receiver will obtain this subtext c.
+
+426
+00:55:30,260 --> 00:55:49,260
+Receiver will use his private key d, c to the d mod n to get back original message m to be 88.
+
+427
+00:55:49,260 --> 00:55:57,260
+So this is RSA algorithm. Is that clear?
+
+428
+00:55:57,260 --> 00:56:13,260
+Any question, difficulty here?
+
+429
+00:56:13,260 --> 00:56:18,260
+Well, it seems to be okay to you.
+
+430
+00:56:18,260 --> 00:56:22,260
+So then let's try to solve this question.
+
+431
+00:56:22,260 --> 00:56:32,260
+The question asks you to use the extended Euclidean algorithm to calculate the private key from the public key in the previous slide.
+
+432
+00:56:32,260 --> 00:56:46,260
+So in previous slide we have
+
+433
+00:56:46,260 --> 00:56:58,260
+the public key to be 7 and 87.
+
+434
+00:56:58,260 --> 00:57:06,260
+So this is e, this is m, the private key is d.
+
+435
+00:57:06,260 --> 00:57:13,260
+So d equals 23.
+
+436
+00:57:13,260 --> 00:57:19,260
+You can use the extended Euclidean algorithm to get the private key d.
+
+437
+00:57:19,260 --> 00:57:23,260
+How can you get it?
+
+438
+00:57:23,260 --> 00:57:27,260
+You can follow this slide.
+
+439
+00:57:27,260 --> 00:57:31,260
+d is the module inverse of e.
+
+440
+00:57:31,260 --> 00:57:38,260
+So to get the module inverse, you should use the extended Euclidean algorithm.
+
+441
+00:57:38,260 --> 00:57:41,260
+Okay, can I try?
+
+442
+00:57:41,260 --> 00:57:44,260
+I give you five minutes to try it.
+
+443
+01:01:39,260 --> 01:01:43,260
+Some of you have finished the process.
+
+444
+01:01:43,260 --> 01:01:48,260
+So let's see how we can derive the private key.
+
+445
+01:01:48,260 --> 01:01:55,260
+To get the private key, first we need to get from n to phi n.
+
+446
+01:01:55,260 --> 01:01:59,260
+So this n equals 187.
+
+447
+01:01:59,260 --> 01:02:05,260
+You should factor this number to be two primes, the product.
+
+448
+01:02:05,260 --> 01:02:10,260
+And this one actually equals 11 times 17.
+
+449
+01:02:10,260 --> 01:02:16,260
+This implies the phi n equals 10 times 16.
+
+450
+01:02:16,260 --> 01:02:19,260
+And this is 160.
+
+451
+01:02:19,260 --> 01:02:22,260
+Okay, fine.
+
+452
+01:02:22,260 --> 01:02:27,260
+Then you have the e and gcd.
+
+453
+01:02:27,260 --> 01:02:32,260
+You will guarantee that e and phi n to be one.
+
+454
+01:02:32,260 --> 01:02:38,260
+To get the gcd value, you can follow the Euclidean algorithm.
+
+455
+01:02:38,260 --> 01:02:43,260
+In the traceback, you will get the extended Euclidean algorithm.
+
+456
+01:02:43,260 --> 01:02:47,260
+Then you will get the private key d.
+
+457
+01:02:47,260 --> 01:03:01,260
+So this process is from 160 equals 7 times 22 plus 6.
+
+458
+01:03:01,260 --> 01:03:05,260
+So then 7 equals 6 plus 1.
+
+459
+01:03:05,260 --> 01:03:11,260
+And this one is the gcd value.
+
+460
+01:03:11,260 --> 01:03:17,260
+When we trace back, 1 equals 7 minus 6.
+
+461
+01:03:17,260 --> 01:03:22,260
+And this 6 can be represented as...
+
+462
+01:03:28,260 --> 01:03:37,260
+7 minus 6. 6 can be represented as 160 minus 7 times 22.
+
+463
+01:03:37,260 --> 01:03:44,260
+So this is 23 times 7 minus 160.
+
+464
+01:03:49,260 --> 01:03:52,260
+Okay, well, this is one.
+
+465
+01:03:52,260 --> 01:03:58,260
+Of course, you can see this is phi n.
+
+466
+01:03:58,260 --> 01:04:04,260
+And this is a private key e.
+
+467
+01:04:04,260 --> 01:04:07,260
+And this one is d.
+
+468
+01:04:12,260 --> 01:04:17,260
+So we have the private key d to be 23 in this example.
+
+469
+01:04:29,260 --> 01:04:35,260
+Okay, now we look at the general form.
+
+470
+01:04:35,260 --> 01:04:39,260
+Suppose we have a sentence from the center side.
+
+471
+01:04:39,260 --> 01:04:41,260
+Like, how are you?
+
+472
+01:04:41,260 --> 01:04:46,260
+And each character, we can decode a character.
+
+473
+01:04:46,260 --> 01:04:50,260
+h to be some data, 33.
+
+474
+01:04:50,260 --> 01:04:53,260
+o to be 1, 4.
+
+475
+01:04:53,260 --> 01:04:55,260
+w to be 22.
+
+476
+01:04:55,260 --> 01:04:58,260
+space to be 62, so on and so forth, right?
+
+477
+01:04:58,260 --> 01:05:02,260
+So one sentence can be represented by some data.
+
+478
+01:05:02,260 --> 01:05:07,260
+And well, in this encoding-decoding,
+
+479
+01:05:07,260 --> 01:05:17,260
+each block will contain 3, should contain 4 digits.
+
+480
+01:05:17,260 --> 01:05:19,260
+So every block.
+
+481
+01:05:19,260 --> 01:05:24,260
+We assume that block 1 contains 33, 1, 4, 4 digits.
+
+482
+01:05:24,260 --> 01:05:30,260
+And block 2 contains 22, 62, right, 4 digits.
+
+483
+01:05:30,260 --> 01:05:35,260
+Well, after this encoding, from character to some data,
+
+484
+01:05:35,260 --> 01:05:37,260
+then we do transmission.
+
+485
+01:05:37,260 --> 01:05:41,260
+So in the transmission, the receiver and sender,
+
+486
+01:05:41,260 --> 01:05:48,260
+suppose this sender, sender will first obtain the receiver's
+
+487
+01:05:48,260 --> 01:05:50,260
+the public key.
+
+488
+01:05:50,260 --> 01:05:54,260
+So this is the receiver.
+
+489
+01:05:54,260 --> 01:06:04,260
+Receiver set will first generate the public key.
+
+490
+01:06:04,260 --> 01:06:08,260
+Receiver will generate the public key and the private key.
+
+491
+01:06:08,260 --> 01:06:15,260
+Suppose receiver will use the 2 prime numbers to be p, 73,
+
+492
+01:06:15,260 --> 01:06:20,260
+and q to be 151, and e to be 11.
+
+493
+01:06:20,260 --> 01:06:26,260
+Then this is the n value, and this one is phi n.
+
+494
+01:06:26,260 --> 01:06:32,260
+According to the module inverse calculation,
+
+495
+01:06:32,260 --> 01:06:37,260
+and this one is value d.
+
+496
+01:06:37,260 --> 01:06:43,260
+e equals module inverse of e mod phi n.
+
+497
+01:06:43,260 --> 01:06:51,260
+So receiver will generate the private key d to be 5891.
+
+498
+01:06:51,260 --> 01:06:55,260
+And public key is e and n.
+
+499
+01:06:55,260 --> 01:06:57,260
+This is a public key.
+
+500
+01:06:57,260 --> 01:07:01,260
+And public key can be obtained by the sender.
+
+501
+01:07:01,260 --> 01:07:07,260
+And sender will apply the public key for each block.
+
+502
+01:07:07,260 --> 01:07:14,260
+First of all, p1, 3314 to the e mod n.
+
+503
+01:07:14,260 --> 01:07:18,260
+That's a c1, self-text c1.
+
+504
+01:07:18,260 --> 01:07:21,260
+So first we have c2, c3.
+
+505
+01:07:21,260 --> 01:07:26,260
+So this c1, c2 will be obtained by receiver.
+
+506
+01:07:26,260 --> 01:07:35,260
+And c1, for c1, the receiver can apply his private key d
+
+507
+01:07:35,260 --> 01:07:37,260
+to do the decryption.
+
+508
+01:07:37,260 --> 01:07:42,260
+So c1 to the d value mod n.
+
+509
+01:07:42,260 --> 01:07:47,260
+Then the receiver can get p1, 3314.
+
+510
+01:07:47,260 --> 01:07:52,260
+And 3314 represents h0.
+
+511
+01:07:52,260 --> 01:07:58,260
+So this is an encryption and decryption process
+
+512
+01:07:58,260 --> 01:08:03,260
+for a sequence of characters for a long sentence.
+
+513
+01:08:03,260 --> 01:08:07,260
+Divide sentence into blocks to make sure every block
+
+514
+01:08:07,260 --> 01:08:11,260
+is smaller than the given value n.
+
+515
+01:08:13,260 --> 01:08:18,260
+So before transmission, the receiver should generate
+
+516
+01:08:18,260 --> 01:08:21,260
+its public key and private key.
+
+517
+01:08:21,260 --> 01:08:24,260
+The public key will be long by sender.
+
+518
+01:08:24,260 --> 01:08:28,260
+Sender can use receiver's public key to do the encryption.
+
+519
+01:08:28,260 --> 01:08:33,260
+Receiver can use his private key to do the decryption.
+
+520
+01:08:39,260 --> 01:08:41,260
+Let's look at another example.
+
+521
+01:08:41,260 --> 01:08:46,260
+So assume that, well, in this case,
+
+522
+01:08:46,260 --> 01:08:52,260
+we have p, q to be 7 and 17, respectively.
+
+523
+01:08:53,260 --> 01:08:56,260
+So n equals p times q.
+
+524
+01:08:56,260 --> 01:09:02,260
+And phi equals p1, p must 1 times q must 1.
+
+525
+01:09:02,260 --> 01:09:07,260
+And assume that we choose the e to be 5.
+
+526
+01:09:07,260 --> 01:09:15,260
+And assume that we want to encrypt the message m equals 8.
+
+527
+01:09:15,260 --> 01:09:21,260
+So the first step is we should generate the private key d
+
+528
+01:09:22,260 --> 01:09:26,260
+and then use the private key d.
+
+529
+01:09:26,260 --> 01:09:36,260
+We can get the subtext c equals m to the e mod n.
+
+530
+01:09:36,260 --> 01:09:41,260
+So the second step is to calculate the subtext c.
+
+531
+01:09:41,260 --> 01:09:50,260
+From c, we can derive the m equals c to the d mod n.
+
+532
+01:09:52,260 --> 01:09:57,260
+So let's have a break of 10 minutes.
+
+533
+01:09:57,260 --> 01:10:00,260
+So in this break, you can do this practice.
+
+534
+01:10:00,260 --> 01:10:06,260
+Try to get the d and the c, the subtext.
+
+535
+01:10:06,260 --> 01:10:08,260
+So let's have a break of 10 minutes.
+
+536
+01:10:08,260 --> 01:10:09,260
+Thank you.
+

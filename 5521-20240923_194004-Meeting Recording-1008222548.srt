@@ -1,0 +1,1284 @@
+1
+00:00:00,000 --> 00:00:25,640
+Okay, let's continue with our second part of today's lecture.
+
+2
+00:00:25,640 --> 00:00:29,640
+Now we go to our lecture for about digital signature.
+
+3
+00:00:29,800 --> 00:00:37,799
+We mentioned that the public scheme can be used to signature generation.
+
+4
+00:00:37,799 --> 00:00:40,600
+So signature can be used for authentication.
+
+5
+00:00:40,600 --> 00:00:41,960
+That's very important, right?
+
+6
+00:00:41,960 --> 00:00:51,240
+When you do the online shopping, the server, your critical server will guarantee you're the real one to do the online shopping.
+
+7
+00:00:52,200 --> 00:00:54,679
+So this process is called authentication.
+
+8
+00:00:55,399 --> 00:00:57,240
+Authentication is satisfied.
+
+9
+00:00:58,119 --> 00:01:06,120
+Then your critical company will authorize that transaction, that payment request.
+
+10
+00:01:06,920 --> 00:01:09,719
+Then you can continue with the online payment.
+
+11
+00:01:09,719 --> 00:01:13,239
+Otherwise, your payment request will be denied.
+
+12
+00:01:14,200 --> 00:01:16,920
+So authentication is very important.
+
+13
+00:01:16,920 --> 00:01:18,680
+How can we do the authentication?
+
+14
+00:01:18,680 --> 00:01:22,280
+That means you should generate a valid signature.
+
+15
+00:01:24,680 --> 00:01:36,200
+Okay, first we look at part one about signature generation and verification.
+
+16
+00:01:36,200 --> 00:01:40,680
+And we use the RSA algorithm for this explanation.
+
+17
+00:01:42,760 --> 00:01:46,360
+So we have the authentication problem just like in the internet.
+
+18
+00:01:46,360 --> 00:01:51,080
+Suppose Bob gets a message from Alice.
+
+19
+00:01:51,959 --> 00:01:57,159
+Well, Bob will ask whether he can trust this information.
+
+20
+00:01:57,159 --> 00:01:59,319
+Is this information really from Alice?
+
+21
+00:01:59,879 --> 00:02:07,319
+Just like Alice sent a payment request to Bob, asked Bob to authorize that payment request, right?
+
+22
+00:02:07,319 --> 00:02:12,599
+So then Bob needs to guarantee this is a real request from Alice.
+
+23
+00:02:12,599 --> 00:02:16,520
+Otherwise, Bob cannot approve that request.
+
+24
+00:02:17,400 --> 00:02:23,160
+However, you know, in the internet, a message can be modified by others.
+
+25
+00:02:24,120 --> 00:02:28,200
+So how can you guarantee, well, the message is not modified?
+
+26
+00:02:28,200 --> 00:02:32,920
+Or the message is not fabricated by someone else?
+
+27
+00:02:32,920 --> 00:02:36,920
+Just that the message is not from someone else, if...
+
+28
+00:02:38,600 --> 00:02:41,800
+This is not a message from Alice, but from if, right?
+
+29
+00:02:41,800 --> 00:02:44,200
+How can you prevent this case to happen?
+
+30
+00:02:46,520 --> 00:02:56,520
+Well, then we need to use the digital signature.
+
+31
+00:02:56,520 --> 00:03:01,320
+And suppose we have an electronic document to be sent from Alice to Bob.
+
+32
+00:03:02,360 --> 00:03:08,200
+The question is, is there a functional equivalent to a handwritten signature?
+
+33
+00:03:08,920 --> 00:03:15,160
+And this signature is easy for Alice to sign on the document, but hard for anyone else to forge.
+
+34
+00:03:16,120 --> 00:03:23,800
+The Alice signature, and also it is easy for Bob or anyone else to verify.
+
+35
+00:03:23,800 --> 00:03:27,960
+Well, this is really the signature from Alice.
+
+36
+00:03:28,840 --> 00:03:30,519
+And today we have the solution.
+
+37
+00:03:30,519 --> 00:03:32,039
+This is a digital signature.
+
+38
+00:03:32,599 --> 00:03:39,400
+And we use Alice, the private key, to generate the digital signature.
+
+39
+00:03:45,799 --> 00:03:53,000
+And anyone else can use Alice's public key to do the signature verification.
+
+40
+00:03:54,519 --> 00:04:00,199
+So we verify the signature by using Alice's public key.
+
+41
+00:04:04,359 --> 00:04:10,599
+Oh, well, this is a process, just like you have a message, then you can use your private key.
+
+42
+00:04:16,120 --> 00:04:21,959
+To generate the signature, and this signature will be sent to the receiver.
+
+43
+00:04:22,680 --> 00:04:29,399
+At the receiver side, well, the receiver will get the message and also the signature.
+
+44
+00:04:30,199 --> 00:04:35,480
+So the receiver will use the sender's public key to do the verification.
+
+45
+00:04:36,040 --> 00:04:41,399
+So the receiver will check whether this signature equals what.
+
+46
+00:04:45,640 --> 00:04:50,600
+Equals M to D. Is this a verification?
+
+47
+00:04:55,880 --> 00:04:56,439
+Yes or no?
+
+48
+00:05:04,200 --> 00:05:08,120
+So to do the verification, we have the words here.
+
+49
+00:05:08,120 --> 00:05:10,360
+We should use the public key, not private key, right?
+
+50
+00:05:11,160 --> 00:05:13,720
+Because the receiver has no idea about the D.
+
+51
+00:05:15,160 --> 00:05:16,760
+So this is not right.
+
+52
+00:05:16,760 --> 00:05:18,360
+We should use the public key.
+
+53
+00:05:19,000 --> 00:05:20,439
+So how can we use public key?
+
+54
+00:05:22,280 --> 00:05:33,320
+Because according to the RSA algorithm, S to the E equals M to the E to the D, right?
+
+55
+00:05:34,200 --> 00:05:37,080
+Because, you see, S equals M to the D.
+
+56
+00:05:37,800 --> 00:05:40,200
+So S to E equals M to the E to the D.
+
+57
+00:05:41,159 --> 00:05:46,199
+This is congruent to M mod M.
+
+58
+00:05:47,240 --> 00:05:51,639
+So that means in the verification, we have the signature.
+
+59
+00:05:52,199 --> 00:05:58,120
+We apply the public key here, E, and we will do this calculation.
+
+60
+00:05:58,120 --> 00:06:03,560
+Whether S to the E mod M equals the message M.
+
+61
+00:06:04,759 --> 00:06:05,480
+M is here.
+
+62
+00:06:05,480 --> 00:06:11,640
+If this equation is true, we say it is valid.
+
+63
+00:06:12,439 --> 00:06:13,640
+This is a valid signature.
+
+64
+00:06:13,640 --> 00:06:17,080
+Otherwise, we say the signature is not correct.
+
+65
+00:06:18,600 --> 00:06:19,319
+Is that clear?
+
+66
+00:06:26,360 --> 00:06:33,000
+So one example here is Alice sent the message, hello Bob, to Bob.
+
+67
+00:06:33,000 --> 00:06:40,279
+Alice wants to sign this message by using her private key.
+
+68
+00:06:42,040 --> 00:06:47,000
+Well, this is a message M, and this part is a signature S.
+
+69
+00:06:47,639 --> 00:06:53,800
+So S equals M to the D mod M, okay?
+
+70
+00:06:55,399 --> 00:07:02,040
+So both message and signature will be received by Bob.
+
+71
+00:07:02,120 --> 00:07:05,720
+So Bob will use Alice's private key to do the verification.
+
+72
+00:07:06,360 --> 00:07:12,200
+So the verification process is, well, S to the E.
+
+73
+00:07:13,560 --> 00:07:19,879
+Well, this S to the E equals M D to the E.
+
+74
+00:07:19,879 --> 00:07:22,120
+This is M E D.
+
+75
+00:07:23,480 --> 00:07:28,680
+This is congruent to M mod M, right?
+
+76
+00:07:32,040 --> 00:07:43,720
+Well, if this equation is correct, then Bob can guarantee that the message is really from Alice.
+
+77
+00:07:44,439 --> 00:07:54,439
+Okay, so because Bob will use Alice's private key, this one, to do the verification.
+
+78
+00:07:55,399 --> 00:08:03,000
+So in this way, Bob can verify that Alice sent the message, and that the message has not been modified.
+
+79
+00:08:04,040 --> 00:08:17,079
+Well, if the message is modified to be another one, if M becomes M prime, then will this M prime,
+
+80
+00:08:17,319 --> 00:08:18,439
+this M prime,
+
+81
+00:08:20,839 --> 00:08:25,800
+the from S to the E, we only get M.
+
+82
+00:08:26,839 --> 00:08:30,120
+So this M does not equal to M prime.
+
+83
+00:08:31,879 --> 00:08:40,360
+But so that means, well, the message cannot be modified in this because we have both the message
+
+84
+00:08:41,000 --> 00:08:42,360
+and signature.
+
+85
+00:08:43,080 --> 00:08:47,960
+From signature, we only get M but not M prime.
+
+86
+00:08:50,360 --> 00:09:03,879
+In other words, if the Bob got M prime and S, so Bob will verify S to the E mod M,
+
+87
+00:09:04,759 --> 00:09:07,000
+then Bob will get M.
+
+88
+00:09:07,960 --> 00:09:12,039
+So this M does not equal to M prime here.
+
+89
+00:09:12,919 --> 00:09:17,080
+So Bob will know the message has been modified.
+
+90
+00:09:17,639 --> 00:09:18,200
+Is that clear?
+
+91
+00:09:28,280 --> 00:09:32,600
+Well, in a generic model, we should follow this procedure.
+
+92
+00:09:33,800 --> 00:09:38,920
+Well, the original message supports the sender is Bob, Alice is the receiver.
+
+93
+00:09:40,520 --> 00:09:43,879
+The message first will apply the hash function.
+
+94
+00:09:44,840 --> 00:09:45,879
+No matter
+
+95
+00:10:01,559 --> 00:10:09,399
+we've run into a server error, some function might not work right now.
+
+96
+00:10:13,879 --> 00:10:21,399
+Yeah.
+
+97
+00:10:21,399 --> 00:10:44,600
+Well, in this generic model, the message first will go through a hash function.
+
+98
+00:10:45,560 --> 00:10:51,000
+No matter how large of the original message of the hash function we have,
+
+99
+00:10:51,000 --> 00:10:54,840
+we have a fixed output, the hash result.
+
+100
+00:10:54,840 --> 00:11:04,040
+So normally the hash result can be just like, if you apply the SHA 256 of original message M,
+
+101
+00:11:04,680 --> 00:11:06,440
+you will get this edge.
+
+102
+00:11:06,440 --> 00:11:12,360
+So this edge is 256 bits long.
+
+103
+00:11:13,320 --> 00:11:18,680
+256 bits means, well, this edge is 32 bytes.
+
+104
+00:11:22,360 --> 00:11:28,519
+So no matter how large of your original message, you will have this edge result
+
+105
+00:11:29,720 --> 00:11:31,000
+of a hash function.
+
+106
+00:11:31,000 --> 00:11:32,680
+The output will be 32 bytes.
+
+107
+00:11:33,399 --> 00:11:37,320
+So then you will do your signature based on this hash result.
+
+108
+00:11:38,120 --> 00:11:45,160
+So this is hash of M and you will generate your signature based on this hash result.
+
+109
+00:11:45,720 --> 00:11:50,120
+That means your S equals your hash result.
+
+110
+00:11:51,000 --> 00:11:54,920
+Suppose we're using the RSA algorithm.
+
+111
+00:11:54,920 --> 00:12:05,000
+So this one, we apply the private key to generate the signature.
+
+112
+00:12:05,879 --> 00:12:11,480
+The original message M and S, the signature will be sent to Alice.
+
+113
+00:12:12,600 --> 00:12:16,039
+So this is M plus S will be sent to Alice.
+
+114
+00:12:16,600 --> 00:12:24,039
+So Alice will obtain both M and S. Alice will apply the same hash function.
+
+115
+00:12:25,639 --> 00:12:31,879
+So M, after the hash function, we have the same output, H.
+
+116
+00:12:32,519 --> 00:12:34,840
+Suppose this M is not modified.
+
+117
+00:12:35,399 --> 00:12:38,840
+So this output is H, M.
+
+118
+00:12:39,799 --> 00:12:42,360
+Small h equals this one, right?
+
+119
+00:12:46,439 --> 00:12:49,320
+This H, M, we can apply.
+
+120
+00:12:52,679 --> 00:12:59,240
+This H, M, based on the S message, we can apply the public key.
+
+121
+00:13:00,200 --> 00:13:06,279
+Bob's public key, so S, signature will apply the public key E.
+
+122
+00:13:07,159 --> 00:13:14,919
+This equals H, M, D, E again.
+
+123
+00:13:15,480 --> 00:13:23,399
+So this is H, M, E, D.
+
+124
+00:13:23,399 --> 00:13:29,000
+Mod M, well, E, D can be cancelled.
+
+125
+00:13:29,959 --> 00:13:32,439
+This is H, M.
+
+126
+00:13:33,480 --> 00:13:35,319
+So the result here is H, M.
+
+127
+00:13:35,879 --> 00:13:41,480
+We will compare these two, whether these two are the same or not.
+
+128
+00:13:42,519 --> 00:13:48,439
+If they are the same, that means the message and the signature are both correct.
+
+129
+00:13:54,360 --> 00:13:59,240
+And this is a normal procedure for signature generation and verification.
+
+130
+00:14:00,919 --> 00:14:01,959
+Any questions?
+
+131
+00:14:09,159 --> 00:14:12,759
+Well, we can see using this digital signature,
+
+132
+00:14:16,279 --> 00:14:20,600
+we can provide authentication of digital messages or documents.
+
+133
+00:14:21,480 --> 00:14:29,960
+Well, the signature, because the signature, we use your public key to do the verification.
+
+134
+00:14:32,360 --> 00:14:32,840
+We use
+
+135
+00:14:36,120 --> 00:14:43,320
+Alice public key in verification.
+
+136
+00:14:43,320 --> 00:14:57,560
+So we say this message is really from Alice.
+
+137
+00:14:59,800 --> 00:15:01,560
+This is the meaning of authentication.
+
+138
+00:15:02,840 --> 00:15:05,480
+The request is really from Alice.
+
+139
+00:15:08,280 --> 00:15:11,080
+And also, it provides long repudiation.
+
+140
+00:15:11,560 --> 00:15:16,120
+So long repudiation means the signer, just like Alice,
+
+141
+00:15:18,759 --> 00:15:27,160
+cannot successfully claim she did not send a message while also claiming her private key
+
+142
+00:15:29,240 --> 00:15:30,200
+remains secret.
+
+143
+00:15:30,759 --> 00:15:39,240
+So either your private key is lost, someone else has your private key and can fabricate
+
+144
+00:15:39,240 --> 00:15:40,120
+your signature.
+
+145
+00:15:40,840 --> 00:15:47,639
+Or if your secret key is secure, then your signature must be signed by you.
+
+146
+00:15:48,279 --> 00:15:52,120
+You cannot deny your signature.
+
+147
+00:15:52,840 --> 00:15:56,200
+So long repudiation means you can't
+
+148
+00:15:59,159 --> 00:16:04,360
+deny the message is sent from you.
+
+149
+00:16:04,360 --> 00:16:04,600
+Okay.
+
+150
+00:16:06,600 --> 00:16:14,200
+Otherwise, on this, well, you say your secret, your secret key is lost.
+
+151
+00:16:17,240 --> 00:16:20,919
+And also we say the digital signature provides integrity.
+
+152
+00:16:21,639 --> 00:16:25,560
+So integrity means M is not modified.
+
+153
+00:16:27,080 --> 00:16:28,519
+M is not modified.
+
+154
+00:16:29,159 --> 00:16:37,879
+Well, if a message is digitally sent, any change in the message of the signature invalidates
+
+155
+00:16:37,879 --> 00:16:38,679
+the signature.
+
+156
+00:16:39,559 --> 00:16:45,000
+The reason is because M will be sent along with your signature.
+
+157
+00:16:45,879 --> 00:16:46,360
+Okay.
+
+158
+00:16:47,159 --> 00:16:52,600
+And your signature equals the hash result of M
+
+159
+00:16:53,320 --> 00:16:57,320
+to the private key.
+
+160
+00:17:00,200 --> 00:17:05,640
+So S equals the hash result to your private key mod M.
+
+161
+00:17:06,360 --> 00:17:13,000
+Well, if you have another M prime with this signature,
+
+162
+00:17:13,160 --> 00:17:19,400
+well, if you have another M prime with this signature,
+
+163
+00:17:20,680 --> 00:17:23,720
+it's about M is modified to be M prime.
+
+164
+00:17:24,519 --> 00:17:38,200
+Then you apply S to the E mod M and this will generate the HM.
+
+165
+00:17:38,680 --> 00:17:45,559
+So this, this HM does not equal to HM prime.
+
+166
+00:17:48,519 --> 00:17:57,799
+But in other words, well, once you have a correct signature S, this will guarantee your
+
+167
+00:17:57,799 --> 00:18:00,759
+message M is not modified.
+
+168
+00:18:00,920 --> 00:18:12,200
+Otherwise, it cannot pass the signature verification process, right?
+
+169
+00:18:15,879 --> 00:18:19,400
+Only the correct M can match your signature.
+
+170
+00:18:20,360 --> 00:18:20,759
+Okay.
+
+171
+00:18:20,759 --> 00:18:24,440
+Now we look at the RSA, the signature scheme.
+
+172
+00:18:24,759 --> 00:18:32,360
+We said that RSA algorithm can be applied to encryption, decryption, key exchange, and
+
+173
+00:18:32,360 --> 00:18:35,400
+also to be applied in this signature generation.
+
+174
+00:18:37,720 --> 00:18:45,800
+In the setup, just like in the RSA algorithm, we have the add-on, add-on, add-on, add-on,
+
+175
+00:18:45,799 --> 00:18:52,759
+just like in the RSA algorithm, we have the N to be the product of two prime numbers.
+
+176
+00:18:55,000 --> 00:18:59,879
+So PQR large primes will each to be 124 bits long.
+
+177
+00:19:00,680 --> 00:19:08,599
+And we choose the E, then we can generate the private key to be D.
+
+178
+00:19:09,319 --> 00:19:11,879
+D will be used in the signing process.
+
+179
+00:19:12,520 --> 00:19:18,520
+And public key EN will be used for the signature verification.
+
+180
+00:19:20,360 --> 00:19:23,640
+So in signature generation, we apply the message M.
+
+181
+00:19:24,760 --> 00:19:27,800
+At this moment, we don't consider the hash function, okay?
+
+182
+00:19:28,920 --> 00:19:34,040
+So M to D mod N, it is the signature S.
+
+183
+00:19:35,000 --> 00:19:42,119
+So we say S is the generated signature for the message M.
+
+184
+00:19:43,639 --> 00:19:46,599
+So M is the message to be signed.
+
+185
+00:19:47,639 --> 00:19:55,159
+In the verification, we apply the public key to the S mod N.
+
+186
+00:19:55,159 --> 00:19:59,480
+Then we calculate whether the result equals M or not.
+
+187
+00:20:00,440 --> 00:20:05,640
+If it equals, we say the signature is valid.
+
+188
+00:20:05,640 --> 00:20:09,640
+Otherwise, we output invalid signature.
+
+189
+00:20:12,839 --> 00:20:14,680
+Okay, now we look at this example.
+
+190
+00:20:14,680 --> 00:20:20,599
+Suppose we choose two primes, P to be 47 and Q to be 71.
+
+191
+00:20:21,559 --> 00:20:26,440
+So N equals P times Q equals 3337.
+
+192
+00:20:26,440 --> 00:20:31,160
+We choose E such that it is relative prime to phi.
+
+193
+00:20:32,039 --> 00:20:37,799
+So phi equals P minus 1 times Q minus 1.
+
+194
+00:20:38,600 --> 00:20:41,400
+So this is 3220.
+
+195
+00:20:43,080 --> 00:20:47,320
+Suppose we choose E to be plus 1019.
+
+196
+00:20:48,759 --> 00:20:55,960
+Then we compute the private key D using the extended Euclidean algorithm.
+
+197
+00:20:55,960 --> 00:20:59,079
+So D can be calculated to be 79.
+
+198
+00:21:00,039 --> 00:21:05,480
+So public key, in this example, it is E and N.
+
+199
+00:21:07,240 --> 00:21:10,039
+E is 101 line.
+
+200
+00:21:10,759 --> 00:21:13,079
+N is 3337.
+
+201
+00:21:14,120 --> 00:21:16,519
+The private key is 79.
+
+202
+00:21:19,400 --> 00:21:25,400
+So in this example, suppose the message is 688.
+
+203
+00:21:26,120 --> 00:21:34,039
+So signature can be generated by the M to the D mod N.
+
+204
+00:21:35,079 --> 00:21:40,600
+This is 1570 to be a signature.
+
+205
+00:21:42,120 --> 00:21:46,440
+The message and signature will be sent to the receiver.
+
+206
+00:21:46,440 --> 00:21:50,920
+So receiver will do the verification and receiver will check if
+
+207
+00:21:51,880 --> 00:22:02,600
+S to the public key E mod N equals the message itself or not.
+
+208
+00:22:04,279 --> 00:22:10,759
+So of course, well, S to E should equal M itself, right?
+
+209
+00:22:20,920 --> 00:22:37,080
+In the RSA algorithm, we choose E, D such that M, E, D mod N equals M itself.
+
+210
+00:22:37,960 --> 00:22:44,039
+So this makes them to generate the public key and private key.
+
+211
+00:22:44,680 --> 00:22:50,600
+And because of this property, we guarantee in this signature verification process,
+
+212
+00:22:51,880 --> 00:22:57,160
+S to the E mod N, it is, it equals M.
+
+213
+00:23:00,519 --> 00:23:07,880
+Okay, in this exercise, suppose we use some small number and also to redo the previous example.
+
+214
+00:23:09,400 --> 00:23:14,840
+From E, well, equal three is small number and first step, you should calculate
+
+215
+00:23:14,839 --> 00:23:19,159
+the private key D, right?
+
+216
+00:23:20,039 --> 00:23:31,720
+From private key D, the signature equals M to the D mod N.
+
+217
+00:23:35,000 --> 00:23:42,199
+Then you'll check whether M equals S to the E mod N.
+
+218
+00:23:45,000 --> 00:23:49,399
+So three steps. First step, calculate the private key D.
+
+219
+00:23:51,799 --> 00:23:58,919
+Second step, to generate the signature. Third step, to do the signature verification.
+
+220
+00:24:00,439 --> 00:24:07,639
+Step one, step two, step three. So this is signature
+
+221
+00:24:08,120 --> 00:24:08,920
+generation.
+
+222
+00:24:11,960 --> 00:24:13,960
+This step three is signature
+
+223
+00:24:16,200 --> 00:24:17,240
+verification.
+
+224
+00:24:22,280 --> 00:24:26,280
+Okay, can you use probably five to 10 minutes to do this calculation?
+
+225
+00:28:07,640 --> 00:28:37,080
+Okay, some of you have finished
+
+226
+00:28:37,079 --> 00:28:45,879
+the calculation step one, right? To get the private key D. Well, the D, what's the D value?
+
+227
+00:28:49,159 --> 00:28:56,759
+D equals two, one, four, seven, right?
+
+228
+00:28:59,000 --> 00:29:04,359
+Well, in this example, because the public key E is three and the N is
+
+229
+00:29:07,879 --> 00:29:13,480
+three, three, three, seven. Five N is
+
+230
+00:29:17,559 --> 00:29:18,919
+three, two, two, zero.
+
+231
+00:29:25,960 --> 00:29:34,119
+So five N is here, is two, three thousand, two hundred and twenty.
+
+232
+00:29:34,519 --> 00:29:42,119
+Well, because E is a small data, in fact, we can calculate. What we know is
+
+233
+00:29:43,239 --> 00:29:53,159
+E times D equals K times five N plus one, is that right? Because E D
+
+234
+00:29:56,039 --> 00:29:58,119
+is coming to one, mod five.
+
+235
+00:29:58,759 --> 00:30:04,759
+Mod five. So in other words, we calculate D equals
+
+236
+00:30:07,479 --> 00:30:15,799
+K times five N plus one divided by E. Here E is small number equals three.
+
+237
+00:30:21,719 --> 00:30:26,439
+K times five N is three, two, two, zero plus one.
+
+238
+00:30:28,119 --> 00:30:40,839
+So you can try K equals one. If K equals one, well, D is not an integer. How about
+
+239
+00:30:40,839 --> 00:30:51,479
+K equals two? If K equals two, we get D to be two times three, two, two, zero plus one
+
+240
+00:30:51,480 --> 00:31:00,839
+divided by three. This equals two one forty seven.
+
+241
+00:31:03,799 --> 00:31:14,120
+OK, so this way is also fine. You don't need to apply the extended Euclidean algorithm.
+
+242
+00:31:14,120 --> 00:31:19,720
+Of course, because E is small, applying the extended Euclidean algorithm is also
+
+243
+00:31:20,440 --> 00:31:28,519
+very fast. But when E is five, three, so you can apply this method.
+
+244
+00:31:32,839 --> 00:31:39,240
+OK, the first step, we get the private key D to be two thousand and two thousand one hundred
+
+245
+00:31:39,240 --> 00:31:45,160
+and four seven, this large number. For the second step, well, we want to calculate the signature.
+
+246
+00:31:46,040 --> 00:31:47,960
+So S equals M is.
+
+247
+00:31:53,000 --> 00:31:56,600
+So M is six hundred and eighty eight.
+
+248
+00:31:59,880 --> 00:32:10,600
+To the two one four seven mod N, N is three three three seven. Of course, this is a
+
+249
+00:32:11,240 --> 00:32:15,240
+big number. So if it is very big,
+
+250
+00:32:17,719 --> 00:32:27,079
+well, in fact, you still can solve it. So how to solve it? You can use the CRT, right?
+
+251
+00:32:27,319 --> 00:32:45,240
+CRT, that means because N is three three three seven equals P is forty seven times seventy one.
+
+252
+00:32:46,119 --> 00:32:55,960
+So that means you want to suppose this is big number. This one, we use this one to be
+
+253
+00:32:57,079 --> 00:33:26,519
+a big number T. So we want to calculate T mod, this P, this Q, P, this is S1,
+
+254
+00:33:27,639 --> 00:33:42,519
+T mod Q is S2. For S1, S2, we will be able to generate S quickly. So in fact, T mod
+
+255
+00:33:42,519 --> 00:33:59,879
+P, this equals six hundred and eighty eight to the two one forty seven mod P,
+
+256
+00:34:01,400 --> 00:34:10,039
+forty seven. So in fact, this is not that difficult. Well, you can do some calculation to get the
+
+257
+00:34:10,039 --> 00:34:23,320
+remainder forty seven. This is fourteen times forty seven plus thirty. In the exponent part,
+
+258
+00:34:23,400 --> 00:34:32,200
+you should have forty six times forty six plus
+
+259
+00:34:37,480 --> 00:34:45,559
+thirty one mod forty seven. OK, so this part is zero. This part can be canceled.
+
+260
+00:34:53,559 --> 00:35:09,320
+This is congruent to thirty to the thirty one mod forty seven. So this number is not that large.
+
+261
+00:35:09,320 --> 00:35:17,800
+Of course, you can make it to be smaller to do some factorization.
+
+262
+00:35:23,320 --> 00:35:37,720
+If this one is too big, right, you can factorize it. You can represent it to be like thirty
+
+263
+00:35:38,840 --> 00:35:49,080
+to the five to six times thirty mod forty seven. You can first calculate the inside.
+
+264
+00:35:49,319 --> 00:35:59,799
+So this one is thirteen. Thirty to the fifth mod forty seven is thirteen. Thirteen to the sixth
+
+265
+00:36:01,319 --> 00:36:11,880
+times thirty. This is congruent to forty three mod forty seven. So we have S1 to be forty three.
+
+266
+00:36:12,119 --> 00:36:12,840
+Forty three.
+
+267
+00:36:15,960 --> 00:36:23,960
+OK, step by step, use your calculator or use your computer. You will be able to get S1.
+
+268
+00:36:25,079 --> 00:36:27,160
+And similarly, you can get S2.
+
+269
+00:36:27,159 --> 00:36:37,399
+P is seventy one.
+
+270
+00:36:40,119 --> 00:36:52,440
+So seventy one.
+
+271
+00:36:57,159 --> 00:37:08,839
+OK, well, you can apply the same idea as we calculate S1. You will get S2. I give you the result
+
+272
+00:37:09,559 --> 00:37:20,440
+directly to be here to be sixteen. So you have S2 to be sixteen.
+
+273
+00:37:27,159 --> 00:37:44,440
+Mod Q is sixteen. Well, so we can let
+
+274
+00:37:46,920 --> 00:37:50,440
+from this equation, we let S equals
+
+275
+00:37:50,440 --> 00:37:58,679
+Q is seventy one times small t.
+
+276
+00:38:03,320 --> 00:38:07,240
+We use x plus sixteen.
+
+277
+00:38:07,959 --> 00:38:20,599
+Because the S is small number, S mod Q, Q is seventy one
+
+278
+00:38:24,839 --> 00:38:32,119
+equals sixteen. So S can be represented as seventy one times x plus sixteen.
+
+279
+00:38:33,079 --> 00:38:42,920
+So we substitute this one to be the first equation. So in other words, seventy one x
+
+280
+00:38:43,960 --> 00:38:57,319
+sixteen mod forty three. No, mod P is forty seven equals forty three.
+
+281
+00:39:02,119 --> 00:39:28,599
+OK, this equation you can get, you can derive from seventy one, you get twenty four.
+
+282
+00:39:28,599 --> 00:39:39,079
+OK, you can derive twenty four t is congruent to twenty seven mod forty seven.
+
+283
+00:39:40,519 --> 00:39:50,279
+So now you can try, because now the number is not very large, you can try t equals one, two, three.
+
+284
+00:39:50,279 --> 00:39:57,079
+Each one can satisfy this equation until you can try the result is seven.
+
+285
+00:39:57,319 --> 00:40:07,719
+The result is seven. So seven times twenty four mod forty seven equals twenty seven.
+
+286
+00:40:10,599 --> 00:40:20,360
+So that means here is not x, here should be x. Anyway, we translate here to be t.
+
+287
+00:40:20,360 --> 00:40:41,640
+So t can be seven. In other words, this t can meet, satisfy this equation. OK, and then we let t to be seven.
+
+288
+00:40:41,639 --> 00:40:56,279
+So this will derive t equals seven. S equals seventy one times seven or sixteen. This is the signature.
+
+289
+00:40:58,039 --> 00:41:08,920
+So signature is five one three.
+
+290
+00:41:08,920 --> 00:41:29,400
+Or in step three, it is quite easy because well, you apply the s to the e. This is five one three to the three to start.
+
+291
+00:41:29,400 --> 00:41:42,920
+Mod mod and this, of course, will equal the message itself.
+
+292
+00:41:42,920 --> 00:42:07,880
+Well, here I write all the procedure. Well, to show that how you can use different method to calculate the private key d in the step one.
+
+293
+00:42:08,039 --> 00:42:17,160
+OK, if e, if the given public key e is small, then you can use that equation to calculate the private key d.
+
+294
+00:42:17,160 --> 00:42:23,880
+Otherwise, you should use the extended Euclidean algorithm to calculate the module inverse.
+
+295
+00:42:23,880 --> 00:42:31,079
+Then in step two, to generate the signature, you can apply the Chinese remainder theorem.
+
+296
+00:42:31,079 --> 00:42:39,400
+So here the data is quite large. Well, in your midterm test, I will try to make the number to be small.
+
+297
+00:42:39,400 --> 00:42:55,239
+Don't need to worry. However, you need to guarantee you need to master this CRT technique to, well, to apply this CRT process to generate the result.
+
+298
+00:42:55,319 --> 00:43:05,319
+Like here. So that means just like in this example, this big number mod n can be translated to big number mod p.
+
+299
+00:43:05,319 --> 00:43:15,479
+We have s1, big number mod q. We have s2. Then from these two equations, we can calculate the original small s.
+
+300
+00:43:25,959 --> 00:43:33,799
+Well, in RSA algorithm, the key length actually is critical for the security purpose.
+
+301
+00:43:33,799 --> 00:43:44,279
+RSA algorithm is not efficient because it gains strength slowly. The RSA, when we choose n,
+
+302
+00:43:45,240 --> 00:43:56,519
+the length to be 1024 bits, the security is equivalent to an 80-bit symmetry key, just like in the AES.
+
+303
+00:43:56,519 --> 00:44:09,080
+In the AES, the key length will to be 80 bits, and AES can achieve the same security level as RSA.
+
+304
+00:44:09,639 --> 00:44:15,719
+When we use the RSA, the key length to be 1024 bits.
+
+305
+00:44:16,920 --> 00:44:26,279
+And if we increase the n to be 248 bits, this is equivalent to a 112-bit key.
+
+306
+00:44:29,079 --> 00:44:35,559
+So of course, this is not AES. AES requires the key length to be much longer.
+
+307
+00:44:35,559 --> 00:44:45,559
+So we can continue to increase the RSA key length. But you can see, well, when we apply the symmetry key,
+
+308
+00:44:45,559 --> 00:44:59,799
+that's much more efficient. When the large size n to be applied in RSA, the performance is terrible.
+
+309
+00:45:00,519 --> 00:45:09,400
+Because n is very large, you need to do the exponential operation and mod n. That's terrible.
+
+310
+00:45:12,120 --> 00:45:17,240
+So because the computation time required for large keys increases rapidly,
+
+311
+00:45:18,680 --> 00:45:28,280
+well, if we increase the key length from 124 to 248, the key length doubled.
+
+312
+00:45:29,080 --> 00:45:38,360
+But the operation is eight times. Eight times. The reason is because you can see
+
+313
+00:45:39,640 --> 00:45:52,120
+message to the e mod n. When this n doubled, your e, your n message to the e mod this n.
+
+314
+00:45:52,680 --> 00:45:54,760
+This calculation will be eight times.
+
+315
+00:45:55,080 --> 00:46:03,080
+Compared to, well, let's just half the key length. So that means, well, RSA, the algorithm can be
+
+316
+00:46:03,080 --> 00:46:12,440
+used in very limited cases. For the large document encryption-decryption, we should use the
+
+317
+00:46:13,320 --> 00:46:20,680
+symmetry key scheme. But we can use RSA for the key distribution. Is that clear?
+
+318
+00:46:21,079 --> 00:46:36,039
+The key can be large. Well, we use RSA to encrypt that key. That key can be sent to the
+
+319
+00:46:37,000 --> 00:46:43,719
+receiver. And then both sender and receiver can use that key to encrypt a large file.
+
+320
+00:46:43,719 --> 00:46:54,199
+Okay. Today I stop here. Well, today we still have the project introduction. So let's have
+
+321
+00:46:54,199 --> 00:47:07,559
+a break. After five minutes, we start with today's project introduction. Thank you.
+

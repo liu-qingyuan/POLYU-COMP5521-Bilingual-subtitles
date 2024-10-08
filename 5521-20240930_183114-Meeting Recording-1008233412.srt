@@ -1,0 +1,1360 @@
+1
+00:00:00,000 --> 00:00:23,519
+Hello. Hello. Hello. Okay. Good evening, everyone. So, this is today's lecture. So, welcome to
+
+2
+00:00:24,160 --> 00:00:32,719
+thank you for your attendance. Today is the day before the holiday tomorrow. You're still here.
+
+3
+00:00:32,719 --> 00:00:40,799
+I'm very glad to see you. Okay. Last time, let's have a brief review about what we have learned
+
+4
+00:00:40,799 --> 00:00:52,879
+last time about the digital signature. So, in digital signature in part one,
+
+5
+00:00:52,880 --> 00:01:01,440
+we finished part one about the RSA algorithm, how this one can be used to generate the RSA signature.
+
+6
+00:01:02,400 --> 00:01:06,159
+So, we have the signature generation and the signature verification.
+
+7
+00:01:10,240 --> 00:01:17,439
+So, because we have the public key and the private key in the RSA algorithm,
+
+8
+00:01:18,079 --> 00:01:26,079
+and the private key can be used to generate the signature, and the public key can be used by the
+
+9
+00:01:26,079 --> 00:01:33,519
+receiver to verify the correctness of your signature. So, you can see this process, you can see,
+
+10
+00:01:35,039 --> 00:01:46,479
+so we use the private key D to generate the signature S, and at the receiver side,
+
+11
+00:01:47,040 --> 00:01:54,560
+receiver will use the sender's public key to do the verification. So, in this way, we guarantee
+
+12
+00:01:55,600 --> 00:02:06,880
+the message is really from the sender like from Alice. So, we have this example to show how you can
+
+13
+00:02:06,880 --> 00:02:15,040
+generate the public key, private key, and how we can generate the signature, and also how can we
+
+14
+00:02:15,599 --> 00:02:24,000
+apply the Chinese remainder theorem to quickly calculate a large number, but in generation,
+
+15
+00:02:26,239 --> 00:02:34,239
+in the verification of the signature. So, step three is verification,
+
+16
+00:02:35,919 --> 00:02:37,919
+whether the signature is correct.
+
+17
+00:02:38,399 --> 00:02:45,039
+Now, we look at part two, and part two is another signature scheme. We call it to be the
+
+18
+00:02:45,039 --> 00:02:53,679
+ALKMA digital signature. So, this one is based on the DLP problem. So, DLP problem is a discrete
+
+19
+00:02:53,679 --> 00:02:59,919
+logarithm problem. So, this one is also believed to be very hard to attack.
+
+20
+00:02:59,919 --> 00:03:07,679
+So, now, first, we look at the discrete logarithm problem, just like, you know,
+
+21
+00:03:07,679 --> 00:03:18,239
+abbreviation to be DLP problem. The input for this problem, we have the input. So, input is ZP star.
+
+22
+00:03:18,239 --> 00:03:28,479
+So, this is a set. This is a set of DLP problems. So, this is a set of DLP problems. So,
+
+23
+00:03:29,359 --> 00:03:30,159
+this is a set
+
+24
+00:03:42,879 --> 00:03:53,199
+with all members from 1, 2, 3, till P must 1, and we assume P is a prime number.
+
+25
+00:03:53,679 --> 00:04:02,560
+So, this set contains all the numbers from 1 to P must 1. And we have another data G in this set.
+
+26
+00:04:03,119 --> 00:04:13,280
+So, G is a generator of ZP star. So, generator, or in some cases, we say it is a primitive root.
+
+27
+00:04:23,360 --> 00:04:25,680
+So, generator means
+
+28
+00:04:35,439 --> 00:04:36,319
+for any i
+
+29
+00:04:39,839 --> 00:04:41,839
+in this ZP star,
+
+30
+00:04:41,839 --> 00:04:49,119
+so, G i mod P,
+
+31
+00:04:51,839 --> 00:04:52,719
+G i mod P,
+
+32
+00:04:56,319 --> 00:04:59,599
+and these four members
+
+33
+00:05:06,719 --> 00:05:09,919
+in ZP star.
+
+34
+00:05:12,719 --> 00:05:19,359
+Okay, this is a good property for G to be a generator of ZP star. So, what's the meaning?
+
+35
+00:05:20,159 --> 00:05:24,479
+Well, in fact, we can look at this example. So, in this example,
+
+36
+00:05:27,839 --> 00:05:38,159
+we have table. So, we have the B, the value B, right, can be from 1, 2, 3, 4, 5, 6.
+
+37
+00:05:39,040 --> 00:05:45,520
+So, here P is a prime number to be 7. So, this ZP star
+
+38
+00:05:47,920 --> 00:05:59,040
+is this set X. So, X can take any value from 1 to 6. And we look at which B, B is the base,
+
+39
+00:05:59,040 --> 00:06:05,840
+right, B is the base, just like previously the G. So, G i, we look at these two rows.
+
+40
+00:06:06,479 --> 00:06:17,759
+When B equals 3 and B equals 5. So, you can see G B i. So, in this example, it is B i
+
+41
+00:06:21,199 --> 00:06:21,839
+mod P,
+
+42
+00:06:22,000 --> 00:06:31,919
+P is 7. So, we look at BX mod 7, and the result can represent
+
+43
+00:06:33,679 --> 00:06:46,399
+all members in the set X. So, when we take the B to be the value to be 3, so we can see B1 mod 7
+
+44
+00:06:46,399 --> 00:06:59,599
+is 3, right, because B equals 3. And B squared, that's 3 times 3 is 9, 9 mod 7, we have 2.
+
+45
+00:07:01,199 --> 00:07:14,959
+And B cubed, 2 times 3, that's 6. B to the fourth, that's 6 times 3, that's 18,
+
+46
+00:07:15,919 --> 00:07:27,199
+mod 7, we have 4. So, 4 times 3, that's 12, 12 mod 7, we have 5. 5 times 3, that's 15,
+
+47
+00:07:27,759 --> 00:07:36,639
+mod 7, we have 1. And all the results you can see, we can have all members 1, 2, 3, 4, 5, 6,
+
+48
+00:07:36,639 --> 00:07:47,919
+all the members in the set X, right? And thus, we say B equals 3, these two are the generators.
+
+49
+00:07:47,920 --> 00:07:53,199
+Generators.
+
+50
+00:07:59,759 --> 00:08:06,639
+For B equals 3 or 5, so these two data can be the generators in this example. For P
+
+51
+00:08:07,360 --> 00:08:20,959
+equals 7. However, if B equals 2, and the result will be repeated with only
+
+52
+00:08:22,000 --> 00:08:33,519
+2, 4, 1, and 2, 4, 1 repeated. So, when B equals 2, we cannot get all members in the set X. So,
+
+53
+00:08:33,519 --> 00:08:47,039
+set X is ZP star, right? In other words, B cannot be 2 or 4 or 6 to be the generator.
+
+54
+00:08:47,759 --> 00:09:00,399
+We need to guarantee when I take the value from 1 to 6, the result can list all members in the set
+
+55
+00:09:00,399 --> 00:09:10,879
+X. Is that clear? Okay, so this is the definition about the generator. So, in some cases,
+
+56
+00:09:10,879 --> 00:09:20,959
+we call it to be the primitive root. And given that B is a number in the set ZP star,
+
+57
+00:09:21,920 --> 00:09:32,720
+and this is create logarithm problem, we'll ask you to find a unique number A. So, this A is
+
+58
+00:09:32,720 --> 00:09:44,879
+smaller than the P, such that G to the A is congruent to B more P. Okay, we want to find
+
+59
+00:09:44,960 --> 00:09:57,840
+this exponent number A such that G to the A more P equals B. So, we denote this value A as discrete
+
+60
+00:09:57,840 --> 00:10:12,399
+log of the number B for the base G more P. So, we have this GP the meaning. So, in fact, if we have
+
+61
+00:10:13,360 --> 00:10:24,639
+for A, if we have A, G and P to calculate B, this is easy, right?
+
+62
+00:10:27,600 --> 00:10:40,240
+With the value A, G, P to calculate B, it is easy. However, with the G, with G, this generator, P
+
+63
+00:10:41,200 --> 00:10:51,120
+and B to calculate A, this is very difficult, very difficult.
+
+64
+00:10:55,840 --> 00:11:07,759
+So, currently, we do not have a convenient way to get A easily. So, this is actually an exponential
+
+65
+00:11:07,840 --> 00:11:15,439
+problem where probably we need to try all possibilities. So, we have this assumption.
+
+66
+00:11:15,439 --> 00:11:23,679
+This assumption is called the DL assumption. So, this assumption says there is no efficient
+
+67
+00:11:23,679 --> 00:11:33,200
+algorithm in polynomial time. So, non-exponential time to solve DL problem. So, this is DL problem,
+
+68
+00:11:33,200 --> 00:11:49,360
+okay? Given G, P, B to get A, this is the DL problem. Well, today, it is still widely believed
+
+69
+00:11:49,360 --> 00:11:57,440
+that this assumption holds. It is true, very difficult. So, difficulty is said is similar
+
+70
+00:11:58,080 --> 00:12:09,360
+to the RSA algorithm. When you have a big N, you will find P times Q, this factorization.
+
+71
+00:12:15,360 --> 00:12:22,560
+The difficulty of factorization will be similar to this DL problem, similar difficulty.
+
+72
+00:12:27,440 --> 00:12:41,040
+Given that just like the P can be very large with a size like to be 1 or 24 bits, okay? A very large
+
+73
+00:12:41,040 --> 00:12:50,400
+number. In that case, it is difficult for you to calculate the A given B.
+
+74
+00:12:50,399 --> 00:13:06,240
+So, here we have explained this table, right? Just we list the base B, and when B equals 1, 2, 3, 4, 5, 6,
+
+75
+00:13:06,879 --> 00:13:17,199
+and B, I, more P, what's the result in this table? And we can see only when B equals 3 or 5,
+
+76
+00:13:18,080 --> 00:13:26,800
+we can get all possible result to make the result to equal the set ZP star.
+
+77
+00:13:29,680 --> 00:13:35,120
+So, according to previous table, we look at how can we solve the DLP problem.
+
+78
+00:13:35,759 --> 00:13:54,240
+As we know, if the base equals B or G equals 3. So, G equals 3, 3 squared plus 7 is 2.
+
+79
+00:13:54,240 --> 00:14:06,720
+So, for this discrete log of 2, we want to get its exponent. So, exponent number should be 2 here.
+
+80
+00:14:07,680 --> 00:14:23,279
+So, the discrete log of 2 for the base 3, this is G mod 7, this is P. The exponent in this example
+
+81
+00:14:23,279 --> 00:14:38,480
+should be 2. Well, for this example, because 3 cubed plus 7, we have 6. And this discrete log of 6,
+
+82
+00:14:41,839 --> 00:14:52,720
+for the base 3 mod 7, the exponent should be 3. And similarly, this 5, we have the result to be
+
+83
+00:14:54,240 --> 00:15:06,720
+5. So, how about this one? Well, if the base is 2 and the B is 4, if base is 2
+
+84
+00:15:08,799 --> 00:15:13,839
+and the result is 4. So, in fact, we can find two cases.
+
+85
+00:15:14,480 --> 00:15:25,360
+This is case 1. This is case 2. And this shows that the exponent can be either 2 or 5. So, we do not
+
+86
+00:15:25,360 --> 00:15:42,639
+have a unique result. The result can be either 2 or 5. But, because the B, G to the G squared mod 7,
+
+87
+00:15:42,799 --> 00:15:48,000
+is 4, and also G to the 5 mod 7, is also 4.
+
+88
+00:15:51,759 --> 00:15:58,480
+So, the reason is because G equals 2 is not a generator.
+
+89
+00:15:58,560 --> 00:16:14,240
+The result will not be unique. So, this is not allowed. We must choose the
+
+90
+00:16:15,039 --> 00:16:23,360
+the base G to be a generator, such that in this discrete log calculation, the result will be unique.
+
+91
+00:16:28,639 --> 00:16:39,600
+Okay, based on the DLP problem, we look at how we can construct some of the public key and private
+
+92
+00:16:39,600 --> 00:16:48,639
+key. And now we look at for this DLP problem, some property for this problem. If P is small,
+
+93
+00:16:49,519 --> 00:16:57,279
+discrete log can be found by exhaustive search. Now, we can try all possible of i.
+
+94
+00:16:59,279 --> 00:17:04,559
+So, i, we can exhaustive search i in this set,
+
+95
+00:17:07,759 --> 00:17:12,559
+JP star, right? From 1, 2, 3,
+
+96
+00:17:12,559 --> 00:17:42,559
+4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 44, 45, 46, 46, 47, 48, 49, 50, 51, 52, 53, 52, 53, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54, 54
+
+97
+00:17:42,559 --> 00:17:53,919
+trial or possibilities to see which exponent to make the result equals the given p, okay?
+
+98
+00:17:58,159 --> 00:18:06,639
+Well, we will make the p to be very large. So the size of prime p for which dl can be computed
+
+99
+00:18:07,200 --> 00:18:13,759
+is approximately the same size, the same as the size of integers that can be
+
+100
+00:18:13,759 --> 00:18:21,920
+factored. So normally we will choose the p to be one or 24 bits. At this moment,
+
+101
+00:18:23,040 --> 00:18:34,560
+this size is believed to be quite secure. For the deal problem, this is in fact an example
+
+102
+00:18:34,960 --> 00:18:45,759
+one-way function. So one function means from g, p, and a to get,
+
+103
+00:18:48,639 --> 00:18:53,039
+or we say x, to get y. So this
+
+104
+00:18:54,000 --> 00:19:10,639
+is, this means we can calculate the function g to the x mod p to get y. Finding fx, this is easy.
+
+105
+00:19:11,599 --> 00:19:19,839
+However, given y, finding x, to certify this equation, it is hard. In the deal problem,
+
+106
+00:19:19,839 --> 00:19:31,359
+that means given g, p, y to find x, this is very difficult because you need to guarantee
+
+107
+00:19:31,439 --> 00:19:49,519
+p gx mod p equals y. So this is almost impossible, okay? If the p is very large, to get this x is
+
+108
+00:19:50,079 --> 00:20:00,319
+almost impossible. So based on this good property, we have the l comma signature scheme.
+
+109
+00:20:01,359 --> 00:20:08,240
+So you can see different cryptography based on different mathematical problems. The RSA is based
+
+110
+00:20:08,240 --> 00:20:16,959
+on the factorization of a big number, the difficulty. And this one is based on the difficulty of the deal
+
+111
+00:20:16,959 --> 00:20:26,319
+problem. This scheme is based on the difficulty of computing discrete logarithm over the zp
+
+112
+00:20:26,480 --> 00:20:35,679
+over this set. So p is prime. In this signature scheme, we have the setup and the key generation
+
+113
+00:20:36,240 --> 00:20:47,439
+step. And suppose Alice is the one to use this scheme. Alice will choose large prime p.
+
+114
+00:20:48,160 --> 00:20:58,160
+Well, so p minus one, p is an odd number. So p minus one is an even number, right? Even number.
+
+115
+00:20:58,160 --> 00:21:05,600
+So seven, if p equals seven, p minus one is six. Six is an even number. So even number must have
+
+116
+00:21:05,600 --> 00:21:15,440
+some prime factor. And we will require p minus one has a large prime factor. So p minus one is
+
+117
+00:21:15,840 --> 00:21:21,120
+has a large prime factor. So this is for the security purpose.
+
+118
+00:21:26,880 --> 00:21:27,759
+Security purpose.
+
+119
+00:21:31,519 --> 00:21:44,559
+Then for the given p, we are able to know which data is a primitive root
+
+120
+00:21:44,559 --> 00:21:49,839
+or primitive element. So this is the meaning of generator.
+
+121
+00:21:53,039 --> 00:22:02,639
+So we choose one data to be the generator to the prime number p, okay? So given the p is prime,
+
+122
+00:22:02,639 --> 00:22:09,519
+the multiple number can be the generator. So we choose one. And then Alice will choose
+
+123
+00:22:10,079 --> 00:22:22,799
+x, small x as her private key and calculate the gx small p to get y. The public key is p, g and y.
+
+124
+00:22:23,599 --> 00:22:33,039
+The primary key for Alice is this x, right? From x to get y is easy.
+
+125
+00:22:33,039 --> 00:22:46,000
+And then to sign a message, this is a big x. Alice needs to choose an integer k. So this k,
+
+126
+00:22:47,839 --> 00:22:55,920
+we can say this k is a one-time random key.
+
+127
+00:23:03,039 --> 00:23:21,119
+For one message x, we will choose one key, one different key, k. So this key k should be
+
+128
+00:23:21,119 --> 00:23:28,879
+smaller than or equal to p minus one. And also we need to guarantee that the gcd, k and p minus one
+
+129
+00:23:28,880 --> 00:23:36,560
+is one, the relative prime, because we need to calculate this module inverse. So this will
+
+130
+00:23:36,560 --> 00:23:57,600
+guarantee that we have the k minus one mod p minus one. So there are relatively primes
+
+131
+00:23:57,599 --> 00:24:04,319
+and this means we are able to calculate the module inverse of k mod p minus one.
+
+132
+00:24:06,000 --> 00:24:17,439
+And then Alice will calculate gk mod p to be r. Well, in this way, r will be the signature.
+
+133
+00:24:18,080 --> 00:24:28,480
+So rs will be the signature. So you can see the k is a one-time random key, right? But gk mod p
+
+134
+00:24:29,200 --> 00:24:43,200
+equals r, the r will be no. However, with r, you cannot know the k. So this key k will not be
+
+135
+00:24:44,160 --> 00:24:54,160
+disclosed. The receiver will only get r and s. Now we look at what's s. So s equals
+
+136
+00:24:55,920 --> 00:25:03,680
+module inverse of k minus one. Here we mod p minus one. So we have k minus one times,
+
+137
+00:25:03,680 --> 00:25:17,840
+this is the message x minus the private key of Alice times r. So r from here, and Alice has a
+
+138
+00:25:17,840 --> 00:25:27,920
+private key, right? So of course Alice is able to calculate the k minus one times the message
+
+139
+00:25:27,920 --> 00:25:38,240
+minus her private key times r and then mod p minus one to be another signature s.
+
+140
+00:25:40,720 --> 00:25:54,400
+The send message is the message end with the r and s. r and s will be sent along with x to the
+
+141
+00:25:54,400 --> 00:26:06,960
+receiver like Bob. When Bob received this message, Bob will do the signature verification.
+
+142
+00:26:07,759 --> 00:26:20,400
+To verify the message, Bob will do the comparison of g to the x and y to the r times r to the s.
+
+143
+00:26:25,120 --> 00:26:26,480
+So y is the public key.
+
+144
+00:26:29,920 --> 00:26:43,280
+So these are the public key, public key now g, p, and y to be known by receiver by Bob.
+
+145
+00:26:44,240 --> 00:26:57,039
+g, p, y is a public key to be known by anyone else. Okay, we want to know why this equation is
+
+146
+00:26:57,039 --> 00:27:10,079
+true. The gx equals yr times rs. That means your signature is correct. So of course you can see
+
+147
+00:27:10,079 --> 00:27:13,359
+the receiver will use Alice, the public key,
+
+148
+00:27:20,240 --> 00:27:28,559
+in the verification, right? y is the public key of Alice. So this public key will be sent to Bob.
+
+149
+00:27:29,200 --> 00:27:38,480
+So Bob will use Alice's public key r in the verification. So in this way Bob will guarantee
+
+150
+00:27:38,480 --> 00:27:47,679
+the message is really from Alice because I'm using your public key y in this verification. So small r,
+
+151
+00:27:48,000 --> 00:27:54,320
+is really from Alice because I'm using your public key y in this verification.
+
+152
+00:27:55,120 --> 00:28:04,400
+So small r, small s are the signed signature you sent to me. I use your public key y in the
+
+153
+00:28:04,400 --> 00:28:12,880
+verification. So g is the public key and also I apply the message in the verification, right?
+
+154
+00:28:12,960 --> 00:28:23,200
+So no one else can fabricate this data because I'm using that message and I'm using your public key
+
+155
+00:28:23,200 --> 00:28:33,280
+in this verification. So now we look at why this gx equals y to the r times r to the s.
+
+156
+00:28:34,240 --> 00:28:44,000
+So g to the x, this is a x is a capital x is a message. So in fact we look at the second equation.
+
+157
+00:28:44,960 --> 00:28:54,559
+So second equation means at both sides we can time at both sides with times k, right? So we have
+
+158
+00:28:55,119 --> 00:29:03,119
+k times s, then the right hand side k times k to the mass one, that's one.
+
+159
+00:29:07,839 --> 00:29:17,599
+It's congruent to one mod p mass one, right? So that means this k mass one can be cancelled.
+
+160
+00:29:18,399 --> 00:29:26,079
+So that means this k mass one can be cancelled. Then we have x minus x r
+
+161
+00:29:27,679 --> 00:29:37,039
+is congruent to x mass minus x r mod p mass one. In other words,
+
+162
+00:29:37,039 --> 00:29:55,599
+this x capital x minus x r, well this is mod p mass one, right? So this can be represented as
+
+163
+00:29:57,680 --> 00:30:04,720
+k times s plus let's say t times p mass one.
+
+164
+00:30:07,759 --> 00:30:14,399
+The congruent, that means the difference will be multiple of p mass one.
+
+165
+00:30:17,119 --> 00:30:21,920
+So both sides we mod p mass one, then we have that equation, right?
+
+166
+00:30:24,159 --> 00:30:30,720
+The difference will be a multiple of p mass one, multiple we use t to represent this multiple.
+
+167
+00:30:31,120 --> 00:30:40,319
+Okay, this is congruent, but here we have equation, because we use t to represent the difference.
+
+168
+00:30:42,160 --> 00:30:56,240
+And this implies the capital X equals k times s plus x r times t times p mass one.
+
+169
+00:31:01,360 --> 00:31:22,480
+So then the gx, so gx equals g to this part, right? Well, if we mod p,
+
+170
+00:31:23,200 --> 00:31:33,360
+mod p, according to the Fermat's theorem, we know that g to the t times p mass one is congruent to
+
+171
+00:31:33,360 --> 00:31:47,039
+one mod p, because p is a prime number. This is a Fermat's theorem. So this part can be removed.
+
+172
+00:31:47,039 --> 00:31:58,960
+And thus we have g to the x equals ks from here, xr from here.
+
+173
+00:32:06,720 --> 00:32:07,279
+Is that clear?
+
+174
+00:32:07,279 --> 00:32:24,240
+Why we have gx equals gxr plus ks? Because start from the second s generation, second equation.
+
+175
+00:32:37,279 --> 00:32:54,399
+So from this s, so this explains the whole process again. From this s, this equation, right?
+
+176
+00:32:55,599 --> 00:33:04,559
+Here, at both sides, we times k, that means we move the k mass one to the left hand side.
+
+177
+00:33:05,519 --> 00:33:16,879
+So we have ks is congruent to x minus xr mod p minus one. The congruent means this x minus x r
+
+178
+00:33:16,879 --> 00:33:24,639
+can be represented as ks plus t times p minus one, because we have mod p minus one, this operation.
+
+179
+00:33:25,440 --> 00:33:34,480
+Then this x, the capital X equals k times s plus xr plus t times p minus one.
+
+180
+00:33:38,400 --> 00:33:49,440
+And thus we have the result here, the gx equals g to the xr plus ks. And this is in the exponent,
+
+181
+00:33:49,600 --> 00:33:55,120
+we have addition, that can be translated to the multiplication, because this is the exponential
+
+182
+00:33:55,120 --> 00:34:07,920
+operation. So this equals g to the xr times g to the ks. g to the x equals y. This is the small x,
+
+183
+00:34:08,240 --> 00:34:16,079
+equals y. This is the small x, private key. So g to the x equals y.
+
+184
+00:34:18,960 --> 00:34:28,480
+And g to the k, k is the one time private key. Well, this equals r.
+
+185
+00:34:29,440 --> 00:34:40,240
+We can see from the first signature generation, g to the k equals r. And thus we have y to the r,
+
+186
+00:34:41,360 --> 00:34:50,639
+y is the public key of Alice. So Bob can use Alice public key, and this r is the signed
+
+187
+00:34:51,599 --> 00:35:02,159
+signature. And r to the s, s is another signed signature. And p is a public key. And thus Bob
+
+188
+00:35:02,159 --> 00:35:14,400
+can verify gx, capital X, equals y to the r times r to the s. If they're equal, that means the message
+
+189
+00:35:15,119 --> 00:35:22,639
+is signed by Alice. So we have the mathematical
+
+190
+00:35:25,280 --> 00:35:38,400
+the equations, derivation to guarantee. Well, this result is correct to show the signature is
+
+191
+00:35:38,400 --> 00:35:47,519
+really generated by Alice, because I'm using Alice, the public key here, to do the verification.
+
+192
+00:35:52,160 --> 00:35:56,800
+Okay, let's look at one example. So in this example,
+
+193
+00:35:56,800 --> 00:36:04,400
+so the public key is 11, p is 11, the base g generator is 2,
+
+194
+00:36:05,920 --> 00:36:13,280
+well, 2 is the generator of z11. And public key is, the private key is 3. So public key is
+
+195
+00:36:13,680 --> 00:36:21,840
+And public key is, the private key is 3. So public key is g to the x, 3,
+
+196
+00:36:23,760 --> 00:36:35,760
+g to the x, that is 2 to the 3 mod 11. That's 8. Suppose the message value is 9, and we choose
+
+197
+00:36:36,480 --> 00:36:50,000
+the one time key k to be 7. So k, 7, and p minus 1, 10, the relative prime, and we can get k
+
+198
+00:36:50,720 --> 00:37:01,200
+minus 1. So k minus 1, in this example, I tell you the result is 3. And we calculate the signature
+
+199
+00:37:01,199 --> 00:37:09,839
+r to be g to the k. So base is 2 to the 3, 2 to the k is 7.
+
+200
+00:37:09,840 --> 00:37:33,280
+The mod p mod 11, the result here is 7. So s will be a value to be k minus 1
+
+201
+00:37:34,240 --> 00:37:43,200
+times the message minus the private key x times r mod p minus 1.
+
+202
+00:37:45,840 --> 00:37:59,040
+And the value should be, this is 3 times the message is 9, the private key is 3, r is 7,
+
+203
+00:38:00,000 --> 00:38:08,480
+and this result is 3 times
+
+204
+00:38:11,199 --> 00:38:12,639
+minus 12.
+
+205
+00:38:17,920 --> 00:38:26,559
+So this equals minus 36. This is congruent to 4 because we mod 10.
+
+206
+00:38:26,719 --> 00:38:40,159
+And thus the sign message should be, well, the message is 9, with r to be 7, and s to be 4.
+
+207
+00:38:45,679 --> 00:38:50,880
+In the verification, we compare these two data. The first one is gx.
+
+208
+00:38:50,880 --> 00:39:06,160
+The first one is gx. g, the base is 2, message is 9, mod p, p is 11, and this result is 6.
+
+209
+00:39:07,119 --> 00:39:18,879
+y is the public key, is 8 from here, y is here. r is, this is r, this is s.
+
+210
+00:39:19,680 --> 00:39:31,599
+So r is 7 times, 7 to the s is 4, mod 11. This result is also 6.
+
+211
+00:39:32,400 --> 00:39:38,720
+The equal, that means the signature is correct.
+
+212
+00:39:48,880 --> 00:40:02,720
+Any question?
+
+213
+00:40:02,719 --> 00:40:18,079
+Okay, in part three, we talk about another signature, and this one is quite important.
+
+214
+00:40:19,039 --> 00:40:25,679
+This is called the bland signature. In some cases, we need to have the bland signature,
+
+215
+00:40:26,399 --> 00:40:35,279
+and we look at what's meaning for bland signature. The basic idea is that a sender
+
+216
+00:40:36,399 --> 00:40:45,199
+makes a sender to send message m without knowing m. Therefore, blandly,
+
+217
+00:40:46,319 --> 00:40:49,440
+this is needed in some e-commerce applications.
+
+218
+00:40:50,400 --> 00:40:58,320
+In another application, just like in the voting scenario, what's your vote?
+
+219
+00:40:59,280 --> 00:41:08,960
+You don't want to disclose your voting result to some officer. The officer needs to sign his
+
+220
+00:41:09,920 --> 00:41:19,840
+signature on your form. So this is another case. Well, when you guarantee that, well,
+
+221
+00:41:19,840 --> 00:41:28,159
+the form contains the correct signature from the officer. However, the officer will not know
+
+222
+00:41:28,879 --> 00:41:33,839
+your voting form, your voted result.
+
+223
+00:41:36,239 --> 00:41:45,519
+So this is a bland signature, just like, well, this is a scenario. Someone can sign
+
+224
+00:41:46,239 --> 00:41:52,480
+the signature. Well, in this hard copy, that's fine.
+
+225
+00:41:53,280 --> 00:42:01,760
+Bland, her eyes will not see your content, but can generate the signature. And we won't have
+
+226
+00:42:03,039 --> 00:42:07,840
+the same process in the e-commerce in two parties.
+
+227
+00:42:12,320 --> 00:42:18,159
+So bland signature can be generated in the following procedures.
+
+228
+00:42:19,119 --> 00:42:28,239
+So we assume that, well, the original message is m. Of course, we sent something different
+
+229
+00:42:29,119 --> 00:42:37,119
+to the sender, right? So it cannot be m. That means from m, we generate m prime.
+
+230
+00:42:37,119 --> 00:42:48,799
+m prime is different. So m prime will not disclose your data information.
+
+231
+00:42:51,440 --> 00:42:58,960
+m cannot be obtained by the sender, and m prime will be signed by sender. So sender will sign
+
+232
+00:42:59,519 --> 00:43:05,199
+m prime to get a signature s prime. So for m prime,
+
+233
+00:43:06,880 --> 00:43:15,280
+we'll assume that we are using the RSA algorithm. So m prime to get signature s prime.
+
+234
+00:43:17,519 --> 00:43:24,559
+To generate signature, that means we will use the private key to generate the signature.
+
+235
+00:43:25,519 --> 00:43:31,360
+D mod n, we have the signature. But
+
+236
+00:43:33,920 --> 00:43:40,079
+in the RSA, suppose in the RSA, this signature generation algorithm,
+
+237
+00:43:41,440 --> 00:43:48,079
+the message, I'm using my private key, we generate the signature s prime.
+
+238
+00:43:48,480 --> 00:43:57,199
+Okay, this s prime will be returned to the sender. So sender now can compute the sender's
+
+239
+00:43:57,199 --> 00:44:10,239
+signature s of m. That means at the sender side, sender will try to generate s from s prime.
+
+240
+00:44:10,719 --> 00:44:19,599
+This is the arm blinding procedure. So this is called the blinding procedure.
+
+241
+00:44:19,599 --> 00:44:41,679
+Now this is the arm blinding procedure. And this s, well, the generation s should equal
+
+242
+00:44:41,759 --> 00:45:00,799
+m to the d mod n equals s. We need to guarantee s. Okay, this s contains to be the correct
+
+243
+00:45:00,880 --> 00:45:11,920
+signal from the sender. That means it equals the m to the d mod n. So d is the private key of the
+
+244
+00:45:11,920 --> 00:45:23,200
+sender. So it looks to be quite just like a magic, magical trick, right? I do not have your
+
+245
+00:45:23,199 --> 00:45:33,919
+private key, but somehow I will generate this s. It contains, it equals the message m
+
+246
+00:45:34,639 --> 00:45:42,559
+to the d mod n. d is the sender's private key. I don't have it, but I can generate the s.
+
+247
+00:45:43,199 --> 00:45:56,320
+The process can be viewed in this diagram. Well, this is Alice and this is Bob. Alice is the sender.
+
+248
+00:46:00,559 --> 00:46:02,639
+Bob is the sender.
+
+249
+00:46:02,639 --> 00:46:13,359
+So what we've done in this process is, in the blinding process, we will multiply m with another
+
+250
+00:46:13,440 --> 00:46:29,840
+key. In the blinding process, in the blinding process, we will multiply m with another data.
+
+251
+00:46:30,559 --> 00:46:33,680
+And this data r is called the one-time key.
+
+252
+00:46:33,919 --> 00:46:48,879
+r is a one-time key, random key. So this r, we will, in fact, Alice will choose the data r. r to be
+
+253
+00:46:48,879 --> 00:46:56,079
+one-time key. And m will times r to the e, and then mod p.
+
+254
+00:46:57,039 --> 00:47:06,799
+And m will times r to the e, and then mod p. So this m prime will be sent to Bob.
+
+255
+00:47:09,199 --> 00:47:19,440
+Alice will choose this r. This r is unknown to Bob. And in this way, m prime will
+
+256
+00:47:20,400 --> 00:47:26,559
+can conceal the original message m. Is this right?
+
+257
+00:47:30,000 --> 00:47:35,760
+The m prime will be sent to Bob. This message contains some random number r.
+
+258
+00:47:37,119 --> 00:47:45,599
+Bob has no idea about r. Thus, Bob cannot get any information from m.
+
+259
+00:47:46,480 --> 00:47:55,839
+So Bob will do this signing process. The signing is quite simple to Bob. So Bob will apply his
+
+260
+00:47:55,839 --> 00:48:06,559
+private key d to sign to generate the signature s prime. The s prime will be returned to Alice.
+
+261
+00:48:06,639 --> 00:48:18,799
+So let's see, s prime equals m prime to the d mod p. So m prime equals m times r e,
+
+262
+00:48:20,480 --> 00:48:34,559
+this to the d mod p. This equals m to the d times r mod p.
+
+263
+00:48:37,119 --> 00:48:40,960
+To the e d mod p.
+
+264
+00:48:44,159 --> 00:48:50,799
+Right? Well, according to RSA algorithm, RSA, we know that
+
+265
+00:48:52,239 --> 00:49:04,719
+r to the e d is congruent to 1 mod p, or previously with mod n. But here we simply use p.
+
+266
+00:49:05,359 --> 00:49:06,399
+That's the same thing, right?
+
+267
+00:49:09,839 --> 00:49:17,839
+So you can refresh your memory. m to the e d is congruent to n mod n.
+
+268
+00:49:20,559 --> 00:49:29,839
+And we apply the public key e, apply the private key d again. We can get the original message m
+
+269
+00:49:30,800 --> 00:49:42,880
+in the RSA algorithm. So here, the r e d will get back to r, that one time key again,
+
+270
+00:49:44,000 --> 00:49:56,160
+1 mod p. So this one will generate, this one equals m d times r mod p.
+
+271
+00:49:56,159 --> 00:50:02,079
+So this is the s prime. Is that clear?
+
+272
+00:50:05,440 --> 00:50:09,679
+Okay, this s prime will be obtained by Alice.
+
+273
+00:50:12,000 --> 00:50:22,319
+So Alice got s prime. From s prime, Alice will divide this s prime by r
+
+274
+00:50:26,799 --> 00:50:42,319
+So she will get m to the d times r divided by r mod p. And this equals m d mod p.
+
+275
+00:50:45,599 --> 00:50:52,399
+s prime divided by r equals s prime times r minus 1.
+
+276
+00:50:52,400 --> 00:50:58,320
+The times r minus 1, that's a module inverse.
+
+277
+00:51:04,240 --> 00:51:13,680
+So you see, s prime times r equals s prime times r minus 1.
+
+278
+00:51:14,480 --> 00:51:29,599
+Not because if both sides, we times r, we times r, we mod p, of course this can be canceled, right?
+
+279
+00:51:29,599 --> 00:51:40,079
+This is prime. And according to definition, r minus 1 times r, this is 1 mod p.
+
+280
+00:51:44,079 --> 00:51:54,559
+So of course, with this s prime divided by r, in fact equals s prime times r minus 1.
+
+281
+00:51:54,559 --> 00:52:00,559
+r minus 1 is a module inverse. So how can we do the division operation?
+
+282
+00:52:01,759 --> 00:52:07,199
+Division can be translated to the multiplication of the modular inverse.
+
+283
+00:52:07,919 --> 00:52:14,159
+Okay, so in nature 2, we studied the modular inverse.
+
+284
+00:52:15,279 --> 00:52:21,599
+We just guarantee modular inverse times the r mod p equals 1. That's a requirement.
+
+285
+00:52:21,599 --> 00:52:36,960
+The eyes can get s prime from Bob. So eyes will divide s prime by r.
+
+286
+00:52:36,960 --> 00:52:44,719
+Or we say s prime times r to the minus 1. Then we can get this is s.
+
+287
+00:52:44,799 --> 00:52:56,879
+For message m, it's signature to be signed by Bob. This signature is m to the d mod p.
+
+288
+00:52:57,519 --> 00:53:16,000
+So this for Bob, the public key is e p. This is the public key. And private key
+
+289
+00:53:16,000 --> 00:53:33,280
+is d, right? For Bob. Then you can see this is indeed
+
+290
+00:53:36,239 --> 00:53:43,199
+is generated by using Bob's private key based on the original message m.
+
+291
+00:53:43,279 --> 00:53:51,759
+We have this signature. Although Alice has no idea of Bob's private key,
+
+292
+00:53:52,319 --> 00:54:01,359
+but she can successfully generate the signature s. In this signing process,
+
+293
+00:54:01,359 --> 00:54:11,119
+Bob has no idea of the original message m. So eyes can know this r.
+
+294
+00:54:13,519 --> 00:54:25,839
+Of course, eyes can calculate r minus 1. When eyes obtain s prime from Bob,
+
+295
+00:54:26,639 --> 00:54:35,119
+so eyes can calculate s prime times r minus 1 mod p, then this equals the signature s.
+
+296
+00:54:35,119 --> 00:54:50,639
+So this is the blind signature generation process.
+
+297
+00:54:50,639 --> 00:55:14,159
+We have the charms plus signature scheme. This scheme is exactly the process illustrated in this page.
+
+298
+00:55:21,440 --> 00:55:32,559
+So you can see in this transplant signature, we assume that we're using the RSA algorithm.
+
+299
+00:55:33,519 --> 00:55:44,480
+And suppose Bob's public key is n and e. His private key is d. The message is m.
+
+300
+00:55:44,480 --> 00:55:50,639
+m should be smaller than n. And Alice chooses a one-time key k.
+
+301
+00:55:51,760 --> 00:55:58,719
+k should be in the range from 0 to n. We will guarantee that gcd n k is 1.
+
+302
+00:55:59,679 --> 00:56:06,159
+So this will guarantee that we have the k must 1 mod n.
+
+303
+00:56:06,159 --> 00:56:13,039
+k is a randomly chosen number. This is called the blinding factor.
+
+304
+00:56:16,799 --> 00:56:27,199
+In the blinding process, Alice will compute n times k to the e. Alice knows k.
+
+305
+00:56:27,279 --> 00:56:37,279
+And in this blinding process, well, when Bob applied his signature, applied his private key d,
+
+306
+00:56:37,519 --> 00:56:51,120
+and this m prime d equals this one.
+
+307
+00:56:53,440 --> 00:56:59,840
+m to the d times k times e d.
+
+308
+00:57:00,160 --> 00:57:11,200
+Well, in this way, the random number k with an exponent d can be actually can be cancelled.
+
+309
+00:57:11,279 --> 00:57:23,039
+We already put the exponent part with a value of e. So e times d mod n. Actually, this equals 1.
+
+310
+00:57:24,319 --> 00:57:35,039
+So in the on-branded case, we have a random number k with an exponent d.
+
+311
+00:57:35,759 --> 00:57:45,840
+Actually, this equals 1. So in the on-branding, the message we want to get from s prime to s.
+
+312
+00:57:46,719 --> 00:57:59,840
+So s prime is the signature obtained by Alice. So Alice can get
+
+313
+00:57:59,840 --> 00:58:10,720
+s prime times the k must 1. So this will get the original signature.
+
+314
+00:58:12,480 --> 00:58:16,640
+The reason is because s prime, this is s prime.
+
+315
+00:58:16,639 --> 00:58:31,440
+So s prime equals m d is equal to m d times k mod n. So from s prime to s,
+
+316
+00:58:32,400 --> 00:58:39,839
+we can simply multiply s prime by k must 1. This will generate the signature s.
+
+317
+00:58:47,279 --> 00:59:01,199
+So this is the whole process. You can see this is the m prime. m prime to d, we have m d, this is s, this is k.
+
+318
+00:59:01,199 --> 00:59:12,559
+You have mod n, e d.
+
+319
+00:59:14,879 --> 00:59:26,480
+In our RSA algorithm, e d, we choose e d such that it equals, it is congruent to 1 mod phi.
+
+320
+00:59:27,199 --> 00:59:35,599
+This is a guarantee that k e d mod n equals k.
+
+321
+00:59:39,119 --> 00:59:44,159
+So thus, we can get the s. This is the signature.
+
+322
+00:59:49,280 --> 00:59:53,599
+And this signature equals this part
+
+323
+00:59:57,440 --> 00:59:59,599
+is s prime.
+
+324
+01:00:10,800 --> 01:00:18,639
+Okay, now we look at this exercise. Suppose we have the copy key to be
+
+325
+01:00:18,719 --> 01:00:26,879
+e equals 5, n is 1, 1, 9. So 1, 1, 9 equals 7 times 17, right?
+
+326
+01:00:28,480 --> 01:00:38,480
+This p to be 7, q to be 17. The requester wants a signature on the message m equals
+
+327
+01:00:39,440 --> 01:00:50,320
+37. Suppose he chooses a random blending factor R to be 29. So we need to guarantee that g c d
+
+328
+01:00:51,440 --> 01:01:01,039
+R n is 1. In this way, we can calculate our must 1 mod n.
+
+329
+01:01:01,199 --> 01:01:10,400
+So what's the private key of Sonar? We have the public key, e and n. We are able to calculate
+
+330
+01:01:11,199 --> 01:01:18,320
+the Sonar's private key. And then we should apply the blending phase.
+
+331
+01:01:18,720 --> 01:01:28,640
+So suppose this step 1, step 2, blending phase, step 3, signing phase, step 4 on blending phase.
+
+332
+01:01:29,600 --> 01:01:39,600
+In the blending phase, that means the message m times R is one time key. We apply the same
+
+333
+01:01:39,599 --> 01:01:53,679
+message m times R is one time key. We apply the public key of the Sonar, right?
+
+334
+01:01:56,319 --> 01:02:02,960
+This is the blending phase. We get m prime. In the signing phase,
+
+335
+01:02:02,960 --> 01:02:13,599
+this is quite simple. The Sonar will apply his private key to do the signing. That's the m prime
+
+336
+01:02:15,199 --> 01:02:26,000
+to apply the private key d to generate the s prime. In the on-blending phase, it is
+
+337
+01:02:26,000 --> 01:02:41,119
+done by the requester. He will get the signature s from s prime times R one time key,
+
+338
+01:02:42,559 --> 01:02:47,440
+the module inverse of this R mod n.
+
+339
+01:02:47,440 --> 01:02:54,720
+OK, so this is an exercise. Let's have a break for 10 minutes. So in 10 minutes,
+
+340
+01:02:55,760 --> 01:03:04,480
+you can try to solve this exercise. OK, so let's have a break for 10 minutes.
+

@@ -1,0 +1,1968 @@
+1
+00:00:00,000 --> 00:00:14,140
+Hello, good evening.
+
+2
+00:00:14,140 --> 00:00:20,660
+So let's start with today's lecture.
+
+3
+00:00:20,660 --> 00:00:26,260
+Last time we talked about the lecture five, about your payment protocol, about this SET
+
+4
+00:00:26,260 --> 00:00:28,820
+protocol, right?
+
+5
+00:00:28,820 --> 00:00:35,659
+We talked about part one, about the SET architecture and the dual signature.
+
+6
+00:00:35,659 --> 00:00:41,060
+So in this SET protocol, we have multiple participants, like you're the card holder,
+
+7
+00:00:41,060 --> 00:00:47,460
+you're the customer, and then we have the customer's credit card company.
+
+8
+00:00:47,460 --> 00:00:54,740
+We have the merchant, the customer can place an order on the merchant's website, web page,
+
+9
+00:00:54,740 --> 00:00:56,859
+to have the online shopping.
+
+10
+00:00:56,859 --> 00:01:02,820
+And then we have the merchant's bank, we call it to be the acquire institution.
+
+11
+00:01:02,820 --> 00:01:09,939
+Of course, in between the internet and the closed financial network, we have the gateway.
+
+12
+00:01:09,939 --> 00:01:17,159
+So the gateway, the payment gateway will connect the internet with the bank system.
+
+13
+00:01:17,159 --> 00:01:25,159
+So all the information will be transmitted through this payment gateway.
+
+14
+00:01:25,159 --> 00:01:31,879
+So in this architecture, we say that how we can send our order, write the message.
+
+15
+00:01:31,879 --> 00:01:35,719
+So message first will be hashed, we get the digest.
+
+16
+00:01:35,719 --> 00:01:41,979
+And this digest, we will generate the signature based on this digest.
+
+17
+00:01:41,979 --> 00:01:48,699
+So that means the sender can use his private key to generate the signature.
+
+18
+00:01:48,699 --> 00:01:54,799
+The signature along with the message, S plus M, will be encrypted.
+
+19
+00:01:54,799 --> 00:02:01,219
+We're using a symmetric key K here for encryption.
+
+20
+00:02:01,219 --> 00:02:05,659
+And this symmetric key K will be encrypted in an envelope.
+
+21
+00:02:05,659 --> 00:02:13,419
+So in this envelope, we will use the public key of the recipient to have the encryption.
+
+22
+00:02:13,419 --> 00:02:18,699
+So this will guarantee that only the recipient can open the envelope.
+
+23
+00:02:18,699 --> 00:02:24,919
+And then we'll know the key to get the information of the original message.
+
+24
+00:02:24,919 --> 00:02:32,899
+So this is a whole process to process the message in today's e-commerce.
+
+25
+00:02:32,899 --> 00:02:36,719
+So here we show, based on the previous slide, the logic.
+
+26
+00:02:36,719 --> 00:02:44,679
+Then we have the diagram to show the message signature and how they can be encrypted by
+
+27
+00:02:44,680 --> 00:02:49,800
+using different keys.
+
+28
+00:02:49,800 --> 00:02:59,360
+And also we said that we have the dual signature, this mechanism in the state protocols.
+
+29
+00:02:59,360 --> 00:03:06,680
+The dual signature means just like from the customer, the customer will generate two messages,
+
+30
+00:03:06,680 --> 00:03:08,520
+M1 and M2.
+
+31
+00:03:08,520 --> 00:03:14,319
+So M1 will show the order information, just like the customer buy a TV.
+
+32
+00:03:14,959 --> 00:03:20,560
+M2 will contain the customer's account information.
+
+33
+00:03:20,560 --> 00:03:24,239
+So account information just like your credit card information.
+
+34
+00:03:24,239 --> 00:03:27,959
+So both messages will be sent to different parties.
+
+35
+00:03:27,959 --> 00:03:35,159
+For example, all the information will be reviewed by the merchant and account information will
+
+36
+00:03:35,159 --> 00:03:40,199
+be reviewed by your credit card company.
+
+37
+00:03:40,199 --> 00:03:48,679
+But to be more efficient, we will generate one signature to be used by two parties.
+
+38
+00:03:48,679 --> 00:03:57,959
+So we say this is a dual signature, one signature to be checked by two parties.
+
+39
+00:03:57,959 --> 00:04:03,319
+So now we look at how we can construct this dual signature.
+
+40
+00:04:03,319 --> 00:04:09,419
+In this scheme, we assume that M1 is a message destined to the merchant.
+
+41
+00:04:09,419 --> 00:04:14,019
+So this is the order information.
+
+42
+00:04:14,019 --> 00:04:19,740
+And M2 will be the message for the payment gateway by way of the merchant.
+
+43
+00:04:19,740 --> 00:04:26,300
+So M2 means the account information.
+
+44
+00:04:26,300 --> 00:04:33,399
+The buyer can concatenate the digest of both messages to construct a new M3.
+
+45
+00:04:33,399 --> 00:04:36,539
+So M3 can be obtained by this equation.
+
+46
+00:04:36,660 --> 00:04:43,780
+For M1, we have the hash result concatenated by the hash result of M2.
+
+47
+00:04:43,780 --> 00:04:47,660
+So we have M3.
+
+48
+00:04:47,660 --> 00:04:51,760
+And then we have this dual signature, the content.
+
+49
+00:04:51,760 --> 00:04:58,000
+The customer will send the following messages to the merchant.
+
+50
+00:04:58,000 --> 00:05:07,639
+So the messages are composed of the following elements, like M1 is the order information.
+
+51
+00:05:07,639 --> 00:05:20,639
+Here, HM1 is the digest, and M2 is the account information.
+
+52
+00:05:20,639 --> 00:05:27,279
+So HM2 together will be encrypted by using the gateway's public key.
+
+53
+00:05:27,279 --> 00:05:32,319
+So you can see PKG, this is the public key of the payment gateway.
+
+54
+00:05:32,319 --> 00:05:40,319
+That means only the payment gateway can open M2, this message, because only the payment
+
+55
+00:05:40,319 --> 00:05:47,019
+gateway can use his private key to do the decryption of this part.
+
+56
+00:05:47,019 --> 00:05:50,279
+And then we have the signature.
+
+57
+00:05:50,279 --> 00:05:53,279
+So the dual signature is this part.
+
+58
+00:05:53,279 --> 00:05:59,119
+HM3, M3 is a message generated in the previous slide.
+
+59
+00:05:59,119 --> 00:06:03,519
+So this M3 first will go to a hash function.
+
+60
+00:06:03,519 --> 00:06:04,519
+We have the digest.
+
+61
+00:06:04,519 --> 00:06:10,279
+Based on digest, the customer can sign his signature.
+
+62
+00:06:10,279 --> 00:06:16,639
+So signature will be generated by using the customer's secret key.
+
+63
+00:06:16,639 --> 00:06:20,819
+So SKC is the private key of the buyer.
+
+64
+00:06:20,819 --> 00:06:27,459
+So this part is a signature, because you use your private key to generate the signature
+
+65
+00:06:27,459 --> 00:06:28,459
+part.
+
+66
+00:06:28,459 --> 00:06:41,459
+Along with the top line, we have this information, HM1 exclusive or HM2 will also be sent to
+
+67
+00:06:41,459 --> 00:06:44,379
+the merchant.
+
+68
+00:06:44,379 --> 00:06:56,839
+So these are the messages generated by the customer, by the buyer.
+
+69
+00:06:56,839 --> 00:07:07,199
+For all the messages received by the merchant, the merchant will check whether the order
+
+70
+00:07:07,199 --> 00:07:10,800
+is valid.
+
+71
+00:07:10,800 --> 00:07:15,879
+So at this moment, the merchant will do the following two jobs.
+
+72
+00:07:15,879 --> 00:07:26,740
+So the first job is order integrity.
+
+73
+00:07:26,740 --> 00:07:32,400
+The merchant will guarantee that, of course, all the messages will be encrypted.
+
+74
+00:07:32,400 --> 00:07:37,920
+All the messages will be encrypted just by following the mechanism here.
+
+75
+00:07:37,920 --> 00:07:41,840
+So this makes them to encrypt the message.
+
+76
+00:07:41,840 --> 00:07:49,060
+So now we only assume that the merchant can get M1, HM1, and all the information listed
+
+77
+00:07:49,060 --> 00:07:50,840
+in this page.
+
+78
+00:07:50,840 --> 00:07:58,340
+So the order integrity, that means the merchant will double check the order M1, this content
+
+79
+00:07:58,340 --> 00:07:59,680
+is valid.
+
+80
+00:07:59,680 --> 00:08:01,819
+It is not modified.
+
+81
+00:08:01,819 --> 00:08:03,300
+It is wrong.
+
+82
+00:08:03,300 --> 00:08:08,220
+So to check the order integrity, that's quite simple.
+
+83
+00:08:08,220 --> 00:08:13,639
+For M1, we can do the hash result, HM1.
+
+84
+00:08:13,639 --> 00:08:17,160
+And we have both M1 and HM1 here.
+
+85
+00:08:17,160 --> 00:08:29,199
+So we will check whether these two can match with each other.
+
+86
+00:08:29,199 --> 00:08:51,379
+So this is check to verify the merchant can verify, verifies integrity of purchase order
+
+87
+00:08:52,379 --> 00:09:07,179
+Right, from M1, we apply a probably null hash function and to see whether these two actually
+
+88
+00:09:07,179 --> 00:09:08,759
+are equal.
+
+89
+00:09:08,759 --> 00:09:11,980
+So this is the first step, quite simple.
+
+90
+00:09:11,980 --> 00:09:18,559
+The second step, you know, we always want to need to do the authentication.
+
+91
+00:09:18,559 --> 00:09:24,819
+When you guarantee that your signature is correct, that means the signature is generated
+
+92
+00:09:24,819 --> 00:09:26,599
+by the buyer.
+
+93
+00:09:26,599 --> 00:09:34,539
+So this step is called the authentication.
+
+94
+00:09:34,539 --> 00:09:44,779
+So authentication part, we have the signature from the buyer, right, HM3, encrypted by or
+
+95
+00:09:45,000 --> 00:09:52,439
+we say signed by the buyer using the buyer's secret key, the private key here.
+
+96
+00:09:52,439 --> 00:09:57,819
+So this signature, we need to guarantee this signature is correct.
+
+97
+00:09:57,819 --> 00:10:10,959
+So the first step is from the signature, this your signature, we have HM3, we have the signature
+
+98
+00:10:10,959 --> 00:10:13,779
+generated by SKC.
+
+99
+00:10:13,779 --> 00:10:20,199
+So this signature, we can use the public key.
+
+100
+00:10:20,199 --> 00:10:33,120
+We can use the public key of the buyer to decrypt the message.
+
+101
+00:10:33,120 --> 00:10:39,079
+We decrypt the message by using the public key of the customer, right.
+
+102
+00:10:39,080 --> 00:10:44,420
+So correspond to this secret key, private key.
+
+103
+00:10:44,420 --> 00:10:50,280
+So using the public key, public key is known to everyone.
+
+104
+00:10:50,280 --> 00:10:56,700
+So this public key, we can get the original message HM3.
+
+105
+00:10:56,700 --> 00:10:59,139
+So HM3 is the hash result.
+
+106
+00:10:59,139 --> 00:11:05,580
+Well, at this moment, how to verify the content is correct.
+
+107
+00:11:05,580 --> 00:11:11,320
+So we need to double check this HM3 is valid.
+
+108
+00:11:11,320 --> 00:11:22,180
+So HM3 is valid, well, for the merchant, merchant has HM1.
+
+109
+00:11:22,180 --> 00:11:31,860
+So HM1, so merchant can try to get M3 first.
+
+110
+00:11:31,860 --> 00:11:42,820
+So merchant has the HM1 from here, right, HM1.
+
+111
+00:11:42,820 --> 00:12:02,540
+And also, he can do this operation, exclusive or this message, HM1, exclusive or HM2.
+
+112
+00:12:02,540 --> 00:12:10,740
+So this one will get what's the result.
+
+113
+00:12:10,740 --> 00:12:17,419
+So two messages, we do the exclusive or this operation, this will generate what's the result
+
+114
+00:12:17,419 --> 00:12:32,779
+for the first two, first two operands, HM1 exclusive or HM1 will get what?
+
+115
+00:12:32,779 --> 00:12:39,940
+Or zero, that's right, because the same bits, exclusive or we have zero, different bits,
+
+116
+00:12:39,940 --> 00:12:41,380
+we have one, right?
+
+117
+00:12:41,380 --> 00:12:51,900
+So that means the first part here, we get or zero, zero, bits.
+
+118
+00:12:51,900 --> 00:13:03,300
+So zero, exclusive or the HM2, what's the result?
+
+119
+00:13:03,299 --> 00:13:17,579
+So that means actually zero, exclusive or the second part, the third part, we have the result to be exactly HM2.
+
+120
+00:13:17,579 --> 00:13:25,419
+Zero, exclusive or zero, it is zero, zero, exclusive one, it is one, right?
+
+121
+00:13:25,419 --> 00:13:31,219
+So that means or zero, exclusive or HM2, we have HM2.
+
+122
+00:13:31,220 --> 00:13:43,420
+From HM2, the merchant also has HM1.
+
+123
+00:13:43,420 --> 00:13:50,700
+So the merchant can concatenate these two together to get M3.
+
+124
+00:13:50,700 --> 00:14:00,980
+And for M3, the merchant can apply the hash function H to get HM3.
+
+125
+00:14:00,980 --> 00:14:07,980
+And then the merchant can double check whether these two are equal or not.
+
+126
+00:14:07,980 --> 00:14:24,659
+If these two are the same, that means the signature is correct.
+
+127
+00:14:25,659 --> 00:14:33,299
+Because at this moment, the merchant does not know what's the account information.
+
+128
+00:14:33,299 --> 00:14:35,740
+Your account information is encrypted.
+
+129
+00:14:35,740 --> 00:14:40,100
+Only the payment gateway can open account information.
+
+130
+00:14:40,100 --> 00:14:47,980
+So at this moment, the merchant only knows HM2, the hash result.
+
+131
+00:14:48,019 --> 00:14:57,379
+So through this kind of mechanism, the merchant can guarantee that the message is really generated by the buyer.
+
+132
+00:14:57,379 --> 00:15:10,940
+Because from this kind of comparisons, the merchant can guarantee the message is sent from a particular buyer.
+
+133
+00:15:10,980 --> 00:15:20,380
+Because the merchant will use that buyer's public key here to do the verification.
+
+134
+00:15:20,380 --> 00:15:32,580
+OK, once these two steps pass through, then the merchant will guarantee all the messages he received are correct.
+
+135
+00:15:32,580 --> 00:15:39,420
+And then the merchant can pass some information to the payment gateway.
+
+136
+00:15:39,419 --> 00:15:51,059
+So if the merchant accepts the integrity of the message, integrity means all the information is correct and also the signature is correct.
+
+137
+00:15:51,059 --> 00:16:04,019
+So then the next step is the merchant will submit the information to the payment gateway.
+
+138
+00:16:04,019 --> 00:16:18,059
+So in the payment gateway, you can see this is a message, in fact, to be the account information.
+
+139
+00:16:18,059 --> 00:16:25,579
+And also, the merchant will send HM1.
+
+140
+00:16:25,579 --> 00:16:33,460
+So HM1 is all the information, the hashed result, right?
+
+141
+00:16:33,460 --> 00:16:42,940
+So this hash result of order.
+
+142
+00:16:42,940 --> 00:16:49,700
+In other words, the gateway will not know the order information.
+
+143
+00:16:49,700 --> 00:16:56,019
+So gateway has no idea of order.
+
+144
+00:16:56,059 --> 00:17:05,299
+Gateway will only get the hash result of the order message.
+
+145
+00:17:05,299 --> 00:17:10,980
+And also, we have the dual signature to be sent to the gateway.
+
+146
+00:17:10,980 --> 00:17:17,740
+So merchant will send the same dual signature to the gateway.
+
+147
+00:17:17,740 --> 00:17:23,220
+At this moment, the gateway will also do two checks.
+
+148
+00:17:23,220 --> 00:17:27,100
+The first check is the account integrity.
+
+149
+00:17:35,819 --> 00:17:49,660
+Account integrity means, well, the gateway can use its private key to open the account information.
+
+150
+00:17:49,660 --> 00:18:01,940
+So from M2, HM2, this one is encrypted by using the payment gateway's public key.
+
+151
+00:18:01,940 --> 00:18:14,700
+So payment gateway can use its private key to do decryption, decrypt the message.
+
+152
+00:18:14,700 --> 00:18:21,460
+And then the payment gateway will get M2 and HM2.
+
+153
+00:18:21,460 --> 00:18:44,100
+So through a simple hash operation, and then the gateway can make sure this account information is correct.
+
+154
+00:18:44,099 --> 00:18:51,339
+Hashed result check.
+
+155
+00:18:51,339 --> 00:18:55,859
+You see the payment gateway has both M2 and HM2, right?
+
+156
+00:18:55,859 --> 00:19:04,019
+So he can simply apply a hash to get a digest of M2 and to compare the result with HM2.
+
+157
+00:19:04,019 --> 00:19:10,939
+So in this way, the gateway will guarantee the account information is correct.
+
+158
+00:19:10,940 --> 00:19:30,860
+And then we look at the second check is the signature validity, or we say this is an authentication check.
+
+159
+00:19:30,860 --> 00:19:37,980
+The payment gateway also needs to guarantee that this request is from a valid buyer.
+
+160
+00:19:37,980 --> 00:19:47,299
+So authentication verification will also check this dual signature.
+
+161
+00:19:47,299 --> 00:20:00,700
+So now you can see the payment gateway has the HM1 here.
+
+162
+00:20:00,700 --> 00:20:12,180
+And also he can encrypt the second elements to get HM2.
+
+163
+00:20:12,180 --> 00:20:14,580
+So HM2 comes from here.
+
+164
+00:20:14,580 --> 00:20:18,779
+So these two, we concatenate them.
+
+165
+00:20:18,779 --> 00:20:22,980
+Together, we get the M3 message.
+
+166
+00:20:22,980 --> 00:20:27,660
+So M3 is a concatenation of these two digest.
+
+167
+00:20:27,700 --> 00:20:34,140
+From M3, we can apply a public hash function.
+
+168
+00:20:34,140 --> 00:20:36,820
+We get HM3.
+
+169
+00:20:36,820 --> 00:20:52,420
+So HM3, this one, and also from the dual signature, the HM3, this is the signature.
+
+170
+00:20:52,420 --> 00:21:04,779
+We can apply the public key of the customer, the public key of the buyer, so we can get the original message.
+
+171
+00:21:04,779 --> 00:21:11,220
+This is a decryption.
+
+172
+00:21:11,220 --> 00:21:14,580
+We get HM3.
+
+173
+00:21:14,580 --> 00:21:18,500
+So we compare these two with the same.
+
+174
+00:21:18,500 --> 00:21:34,900
+If they're the same, that means this signature is correct because we're using the public key of this particular customer to do the verification.
+
+175
+00:21:34,900 --> 00:21:41,299
+So this means signature is valid.
+
+176
+00:21:41,299 --> 00:21:46,660
+And thus, this account information is valid.
+
+177
+00:21:46,660 --> 00:21:50,460
+So this pass through the authentication.
+
+178
+00:21:50,460 --> 00:21:51,460
+Is that clear?
+
+179
+00:21:51,460 --> 00:22:11,060
+So we'll guarantee the account information provided by the buyer is valid.
+
+180
+00:22:11,060 --> 00:22:12,620
+So any questions?
+
+181
+00:22:12,619 --> 00:22:25,259
+Yeah.
+
+182
+00:22:25,259 --> 00:22:32,459
+No.
+
+183
+00:22:32,459 --> 00:22:35,779
+Well, the hash, we get the digest.
+
+184
+00:22:35,779 --> 00:22:42,539
+So this one step, based on the digest, we get the signature.
+
+185
+00:22:42,539 --> 00:22:56,019
+So normally, we should have both the, well, we will check because you have both the signature and the message.
+
+186
+00:22:56,019 --> 00:23:03,139
+So this actually, this means we have HM3.
+
+187
+00:23:03,140 --> 00:23:22,620
+If this one we generate, it will apply the secret key, just like we are using the RSA algorithm, we apply the secret key D, we get the signature.
+
+188
+00:23:22,619 --> 00:23:34,899
+So this HM3, the signature will be sent to the, will be obtained by receiver.
+
+189
+00:23:34,899 --> 00:23:47,139
+So here means we mean decryption means from S, from S here, we do decryption, we will get HM3.
+
+190
+00:23:47,140 --> 00:24:02,660
+We guarantee the signature is correct.
+
+191
+00:24:02,660 --> 00:24:10,380
+Yeah, so the process is HM2, we have the digest here, right?
+
+192
+00:24:10,380 --> 00:24:14,940
+And HM1, similarly, we have the digest.
+
+193
+00:24:14,940 --> 00:24:22,539
+M3 equals the concatenation of HM1 and HM2.
+
+194
+00:24:22,539 --> 00:24:24,380
+That's M3.
+
+195
+00:24:24,380 --> 00:24:32,059
+For M3, we apply the same hash function to get the digest HM3.
+
+196
+00:24:32,059 --> 00:24:41,420
+So we should get HM3 from two directions.
+
+197
+00:24:41,420 --> 00:25:05,660
+Because not just from just the HM3 plus S, also, we should get the M3 information from your order information HM1 to double check the information sent from the payment gateway from merchant is not modified, is valid.
+
+198
+00:25:11,420 --> 00:25:24,700
+Not not just to verify this signature part, of course, we can in this line, we can double check your signature is correct.
+
+199
+00:25:24,700 --> 00:25:36,220
+But however, we need to guarantee this message M3 contains your both account information and the order information.
+
+200
+00:25:36,220 --> 00:25:48,180
+So this M3 is valid.
+
+201
+00:25:48,180 --> 00:25:58,059
+Any other questions?
+
+202
+00:25:58,059 --> 00:26:15,460
+Although this page, you can see the gateway has no idea of the order, but he can check the order is valid through this HM1 information provided from the merchant.
+
+203
+00:26:15,460 --> 00:26:32,460
+So the payment gateway will double check your order information, your account information, both can match to this HM3.
+
+204
+00:26:32,460 --> 00:26:44,259
+OK, part two is optional, and we also this part just to show how each participant can obtain a certificate in this set protocol.
+
+205
+00:26:44,259 --> 00:26:50,299
+So basically, the certificate, in fact, will contain your public key.
+
+206
+00:26:50,299 --> 00:27:06,859
+Your public key for encryption, your public key to sign your signature, so people can use this public key to verify your signature and people can use this public key to encrypt a message.
+
+207
+00:27:07,699 --> 00:27:13,099
+Just previously, there's an envelope inside the envelope.
+
+208
+00:27:13,099 --> 00:27:31,419
+We have the symmetric key and sender can use your public key to encrypt that envelope such that only you as a receiver can open that envelope because you have your private key to to open it.
+
+209
+00:27:31,460 --> 00:27:41,300
+Well, in every message you can see here, in fact, you need to show your receiver that this is my certificate.
+
+210
+00:27:41,300 --> 00:27:44,620
+This certificate contains my public key.
+
+211
+00:27:44,620 --> 00:27:49,380
+You can use this key to verify my signature.
+
+212
+00:27:49,380 --> 00:27:55,740
+So this purpose, OK, along with the message, I will send you my certificate.
+
+213
+00:27:55,740 --> 00:27:59,420
+So how to get the certificate?
+
+214
+00:27:59,460 --> 00:28:03,700
+This involves the CA Center.
+
+215
+00:28:03,700 --> 00:28:14,140
+So the CA Center will have multiple rounds of communication with the user to guarantee, well, your sent information is correct.
+
+216
+00:28:14,140 --> 00:28:23,259
+And then I will certify, well, this is your public key and put the public key in a certificate and sign my name.
+
+217
+00:28:23,299 --> 00:28:27,059
+So certificate contains the CA's signature.
+
+218
+00:28:30,740 --> 00:28:42,180
+Because your certificate contains the CA's signature, then the receiver will trust your CA is valid, your certificate is valid.
+
+219
+00:28:42,180 --> 00:28:45,980
+OK, so this logic.
+
+220
+00:28:45,980 --> 00:28:52,379
+Just like your polio degree will contain the polio stamp, right?
+
+221
+00:28:52,380 --> 00:29:00,780
+If in the electronic documents, your certificate should contain the polio's signature.
+
+222
+00:29:00,780 --> 00:29:09,100
+So I will not give the details of part two, just give you the idea.
+
+223
+00:29:09,100 --> 00:29:14,980
+Before we have said this, you can involve in the set in this payment protocol.
+
+224
+00:29:14,980 --> 00:29:21,620
+You need to register yourself and get the certificate from the CA Center.
+
+225
+00:29:21,619 --> 00:29:30,939
+OK, now we look at part three about the different transactions involved in this payment protocol instead.
+
+226
+00:29:30,939 --> 00:29:47,019
+So for said purchase transaction, in fact, we have three categories of request response pairs related to purchase orders, payment authorization and the financial settlement.
+
+227
+00:29:47,019 --> 00:29:57,059
+And the first pair is about, so this should be the purchase request.
+
+228
+00:30:18,019 --> 00:30:30,059
+This is a purchase, P means purchase, purchase request, purchase response.
+
+229
+00:30:30,059 --> 00:30:40,980
+So this one for this pair means just like very beginning, you're the customer, the card holder, place and order.
+
+230
+00:30:40,980 --> 00:30:46,220
+So this order contains your order information and your account information.
+
+231
+00:30:46,220 --> 00:30:51,180
+This purchase request message will be sent to merchant.
+
+232
+00:30:51,180 --> 00:30:56,819
+And in step two, we have the authorization request.
+
+233
+00:30:56,819 --> 00:31:08,779
+Well, the merchant will check your order information, so your order information is correct, just like you want to order a TV and then.
+
+234
+00:31:08,779 --> 00:31:14,779
+The merchant will pass your request to the payment gateway.
+
+235
+00:31:14,779 --> 00:31:18,339
+So this payment gateway, of course.
+
+236
+00:31:18,339 --> 00:31:23,460
+This request. Will finally be sent to.
+
+237
+00:31:23,460 --> 00:31:28,899
+The usual bank.
+
+238
+00:31:28,899 --> 00:31:33,859
+Or we say the.
+
+239
+00:31:33,859 --> 00:31:44,099
+Very card company.
+
+240
+00:31:44,099 --> 00:31:49,699
+So this request will go through the payment gateway.
+
+241
+00:31:49,699 --> 00:31:56,259
+Request.
+
+242
+00:31:56,259 --> 00:32:09,740
+So payment gateway will check this request is valid, and then this request will finally be sent to the critical company and critical company will prove it that approve this request.
+
+243
+00:32:09,740 --> 00:32:18,620
+So then we have the authorization response in this number three, the step three.
+
+244
+00:32:18,620 --> 00:32:31,220
+So this is a pair. Once the merchant get the response, that means this order information is approved by the customers.
+
+245
+00:32:31,299 --> 00:32:33,299
+Credit card company.
+
+246
+00:32:33,299 --> 00:32:45,059
+And then he can show the response purchase response message to the order to say, well, your request is approved.
+
+247
+00:32:45,059 --> 00:32:49,019
+So you have paid this transaction.
+
+248
+00:32:49,019 --> 00:32:51,579
+And later on.
+
+249
+00:32:51,579 --> 00:32:55,620
+The merchant and get.
+
+250
+00:32:55,619 --> 00:33:00,219
+The credit. So we have the step five and step six.
+
+251
+00:33:00,219 --> 00:33:07,219
+So this is a caption request.
+
+252
+00:33:07,219 --> 00:33:09,419
+And caption response.
+
+253
+00:33:09,419 --> 00:33:12,739
+So this step is for.
+
+254
+00:33:12,739 --> 00:33:17,059
+Merchant.
+
+255
+00:33:17,059 --> 00:33:22,859
+To claim credit.
+
+256
+00:33:22,859 --> 00:33:25,699
+From his bank account.
+
+257
+00:33:25,699 --> 00:33:31,779
+Just in step five, we have the caption request from merchant to the payment gateway.
+
+258
+00:33:31,779 --> 00:33:37,859
+So the payment gateway will send this.
+
+259
+00:33:37,859 --> 00:33:40,259
+Copy request.
+
+260
+00:33:40,259 --> 00:33:51,379
+To the merchants bank.
+
+261
+00:33:51,540 --> 00:34:00,420
+Of course, the merchant bank can acknowledge, well, you have this credit because of this purchase transaction.
+
+262
+00:34:00,420 --> 00:34:09,300
+And also the response will be sent back to the payment gateway and gateway will notify the merchant you have the credit.
+
+263
+00:34:09,300 --> 00:34:15,099
+So your account balance will be increased by like one hundred Hong Kong dollars.
+
+264
+00:34:15,099 --> 00:34:17,860
+So this is a caption response.
+
+265
+00:34:17,900 --> 00:34:20,420
+Step five, step six.
+
+266
+00:34:20,420 --> 00:34:30,900
+For the financial settlement.
+
+267
+00:34:30,900 --> 00:34:33,980
+You can see in this table.
+
+268
+00:34:33,980 --> 00:34:36,980
+We had a purchase request.
+
+269
+00:34:36,980 --> 00:34:45,460
+This is the message from court holder to merchant that this denotes the purchase request.
+
+270
+00:34:45,460 --> 00:34:49,539
+Purchase response is a direction from merchant to court holder.
+
+271
+00:34:49,539 --> 00:34:57,380
+That means this is a response to the purchase request to notify the buyer.
+
+272
+00:34:57,380 --> 00:35:00,179
+Your request is approved.
+
+273
+00:35:00,179 --> 00:35:08,300
+So we have authorization request, authorization response and caption request and caption response.
+
+274
+00:35:08,300 --> 00:35:14,059
+OK, well, previously we have mentioned that we have the dual signature scheme, right?
+
+275
+00:35:14,059 --> 00:35:19,820
+In this purchase request message, we will apply this dual signature.
+
+276
+00:35:19,820 --> 00:35:26,299
+In the purchase request message, this is from the buyer to the merchant.
+
+277
+00:35:26,299 --> 00:35:31,139
+So buyer will provide two information, two pieces of information.
+
+278
+00:35:31,139 --> 00:35:35,619
+The first information is we call it to be M1.
+
+279
+00:35:35,619 --> 00:35:38,380
+Order information.
+
+280
+00:35:38,380 --> 00:35:41,980
+You order one TV, you order some books, right?
+
+281
+00:35:41,980 --> 00:35:43,259
+Different orders.
+
+282
+00:35:43,260 --> 00:35:48,020
+So this information is M1.
+
+283
+00:35:48,020 --> 00:35:58,180
+And the buyer also need to provide his payment account, his account information.
+
+284
+00:35:58,180 --> 00:36:01,340
+Just what's your credit card number?
+
+285
+00:36:01,340 --> 00:36:04,100
+And this is in M2.
+
+286
+00:36:04,100 --> 00:36:07,340
+OK, from M1, we have HM1.
+
+287
+00:36:07,340 --> 00:36:11,340
+We get the digest HM1.
+
+288
+00:36:11,340 --> 00:36:14,860
+From M2, we have HM2.
+
+289
+00:36:14,860 --> 00:36:16,940
+We do the concatenation.
+
+290
+00:36:16,940 --> 00:36:27,660
+So we get M3 equals HM1 concatenated with HM2.
+
+291
+00:36:27,660 --> 00:36:30,380
+So we have message M3.
+
+292
+00:36:30,380 --> 00:36:33,500
+So M3, we apply the same hash function.
+
+293
+00:36:33,500 --> 00:36:36,660
+We have HM3.
+
+294
+00:36:36,659 --> 00:36:49,059
+And then based on HM3, we apply the sign, the secret key, the private key for signing.
+
+295
+00:36:49,059 --> 00:36:58,059
+So we get this signature by applying the user's, the card holder's, private key.
+
+296
+00:36:58,059 --> 00:37:02,019
+So we denote this one to be.
+
+297
+00:37:02,139 --> 00:37:07,420
+To follow the previous one, we have HM3.
+
+298
+00:37:07,420 --> 00:37:13,900
+We apply the secret key of the card holder.
+
+299
+00:37:13,900 --> 00:37:21,820
+So this one is, we call it to be the dual signature to be verified by both the merchant
+
+300
+00:37:21,820 --> 00:37:25,619
+and payment gateway.
+
+301
+00:37:25,619 --> 00:37:39,579
+OK, now we look at the content of this purchase request message.
+
+302
+00:37:39,579 --> 00:37:45,099
+So we have the, I said before, this is M1, all the information.
+
+303
+00:37:45,099 --> 00:37:49,819
+This is payment instruction M2.
+
+304
+00:37:49,819 --> 00:37:53,099
+And we have HM1.
+
+305
+00:37:53,099 --> 00:38:08,420
+And we have a dual signature, HM3, signed by the card holder's secret key.
+
+306
+00:38:08,420 --> 00:38:12,699
+This M2, we have HM2.
+
+307
+00:38:12,699 --> 00:38:18,059
+And this is the same dual signature.
+
+308
+00:38:18,059 --> 00:38:31,659
+That's the HM3, signed by the card holder's signing key, private key.
+
+309
+00:38:31,659 --> 00:38:39,699
+So the message will be sent to, so this is a request message.
+
+310
+00:38:39,699 --> 00:38:46,500
+And all the information identifies the goods to be purchased will be known by the merchant.
+
+311
+00:38:46,500 --> 00:38:50,179
+So payment instructions contain the PAN number.
+
+312
+00:38:50,179 --> 00:38:56,419
+PAN means the buyer's primary account number, your account number.
+
+313
+00:38:56,419 --> 00:39:03,699
+Also the price of the whole items and the transaction identifier, transaction ID, for
+
+314
+00:39:03,699 --> 00:39:06,779
+this transaction.
+
+315
+00:39:06,780 --> 00:39:17,340
+So the first part, just like, will be encrypted, right, will be encrypted with K1.
+
+316
+00:39:17,340 --> 00:39:24,500
+So this K1 will be encrypted by using the merchant's public key.
+
+317
+00:39:24,500 --> 00:39:32,180
+So only the merchant can open the envelope and get the K1 and then do the decryption
+
+318
+00:39:32,180 --> 00:39:36,300
+to get this part.
+
+319
+00:39:36,300 --> 00:39:47,340
+So this part will be known to merchant.
+
+320
+00:39:47,340 --> 00:39:48,900
+Okay we'll look at second part.
+
+321
+00:39:48,900 --> 00:39:51,900
+Second part will also be encrypted.
+
+322
+00:39:51,900 --> 00:39:59,660
+So will be encrypted by a symmetric key K, but this key K will be put, this key will
+
+323
+00:39:59,660 --> 00:40:03,019
+be put into an envelope.
+
+324
+00:40:03,019 --> 00:40:09,980
+So this envelope will be encrypted by using the payment gateway's public key.
+
+325
+00:40:09,980 --> 00:40:14,980
+So encryption with the public key, encryption key of the payment gateway.
+
+326
+00:40:14,980 --> 00:40:22,579
+In other words, all the account information cannot be known to the merchant.
+
+327
+00:40:22,579 --> 00:40:40,219
+So this part is known to the gateway, the gateway.
+
+328
+00:40:40,219 --> 00:40:53,500
+You can see, along with the message, the buyer also needs to provide his certificate.
+
+329
+00:40:53,500 --> 00:41:05,699
+So this certificate contains, in fact, it is his public key to verify the signature.
+
+330
+00:41:05,699 --> 00:41:10,819
+So this is signature certificate, signature certificate.
+
+331
+00:41:10,819 --> 00:41:19,819
+So this is for verify the dual signature.
+
+332
+00:41:19,820 --> 00:41:43,300
+Just like previously, it should be, just like here we have PUC, public key of the cardholder
+
+333
+00:41:44,180 --> 00:41:52,860
+here.
+
+334
+00:41:52,860 --> 00:42:00,480
+So this part contains the PUC of cardholder and this certificate will be sent to receivers.
+
+335
+00:42:00,480 --> 00:42:09,260
+So receiver can use this public key to verify the dual signature.
+
+336
+00:42:10,260 --> 00:42:15,100
+The first part can be checked by the merchant.
+
+337
+00:42:15,100 --> 00:42:22,580
+So merchant will verify your order is correct, your signature is correct.
+
+338
+00:42:22,580 --> 00:42:27,020
+If well, your signature is correct.
+
+339
+00:42:27,020 --> 00:42:34,900
+And then the second part, the merchant will send the second part to the payment gateway.
+
+340
+00:42:34,940 --> 00:42:39,059
+So payment gateway will get the account information.
+
+341
+00:42:39,059 --> 00:42:49,579
+Your PAN, primary account number information will be obtained by the payment gateway.
+
+342
+00:42:49,579 --> 00:42:52,720
+So now we look at the second message.
+
+343
+00:42:52,720 --> 00:43:02,180
+The first message, purchase request message is this one.
+
+344
+00:43:02,179 --> 00:43:09,539
+So this one will be sent to the post.
+
+345
+00:43:09,539 --> 00:43:18,500
+So this view it to be this one.
+
+346
+00:43:18,500 --> 00:43:22,579
+The purchase request message contains two parts.
+
+347
+00:43:22,579 --> 00:43:24,819
+First part can be known by the merchant.
+
+348
+00:43:24,819 --> 00:43:32,059
+Second part will be known by the payment gateway.
+
+349
+00:43:32,059 --> 00:43:36,059
+That's the first part checked by the merchant.
+
+350
+00:43:36,059 --> 00:43:42,940
+Merchant can know this message, this order information is correct.
+
+351
+00:43:42,940 --> 00:43:53,420
+And then the merchant will generate the authorization request message.
+
+352
+00:43:53,420 --> 00:44:07,900
+So in this authorization request message, the merchant, request for payment authorization
+
+353
+00:44:07,900 --> 00:44:20,340
+support this message M4, the merchant will request to authorize this transaction.
+
+354
+00:44:20,340 --> 00:44:33,360
+So we get the HM4 and the merchant will generate the signature here, just an S4.
+
+355
+00:44:33,360 --> 00:44:37,980
+So this message, we have a key K for the encryption.
+
+356
+00:44:37,980 --> 00:44:42,740
+This key K will be put into an envelope.
+
+357
+00:44:42,739 --> 00:44:55,500
+So this envelope will be encrypted by the, so we suppose this key K, this key K will
+
+358
+00:44:55,500 --> 00:45:07,819
+be encrypted by the public key of the gateway.
+
+359
+00:45:07,820 --> 00:45:14,800
+So you can see this part authorization request message will be put here.
+
+360
+00:45:14,800 --> 00:45:21,100
+So this will be decrypted by the payment gateway.
+
+361
+00:45:21,100 --> 00:45:25,539
+So all the message will be sent to gateway.
+
+362
+00:45:25,539 --> 00:45:42,500
+If we denote a previous slide, this part to be, just we represent this part to be A.
+
+363
+00:45:42,500 --> 00:45:50,739
+So this part is encrypted and only the payment gateway can open it.
+
+364
+00:45:50,739 --> 00:46:01,000
+So the merchant will forward this A part here to be included in this part.
+
+365
+00:46:01,000 --> 00:46:07,279
+So these two parts, the top part includes the authorization request information.
+
+366
+00:46:07,279 --> 00:46:13,319
+The bottom part contains the account information.
+
+367
+00:46:13,320 --> 00:46:21,440
+So payment gateway also checks the consistency of the request for payment, request for payment.
+
+368
+00:46:21,440 --> 00:46:28,920
+That's M4, request for payment authorization with a payment instruction.
+
+369
+00:46:28,920 --> 00:46:34,200
+Payment instruction, that's M2, M2 is here.
+
+370
+00:46:34,200 --> 00:46:39,840
+And in both parts, they should have the same transaction ID.
+
+371
+00:46:39,840 --> 00:46:43,480
+The transaction identifier is the same in both parts.
+
+372
+00:46:43,480 --> 00:46:52,800
+So this part authorization request will have the transaction ID.
+
+373
+00:46:52,800 --> 00:47:05,240
+And this bottom part will also contain the same transaction ID.
+
+374
+00:47:05,239 --> 00:47:10,159
+Along with the message, you can see we have the certificate.
+
+375
+00:47:10,159 --> 00:47:14,399
+So this is certificate for signature generation, right?
+
+376
+00:47:14,399 --> 00:47:18,839
+The card holder, the signature generation for merchant.
+
+377
+00:47:18,839 --> 00:47:29,359
+So this, the first one, the second one, both are for the signature verification.
+
+378
+00:47:29,360 --> 00:47:38,039
+So this signature verification, the first signature verification, the second signature
+
+379
+00:47:38,039 --> 00:47:39,320
+verification.
+
+380
+00:47:39,320 --> 00:47:45,059
+So they will be used for to check which signature.
+
+381
+00:47:45,059 --> 00:47:51,019
+We have one, we have two, right, two certificates.
+
+382
+00:47:51,019 --> 00:47:56,960
+So the first certificate will be used to verify which signature.
+
+383
+00:47:56,960 --> 00:48:04,800
+The first certificate is the signature certificate of the card holder.
+
+384
+00:48:04,800 --> 00:48:15,960
+This contains the card holder's public key to verify the buyer's signature, right?
+
+385
+00:48:15,960 --> 00:48:21,039
+So where is the buyer's signature in this, in this message?
+
+386
+00:48:21,039 --> 00:48:26,159
+Which one?
+
+387
+00:48:26,159 --> 00:48:30,759
+Anyone can tell me?
+
+388
+00:48:30,759 --> 00:48:37,759
+As you can see, we have signature one here, one signature, and two signature.
+
+389
+00:48:37,759 --> 00:48:43,559
+The second signature will be the bottom message, first signature in top message.
+
+390
+00:48:43,559 --> 00:49:02,559
+So one, the first certificate will be used in top or bottom, top or bottom.
+
+391
+00:49:02,559 --> 00:49:09,960
+Anyone can give me any answer?
+
+392
+00:49:09,960 --> 00:49:22,059
+Top or bottom?
+
+393
+00:49:22,059 --> 00:49:29,340
+The first one is the signing certificate for the card holder, right?
+
+394
+00:49:29,340 --> 00:49:37,500
+So which one is the card holder's signature, the top or bottom one?
+
+395
+00:49:37,500 --> 00:49:42,980
+Bottom, that's right.
+
+396
+00:49:42,980 --> 00:49:51,260
+So the dual signature is generated by the customer, okay?
+
+397
+00:49:51,260 --> 00:49:56,740
+The top part, actually that's authorization request message.
+
+398
+00:49:56,739 --> 00:50:00,899
+This one is generated by the merchant.
+
+399
+00:50:00,899 --> 00:50:11,979
+So this certificate will be used to verify this signature.
+
+400
+00:50:11,979 --> 00:50:24,579
+This part is generated by merchant.
+
+401
+00:50:24,579 --> 00:50:32,739
+Merchant accept your order and it will generate this authorization request message to the
+
+402
+00:50:32,739 --> 00:50:34,819
+payment gateway, right?
+
+403
+00:50:34,819 --> 00:50:49,380
+So you can see, number two is here, it's from merchant and payment gateway.
+
+404
+00:50:49,380 --> 00:50:59,059
+Okay, this message also contains another certificate.
+
+405
+00:50:59,059 --> 00:51:04,260
+So this certificate is for merchant, for encryption certificate.
+
+406
+00:51:04,260 --> 00:51:11,220
+So this one actually means because we have the communication between the merchant and
+
+407
+00:51:11,219 --> 00:51:22,980
+the gateway.
+
+408
+00:51:22,980 --> 00:51:32,019
+At this moment, we have the request, authorization request from merchant to the gateway, right?
+
+409
+00:51:32,019 --> 00:51:37,619
+So later on, there will be the response message.
+
+410
+00:51:37,619 --> 00:51:47,059
+So in this response, well, in the response message, normally will be encrypted by a symmetric
+
+411
+00:51:47,059 --> 00:52:04,380
+key K and then the gateway can use this public key of the merchant to encrypt this key.
+
+412
+00:52:04,380 --> 00:52:13,980
+This public key of the merchant is indicated here, like here.
+
+413
+00:52:13,980 --> 00:52:22,680
+So at this moment, I pass you my public key in this message.
+
+414
+00:52:22,680 --> 00:52:31,500
+So later on, when gateway send back the response message, you can use this public key to do
+
+415
+00:52:32,500 --> 00:52:33,500
+the encryption.
+
+416
+00:52:33,500 --> 00:52:35,940
+Like here.
+
+417
+00:52:35,940 --> 00:52:39,619
+So first I give you the key, you see, that's my public key.
+
+418
+00:52:39,619 --> 00:52:58,940
+So later on, you can talk to me by using this public key to encrypt the message.
+
+419
+00:52:58,940 --> 00:53:05,019
+So encryption, some key will be used for signature, generation and verification.
+
+420
+00:53:05,019 --> 00:53:12,780
+Some will be used for purely for confidentiality, right, purpose to encrypt the message such
+
+421
+00:53:12,780 --> 00:53:17,700
+that only the receiver can decrypt the message.
+
+422
+00:53:17,700 --> 00:53:26,880
+Okay, we look at the authorization response.
+
+423
+00:53:26,880 --> 00:53:35,440
+So this information contains your request message from the merchant and also your account
+
+424
+00:53:35,440 --> 00:53:42,240
+information from the buyer, from the call holder.
+
+425
+00:53:42,240 --> 00:53:56,440
+And then this message will be sent to the credit card company.
+
+426
+00:53:56,440 --> 00:54:23,500
+The process is the merchant will send this authorization request authorization request
+
+427
+00:54:23,500 --> 00:54:32,980
+message to the payment gateway.
+
+428
+00:54:32,980 --> 00:54:47,840
+So this authorization request message will be sent to the issued bank or we say the credit
+
+429
+00:54:47,840 --> 00:55:05,360
+card company, payment gateway, the merchant, the credit card company.
+
+430
+00:55:05,360 --> 00:55:12,920
+This is a request authorization request.
+
+431
+00:55:12,920 --> 00:55:20,200
+Of course, the credit card company can open your account information and will check your
+
+432
+00:55:20,200 --> 00:55:26,079
+signature is correct and will check your balance can support this transaction.
+
+433
+00:55:26,079 --> 00:55:37,360
+And credit card company can give you a response to approve this request, approve it.
+
+434
+00:55:37,360 --> 00:55:44,599
+If this transaction request is approved, the gateway can send back authorization response
+
+435
+00:55:44,599 --> 00:55:51,120
+message.
+
+436
+00:55:51,119 --> 00:56:07,960
+We call this is authorization response from here through the payment gateway.
+
+437
+00:56:07,960 --> 00:56:25,599
+In this authorization response, it shows that well, this transaction is approved.
+
+438
+00:56:25,719 --> 00:56:29,199
+approved.
+
+439
+00:56:29,199 --> 00:56:42,880
+And also it contains a token or merchant.
+
+440
+00:56:42,880 --> 00:56:58,079
+to claim credit.
+
+441
+00:56:58,079 --> 00:57:05,960
+So just like the payment request is accepted by the payment gateway, the payment gateway
+
+442
+00:57:05,960 --> 00:57:12,880
+prepares an authorization request and send it to the issued bank.
+
+443
+00:57:12,880 --> 00:57:19,400
+Send this authorization request just like this one to the issued bank issued bank is
+
+444
+00:57:19,400 --> 00:57:24,159
+a credit card company through the bank card network.
+
+445
+00:57:24,159 --> 00:57:32,320
+Once the authorization from the issued bank arrives, just like this is approved message
+
+446
+00:57:32,320 --> 00:57:35,440
+arrived at the payment gateway.
+
+447
+00:57:35,440 --> 00:57:45,639
+The gateway sends the response message authorization response message.
+
+448
+00:57:45,639 --> 00:57:53,559
+So it represents that the response of the issued bank authorizing the payment and also
+
+449
+00:57:53,559 --> 00:58:01,960
+there is a capture token associated with this transaction to facilitate daily remote connections.
+
+450
+00:58:01,960 --> 00:58:09,840
+We have a token for merchant to be used for later on to claim the credit because of this
+
+451
+00:58:09,840 --> 00:58:17,079
+transaction.
+
+452
+00:58:17,079 --> 00:58:21,159
+So in step four, we have purchase response.
+
+453
+00:58:21,159 --> 00:58:24,440
+The purchase response is quite simple.
+
+454
+00:58:24,440 --> 00:58:31,079
+That's a response for merchant to notify the card holder whether this purchase request
+
+455
+00:58:31,079 --> 00:58:32,759
+is approved or not.
+
+456
+00:58:32,759 --> 00:58:41,239
+Of course, if it's approved, the card holder, the buyer can get the notification this transaction
+
+457
+00:58:41,239 --> 00:58:43,799
+is successful.
+
+458
+00:58:43,799 --> 00:58:49,880
+So of course, the merchant do this notification after getting the authorization response from
+
+459
+00:58:49,880 --> 00:58:53,199
+the gateway.
+
+460
+00:58:53,199 --> 00:58:57,960
+Step five and six are the capture request.
+
+461
+00:58:57,960 --> 00:58:59,240
+So capture request.
+
+462
+00:58:59,240 --> 00:59:06,880
+That means well, the merchant will claim the credit that was implicitly accorded during
+
+463
+00:59:06,880 --> 00:59:09,199
+the transaction authorization.
+
+464
+00:59:09,199 --> 00:59:19,800
+So the main function is for the merchant to claim the credit.
+
+465
+00:59:19,800 --> 00:59:38,000
+So this can be viewed just like we have merchant and we have the merchant's bank.
+
+466
+00:59:38,000 --> 00:59:44,240
+Merchant will send a request.
+
+467
+00:59:44,239 --> 00:59:56,959
+In step five to claim the credit and in step six, the merchant bank will acknowledge response
+
+468
+00:59:56,959 --> 01:00:06,239
+that your account is increased by this credit.
+
+469
+01:00:06,239 --> 01:00:12,079
+So this shows the financial settlement can be initiated by sending the capture request
+
+470
+01:00:12,079 --> 01:00:18,559
+message to the payment gateway to request capture or connection.
+
+471
+01:00:18,559 --> 01:00:25,039
+The message contains the amount of transaction in this part right, amount of transaction,
+
+472
+01:00:25,039 --> 01:00:33,360
+the transaction ID, the reference to the authorization, and also with the encrypted and signed capture
+
+473
+01:00:33,360 --> 01:00:38,940
+token.
+
+474
+01:00:38,940 --> 01:00:47,940
+The reference to the authorization, that means who is the credit card company to approve
+
+475
+01:00:47,940 --> 01:00:50,820
+this transaction.
+
+476
+01:00:50,820 --> 01:00:57,860
+So later on, the payment gateway sends a clearance request using all the information it has collected
+
+477
+01:00:57,860 --> 01:01:09,860
+to the acquired bank.
+
+478
+01:01:09,860 --> 01:01:11,980
+So step six is capture response.
+
+479
+01:01:11,980 --> 01:01:17,820
+That means the gateway responds to the merchant with a capture response message.
+
+480
+01:01:17,820 --> 01:01:24,320
+And this message contains the response of the acquired bank with the amount finally
+
+481
+01:01:24,360 --> 01:01:28,240
+credited to the merchant account.
+
+482
+01:01:28,240 --> 01:01:37,440
+So that's step six, quite simple.
+
+483
+01:01:37,440 --> 01:01:43,559
+Okay then in this part three, we talk about the detailed information, right?
+
+484
+01:01:44,279 --> 01:01:54,799
+The purchase request, the second one is authorization request.
+
+485
+01:01:54,799 --> 01:02:03,079
+So in this tool, we understand how we can, how all the information should be included
+
+486
+01:02:03,079 --> 01:02:08,559
+in this kind of messages, your order information, your account information.
+
+487
+01:02:08,559 --> 01:02:17,000
+And we have the key different certificate to be utilized for different part, the signature
+
+488
+01:02:17,000 --> 01:02:22,840
+verification, and also some certificate to be used for the future communications.
+
+489
+01:02:22,840 --> 01:02:28,960
+So this is, this is for future communication.
+
+490
+01:02:59,119 --> 01:03:08,400
+Five, we talk about, we'll give you the idea how the SET protocol, how it works.
+
+491
+01:03:08,400 --> 01:03:11,400
+Okay, let's have a break, 10 minutes.
+
+492
+01:03:11,400 --> 01:03:13,960
+If you have any question, you can come here and ask me.
+

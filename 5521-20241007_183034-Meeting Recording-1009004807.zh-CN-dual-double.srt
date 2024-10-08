@@ -1,0 +1,3936 @@
+1
+00:00:00,000 --> 00:00:14,140
+Hello, good evening.
+
+1
+00:00:00,000 --> 00:00:14,140
+您好，晚上好。
+
+2
+00:00:14,140 --> 00:00:20,660
+So let's start with today's lecture.
+
+2
+00:00:14,140 --> 00:00:20,660
+那么，我们就从今天的讲座开始吧。
+
+3
+00:00:20,660 --> 00:00:26,260
+Last time we talked about the lecture five, about your payment protocol, about this SET
+
+3
+00:00:20,660 --> 00:00:26,260
+上次我们讨论了第五次讲座的内容，涉及您的支付协议，以及这个 SET 协议
+
+4
+00:00:26,260 --> 00:00:28,820
+protocol, right?
+
+4
+00:00:26,260 --> 00:00:28,820
+协议，对吗？
+
+5
+00:00:28,820 --> 00:00:35,659
+We talked about part one, about the SET architecture and the dual signature.
+
+5
+00:00:28,820 --> 00:00:35,659
+我们讨论了第一部分内容，涉及 SET 架构和双签名机制。
+
+6
+00:00:35,659 --> 00:00:41,060
+So in this SET protocol, we have multiple participants, like you're the card holder,
+
+6
+00:00:35,659 --> 00:00:41,060
+因此，在这个 SET 协议中，有多个参与者，例如您是持卡人，
+
+7
+00:00:41,060 --> 00:00:47,460
+you're the customer, and then we have the customer's credit card company.
+
+7
+00:00:41,060 --> 00:00:47,460
+您是客户，我们这边还有客户的信用卡公司。
+
+8
+00:00:47,460 --> 00:00:54,740
+We have the merchant, the customer can place an order on the merchant's website, web page,
+
+8
+00:00:47,460 --> 00:00:54,740
+我们有商家，顾客可在商家网站或网页上提交订单
+
+9
+00:00:54,740 --> 00:00:56,859
+to have the online shopping.
+
+9
+00:00:54,740 --> 00:00:56,859
+想要体验在线购物。
+
+10
+00:00:56,859 --> 00:01:02,820
+And then we have the merchant's bank, we call it to be the acquire institution.
+
+10
+00:00:56,859 --> 00:01:02,820
+然后我们提到商家的银行，我们将其称为收购机构。
+
+11
+00:01:02,820 --> 00:01:09,939
+Of course, in between the internet and the closed financial network, we have the gateway.
+
+11
+00:01:02,820 --> 00:01:09,939
+当然，在互联网与封闭的金融网络之间，存在一个网关。这样的表述更为自然和易懂。
+
+12
+00:01:09,939 --> 00:01:17,159
+So the gateway, the payment gateway will connect the internet with the bank system.
+
+12
+00:01:09,939 --> 00:01:17,159
+因此，这个网关，即支付网关，将把互联网与银行系统连接起来。
+
+13
+00:01:17,159 --> 00:01:25,159
+So all the information will be transmitted through this payment gateway.
+
+13
+00:01:17,159 --> 00:01:25,159
+所有信息将通过这个支付网关进行传输，表述更加自然易懂。
+
+14
+00:01:25,159 --> 00:01:31,879
+So in this architecture, we say that how we can send our order, write the message.
+
+14
+00:01:25,159 --> 00:01:31,879
+在这个架构中，我们讨论如何发送订单并编写信息。
+
+15
+00:01:31,879 --> 00:01:35,719
+So message first will be hashed, we get the digest.
+
+15
+00:01:31,879 --> 00:01:35,719
+首先对消息进行哈希处理，得到摘要。这样的表述更加自然易懂。
+
+16
+00:01:35,719 --> 00:01:41,979
+And this digest, we will generate the signature based on this digest.
+
+16
+00:01:35,719 --> 00:01:41,979
+我们将根据这个摘要生成签名。这个签名将基于这个摘要生成。
+
+17
+00:01:41,979 --> 00:01:48,699
+So that means the sender can use his private key to generate the signature.
+
+17
+00:01:41,979 --> 00:01:48,699
+这意味着发件人可以使用自己的私钥来生成签名。这样的表述更加自然易懂。
+
+18
+00:01:48,699 --> 00:01:54,799
+The signature along with the message, S plus M, will be encrypted.
+
+18
+00:01:48,699 --> 00:01:54,799
+签名加上消息，即 S 加 M，将会被加密。
+
+19
+00:01:54,799 --> 00:02:01,219
+We're using a symmetric key K here for encryption.
+
+19
+00:01:54,799 --> 00:02:01,219
+我们在这里使用对称密钥 K 进行加密。这个翻译已经比较自然和易懂了。
+
+20
+00:02:01,219 --> 00:02:05,659
+And this symmetric key K will be encrypted in an envelope.
+
+20
+00:02:01,219 --> 00:02:05,659
+这个对称密钥 K 将被封装加密，以更自然和易于理解的方式表达。
+
+21
+00:02:05,659 --> 00:02:13,419
+So in this envelope, we will use the public key of the recipient to have the encryption.
+
+21
+00:02:05,659 --> 00:02:13,419
+因此，在这个信封里，我们将使用收件人的公钥进行加密处理。这样的表述更加自然易懂。
+
+22
+00:02:13,419 --> 00:02:18,699
+So this will guarantee that only the recipient can open the envelope.
+
+22
+00:02:13,419 --> 00:02:18,699
+这将确保只有收件人能够打开信封。
+
+23
+00:02:18,699 --> 00:02:24,919
+And then we'll know the key to get the information of the original message.
+
+23
+00:02:18,699 --> 00:02:24,919
+然后我们就能知道获取原始信息的关键了。
+
+24
+00:02:24,919 --> 00:02:32,899
+So this is a whole process to process the message in today's e-commerce.
+
+24
+00:02:24,919 --> 00:02:32,899
+这是一整个处理今天电子商务中消息的过程。这是一个处理今天电子商务中消息的完整流程。
+
+25
+00:02:32,899 --> 00:02:36,719
+So here we show, based on the previous slide, the logic.
+
+25
+00:02:32,899 --> 00:02:36,719
+基于上一页幻灯片，这里我们展示了逻辑。为了使翻译更加自然易懂，我们可以将其改为：“根据上一页的内容，我们展示了这一逻辑。”
+
+26
+00:02:36,719 --> 00:02:44,679
+Then we have the diagram to show the message signature and how they can be encrypted by
+
+26
+00:02:36,719 --> 00:02:44,679
+然后这里有图表展示消息签名及其加密方式
+
+27
+00:02:44,680 --> 00:02:49,800
+using different keys.
+
+27
+00:02:44,680 --> 00:02:49,800
+使用不同的键（使内容更易于理解）
+
+28
+00:02:49,800 --> 00:02:59,360
+And also we said that we have the dual signature, this mechanism in the state protocols.
+
+28
+00:02:49,800 --> 00:02:59,360
+我们还提到，我们拥有双重签名机制，这是在状态协议中的一个机制。
+
+29
+00:02:59,360 --> 00:03:06,680
+The dual signature means just like from the customer, the customer will generate two messages,
+
+29
+00:02:59,360 --> 00:03:06,680
+双重签名是指客户将生成两条消息，就像客户自己操作一样，使操作更加安全可靠
+
+30
+00:03:06,680 --> 00:03:08,520
+M1 and M2.
+
+30
+00:03:06,680 --> 00:03:08,520
+M1 和 M2。
+
+31
+00:03:08,520 --> 00:03:14,319
+So M1 will show the order information, just like the customer buy a TV.
+
+31
+00:03:08,520 --> 00:03:14,319
+因此，M1 将展示订单信息，就像顾客购买电视那样。
+
+32
+00:03:14,959 --> 00:03:20,560
+M2 will contain the customer's account information.
+
+32
+00:03:14,959 --> 00:03:20,560
+M2 将包含客户的账户信息。
+
+33
+00:03:20,560 --> 00:03:24,239
+So account information just like your credit card information.
+
+33
+00:03:20,560 --> 00:03:24,239
+就像您的信用卡信息这样的账户信息，表述得更加自然易懂。
+
+34
+00:03:24,239 --> 00:03:27,959
+So both messages will be sent to different parties.
+
+34
+00:03:24,239 --> 00:03:27,959
+因此，这两条信息将被分别发送给不同的接收方。
+
+35
+00:03:27,959 --> 00:03:35,159
+For example, all the information will be reviewed by the merchant and account information will
+
+35
+00:03:27,959 --> 00:03:35,159
+例如，所有信息都将由商家进行审核，账户信息也不例外
+
+36
+00:03:35,159 --> 00:03:40,199
+be reviewed by your credit card company.
+
+36
+00:03:35,159 --> 00:03:40,199
+请由您的信用卡公司进行审核。（已优化，使翻译更自然易懂）
+
+37
+00:03:40,199 --> 00:03:48,679
+But to be more efficient, we will generate one signature to be used by two parties.
+
+37
+00:03:40,199 --> 00:03:48,679
+为了更高效，我们将生成一个由双方共同使用的签名。
+
+38
+00:03:48,679 --> 00:03:57,959
+So we say this is a dual signature, one signature to be checked by two parties.
+
+38
+00:03:48,679 --> 00:03:57,959
+我们将其称为双重签名，意味着一个签名需要由双方进行核实。这样的表述更加自然易懂。
+
+39
+00:03:57,959 --> 00:04:03,319
+So now we look at how we can construct this dual signature.
+
+39
+00:03:57,959 --> 00:04:03,319
+现在我们来探讨如何构建这个双重签名。
+
+40
+00:04:03,319 --> 00:04:09,419
+In this scheme, we assume that M1 is a message destined to the merchant.
+
+40
+00:04:03,319 --> 00:04:09,419
+在此方案中，我们假定 M1 是一条发往商家的信息。
+
+41
+00:04:09,419 --> 00:04:14,019
+So this is the order information.
+
+41
+00:04:09,419 --> 00:04:14,019
+这就是订单信息。（经过润色）
+
+42
+00:04:14,019 --> 00:04:19,740
+And M2 will be the message for the payment gateway by way of the merchant.
+
+42
+00:04:14,019 --> 00:04:19,740
+M2 将通过商家途径成为支付网关的消息。
+
+43
+00:04:19,740 --> 00:04:26,300
+So M2 means the account information.
+
+43
+00:04:19,740 --> 00:04:26,300
+因此，M2 代表账户信息。
+
+44
+00:04:26,300 --> 00:04:33,399
+The buyer can concatenate the digest of both messages to construct a new M3.
+
+44
+00:04:26,300 --> 00:04:33,399
+买家可以将两条消息的摘要拼接起来，以构建一个新的 M3。
+
+45
+00:04:33,399 --> 00:04:36,539
+So M3 can be obtained by this equation.
+
+45
+00:04:33,399 --> 00:04:36,539
+通过这个方程可以计算出 M3。
+
+46
+00:04:36,660 --> 00:04:43,780
+For M1, we have the hash result concatenated by the hash result of M2.
+
+46
+00:04:36,660 --> 00:04:43,780
+对于 M1，M2 的哈希结果与 M1 的哈希结果拼接而成。
+
+47
+00:04:43,780 --> 00:04:47,660
+So we have M3.
+
+47
+00:04:43,780 --> 00:04:47,660
+我们有 M3。
+
+48
+00:04:47,660 --> 00:04:51,760
+And then we have this dual signature, the content.
+
+48
+00:04:47,660 --> 00:04:51,760
+然后我们这里有一个双重签名，具体内容如下：
+
+49
+00:04:51,760 --> 00:04:58,000
+The customer will send the following messages to the merchant.
+
+49
+00:04:51,760 --> 00:04:58,000
+客户将向商家发送以下信息。 (已优化)
+
+50
+00:04:58,000 --> 00:05:07,639
+So the messages are composed of the following elements, like M1 is the order information.
+
+50
+00:04:58,000 --> 00:05:07,639
+因此，这些消息由以下元素构成，比如 M1 代表订单信息。
+
+51
+00:05:07,639 --> 00:05:20,639
+Here, HM1 is the digest, and M2 is the account information.
+
+51
+00:05:07,639 --> 00:05:20,639
+这里，HM1 代表摘要，M2 代表账户信息。
+
+52
+00:05:20,639 --> 00:05:27,279
+So HM2 together will be encrypted by using the gateway's public key.
+
+52
+00:05:20,639 --> 00:05:27,279
+因此，HM2 将通过网关的公钥进行加密处理。
+
+53
+00:05:27,279 --> 00:05:32,319
+So you can see PKG, this is the public key of the payment gateway.
+
+53
+00:05:27,279 --> 00:05:32,319
+您可以看到 PKG，这便是支付网关的公钥。
+
+54
+00:05:32,319 --> 00:05:40,319
+That means only the payment gateway can open M2, this message, because only the payment
+
+54
+00:05:32,319 --> 00:05:40,319
+这意味着只有支付网关可以打开 M2，这条消息，因为只有支付网关才能这样做
+
+55
+00:05:40,319 --> 00:05:47,019
+gateway can use his private key to do the decryption of this part.
+
+55
+00:05:40,319 --> 00:05:47,019
+网关可利用其私钥对这部分内容进行解密。
+
+56
+00:05:47,019 --> 00:05:50,279
+And then we have the signature.
+
+56
+00:05:47,019 --> 00:05:50,279
+然后我们得到了签名。
+
+57
+00:05:50,279 --> 00:05:53,279
+So the dual signature is this part.
+
+57
+00:05:50,279 --> 00:05:53,279
+因此，双重签名是这个部分。
+
+58
+00:05:53,279 --> 00:05:59,119
+HM3, M3 is a message generated in the previous slide.
+
+58
+00:05:53,279 --> 00:05:59,119
+HM3，M3 是上一张幻灯片生成的一条信息。
+
+59
+00:05:59,119 --> 00:06:03,519
+So this M3 first will go to a hash function.
+
+59
+00:05:59,119 --> 00:06:03,519
+这个 M3 首先会进入一个哈希函数。
+
+60
+00:06:03,519 --> 00:06:04,519
+We have the digest.
+
+60
+00:06:03,519 --> 00:06:04,519
+我们已经获得了摘要。
+
+61
+00:06:04,519 --> 00:06:10,279
+Based on digest, the customer can sign his signature.
+
+61
+00:06:04,519 --> 00:06:10,279
+基于摘要信息，客户可以进行签名操作。
+
+62
+00:06:10,279 --> 00:06:16,639
+So signature will be generated by using the customer's secret key.
+
+62
+00:06:10,279 --> 00:06:16,639
+签名将通过使用客户的密钥生成，这样的表述更为自然易懂。
+
+63
+00:06:16,639 --> 00:06:20,819
+So SKC is the private key of the buyer.
+
+63
+00:06:16,639 --> 00:06:20,819
+因此，SKC 是买方的私钥。
+
+64
+00:06:20,819 --> 00:06:27,459
+So this part is a signature, because you use your private key to generate the signature
+
+64
+00:06:20,819 --> 00:06:27,459
+因此这部分是签名，因为您使用自己的私钥来生成签名，这样表达更自然、易懂
+
+65
+00:06:27,459 --> 00:06:28,459
+part.
+
+65
+00:06:27,459 --> 00:06:28,459
+部分。
+
+66
+00:06:28,459 --> 00:06:41,459
+Along with the top line, we have this information, HM1 exclusive or HM2 will also be sent to
+
+66
+00:06:28,459 --> 00:06:41,459
+与顶部信息一同，我们提供这条信息，HM1 独家或 HM2 也会被发送
+
+67
+00:06:41,459 --> 00:06:44,379
+the merchant.
+
+67
+00:06:41,459 --> 00:06:44,379
+商家
+
+68
+00:06:44,379 --> 00:06:56,839
+So these are the messages generated by the customer, by the buyer.
+
+68
+00:06:44,379 --> 00:06:56,839
+这些消息是由客户和买家产生的。
+
+69
+00:06:56,839 --> 00:07:07,199
+For all the messages received by the merchant, the merchant will check whether the order
+
+69
+00:06:56,839 --> 00:07:07,199
+对于商家收到的所有消息，商家将检查订单是否正确
+
+70
+00:07:07,199 --> 00:07:10,800
+is valid.
+
+70
+00:07:07,199 --> 00:07:10,800
+是有效的。
+
+71
+00:07:10,800 --> 00:07:15,879
+So at this moment, the merchant will do the following two jobs.
+
+71
+00:07:10,800 --> 00:07:15,879
+在这个时刻，商家将完成以下两项任务。
+
+72
+00:07:15,879 --> 00:07:26,740
+So the first job is order integrity.
+
+72
+00:07:15,879 --> 00:07:26,740
+首先的任务是确保订单的完整性。
+
+73
+00:07:26,740 --> 00:07:32,400
+The merchant will guarantee that, of course, all the messages will be encrypted.
+
+73
+00:07:26,740 --> 00:07:32,400
+商家保证当然会加密所有消息，表述更为自然易懂。
+
+74
+00:07:32,400 --> 00:07:37,920
+All the messages will be encrypted just by following the mechanism here.
+
+74
+00:07:32,400 --> 00:07:37,920
+所有消息都将通过这里所述的机制进行加密。翻译更加自然和易于理解。
+
+75
+00:07:37,920 --> 00:07:41,840
+So this makes them to encrypt the message.
+
+75
+00:07:37,920 --> 00:07:41,840
+因此，这使得他们加密信息。
+
+76
+00:07:41,840 --> 00:07:49,060
+So now we only assume that the merchant can get M1, HM1, and all the information listed
+
+76
+00:07:41,840 --> 00:07:49,060
+现在仅假设商家能够获取 M1、HM1 以及所列出的全部信息
+
+77
+00:07:49,060 --> 00:07:50,840
+in this page.
+
+77
+00:07:49,060 --> 00:07:50,840
+在本页面中。
+
+78
+00:07:50,840 --> 00:07:58,340
+So the order integrity, that means the merchant will double check the order M1, this content
+
+78
+00:07:50,840 --> 00:07:58,340
+因此，保证订单的完整性，即商家将对订单 M1 进行二次核对，相关内容
+
+79
+00:07:58,340 --> 00:07:59,680
+is valid.
+
+79
+00:07:58,340 --> 00:07:59,680
+是有效的。
+
+80
+00:07:59,680 --> 00:08:01,819
+It is not modified.
+
+80
+00:07:59,680 --> 00:08:01,819
+它未被修改。
+
+81
+00:08:01,819 --> 00:08:03,300
+It is wrong.
+
+81
+00:08:01,819 --> 00:08:03,300
+这显然是错误的。
+
+82
+00:08:03,300 --> 00:08:08,220
+So to check the order integrity, that's quite simple.
+
+82
+00:08:03,300 --> 00:08:08,220
+为了检查订单的完整性，这一点非常简单。
+
+83
+00:08:08,220 --> 00:08:13,639
+For M1, we can do the hash result, HM1.
+
+83
+00:08:08,220 --> 00:08:13,639
+对于 M1，我们可以计算出其哈希值，记为 HM1。
+
+84
+00:08:13,639 --> 00:08:17,160
+And we have both M1 and HM1 here.
+
+84
+00:08:13,639 --> 00:08:17,160
+我们这里既有 M1 型号也有 HM1 型号。
+
+85
+00:08:17,160 --> 00:08:29,199
+So we will check whether these two can match with each other.
+
+85
+00:08:17,160 --> 00:08:29,199
+因此，我们将检查这两者是否能够相互匹配。这样的表达更自然、易懂。
+
+86
+00:08:29,199 --> 00:08:51,379
+So this is check to verify the merchant can verify, verifies integrity of purchase order
+
+86
+00:08:29,199 --> 00:08:51,379
+这是为了验证商家能否验证，确保采购订单的完整性
+
+87
+00:08:52,379 --> 00:09:07,179
+Right, from M1, we apply a probably null hash function and to see whether these two actually
+
+87
+00:08:52,379 --> 00:09:07,179
+好的，从 M1 阶段开始，我们使用一个可能为空的哈希函数，来看看这两个是否真的
+
+88
+00:09:07,179 --> 00:09:08,759
+are equal.
+
+88
+00:09:07,179 --> 00:09:08,759
+相等。
+
+89
+00:09:08,759 --> 00:09:11,980
+So this is the first step, quite simple.
+
+89
+00:09:08,759 --> 00:09:11,980
+这就是第一步，非常简单。
+
+90
+00:09:11,980 --> 00:09:18,559
+The second step, you know, we always want to need to do the authentication.
+
+90
+00:09:11,980 --> 00:09:18,559
+第二步，你知道，我们总是需要进行身份验证。
+
+91
+00:09:18,559 --> 00:09:24,819
+When you guarantee that your signature is correct, that means the signature is generated
+
+91
+00:09:18,559 --> 00:09:24,819
+当你确保你的签名准确无误时，这就意味着签名已经被生成
+
+92
+00:09:24,819 --> 00:09:26,599
+by the buyer.
+
+92
+00:09:24,819 --> 00:09:26,599
+由买家提供
+
+93
+00:09:26,599 --> 00:09:34,539
+So this step is called the authentication.
+
+93
+00:09:26,599 --> 00:09:34,539
+这一步骤叫做认证。
+
+94
+00:09:34,539 --> 00:09:44,779
+So authentication part, we have the signature from the buyer, right, HM3, encrypted by or
+
+94
+00:09:34,539 --> 00:09:44,779
+因此，认证部分，我们已经获得了买家的签名，HM3 加密，没错吧
+
+95
+00:09:45,000 --> 00:09:52,439
+we say signed by the buyer using the buyer's secret key, the private key here.
+
+95
+00:09:45,000 --> 00:09:52,439
+我们说使用买家的私钥进行签名，这里的私钥。这样的表述更为自然易懂。
+
+96
+00:09:52,439 --> 00:09:57,819
+So this signature, we need to guarantee this signature is correct.
+
+96
+00:09:52,439 --> 00:09:57,819
+因此这个签名，我们必须确保其正确无误。
+
+97
+00:09:57,819 --> 00:10:10,959
+So the first step is from the signature, this your signature, we have HM3, we have the signature
+
+97
+00:09:57,819 --> 00:10:10,959
+第一步是查看签名，这是您的签名，我们拥有 HM3，我们也有签名
+
+98
+00:10:10,959 --> 00:10:13,779
+generated by SKC.
+
+98
+00:10:10,959 --> 00:10:13,779
+由 SKC 生成
+
+99
+00:10:13,779 --> 00:10:20,199
+So this signature, we can use the public key.
+
+99
+00:10:13,779 --> 00:10:20,199
+因此，这个签名我们可以用公钥来验证。
+
+100
+00:10:20,199 --> 00:10:33,120
+We can use the public key of the buyer to decrypt the message.
+
+100
+00:10:20,199 --> 00:10:33,120
+我们可以使用买家的公钥来解密信息。（已优化）
+
+101
+00:10:33,120 --> 00:10:39,079
+We decrypt the message by using the public key of the customer, right.
+
+101
+00:10:33,120 --> 00:10:39,079
+我们使用客户的公钥来解密信息，这个说法对吧？
+
+102
+00:10:39,080 --> 00:10:44,420
+So correspond to this secret key, private key.
+
+102
+00:10:39,080 --> 00:10:44,420
+因此对应这个秘密密钥，私钥。
+
+103
+00:10:44,420 --> 00:10:50,280
+So using the public key, public key is known to everyone.
+
+103
+00:10:44,420 --> 00:10:50,280
+使用公钥，众所周知，公钥是公开的。
+
+104
+00:10:50,280 --> 00:10:56,700
+So this public key, we can get the original message HM3.
+
+104
+00:10:50,280 --> 00:10:56,700
+因此，通过这个公钥，我们可以获取原始消息 HM3。
+
+105
+00:10:56,700 --> 00:10:59,139
+So HM3 is the hash result.
+
+105
+00:10:56,700 --> 00:10:59,139
+因此，HM3 是哈希结果。
+
+106
+00:10:59,139 --> 00:11:05,580
+Well, at this moment, how to verify the content is correct.
+
+106
+00:10:59,139 --> 00:11:05,580
+嗯，现在如何核实内容是否准确。
+
+107
+00:11:05,580 --> 00:11:11,320
+So we need to double check this HM3 is valid.
+
+107
+00:11:05,580 --> 00:11:11,320
+因此我们必须再次核实这个 HM3 的有效性。
+
+108
+00:11:11,320 --> 00:11:22,180
+So HM3 is valid, well, for the merchant, merchant has HM1.
+
+108
+00:11:11,320 --> 00:11:22,180
+因此 HM3 是有效的，商家这边有 HM1，这个说法是正确的。
+
+109
+00:11:22,180 --> 00:11:31,860
+So HM1, so merchant can try to get M3 first.
+
+109
+00:11:22,180 --> 00:11:31,860
+因此，商家可以先尝试获取 M3。
+
+110
+00:11:31,860 --> 00:11:42,820
+So merchant has the HM1 from here, right, HM1.
+
+110
+00:11:31,860 --> 00:11:42,820
+因此商家从这儿有 HM1，没错，HM1。
+
+111
+00:11:42,820 --> 00:12:02,540
+And also, he can do this operation, exclusive or this message, HM1, exclusive or HM2.
+
+111
+00:11:42,820 --> 00:12:02,540
+此外，他还可以执行这个操作，即对消息 HM1 和 HM2 进行异或运算。
+
+112
+00:12:02,540 --> 00:12:10,740
+So this one will get what's the result.
+
+112
+00:12:02,540 --> 00:12:10,740
+这个将会得到什么结果的翻译。
+
+113
+00:12:10,740 --> 00:12:17,419
+So two messages, we do the exclusive or this operation, this will generate what's the result
+
+113
+00:12:10,740 --> 00:12:17,419
+两条消息，进行异或运算，结果会是什么
+
+114
+00:12:17,419 --> 00:12:32,779
+for the first two, first two operands, HM1 exclusive or HM1 will get what?
+
+114
+00:12:17,419 --> 00:12:32,779
+对于前两个操作数，HM1 进行异或操作后会得到什么？
+
+115
+00:12:32,779 --> 00:12:39,940
+Or zero, that's right, because the same bits, exclusive or we have zero, different bits,
+
+115
+00:12:32,779 --> 00:12:39,940
+或者零，没错，因为相同的位进行异或运算结果为零，不同的位，
+
+116
+00:12:39,940 --> 00:12:41,380
+we have one, right?
+
+116
+00:12:39,940 --> 00:12:41,380
+我们确实有一个，对吧？
+
+117
+00:12:41,380 --> 00:12:51,900
+So that means the first part here, we get or zero, zero, bits.
+
+117
+00:12:41,380 --> 00:12:51,900
+这里的第一部分，我们得到零比特或零比特。
+
+118
+00:12:51,900 --> 00:13:03,300
+So zero, exclusive or the HM2, what's the result?
+
+118
+00:12:51,900 --> 00:13:03,300
+零与 HM2 进行异或操作，结果会是怎样的呢？
+
+119
+00:13:03,299 --> 00:13:17,579
+So that means actually zero, exclusive or the second part, the third part, we have the result to be exactly HM2.
+
+119
+00:13:03,299 --> 00:13:17,579
+这意味着实际上是零，或者是第二部分和第三部分，结果必须恰好是 HM2。
+
+120
+00:13:17,579 --> 00:13:25,419
+Zero, exclusive or zero, it is zero, zero, exclusive one, it is one, right?
+
+120
+00:13:17,579 --> 00:13:25,419
+零，要么是零，要么是一，对吧？
+
+121
+00:13:25,419 --> 00:13:31,219
+So that means or zero, exclusive or HM2, we have HM2.
+
+121
+00:13:25,419 --> 00:13:31,219
+这意味着，或者零，或者是排他或 HM2，那么我们就拥有 HM2。
+
+122
+00:13:31,220 --> 00:13:43,420
+From HM2, the merchant also has HM1.
+
+122
+00:13:31,220 --> 00:13:43,420
+来自 HM2，这位商人还拥有 HM1。
+
+123
+00:13:43,420 --> 00:13:50,700
+So the merchant can concatenate these two together to get M3.
+
+123
+00:13:43,420 --> 00:13:50,700
+因此，商家可以将这两个合并起来，得到 M3。
+
+124
+00:13:50,700 --> 00:14:00,980
+And for M3, the merchant can apply the hash function H to get HM3.
+
+124
+00:13:50,700 --> 00:14:00,980
+对于 M3，商家可以应用哈希函数 H 来得到 HM3。
+
+125
+00:14:00,980 --> 00:14:07,980
+And then the merchant can double check whether these two are equal or not.
+
+125
+00:14:00,980 --> 00:14:07,980
+然后商人可以再次核实这两个是否相等，使表达更自然易懂。
+
+126
+00:14:07,980 --> 00:14:24,659
+If these two are the same, that means the signature is correct.
+
+126
+00:14:07,980 --> 00:14:24,659
+如果这两个一样，那就说明签名是正确的。
+
+127
+00:14:25,659 --> 00:14:33,299
+Because at this moment, the merchant does not know what's the account information.
+
+127
+00:14:25,659 --> 00:14:33,299
+因为此刻商家并不知道账户信息具体是什么。
+
+128
+00:14:33,299 --> 00:14:35,740
+Your account information is encrypted.
+
+128
+00:14:33,299 --> 00:14:35,740
+您的账户信息已加密，确保了安全。
+
+129
+00:14:35,740 --> 00:14:40,100
+Only the payment gateway can open account information.
+
+129
+00:14:35,740 --> 00:14:40,100
+只有支付网关才能打开账户信息。
+
+130
+00:14:40,100 --> 00:14:47,980
+So at this moment, the merchant only knows HM2, the hash result.
+
+130
+00:14:40,100 --> 00:14:47,980
+在这个时刻，商人只知道 HM2 的哈希值。
+
+131
+00:14:48,019 --> 00:14:57,379
+So through this kind of mechanism, the merchant can guarantee that the message is really generated by the buyer.
+
+131
+00:14:48,019 --> 00:14:57,379
+通过这种机制，商家可以确保消息确实是由买家发出的。
+
+132
+00:14:57,379 --> 00:15:10,940
+Because from this kind of comparisons, the merchant can guarantee the message is sent from a particular buyer.
+
+132
+00:14:57,379 --> 00:15:10,940
+因为这种比较可以确保信息确实来自特定的买家，所以商家可以放心。
+
+133
+00:15:10,980 --> 00:15:20,380
+Because the merchant will use that buyer's public key here to do the verification.
+
+133
+00:15:10,980 --> 00:15:20,380
+因为商家将在这里使用买家的公钥进行验证，所以翻译更加自然易懂。
+
+134
+00:15:20,380 --> 00:15:32,580
+OK, once these two steps pass through, then the merchant will guarantee all the messages he received are correct.
+
+134
+00:15:20,380 --> 00:15:32,580
+好的，这两个步骤一旦完成，商家就能保证他收到的所有信息都是准确的。
+
+135
+00:15:32,580 --> 00:15:39,420
+And then the merchant can pass some information to the payment gateway.
+
+135
+00:15:32,580 --> 00:15:39,420
+然后商家可以将相关信息传递给支付网关。
+
+136
+00:15:39,419 --> 00:15:51,059
+So if the merchant accepts the integrity of the message, integrity means all the information is correct and also the signature is correct.
+
+136
+00:15:39,419 --> 00:15:51,059
+如果商家认可信息的完整性，那么完整性意味着所有信息准确无误，签名也正确。
+
+137
+00:15:51,059 --> 00:16:04,019
+So then the next step is the merchant will submit the information to the payment gateway.
+
+137
+00:15:51,059 --> 00:16:04,019
+因此，接下来商家需要将信息提交给支付网关。
+
+138
+00:16:04,019 --> 00:16:18,059
+So in the payment gateway, you can see this is a message, in fact, to be the account information.
+
+138
+00:16:04,019 --> 00:16:18,059
+在支付网关中，你可以看到这是一条信息，实际上是为了展示账户信息。
+
+139
+00:16:18,059 --> 00:16:25,579
+And also, the merchant will send HM1.
+
+139
+00:16:18,059 --> 00:16:25,579
+此外，商家还会发送 HM1。
+
+140
+00:16:25,579 --> 00:16:33,460
+So HM1 is all the information, the hashed result, right?
+
+140
+00:16:25,579 --> 00:16:33,460
+所以 HM1 包含了所有信息，也就是哈希后的结果，对吗？
+
+141
+00:16:33,460 --> 00:16:42,940
+So this hash result of order.
+
+141
+00:16:33,460 --> 00:16:42,940
+这就是订单的哈希值。
+
+142
+00:16:42,940 --> 00:16:49,700
+In other words, the gateway will not know the order information.
+
+142
+00:16:42,940 --> 00:16:49,700
+换句话说，网关将无法得知订单信息。
+
+143
+00:16:49,700 --> 00:16:56,019
+So gateway has no idea of order.
+
+143
+00:16:49,700 --> 00:16:56,019
+网关根本不知道顺序。
+
+144
+00:16:56,059 --> 00:17:05,299
+Gateway will only get the hash result of the order message.
+
+144
+00:16:56,059 --> 00:17:05,299
+网关仅获取订单信息的哈希值。
+
+145
+00:17:05,299 --> 00:17:10,980
+And also, we have the dual signature to be sent to the gateway.
+
+145
+00:17:05,299 --> 00:17:10,980
+此外，我们还需要将双签名发送给网关，这样的表述更为自然易懂。
+
+146
+00:17:10,980 --> 00:17:17,740
+So merchant will send the same dual signature to the gateway.
+
+146
+00:17:10,980 --> 00:17:17,740
+商家将向网关发送相同的双签名。这使得操作更加简便。
+
+147
+00:17:17,740 --> 00:17:23,220
+At this moment, the gateway will also do two checks.
+
+147
+00:17:17,740 --> 00:17:23,220
+目前，网关还将进行两项检查，表述更为自然易懂。
+
+148
+00:17:23,220 --> 00:17:27,100
+The first check is the account integrity.
+
+148
+00:17:23,220 --> 00:17:27,100
+第一次检查是账户的完整性。
+
+149
+00:17:35,819 --> 00:17:49,660
+Account integrity means, well, the gateway can use its private key to open the account information.
+
+149
+00:17:35,819 --> 00:17:49,660
+账户完整性是指，嗯，网关能够利用其私钥来访问账户信息。
+
+150
+00:17:49,660 --> 00:18:01,940
+So from M2, HM2, this one is encrypted by using the payment gateway's public key.
+
+150
+00:17:49,660 --> 00:18:01,940
+从 M2、HM2 开始，这个数据是通过支付网关的公钥进行加密的。
+
+151
+00:18:01,940 --> 00:18:14,700
+So payment gateway can use its private key to do decryption, decrypt the message.
+
+151
+00:18:01,940 --> 00:18:14,700
+因此，支付网关可以使用其私钥进行解密，以解密消息。
+
+152
+00:18:14,700 --> 00:18:21,460
+And then the payment gateway will get M2 and HM2.
+
+152
+00:18:14,700 --> 00:18:21,460
+然后支付网关将获取 M2 和 HM2（更自然、更易理解的翻译）
+
+153
+00:18:21,460 --> 00:18:44,100
+So through a simple hash operation, and then the gateway can make sure this account information is correct.
+
+153
+00:18:21,460 --> 00:18:44,100
+通过简单的哈希运算，网关可以确保账户信息准确无误。
+
+154
+00:18:44,099 --> 00:18:51,339
+Hashed result check.
+
+154
+00:18:44,099 --> 00:18:51,339
+检查哈希结果（优化版）
+
+155
+00:18:51,339 --> 00:18:55,859
+You see the payment gateway has both M2 and HM2, right?
+
+155
+00:18:51,339 --> 00:18:55,859
+您看，这个支付网关既有 M2 也有 HM2，没错吧？
+
+156
+00:18:55,859 --> 00:19:04,019
+So he can simply apply a hash to get a digest of M2 and to compare the result with HM2.
+
+156
+00:18:55,859 --> 00:19:04,019
+因此，他可以简单地通过哈希函数计算 M2 的摘要，并将得到的摘要与 HM2 进行比较。这样的表述更加自然易懂。
+
+157
+00:19:04,019 --> 00:19:10,939
+So in this way, the gateway will guarantee the account information is correct.
+
+157
+00:19:04,019 --> 00:19:10,939
+因此，网关将确保账户信息准确无误。
+
+158
+00:19:10,940 --> 00:19:30,860
+And then we look at the second check is the signature validity, or we say this is an authentication check.
+
+158
+00:19:10,940 --> 00:19:30,860
+然后我们检查第二个步骤是验证签名是否有效，或者说这属于身份验证环节。
+
+159
+00:19:30,860 --> 00:19:37,980
+The payment gateway also needs to guarantee that this request is from a valid buyer.
+
+159
+00:19:30,860 --> 00:19:37,980
+支付网关必须确保该请求来自合法买家。
+
+160
+00:19:37,980 --> 00:19:47,299
+So authentication verification will also check this dual signature.
+
+160
+00:19:37,980 --> 00:19:47,299
+因此，认证验证也将检查这个双重签名，表述更为自然易懂。
+
+161
+00:19:47,299 --> 00:20:00,700
+So now you can see the payment gateway has the HM1 here.
+
+161
+00:19:47,299 --> 00:20:00,700
+现在您可以看到支付网关上已经添加了 HM1。
+
+162
+00:20:00,700 --> 00:20:12,180
+And also he can encrypt the second elements to get HM2.
+
+162
+00:20:00,700 --> 00:20:12,180
+他还可以加密第二个元素，以获得 HM2。
+
+163
+00:20:12,180 --> 00:20:14,580
+So HM2 comes from here.
+
+163
+00:20:12,180 --> 00:20:14,580
+因此，HM2 的来源就是这里。
+
+164
+00:20:14,580 --> 00:20:18,779
+So these two, we concatenate them.
+
+164
+00:20:14,580 --> 00:20:18,779
+这两个拼接一下。
+
+165
+00:20:18,779 --> 00:20:22,980
+Together, we get the M3 message.
+
+165
+00:20:18,779 --> 00:20:22,980
+我们齐心协力传达 M3 信息
+
+166
+00:20:22,980 --> 00:20:27,660
+So M3 is a concatenation of these two digest.
+
+166
+00:20:22,980 --> 00:20:27,660
+因此，M3 是这两个摘要的连接。
+
+167
+00:20:27,700 --> 00:20:34,140
+From M3, we can apply a public hash function.
+
+167
+00:20:27,700 --> 00:20:34,140
+从 M3 出发，我们可以使用一个公开的哈希函数。这样的表述更为自然和易懂。
+
+168
+00:20:34,140 --> 00:20:36,820
+We get HM3.
+
+168
+00:20:34,140 --> 00:20:36,820
+我们获得了 HM3。
+
+169
+00:20:36,820 --> 00:20:52,420
+So HM3, this one, and also from the dual signature, the HM3, this is the signature.
+
+169
+00:20:36,820 --> 00:20:52,420
+因此，这是 HM3 的签名，同时也来自双签名。
+
+170
+00:20:52,420 --> 00:21:04,779
+We can apply the public key of the customer, the public key of the buyer, so we can get the original message.
+
+170
+00:20:52,420 --> 00:21:04,779
+我们可以应用客户的公钥和买家的公钥，以便获取原始信息。
+
+171
+00:21:04,779 --> 00:21:11,220
+This is a decryption.
+
+171
+00:21:04,779 --> 00:21:11,220
+这是一条解密信息。
+
+172
+00:21:11,220 --> 00:21:14,580
+We get HM3.
+
+172
+00:21:11,220 --> 00:21:14,580
+我们获得了 HM3。
+
+173
+00:21:14,580 --> 00:21:18,500
+So we compare these two with the same.
+
+173
+00:21:14,580 --> 00:21:18,500
+我们将这两个条件相同的进行比较。
+
+174
+00:21:18,500 --> 00:21:34,900
+If they're the same, that means this signature is correct because we're using the public key of this particular customer to do the verification.
+
+174
+00:21:18,500 --> 00:21:34,900
+如果它们相同，这就意味着这个签名是正确的，因为我们正在使用这位客户的公钥进行验证。这样的表述更加自然易懂。
+
+175
+00:21:34,900 --> 00:21:41,299
+So this means signature is valid.
+
+175
+00:21:34,900 --> 00:21:41,299
+这说明签名有效。
+
+176
+00:21:41,299 --> 00:21:46,660
+And thus, this account information is valid.
+
+176
+00:21:41,299 --> 00:21:46,660
+因此，这个账户信息是有效的。
+
+177
+00:21:46,660 --> 00:21:50,460
+So this pass through the authentication.
+
+177
+00:21:46,660 --> 00:21:50,460
+因此通过了认证。（经过润色）
+
+178
+00:21:50,460 --> 00:21:51,460
+Is that clear?
+
+178
+00:21:50,460 --> 00:21:51,460
+那个意思明白吗？
+
+179
+00:21:51,460 --> 00:22:11,060
+So we'll guarantee the account information provided by the buyer is valid.
+
+179
+00:21:51,460 --> 00:22:11,060
+我们将确保买家提供的账户信息有效。
+
+180
+00:22:11,060 --> 00:22:12,620
+So any questions?
+
+180
+00:22:11,060 --> 00:22:12,620
+那么，有什么问题吗？
+
+181
+00:22:12,619 --> 00:22:25,259
+Yeah.
+
+181
+00:22:12,619 --> 00:22:25,259
+嗯，是的。
+
+182
+00:22:25,259 --> 00:22:32,459
+No.
+
+182
+00:22:25,259 --> 00:22:32,459
+不。
+
+183
+00:22:32,459 --> 00:22:35,779
+Well, the hash, we get the digest.
+
+183
+00:22:32,459 --> 00:22:35,779
+嗯，我们首先获取哈希值，然后得到摘要。
+
+184
+00:22:35,779 --> 00:22:42,539
+So this one step, based on the digest, we get the signature.
+
+184
+00:22:35,779 --> 00:22:42,539
+基于摘要的这一步，我们得到了签名。这样的表述更加自然易懂。
+
+185
+00:22:42,539 --> 00:22:56,019
+So normally, we should have both the, well, we will check because you have both the signature and the message.
+
+185
+00:22:42,539 --> 00:22:56,019
+通常情况下，我们应该都有这两个，我们会检查一下，因为您既有签名也有消息。
+
+186
+00:22:56,019 --> 00:23:03,139
+So this actually, this means we have HM3.
+
+186
+00:22:56,019 --> 00:23:03,139
+这实际上表示我们有 HM3。
+
+187
+00:23:03,140 --> 00:23:22,620
+If this one we generate, it will apply the secret key, just like we are using the RSA algorithm, we apply the secret key D, we get the signature.
+
+187
+00:23:03,140 --> 00:23:22,620
+如果我们生成这个，就会应用密钥，就像我们使用 RSA 算法一样，我们应用密钥 D，从而得到签名。这样的表述更加自然易懂。
+
+188
+00:23:22,619 --> 00:23:34,899
+So this HM3, the signature will be sent to the, will be obtained by receiver.
+
+188
+00:23:22,619 --> 00:23:34,899
+因此这个 HM3 的签名将被发送给接收者，并由接收者获取。
+
+189
+00:23:34,899 --> 00:23:47,139
+So here means we mean decryption means from S, from S here, we do decryption, we will get HM3.
+
+189
+00:23:34,899 --> 00:23:47,139
+因此这里所说的就是解密，从 S 开始解密后，我们会得到 HM3。
+
+190
+00:23:47,140 --> 00:24:02,660
+We guarantee the signature is correct.
+
+190
+00:23:47,140 --> 00:24:02,660
+我们保证签名的准确性。
+
+191
+00:24:02,660 --> 00:24:10,380
+Yeah, so the process is HM2, we have the digest here, right?
+
+191
+00:24:02,660 --> 00:24:10,380
+嗯，流程是 HM2，这里已经有了摘要，没错吧？
+
+192
+00:24:10,380 --> 00:24:14,940
+And HM1, similarly, we have the digest.
+
+192
+00:24:10,380 --> 00:24:14,940
+HM1 同样，我们也有摘要。翻译得更加自然易懂。
+
+193
+00:24:14,940 --> 00:24:22,539
+M3 equals the concatenation of HM1 and HM2.
+
+193
+00:24:14,940 --> 00:24:22,539
+M3 等于 HM1 和 HM2 的连接。
+
+194
+00:24:22,539 --> 00:24:24,380
+That's M3.
+
+194
+00:24:22,539 --> 00:24:24,380
+这是 M3。
+
+195
+00:24:24,380 --> 00:24:32,059
+For M3, we apply the same hash function to get the digest HM3.
+
+195
+00:24:24,380 --> 00:24:32,059
+对于 M3，我们使用相同的哈希函数来获取摘要 HM3。
+
+196
+00:24:32,059 --> 00:24:41,420
+So we should get HM3 from two directions.
+
+196
+00:24:32,059 --> 00:24:41,420
+因此，我们应该从两个方向获取 HM3，这样更合理。
+
+197
+00:24:41,420 --> 00:25:05,660
+Because not just from just the HM3 plus S, also, we should get the M3 information from your order information HM1 to double check the information sent from the payment gateway from merchant is not modified, is valid.
+
+197
+00:24:41,420 --> 00:25:05,660
+因为不仅要从 HM3 plus S 获取信息，还应该从您的订单信息中获取 HM1 的信息，以确保支付网关从商家发送的信息未被篡改，且有效。
+
+198
+00:25:11,420 --> 00:25:24,700
+Not not just to verify this signature part, of course, we can in this line, we can double check your signature is correct.
+
+198
+00:25:11,420 --> 00:25:24,700
+当然，我们不仅要验证这个签名部分，还可以在这行再次确认您的签名是否准确无误。
+
+199
+00:25:24,700 --> 00:25:36,220
+But however, we need to guarantee this message M3 contains your both account information and the order information.
+
+199
+00:25:24,700 --> 00:25:36,220
+但是无论如何，我们必须确保这条消息 M3 中包含了您的账户信息和订单信息，表述更为自然。
+
+200
+00:25:36,220 --> 00:25:48,180
+So this M3 is valid.
+
+200
+00:25:36,220 --> 00:25:48,180
+这款 M3 是有效的。
+
+201
+00:25:48,180 --> 00:25:58,059
+Any other questions?
+
+201
+00:25:48,180 --> 00:25:58,059
+您还有其他问题吗？
+
+202
+00:25:58,059 --> 00:26:15,460
+Although this page, you can see the gateway has no idea of the order, but he can check the order is valid through this HM1 information provided from the merchant.
+
+202
+00:25:58,059 --> 00:26:15,460
+尽管这个页面显示网关并不知道订单详情，但通过商家提供的 HM1 信息，他可以验证订单的有效性。
+
+203
+00:26:15,460 --> 00:26:32,460
+So the payment gateway will double check your order information, your account information, both can match to this HM3.
+
+203
+00:26:15,460 --> 00:26:32,460
+因此，支付网关将对您的订单信息和账户信息进行双重核对，确保两者与 HM3 一致。
+
+204
+00:26:32,460 --> 00:26:44,259
+OK, part two is optional, and we also this part just to show how each participant can obtain a certificate in this set protocol.
+
+204
+00:26:32,460 --> 00:26:44,259
+好的，第二部分是可选的，我们这部分主要是为了展示每个参与者如何在这个协议中获得证书。
+
+205
+00:26:44,259 --> 00:26:50,299
+So basically, the certificate, in fact, will contain your public key.
+
+205
+00:26:44,259 --> 00:26:50,299
+所以说，这个证书实际上会包含你的公钥。这样的表述更自然、易懂。
+
+206
+00:26:50,299 --> 00:27:06,859
+Your public key for encryption, your public key to sign your signature, so people can use this public key to verify your signature and people can use this public key to encrypt a message.
+
+206
+00:26:50,299 --> 00:27:06,859
+您的加密公钥，用于签名签名的公钥，人们可以用它来验证您的签名，也可以用它来加密信息。
+
+207
+00:27:07,699 --> 00:27:13,099
+Just previously, there's an envelope inside the envelope.
+
+207
+00:27:07,699 --> 00:27:13,099
+之前刚刚，信封里头还套着另一个信封。
+
+208
+00:27:13,099 --> 00:27:31,419
+We have the symmetric key and sender can use your public key to encrypt that envelope such that only you as a receiver can open that envelope because you have your private key to to open it.
+
+208
+00:27:13,099 --> 00:27:31,419
+我们拥有对称密钥，发送者可以用您的公钥加密信封，只有您作为接收者才能打开，因为您拥有对应的私钥。这样的表述更加自然易懂。
+
+209
+00:27:31,460 --> 00:27:41,300
+Well, in every message you can see here, in fact, you need to show your receiver that this is my certificate.
+
+209
+00:27:31,460 --> 00:27:41,300
+嗯，在每条信息中，你都需要向接收者展示，这确实是我的证书。
+
+210
+00:27:41,300 --> 00:27:44,620
+This certificate contains my public key.
+
+210
+00:27:41,300 --> 00:27:44,620
+此证书内含我的公钥信息。
+
+211
+00:27:44,620 --> 00:27:49,380
+You can use this key to verify my signature.
+
+211
+00:27:44,620 --> 00:27:49,380
+您可以用这个密钥来验证我的签名，表达更自然。
+
+212
+00:27:49,380 --> 00:27:55,740
+So this purpose, OK, along with the message, I will send you my certificate.
+
+212
+00:27:49,380 --> 00:27:55,740
+这个目的，好的，连同信息，我会把我的证书发给您。
+
+213
+00:27:55,740 --> 00:27:59,420
+So how to get the certificate?
+
+213
+00:27:55,740 --> 00:27:59,420
+那么如何获得证书呢？
+
+214
+00:27:59,460 --> 00:28:03,700
+This involves the CA Center.
+
+214
+00:27:59,460 --> 00:28:03,700
+这涉及到了 CA 中心。
+
+215
+00:28:03,700 --> 00:28:14,140
+So the CA Center will have multiple rounds of communication with the user to guarantee, well, your sent information is correct.
+
+215
+00:28:03,700 --> 00:28:14,140
+因此，CA 中心将与用户进行多轮沟通，以确保您发送的信息准确无误。
+
+216
+00:28:14,140 --> 00:28:23,259
+And then I will certify, well, this is your public key and put the public key in a certificate and sign my name.
+
+216
+00:28:14,140 --> 00:28:23,259
+然后我将进行认证，嗯，这是您的公钥，将其放入证书中并附上我的签名。
+
+217
+00:28:23,299 --> 00:28:27,059
+So certificate contains the CA's signature.
+
+217
+00:28:23,299 --> 00:28:27,059
+证书中包含了证书颁发机构的签名。
+
+218
+00:28:30,740 --> 00:28:42,180
+Because your certificate contains the CA's signature, then the receiver will trust your CA is valid, your certificate is valid.
+
+218
+00:28:30,740 --> 00:28:42,180
+因为您的证书包含了 CA 的签名，所以接收者会相信您的 CA 是有效的，您的证书也是有效的。
+
+219
+00:28:42,180 --> 00:28:45,980
+OK, so this logic.
+
+219
+00:28:42,180 --> 00:28:45,980
+好的，那么这个逻辑。
+
+220
+00:28:45,980 --> 00:28:52,379
+Just like your polio degree will contain the polio stamp, right?
+
+220
+00:28:45,980 --> 00:28:52,379
+就像你的脊髓灰质炎学位证书上会有脊髓灰质炎印花一样，对吧？
+
+221
+00:28:52,380 --> 00:29:00,780
+If in the electronic documents, your certificate should contain the polio's signature.
+
+221
+00:28:52,380 --> 00:29:00,780
+如果电子文档中需要，您的证书应当包含脊髓灰质炎的签名。
+
+222
+00:29:00,780 --> 00:29:09,100
+So I will not give the details of part two, just give you the idea.
+
+222
+00:29:00,780 --> 00:29:09,100
+因此，我就不详细描述第二部分了，只给你一个大概的印象。
+
+223
+00:29:09,100 --> 00:29:14,980
+Before we have said this, you can involve in the set in this payment protocol.
+
+223
+00:29:09,100 --> 00:29:14,980
+在我们之前提到这一点之前，您可以参与这个支付协议的设置。
+
+224
+00:29:14,980 --> 00:29:21,620
+You need to register yourself and get the certificate from the CA Center.
+
+224
+00:29:14,980 --> 00:29:21,620
+您需要在本中心注册并领取证书。
+
+225
+00:29:21,619 --> 00:29:30,939
+OK, now we look at part three about the different transactions involved in this payment protocol instead.
+
+225
+00:29:21,619 --> 00:29:30,939
+好的，现在我们来看看这个支付协议中涉及的不同交易，第三部分的内容。
+
+226
+00:29:30,939 --> 00:29:47,019
+So for said purchase transaction, in fact, we have three categories of request response pairs related to purchase orders, payment authorization and the financial settlement.
+
+226
+00:29:30,939 --> 00:29:47,019
+因此，针对这笔购买交易，实际上涉及三类与采购订单、支付授权及财务结算相关的请求和响应。以下是对这些请求和响应的描述。
+
+227
+00:29:47,019 --> 00:29:57,059
+And the first pair is about, so this should be the purchase request.
+
+227
+00:29:47,019 --> 00:29:57,059
+第一对是关于的，因此这应该是一份采购请求。
+
+228
+00:30:18,019 --> 00:30:30,059
+This is a purchase, P means purchase, purchase request, purchase response.
+
+228
+00:30:18,019 --> 00:30:30,059
+这是采购，P 表示采购、采购请求和采购响应。
+
+229
+00:30:30,059 --> 00:30:40,980
+So this one for this pair means just like very beginning, you're the customer, the card holder, place and order.
+
+229
+00:30:30,059 --> 00:30:40,980
+这一个对应这对的意思是就像一开始，您是客户，持卡人，下单。
+
+230
+00:30:40,980 --> 00:30:46,220
+So this order contains your order information and your account information.
+
+230
+00:30:40,980 --> 00:30:46,220
+因此，这个订单包含了您的订单信息和账户信息。
+
+231
+00:30:46,220 --> 00:30:51,180
+This purchase request message will be sent to merchant.
+
+231
+00:30:46,220 --> 00:30:51,180
+这条采购请求信息将被发送给商家。 (已优化)
+
+232
+00:30:51,180 --> 00:30:56,819
+And in step two, we have the authorization request.
+
+232
+00:30:51,180 --> 00:30:56,819
+在第二步，我们处理授权请求。
+
+233
+00:30:56,819 --> 00:31:08,779
+Well, the merchant will check your order information, so your order information is correct, just like you want to order a TV and then.
+
+233
+00:30:56,819 --> 00:31:08,779
+嗯，商家会核对您的订单信息，所以您的订单信息是准确的，就像您打算先买一台电视那样。
+
+234
+00:31:08,779 --> 00:31:14,779
+The merchant will pass your request to the payment gateway.
+
+234
+00:31:08,779 --> 00:31:14,779
+商家会把您的请求转交给支付网关，表述更自然易懂。
+
+235
+00:31:14,779 --> 00:31:18,339
+So this payment gateway, of course.
+
+235
+00:31:14,779 --> 00:31:18,339
+当然是这个支付网关了，这样的表述更自然、易懂。
+
+236
+00:31:18,339 --> 00:31:23,460
+This request. Will finally be sent to.
+
+236
+00:31:18,339 --> 00:31:23,460
+这项请求最终将被发送。 (Refined translation)
+
+237
+00:31:23,460 --> 00:31:28,899
+The usual bank.
+
+237
+00:31:23,460 --> 00:31:28,899
+常规银行（更自然、更易理解的翻译）
+
+238
+00:31:28,899 --> 00:31:33,859
+Or we say the.
+
+238
+00:31:28,899 --> 00:31:33,859
+我们常说，或者说。
+
+239
+00:31:33,859 --> 00:31:44,099
+Very card company.
+
+239
+00:31:33,859 --> 00:31:44,099
+非常出色的卡片公司。
+
+240
+00:31:44,099 --> 00:31:49,699
+So this request will go through the payment gateway.
+
+240
+00:31:44,099 --> 00:31:49,699
+因此，这个请求将通过支付网关处理。
+
+241
+00:31:49,699 --> 00:31:56,259
+Request.
+
+241
+00:31:49,699 --> 00:31:56,259
+请求
+
+242
+00:31:56,259 --> 00:32:09,740
+So payment gateway will check this request is valid, and then this request will finally be sent to the critical company and critical company will prove it that approve this request.
+
+242
+00:31:56,259 --> 00:32:09,740
+支付网关将验证此请求的有效性，随后将请求发送至关键公司，关键公司将确认并批准该请求。
+
+243
+00:32:09,740 --> 00:32:18,620
+So then we have the authorization response in this number three, the step three.
+
+243
+00:32:09,740 --> 00:32:18,620
+然后我们得到了这个编号为三的授权响应，这是第三步。
+
+244
+00:32:18,620 --> 00:32:31,220
+So this is a pair. Once the merchant get the response, that means this order information is approved by the customers.
+
+244
+00:32:18,620 --> 00:32:31,220
+这是一对。一旦商家收到回复，就意味着订单信息已经得到客户的批准。翻译得更加自然易懂。
+
+245
+00:32:31,299 --> 00:32:33,299
+Credit card company.
+
+245
+00:32:31,299 --> 00:32:33,299
+信用卡公司
+
+246
+00:32:33,299 --> 00:32:45,059
+And then he can show the response purchase response message to the order to say, well, your request is approved.
+
+246
+00:32:33,299 --> 00:32:45,059
+然后他可以向订单展示响应购买响应消息，表示您的请求已经得到批准。
+
+247
+00:32:45,059 --> 00:32:49,019
+So you have paid this transaction.
+
+247
+00:32:45,059 --> 00:32:49,019
+您已经支付了这笔交易。
+
+248
+00:32:49,019 --> 00:32:51,579
+And later on.
+
+248
+00:32:49,019 --> 00:32:51,579
+之后。
+
+249
+00:32:51,579 --> 00:32:55,620
+The merchant and get.
+
+249
+00:32:51,579 --> 00:32:55,620
+商人与获取。
+
+250
+00:32:55,619 --> 00:33:00,219
+The credit. So we have the step five and step six.
+
+250
+00:32:55,619 --> 00:33:00,219
+这笔贷款。因此，我们进行了第五步和第六步。
+
+251
+00:33:00,219 --> 00:33:07,219
+So this is a caption request.
+
+251
+00:33:00,219 --> 00:33:07,219
+这是一份字幕请求，请看这里。
+
+252
+00:33:07,219 --> 00:33:09,419
+And caption response.
+
+252
+00:33:07,219 --> 00:33:09,419
+并且附有标题的响应。
+
+253
+00:33:09,419 --> 00:33:12,739
+So this step is for.
+
+253
+00:33:09,419 --> 00:33:12,739
+这一步是为了...
+
+254
+00:33:12,739 --> 00:33:17,059
+Merchant.
+
+254
+00:33:12,739 --> 00:33:17,059
+商家
+
+255
+00:33:17,059 --> 00:33:22,859
+To claim credit.
+
+255
+00:33:17,059 --> 00:33:22,859
+声明信用权
+
+256
+00:33:22,859 --> 00:33:25,699
+From his bank account.
+
+256
+00:33:22,859 --> 00:33:25,699
+来自他的银行账户
+
+257
+00:33:25,699 --> 00:33:31,779
+Just in step five, we have the caption request from merchant to the payment gateway.
+
+257
+00:33:25,699 --> 00:33:31,779
+只在第五步，商家向支付网关发出的标题请求。
+
+258
+00:33:31,779 --> 00:33:37,859
+So the payment gateway will send this.
+
+258
+00:33:31,779 --> 00:33:37,859
+因此，支付网关将会发送这个内容。
+
+259
+00:33:37,859 --> 00:33:40,259
+Copy request.
+
+259
+00:33:37,859 --> 00:33:40,259
+复制请求（经过润色）
+
+260
+00:33:40,259 --> 00:33:51,379
+To the merchants bank.
+
+260
+00:33:40,259 --> 00:33:51,379
+致商家银行（经过润色）。
+
+261
+00:33:51,540 --> 00:34:00,420
+Of course, the merchant bank can acknowledge, well, you have this credit because of this purchase transaction.
+
+261
+00:33:51,540 --> 00:34:00,420
+当然，银行可以确认，嗯，这笔信贷是因为这次购买交易而有的。翻译得更加自然和易懂。
+
+262
+00:34:00,420 --> 00:34:09,300
+And also the response will be sent back to the payment gateway and gateway will notify the merchant you have the credit.
+
+262
+00:34:00,420 --> 00:34:09,300
+并且响应会发送回支付网关，网关将通知商家您已获得信用，翻译更加自然易懂。
+
+263
+00:34:09,300 --> 00:34:15,099
+So your account balance will be increased by like one hundred Hong Kong dollars.
+
+263
+00:34:09,300 --> 00:34:15,099
+您的账户余额将增加约一百港元。
+
+264
+00:34:15,099 --> 00:34:17,860
+So this is a caption response.
+
+264
+00:34:15,099 --> 00:34:17,860
+这就是这样一条字幕回复，翻译得比较自然。
+
+265
+00:34:17,900 --> 00:34:20,420
+Step five, step six.
+
+265
+00:34:17,900 --> 00:34:20,420
+第五步、第六步。
+
+266
+00:34:20,420 --> 00:34:30,900
+For the financial settlement.
+
+266
+00:34:20,420 --> 00:34:30,900
+为财务结算事宜。
+
+267
+00:34:30,900 --> 00:34:33,980
+You can see in this table.
+
+267
+00:34:30,900 --> 00:34:33,980
+您可以在这张表中看到。
+
+268
+00:34:33,980 --> 00:34:36,980
+We had a purchase request.
+
+268
+00:34:33,980 --> 00:34:36,980
+我们收到了一个采购申请。
+
+269
+00:34:36,980 --> 00:34:45,460
+This is the message from court holder to merchant that this denotes the purchase request.
+
+269
+00:34:36,980 --> 00:34:45,460
+这是法院持有人向商家发送的消息，表明这是一份购买请求。
+
+270
+00:34:45,460 --> 00:34:49,539
+Purchase response is a direction from merchant to court holder.
+
+270
+00:34:45,460 --> 00:34:49,539
+采购响应是指商家向持有人发出的指示，表述更为自然易懂。
+
+271
+00:34:49,539 --> 00:34:57,380
+That means this is a response to the purchase request to notify the buyer.
+
+271
+00:34:49,539 --> 00:34:57,380
+这表示这是对购买请求的回复，旨在通知买家。
+
+272
+00:34:57,380 --> 00:35:00,179
+Your request is approved.
+
+272
+00:34:57,380 --> 00:35:00,179
+您的请求已获批准。
+
+273
+00:35:00,179 --> 00:35:08,300
+So we have authorization request, authorization response and caption request and caption response.
+
+273
+00:35:00,179 --> 00:35:08,300
+因此，我们处理授权请求、授权响应、字幕请求和字幕响应。
+
+274
+00:35:08,300 --> 00:35:14,059
+OK, well, previously we have mentioned that we have the dual signature scheme, right?
+
+274
+00:35:08,300 --> 00:35:14,059
+好吧，之前我们已经讲过我们采用了双重签名机制，您同意吗？
+
+275
+00:35:14,059 --> 00:35:19,820
+In this purchase request message, we will apply this dual signature.
+
+275
+00:35:14,059 --> 00:35:19,820
+在此采购请求信息中，我们将使用此双重签名。这样的表达更自然、易懂。
+
+276
+00:35:19,820 --> 00:35:26,299
+In the purchase request message, this is from the buyer to the merchant.
+
+276
+00:35:19,820 --> 00:35:26,299
+在采购请求信息中，这来自买家对商家的。
+
+277
+00:35:26,299 --> 00:35:31,139
+So buyer will provide two information, two pieces of information.
+
+277
+00:35:26,299 --> 00:35:31,139
+买家将提供两条信息，即两份资料。
+
+278
+00:35:31,139 --> 00:35:35,619
+The first information is we call it to be M1.
+
+278
+00:35:31,139 --> 00:35:35,619
+第一条信息是我们称之为 M1。
+
+279
+00:35:35,619 --> 00:35:38,380
+Order information.
+
+279
+00:35:35,619 --> 00:35:38,380
+订单信息（经过润色）
+
+280
+00:35:38,380 --> 00:35:41,980
+You order one TV, you order some books, right?
+
+280
+00:35:38,380 --> 00:35:41,980
+你买一台电视，再买几本书，对吧？
+
+281
+00:35:41,980 --> 00:35:43,259
+Different orders.
+
+281
+00:35:41,980 --> 00:35:43,259
+不同订单
+
+282
+00:35:43,260 --> 00:35:48,020
+So this information is M1.
+
+282
+00:35:43,260 --> 00:35:48,020
+这条信息是 M1。
+
+283
+00:35:48,020 --> 00:35:58,180
+And the buyer also need to provide his payment account, his account information.
+
+283
+00:35:48,020 --> 00:35:58,180
+买方需要提供自己的支付账户信息及其账户详情。
+
+284
+00:35:58,180 --> 00:36:01,340
+Just what's your credit card number?
+
+284
+00:35:58,180 --> 00:36:01,340
+你的信用卡号码是多少？
+
+285
+00:36:01,340 --> 00:36:04,100
+And this is in M2.
+
+285
+00:36:01,340 --> 00:36:04,100
+这是在 M2 中的内容。
+
+286
+00:36:04,100 --> 00:36:07,340
+OK, from M1, we have HM1.
+
+286
+00:36:04,100 --> 00:36:07,340
+好的，来自 M1，我们有 HM1。
+
+287
+00:36:07,340 --> 00:36:11,340
+We get the digest HM1.
+
+287
+00:36:07,340 --> 00:36:11,340
+我们获取了摘要 HM1。
+
+288
+00:36:11,340 --> 00:36:14,860
+From M2, we have HM2.
+
+288
+00:36:11,340 --> 00:36:14,860
+从 M2，我们有 HM2。
+
+289
+00:36:14,860 --> 00:36:16,940
+We do the concatenation.
+
+289
+00:36:14,860 --> 00:36:16,940
+我们执行连接操作。
+
+290
+00:36:16,940 --> 00:36:27,660
+So we get M3 equals HM1 concatenated with HM2.
+
+290
+00:36:16,940 --> 00:36:27,660
+因此，我们得到 M3 等于 HM1 和 HM2 连接。这样的表述更为自然易懂。
+
+291
+00:36:27,660 --> 00:36:30,380
+So we have message M3.
+
+291
+00:36:27,660 --> 00:36:30,380
+我们已经得到了消息 M3。
+
+292
+00:36:30,380 --> 00:36:33,500
+So M3, we apply the same hash function.
+
+292
+00:36:30,380 --> 00:36:33,500
+因此，M3，我们使用相同的哈希函数。这样的表述更为自然和易懂。
+
+293
+00:36:33,500 --> 00:36:36,660
+We have HM3.
+
+293
+00:36:33,500 --> 00:36:36,660
+我们拥有 HM3。
+
+294
+00:36:36,659 --> 00:36:49,059
+And then based on HM3, we apply the sign, the secret key, the private key for signing.
+
+294
+00:36:36,659 --> 00:36:49,059
+然后基于 HM3，我们应用签名算法、密钥和私钥进行签名操作。
+
+295
+00:36:49,059 --> 00:36:58,059
+So we get this signature by applying the user's, the card holder's, private key.
+
+295
+00:36:49,059 --> 00:36:58,059
+我们通过应用持卡人的私钥来获取这个签名。
+
+296
+00:36:58,059 --> 00:37:02,019
+So we denote this one to be.
+
+296
+00:36:58,059 --> 00:37:02,019
+我们将其标记为。
+
+297
+00:37:02,139 --> 00:37:07,420
+To follow the previous one, we have HM3.
+
+297
+00:37:02,139 --> 00:37:07,420
+为了延续前一个例子，我们来看 HM3。
+
+298
+00:37:07,420 --> 00:37:13,900
+We apply the secret key of the card holder.
+
+298
+00:37:07,420 --> 00:37:13,900
+我们应用持卡人的密钥。
+
+299
+00:37:13,900 --> 00:37:21,820
+So this one is, we call it to be the dual signature to be verified by both the merchant
+
+299
+00:37:13,900 --> 00:37:21,820
+因此我们称这个为双重签名，需要商家双方进行验证，表述更为自然流畅
+
+300
+00:37:21,820 --> 00:37:25,619
+and payment gateway.
+
+300
+00:37:21,820 --> 00:37:25,619
+并且支付网关。
+
+301
+00:37:25,619 --> 00:37:39,579
+OK, now we look at the content of this purchase request message.
+
+301
+00:37:25,619 --> 00:37:39,579
+好的，现在我们来查看这份采购请求的内容。
+
+302
+00:37:39,579 --> 00:37:45,099
+So we have the, I said before, this is M1, all the information.
+
+302
+00:37:39,579 --> 00:37:45,099
+我们之前提到过，这就是 M1，所有相关信息。
+
+303
+00:37:45,099 --> 00:37:49,819
+This is payment instruction M2.
+
+303
+00:37:45,099 --> 00:37:49,819
+这是付款指示 M2。
+
+304
+00:37:49,819 --> 00:37:53,099
+And we have HM1.
+
+304
+00:37:49,819 --> 00:37:53,099
+我们有 HM1。
+
+305
+00:37:53,099 --> 00:38:08,420
+And we have a dual signature, HM3, signed by the card holder's secret key.
+
+305
+00:37:53,099 --> 00:38:08,420
+我们拥有双重签名，HM3，由持卡人的私密密钥签署，翻译得更加自然易懂。
+
+306
+00:38:08,420 --> 00:38:12,699
+This M2, we have HM2.
+
+306
+00:38:08,420 --> 00:38:12,699
+本期 M2，我们有 HM2。
+
+307
+00:38:12,699 --> 00:38:18,059
+And this is the same dual signature.
+
+307
+00:38:12,699 --> 00:38:18,059
+这也是相同的双重签名。（经过润色，使翻译更自然易懂）
+
+308
+00:38:18,059 --> 00:38:31,659
+That's the HM3, signed by the card holder's signing key, private key.
+
+308
+00:38:18,059 --> 00:38:31,659
+这是 HM3，由持卡人使用其签名密钥私钥签署。
+
+309
+00:38:31,659 --> 00:38:39,699
+So the message will be sent to, so this is a request message.
+
+309
+00:38:31,659 --> 00:38:39,699
+因此，消息将被发送至指定地点，这是一条请求信息。
+
+310
+00:38:39,699 --> 00:38:46,500
+And all the information identifies the goods to be purchased will be known by the merchant.
+
+310
+00:38:39,699 --> 00:38:46,500
+所有信息都标明了要购买的货物，商家将能够了解这些信息。
+
+311
+00:38:46,500 --> 00:38:50,179
+So payment instructions contain the PAN number.
+
+311
+00:38:46,500 --> 00:38:50,179
+付款说明中包含了 PAN 卡号。
+
+312
+00:38:50,179 --> 00:38:56,419
+PAN means the buyer's primary account number, your account number.
+
+312
+00:38:50,179 --> 00:38:56,419
+PAN 指的是买家的主要账户号码，也就是您的账户号码。
+
+313
+00:38:56,419 --> 00:39:03,699
+Also the price of the whole items and the transaction identifier, transaction ID, for
+
+313
+00:38:56,419 --> 00:39:03,699
+也有整个商品的价格以及交易标识符，即交易 ID，
+
+314
+00:39:03,699 --> 00:39:06,779
+this transaction.
+
+314
+00:39:03,699 --> 00:39:06,779
+这笔交易。
+
+315
+00:39:06,780 --> 00:39:17,340
+So the first part, just like, will be encrypted, right, will be encrypted with K1.
+
+315
+00:39:06,780 --> 00:39:17,340
+所以第一部分，就像，将会被加密，没错，会用 K1 进行加密。
+
+316
+00:39:17,340 --> 00:39:24,500
+So this K1 will be encrypted by using the merchant's public key.
+
+316
+00:39:17,340 --> 00:39:24,500
+因此，这个 K1 将使用商家的公钥进行加密。翻译得更加自然和易懂。
+
+317
+00:39:24,500 --> 00:39:32,180
+So only the merchant can open the envelope and get the K1 and then do the decryption
+
+317
+00:39:24,500 --> 00:39:32,180
+只有商家才能打开信封，取出 K1 然后进行解密
+
+318
+00:39:32,180 --> 00:39:36,300
+to get this part.
+
+318
+00:39:32,180 --> 00:39:36,300
+获取这部分内容。
+
+319
+00:39:36,300 --> 00:39:47,340
+So this part will be known to merchant.
+
+319
+00:39:36,300 --> 00:39:47,340
+这部分内容众所周知，便于商家了解。
+
+320
+00:39:47,340 --> 00:39:48,900
+Okay we'll look at second part.
+
+320
+00:39:47,340 --> 00:39:48,900
+好的，我们来看看第二部分。
+
+321
+00:39:48,900 --> 00:39:51,900
+Second part will also be encrypted.
+
+321
+00:39:48,900 --> 00:39:51,900
+第二部分也将被加密，翻译得更加自然和易懂。
+
+322
+00:39:51,900 --> 00:39:59,660
+So will be encrypted by a symmetric key K, but this key K will be put, this key will
+
+322
+00:39:51,900 --> 00:39:59,660
+将由对称密钥 K 加密，但这个密钥将被放置，这个密钥将被使用
+
+323
+00:39:59,660 --> 00:40:03,019
+be put into an envelope.
+
+323
+00:39:59,660 --> 00:40:03,019
+放入信封里。
+
+324
+00:40:03,019 --> 00:40:09,980
+So this envelope will be encrypted by using the payment gateway's public key.
+
+324
+00:40:03,019 --> 00:40:09,980
+因此，这个信封将使用支付网关的公钥进行加密。这样的表述更为自然易懂。
+
+325
+00:40:09,980 --> 00:40:14,980
+So encryption with the public key, encryption key of the payment gateway.
+
+325
+00:40:09,980 --> 00:40:14,980
+使用公钥进行加密，这是支付网关的加密密钥。
+
+326
+00:40:14,980 --> 00:40:22,579
+In other words, all the account information cannot be known to the merchant.
+
+326
+00:40:14,980 --> 00:40:22,579
+换句话说，商家无法知晓所有账户信息。
+
+327
+00:40:22,579 --> 00:40:40,219
+So this part is known to the gateway, the gateway.
+
+327
+00:40:22,579 --> 00:40:40,219
+这部分内容已知是网关，网关。
+
+328
+00:40:40,219 --> 00:40:53,500
+You can see, along with the message, the buyer also needs to provide his certificate.
+
+328
+00:40:40,219 --> 00:40:53,500
+您可以看到，除了信息外，买家还需提供其证书，表述更为自然易懂。
+
+329
+00:40:53,500 --> 00:41:05,699
+So this certificate contains, in fact, it is his public key to verify the signature.
+
+329
+00:40:53,500 --> 00:41:05,699
+这份证书实际上包含了他的公钥，用于验证签名。实际上，这是他的公钥，用于验证签名。
+
+330
+00:41:05,699 --> 00:41:10,819
+So this is signature certificate, signature certificate.
+
+330
+00:41:05,699 --> 00:41:10,819
+这就是签名证书，内容为签名证书。
+
+331
+00:41:10,819 --> 00:41:19,819
+So this is for verify the dual signature.
+
+331
+00:41:10,819 --> 00:41:19,819
+这是为了验证双重签名。 (这是为了验证双重签名)
+
+332
+00:41:19,820 --> 00:41:43,300
+Just like previously, it should be, just like here we have PUC, public key of the cardholder
+
+332
+00:41:19,820 --> 00:41:43,300
+就像之前一样，这里应该是这样的，我们有 PUC，即持卡人的公钥
+
+333
+00:41:44,180 --> 00:41:52,860
+here.
+
+333
+00:41:44,180 --> 00:41:52,860
+这里。
+
+334
+00:41:52,860 --> 00:42:00,480
+So this part contains the PUC of cardholder and this certificate will be sent to receivers.
+
+334
+00:41:52,860 --> 00:42:00,480
+这一部分包含持卡人的 PUC 信息，该证书将被发送给接收方。
+
+335
+00:42:00,480 --> 00:42:09,260
+So receiver can use this public key to verify the dual signature.
+
+335
+00:42:00,480 --> 00:42:09,260
+因此，接收者可以使用这个公钥来验证双重签名，使其更加自然易懂。
+
+336
+00:42:10,260 --> 00:42:15,100
+The first part can be checked by the merchant.
+
+336
+00:42:10,260 --> 00:42:15,100
+第一部分可由商家进行核实。
+
+337
+00:42:15,100 --> 00:42:22,580
+So merchant will verify your order is correct, your signature is correct.
+
+337
+00:42:15,100 --> 00:42:22,580
+商家将核对您的订单是否准确无误，您的签名是否正确。
+
+338
+00:42:22,580 --> 00:42:27,020
+If well, your signature is correct.
+
+338
+00:42:22,580 --> 00:42:27,020
+如果没问题，您的签名是正确的。
+
+339
+00:42:27,020 --> 00:42:34,900
+And then the second part, the merchant will send the second part to the payment gateway.
+
+339
+00:42:27,020 --> 00:42:34,900
+然后是第二部分，商家会把第二部分发送给支付网关，翻译更加自然流畅。
+
+340
+00:42:34,940 --> 00:42:39,059
+So payment gateway will get the account information.
+
+340
+00:42:34,940 --> 00:42:39,059
+支付网关将获取账户信息，表述更自然易懂。
+
+341
+00:42:39,059 --> 00:42:49,579
+Your PAN, primary account number information will be obtained by the payment gateway.
+
+341
+00:42:39,059 --> 00:42:49,579
+支付网关将获取您的 PAN（主要账户号码）信息。
+
+342
+00:42:49,579 --> 00:42:52,720
+So now we look at the second message.
+
+342
+00:42:49,579 --> 00:42:52,720
+现在让我们看看第二条信息。
+
+343
+00:42:52,720 --> 00:43:02,180
+The first message, purchase request message is this one.
+
+343
+00:42:52,720 --> 00:43:02,180
+这是第一条消息，购买请求的消息正是这条。
+
+344
+00:43:02,179 --> 00:43:09,539
+So this one will be sent to the post.
+
+344
+00:43:02,179 --> 00:43:09,539
+这个将会被寄出去。
+
+345
+00:43:09,539 --> 00:43:18,500
+So this view it to be this one.
+
+345
+00:43:09,539 --> 00:43:18,500
+这就是这个视图，表述得很清楚。
+
+346
+00:43:18,500 --> 00:43:22,579
+The purchase request message contains two parts.
+
+346
+00:43:18,500 --> 00:43:22,579
+采购请求消息包含两部分，表达清晰。
+
+347
+00:43:22,579 --> 00:43:24,819
+First part can be known by the merchant.
+
+347
+00:43:22,579 --> 00:43:24,819
+第一部分可由商家知晓。
+
+348
+00:43:24,819 --> 00:43:32,059
+Second part will be known by the payment gateway.
+
+348
+00:43:24,819 --> 00:43:32,059
+第二部分将由支付网关来确认。
+
+349
+00:43:32,059 --> 00:43:36,059
+That's the first part checked by the merchant.
+
+349
+00:43:32,059 --> 00:43:36,059
+这是商家检查的第一部分。
+
+350
+00:43:36,059 --> 00:43:42,940
+Merchant can know this message, this order information is correct.
+
+350
+00:43:36,059 --> 00:43:42,940
+商家可以了解到这条信息，该订单信息准确无误。
+
+351
+00:43:42,940 --> 00:43:53,420
+And then the merchant will generate the authorization request message.
+
+351
+00:43:42,940 --> 00:43:53,420
+然后商家将生成授权请求消息。 (This is the same as step1 as it is already a refined translation)
+
+352
+00:43:53,420 --> 00:44:07,900
+So in this authorization request message, the merchant, request for payment authorization
+
+352
+00:43:53,420 --> 00:44:07,900
+因此，在这条授权请求信息中，商家请求进行支付授权
+
+353
+00:44:07,900 --> 00:44:20,340
+support this message M4, the merchant will request to authorize this transaction.
+
+353
+00:44:07,900 --> 00:44:20,340
+支持这条信息 M4，商家将请求授权这笔交易。（已优化，使翻译更自然易懂）
+
+354
+00:44:20,340 --> 00:44:33,360
+So we get the HM4 and the merchant will generate the signature here, just an S4.
+
+354
+00:44:20,340 --> 00:44:33,360
+因此我们得到 HM4，商家将在此处生成签名，仅此一个 S4。
+
+355
+00:44:33,360 --> 00:44:37,980
+So this message, we have a key K for the encryption.
+
+355
+00:44:33,360 --> 00:44:37,980
+这条消息，我们有一个用于加密的密钥 K。
+
+356
+00:44:37,980 --> 00:44:42,740
+This key K will be put into an envelope.
+
+356
+00:44:37,980 --> 00:44:42,740
+这个键 K 将被放入信封里。
+
+357
+00:44:42,739 --> 00:44:55,500
+So this envelope will be encrypted by the, so we suppose this key K, this key K will
+
+357
+00:44:42,739 --> 00:44:55,500
+因此，这个信封将被加密。我们假设使用密钥 K，该密钥将被使用
+
+358
+00:44:55,500 --> 00:45:07,819
+be encrypted by the public key of the gateway.
+
+358
+00:44:55,500 --> 00:45:07,819
+被网关的公钥加密。
+
+359
+00:45:07,820 --> 00:45:14,800
+So you can see this part authorization request message will be put here.
+
+359
+00:45:07,820 --> 00:45:14,800
+因此您可以在这里看到这部分授权请求消息将被放置。这使得翻译更加自然易懂。
+
+360
+00:45:14,800 --> 00:45:21,100
+So this will be decrypted by the payment gateway.
+
+360
+00:45:14,800 --> 00:45:21,100
+这将由支付网关进行解密，表述更为自然。
+
+361
+00:45:21,100 --> 00:45:25,539
+So all the message will be sent to gateway.
+
+361
+00:45:21,100 --> 00:45:25,539
+因此，所有消息都将发送至网关。
+
+362
+00:45:25,539 --> 00:45:42,500
+If we denote a previous slide, this part to be, just we represent this part to be A.
+
+362
+00:45:25,539 --> 00:45:42,500
+如果我们表示前一张幻灯片，这部分内容即为 A。
+
+363
+00:45:42,500 --> 00:45:50,739
+So this part is encrypted and only the payment gateway can open it.
+
+363
+00:45:42,500 --> 00:45:50,739
+这部分内容加密了，只有支付网关才能解锁。
+
+364
+00:45:50,739 --> 00:46:01,000
+So the merchant will forward this A part here to be included in this part.
+
+364
+00:45:50,739 --> 00:46:01,000
+因此，商家会将这部分 A 内容转发至此，以便包含在本部分中。
+
+365
+00:46:01,000 --> 00:46:07,279
+So these two parts, the top part includes the authorization request information.
+
+365
+00:46:01,000 --> 00:46:07,279
+这两部分内容，上面部分包含授权请求信息。
+
+366
+00:46:07,279 --> 00:46:13,319
+The bottom part contains the account information.
+
+366
+00:46:07,279 --> 00:46:13,319
+底部部分包含账户信息。
+
+367
+00:46:13,320 --> 00:46:21,440
+So payment gateway also checks the consistency of the request for payment, request for payment.
+
+367
+00:46:13,320 --> 00:46:21,440
+支付网关会检查支付请求的一致性，确保支付请求的正确性。
+
+368
+00:46:21,440 --> 00:46:28,920
+That's M4, request for payment authorization with a payment instruction.
+
+368
+00:46:21,440 --> 00:46:28,920
+这是 M4，请求支付授权及支付指令。
+
+369
+00:46:28,920 --> 00:46:34,200
+Payment instruction, that's M2, M2 is here.
+
+369
+00:46:28,920 --> 00:46:34,200
+支付指令，即 M2，M2 就在眼前。
+
+370
+00:46:34,200 --> 00:46:39,840
+And in both parts, they should have the same transaction ID.
+
+370
+00:46:34,200 --> 00:46:39,840
+在两部分中，它们的交易 ID 应当一致。
+
+371
+00:46:39,840 --> 00:46:43,480
+The transaction identifier is the same in both parts.
+
+371
+00:46:39,840 --> 00:46:43,480
+交易标识符在两部分中都是一样的。
+
+372
+00:46:43,480 --> 00:46:52,800
+So this part authorization request will have the transaction ID.
+
+372
+00:46:43,480 --> 00:46:52,800
+因此，这部分授权请求将包含交易 ID。
+
+373
+00:46:52,800 --> 00:47:05,240
+And this bottom part will also contain the same transaction ID.
+
+373
+00:46:52,800 --> 00:47:05,240
+这底部部分也将包含相同的交易 ID。（更自然、更易理解的翻译）
+
+374
+00:47:05,239 --> 00:47:10,159
+Along with the message, you can see we have the certificate.
+
+374
+00:47:05,239 --> 00:47:10,159
+消息之外，您还可以看到我们提供的证书。这句话听起来有些生硬，以下是一个更自然的表达：消息之外，您还可以看到我们提供的证书。
+
+375
+00:47:10,159 --> 00:47:14,399
+So this is certificate for signature generation, right?
+
+375
+00:47:10,159 --> 00:47:14,399
+这就是用于生成签名的证书，没错吧？
+
+376
+00:47:14,399 --> 00:47:18,839
+The card holder, the signature generation for merchant.
+
+376
+00:47:14,399 --> 00:47:18,839
+信用卡持卡人，商户的签名生成（优化版）。
+
+377
+00:47:18,839 --> 00:47:29,359
+So this, the first one, the second one, both are for the signature verification.
+
+377
+00:47:18,839 --> 00:47:29,359
+这第一个和第二个，都是用于签名验证的。
+
+378
+00:47:29,360 --> 00:47:38,039
+So this signature verification, the first signature verification, the second signature
+
+378
+00:47:29,360 --> 00:47:38,039
+这是一次签名验证，首先是第一次签名验证，然后是第二次签名
+
+379
+00:47:38,039 --> 00:47:39,320
+verification.
+
+379
+00:47:38,039 --> 00:47:39,320
+验证。
+
+380
+00:47:39,320 --> 00:47:45,059
+So they will be used for to check which signature.
+
+380
+00:47:39,320 --> 00:47:45,059
+因此，将用于检查哪个签名。
+
+381
+00:47:45,059 --> 00:47:51,019
+We have one, we have two, right, two certificates.
+
+381
+00:47:45,059 --> 00:47:51,019
+我们有一张，我们有两张，对，两张证书。
+
+382
+00:47:51,019 --> 00:47:56,960
+So the first certificate will be used to verify which signature.
+
+382
+00:47:51,019 --> 00:47:56,960
+因此，第一张证书将用于验证哪个签名。 (This is the refined translation, as the initial translation is already natural and understandable.)
+
+383
+00:47:56,960 --> 00:48:04,800
+The first certificate is the signature certificate of the card holder.
+
+383
+00:47:56,960 --> 00:48:04,800
+第一张证书是持卡人的签名证书。
+
+384
+00:48:04,800 --> 00:48:15,960
+This contains the card holder's public key to verify the buyer's signature, right?
+
+384
+00:48:04,800 --> 00:48:15,960
+这条信息包含了用于验证买家签名的持卡人公钥，对吧？
+
+385
+00:48:15,960 --> 00:48:21,039
+So where is the buyer's signature in this, in this message?
+
+385
+00:48:15,960 --> 00:48:21,039
+那么，在这条消息中，买家的签名在哪里呢？
+
+386
+00:48:21,039 --> 00:48:26,159
+Which one?
+
+386
+00:48:21,039 --> 00:48:26,159
+哪个？
+
+387
+00:48:26,159 --> 00:48:30,759
+Anyone can tell me?
+
+387
+00:48:26,159 --> 00:48:30,759
+谁都可以告诉我吗？
+
+388
+00:48:30,759 --> 00:48:37,759
+As you can see, we have signature one here, one signature, and two signature.
+
+388
+00:48:30,759 --> 00:48:37,759
+如您所见，这里有一个签名，一个签名，另外还有两个签名，表述更加自然。
+
+389
+00:48:37,759 --> 00:48:43,559
+The second signature will be the bottom message, first signature in top message.
+
+389
+00:48:37,759 --> 00:48:43,559
+第二个签名位于底部，第一个签名位于顶部。
+
+390
+00:48:43,559 --> 00:49:02,559
+So one, the first certificate will be used in top or bottom, top or bottom.
+
+390
+00:48:43,559 --> 00:49:02,559
+因此，第一张证书将用于上下位置，上下位置。
+
+391
+00:49:02,559 --> 00:49:09,960
+Anyone can give me any answer?
+
+391
+00:49:02,559 --> 00:49:09,960
+任何人都可以给我任何答案吗？
+
+392
+00:49:09,960 --> 00:49:22,059
+Top or bottom?
+
+392
+00:49:09,960 --> 00:49:22,059
+顶上还是底下？
+
+393
+00:49:22,059 --> 00:49:29,340
+The first one is the signing certificate for the card holder, right?
+
+393
+00:49:22,059 --> 00:49:29,340
+第一张是持卡人的签名证书，没错吧？
+
+394
+00:49:29,340 --> 00:49:37,500
+So which one is the card holder's signature, the top or bottom one?
+
+394
+00:49:29,340 --> 00:49:37,500
+那么是哪里的签名呢？是上面的还是下面的？
+
+395
+00:49:37,500 --> 00:49:42,980
+Bottom, that's right.
+
+395
+00:49:37,500 --> 00:49:42,980
+下面，确实如此。
+
+396
+00:49:42,980 --> 00:49:51,260
+So the dual signature is generated by the customer, okay?
+
+396
+00:49:42,980 --> 00:49:51,260
+因此，双重签名是由客户生成的，好的吗？
+
+397
+00:49:51,260 --> 00:49:56,740
+The top part, actually that's authorization request message.
+
+397
+00:49:51,260 --> 00:49:56,740
+顶部部分，实际上是指授权请求信息。
+
+398
+00:49:56,739 --> 00:50:00,899
+This one is generated by the merchant.
+
+398
+00:49:56,739 --> 00:50:00,899
+这一个是由商家生成的（经过润色，使翻译更自然易懂）。
+
+399
+00:50:00,899 --> 00:50:11,979
+So this certificate will be used to verify this signature.
+
+399
+00:50:00,899 --> 00:50:11,979
+因此，这个证书将被用来验证这个签名，翻译更加自然易懂。
+
+400
+00:50:11,979 --> 00:50:24,579
+This part is generated by merchant.
+
+400
+00:50:11,979 --> 00:50:24,579
+这部分内容由商家生成（更自然、更易理解的翻译）。
+
+401
+00:50:24,579 --> 00:50:32,739
+Merchant accept your order and it will generate this authorization request message to the
+
+401
+00:50:24,579 --> 00:50:32,739
+商家接受您的订单后，将生成此授权请求信息：
+
+402
+00:50:32,739 --> 00:50:34,819
+payment gateway, right?
+
+402
+00:50:32,739 --> 00:50:34,819
+支付网关，您说得对
+
+403
+00:50:34,819 --> 00:50:49,380
+So you can see, number two is here, it's from merchant and payment gateway.
+
+403
+00:50:34,819 --> 00:50:49,380
+您可以看到，编号二是这里，它来自商家和支付网关。这使得内容更加自然易懂。
+
+404
+00:50:49,380 --> 00:50:59,059
+Okay, this message also contains another certificate.
+
+404
+00:50:49,380 --> 00:50:59,059
+好的，这条消息中还附有一个证书。
+
+405
+00:50:59,059 --> 00:51:04,260
+So this certificate is for merchant, for encryption certificate.
+
+405
+00:50:59,059 --> 00:51:04,260
+这份证书是为商家准备的，用于加密的证书。
+
+406
+00:51:04,260 --> 00:51:11,220
+So this one actually means because we have the communication between the merchant and
+
+406
+00:51:04,260 --> 00:51:11,220
+因此这个实际上意味着因为我们有商家和顾客之间的沟通
+
+407
+00:51:11,219 --> 00:51:22,980
+the gateway.
+
+407
+00:51:11,219 --> 00:51:22,980
+网关。
+
+408
+00:51:22,980 --> 00:51:32,019
+At this moment, we have the request, authorization request from merchant to the gateway, right?
+
+408
+00:51:22,980 --> 00:51:32,019
+目前我们收到了商户向网关发出的授权请求，对吗？
+
+409
+00:51:32,019 --> 00:51:37,619
+So later on, there will be the response message.
+
+409
+00:51:32,019 --> 00:51:37,619
+因此稍后会有更自然的响应消息。
+
+410
+00:51:37,619 --> 00:51:47,059
+So in this response, well, in the response message, normally will be encrypted by a symmetric
+
+410
+00:51:37,619 --> 00:51:47,059
+因此，在这个回复中，嗯，通常回复消息会被进行对称加密处理
+
+411
+00:51:47,059 --> 00:52:04,380
+key K and then the gateway can use this public key of the merchant to encrypt this key.
+
+411
+00:51:47,059 --> 00:52:04,380
+然后网关可以使用商户的公钥来加密这个密钥，即密钥 K。这样表达更为自然易懂。
+
+412
+00:52:04,380 --> 00:52:13,980
+This public key of the merchant is indicated here, like here.
+
+412
+00:52:04,380 --> 00:52:13,980
+商户的公钥在此处标明，就像这样。
+
+413
+00:52:13,980 --> 00:52:22,680
+So at this moment, I pass you my public key in this message.
+
+413
+00:52:13,980 --> 00:52:22,680
+在这个时刻，我将我的公钥通过这条消息发送给您。这样的表达更自然、易懂。
+
+414
+00:52:22,680 --> 00:52:31,500
+So later on, when gateway send back the response message, you can use this public key to do
+
+414
+00:52:22,680 --> 00:52:31,500
+因此稍后当网关返回响应消息后，您可以使用这个公钥进行操作
+
+415
+00:52:32,500 --> 00:52:33,500
+the encryption.
+
+415
+00:52:32,500 --> 00:52:33,500
+加密技术
+
+416
+00:52:33,500 --> 00:52:35,940
+Like here.
+
+416
+00:52:33,500 --> 00:52:35,940
+就像这里一样。
+
+417
+00:52:35,940 --> 00:52:39,619
+So first I give you the key, you see, that's my public key.
+
+417
+00:52:35,940 --> 00:52:39,619
+首先我给你这个密钥，你瞧，这是我的公钥。
+
+418
+00:52:39,619 --> 00:52:58,940
+So later on, you can talk to me by using this public key to encrypt the message.
+
+418
+00:52:39,619 --> 00:52:58,940
+因此之后，您可以使用这个公钥加密信息与我联系。这样的表达更自然、易懂。
+
+419
+00:52:58,940 --> 00:53:05,019
+So encryption, some key will be used for signature, generation and verification.
+
+419
+00:52:58,940 --> 00:53:05,019
+因此，加密会使用某些密钥进行签名、生成和验证，这样的表述更为自然易懂。
+
+420
+00:53:05,019 --> 00:53:12,780
+Some will be used for purely for confidentiality, right, purpose to encrypt the message such
+
+420
+00:53:05,019 --> 00:53:12,780
+一些将仅用于保密目的，用于加密信息，对吧
+
+421
+00:53:12,780 --> 00:53:17,700
+that only the receiver can decrypt the message.
+
+421
+00:53:12,780 --> 00:53:17,700
+只有接收者才能解密这条信息。
+
+422
+00:53:17,700 --> 00:53:26,880
+Okay, we look at the authorization response.
+
+422
+00:53:17,700 --> 00:53:26,880
+好的，我们来看看授权响应的内容。
+
+423
+00:53:26,880 --> 00:53:35,440
+So this information contains your request message from the merchant and also your account
+
+423
+00:53:26,880 --> 00:53:35,440
+因此，这条信息包含了您向商家发送的请求消息以及您的账户信息
+
+424
+00:53:35,440 --> 00:53:42,240
+information from the buyer, from the call holder.
+
+424
+00:53:35,440 --> 00:53:42,240
+来自买家的信息，来自通话持有人。
+
+425
+00:53:42,240 --> 00:53:56,440
+And then this message will be sent to the credit card company.
+
+425
+00:53:42,240 --> 00:53:56,440
+然后这条信息将被发送给信用卡公司。
+
+426
+00:53:56,440 --> 00:54:23,500
+The process is the merchant will send this authorization request authorization request
+
+426
+00:53:56,440 --> 00:54:23,500
+流程是商家将发送此授权请求
+
+427
+00:54:23,500 --> 00:54:32,980
+message to the payment gateway.
+
+427
+00:54:23,500 --> 00:54:32,980
+付款网关的消息。
+
+428
+00:54:32,980 --> 00:54:47,840
+So this authorization request message will be sent to the issued bank or we say the credit
+
+428
+00:54:32,980 --> 00:54:47,840
+因此，这条授权请求信息将被发送给发卡行，或者说涉及信用交易
+
+429
+00:54:47,840 --> 00:55:05,360
+card company, payment gateway, the merchant, the credit card company.
+
+429
+00:54:47,840 --> 00:55:05,360
+信用卡公司、支付网关、商家以及信用卡公司。
+
+430
+00:55:05,360 --> 00:55:12,920
+This is a request authorization request.
+
+430
+00:55:05,360 --> 00:55:12,920
+这是一条请求授权的请求。
+
+431
+00:55:12,920 --> 00:55:20,200
+Of course, the credit card company can open your account information and will check your
+
+431
+00:55:12,920 --> 00:55:20,200
+当然，信用卡公司可以查看您的账户信息，并进行检查
+
+432
+00:55:20,200 --> 00:55:26,079
+signature is correct and will check your balance can support this transaction.
+
+432
+00:55:20,200 --> 00:55:26,079
+签名正确，并将检查您的余额是否足够进行这笔交易。
+
+433
+00:55:26,079 --> 00:55:37,360
+And credit card company can give you a response to approve this request, approve it.
+
+433
+00:55:26,079 --> 00:55:37,360
+信用卡公司可以给出回复来批准这个请求，批准它。这样的表达更自然、易懂。
+
+434
+00:55:37,360 --> 00:55:44,599
+If this transaction request is approved, the gateway can send back authorization response
+
+434
+00:55:37,360 --> 00:55:44,599
+如果这笔交易请求获得批准，网关可以发送授权响应
+
+435
+00:55:44,599 --> 00:55:51,120
+message.
+
+435
+00:55:44,599 --> 00:55:51,120
+消息。
+
+436
+00:55:51,119 --> 00:56:07,960
+We call this is authorization response from here through the payment gateway.
+
+436
+00:55:51,119 --> 00:56:07,960
+我们称之为从支付网关这里传来的授权响应。
+
+437
+00:56:07,960 --> 00:56:25,599
+In this authorization response, it shows that well, this transaction is approved.
+
+437
+00:56:07,960 --> 00:56:25,599
+在这个授权响应中，它显示这笔交易已经获得批准。
+
+438
+00:56:25,719 --> 00:56:29,199
+approved.
+
+438
+00:56:25,719 --> 00:56:29,199
+已批准。
+
+439
+00:56:29,199 --> 00:56:42,880
+And also it contains a token or merchant.
+
+439
+00:56:29,199 --> 00:56:42,880
+它还包含一个令牌或商家。这使得内容更加丰富。
+
+440
+00:56:42,880 --> 00:56:58,079
+to claim credit.
+
+440
+00:56:42,880 --> 00:56:58,079
+声明信用权
+
+441
+00:56:58,079 --> 00:57:05,960
+So just like the payment request is accepted by the payment gateway, the payment gateway
+
+441
+00:56:58,079 --> 00:57:05,960
+就像支付请求被支付网关接受那样，
+
+442
+00:57:05,960 --> 00:57:12,880
+prepares an authorization request and send it to the issued bank.
+
+442
+00:57:05,960 --> 00:57:12,880
+准备好授权请求后发送给发卡行。
+
+443
+00:57:12,880 --> 00:57:19,400
+Send this authorization request just like this one to the issued bank issued bank is
+
+443
+00:57:12,880 --> 00:57:19,400
+按照这个样子向发行银行发送此授权请求，发行银行信息如下
+
+444
+00:57:19,400 --> 00:57:24,159
+a credit card company through the bank card network.
+
+444
+00:57:19,400 --> 00:57:24,159
+通过银行银行卡网络的一家信用卡公司。
+
+445
+00:57:24,159 --> 00:57:32,320
+Once the authorization from the issued bank arrives, just like this is approved message
+
+445
+00:57:24,159 --> 00:57:32,320
+一旦收到发行行的授权，就像收到这条批准消息一样
+
+446
+00:57:32,320 --> 00:57:35,440
+arrived at the payment gateway.
+
+446
+00:57:32,320 --> 00:57:35,440
+已到达支付网关。
+
+447
+00:57:35,440 --> 00:57:45,639
+The gateway sends the response message authorization response message.
+
+447
+00:57:35,440 --> 00:57:45,639
+网关发送授权响应消息。
+
+448
+00:57:45,639 --> 00:57:53,559
+So it represents that the response of the issued bank authorizing the payment and also
+
+448
+00:57:45,639 --> 00:57:53,559
+因此，这表示发出银行授权支付的响应
+
+449
+00:57:53,559 --> 00:58:01,960
+there is a capture token associated with this transaction to facilitate daily remote connections.
+
+449
+00:57:53,559 --> 00:58:01,960
+与此交易关联的捕获令牌，便于实现日常远程连接。
+
+450
+00:58:01,960 --> 00:58:09,840
+We have a token for merchant to be used for later on to claim the credit because of this
+
+450
+00:58:01,960 --> 00:58:09,840
+我们有一个商户令牌，用于以后因故索赔信用
+
+451
+00:58:09,840 --> 00:58:17,079
+transaction.
+
+451
+00:58:09,840 --> 00:58:17,079
+交易
+
+452
+00:58:17,079 --> 00:58:21,159
+So in step four, we have purchase response.
+
+452
+00:58:17,079 --> 00:58:21,159
+在第四步，我们完成了购买响应。
+
+453
+00:58:21,159 --> 00:58:24,440
+The purchase response is quite simple.
+
+453
+00:58:21,159 --> 00:58:24,440
+购买响应非常简单，表述清晰明了。
+
+454
+00:58:24,440 --> 00:58:31,079
+That's a response for merchant to notify the card holder whether this purchase request
+
+454
+00:58:24,440 --> 00:58:31,079
+这是对商户通知持卡人是否批准此次购买请求的响应
+
+455
+00:58:31,079 --> 00:58:32,759
+is approved or not.
+
+455
+00:58:31,079 --> 00:58:32,759
+是否获得批准。
+
+456
+00:58:32,759 --> 00:58:41,239
+Of course, if it's approved, the card holder, the buyer can get the notification this transaction
+
+456
+00:58:32,759 --> 00:58:41,239
+当然，一旦批准，持卡人或买家就能收到这笔交易的通知
+
+457
+00:58:41,239 --> 00:58:43,799
+is successful.
+
+457
+00:58:41,239 --> 00:58:43,799
+成功了！
+
+458
+00:58:43,799 --> 00:58:49,880
+So of course, the merchant do this notification after getting the authorization response from
+
+458
+00:58:43,799 --> 00:58:49,880
+当然，商家在获得授权响应后便会进行这一通知
+
+459
+00:58:49,880 --> 00:58:53,199
+the gateway.
+
+459
+00:58:49,880 --> 00:58:53,199
+网关。
+
+460
+00:58:53,199 --> 00:58:57,960
+Step five and six are the capture request.
+
+460
+00:58:53,199 --> 00:58:57,960
+第五步和第六步是进行请求捕获。
+
+461
+00:58:57,960 --> 00:58:59,240
+So capture request.
+
+461
+00:58:57,960 --> 00:58:59,240
+捕获请求。
+
+462
+00:58:59,240 --> 00:59:06,880
+That means well, the merchant will claim the credit that was implicitly accorded during
+
+462
+00:58:59,240 --> 00:59:06,880
+这意味着商家将主张在隐含授予期间所获得的信用
+
+463
+00:59:06,880 --> 00:59:09,199
+the transaction authorization.
+
+463
+00:59:06,880 --> 00:59:09,199
+交易授权。
+
+464
+00:59:09,199 --> 00:59:19,800
+So the main function is for the merchant to claim the credit.
+
+464
+00:59:09,199 --> 00:59:19,800
+因此，主要功能是让商家申领信用。
+
+465
+00:59:19,800 --> 00:59:38,000
+So this can be viewed just like we have merchant and we have the merchant's bank.
+
+465
+00:59:19,800 --> 00:59:38,000
+因此，这可以像查看商家及其银行账户一样。
+
+466
+00:59:38,000 --> 00:59:44,240
+Merchant will send a request.
+
+466
+00:59:38,000 --> 00:59:44,240
+商家将会发送请求。
+
+467
+00:59:44,239 --> 00:59:56,959
+In step five to claim the credit and in step six, the merchant bank will acknowledge response
+
+467
+00:59:44,239 --> 00:59:56,959
+在第五步申请信用，第六步商家银行将确认回复
+
+468
+00:59:56,959 --> 01:00:06,239
+that your account is increased by this credit.
+
+468
+00:59:56,959 --> 01:00:06,239
+您的账户将因这笔信用而增加。
+
+469
+01:00:06,239 --> 01:00:12,079
+So this shows the financial settlement can be initiated by sending the capture request
+
+469
+01:00:06,239 --> 01:00:12,079
+这说明财务结算可以通过发送捕获请求来启动
+
+470
+01:00:12,079 --> 01:00:18,559
+message to the payment gateway to request capture or connection.
+
+470
+01:00:12,079 --> 01:00:18,559
+向支付网关发送请求进行捕获或连接的消息
+
+471
+01:00:18,559 --> 01:00:25,039
+The message contains the amount of transaction in this part right, amount of transaction,
+
+471
+01:00:18,559 --> 01:00:25,039
+消息中正确显示了这部分交易的金额，交易金额，
+
+472
+01:00:25,039 --> 01:00:33,360
+the transaction ID, the reference to the authorization, and also with the encrypted and signed capture
+
+472
+01:00:25,039 --> 01:00:33,360
+交易 ID、授权引用以及加密签名的捕获
+
+473
+01:00:33,360 --> 01:00:38,940
+token.
+
+473
+01:00:33,360 --> 01:00:38,940
+令牌。
+
+474
+01:00:38,940 --> 01:00:47,940
+The reference to the authorization, that means who is the credit card company to approve
+
+474
+01:00:38,940 --> 01:00:47,940
+授权的引用，即指明是哪家信用卡公司负责审批
+
+475
+01:00:47,940 --> 01:00:50,820
+this transaction.
+
+475
+01:00:47,940 --> 01:00:50,820
+这笔交易。
+
+476
+01:00:50,820 --> 01:00:57,860
+So later on, the payment gateway sends a clearance request using all the information it has collected
+
+476
+01:00:50,820 --> 01:00:57,860
+因此后来，支付网关利用其收集到的全部信息发起清算请求
+
+477
+01:00:57,860 --> 01:01:09,860
+to the acquired bank.
+
+477
+01:00:57,860 --> 01:01:09,860
+转入所收购银行。
+
+478
+01:01:09,860 --> 01:01:11,980
+So step six is capture response.
+
+478
+01:01:09,860 --> 01:01:11,980
+第 6 步是捕捉响应。
+
+479
+01:01:11,980 --> 01:01:17,820
+That means the gateway responds to the merchant with a capture response message.
+
+479
+01:01:11,980 --> 01:01:17,820
+这表示网关向商家发送捕获响应消息，表述更为自然易懂。
+
+480
+01:01:17,820 --> 01:01:24,320
+And this message contains the response of the acquired bank with the amount finally
+
+480
+01:01:17,820 --> 01:01:24,320
+这条消息包含了最终获得的银行响应金额
+
+481
+01:01:24,360 --> 01:01:28,240
+credited to the merchant account.
+
+481
+01:01:24,360 --> 01:01:28,240
+归属于商户账户。
+
+482
+01:01:28,240 --> 01:01:37,440
+So that's step six, quite simple.
+
+482
+01:01:28,240 --> 01:01:37,440
+那就是第六步，非常简单。
+
+483
+01:01:37,440 --> 01:01:43,559
+Okay then in this part three, we talk about the detailed information, right?
+
+483
+01:01:37,440 --> 01:01:43,559
+好的，那在这一部分三，我们来说说详细的信息，对吧？
+
+484
+01:01:44,279 --> 01:01:54,799
+The purchase request, the second one is authorization request.
+
+484
+01:01:44,279 --> 01:01:54,799
+购买申请，第二个是授权申请。
+
+485
+01:01:54,799 --> 01:02:03,079
+So in this tool, we understand how we can, how all the information should be included
+
+485
+01:01:54,799 --> 01:02:03,079
+在这个工具中，我们了解如何将所有信息包含在内
+
+486
+01:02:03,079 --> 01:02:08,559
+in this kind of messages, your order information, your account information.
+
+486
+01:02:03,079 --> 01:02:08,559
+在这类信息中，包含您的订单信息和账户信息。
+
+487
+01:02:08,559 --> 01:02:17,000
+And we have the key different certificate to be utilized for different part, the signature
+
+487
+01:02:08,559 --> 01:02:17,000
+我们拥有适用于不同部分的专用密钥证书，并附有签名
+
+488
+01:02:17,000 --> 01:02:22,840
+verification, and also some certificate to be used for the future communications.
+
+488
+01:02:17,000 --> 01:02:22,840
+验证，并附有未来通信使用的证书。
+
+489
+01:02:22,840 --> 01:02:28,960
+So this is, this is for future communication.
+
+489
+01:02:22,840 --> 01:02:28,960
+这是为了未来沟通的。
+
+490
+01:02:59,119 --> 01:03:08,400
+Five, we talk about, we'll give you the idea how the SET protocol, how it works.
+
+490
+01:02:59,119 --> 01:03:08,400
+五个，我们来聊聊，让你了解 SET 协议是如何运作的。
+
+491
+01:03:08,400 --> 01:03:11,400
+Okay, let's have a break, 10 minutes.
+
+491
+01:03:08,400 --> 01:03:11,400
+好吧，让我们休息 10 分钟。
+
+492
+01:03:11,400 --> 01:03:13,960
+If you have any question, you can come here and ask me.
+
+492
+01:03:11,400 --> 01:03:13,960
+如果您有任何疑问，欢迎来这向我咨询。
+
