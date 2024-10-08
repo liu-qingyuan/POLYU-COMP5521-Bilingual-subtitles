@@ -1,0 +1,1928 @@
+1
+00:00:00,000 --> 00:00:13,519
+OK, uh, anyone got the result?
+
+2
+00:00:13,519 --> 00:00:17,960
+64, not correct.
+
+3
+00:00:31,160 --> 00:00:36,320
+So let's see how we can get the result to be 64.
+
+4
+00:00:36,320 --> 00:00:40,320
+OK, we can go back to the previous slide.
+
+5
+00:00:44,520 --> 00:00:48,520
+OK, at this part, right?
+
+6
+00:00:48,520 --> 00:00:56,520
+So we start from this row, 1 can be represented as 13.
+
+7
+00:00:56,520 --> 00:01:09,520
+So 13 minus 3 times 4, and this 3, 13 minus 3 is minus 4 times
+
+8
+00:01:10,519 --> 00:01:14,519
+3 is some combination of 16 and 13.
+
+9
+00:01:14,519 --> 00:01:26,519
+16 minus 13, so this 5 times 13 minus 4 times 16.
+
+10
+00:01:26,519 --> 00:01:32,519
+OK, and this 13 can be represented as some combination
+
+11
+00:01:32,519 --> 00:01:39,519
+of 5 times 13 is 93 minus 5 times 16.
+
+12
+00:01:39,519 --> 00:01:46,519
+Minus 4 times 16, so this 5 times 93, 1.
+
+13
+00:01:46,519 --> 00:01:55,519
+This 25 minus 4, this is 29 times 16.
+
+14
+00:01:56,519 --> 00:02:07,519
+OK, we want to get modular inverse of 16, mod 93.
+
+15
+00:02:07,519 --> 00:02:12,519
+So both sides, we take mod 93, so this part is 0,
+
+16
+00:02:12,519 --> 00:02:18,519
+and this part, that means this is minus 29,
+
+17
+00:02:18,519 --> 00:02:23,519
+is modular inverse of 16.
+
+18
+00:02:23,520 --> 00:02:29,520
+So this is congruent to 93 minus 29.
+
+19
+00:02:29,520 --> 00:02:37,520
+So this equals 64 mod 93.
+
+20
+00:02:39,520 --> 00:02:42,520
+So this is x value, right?
+
+21
+00:02:42,520 --> 00:02:55,520
+So 64 is the modular inverse of 15 mod 93.
+
+22
+00:02:55,520 --> 00:02:59,520
+OK, any questions, comments?
+
+23
+00:03:12,520 --> 00:03:22,520
+So this result is 64.
+
+24
+00:03:22,520 --> 00:03:30,520
+OK, now we go to part 3.
+
+25
+00:03:30,520 --> 00:03:34,520
+So part 3, we'll study the prime numbers.
+
+26
+00:03:34,520 --> 00:03:39,520
+From prime numbers, we will learn the Fermat theorem,
+
+27
+00:03:39,520 --> 00:04:00,520
+and then we'll continue with the Euler's theorem.
+
+28
+00:04:00,520 --> 00:04:05,520
+No problem.
+
+29
+00:04:05,520 --> 00:04:11,520
+But prime numbers are those numbers with dividers of 1 and itself,
+
+30
+00:04:11,520 --> 00:04:14,520
+just like 2, 3, 5, 7, and 11.
+
+31
+00:04:14,520 --> 00:04:20,519
+All the numbers are called to be composite numbers, that's 4 and 6.
+
+32
+00:04:20,519 --> 00:04:24,519
+And we have the fundamental theorem of arithmetic.
+
+33
+00:04:24,519 --> 00:04:29,519
+That means any integer to be bigger than 1 can be factored in a unique way,
+
+34
+00:04:30,519 --> 00:04:40,519
+as a equals p1 to the a1 times p2 to the a2 times pt to the at.
+
+35
+00:04:40,519 --> 00:04:45,519
+So p1 is more than p2, it's more than pt.
+
+36
+00:04:45,519 --> 00:04:50,519
+Those are the prime numbers, and where each ai is part integer,
+
+37
+00:04:50,519 --> 00:04:55,519
+so a1, a2 are at the exponent part.
+
+38
+00:04:55,519 --> 00:05:06,519
+For example, 24 can be factored as 2 to the 3 times 3 to the 1, right?
+
+39
+00:05:06,519 --> 00:05:19,519
+Two prime numbers to the exponent to be 3 and 1.
+
+40
+00:05:19,519 --> 00:05:26,519
+Okay, here we have all the primes under two solid four prime numbers.
+
+41
+00:05:26,519 --> 00:05:30,519
+It's hard to tell which one is a prime number or not.
+
+42
+00:05:30,519 --> 00:05:35,519
+Especially when the number is very large, how to test if the number is prime.
+
+43
+00:05:35,519 --> 00:05:42,519
+That's a challenge problem.
+
+44
+00:05:42,519 --> 00:05:45,519
+Now we look at the Fermat theorem.
+
+45
+00:05:45,519 --> 00:05:54,519
+Fermat's theorem states that if p is prime and a is a part integer not divisible by p,
+
+46
+00:05:54,519 --> 00:06:02,519
+then we have a to the p mass 1 is congruent to 1 mod p.
+
+47
+00:06:02,519 --> 00:06:07,519
+So a is a part integer not divisible by p.
+
+48
+00:06:07,519 --> 00:06:09,519
+Suppose p is prime.
+
+49
+00:06:09,519 --> 00:06:19,519
+One example just like if p is prime number 7, so a equals 4 or 10.
+
+50
+00:06:19,519 --> 00:06:31,519
+So p is not a factor of a, so a is not divisible by p.
+
+51
+00:06:31,519 --> 00:06:38,519
+Just like in this example, a can be 4, a can be 10.
+
+52
+00:06:38,519 --> 00:06:43,519
+So p is not a factor of a.
+
+53
+00:06:43,519 --> 00:06:46,519
+Then we have this equation.
+
+54
+00:06:46,519 --> 00:06:54,519
+a to the p mass 1, if p mass 1 is, in this example is 6,
+
+55
+00:06:54,519 --> 00:07:03,519
+so a is 4 to the 6 is congruent to 1 mod 7.
+
+56
+00:07:03,519 --> 00:07:16,519
+Or 10 to the 6 is congruent to 1 mod 7.
+
+57
+00:07:16,519 --> 00:07:18,519
+So this is our statement.
+
+58
+00:07:25,519 --> 00:07:35,519
+An applied form is, we'll add both sides with times a.
+
+59
+00:07:35,519 --> 00:07:42,519
+So the left-hand side is a to the p is congruent to a mod p.
+
+60
+00:07:42,519 --> 00:07:44,519
+That's mod p.
+
+61
+00:07:44,519 --> 00:07:49,519
+So this is the Fermat theorem.
+
+62
+00:07:49,519 --> 00:08:01,519
+Here is the table to show that for any given the p to be 19, to be a prime number.
+
+63
+00:08:01,519 --> 00:08:11,519
+For any number a, a is from in this column, 1, 2, 3, 0, 18.
+
+64
+00:08:11,519 --> 00:08:23,519
+For the number a is smaller than p, of course, p is not a factor of a.
+
+65
+00:08:23,519 --> 00:08:32,519
+So if a is smaller than p, a is not divisible by p according to the Fermat theorem.
+
+66
+00:08:32,519 --> 00:08:43,519
+For the a to the p mass 1 is congruent to 1 mod p.
+
+67
+00:08:43,519 --> 00:08:55,519
+So if we look at the last column, so here is a to the 18 is congruent to 1 mod 19.
+
+68
+00:08:55,519 --> 00:09:06,519
+So the last column, no matter what the value of a, y, j, h, t, the last column for the value to be 1.
+
+69
+00:09:12,519 --> 00:09:16,519
+So this is the Fermat theorem.
+
+70
+00:09:16,519 --> 00:09:20,519
+To tell you, this is the rule of this problem you can find.
+
+71
+00:09:20,519 --> 00:09:33,519
+So we need to understand how we can prove it because this proposal is quite critical for us to understand the modular operation.
+
+72
+00:09:33,519 --> 00:09:46,519
+In this statement, in Fermat's theorem, if p is prime and a is a positive integer not divisible by p, so we have this equation.
+
+73
+00:09:46,519 --> 00:09:54,519
+The proof process is quite interesting, so I would like to share it with you.
+
+74
+00:09:54,519 --> 00:10:00,519
+Suppose we have a set to prove it, we can construct some sets.
+
+75
+00:10:00,519 --> 00:10:10,519
+So set A with all members 1, 2, 3, till p mass 1.
+
+76
+00:10:10,519 --> 00:10:19,519
+So p is a prime number, right? So in set A we have p mass 1 numbers.
+
+77
+00:10:19,519 --> 00:10:31,519
+OK, we look at another set, so another set B.
+
+78
+00:10:31,519 --> 00:10:44,519
+So B's set, because we have the parameter a here, we want to integrate a in the set of members.
+
+79
+00:10:44,519 --> 00:10:54,519
+So every member with times a, a, 2a, 3a, and p mass 1a.
+
+80
+00:10:54,519 --> 00:11:07,519
+Also we have, so a, all members times a, respectively, we get B, p mass 1 numbers.
+
+81
+00:11:07,519 --> 00:11:15,519
+We have mod p operation. So from B to C, each member will take the mod p operation.
+
+82
+00:11:15,519 --> 00:11:41,519
+We get a set C like a mod p, 2a mod p, 3a mod p, so the last one is p mass 1 times a mod p.
+
+83
+00:11:41,519 --> 00:11:50,519
+OK, now we look at this set C, a mod p, 2a mod p, what property?
+
+84
+00:11:50,519 --> 00:11:55,519
+So property is, we have one conclusion to say that.
+
+85
+00:11:55,519 --> 00:12:17,519
+Any from this set C, any two numbers are different.
+
+86
+00:12:17,519 --> 00:12:25,519
+Any two numbers in this set C are different. If not, so we rather pick two numbers.
+
+87
+00:12:25,519 --> 00:12:38,519
+Suppose they are t times a mod p, and s times a mod p.
+
+88
+00:12:38,519 --> 00:12:50,519
+We assume that t is bigger than zero, smaller than s, smaller than p mass 1.
+
+89
+00:12:50,519 --> 00:13:01,519
+Any two numbers, for this set C, any two, so t, s, should be different.
+
+90
+00:13:01,519 --> 00:13:10,519
+They represent two numbers, they should be at least three y and smaller than p. The last one is p mass 1.
+
+91
+00:13:10,519 --> 00:13:14,519
+No problem, right? We pick two numbers.
+
+92
+00:13:14,519 --> 00:13:30,519
+So if they are the same, if they are equal, and this implies t times a mod p equals s times a mod p.
+
+93
+00:13:30,519 --> 00:13:41,519
+So this implies t times a is equal to s times a mod p.
+
+94
+00:13:42,519 --> 00:14:03,519
+Well previously we learned that if the GCD a p is 1, so of course because p is a prime number, and a is not divisible by p.
+
+95
+00:14:03,519 --> 00:14:16,519
+So in fact this one implies GCD value a and p is 1.
+
+96
+00:14:16,519 --> 00:14:27,519
+a is not divisible by p, p is not a prime number of a, and p is a prime.
+
+97
+00:14:27,519 --> 00:14:39,519
+They do not have any common divisor except 1. But without a, because 1 contains a prime number of p.
+
+98
+00:14:40,519 --> 00:14:47,519
+p has two functions, one is 1, one is p. No p, their common divisor is 1.
+
+99
+00:14:49,519 --> 00:15:00,519
+So we have previously learned that if GCD a p is 1, this a can be cancelled, can be removed.
+
+100
+00:15:00,519 --> 00:15:09,519
+So this implies t is equal to s times a mod p. However, this is not possible.
+
+101
+00:15:13,519 --> 00:15:23,519
+This contradicts our assumption of two numbers. p times a is contained from that group, from cc.
+
+102
+00:15:24,519 --> 00:15:28,519
+Their value should range from 0 to t.
+
+103
+00:15:29,519 --> 00:15:41,519
+So from here we show that two distinct numbers, if they are not equal to a, their mod value is the same. That's not possible.
+
+104
+00:15:43,519 --> 00:15:45,519
+So this is a contradiction.
+
+105
+00:15:46,519 --> 00:15:57,519
+Based on this result, any two numbers are different. If they are the same, any two to be the same, we can have this contradiction.
+
+106
+00:15:59,519 --> 00:16:04,519
+So now we say any two numbers are different, and their value...
+
+107
+00:16:04,519 --> 00:16:29,519
+So we have the cc, we also have p-mass-1 numbers in all data in the range from 1 to p-mass-1.
+
+108
+00:16:35,519 --> 00:16:46,519
+So zero, right? Because all the numbers p-mass-1 to a, the relative prime of p cannot be zero, no factor of p.
+
+109
+00:16:47,519 --> 00:16:55,519
+And the distinct, they are different. So their range is actually from 1 to p-mass-1.
+
+110
+00:16:56,519 --> 00:17:07,519
+When p-mass-1 numbers are all distinct, no repetition, p-mass-1 numbers, that means their value must be from 1 to p-mass-1.
+
+111
+00:17:09,519 --> 00:17:14,519
+So this implies actually that set a equals set c.
+
+112
+00:17:17,519 --> 00:17:22,519
+So this implies set a equals set c.
+
+113
+00:17:25,519 --> 00:17:33,519
+If set a equals set c, we time all numbers together.
+
+114
+00:17:34,519 --> 00:17:41,519
+When time a, this result equals with time all the numbers in set c.
+
+115
+00:17:42,519 --> 00:17:48,519
+When we time a, we have 1 times 2 times 3 times p-mass-1.
+
+116
+00:17:49,519 --> 00:18:03,519
+And the set c, after it is a times 2a times 3a times p-mass-1a, we mod p operation.
+
+117
+00:18:05,519 --> 00:18:10,519
+Right? Because in set c we have mod p operation.
+
+118
+00:18:12,519 --> 00:18:21,519
+So the right-hand side, we have how many a? 1 times 2 times 3 times p-mass-1.
+
+119
+00:18:23,519 --> 00:18:28,519
+And number of a is a to the power p-mass-1.
+
+120
+00:18:28,519 --> 00:18:32,519
+p-mass-1 numbers.
+
+121
+00:18:33,519 --> 00:18:39,519
+Number of a is a to the power p-mass-1.
+
+122
+00:18:40,519 --> 00:18:43,519
+This is a mod p operation.
+
+123
+00:18:44,519 --> 00:18:56,519
+And similarly we have the GCD 1 times 2 times 3 times p-mass-1 with p, this is 1.
+
+124
+00:18:57,519 --> 00:19:02,519
+1, 2, they are all relative prime to p.
+
+125
+00:19:03,519 --> 00:19:09,519
+We time them together, that data is also relative prime to p.
+
+126
+00:19:10,519 --> 00:19:14,519
+The largest common divisor is 1.
+
+127
+00:19:15,519 --> 00:19:21,519
+So both sides, this factor can be cancelled.
+
+128
+00:19:22,519 --> 00:19:34,519
+So the left-hand side is 1, the left-hand side is a to the p-mass-1 mod p.
+
+129
+00:19:35,519 --> 00:19:37,519
+It's common 2.
+
+130
+00:19:38,519 --> 00:19:41,519
+Common 2, common 2.
+
+131
+00:19:42,519 --> 00:19:47,519
+So thus we have this famous theorem result.
+
+132
+00:19:48,519 --> 00:19:51,519
+Not very difficult, right?
+
+133
+00:19:55,519 --> 00:20:00,519
+So in this proof you can see we need to understand the prime number p,
+
+134
+00:20:01,519 --> 00:20:05,519
+and we construct a set with four numbers from 1 to p-mass-1.
+
+135
+00:20:06,519 --> 00:20:10,519
+Hopefully we have p-mass-1 numbers distinct, different.
+
+136
+00:20:11,519 --> 00:20:16,519
+And we involve the factor of a and we take the mod p operation.
+
+137
+00:20:17,519 --> 00:20:22,519
+Time them together, that same a and c are the same.
+
+138
+00:20:24,519 --> 00:20:33,519
+So finally we have this a to the p-mass-1 is common to 1 mod p, we have this result.
+
+139
+00:20:37,519 --> 00:20:43,519
+So this is a good process to understand the mod operation prime numbers.
+
+140
+00:20:48,519 --> 00:20:54,519
+Of course you can test the famous theorem with the a equals 7, p equals 19.
+
+141
+00:20:55,519 --> 00:21:06,519
+So according to the famous theorem it is a to p-mass-1 is common to 1 mod p.
+
+142
+00:21:07,519 --> 00:21:15,519
+In this example a is 7, p-mass-1 is 18, common to 1 mod 19.
+
+143
+00:21:16,519 --> 00:21:20,519
+Of course you can refer to the previous table.
+
+144
+00:21:20,519 --> 00:21:28,519
+The 7 on this row is a to p-mass-1 is common to p-mass-1.
+
+145
+00:21:29,519 --> 00:21:35,519
+So we have a to p-mass-1 is common to p-mass-1.
+
+146
+00:21:35,519 --> 00:21:53,519
+The 7 on this row is 1. Of course it is 1.
+
+147
+00:22:05,519 --> 00:22:13,519
+We look at another important concept, it is called the Euler's totient function phi n.
+
+148
+00:22:14,519 --> 00:22:17,519
+Phi is used in the RSA algorithm.
+
+149
+00:22:18,519 --> 00:22:26,519
+Phi n is the number of positive integers less than n and are relative prime to n.
+
+150
+00:22:28,519 --> 00:22:32,519
+So we define if a equals 1, we have 1.
+
+151
+00:22:33,519 --> 00:22:45,519
+If a equals 2, our number of positive integers less than 2 and are relative prime to n, we have a single one, 1.
+
+152
+00:22:49,519 --> 00:22:54,519
+Because GCD, 2, 1 is 1.
+
+153
+00:22:54,519 --> 00:23:04,519
+These are 3, we have two numbers, 2 and 1.
+
+154
+00:23:05,519 --> 00:23:09,519
+Smaller than 3 and relative prime to 3, we have two numbers, 2.
+
+155
+00:23:10,519 --> 00:23:18,519
+And 4, what are those two numbers? 1 and 3.
+
+156
+00:23:19,519 --> 00:23:27,519
+Two numbers, these are 4 and are relative prime to 4, 1 and 3.
+
+157
+00:23:28,519 --> 00:23:31,519
+How about 5? 5 we have 1, 2, 3, 4, right?
+
+158
+00:23:34,519 --> 00:23:36,519
+We have 4 numbers.
+
+159
+00:23:37,519 --> 00:23:42,519
+6 we have 1 and 5, two numbers.
+
+160
+00:23:42,519 --> 00:23:45,519
+7 we have 1, 2, 6.
+
+161
+00:23:46,519 --> 00:23:54,519
+8 we have 1, 3, 5, 7.
+
+162
+00:23:59,519 --> 00:24:09,519
+And 9 we have 1, 2, 4, 5, 7.
+
+163
+00:24:09,519 --> 00:24:15,519
+8, 1, 2, 3, 4, 5, 6, yeah.
+
+164
+00:24:17,519 --> 00:24:26,519
+So 10 we have 1, 3, 7.
+
+165
+00:24:27,519 --> 00:24:29,519
+9, right?
+
+166
+00:24:30,519 --> 00:24:32,519
+4 numbers.
+
+167
+00:24:32,519 --> 00:24:44,519
+And now, so far you can find this file to denote all the numbers less than the given n and are relative prime to n.
+
+168
+00:24:45,519 --> 00:24:48,519
+Remember how many of those numbers.
+
+169
+00:24:48,519 --> 00:25:15,519
+Okay, based on this ONA's totient function phi n, if p is a prime number, of course all the numbers from 1, 2, 3 till p must 1, all of them are relative prime.
+
+170
+00:25:16,519 --> 00:25:38,519
+So they are relative, relative prime, prime to p.
+
+171
+00:25:39,519 --> 00:25:47,519
+So this phi p is p must 1, the common divisor is 1.
+
+172
+00:25:56,519 --> 00:25:58,519
+So relative.
+
+173
+00:25:59,519 --> 00:26:14,519
+Okay, if n is, n equals p to k, and p is prime, then phi equals tk, must tk, must not mean.
+
+174
+00:26:14,519 --> 00:26:39,519
+So one example, suppose, just like, one example is, if n is 8, t is 2, 8 equals 2 to the 3, right?
+
+175
+00:26:44,519 --> 00:26:55,519
+So phi n equals phi 8, equals 2 to the 3, minus 2 to the 2.
+
+176
+00:26:56,519 --> 00:26:59,519
+This is 8 minus 44.
+
+177
+00:27:00,519 --> 00:27:05,519
+So phi 8 equals 4.
+
+178
+00:27:06,519 --> 00:27:11,519
+According to this equation, it shows the result is 2.
+
+179
+00:27:14,519 --> 00:27:33,519
+So of course what we can see is, we should remove all the elements that are not relative prime to p.
+
+180
+00:27:34,519 --> 00:27:41,519
+That means we should remove all members who contain a factor of p.
+
+181
+00:27:42,519 --> 00:27:55,519
+So in this example also we can construct two sets, set A with all members from 1, 2, 3 till pk must 1.
+
+182
+00:27:57,519 --> 00:28:04,519
+So this is set with all members to be smaller than n, so we have pk must 1 numbers.
+
+183
+00:28:04,519 --> 00:28:17,519
+In set B, we should remove all members that are, that contains a factor of p.
+
+184
+00:28:18,519 --> 00:28:21,519
+Smallest one is p, right?
+
+185
+00:28:22,519 --> 00:28:25,519
+We have 2p, 3p.
+
+186
+00:28:26,519 --> 00:28:38,519
+So the last one is p times, so the last one actually is pk must p.
+
+187
+00:28:38,519 --> 00:28:53,519
+So this one can be represented as p times pk must 1, must 1.
+
+188
+00:28:54,519 --> 00:28:57,519
+Right?
+
+189
+00:28:58,519 --> 00:29:09,519
+Okay, so this phi n equals the number of elements in A, minus the number of elements in B.
+
+190
+00:29:10,519 --> 00:29:18,519
+Because all members in B contains the common divisor of p.
+
+191
+00:29:19,519 --> 00:29:24,519
+So phi n, n contains the p.
+
+192
+00:29:25,519 --> 00:29:32,519
+And 1, no other, no other prime numbers.
+
+193
+00:29:34,519 --> 00:29:41,519
+So we should remove all the numbers with p as the factor.
+
+194
+00:29:42,519 --> 00:29:46,519
+What is the difference between p and the prime number?
+
+195
+00:29:46,519 --> 00:29:57,519
+For the number of elements in p, it is from 1, 2, 3 till pk must 1, must 1.
+
+196
+00:29:59,519 --> 00:30:13,519
+So this number of p of B, number of A is here, pk must 1, number of B is here.
+
+197
+00:30:14,519 --> 00:30:17,519
+pk must 1, must 1.
+
+198
+00:30:17,519 --> 00:30:23,519
+And also we have the result, pk must pk 2.
+
+199
+00:30:37,519 --> 00:30:40,519
+And here, this result.
+
+200
+00:30:43,519 --> 00:31:03,519
+Another very important property is if n equals p times q, well both p and q are prime numbers.
+
+201
+00:31:04,519 --> 00:31:09,519
+The phi n equals p must 1 times q must 1.
+
+202
+00:31:10,519 --> 00:31:16,519
+So this one I put it in an exercise for your homework.
+
+203
+00:31:17,519 --> 00:31:23,519
+You can take home and exercise, think about how you can prove this property.
+
+204
+00:31:26,519 --> 00:31:30,519
+Well, 31 is a prime number, right?
+
+205
+00:31:31,519 --> 00:31:38,519
+So 31 is a prime number p, and this equals p must 1, so this equals 30.
+
+206
+00:31:39,519 --> 00:31:55,519
+And 32, this is 2 to the 5th, so this equals 2 to the 5th must 2 to the 4th is 16.
+
+207
+00:31:56,519 --> 00:32:02,519
+33 is 3 times 11, 2 prime numbers, the problem.
+
+208
+00:32:03,519 --> 00:32:07,519
+So this equals 2 times 10, 20.
+
+209
+00:32:07,519 --> 00:32:16,519
+34 is 2 times 17, 2 prime numbers, this equals 1 times 16, 16.
+
+210
+00:32:19,519 --> 00:32:24,519
+So this is 5 times 7, this is 4 times 6, 24.
+
+211
+00:32:25,519 --> 00:32:40,519
+Okay, you can well do it by yourself to check whether you can try this property or previous one to get the result.
+
+212
+00:32:41,519 --> 00:32:47,519
+So this is the definition and some calculation of the Euler's theorem.
+
+213
+00:32:48,519 --> 00:32:54,519
+From Euler's current function, we have this Euler's theorem.
+
+214
+00:32:55,519 --> 00:33:03,519
+The Euler's theorem states that for every a and n, that are relative prime numbers.
+
+215
+00:33:04,519 --> 00:33:08,519
+Relative prime.
+
+216
+00:33:12,519 --> 00:33:29,519
+Relative prime means n is not a n or relative prime, so that means GCT a n equals 1, so this is only relative prime.
+
+217
+00:33:30,519 --> 00:33:37,519
+Then we have a to the psi n is convert to 1 mod n.
+
+218
+00:33:37,519 --> 00:34:06,519
+So one example, suppose a equals 4, n equals 15, so GCT a GCT 4 and 15, the greatest common divisor is 1.
+
+219
+00:34:07,519 --> 00:34:13,519
+We should first calculate the 5, 15.
+
+220
+00:34:14,519 --> 00:34:23,519
+15 equals 3 times 5, 2 prime numbers, so this 2 times 4 equals 8.
+
+221
+00:34:24,519 --> 00:34:37,519
+According to this Euler's theorem, we have 4 to the 8 is convert to 1 mod 15.
+
+222
+00:34:38,519 --> 00:34:44,519
+So this is psi n, this is a, this is n.
+
+223
+00:34:53,519 --> 00:35:13,519
+If we times a at both sides, this times a, this times a, we have a to the psi n plus 1 is convert to a mod n.
+
+224
+00:35:14,519 --> 00:35:32,519
+OK, so this one, in fact, you can see, is very close to our some encryption, the decryption process.
+
+225
+00:35:33,519 --> 00:35:36,519
+You can regard a to be a message.
+
+226
+00:35:37,519 --> 00:35:44,519
+After some operation, you take n, you can get a back.
+
+227
+00:35:47,519 --> 00:35:55,519
+So this is a, you do some encryption and then you do some decryption, somehow you get the result to be same.
+
+228
+00:35:57,519 --> 00:36:04,519
+So we are very close to the public key scheme, the original RSA algorithm.
+
+229
+00:36:04,519 --> 00:36:11,519
+OK, for this one, we also can prove it.
+
+230
+00:36:12,519 --> 00:36:18,519
+And the proof process is quite close to the Fermat's algorithm.
+
+231
+00:36:19,519 --> 00:36:33,519
+We can construct three sets, a set with all members, t1, t2, till t by n.
+
+232
+00:36:34,519 --> 00:36:42,519
+So this is all the data that are very close to n.
+
+233
+00:36:43,519 --> 00:36:55,519
+Because n is not a prime number anymore, we only select those numbers that are very close to n.
+
+234
+00:36:56,519 --> 00:37:00,519
+And total number is 5, this definition of psi n logic.
+
+235
+00:37:00,519 --> 00:37:02,519
+So we have five numbers.
+
+236
+00:37:08,519 --> 00:37:19,519
+So remember phi n is all the numbers that are less than n and are relative to prime to n,
+
+237
+00:37:20,519 --> 00:37:25,519
+within this set, this total number, phi n.
+
+238
+00:37:26,519 --> 00:37:45,519
+OK, similarly, we can construct b to times a, so we have this set t1 times a, t2 times a, and till t phi n times a.
+
+239
+00:37:46,519 --> 00:37:56,519
+Similarly, we have five numbers, and then we take the mod n operation, then we get a safe c.
+
+240
+00:37:57,519 --> 00:38:12,519
+So we have t1 times a, mod n, t2 times a, mod n, till t phi n times p, mod n.
+
+241
+00:38:13,519 --> 00:38:27,519
+And similarly, we can argue any two from this set c, any two are different.
+
+242
+00:38:27,519 --> 00:38:45,519
+The reason is because GCD a n is 1, GCD any t i n also take 1.
+
+243
+00:38:47,519 --> 00:38:54,519
+Any t i from set a, that is the value is 1, and GCD a n is 1.
+
+244
+00:38:57,519 --> 00:39:07,519
+So we have this result cannot be the same, otherwise we have the same condition as in the theorem.
+
+245
+00:39:08,519 --> 00:39:17,519
+If any two are different, that means in this set we also have phi n numbers.
+
+246
+00:39:18,519 --> 00:39:22,519
+So this is because we have this given condition.
+
+247
+00:39:23,519 --> 00:39:30,519
+So that means from the set c we have phi n distinct numbers.
+
+248
+00:39:30,519 --> 00:39:45,519
+And this t1 times a, t i times a, mod n times p, mod n, till t phi n times p, mod n.
+
+249
+00:39:45,519 --> 00:40:05,519
+And this t1 times a, t i times a, mod n, value.
+
+250
+00:40:10,519 --> 00:40:11,519
+That's the result.
+
+251
+00:40:16,519 --> 00:40:19,519
+It's also very important.
+
+252
+00:40:21,519 --> 00:40:36,519
+So also you can have this conclusion that GCD any t i times a, mod n, that value with n is also to be 1.
+
+253
+00:40:37,519 --> 00:40:45,519
+So t i times a has no common divisor with n.
+
+254
+00:40:45,519 --> 00:41:01,519
+A no common divisor with n, t i no common divisor with n, but a no common divisor, t i no common divisor.
+
+255
+00:41:02,519 --> 00:41:09,519
+So t i times a also no common divisor with n.
+
+256
+00:41:09,519 --> 00:41:16,519
+So those two are really prime.
+
+257
+00:41:18,519 --> 00:41:31,519
+Based on this fact, we argue all the members in set c are different and they are really prime to n.
+
+258
+00:41:32,519 --> 00:41:34,519
+So that means totally we have phi n numbers.
+
+259
+00:41:35,519 --> 00:41:41,519
+So this implies a equals c.
+
+260
+00:41:42,519 --> 00:41:45,519
+So phi a equals phi c.
+
+261
+00:41:46,519 --> 00:41:51,519
+So phi means the product of all members in the set.
+
+262
+00:41:51,519 --> 00:41:54,519
+We take the mod and operation.
+
+263
+00:41:54,519 --> 00:42:23,519
+And this finally we have t1 times t2 times phi n equals the right hand side we have t1 times a, mod n, this one times t2 times a, mod n, so on so forth.
+
+264
+00:42:25,519 --> 00:42:33,519
+And the right hand side is t1 times t2 times t phi n.
+
+265
+00:42:34,519 --> 00:42:41,519
+And for a, we only have phi n times, so we have phi n numbers.
+
+266
+00:42:42,519 --> 00:42:45,519
+And this part can be cancelled.
+
+267
+00:42:46,519 --> 00:42:54,519
+So this implies mod n operation.
+
+268
+00:42:55,519 --> 00:43:06,519
+This implies the a phi n is coming to 1 with mod n, this operation.
+
+269
+00:43:15,519 --> 00:43:33,519
+Okay, you can regard this one without proof of process why the Euler's Theorem is correct.
+
+270
+00:43:45,519 --> 00:44:14,519
+So now we can test the Euler's Theorem with this small log.
+
+271
+00:44:16,519 --> 00:44:21,519
+The first one, n is 10, first we need to calculate phi n.
+
+272
+00:44:22,519 --> 00:44:28,519
+So this n equals 2 times 5, 2 prime numbers.
+
+273
+00:44:29,519 --> 00:44:31,519
+So phi equals 1 times 4 is 4.
+
+274
+00:44:32,519 --> 00:44:44,519
+According to the Euler's Theorem, which is a to the phi n, phi is 4, mod n.
+
+275
+00:44:45,519 --> 00:45:02,519
+So the a is 3, 3 to the 4, it is 81.
+
+276
+00:45:03,519 --> 00:45:07,519
+It's coming to 1 with mod 10.
+
+277
+00:45:16,519 --> 00:45:18,519
+This is true.
+
+278
+00:45:19,519 --> 00:45:20,519
+We look at the second one.
+
+279
+00:45:21,519 --> 00:45:27,519
+n equals 11, this phi n, phi 11 is, n is the prime number.
+
+280
+00:45:28,519 --> 00:45:29,519
+Equals p-major is this 10.
+
+281
+00:45:30,519 --> 00:45:39,519
+And this 2 to the 10, mod 11, we know it is 1 over 24.
+
+282
+00:45:40,519 --> 00:45:48,519
+So 1 over 24 equals 93 times 11 plus 1.
+
+283
+00:45:49,519 --> 00:45:55,519
+So of course this one is coming to 1, a problem, incorrect.
+
+284
+00:46:09,519 --> 00:46:23,519
+Okay, well for this Euler's Theorem, actually you can see it is very close to the public key scheme.
+
+285
+00:46:24,519 --> 00:46:29,519
+A is the mean, after some operation, we can get back to A itself.
+
+286
+00:46:30,519 --> 00:46:35,519
+Okay, so this is the public key scheme, very close.
+
+287
+00:46:40,519 --> 00:46:47,519
+We skip our break, so let's try to finish our part 4, and we'll finish today's lecture too.
+
+288
+00:46:48,519 --> 00:46:56,519
+Part 4 is about how we can apply very efficient model operations for very large numbers.
+
+289
+00:46:57,519 --> 00:47:01,519
+And then we can apply the CRT, the Chinese Remainder Theorem.
+
+290
+00:47:02,519 --> 00:47:04,519
+So what are the purpose of this one?
+
+291
+00:47:04,519 --> 00:47:09,519
+The Chinese Remainder Theorem tells you that,
+
+292
+00:47:20,519 --> 00:47:27,519
+given we have very large number exponential operations mod some prime numbers,
+
+293
+00:47:28,519 --> 00:47:35,519
+we can have this quick way to decide the result.
+
+294
+00:47:36,519 --> 00:47:52,519
+Really because in the RSA algorithm, we need to calculate the message to a public key mod a given number n.
+
+295
+00:47:53,519 --> 00:47:57,519
+Message to the E mod n.
+
+296
+00:47:58,519 --> 00:48:03,519
+And this n can be factored to be two prime numbers, p and q.
+
+297
+00:48:04,519 --> 00:48:10,519
+In the RSA algorithm, we will choose two big prime numbers, p and q.
+
+298
+00:48:11,519 --> 00:48:13,519
+So E is a given public key.
+
+299
+00:48:14,519 --> 00:48:18,519
+So normally we need to do this kind of calculation.
+
+300
+00:48:18,519 --> 00:48:29,519
+However, because n is very large, in fact, we can first calculate m to the E is also very large.
+
+301
+00:48:30,519 --> 00:48:39,519
+But once we have this mE mod p, we get some R1 value.
+
+302
+00:48:40,519 --> 00:48:46,519
+mE mod q, we get R2 value.
+
+303
+00:48:46,519 --> 00:48:58,519
+So these two values will be much easier to calculate compared to any mod n, because both t and q are much smaller.
+
+304
+00:49:00,519 --> 00:49:07,519
+So the Chinese Remainder Theorem tells you that from these two equations,
+
+305
+00:49:08,519 --> 00:49:15,519
+we get a unique number x, a unique x.
+
+306
+00:49:18,519 --> 00:49:23,519
+To be smaller than n, we can decide this x.
+
+307
+00:49:24,519 --> 00:49:30,519
+So CRT, this theorem can do that. We can calculate this n.
+
+308
+00:49:30,519 --> 00:49:39,519
+And this n, in fact, equals the original big number, m to the E mod n.
+
+309
+00:49:41,519 --> 00:49:49,519
+Rather than to calculate mE mod x, we can calculate mE mod t and mE mod q.
+
+310
+00:49:50,519 --> 00:49:57,519
+From two reminders, we apply the CRT algorithm. We can quickly get x, like here.
+
+311
+00:49:57,519 --> 00:50:04,519
+So that's the purpose we apply the CRT on this operation here.
+
+312
+00:50:06,519 --> 00:50:13,519
+To make the calculation to be four times faster than the original calculation.
+
+313
+00:50:16,519 --> 00:50:18,519
+OK, so this is the purpose.
+
+314
+00:50:19,519 --> 00:50:22,519
+Now we look at what's the meaning for the Chinese Remainder Theorem.
+
+315
+00:50:23,519 --> 00:50:32,519
+And this one is believed to have been discovered by the Chinese mathematician Sun Tzu in around 100 AD.
+
+316
+00:50:33,519 --> 00:50:38,519
+And this one is one of the most useful results of number theory.
+
+317
+00:50:38,519 --> 00:50:53,519
+It says that it is possible to reconstruct integers in a certain range from their residues modulo a set of pairwise vector prime moduli.
+
+318
+00:50:56,519 --> 00:50:59,519
+OK, you know the story, right?
+
+319
+00:51:00,519 --> 00:51:11,519
+So, normally you don't know the number, but you count a group of items 3 by 3, then the net is 2.
+
+320
+00:51:12,519 --> 00:51:22,519
+You count all the numbers 5 by 5, because you divide the numbers by 5, the remainder is 3, the remainder is 3.
+
+321
+00:51:23,519 --> 00:51:30,519
+You count them by 7, the net, the remainder will be 2.
+
+322
+00:51:31,519 --> 00:51:34,519
+So the question is, what is the original number of items here?
+
+323
+00:51:35,519 --> 00:51:46,519
+So you can find this story in the She-Diao-Ying-Cheng-Zhuang, used by Jin Yong to test how smart you are.
+
+324
+00:51:46,519 --> 00:51:54,519
+OK, we can have a formal definition of this DRG.
+
+325
+00:51:55,519 --> 00:52:06,519
+Let n1, n sub 1, n sub 2 sub k be integers greater than 1, recorded to be moduli or divisors.
+
+326
+00:52:06,519 --> 00:52:13,519
+And let us denote by n the product of the ni.
+
+327
+00:52:14,519 --> 00:52:22,519
+So n is n1, n sub 1 times n sub 2 times n sub k.
+
+328
+00:52:23,519 --> 00:52:32,519
+The Chinese remainder theorem asserts that if the ni are pairwise co-prime,
+
+329
+00:52:33,519 --> 00:52:45,519
+So pairwise co-prime, that means just like GCD, ni, and j is 1.
+
+330
+00:52:46,519 --> 00:52:51,519
+Any two, their greatest common denominator is 1.
+
+331
+00:52:51,519 --> 00:53:07,519
+And if a1, a sub 1, a sub k are integers, but that will kill the ai in this range for every i, then there is only one integer x.
+
+332
+00:53:08,519 --> 00:53:19,519
+So we have this x in this range, and the remainder of the Euclidean division of x by n i is ai for every i.
+
+333
+00:53:19,519 --> 00:53:31,519
+In other words, this x, well, mod n i, we have a1, and mod n k, we have ak.
+
+334
+00:53:32,519 --> 00:53:39,519
+So from all these k equations, we say we have a unique x.
+
+335
+00:53:39,519 --> 00:53:51,519
+So this x is smaller than n, non-negative.
+
+336
+00:53:51,519 --> 00:54:03,519
+Next, divided by n sub 1, the remainder is a1.
+
+337
+00:54:04,519 --> 00:54:08,519
+Finally, we have this k equations.
+
+338
+00:54:08,519 --> 00:54:22,519
+The Chinese remainder theorem tells you that we have a unique x in this range, one x, to stand by all k equations.
+
+339
+00:54:23,519 --> 00:54:35,519
+So one example here is, suppose x, according to the previous problem, we count x by 3, the left is 2.
+
+340
+00:54:36,519 --> 00:54:49,519
+We count all x by 5, the left is 3, we count x by 7, so divided by 7, 7 by 7, 7 as a group, the remainder is 2.
+
+341
+00:54:49,519 --> 00:54:56,519
+What's the original x? So we have 3 propositions, p1, p2, p3.
+
+342
+00:54:57,519 --> 00:55:17,519
+From proposition 1, of course, from this one, we have, easily we can get x equals 3 times t plus 2.
+
+343
+00:55:17,519 --> 00:55:25,519
+But either 3 times the multiple of 3 times 2.
+
+344
+00:55:26,519 --> 00:55:28,519
+So from proposition 1, we have this one.
+
+345
+00:55:29,519 --> 00:55:38,519
+From this, well, if x equals this value, we use the second proposition.
+
+346
+00:55:38,519 --> 00:55:54,519
+So the second proposition means 3t plus 2, when we multiply by 5, this will convert to 3.
+
+347
+00:55:54,519 --> 00:56:04,519
+So from proposition 2, this means x mod 5 equals 3.
+
+348
+00:56:05,519 --> 00:56:09,519
+So this implies 2, both sides we have minus 2.
+
+349
+00:56:10,519 --> 00:56:19,519
+So 3t will convert to 3 minus 2, mod 5.
+
+350
+00:56:20,519 --> 00:56:24,519
+So we have this equation.
+
+351
+00:56:25,519 --> 00:56:28,519
+3t is converted to 1, mod 5.
+
+352
+00:56:29,519 --> 00:56:33,519
+This is the result of the second proposition.
+
+353
+00:56:36,519 --> 00:56:40,519
+So what is the mod 5 operation if t, we don't have t?
+
+354
+00:56:40,519 --> 00:56:59,519
+So t value, t value can be anyone from 0, 1, 2, 3, 4.
+
+355
+00:57:00,519 --> 00:57:04,519
+Because it is mod 5, we don't need to use t to define the game.
+
+356
+00:57:05,519 --> 00:57:07,519
+Mod 5 gives you a loop.
+
+357
+00:57:07,519 --> 00:57:10,519
+If t is 0, mod 5 is 0.
+
+358
+00:57:11,519 --> 00:57:13,519
+3t is 0.
+
+359
+00:57:14,519 --> 00:57:16,519
+3t mod 5 is 0, right?
+
+360
+00:57:17,519 --> 00:57:24,519
+If t is 1, 3t is what's the value?
+
+361
+00:57:26,519 --> 00:57:27,519
+What's the value?
+
+362
+00:57:30,519 --> 00:57:31,519
+3.
+
+363
+00:57:32,519 --> 00:57:34,519
+3t mod 5 is 3.
+
+364
+00:57:34,519 --> 00:57:37,519
+If t is 2, 3t is what?
+
+365
+00:57:38,519 --> 00:57:39,519
+6.
+
+366
+00:57:40,519 --> 00:57:42,519
+3t mod 5 is 1.
+
+367
+00:57:43,519 --> 00:57:49,519
+t is 3, 3t is 9, mod 5 is 4.
+
+368
+00:57:50,519 --> 00:57:56,519
+4, 3t, 12, 2, right?
+
+369
+00:57:57,519 --> 00:58:00,519
+If it is 5, it is beyond 0.
+
+370
+00:58:01,519 --> 00:58:06,519
+Okay, we have the result 3t mod 5 is 1.
+
+371
+00:58:09,519 --> 00:58:12,519
+That means this row.
+
+372
+00:58:13,519 --> 00:58:21,519
+So this implies t mod 5 should be 2.
+
+373
+00:58:23,519 --> 00:58:25,519
+t mod 5 should be 2.
+
+374
+00:58:25,519 --> 00:58:30,519
+t mod 5 can be 1 and 0 and 1 and 2 and 3 and 4.
+
+375
+00:58:32,519 --> 00:58:39,519
+But only if t is 2, then 3t mod 1 can be 1.
+
+376
+00:58:41,519 --> 00:58:44,519
+So we have this problem 4.
+
+377
+00:58:45,519 --> 00:58:50,519
+t can be represented as 1.
+
+378
+00:58:50,519 --> 00:58:56,519
+So t can be represented as 5s plus 2.
+
+379
+00:58:57,519 --> 00:58:59,519
+mod 5 equals 2.
+
+380
+00:59:00,519 --> 00:59:01,519
+5s equals 2.
+
+381
+00:59:02,519 --> 00:59:06,519
+So that means for both p1 and p2, we have this x.
+
+382
+00:59:07,519 --> 00:59:11,519
+We have x equals 3t plus 2.
+
+383
+00:59:11,519 --> 00:59:25,519
+And this t, 5s plus 2, to substitute this t, we have 3 times 5s plus 2 plus 2.
+
+384
+00:59:26,519 --> 00:59:31,519
+So we have 15s plus 8 here.
+
+385
+00:59:33,519 --> 00:59:40,519
+Okay, from proposition p1 and proposition 2, we have the conclusion.
+
+386
+00:59:41,519 --> 00:59:53,519
+x can be represented as 15s plus 8.
+
+387
+00:59:54,519 --> 00:59:55,519
+Is that clear?
+
+388
+00:59:57,519 --> 01:00:00,519
+We only have two propositions.
+
+389
+01:00:01,519 --> 01:00:04,519
+So we can say the original x can be 8.
+
+390
+01:00:04,519 --> 01:00:14,519
+If we only have one proposition, we say we count items plus 3, then there will be 2.
+
+391
+01:00:15,519 --> 01:00:19,519
+If only this condition, the original item can be what?
+
+392
+01:00:20,519 --> 01:00:21,519
+Number of items can be what?
+
+393
+01:00:22,519 --> 01:00:23,519
+Can be 2, right?
+
+394
+01:00:24,519 --> 01:00:25,519
+Just two items.
+
+395
+01:00:26,519 --> 01:00:27,519
+We count them plus 3, then there will be 2.
+
+396
+01:00:28,519 --> 01:00:31,519
+So 2 is the correct answer.
+
+397
+01:00:32,519 --> 01:00:37,519
+So now suppose we have two propositions, we count them 5 by 5.
+
+398
+01:00:38,519 --> 01:00:40,519
+So that is 3.
+
+399
+01:00:41,519 --> 01:00:43,519
+Then we have the answer.
+
+400
+01:00:44,519 --> 01:00:46,519
+The original items can be 8.
+
+401
+01:00:52,519 --> 01:00:58,519
+So 8 satisfies proposition 1 in order of proposition 2.
+
+402
+01:00:58,519 --> 01:01:03,519
+But we have three conditions, so we need to continue.
+
+403
+01:01:05,519 --> 01:01:08,519
+Now we look at proposition 3.
+
+404
+01:01:09,519 --> 01:01:15,519
+So because x is 15s plus 1, we take mod 7 operation.
+
+405
+01:01:15,519 --> 01:01:29,519
+Mod 7, so this is after it can be represented as 14s plus 8 plus 7 plus 1, we convert to 2 mod 7.
+
+406
+01:01:30,519 --> 01:01:32,519
+So 14s mod 7 is 0.
+
+407
+01:01:33,519 --> 01:01:34,519
+This is 0.
+
+408
+01:01:34,519 --> 01:01:45,519
+And we have 8s plus 1, 8s plus 1 convert to 2 mod 7.
+
+409
+01:01:46,519 --> 01:01:51,519
+So this one implies 8s mod 7 equals 1.
+
+410
+01:01:52,519 --> 01:01:53,519
+Right?
+
+411
+01:01:54,519 --> 01:01:55,519
+8s mod 7 equals 1.
+
+412
+01:01:56,519 --> 01:01:58,519
+So 8s plus 1 mod 7 equals 2.
+
+413
+01:01:59,519 --> 01:02:02,519
+So we have this equation.
+
+414
+01:02:03,519 --> 01:02:06,519
+So 8s mod 7 equals 1.
+
+415
+01:02:08,519 --> 01:02:14,519
+Then we have 8s can be represented as 7 times u plus 1.
+
+416
+01:02:16,519 --> 01:02:22,519
+So this 8s, we can substitute 8s to be here.
+
+417
+01:02:25,519 --> 01:02:30,519
+Then finally we have 8s to be 105 times u plus 23.
+
+418
+01:02:31,519 --> 01:02:36,519
+And here, so 8s equals 7u plus 1.
+
+419
+01:02:37,519 --> 01:02:40,519
+We look at 8s, that equation.
+
+420
+01:02:41,519 --> 01:02:48,519
+Substitute 8s by 7u plus 1, so we have 8s equals 1 plus u plus 23.
+
+421
+01:02:49,519 --> 01:02:54,519
+And this is a general form to represent the value of x.
+
+422
+01:02:55,519 --> 01:03:03,519
+And note that 105 is a deep common multiple of 3, 5, 7.
+
+423
+01:03:04,519 --> 01:03:07,519
+3, 5, 7, or the modular here.
+
+424
+01:03:08,519 --> 01:03:09,519
+3, 5, 7.
+
+425
+01:03:10,519 --> 01:03:17,519
+So then we have a solution, 23, 128, 233.
+
+426
+01:03:18,519 --> 01:03:20,519
+Multiple of 105.
+
+427
+01:03:21,519 --> 01:03:27,519
+However, in this range, 2 times 3 times 5.
+
+428
+01:03:32,519 --> 01:03:36,519
+3 times 5 times 7, this equals 5.
+
+429
+01:03:37,519 --> 01:03:43,519
+We have a unique x to be 23.
+
+430
+01:03:44,519 --> 01:03:45,519
+23.
+
+431
+01:03:46,519 --> 01:03:53,519
+So of course, the original number according to that counting is not unique.
+
+432
+01:03:54,519 --> 01:03:57,519
+We have 23, 128, and so on.
+
+433
+01:03:58,519 --> 01:04:06,519
+But before that, 105, we have a unique value to be 23 in this problem.
+
+434
+01:04:14,519 --> 01:04:16,519
+OK, now we have this exercise.
+
+435
+01:04:17,519 --> 01:04:20,519
+Suppose x mod 5 is 3, x mod 7 is 4.
+
+436
+01:04:21,519 --> 01:04:22,519
+What's x?
+
+437
+01:04:23,519 --> 01:04:25,519
+I give you 5 minutes.
+
+438
+01:04:26,519 --> 01:04:31,519
+Anyone can provide me the correct answer, then you can leave. Otherwise, stay here.
+
+439
+01:04:34,519 --> 01:04:35,519
+So how is it?
+
+440
+01:04:36,519 --> 01:04:38,519
+What's x? Tell me.
+
+441
+01:04:43,519 --> 01:04:44,519
+5 minutes.
+
+442
+01:05:13,519 --> 01:05:14,519
+Thank you.
+
+443
+01:05:43,519 --> 01:05:44,519
+Thank you.
+
+444
+01:06:13,519 --> 01:06:14,519
+Thank you.
+
+445
+01:06:43,519 --> 01:06:44,519
+Thank you.
+
+446
+01:07:13,519 --> 01:07:14,519
+Thank you.
+
+447
+01:07:43,519 --> 01:07:44,519
+Thank you.
+
+448
+01:08:13,519 --> 01:08:14,519
+Thank you.
+
+449
+01:08:43,520 --> 01:09:03,520
+OK, some of you have solved the problem, so you can dry your teeth.
+
+450
+01:09:03,520 --> 01:09:08,520
+You have played so long, it's finished.
+
+451
+01:09:09,520 --> 01:09:12,520
+Just give some time to others to finish, OK?
+
+452
+01:09:33,520 --> 01:09:34,520
+Thank you.
+
+453
+01:10:03,520 --> 01:10:27,520
+OK, we look at the solution to this one.
+
+454
+01:10:28,520 --> 01:10:34,520
+In fact, because the number is not large, to get the result is not difficult.
+
+455
+01:10:35,520 --> 01:10:42,520
+Normally, my practice is to start from the mod, the moduli to be a bigger one, 7.
+
+456
+01:10:42,520 --> 01:10:56,520
+So from the second equation, we can get x to be 7t plus 4, right?
+
+457
+01:10:57,520 --> 01:10:58,520
+Now mod 7 is 4.
+
+458
+01:10:59,520 --> 01:11:03,520
+Then we look at the first equation.
+
+459
+01:11:04,520 --> 01:11:13,520
+So 7t plus 4, this one mod 5, it comes to 3, mod 5.
+
+460
+01:11:14,520 --> 01:11:27,520
+Well, this mod 3, the left hand side mod 4, so this mod 7t, it comes to mod 5.
+
+461
+01:11:27,520 --> 01:11:42,520
+So we have 5t plus 2t, mod 4, comes to 3, mod 5.
+
+462
+01:11:42,520 --> 01:11:57,520
+So both sides actually, this side you can add 3 plus 5 to be 8, mod 5, doesn't matter.
+
+463
+01:11:58,520 --> 01:12:08,520
+So we have this 5t to be, can be 0, so this implies 2t is congruent to 4, mod 5.
+
+464
+01:12:09,520 --> 01:12:15,520
+And also you need to find what's the t value.
+
+465
+01:12:16,520 --> 01:12:24,520
+So 2t, because what you know is the GCD, 2, 5 is 1.
+
+466
+01:12:25,520 --> 01:12:29,520
+So this implies we can cancel t from both sides.
+
+467
+01:12:30,520 --> 01:12:35,520
+t is congruent to 2, mod 5.
+
+468
+01:12:36,520 --> 01:12:46,520
+This 2, they are relatively prime, so 2 can be, as a factor, can be cancelled.
+
+469
+01:12:47,520 --> 01:12:59,520
+So t is, so t can be 5 times x plus 2, we can substitute this one to be here,
+
+470
+01:13:00,520 --> 01:13:19,520
+and then we get x equals 7 times 5s plus 2, and then plus 4, so this represented as 75 times s plus 18.
+
+471
+01:13:20,520 --> 01:13:25,520
+This is a general form to represent the value of x.
+
+472
+01:13:26,520 --> 01:13:34,520
+If the x to be smaller than 35, we have Unix x to be 18.
+
+473
+01:13:35,520 --> 01:13:47,520
+So this 35 comes from 5 times 7, 5 times 7 from here, the two modulus.
+
+474
+01:13:50,520 --> 01:13:57,520
+Okay, then we finish today's lecture very good.
+
+475
+01:13:58,520 --> 01:14:00,520
+We finished all the required knowledge.
+
+476
+01:14:01,520 --> 01:14:09,520
+So from next class, we will study how we can derive the RSA algorithm from today's owners theorem.
+
+477
+01:14:09,520 --> 01:14:23,520
+And then we know how we can design the public key and private key to apply the public key and private key to the buy encryption, decryption, and to design the signature.
+
+478
+01:14:25,520 --> 01:14:27,520
+So of course we have some take-home exercises.
+
+479
+01:14:28,520 --> 01:14:36,520
+You can do some more practice, okay, to try to solve these exercises by yourself.
+
+480
+01:14:37,520 --> 01:14:41,520
+Okay, thank you, so that's all for today's lecture.
+
+481
+01:14:42,520 --> 01:14:46,520
+So any questions, I'm still here, you can come and ask me.
+
+482
+01:14:47,520 --> 01:14:49,520
+Okay, I will see you next week.
+
