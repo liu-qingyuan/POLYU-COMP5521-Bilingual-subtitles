@@ -1,0 +1,2624 @@
+1
+00:00:00,000 --> 00:00:20,600
+Okay. Good evening, everyone. Today is our lecture two. So, lecture two, we talked about
+
+1
+00:00:00,000 --> 00:00:20,600
+好的。大家晚上好，今天我们进行了第二讲。那么，在第二讲中，我们讨论了
+
+2
+00:00:20,600 --> 00:00:33,920
+the number theory. Totally, we have four parts for today's lecture. The part one is about
+
+2
+00:00:20,600 --> 00:00:33,920
+数论。今天我们讲座分为四个部分，第一部分主要讲述
+
+3
+00:00:33,920 --> 00:00:51,160
+the divisibility, and from divisibility, we'll talk about the Euclidean algorithm. So, this
+
+3
+00:00:33,920 --> 00:00:51,160
+这里讨论了可被整除的概念，并由此引出欧几里得算法。因此，我们说，
+
+4
+00:00:51,159 --> 00:01:05,039
+one is GCD, how we calculate the GCD value. First, we look at the divisibility. This concept
+
+4
+00:00:51,159 --> 00:01:05,039
+一个是最大公约数，我们是如何计算最大公约数值的。首先，我们要关注可除性的概念
+
+5
+00:01:05,039 --> 00:01:16,079
+says that we have a long zero b, so b divides a evenly. That means if a can be represented
+
+5
+00:01:05,039 --> 00:01:16,079
+据说存在一个长零 b，因此 b 能整除 a，这意味着如果 a 可以表示为
+
+6
+00:01:16,079 --> 00:01:24,879
+as n times b for some n, where a, b, and n are both integers, so one example is just like
+
+6
+00:01:16,079 --> 00:01:24,879
+对于某些整数 a、b 和 n，a 乘以 n 次 b（n 次），例如，一个例子就是
+
+7
+00:01:24,879 --> 00:01:52,919
+a 3 divides 6. So, here a is 6, b is 3. So, 6 equals 2 times 3, right? So, n is 2. In
+
+7
+00:01:24,879 --> 00:01:52,919
+3 能整除 6。因此，这里 a 代表 6，b 代表 3。所以，6 等于 2 乘以 3，对吗？那么，n 的值就是 2。
+
+8
+00:01:52,920 --> 00:01:59,920
+this equation, we can see there is no remainder on division. So, we can represent this relation
+
+8
+00:01:52,920 --> 00:01:59,920
+这个方程中，我们可以看到除法没有余数，所以我们可以用这种方式来表示这个关系
+
+9
+00:01:59,920 --> 00:02:10,120
+to be b divides a, b divides a evenly, and we say that b is a divisor or a factor of a, and a is
+
+9
+00:01:59,920 --> 00:02:10,120
+若 b 能整除 a，则称 b 是 a 的因数或约数，且 a 能被 b 整除，这种说法更为自然易懂
+
+10
+00:02:10,120 --> 00:02:22,719
+divisible by b. So, 6 is a factor of 3, a factor of 6. So, 6 is divisible by 3. So, according to
+
+10
+00:02:10,120 --> 00:02:22,719
+6 可以被 b 整除。所以，6 是 3 的因数，也是 6 的因数。因此，6 能被 3 整除。所以，按照
+
+11
+00:02:22,719 --> 00:02:32,280
+this definition, we first look at the project dividers of 24. So, the divider of 24, we have
+
+11
+00:02:22,719 --> 00:02:32,280
+在这个定义中，我们首先来看 24 的项目分隔符。那么，24 的分隔符是...
+
+12
+00:02:32,280 --> 00:02:51,639
+what? 1, 2, 3, 4, 6, 8, 12, 24. So, we have all these dividers of 24. So, the next example
+
+12
+00:02:32,280 --> 00:02:51,639
+what？1、2、3、4、6、8、12、24 都是 24 的因数。那么，下一个例子
+
+13
+00:02:51,639 --> 00:03:04,799
+is, minus 5 is a divider of 30, yes or no? Minus 5 divides 60, or 30, yes or no? Yes, right?
+
+13
+00:02:51,639 --> 00:03:04,799
+减去 5 是 30 的因数吗？减去 5 能整除 60 或 30 吗？当然可以，没错
+
+14
+00:03:04,800 --> 00:03:18,719
+Because 30 can be represented as minus 5 times minus 6. So, we say yes. 17 is a divider of 0, yes or no?
+
+14
+00:03:04,800 --> 00:03:18,719
+因为 30 可以表示为负 5 乘以负 6，所以我们说“是”。17 是 0 的因数，对吗？
+
+15
+00:03:20,960 --> 00:03:32,320
+Yes, right? Because 0 can be represented as 17 times 0. So, this b, this a, b cannot be 0.
+
+15
+00:03:20,960 --> 00:03:32,320
+是的，没错？因为 0 可以表示为 17 个 0 相乘。因此，这里的 b 和 a 都不能是 0。这样的表达更符合中文的表达习惯。
+
+16
+00:03:32,319 --> 00:03:49,799
+For division, we have this division algorithm. So, this algorithm says that for any positive
+
+16
+00:03:32,319 --> 00:03:49,799
+对于除法，我们有一个这样的除法算法。因此，该算法指出，对于任何正数
+
+17
+00:03:49,799 --> 00:03:58,799
+integer n and any non-negative integer a, if we divide a by n, we can get an integer
+
+17
+00:03:49,799 --> 00:03:58,799
+整数 n 和任意非负整数 a，用 a 除以 n 后，结果可以是一个整数
+
+18
+00:03:59,439 --> 00:04:09,840
+quotient q and an integer remainder r. So, a can be represented as q times n plus r,
+
+18
+00:03:59,439 --> 00:04:09,840
+分数 q 和一个整数余数 r。所以，a 可以表示为 q 乘以 n 再加上 r，表达得更为自然。
+
+19
+00:04:10,560 --> 00:04:16,879
+q is quotient, and r is a remainder. And r is a remainder, that means r should be
+
+19
+00:04:10,560 --> 00:04:16,879
+q 是商，r 是余数。而且 r 作为余数，这就意味着 r 应当是
+
+20
+00:04:17,600 --> 00:04:26,000
+bigger than or equal to 0, but smaller than n. So, we divide a by n, and q is the quotient,
+
+20
+00:04:17,600 --> 00:04:26,000
+大于等于 0 且小于 n，所以我们将 a 除以 n，q 为商
+
+21
+00:04:26,639 --> 00:04:36,720
+and this is the flow. Flow of a divides n. So, flow means the largest integer
+
+21
+00:04:26,639 --> 00:04:36,720
+这是流程描述。它指的是 n 除法中的最大整数
+
+22
+00:04:37,360 --> 00:04:44,399
+that is smaller than or equal to the given data. For example, 3.3, the flow is 3,
+
+22
+00:04:37,360 --> 00:04:44,399
+那个值小于或等于给定数据。例如，3.3，则流程数为 3，
+
+23
+00:04:46,079 --> 00:04:55,600
+the flow of 3 is 3. The largest integer that's smaller than or equal to the given data. So,
+
+23
+00:04:46,079 --> 00:04:55,600
+3 的流动值为 3，即小于或等于给定数据的最大整数。因此，
+
+24
+00:04:55,600 --> 00:05:06,879
+q is a quotient. And also, this r remainder, we can represent this one as a mod n, a mod n,
+
+24
+00:04:55,600 --> 00:05:06,879
+q 是商，而 r 是余数，我们可以将其表示为 a mod n，即 a 除以 n 的余数。
+
+25
+00:05:07,760 --> 00:05:16,879
+the remainder will be the result. And also, we use this symbol to represent the mod
+
+25
+00:05:07,760 --> 00:05:16,879
+剩余部分即为结果，而且我们用此符号来表示模运算
+
+26
+00:05:16,959 --> 00:05:20,560
+operation to get the remainder to be the result.
+
+26
+00:05:16,959 --> 00:05:20,560
+获取余数作为结果的操作。
+
+27
+00:05:23,600 --> 00:05:32,959
+So, to support that, we have a equals q times n plus r. So, this data is a, and in this x-axis,
+
+27
+00:05:23,600 --> 00:05:32,959
+因此，为了支持这一点，我们有 a 等于 q 乘以 n 再加 r。因此，这些数据对应于 a，位于 x 轴上，
+
+28
+00:05:32,959 --> 00:05:41,519
+you can see we have q times n, and plus this part, this distance to be r. So, one example is,
+
+28
+00:05:32,959 --> 00:05:41,519
+你可以看到我们有 q 乘以 n，再加上这部分距离，即为 r。举个例子，是这样的。
+
+29
+00:05:41,519 --> 00:05:54,959
+suppose a is 70, and n is 15. This is n, and this is the quotient to be 4, and 10 will be the
+
+29
+00:05:41,519 --> 00:05:54,959
+假设 a 为 70，n 为 15。这是 n，这个商应该是 4，那么 10 将是
+
+30
+00:05:54,959 --> 00:06:03,919
+remainder, r. So, this is the relationship, quite easy. Okay, based on the division,
+
+30
+00:05:54,959 --> 00:06:03,919
+剩余，R. 所以说，这关系很简单。好的，根据除法，
+
+31
+00:06:03,919 --> 00:06:11,359
+we look at this Euclidean algorithm, and this one is one of the basic techniques of number theory,
+
+31
+00:06:03,919 --> 00:06:11,359
+我们来看看这个欧几里得算法，它是数论中的基础技术之一，
+
+32
+00:06:12,000 --> 00:06:19,520
+and according to this algorithm, we are able to determine the greatest common divider of the two
+
+32
+00:06:12,000 --> 00:06:19,520
+根据这个算法，我们可以确定这两个数的最大公约数
+
+33
+00:06:19,520 --> 00:06:30,480
+positive integers. So, first, we look at the order of greatest common divider, GCD value.
+
+33
+00:06:19,520 --> 00:06:30,480
+正整数。所以，我们首先来看最大公约数（GCD）的排列顺序。
+
+34
+00:06:30,480 --> 00:06:41,200
+Okay, the greatest common divider of a and b, that's GCD a, b, e, is the largest integer
+
+34
+00:06:30,480 --> 00:06:41,200
+好吧，a 和 b 的最大公约数，也就是 GCD(a, b, e)，是最大的整数
+
+35
+00:06:41,200 --> 00:06:53,120
+that divides both a and b. For example, GCD value of 0 and 0 will be what? 0, yeah, by default,
+
+35
+00:06:41,200 --> 00:06:53,120
+那个能同时整除 a 和 b 的数。比如，0 和 0 的最大公约数是 0，对吧，默认就是这样的。
+
+36
+00:06:53,120 --> 00:07:04,639
+we set it to be 0. GCD a and 0 will be what? a. So, suppose if a can be negative, so we set to be
+
+36
+00:06:53,120 --> 00:07:04,639
+我们将其设为 0。a 和 0 的最大公约数会是多少？a。假设 a 可能是负数的话，那么我们就将其设置为
+
+37
+00:07:04,639 --> 00:07:16,560
+absolute value of a, a is an integer, right? GCD value a and b equals what? Can you imagine what's
+
+37
+00:07:04,639 --> 00:07:16,560
+a 的绝对值，a 是个整数吧？a 和 b 的最大公约数会是多少呢？你能想象一下吗？
+
+38
+00:07:16,879 --> 00:07:30,319
+going to be? It's going to be too complicated. So, this equals GCD
+
+38
+00:07:16,879 --> 00:07:30,319
+即将发生？这会变得相当复杂。因此，这代表最大公约数
+
+39
+00:07:31,439 --> 00:07:41,040
+e a, right? The share is the same GCD value. Okay. So, how about the last one, GCD a times n,
+
+39
+00:07:31,439 --> 00:07:41,040
+e a，对吧？这个份额是相同的最大公约数。那么最后一个怎么算，GCD(a)乘以 n，
+
+40
+00:07:41,040 --> 00:07:52,480
+and a will be what? a. To be more accurate, it is the absolute value of a. So, an equivalent
+
+40
+00:07:41,040 --> 00:07:52,480
+那么“a”会是什么？a. 更精确地说，它是“a”的绝对值。因此，一个等价
+
+41
+00:07:52,480 --> 00:08:02,080
+definition is the GCD value of n, b. That means we want to get the max k, and this k divides a,
+
+41
+00:07:52,480 --> 00:08:02,080
+定义是 n 和 b 的最大公约数，即我们要找到最大的 k，使得 k 可以整除 a，
+
+42
+00:08:02,080 --> 00:08:10,240
+and this k also divides b. Okay, the maximum number of this k. We look at this example,
+
+42
+00:08:02,080 --> 00:08:10,240
+并且这个 k 可以整除 b。那么，这个 k 的最大值是多少呢？让我们来看一个例子，
+
+43
+00:08:10,240 --> 00:08:23,439
+GCD 6 and 18 will be what? What's the value? 6, right? Because 18 is 6 times 3. The maximum
+
+43
+00:08:10,240 --> 00:08:23,439
+GCD（最大公约数）6 和 18 会是什么？值是多少？6，没错吧？因为 18 是 6 乘以 3。最大公约数是 6。
+
+44
+00:08:23,439 --> 00:08:36,159
+divisor for these two numbers is 6. And this is GCD value. And based on the GCD value, we define
+
+44
+00:08:23,439 --> 00:08:36,159
+这两个数的最大公约数是 6。这就是最大公约数（GCD）的值。根据 GCD 值，我们进行定义
+
+45
+00:08:36,159 --> 00:08:45,759
+that two integers a and b are relatively prime if their GCD value is 1. So, GCD value is 1. We say
+
+45
+00:08:36,159 --> 00:08:45,759
+如果两个整数 a 和 b 的最大公约数（GCD）为 1，则称它们互质。因此，GCD 值为 1。我们便说
+
+46
+00:08:45,759 --> 00:08:55,279
+they are relatively prime. This is an important concept. Are 8 and 15 relatively prime? Yes or
+
+46
+00:08:45,759 --> 00:08:55,279
+他们互质。这是一个关键概念。8 和 15 互质吗？当然。
+
+47
+00:08:55,279 --> 00:09:06,240
+no? So, we say yes. The reason is because if we leave all positive divisors of 8 and 5,
+
+47
+00:08:55,279 --> 00:09:06,240
+那么，我们说“是”。因为如果我们保留 8 和 5 的所有正约数，
+
+48
+00:09:07,199 --> 00:09:18,240
+8 and 15, we can find that the positive divisors of 8, we have 1, 2, 4, 8, and 15, we have 1,
+
+48
+00:09:07,199 --> 00:09:18,240
+我们可以找到 8 的正因数包括 1、2、4、8，15 的正因数有 1、
+
+49
+00:09:19,039 --> 00:09:30,560
+3, 5, 15. So, the largest common divisor of 8 and 15 is 1. So, this shows GCD value,
+
+49
+00:09:19,039 --> 00:09:30,560
+3、5、15。所以，8 和 15 的最大公约数是 1。这显示了 GCD 的值，
+
+50
+00:09:31,519 --> 00:09:40,719
+8, 15 is 1. So, we say these two data, they are relatively prime. Okay?
+
+50
+00:09:31,519 --> 00:09:40,719
+8 和 15 是互质数，也就是说这两个数没有公因数。对吧？
+
+51
+00:09:44,719 --> 00:09:51,839
+So, how to calculate two integers, their GCD value, we have this Euclidean algorithm.
+
+51
+00:09:44,719 --> 00:09:51,839
+那么，如何计算两个整数的最大公约数？这里有一个欧几里得算法。
+
+52
+00:09:52,720 --> 00:10:02,320
+And this is a recursive algorithm. So, this one can quickly calculate the result. The GCD value,
+
+52
+00:09:52,720 --> 00:10:02,320
+这是一种递归算法。因此，它可以迅速计算出结果。最大公约数（GCD）的值，
+
+53
+00:10:03,120 --> 00:10:17,120
+the procedure is if q is 0, the result is p. And here, we suppose in this example,
+
+53
+00:10:03,120 --> 00:10:17,120
+如果 q 为 0，则结果为 p。在此例中，我们假设情况是这样的，使翻译更加自然易懂。
+
+54
+00:10:17,919 --> 00:10:26,480
+in this representation, we suppose that q is bigger than or equal to 0, but smaller than p.
+
+54
+00:10:17,919 --> 00:10:26,480
+在这种表示法中，我们假定 q 不小于 0，但小于 p。
+
+55
+00:10:27,600 --> 00:10:36,240
+Okay? So, if q is 0, the result is p. This is easy to understand because GCD,
+
+55
+00:10:27,600 --> 00:10:36,240
+好的？所以，如果 q 为 0，结果就是 p。这很容易理解，因为最大公约数（GCD），
+
+56
+00:10:36,240 --> 00:10:50,480
+p0 is p. So, p is the largest common divisor of both p and 0. Otherwise,
+
+56
+00:10:36,240 --> 00:10:50,480
+p0 等于 p，因此 p 是 p 和 0 的最大公约数。否则，
+
+57
+00:10:51,919 --> 00:11:02,320
+we calculate it equals GCD q and p percent q. So, p percent q means the remainder R.
+
+57
+00:10:51,919 --> 00:11:02,320
+我们计算它等于 q 和 p 的最大公约数，p 除以 q 的余数即为 R。
+
+58
+00:11:03,200 --> 00:11:11,840
+Because we can represent p to be q times n plus R. So, this GCD,
+
+58
+00:11:03,200 --> 00:11:11,840
+因为我们可以把 p 表示成 qn 加 R 的形式。因此，这个最大公约数，
+
+59
+00:11:13,520 --> 00:11:28,800
+pq equals here means GCD q and R. Right? The reason is because, well, the GCD value means
+
+59
+00:11:13,520 --> 00:11:28,800
+pq 等于这里表示 GCD（最大公约数）q 和 R。对吧？原因在于，嗯，GCD 值代表
+
+60
+00:11:28,879 --> 00:11:38,079
+the divisor of both p and q. So, p can be represented as, suppose p equals s times
+
+60
+00:11:28,879 --> 00:11:38,079
+p 和 q 的公因数。所以，p 可以表示为，假设 p 等于 s 的倍数
+
+61
+00:11:39,039 --> 00:11:46,479
+the GCD value. Okay? No problem, right? GCD is the divisor of p. So, we represent p to be
+
+61
+00:11:39,039 --> 00:11:46,479
+GCD 值。没问题吧？GCD 是 p 的约数。因此，我们表示 p 为
+
+62
+00:11:46,479 --> 00:11:56,079
+s times GCD value. And q is also the model of this GCD. So, q can be represented as,
+
+62
+00:11:46,479 --> 00:11:56,079
+s 代表 GCD 的值。q 是这个 GCD 的模型，所以 q 可以表示为，
+
+63
+00:11:56,800 --> 00:12:06,160
+let's say, t times GCD value times n. And R, we have the remainder to be R.
+
+63
+00:11:56,800 --> 00:12:06,160
+假设，t 次最大公约数乘以 n。余数则为 R。
+
+64
+00:12:08,639 --> 00:12:21,759
+And then this R equals s minus t times n times GCD value. Okay? R equals this one.
+
+64
+00:12:08,639 --> 00:12:21,759
+然后这个 R 等于 s 减去 t 乘以 n 乘以最大公约数。好的吗？R 就是这个数。
+
+65
+00:12:22,639 --> 00:12:29,039
+In other words, the GCD value is also a divisor of R.
+
+65
+00:12:22,639 --> 00:12:29,039
+换句话说，GCD 值同样是 R 的约数。
+
+66
+00:12:31,039 --> 00:12:41,439
+That true? Okay. So, in other words, we want to calculate the GCD value of both p and q.
+
+66
+00:12:31,039 --> 00:12:41,439
+那是真的吗？好吧。换句话说，我们想要计算 p 和 q 的最大公约数值。
+
+67
+00:12:41,440 --> 00:12:54,400
+So, GCD value is a factor of p, is a factor of q. And also, we find that GCD is also a factor of
+
+67
+00:12:41,440 --> 00:12:54,400
+因此，最大公约数是 p 的因子，也是 q 的因子。此外，我们还发现最大公约数同样是...
+
+68
+00:12:54,400 --> 00:13:05,840
+R from this equation. Right? GCD is also a factor of R. And this implies, well, if we want to calculate
+
+68
+00:12:54,400 --> 00:13:05,840
+这个方程中的 R。对吧？GCD 也是 R 的因数。这也意味着，嗯，如果我们想要计算
+
+69
+00:13:05,840 --> 00:13:16,240
+GCD p, q, then this value can be calculated by the GCD of q and R. So, GCD must be the factor of
+
+69
+00:13:05,840 --> 00:13:16,240
+计算 p 和 q 的最大公约数后，这个值可以通过计算 q 和 R 的最大公约数来得到。所以，最大公约数必须是
+
+70
+00:13:16,240 --> 00:13:28,639
+q and R simultaneously. So, because q and R are the values to be much smaller than q. Okay? So,
+
+70
+00:13:16,240 --> 00:13:28,639
+q 和 R 同时存在，所以 q 和 R 的值要比 q 小得多。好的吗？
+
+71
+00:13:28,639 --> 00:13:37,360
+in this way, and finally, we recursively call this function. Otherwise, if q is not 0, we get
+
+71
+00:13:28,639 --> 00:13:37,360
+以此方式，最终我们递归调用这个函数。如果不是 0，则得到
+
+72
+00:13:37,360 --> 00:13:46,000
+this q and R. And both q and R will be much smaller than t and q. We recursively call this function.
+
+72
+00:13:37,360 --> 00:13:46,000
+这里 q 和 R。q 和 R 都远小于 t 和 q。我们递归调用这个函数，表达更自然。
+
+73
+00:13:46,000 --> 00:13:53,200
+And finally, the R position can be 0. And we have t to be the output.
+
+73
+00:13:46,000 --> 00:13:53,200
+最后，R 的位置可以是 0，我们要求 t 作为输出。
+
+74
+00:13:59,600 --> 00:14:09,199
+So, here is a flow to apply the Euclidean algorithm. So, suppose here we start, we want to get
+
+74
+00:13:59,600 --> 00:14:09,199
+因此，这里有一个应用欧几里得算法的流程。假设我们从这个点开始，我们的目标是得到
+
+75
+00:14:10,399 --> 00:14:24,080
+the GCD a and b. And suppose a to be bigger than b. If yes, we divide a by b and put in the remainder.
+
+75
+00:14:10,399 --> 00:14:24,080
+求 a 和 b 的最大公约数。若 a 大于 b，则将 a 除以 b，并记录下余数。
+
+76
+00:14:24,879 --> 00:14:43,360
+So, this means a can be represented as a equals b times n plus R. And we look at R. If R is bigger
+
+76
+00:14:24,879 --> 00:14:43,360
+因此，这意味着 a 可以表示为 a 等于 b 乘以 n 加上余数 R。我们来看看 R。如果 R 的值更大
+
+77
+00:14:43,759 --> 00:14:59,200
+than 0, we replace a with b. So, this GCD a, b equals GCD b and R. Until R equals 0,
+
+77
+00:14:43,759 --> 00:14:59,200
+如果大于 0，则用 b 替换 a。所以，a 和 b 的最大公约数等于 b 和 R 的最大公约数。直到 R 等于 0，
+
+78
+00:15:00,160 --> 00:15:19,840
+then the result, the GCD a, b, or we say it is b, R equals, if R is 0, the result is b at this moment.
+
+78
+00:15:00,160 --> 00:15:19,840
+那么结果就是 GCD(a, b)，或者说它是 b，如果 R 为 0，那么此刻的结果就是 b。
+
+79
+00:15:20,639 --> 00:15:27,680
+Now, we look at this example. Suppose we want to get the GCD value
+
+79
+00:15:20,639 --> 00:15:27,680
+现在，让我们来看这个例子。假设我们要计算最大公约数（GCD）的值
+
+80
+00:15:30,560 --> 00:15:49,759
+7, 10, and 3, 10. Yeah, here. We want to calculate this value. So, this one, well, this is p,
+
+80
+00:15:30,560 --> 00:15:49,759
+7、10 和 3、10，对吧。这里我们要计算这个数值。那么，这个，嗯，这个就是 p，
+
+81
+00:15:49,840 --> 00:16:00,960
+t is 7, 10, q is 3, 10, and this is R. According to the Euclidean algorithm, this one equals
+
+81
+00:15:49,840 --> 00:16:00,960
+t 等于 7，10，q 等于 3，10，这是 R。根据欧几里得算法，它等于
+
+82
+00:16:03,519 --> 00:16:18,480
+the GCD value, q is 3, 10, R is 90, q and R. And here we continue this process. So, this is q,
+
+82
+00:16:03,519 --> 00:16:18,480
+最大公约数，q 为 3、10，R 为 90，q 和 R。然后我们继续这个过程。所以这是 q，翻译得更加自然和易懂。
+
+83
+00:16:20,560 --> 00:16:32,399
+this is R, and this is R1. So, this equals the GCD value, q is 90. Now, we have equals
+
+83
+00:16:20,560 --> 00:16:32,399
+这是 R，这是 R1。因此，等于最大公约数，q 值为 90。现在，我们得到等于
+
+84
+00:16:33,440 --> 00:16:47,759
+this p, this is q, so this is q, this R equals R, R is 90, and R1, 40. So, this is
+
+84
+00:16:33,440 --> 00:16:47,759
+这 p，这是 q，因此也是 q，R 等于 R，R 的值为 90，R1 为 40。因此这是
+
+85
+00:16:48,639 --> 00:16:57,759
+R, this is R1. So, every step you can see the p, r becomes smaller compared to the previous
+
+85
+00:16:48,639 --> 00:16:57,759
+R，这是 R1。因此，每一步你都能观察到 p 和 r 的值相较于上一步有所减小
+
+86
+00:16:57,759 --> 00:17:08,480
+p, q, and we continue this process. This is R, this is R1, we have R2, so this equals GCD,
+
+86
+00:16:57,759 --> 00:17:08,480
+p, q，然后我们继续这个过程。这是 R，这是 R1，我们有 R2，因此这代表最大公约数，
+
+87
+00:17:09,360 --> 00:17:23,519
+R1, R2, 40, and R2 is 10. And we continue this process. So, we have R1 and R2 plus 0. 0 is R3,
+
+87
+00:17:09,360 --> 00:17:23,519
+R1、R2、40，其中 R2 为 10。我们持续这个过程。因此，我们得到 R1 和 R2 加 0，0 即为 R3，
+
+88
+00:17:23,519 --> 00:17:37,360
+right? And this equals GCD, R2, and R3. So, R2 is 10, R3 is 0. So, because the R value is 0,
+
+88
+00:17:23,519 --> 00:17:37,360
+right？这等于最大公约数、R2 和 R3。因此，R2 为 10，R3 为 0。由于 R 值为 0，
+
+89
+00:17:38,000 --> 00:17:48,799
+and the output is this 10. So, after 1, 2, 3, 4, 5, 5 steps, we get the result to be 10.
+
+89
+00:17:38,000 --> 00:17:48,799
+因此输出结果是 10。经过 1、2、3、4、5、5 步后，我们得到了 10 这个结果。
+
+90
+00:17:51,359 --> 00:17:59,199
+And this is a positive to calculate the GCD value by applying the Euclidean algorithm.
+
+90
+00:17:51,359 --> 00:17:59,199
+这段内容是关于通过应用欧几里得算法计算最大公约数值的正例。翻译经过润色，使其在简体中文中更加自然易懂。
+
+91
+00:17:59,920 --> 00:18:09,920
+Another example is suppose we have this a, b, a, b, both n, b are very large. And well, even no
+
+91
+00:17:59,920 --> 00:18:09,920
+另一个例子，假设我们有这样的 a, b, a, b，其中 n 和 b 都很大。嗯，甚至没有...
+
+92
+00:18:09,920 --> 00:18:17,519
+matter how large it is, we can quickly get the result after a number of steps. So, this is a,
+
+92
+00:18:09,920 --> 00:18:17,519
+无论大小，我们都能在几个步骤后迅速得到结果。因此，这……
+
+93
+00:18:17,519 --> 00:18:39,119
+b, this is q, and R1. And GCD a, b equals GCD. So, here is a equals b times q1 plus R1. So, this
+
+93
+00:18:17,519 --> 00:18:39,119
+b, 这是 q，还有 R1。GCD(a, b)等于 GCD。因此，这里 a 等于 b 乘以 q1 加上 R1。所以，
+
+94
+00:18:39,119 --> 00:18:59,439
+equals b, R1. So, b, R1. And we recursively call the calculation. So, this equals GCD,
+
+94
+00:18:39,119 --> 00:18:59,439
+等于 b 和 R1，因此我们递归地进行计算。所以这等于最大公约数，
+
+95
+00:19:00,320 --> 00:19:09,279
+R1, R2. So, R1 is here, R2 is a remainder. So, we continue to process until we have.
+
+95
+00:19:00,320 --> 00:19:09,279
+R1, R2。所以，R1 在这里，R2 是余数。我们继续处理，直到处理完毕。
+
+96
+00:19:10,160 --> 00:19:28,799
+So, it equals GCD in this row, R7, and R8. And equals GCD, R8, R9. So, R8 is this one, R9.
+
+96
+00:19:10,160 --> 00:19:28,799
+因此，它等于这一行的最大公约数，即 R7 和 R8。也等于 R8 和 R9 的最大公约数。所以，R8 就是指这个，R9。
+
+97
+00:19:29,440 --> 00:19:37,920
+Is this one. And continually, we have equals GCD, R9, R10.
+
+97
+00:19:29,440 --> 00:19:37,920
+这就是。而且，我们持续有等于 GCD、R9、R10。
+
+98
+00:19:40,960 --> 00:19:52,240
+R sub 10, okay? This one. Because R sub 10 is 0, so, this one equals R9. And this is an output.
+
+98
+00:19:40,960 --> 00:19:52,240
+R10，好的？这个。因为 R10 等于 0，所以这个就等于 R9。这是输出。
+
+99
+00:19:52,880 --> 00:19:57,039
+To be the value of this, it needs to be 10b.
+
+99
+00:19:52,880 --> 00:19:57,039
+要成为这个值的数值，它必须是 10b。
+
+100
+00:19:57,039 --> 00:20:22,000
+So, everything looks fine, right? At this moment. If, well, everything is fine,
+
+100
+00:19:57,039 --> 00:20:22,000
+那么，目前一切看起来都很顺利，对吧？现在是这样的。如果一切正常的话，
+
+101
+00:20:22,000 --> 00:20:31,119
+can you do the calculation of this exercise one? I'll give you three minutes. You tell me what's
+
+101
+00:20:22,000 --> 00:20:31,119
+你能帮我计算这个练习题吗？我给你三分钟，然后告诉我结果。
+
+102
+00:20:31,119 --> 00:20:45,919
+the result. The GCD is 93 and 16.
+
+102
+00:20:31,119 --> 00:20:45,919
+结果为。93 和 16 的最大公约数是。
+
+103
+00:20:45,920 --> 00:21:11,279
+What's the result for this? One. Okay. So, we can repeat. We can use the Euclidean
+
+103
+00:20:45,920 --> 00:21:11,279
+这个结果是什么？一个。好的，所以我们可以重复使用欧几里得距离
+
+104
+00:21:11,279 --> 00:21:22,480
+algorithm to calculate. So, this 93 can be represented as 16 times 5 plus 13.
+
+104
+00:21:11,279 --> 00:21:22,480
+算法计算的内容。所以，这个 93 可以表示为 16 乘以 5 加上 13。
+
+105
+00:21:22,559 --> 00:21:50,480
+And 13, 16. So, next one, we look at 16 and 13. 16. 16 equals 13 times 1 plus 3. And we look at
+
+105
+00:21:22,559 --> 00:21:50,480
+所以，接下来我们看看 16 和 13。16 等于 13 乘以 1 再加 3。然后我们继续看
+
+106
+00:21:51,279 --> 00:22:06,160
+13 and 3. 13 equals 3 times 4 plus 1, right? And we have 3 and 1. So, 3 equals 1 times 3 plus 0.
+
+106
+00:21:51,279 --> 00:22:06,160
+13 和 3。13 等于 3 乘以 4 再加 1，对吧？然后我们有 3 和 1。所以，3 等于 1 乘以 3 再加 0。
+
+107
+00:22:06,960 --> 00:22:22,160
+So, these three, this one is GCD 31. So, finally, this one equals GCD 31 and 10.
+
+107
+00:22:06,960 --> 00:22:22,160
+那么，这三个数中，这个数的最大公约数是 31。最终，这个数等于 31 和 10 的最大公约数。
+
+108
+00:22:22,960 --> 00:22:38,960
+So, this one. So, this corresponds to this row. This corresponds to this row. Equals 10.
+
+108
+00:22:22,960 --> 00:22:38,960
+那么，这个。这对应表格中的这一行。这对应表格中的这一行。等于 10。
+
+109
+00:22:39,440 --> 00:22:54,960
+Okay. This is a very easy part. Part one, just an appetizer. Okay?
+
+109
+00:22:39,440 --> 00:22:54,960
+好的。这部分很简单。第一部分，仅仅是个开胃小菜。好吗？
+
+110
+00:22:57,360 --> 00:23:03,840
+Now, we go to part two. Based on our understanding of the Euclidean algorithm,
+
+110
+00:22:57,360 --> 00:23:03,840
+现在，我们进入第二部分。根据我们对欧几里得算法的理解，
+
+111
+00:23:03,839 --> 00:23:11,199
+how to calculate the GCD value. So, now we need to move to part two about the modular arithmetic.
+
+111
+00:23:03,839 --> 00:23:11,199
+如何计算最大公约数（GCD）值。所以，现在我们要进入第二部分，讲解模运算。
+
+112
+00:23:11,759 --> 00:23:19,599
+And then we need to learn the expanded Euclidean algorithm to get the modular inverse.
+
+112
+00:23:11,759 --> 00:23:19,599
+然后我们需要学习扩展欧几里得算法，以便获取模逆元。这样的表述更自然、易懂。
+
+113
+00:23:20,159 --> 00:23:24,799
+So, modular inverse is an important concept in the cryptography.
+
+113
+00:23:20,159 --> 00:23:24,799
+因此，模逆是密码学中的一个重要概念，是一个关键概念。
+
+114
+00:23:24,799 --> 00:23:39,839
+Okay. First, we look at the modular arithmetic. The modulus was a modulus in this modular operation.
+
+114
+00:23:24,799 --> 00:23:39,839
+好的。首先，让我们来探讨一下模运算。在这个模运算中，“模”指的是模数。
+
+115
+00:23:41,599 --> 00:23:50,960
+Suppose we have A to be an integer and N is a positive integer. We can define A mod N to be
+
+115
+00:23:41,599 --> 00:23:50,960
+假设 A 是一个整数，N 为正整数。我们可以定义 A 除以 N 的余数为
+
+116
+00:23:50,960 --> 00:24:00,640
+the remainder value where A is divided by N. And this integer N is called the modulus.
+
+116
+00:23:50,960 --> 00:24:00,640
+A 除以 N 的余数，整数 N 被称为模数。
+
+117
+00:24:03,360 --> 00:24:12,720
+Suppose for given integer A, A can be represented as Q times M plus R. We note that
+
+117
+00:24:03,360 --> 00:24:12,720
+假设对于给定的整数 A，它可以表示为 Q 乘以 M 再加上 R。我们注意到
+
+118
+00:24:12,799 --> 00:24:21,759
+Q is quotient, right? And R is the remainder. Then A can be represented as this is the Q
+
+118
+00:24:12,799 --> 00:24:21,759
+Q 代表商，R 代表余数。因此，A 可以表示为这是 Q
+
+119
+00:24:21,759 --> 00:24:34,400
+value times N plus this is R value. R value can be represented as A mod N. A mod N. A divided by N,
+
+119
+00:24:21,759 --> 00:24:34,400
+值乘以 N 再加上这个 R 值。R 值可以表示为 A 除以 N 的余数。A 除以 N 的余数。A 除以 N，
+
+120
+00:24:34,400 --> 00:24:40,960
+we want to know what the remainder value. So, for example, 11 mod 7 was our result.
+
+120
+00:24:34,400 --> 00:24:40,960
+我们想知道余数是多少。比如，11 除以 7 的余数就是我们的结果。
+
+121
+00:24:42,320 --> 00:24:53,200
+4, right? 11 equals 7 plus 4. So, 4 is a remainder. How about minus 11 mod 7? What do we want?
+
+121
+00:24:42,320 --> 00:24:53,200
+4，对吧？11 等于 7 加 4，所以 4 是余数。那么，-11 除以 7 的余数是多少呢？我们想要知道什么？
+
+122
+00:24:53,200 --> 00:25:07,759
+So, minus 11 can be represented as 7 times minus 2 plus 3, right? Plus 3. So, normally,
+
+122
+00:24:53,200 --> 00:25:07,759
+那么，减去 11 可以表示为 7 个负 2 加 3，对吧？再加 3。所以，一般来说，
+
+123
+00:25:07,759 --> 00:25:14,000
+we want to have our long negative value to be the remainder. So, this one is 3.
+
+123
+00:25:07,759 --> 00:25:14,000
+我们希望将长负数作为余数，因此这个值为 3。
+
+124
+00:25:14,640 --> 00:25:23,119
+For the mod operation, we have this concept, congruent mod N. Two integers A and B are said
+
+124
+00:25:14,640 --> 00:25:23,119
+对于模运算，有一个概念叫做同余模 N。两个整数 A 和 B，我们称它们为
+
+125
+00:25:23,119 --> 00:25:38,960
+to be congruent mod N if A mod N equals B mod N. This is written as A is congruent to B mod N.
+
+125
+00:25:23,119 --> 00:25:38,960
+如果 A 除以 N 的余数等于 B 除以 N 的余数，则称 A 与 B 对 N 同余。这可以写作 A ≡ B (mod N)。
+
+126
+00:25:44,400 --> 00:25:51,440
+So, both of them divided by N have the same remainder.
+
+126
+00:25:44,400 --> 00:25:51,440
+因此，它们两个除以 N 的余数是一样的。
+
+127
+00:25:54,720 --> 00:26:02,000
+For example, 73. So, 73 can be represented as
+
+127
+00:25:54,720 --> 00:26:02,000
+例如，73，所以它可以被表示为
+
+128
+00:26:02,000 --> 00:26:20,400
+23 times 3 plus 4. And that 73 is congruent to 4 mod 23, right? So, 4 divided by 23,
+
+128
+00:26:02,000 --> 00:26:20,400
+23 乘以 3 再加 4，那么 73 和 4 对 23 取模同余，对吧？所以 4 除以 23，
+
+129
+00:26:20,400 --> 00:26:29,440
+the remainder is 4. And 73 divided by 23, the remainder is 4. So, they're the same. We say
+
+129
+00:26:20,400 --> 00:26:29,440
+剩余数都是 4。73 除以 23 的余数同样是 4，因此它们是相同的。我们可以说
+
+130
+00:26:29,440 --> 00:26:41,200
+they are congruent when we have mod 23 in this operation. And 21 is congruent to 1 when mod N.
+
+130
+00:26:29,440 --> 00:26:41,200
+当我们进行模 23 运算时，它们是同余的。在模 N 的情况下，21 与 1 同余。
+
+131
+00:26:41,200 --> 00:26:57,519
+Okay. Now, if A is congruent to 0 mod N, that means N is a factor of A.
+
+131
+00:26:41,200 --> 00:26:57,519
+好的。现在，如果 A 与 0 模 N 同余，那么 N 就是 A 的因数。
+
+132
+00:26:58,559 --> 00:27:08,400
+N is a factor of A. First, A divided by N, the remainder will be 0. The remainder will be 0.
+
+132
+00:26:58,559 --> 00:27:08,400
+N 是 A 的因数。首先，A 除以 N，余数为 0，余数确实为 0。
+
+133
+00:27:08,400 --> 00:27:20,160
+Okay. We look at this one. Actually, this is a very important zero. So, this one says that
+
+133
+00:27:08,400 --> 00:27:20,160
+好的。我们来看看这个。实际上，这个零非常重要。所以，它说的是
+
+134
+00:27:21,120 --> 00:27:31,200
+if GCD value of U and Z is 1. So, U and Z is 1, means these two are relative prime.
+
+134
+00:27:21,120 --> 00:27:31,200
+如果 U 和 Z 的最大公约数为 1，那么这两个数就是互质的，即它们之间没有其他公约数。
+
+135
+00:27:39,360 --> 00:27:48,560
+So, these two numbers are relative prime. Then U times X is coming to U times Y mod Z
+
+135
+00:27:39,360 --> 00:27:48,560
+因此，这两个数互质。那么，U 乘以 X 等于 U 乘以 Y 对 Z 取模
+
+136
+00:27:49,440 --> 00:27:59,919
+UZ are relative prime. This U can be cancelled. And we have X is congruent to Y mod Z.
+
+136
+00:27:49,440 --> 00:27:59,919
+UZ 互质。U 可以约掉。因此，X 与 Y 模 Z 同余。
+
+137
+00:28:04,559 --> 00:28:14,960
+So, this is a good problem. So, one example is 3 times 3 is 9 is congruent to 3 times 11.
+
+137
+00:28:04,559 --> 00:28:14,960
+因此，这是一个好问题。举个例子，3 乘以 3 等于 9，和 3 乘以 11 同余。
+
+138
+00:28:14,960 --> 00:28:31,840
+This is congruent to 1 when we take the mod 8. Because 3 and 8 are relative prime,
+
+138
+00:28:14,960 --> 00:28:31,840
+这在取模 8 时与 1 同余，因为 3 和 8 互质，所以...
+
+139
+00:28:32,720 --> 00:28:42,160
+so this implies this 3 can be cancelled. This implies 3 is congruent to 11 when we take mod 8.
+
+139
+00:28:32,720 --> 00:28:42,160
+这意味着 3 可以被约去。这意味着当我们对 8 取模时，3 和 11 是同余的。这样的表达更符合中文习惯。
+
+140
+00:28:44,960 --> 00:28:58,640
+However, although we have 3 times 4 is congruent to 5 times 4 is congruent to 4
+
+140
+00:28:44,960 --> 00:28:58,640
+然而，尽管 3 乘 4 等于 5 乘 4，也等于 4 乘 4，它们同余
+
+141
+00:28:59,840 --> 00:29:06,880
+when we have the mod 8 operation. Well, we cannot cancel this form.
+
+141
+00:28:59,840 --> 00:29:06,880
+当我们进行模 8 运算时。嗯，这个形式无法被取消。
+
+142
+00:29:06,880 --> 00:29:20,480
+So, the reason is because 4 and 8 are not relative prime. If we move 4 from both sides,
+
+142
+00:29:06,880 --> 00:29:20,480
+因此，原因在于 4 和 8 不是互质数。如果我们把 4 从等式两边移除，
+
+143
+00:29:20,480 --> 00:29:31,280
+left hand side and right hand side, can we get 3 is congruent to 5 mod 8? Of course not, right?
+
+143
+00:29:20,480 --> 00:29:31,280
+左边和右边，3 和 5 模 8 同余吗？当然不行，对吧？
+
+144
+00:29:31,680 --> 00:29:43,920
+So, the reason is because the common factor 4 is not relative prime to 8. So, it cannot be cancelled.
+
+144
+00:29:31,680 --> 00:29:43,920
+因此，原因是公因数 4 和 8 不互质，所以不能约分。
+
+145
+00:29:47,119 --> 00:29:57,119
+Only if the common divisor number 3 is relative prime to the mod 8, then 3 can be cancelled.
+
+145
+00:29:47,119 --> 00:29:57,119
+只有当 3 与 8 的模数互质时，3 才能被约去。
+
+146
+00:30:01,359 --> 00:30:02,879
+This is a good problem.
+
+146
+00:30:01,359 --> 00:30:02,879
+这是一个很好的问题。
+
+147
+00:30:07,039 --> 00:30:14,639
+Some other good problem is if we want to calculate a plus b mod n, we can first
+
+147
+00:30:07,039 --> 00:30:14,639
+如果我们要计算 a 加 b 模 n 的值，可以先
+
+148
+00:30:16,399 --> 00:30:25,839
+calculate a mod n and then plus b mod n. This will make the result to be much smaller and to have
+
+148
+00:30:16,399 --> 00:30:25,839
+计算模 n 的结果，然后再加上 b 模 n。这样可以使结果变得非常小，并且具有
+
+149
+00:30:25,839 --> 00:30:33,679
+an easier calculation and similar for the minus operation and the multiplication operation.
+
+149
+00:30:25,839 --> 00:30:33,679
+一个更简单的计算，以及类似减法和乘法操作的情况。
+
+150
+00:30:34,879 --> 00:30:41,039
+So, one example is suppose we want to calculate 2 1 1 mod 8.
+
+150
+00:30:34,879 --> 00:30:41,039
+因此，这里有一个例子：假设我们要计算 2 的 1 次方的 1 次方对 8 取模。
+
+151
+00:30:42,959 --> 00:30:53,839
+So, 2 1 1 mod 8 should be 3, 1 to 5 mod 8 will be 5. So, these two, the sum
+
+151
+00:30:42,959 --> 00:30:53,839
+因此，2 除以 8 余 3，1 到 5 除以 8 余 5。所以这两个数的和是
+
+152
+00:30:55,839 --> 00:31:07,279
+the sum mod 8 equals the mod result 3 plus 5 mod 8 and this should be 0.
+
+152
+00:30:55,839 --> 00:31:07,279
+8 取余的结果等于 3 加 5 的 8 取余，结果应当为 0。
+
+153
+00:31:16,799 --> 00:31:24,319
+For the minus also, we can have this equation to quickly get the result. So, 2 1 1 is 3,
+
+153
+00:31:16,799 --> 00:31:24,319
+对于减法来说，我们也可以用这个公式快速计算出结果。因此，2 减 1 等于 3。
+
+154
+00:31:25,039 --> 00:31:37,679
+minus 5, this mod 8, the result is what? The result is 6. Minus 2, we have 1, it should be 6.
+
+154
+00:31:25,039 --> 00:31:37,679
+减去 5，对 8 取模的结果是 6。减去 2 后，我们得到 1，但应该是 6。
+
+155
+00:31:38,559 --> 00:31:48,159
+And this multiplication equals 3 times 5, mod 8, the result is what? 7.
+
+155
+00:31:38,559 --> 00:31:48,159
+这道乘法等于 3 乘以 5，对 8 取模，结果是 7。
+
+156
+00:31:54,319 --> 00:32:05,200
+Okay, we look at this table. This table suppose this row represents
+
+156
+00:31:54,319 --> 00:32:05,200
+好的，我们来看看这张表格。这张表格假设这一行所表示的内容
+
+157
+00:32:10,799 --> 00:32:18,799
+so this row we have a and this column we have b and we have in the table which shows
+
+157
+00:32:10,799 --> 00:32:18,799
+这一行是 a，那一列是 b，表格中展示了
+
+158
+00:32:19,759 --> 00:32:25,519
+the result a plus b mod 8.
+
+158
+00:32:19,759 --> 00:32:25,519
+a+b 对 8 取模的结果
+
+159
+00:32:31,680 --> 00:32:40,000
+0 plus 0, the result mod 8 is 0. And also we can find in this diagonal line,
+
+159
+00:32:31,680 --> 00:32:40,000
+0 加 0 等于 0，对 8 取模的结果也是 0。此外，您还可以在这条对角线上找到这一点，
+
+160
+00:32:40,960 --> 00:32:52,240
+the result is 0. So, 1 plus 7 is 8, mod 8 is 0. So, everyone we can find a corresponding value here
+
+160
+00:32:40,960 --> 00:32:52,240
+结果为 0，因此 1 加 7 等于 8，对 8 取模后结果为 0。因此，我们可以在这一部分找到一个相应的值
+
+161
+00:32:53,039 --> 00:33:01,119
+such that the sum mod 8 is 0. This is the addition operation.
+
+161
+00:32:53,039 --> 00:33:01,119
+这样求和模 8 等于 0，这是加法操作。翻译得更加自然易懂。
+
+162
+00:33:01,519 --> 00:33:17,679
+Well, here we show the result to be a times b mod 8 result. So, this is a, this is b plus for
+
+162
+00:33:01,519 --> 00:33:17,679
+嗯，这里我们展示了 a 乘以 b 再对 8 取模的结果。因此，这是 a，这是 b 加 4
+
+163
+00:33:17,679 --> 00:33:28,399
+number 1 times 1, mod 8 is 1. However, for 2 times something, if b is 2, the whole row
+
+163
+00:33:17,679 --> 00:33:28,399
+数字 1 乘以 1，模 8 等于 1。但是，对于 2 乘以某个数（例如 b=2）的情况，整行
+
+164
+00:33:28,400 --> 00:33:40,480
+we cannot find any number to be 1. So, in the multiplication, we look at the result, the product
+
+164
+00:33:28,400 --> 00:33:40,480
+我们找不到任何数等于 1。因此，在乘法运算中，我们关注的是乘积的结果
+
+165
+00:33:41,360 --> 00:33:51,680
+mod 8 to be 1. So, in the row for b plus 2 cannot find anyone, if b equals 3, we find a value such
+
+165
+00:33:41,360 --> 00:33:51,680
+模 8 等于 1，因此当 b 加 2 的行中找不到对应值时，若 b 等于 3，则找到一个对应的值
+
+166
+00:33:51,759 --> 00:34:05,440
+that a equals 3, there mod 8 result is 1. So, the sum there can be 1 plus not all the a or b value
+
+166
+00:33:51,759 --> 00:34:05,440
+那个 a 等于 3，对 8 取模的结果是 1。因此，那个数列的和可以是 1 加上 a 或 b 的非全部值
+
+167
+00:34:06,400 --> 00:34:11,920
+we can find ourselves for the product value mod 8 to be 1.
+
+167
+00:34:06,400 --> 00:34:11,920
+我们可以找到使产品值对 8 取模等于 1 的情况，表达更为自然。
+
+168
+00:34:11,920 --> 00:34:21,039
+So, then we define the additive and the multiplicative inverse mod 8.
+
+168
+00:34:11,920 --> 00:34:21,039
+因此，我们先定义了模 8 的加法和乘法逆元。这样的表述更为自然和易懂。
+
+169
+00:34:22,960 --> 00:34:36,400
+So, this is the definition of the inverse value mod given number 8. So, we define that the additive
+
+169
+00:34:22,960 --> 00:34:36,400
+因此，这是关于给定数字 8 的逆模值的定义。我们将其定义为加法
+
+170
+00:34:36,400 --> 00:34:53,840
+inverse is your w plus minus w is coming to 0 mod 8. And this minus w is called the additive
+
+170
+00:34:36,400 --> 00:34:53,840
+逆元是您的 w 加减 w 等于 0 模 8。这个减去 w 的数，我们称之为加法逆元
+
+171
+00:34:53,840 --> 00:35:00,400
+inverse, additive inverse, because we have this addition, right, we add them together. This is
+
+171
+00:34:53,840 --> 00:35:00,400
+因为存在加法运算，所以我们有相反数和加法逆元，对吧，将它们相加。这就是
+
+172
+00:35:00,400 --> 00:35:14,880
+for the additive inverse of w mod 8. Well, if w is 0, so minus w will be 0. So, here is
+
+172
+00:35:00,400 --> 00:35:14,880
+对于 w 模 8 的加法逆元。如果 w 为 0，那么它的相反数也是 0。因此，这里就是
+
+173
+00:35:14,880 --> 00:35:27,039
+additive inverse, 0 plus 0, mod 8 is 0. If w is 1, the additive inverse will be 7, 1 plus 7, mod 8
+
+173
+00:35:14,880 --> 00:35:27,039
+加法逆元，0 加 0 等于 0（模 8）。若 w 为 1，则其加法逆元为 7，即 1 加 7（模 8）
+
+174
+00:35:27,039 --> 00:35:40,320
+is 0. For every w, we have corresponding minus w to be the additive inverse of w mod 8. We have
+
+174
+00:35:27,039 --> 00:35:40,320
+对于每个 w，都存在对应的-w，它是 w 模 8 的加法逆元。具体来说，我们有
+
+175
+00:35:40,320 --> 00:35:49,920
+all the values here. However, for multiplicative inverse, so multiplicative inverse defines as
+
+175
+00:35:40,320 --> 00:35:49,920
+所有这些值。然而，所谓的乘法逆元是指
+
+176
+00:35:50,000 --> 00:36:00,800
+w times the w to minus 1. And the result is coming to 1 when we have the mod 8
+
+176
+00:35:50,000 --> 00:36:00,800
+w 乘以 w 减 1，对 8 取模后结果为 1
+
+177
+00:36:02,240 --> 00:36:12,400
+operation. This is the definition to be the multiplicative inverse of w. We denote this value
+
+177
+00:36:02,240 --> 00:36:12,400
+这是 w 的乘法逆元的定义。我们记这个值为
+
+178
+00:36:12,400 --> 00:36:24,880
+to be w to minus 1. If w is 1, this modular inverse should be 1. 1 times 1, here is multiplication.
+
+178
+00:36:12,400 --> 00:36:24,880
+如果 w 等于 1，那么这个模逆元应该是 1。1 乘以 1，这里就是乘法操作。
+
+179
+00:36:24,880 --> 00:36:36,559
+1 times 1 is 1, so mod 8 is 1. However, for 2, 4, 6, we do not have the modular inverse,
+
+179
+00:36:24,880 --> 00:36:36,559
+1 乘以 1 等于 1，所以对 8 取模结果为 1。但是，对于 2、4、6 这三个数，我们找不到它们的模逆元，
+
+180
+00:36:36,559 --> 00:36:50,960
+the multiplicative inverse mod 8. For 3, w equals 3, the w to minus 1 is 3. 3 times 3 is 9.
+
+180
+00:36:36,559 --> 00:36:50,960
+8 的乘法逆元。对于数字 3，其逆元是 3，即 3 减 1 等于 3。3 乘以 3 等于 9。
+
+181
+00:36:51,679 --> 00:36:57,599
+This is congruent to 1. We have mod 8 operation. Check here.
+
+181
+00:36:51,679 --> 00:36:57,599
+这是等于 1 的，我们进行了模 8 运算，请在此处查看。
+
+182
+00:36:57,599 --> 00:37:13,279
+For some w, we have the multiplicative inverse. This w to the minus 1 is called the multiplicative
+
+182
+00:36:57,599 --> 00:37:13,279
+对于某些 w，存在其乘法逆元。w 的-1 次幂被称为乘法逆元。
+
+183
+00:37:13,360 --> 00:37:28,720
+inverse. Some properties for this modular operation are, for example, for this Zn,
+
+183
+00:37:13,360 --> 00:37:28,720
+逆运算。例如，对于这个 Zn，该模块化操作的一些属性，比如包括，
+
+184
+00:37:29,600 --> 00:37:40,400
+so Zn is set with all integers from 0, 1 to a mass 1. We have 40 properties. The first one is
+
+184
+00:37:29,600 --> 00:37:40,400
+因此，Zn 被设置为从 0 到 1 以及质量为 1 的所有整数。我们共有 40 个属性。第一个属性是
+
+185
+00:37:40,400 --> 00:37:46,960
+commutative loss. That means for addition and multiplication, we can swap the first and second
+
+185
+00:37:40,400 --> 00:37:46,960
+交换律损失，即对于加法和乘法运算，我们可以互换第一个和第二个操作数
+
+186
+00:37:46,960 --> 00:37:57,760
+data to the result of the same. For solutive loss means, well, for this addition or multiplication,
+
+186
+00:37:46,960 --> 00:37:57,760
+数据从输入到输出结果。对于求解损失而言，嗯，对于这种加法或乘法操作，
+
+187
+00:37:58,320 --> 00:38:04,000
+we can first calculate the first two or the second two to the result of the same.
+
+187
+00:37:58,320 --> 00:38:04,000
+我们可以先计算前两个数或后两个数，结果是一样的。
+
+188
+00:38:04,079 --> 00:38:15,119
+Then, distributive law means the w can be in this parenthesis, w times x plus y equals w times x
+
+188
+00:38:04,079 --> 00:38:15,119
+然后，根据分配律，w 可以放在这个括号中，w 乘以 x 加 y 等于 w 乘以 x
+
+189
+00:38:15,119 --> 00:38:29,119
+plus w times y. Identity means some data plus the w itself or times w itself equals itself.
+
+189
+00:38:15,119 --> 00:38:29,119
+加上 w 乘以 y。身份意味着某些数据加上 w 本身，或者乘以 w 本身等于自身。这样的表述更符合中文的表达习惯。
+
+190
+00:38:30,079 --> 00:38:36,559
+So this identity in addition is 0. In multiplication is 1.
+
+190
+00:38:30,079 --> 00:38:36,559
+因此这个身份加起来为 0，相乘为 1。
+
+191
+00:38:38,239 --> 00:38:42,559
+In two different scenarios, the identity value will be different.
+
+191
+00:38:38,239 --> 00:38:42,559
+在两种不同的情况下，身份值会有所不同。
+
+192
+00:38:44,639 --> 00:38:53,599
+A detailed inverse will be minus w. That means for each w in this set, there exists a z such that
+
+192
+00:38:44,639 --> 00:38:53,599
+详细的逆映射意味着减去 w，也就是说，对于这个集合中的每一个 w，都存在一个 z，使得
+
+193
+00:38:53,679 --> 00:39:05,119
+w plus z is 0 mod m. So this z, we always can find this z. So this z, we call it to be
+
+193
+00:38:53,679 --> 00:39:05,119
+w 加 z 对 m 取模等于 0。因此，这个 z 我们总能找到，我们将其称为
+
+194
+00:39:06,159 --> 00:39:09,039
+a detailed inverse, to be mass w.
+
+194
+00:39:06,159 --> 00:39:09,039
+一个详细的逆向方案，适用于大规模生产
+
+195
+00:39:09,039 --> 00:39:26,159
+For example, if w is 1, then z is a mass 1. If w is 2, then z is a mass 2.
+
+195
+00:39:09,039 --> 00:39:26,159
+例如，若 w 值为 1，则 z 代表质量 1；若 w 值为 2，则 z 代表质量 2。
+
+196
+00:39:28,480 --> 00:39:34,159
+We can always find this z to be a detailed inverse for a given w.
+
+196
+00:39:28,480 --> 00:39:34,159
+我们总能找到这样一个 z，它是给定 w 的一个详细的逆元。
+
+197
+00:39:39,039 --> 00:39:48,320
+Will we care about the modular inverse for the multiplication? This is our equation.
+
+197
+00:39:39,039 --> 00:39:48,320
+我们会关心乘法的模逆吗？这可是我们的方程式哦。
+
+198
+00:39:49,279 --> 00:39:58,639
+Now, we said that x is a modular inverse of a mod d if a times x mod d equals 1.
+
+198
+00:39:49,279 --> 00:39:58,639
+现在，我们说，如果 a 乘以 x 模 d 等于 1，那么 x 就是 a 模 d 的模逆。这样的表述更加自然易懂。
+
+199
+00:39:59,519 --> 00:40:05,519
+Here is a definition of a modular inverse for the multiplication.
+
+199
+00:39:59,519 --> 00:40:05,519
+这里是对乘法中模逆的定义（经过润色）。
+
+200
+00:40:05,519 --> 00:40:19,920
+x is denoted as a to the mass 1 mod b. So between a times x mod b equals 1, x is denoted to be
+
+200
+00:40:05,519 --> 00:40:19,920
+x 表示为 a 对 b 取模 1，即 a 乘以 x 对 b 取模等于 1 时，x 表示为
+
+201
+00:40:20,079 --> 00:40:34,079
+the multiplicative inverse of a mod b. So x is a modular inverse.
+
+201
+00:40:20,079 --> 00:40:34,079
+a 模 b 的乘法逆元，即 x 是模逆元。
+
+202
+00:40:34,319 --> 00:40:53,440
+So we have examples here. Because 3 times 5 is equal to 1 mod 7. 3 times 5 is 15.
+
+202
+00:40:34,319 --> 00:40:53,440
+这里有一些例子。因为 3 乘以 5 在模 7 的情况下余 1。3 乘以 5 等于 15。
+
+203
+00:40:55,119 --> 00:41:00,559
+So we say 3 is a modular inverse of 5 mod 7.
+
+203
+00:40:55,119 --> 00:41:00,559
+我们说 3 是 5 除以 7 的余数为 1，因此它是 5 模 7 的模逆元。
+
+204
+00:41:01,039 --> 00:41:12,000
+In other words, because this definition is 5 to the mass 1 times 5 mod 7 is 1.
+
+204
+00:41:01,039 --> 00:41:12,000
+换句话说，因为这个定义是 5 的 1 次方乘以 5 再对 7 取模等于 1。这样的表述更为自然易懂。
+
+205
+00:41:14,000 --> 00:41:20,000
+So this 5 mod 1 modular inverse of 5 equals what?
+
+205
+00:41:14,000 --> 00:41:20,000
+这 5 除以 1 的模逆数是多少？5 等于多少？
+
+206
+00:41:20,079 --> 00:41:20,719
+Equals what?
+
+206
+00:41:20,079 --> 00:41:20,719
+等于什么？
+
+207
+00:41:24,320 --> 00:41:30,239
+This is a mass 1 to the mass 1 mod 7 equals what?
+
+207
+00:41:24,320 --> 00:41:30,239
+这是质量 1 除以 7 的余数是多少？
+
+208
+00:41:33,360 --> 00:41:35,679
+So which number is a modular inverse of 5?
+
+208
+00:41:33,360 --> 00:41:35,679
+那么哪个数是 5 的模逆数？
+
+209
+00:41:38,639 --> 00:41:39,679
+Which number?
+
+209
+00:41:38,639 --> 00:41:39,679
+哪个数字？
+
+210
+00:41:39,679 --> 00:41:52,079
+The definition is 5, modular inverse of 5 is 5 mass 1 times 5 mod 7 should be 1.
+
+210
+00:41:39,679 --> 00:41:52,079
+定义是 5，5 的模逆数是 5，5 乘以 1 再模 7 的结果应该是 1。
+
+211
+00:41:52,799 --> 00:42:05,359
+And we have 3 times 5 mod 7 is 1. So this modular inverse of 5 equals 3.
+
+211
+00:41:52,799 --> 00:42:05,359
+我们知道 3 乘以 5 模 7 的结果是 1，因此 5 的模逆元就是 3。
+
+212
+00:42:10,399 --> 00:42:25,919
+And similarly, because 7 times 7 is equal to 1 mod 16. So this 7 represents modular inverse of 7.
+
+212
+00:42:10,399 --> 00:42:25,919
+同样地，因为 7 乘以 7 等于 1 模 16。因此，这个 7 表示 7 的模逆元。
+
+213
+00:42:31,440 --> 00:42:36,719
+So this 7 to the mass 1 mod 16 is 7.
+
+213
+00:42:31,440 --> 00:42:36,719
+因此，1 对 16 取模后，7 除以这个结果等于 7。
+
+214
+00:42:40,000 --> 00:42:53,199
+However, there is no modular inverse for 8 mod 14. So that means we don't have this 8 mass 1,
+
+214
+00:42:40,000 --> 00:42:53,199
+然而，8 除以 14 没有模逆元，所以这意味着我们无法表示 8 的质量为 1，
+
+215
+00:42:54,159 --> 00:43:02,000
+this value such that 8 mass 1 times 8 is equal to 1 mod 14.
+
+215
+00:42:54,159 --> 00:43:02,000
+这个值满足 8 乘以 1 等于 1 模 14（使翻译更自然易懂）。
+
+216
+00:43:04,799 --> 00:43:07,519
+No such modular inverse.
+
+216
+00:43:04,799 --> 00:43:07,519
+没有这样的模逆（更自然和易懂的翻译）
+
+217
+00:43:10,559 --> 00:43:19,359
+No such data such that the demand times 8 mod 14 equals 1.
+
+217
+00:43:10,559 --> 00:43:19,359
+没有这样的数据，使得需求量乘以 8 后对 14 取模的结果为 1。
+
+218
+00:43:21,279 --> 00:43:28,559
+In fact, we have this theorem. There exists a modular inverse for A mod B
+
+218
+00:43:21,279 --> 00:43:28,559
+事实上，我们有一个定理：对于 A 模 B，确实存在一个逆元。
+
+219
+00:43:28,559 --> 00:43:31,839
+even though only if A is relative prime to B.
+
+219
+00:43:28,559 --> 00:43:31,839
+即使只有当 A 与 B 互质时，才满足条件。
+
+220
+00:43:31,840 --> 00:43:40,000
+So that means we have this A to the mass 1 modular inverse of A. So A times A mass 1 is
+
+220
+00:43:31,840 --> 00:43:40,000
+这意味着我们得到了 A 关于质量 1 的模逆，即 A 乘以 A 质量 1 等于
+
+221
+00:43:40,000 --> 00:43:50,800
+congruent to 1 mod B. And this implies GCD AB must be 1. So in this example, because the GCD
+
+221
+00:43:40,000 --> 00:43:50,800
+congruent to 1 mod B. And this implies GCD AB must be 1. So in this example, because the GCD
+
+222
+00:43:50,880 --> 00:43:56,960
+So in this example, because the GCD 814 is what?
+
+222
+00:43:50,880 --> 00:43:56,960
+在这个例子中，GCD 814 是什么？
+
+223
+00:43:59,600 --> 00:44:06,400
+The greatest common divisor of 8 and 14 is what? 8 and 14 is what?
+
+223
+00:43:59,600 --> 00:44:06,400
+8 和 14 的最大公约数是多少？8 和 14 指的是什么？
+
+224
+00:44:07,039 --> 00:44:22,240
+2, right? It is not 1. The not relative prime. So we don't have the 8 to the mass 1.
+
+224
+00:44:07,039 --> 00:44:22,240
+2，对吧？它不是 1。它和 1 不互质。因此，我们无法用 8 乘以 1。
+
+225
+00:44:23,119 --> 00:44:24,079
+Not 1.
+
+225
+00:44:23,119 --> 00:44:24,079
+不是 1（更自然的翻译）
+
+226
+00:44:37,919 --> 00:44:46,079
+So that means we don't have the modular inverse for 8 mod 14.
+
+226
+00:44:37,919 --> 00:44:46,079
+这就是说，我们还没有找到 8 除以 14 的模逆元。
+
+227
+00:44:52,239 --> 00:45:06,799
+Well, the modular inverse is critical. The reason is because in the RSA algorithm,
+
+227
+00:44:52,239 --> 00:45:06,799
+好吧，模逆是至关重要的。这是因为 RSA 算法中，
+
+228
+00:45:09,279 --> 00:45:16,239
+we have public key, we have private key, E and D, right? So E is the public key
+
+228
+00:45:09,279 --> 00:45:16,239
+我们有公钥和私钥，还有 E 和 D，对吧？所以 E 是公钥
+
+229
+00:45:18,479 --> 00:45:20,079
+and D is the private key.
+
+229
+00:45:18,479 --> 00:45:20,079
+并且 D 是私钥。
+
+230
+00:45:23,199 --> 00:45:35,359
+To get public key, we require that E times D is congruent to 1 mod some value. And this value is 5m.
+
+230
+00:45:23,199 --> 00:45:35,359
+获取公钥时，我们需要 E 乘以 D 与某个值同余 1。这个值是 5m。为了使表达更自然易懂，可以改为：“获取公钥需要满足 E 乘以 D 与某个值同余 1 的条件，这个值是 5m。”
+
+231
+00:45:36,399 --> 00:45:49,359
+You see? E times D. So E is the modular inverse of E mod 5m. This public key and private key,
+
+231
+00:45:36,399 --> 00:45:49,359
+你看？E 乘以 D，所以 E 是 5m 模下的模逆元。这个公钥和私钥，
+
+232
+00:45:50,320 --> 00:45:54,960
+that relationship is a modular inverse relationship.
+
+232
+00:45:50,320 --> 00:45:54,960
+那种关系是模逆关系。
+
+233
+00:45:57,680 --> 00:46:04,800
+In this public key scheme, in this RSA algorithm, that's the reason we need to
+
+233
+00:45:57,680 --> 00:46:04,800
+在这个公钥方案和 RSA 算法中，这正是我们之所以需要这样做的原因
+
+234
+00:46:05,120 --> 00:46:08,160
+amplify the modular inverse scheme.
+
+234
+00:46:05,120 --> 00:46:08,160
+放大模逆方案（优化版）。
+
+235
+00:46:14,800 --> 00:46:23,280
+So in RSA algorithm, we need to decide the public key, even the public key.
+
+235
+00:46:14,800 --> 00:46:23,280
+在 RSA 算法中，我们需要确定公钥，甚至包括公钥。
+
+236
+00:46:23,280 --> 00:46:33,760
+The relationship should satisfy E times D with congruent to 1 mod 5m.
+
+236
+00:46:23,280 --> 00:46:33,760
+该关系应满足 E 乘以 D，与 1 模 5m 同余。
+
+237
+00:46:54,000 --> 00:47:04,240
+Okay, so now we want to have a formal way to calculate the modular inverse of A mod n
+
+237
+00:46:54,000 --> 00:47:04,240
+好的，现在我们想要有一种正式的方式来计算 A 对 n 取模的模逆
+
+238
+00:47:04,240 --> 00:47:12,240
+according to the calculation. To do the calculation, we can resort to this phase of identity.
+
+238
+00:47:04,240 --> 00:47:12,240
+根据计算结果。为了进行计算，我们可以借助这个身份阶段。
+
+239
+00:47:12,799 --> 00:47:21,119
+So phase of identity states that for any given integer A and B,
+
+239
+00:47:12,799 --> 00:47:21,119
+因此，身份状态阶段指出，对于任何给定的整数 A 和 B，…
+
+240
+00:47:22,959 --> 00:47:33,039
+we can find such integer x and y such that A times x plus
+
+240
+00:47:22,959 --> 00:47:33,039
+我们可以找到这样的整数 x 和 y，使得 A 乘以 x 加上
+
+241
+00:47:33,039 --> 00:47:46,400
+A times x plus B times y equals their GCD value, GCD AB. So this is a phase of identity
+
+241
+00:47:33,039 --> 00:47:46,400
+A 乘以 x 加上 B 乘以 y 等于它们的最大公约数，即 GCD(AB)。因此，这是身份阶段
+
+242
+00:47:47,199 --> 00:47:57,759
+for any given integers and B. There exist x and y, integers x and y to satisfy this equation.
+
+242
+00:47:47,199 --> 00:47:57,759
+对于任意整数和 B，总存在整数 x 和 y，它们满足该方程。
+
+243
+00:47:58,640 --> 00:48:05,600
+Okay, so this phase of identity tells you that if N, B are relative to 1,
+
+243
+00:47:58,640 --> 00:48:05,600
+好吧，所以这个身份阶段告诉你，如果 N 和 B 是相对于 1 而言的，
+
+244
+00:48:05,839 --> 00:48:09,920
+or relative to 1, so if
+
+244
+00:48:05,839 --> 00:48:09,920
+相对于 1，因此如果
+
+245
+00:48:12,400 --> 00:48:22,559
+GCD A and B equals 1, so AB relatively to 1,
+
+245
+00:48:12,400 --> 00:48:22,559
+A 和 B 的最大公约数为 1，因此 AB 相对于 1，
+
+246
+00:48:25,599 --> 00:48:33,440
+then we are able to calculate the A's modular inverse mod B.
+
+246
+00:48:25,599 --> 00:48:33,440
+我们可以计算出 A 对 B 的模逆
+
+247
+00:48:35,599 --> 00:48:44,000
+So what does it mean? If GCD AB equals 1, we can find such A x plus B y equals 1.
+
+247
+00:48:35,599 --> 00:48:44,000
+那这个是什么意思呢？如果 AB 的最大公约数是 1，我们就能找到这样的 A 乘以 x 加上 B 乘以 y 等于 1。这样的表达更自然、易懂。
+
+248
+00:48:52,079 --> 00:49:02,960
+Well, at both sides, we have mod, for example, mod B. If A x plus B y mod B,
+
+248
+00:48:52,079 --> 00:49:02,960
+好吧，在两边我们都有模运算，比如模 B。如果 A 乘以 B 加上 B 乘以 y 再对 B 取模，
+
+249
+00:49:03,679 --> 00:49:12,559
+this equals 1 mod B. For such, we take the mod operation. So this implies your B times 1,
+
+249
+00:49:03,679 --> 00:49:12,559
+这等于 1 对 B 取模。因此，我们进行取模运算。这意味着 B 乘以 1，
+
+250
+00:49:13,360 --> 00:49:28,639
+this multiple B, this part is 0. Okay, so that means, well, the left-hand side equals A x mod B
+
+250
+00:49:13,360 --> 00:49:28,639
+这是多个 B，这部分代表 0。所以，左边等于 A x mod B
+
+251
+00:49:28,639 --> 00:49:50,799
+is 1. So this implies A x is relative to 1 mod B. So this x is what? x is the modular inverse of A.
+
+251
+00:49:28,639 --> 00:49:50,799
+因此，这意味着 A x 相对于 1 模 B。那么这个 x 是什么？它是 A 的模逆元。这样的表述更符合中文的表达习惯。
+
+252
+00:49:51,280 --> 00:50:00,960
+So this x equals A to the mod 1 mod B.
+
+252
+00:49:51,280 --> 00:50:00,960
+因此，这个 x 等于 A 除以 B 的余数。
+
+253
+00:50:03,440 --> 00:50:12,240
+x is the modular inverse of A mod B in this case. According to this phase of identity,
+
+253
+00:50:03,440 --> 00:50:12,240
+在这个例子中，x 是 A 模 B 的模逆。根据这一身份阶段，
+
+254
+00:50:12,959 --> 00:50:26,639
+if A and B are with fun, then we can find this x and y. So x, we call it to be the modular inverse of A mod D.
+
+254
+00:50:12,959 --> 00:50:26,639
+如果 A 和 B 在一起玩得开心，那么我们就能找到这个 x 和 y。因此，我们将 x 称为 A 模 D 的模逆。
+
+255
+00:50:28,079 --> 00:50:33,439
+We find the modular inverse of A successfully in this case.
+
+255
+00:50:28,079 --> 00:50:33,439
+我们成功找到了 A 的模逆元，表述更为自然。
+
+256
+00:50:33,440 --> 00:50:46,800
+And similarly, if at both sides with mod A, so this implies A x plus B y,
+
+256
+00:50:33,440 --> 00:50:46,800
+如果在两边都除以模 A，这就意味着 A 乘以 x 加上 B 乘以 y，表达得更为自然
+
+257
+00:50:48,400 --> 00:50:57,760
+we take the mod A operation. So this equals 1 mod A, and this A times x mod A is 0.
+
+257
+00:50:48,400 --> 00:50:57,760
+我们进行模 A 运算。所以，这等于 1 除以 A 的余数，而 A 乘以 x 除以 A 的余数是 0。
+
+258
+00:50:58,720 --> 00:51:14,640
+So B y mod A equals 1. In other words, B y is coming to 1 mod A. So this y represents
+
+258
+00:50:58,720 --> 00:51:14,640
+因此，B y 模 A 等于 1，换句话说，B y 等于 1 模 A。这个 y 表示
+
+259
+00:51:16,480 --> 00:51:21,440
+modular inverse of B when it has a mod A operation.
+
+259
+00:51:16,480 --> 00:51:21,440
+B 在模 A 运算下的模逆元（更自然、更易理解的翻译）
+
+260
+00:51:27,760 --> 00:51:41,360
+So here, this is an implication of the modular inverse for this parameter A x and B y.
+
+260
+00:51:27,760 --> 00:51:41,360
+因此，这里就是参数 A x 和 B y 的模逆的推论。这使得表达更加自然易懂。
+
+261
+00:51:45,520 --> 00:51:51,840
+So this is an implication for this phase of identity in this equation.
+
+261
+00:51:45,520 --> 00:51:51,840
+因此，这是对这个方程中这一阶段身份的一个推论。这个推论更加自然和易于理解。
+
+262
+00:51:52,640 --> 00:52:02,559
+Because the result is gcd value, how to calculate gcd value? We can use the Euclidean algorithm.
+
+262
+00:51:52,640 --> 00:52:02,559
+因为结果是最大公约数，那么如何计算最大公约数呢？我们可以使用欧几里得算法。这样的表述更加自然易懂。
+
+263
+00:52:05,360 --> 00:52:14,720
+Euclidean algorithm can help you to calculate the gcd value. And we can use extended Euclidean
+
+263
+00:52:05,360 --> 00:52:14,720
+欧几里得算法能帮助您计算最大公约数值。此外，我们还可以使用扩展欧几里得算法
+
+264
+00:52:14,719 --> 00:52:30,480
+algorithm to solve the initial equation to find x1. Once you find x, you find the modular inverse
+
+264
+00:52:14,719 --> 00:52:30,480
+算法用于求解初始方程以找到 x1。找到 x 之后，再求其模逆，使翻译更加自然易懂
+
+265
+00:52:30,480 --> 00:52:43,199
+of A. So x is here, y is here. But we can use the extended Euclidean algorithm to find the modular
+
+265
+00:52:30,480 --> 00:52:43,199
+在这里，x 位于此处，y 位于此处。然而，我们可以利用扩展欧几里得算法来求解模
+
+266
+00:52:43,199 --> 00:52:54,719
+inverse of A, that's x. Modular inverse of B, that's y. Now let's look at how we can
+
+266
+00:52:43,199 --> 00:52:54,719
+A 的逆元是 x，B 的逆元是 y。现在我们来探讨一下
+
+267
+00:52:55,759 --> 00:53:04,879
+use the extended Euclidean algorithm to find the modular inverse of 911 mod 999.
+
+267
+00:52:55,759 --> 00:53:04,879
+使用扩展欧几里得算法求解 911 模 999 的模逆数
+
+268
+00:53:05,200 --> 00:53:18,079
+So we won't find the modular inverse of 911 mod 999 according to the Bezos identity. If this one is A,
+
+268
+00:53:05,200 --> 00:53:18,079
+因此，根据贝佐斯公式，我们无法找到 911 除以 999 的模逆元。如果这个数是 A，
+
+269
+00:53:19,840 --> 00:53:32,720
+this one is B. So we have A x plus B y equals gcd A B. Is that right?
+
+269
+00:53:19,840 --> 00:53:32,720
+这一个是 B，所以 A 乘以 x 加上 B 乘以 y 等于 A 和 B 的最大公约数，这个说法正确。
+
+270
+00:53:35,200 --> 00:53:42,720
+A is 911, B is 999. First we need to guarantee that this gcd
+
+270
+00:53:35,200 --> 00:53:42,720
+A 是 911，B 是 999。首先，我们必须保证这个 gcd
+
+271
+00:53:42,719 --> 00:54:02,959
+911 999, it is 0, or it is 1. If it is 1, we can find some x. So x will be modular inverse of A
+
+271
+00:53:42,719 --> 00:54:02,959
+911 999，要么是 0，要么是 1。如果是 1，我们就能找到一些 x。这时，x 就是 A 的模逆元
+
+272
+00:54:03,920 --> 00:54:09,440
+mod B according to the Bezos identity.
+
+272
+00:54:03,920 --> 00:54:09,440
+根据贝索斯身份的模块 B（经过润色）。
+
+273
+00:54:13,119 --> 00:54:20,639
+So here you can see we satisfied this equation. We say x is a modular inverse of A mod B.
+
+273
+00:54:13,119 --> 00:54:20,639
+这里您可以看到我们成功解决了这个方程。我们称 x 为 A 模 B 的模逆元。
+
+274
+00:54:20,719 --> 00:54:34,000
+That's exactly. x is a modular inverse of A mod B. A is here, B is here. If their gcd value is 1.
+
+274
+00:54:20,719 --> 00:54:34,000
+那正是。x 是 A 模 B 的模逆元。A 在这里，B 在这里。如果它们的最大公约数为 1。
+
+275
+00:54:36,639 --> 00:54:41,599
+So now we look at how we can calculate this modular inverse.
+
+275
+00:54:36,639 --> 00:54:41,599
+现在我们来探讨如何计算这个模逆，使翻译更加自然易懂。
+
+276
+00:54:41,599 --> 00:54:58,480
+So the first step is we still need to guarantee that the gcd A B is 1. We apply the Euclidean
+
+276
+00:54:41,599 --> 00:54:58,480
+因此，第一步是确保 A 和 B 的最大公约数为 1。我们采用欧几里得算法。
+
+277
+00:54:58,480 --> 00:55:07,199
+algorithm to guarantee that this is true. So from the Euclidean algorithm, this is A, this is B,
+
+277
+00:54:58,480 --> 00:55:07,199
+算法确保这一点是真的。因此，根据欧几里得算法，这是 A，这是 B，
+
+278
+00:55:07,199 --> 00:55:17,199
+this is R, this is B, this is R, this is R1, this is R, this is R1, R2, so on and so forth.
+
+278
+00:55:07,199 --> 00:55:17,199
+这是 R，这是 B，这是 R，这是 R1，这是 R，这是 R1，R2，等等。
+
+279
+00:55:18,000 --> 00:55:30,159
+So this is R2, this is R1, this is R2, R3, so this is R2, this is R1,
+
+279
+00:55:18,000 --> 00:55:30,159
+这是 R2，这是 R1，这是 R2，这是 R3，这是 R2，这是 R1，
+
+280
+00:55:30,159 --> 00:55:44,239
+this is R2, this is R3, this is R4, so R4 will be the result.
+
+280
+00:55:30,159 --> 00:55:44,239
+这是 R2，这是 R3，这是 R4，因此结果为 R4。
+
+281
+00:55:46,480 --> 00:55:53,279
+We finally have 1 to be the output of this gcd value of 999 and then 911.
+
+281
+00:55:46,480 --> 00:55:53,279
+我们终于得到了 999 和 911 的最大公约数，其值为 1。
+
+282
+00:55:54,080 --> 00:56:01,040
+So because their gcd value is 1, that means we can find the corresponding x and y.
+
+282
+00:55:54,080 --> 00:56:01,040
+因为它们的最大公约数为 1，所以我们可以找到相应的 x 和 y 值。
+
+283
+00:56:02,080 --> 00:56:06,800
+How do we find this x and y? So you see, we go to the
+
+283
+00:56:02,080 --> 00:56:06,800
+我们如何找到这个 x 和 y？你看，我们去找一下
+
+284
+00:56:06,800 --> 00:56:18,160
+reverse one. We trace it back. From this one here, one can be represented as R2 minus 5 times R3.
+
+284
+00:56:06,800 --> 00:56:18,160
+反转一下，我们追溯它的来源。从这一步开始，我们可以将“一个”表示为 R2 减去 5 倍的 R3。
+
+285
+00:56:18,879 --> 00:56:31,519
+26 minus 5 times 5. So this is R2, this is R3. And R3,
+
+285
+00:56:18,879 --> 00:56:31,519
+26 减去 5 再乘以 5，这就是 R2，那是 R3。还有 R3，
+
+286
+00:56:33,119 --> 00:56:45,920
+from the second row, R3 equals 31 minus 1 times 26 from this row.
+
+286
+00:56:33,119 --> 00:56:45,920
+从第二行起，R3 等于 31 减 1 再乘以 26，从这一行开始。
+
+287
+00:56:45,920 --> 00:56:57,840
+So we can substitute 5 from the second row. So then, one can be represented as, this is R2,
+
+287
+00:56:45,920 --> 00:56:57,840
+因此我们可以将第二行的 5 替换掉。那么，1 可以表示为，这就是 R2，
+
+288
+00:56:59,039 --> 00:57:12,159
+some value of R2 with R1. Because R3 can be represented as, this is R1, this is R2.
+
+288
+00:56:59,039 --> 00:57:12,159
+因为 R3 可以表示为 R1 和 R2，所以 R2 的某个值与 R1 相关。
+
+289
+00:57:12,319 --> 00:57:18,319
+R3 can be represented as some combination of R1, R2.
+
+289
+00:57:12,319 --> 00:57:18,319
+R3 可以表示为 R1 和 R2 的某种组合，表达更为自然。
+
+290
+00:57:19,679 --> 00:57:29,679
+So 1 equals some beta times R1 times R2. And R2, we can finally, we can, according to
+
+290
+00:57:19,679 --> 00:57:29,679
+因此 1 等于某些 beta 乘以 R1 和 R2 的乘积。而 R2，我们最终可以，根据
+
+291
+00:57:30,319 --> 00:57:41,359
+this row, R2 can be represented as R minus R1. So this 26 can be represented as R
+
+291
+00:57:30,319 --> 00:57:41,359
+这一行，R2 可以表示为 R 减去 R1。因此，这个 26 可以用 R 来表示，表达更为自然。
+
+292
+00:57:42,639 --> 00:57:52,879
+minus 2 times R1. So finally, one can be represented as R times R something
+
+292
+00:57:42,639 --> 00:57:52,879
+减去 R1 的两倍，最终可以表示为 R 乘以 R 的某个量
+
+293
+00:57:54,159 --> 00:58:04,319
+plus or minus something times R1. So 31 can be represented as, so one equals,
+
+293
+00:57:54,159 --> 00:58:04,319
+加或减某个数乘以 R1，因此 31 可以表示为，也就是说一个等于，这样的表述更为自然易懂。
+
+294
+00:58:04,320 --> 00:58:15,440
+this R1 can be represented as, number one is B, and it is R. So finally, one can be represented as
+
+294
+00:58:04,320 --> 00:58:15,440
+这个 R1 可以表示为，数字一对应 B，它是 R。因此，一最终可以表示为
+
+295
+00:58:16,559 --> 00:58:25,840
+B plus R, some combination. And R can be represented as A, B, some combination.
+
+295
+00:58:16,559 --> 00:58:25,840
+B 加 R，表示为 A、B 或其他某种组合。
+
+296
+00:58:26,559 --> 00:58:40,559
+So R comes from here. So R, this 1 equals this B, some number times this A, this B.
+
+296
+00:58:26,559 --> 00:58:40,559
+因此 R 来源于这里。所以，这个 1 等于这个 B，某个数乘以这个 A，这个 B。这样的表述更为自然易懂。
+
+297
+00:58:41,280 --> 00:58:54,160
+And finally, one can be represented as this A, this is X, this is B, this is 1.
+
+297
+00:58:41,280 --> 00:58:54,160
+最后，一个可以表示为这样的 A，这是 X，这是 B，这是 1。这样的表述更为自然易懂。
+
+298
+00:58:55,840 --> 00:59:08,880
+So finally, we have 1, we are putting the betas, and then A times X because B times 1 equals 1.
+
+298
+00:58:55,840 --> 00:59:08,880
+最后终于有了 1，我们正在放置测试版，然后是 A 乘以 X，因为 B 乘以 1 等于 1。这句话更自然、更易于理解。
+
+299
+00:59:10,160 --> 00:59:20,400
+So in this example, because GCD value, so A is 999 times 176.
+
+299
+00:59:10,160 --> 00:59:20,400
+在这个例子中，由于最大公约数，因此 A 等于 999 乘以 176。
+
+300
+00:59:20,400 --> 00:59:43,760
+So this is A, this is X, plus B, 911 times minus 193. This equals GCD, A and B, is 1.
+
+300
+00:59:20,400 --> 00:59:43,760
+这就是 A，这是 X，加上 B，911 次方减去 193。这等于 A 和 B 的最大公约数，为 1。
+
+301
+00:59:43,920 --> 01:00:02,080
+So this is, X is here, A is here, B is here, Y is here, then here, and this we will trace back.
+
+301
+00:59:43,920 --> 01:00:02,080
+这就是，X 在这里，A 在这里，B 在这里，Y 在这里，然后在这里，我们将会追溯回去。
+
+302
+01:00:02,080 --> 01:00:10,080
+This tracing back procedure is called the extended Euclidean algorithm.
+
+302
+01:00:02,080 --> 01:00:10,080
+这种回溯过程称作扩展欧几里得算法，翻译得更加自然易懂。
+
+303
+01:00:14,640 --> 01:00:29,120
+So of course, X represents X equals A to the minus 1, the module inverse of A mod B.
+
+303
+01:00:14,640 --> 01:00:29,120
+当然，X 代表 X 等于 A 的-1 次方，即 A 模 B 的逆元。当然，X 代表 X 等于 A 的-1 次方，即 A 模 B 的逆元。
+
+304
+01:00:33,280 --> 01:00:34,720
+So X is,
+
+304
+01:00:33,280 --> 01:00:34,720
+因此 X 是，
+
+305
+01:00:34,719 --> 01:00:51,039
+sorry, A is 911, right? So here is, change it, A is here, X is here,
+
+305
+01:00:34,719 --> 01:00:51,039
+对不起，A 是 911，对吧？所以这里要改一下，A 在这里，X 在这里，
+
+306
+01:00:51,039 --> 01:01:09,599
+B is here, Y is here. So X is equals mass 193 mod 999.
+
+306
+01:00:51,039 --> 01:01:09,599
+B 和 Y 都在这里，因此 X 的值是 193 除以 999 的余数。
+
+307
+01:01:09,599 --> 01:01:16,159
+So we take the positive value, the positive should be,
+
+307
+01:01:09,599 --> 01:01:16,159
+因此我们取正值，正数应该是，这样的表达更为自然易懂
+
+308
+01:01:16,159 --> 01:01:34,719
+R, X should be 806.
+
+308
+01:01:16,159 --> 01:01:34,719
+R, X 的值应该是 806。
+
+309
+01:01:46,159 --> 01:02:00,000
+So in this example, the module inverse of 911, it is 806.
+
+309
+01:01:46,159 --> 01:02:00,000
+在这个例子中，911 的逆元是 806。
+
+310
+01:02:05,679 --> 01:02:12,559
+Because 806 times 911 mod 999, it is 1.
+
+310
+01:02:05,679 --> 01:02:12,559
+因为 806 乘以 911 除以 999 的余数是 1。
+
+311
+01:02:16,960 --> 01:02:30,879
+The result of 806 times 911 is coming to 1 mod 999.
+
+311
+01:02:16,960 --> 01:02:30,879
+806 乘以 911 的结果对 999 取模为 1。
+
+312
+01:02:36,239 --> 01:02:40,799
+So the basis of this equation implies this equation.
+
+312
+01:02:36,239 --> 01:02:40,799
+因此，这个等式的基础表明了这一点。
+
+313
+01:02:46,159 --> 01:03:03,599
+So here, this is here, this part is here, change it.
+
+313
+01:02:46,159 --> 01:03:03,599
+这里，这就是这里，这部分在这里，需要修改一下。
+
+314
+01:03:03,599 --> 01:03:19,039
+So A is here, this part is X, E is here, this part is 1.
+
+314
+01:03:03,599 --> 01:03:19,039
+因此 A 在这里，这部分对应 X，E 在这里，这部分对应 1。
+
+315
+01:03:33,599 --> 01:03:59,039
+This is A, this is B, this is X, 911 is B, sorry, this is 911 is X, so this is X.
+
+315
+01:03:33,599 --> 01:03:59,039
+这是 A，这是 B，这是 X，911 对应 B，抱歉，911 对应 X，因此这是 X。
+
+316
+01:04:03,599 --> 01:04:23,039
+So finally, we make it to be correct on the equation.
+
+316
+01:04:03,599 --> 01:04:23,039
+终于，我们在等式上做到了正确，表达得更加自然易懂。
+
+317
+01:04:34,079 --> 01:04:42,000
+So the second page actually shows, because according to the basis equation, this GCD
+
+317
+01:04:34,079 --> 01:04:42,000
+因此，实际上第二页展示的内容是，根据基础方程，这个最大公约数
+
+318
+01:04:45,119 --> 01:04:58,079
+A is 911, B is here, can be represented as, this is A, this is X, and this B, this is Y.
+
+318
+01:04:45,119 --> 01:04:58,079
+A 是 911，B 在此处，可以表示为：这是 A，这是 X，这是 B，这是 Y。
+
+319
+01:04:59,039 --> 01:05:08,960
+So we have 806 is a module inverse of A mod B, this is the module inverse.
+
+319
+01:04:59,039 --> 01:05:08,960
+因此，806 是 A 模 B 的模逆元，这即是模逆元的定义。
+
+320
+01:05:11,440 --> 01:05:13,440
+In this example, what's the B mod 1?
+
+320
+01:05:11,440 --> 01:05:13,440
+在这个例子中，B 除以 1 的余数是多少？
+
+321
+01:05:15,599 --> 01:05:16,639
+B mod 1 is what?
+
+321
+01:05:15,599 --> 01:05:16,639
+B 除以 1 等于什么？
+
+322
+01:05:16,639 --> 01:05:25,839
+B mod A, B mod 1 is what?
+
+322
+01:05:16,639 --> 01:05:25,839
+B 对 A 取模，B 对 1 取模是什么意思？
+
+323
+01:05:29,119 --> 01:05:29,839
+Is what, right?
+
+323
+01:05:29,119 --> 01:05:29,839
+是什么来着，对吧？
+
+324
+01:05:34,559 --> 01:05:45,279
+176 is B mod 1, because B mod 1 times B mod A equals what?
+
+324
+01:05:34,559 --> 01:05:45,279
+176 除以 1 的余数是 B，因为 B 除以 1 的余数乘以 B 除以 A 的余数等于多少？
+
+325
+01:05:46,639 --> 01:06:03,839
+Okay, previously, we have, in exercise one, we have the GCD 93, 16, equals what, right?
+
+325
+01:05:46,639 --> 01:06:03,839
+好的，之前在第一题中，我们计算了 93 和 16 的最大公约数，等于什么，对吗？
+
+326
+01:06:04,480 --> 01:06:10,960
+So this is how we can find the module inverse of 16, modular 93.
+
+326
+01:06:04,480 --> 01:06:10,960
+这就是这样，我们可以找到 16 在模 93 下的逆元。
+
+327
+01:06:11,920 --> 01:06:15,760
+So can you use 10 minutes to solve this result?
+
+327
+01:06:11,920 --> 01:06:15,760
+你能花 10 分钟解决这个问题吗？
+
+328
+01:06:17,039 --> 01:06:22,159
+Okay, this has a break, 10 minutes. Okay, after break, we continue.
+
+328
+01:06:17,039 --> 01:06:22,159
+好的，这里有休息时间，10 分钟。好的，休息过后我们再继续。
+

@@ -1,0 +1,1312 @@
+1
+00:00:00,000 --> 00:00:20,600
+Okay. Good evening, everyone. Today is our lecture two. So, lecture two, we talked about
+
+2
+00:00:20,600 --> 00:00:33,920
+the number theory. Totally, we have four parts for today's lecture. The part one is about
+
+3
+00:00:33,920 --> 00:00:51,160
+the divisibility, and from divisibility, we'll talk about the Euclidean algorithm. So, this
+
+4
+00:00:51,159 --> 00:01:05,039
+one is GCD, how we calculate the GCD value. First, we look at the divisibility. This concept
+
+5
+00:01:05,039 --> 00:01:16,079
+says that we have a long zero b, so b divides a evenly. That means if a can be represented
+
+6
+00:01:16,079 --> 00:01:24,879
+as n times b for some n, where a, b, and n are both integers, so one example is just like
+
+7
+00:01:24,879 --> 00:01:52,919
+a 3 divides 6. So, here a is 6, b is 3. So, 6 equals 2 times 3, right? So, n is 2. In
+
+8
+00:01:52,920 --> 00:01:59,920
+this equation, we can see there is no remainder on division. So, we can represent this relation
+
+9
+00:01:59,920 --> 00:02:10,120
+to be b divides a, b divides a evenly, and we say that b is a divisor or a factor of a, and a is
+
+10
+00:02:10,120 --> 00:02:22,719
+divisible by b. So, 6 is a factor of 3, a factor of 6. So, 6 is divisible by 3. So, according to
+
+11
+00:02:22,719 --> 00:02:32,280
+this definition, we first look at the project dividers of 24. So, the divider of 24, we have
+
+12
+00:02:32,280 --> 00:02:51,639
+what? 1, 2, 3, 4, 6, 8, 12, 24. So, we have all these dividers of 24. So, the next example
+
+13
+00:02:51,639 --> 00:03:04,799
+is, minus 5 is a divider of 30, yes or no? Minus 5 divides 60, or 30, yes or no? Yes, right?
+
+14
+00:03:04,800 --> 00:03:18,719
+Because 30 can be represented as minus 5 times minus 6. So, we say yes. 17 is a divider of 0, yes or no?
+
+15
+00:03:20,960 --> 00:03:32,320
+Yes, right? Because 0 can be represented as 17 times 0. So, this b, this a, b cannot be 0.
+
+16
+00:03:32,319 --> 00:03:49,799
+For division, we have this division algorithm. So, this algorithm says that for any positive
+
+17
+00:03:49,799 --> 00:03:58,799
+integer n and any non-negative integer a, if we divide a by n, we can get an integer
+
+18
+00:03:59,439 --> 00:04:09,840
+quotient q and an integer remainder r. So, a can be represented as q times n plus r,
+
+19
+00:04:10,560 --> 00:04:16,879
+q is quotient, and r is a remainder. And r is a remainder, that means r should be
+
+20
+00:04:17,600 --> 00:04:26,000
+bigger than or equal to 0, but smaller than n. So, we divide a by n, and q is the quotient,
+
+21
+00:04:26,639 --> 00:04:36,720
+and this is the flow. Flow of a divides n. So, flow means the largest integer
+
+22
+00:04:37,360 --> 00:04:44,399
+that is smaller than or equal to the given data. For example, 3.3, the flow is 3,
+
+23
+00:04:46,079 --> 00:04:55,600
+the flow of 3 is 3. The largest integer that's smaller than or equal to the given data. So,
+
+24
+00:04:55,600 --> 00:05:06,879
+q is a quotient. And also, this r remainder, we can represent this one as a mod n, a mod n,
+
+25
+00:05:07,760 --> 00:05:16,879
+the remainder will be the result. And also, we use this symbol to represent the mod
+
+26
+00:05:16,959 --> 00:05:20,560
+operation to get the remainder to be the result.
+
+27
+00:05:23,600 --> 00:05:32,959
+So, to support that, we have a equals q times n plus r. So, this data is a, and in this x-axis,
+
+28
+00:05:32,959 --> 00:05:41,519
+you can see we have q times n, and plus this part, this distance to be r. So, one example is,
+
+29
+00:05:41,519 --> 00:05:54,959
+suppose a is 70, and n is 15. This is n, and this is the quotient to be 4, and 10 will be the
+
+30
+00:05:54,959 --> 00:06:03,919
+remainder, r. So, this is the relationship, quite easy. Okay, based on the division,
+
+31
+00:06:03,919 --> 00:06:11,359
+we look at this Euclidean algorithm, and this one is one of the basic techniques of number theory,
+
+32
+00:06:12,000 --> 00:06:19,520
+and according to this algorithm, we are able to determine the greatest common divider of the two
+
+33
+00:06:19,520 --> 00:06:30,480
+positive integers. So, first, we look at the order of greatest common divider, GCD value.
+
+34
+00:06:30,480 --> 00:06:41,200
+Okay, the greatest common divider of a and b, that's GCD a, b, e, is the largest integer
+
+35
+00:06:41,200 --> 00:06:53,120
+that divides both a and b. For example, GCD value of 0 and 0 will be what? 0, yeah, by default,
+
+36
+00:06:53,120 --> 00:07:04,639
+we set it to be 0. GCD a and 0 will be what? a. So, suppose if a can be negative, so we set to be
+
+37
+00:07:04,639 --> 00:07:16,560
+absolute value of a, a is an integer, right? GCD value a and b equals what? Can you imagine what's
+
+38
+00:07:16,879 --> 00:07:30,319
+going to be? It's going to be too complicated. So, this equals GCD
+
+39
+00:07:31,439 --> 00:07:41,040
+e a, right? The share is the same GCD value. Okay. So, how about the last one, GCD a times n,
+
+40
+00:07:41,040 --> 00:07:52,480
+and a will be what? a. To be more accurate, it is the absolute value of a. So, an equivalent
+
+41
+00:07:52,480 --> 00:08:02,080
+definition is the GCD value of n, b. That means we want to get the max k, and this k divides a,
+
+42
+00:08:02,080 --> 00:08:10,240
+and this k also divides b. Okay, the maximum number of this k. We look at this example,
+
+43
+00:08:10,240 --> 00:08:23,439
+GCD 6 and 18 will be what? What's the value? 6, right? Because 18 is 6 times 3. The maximum
+
+44
+00:08:23,439 --> 00:08:36,159
+divisor for these two numbers is 6. And this is GCD value. And based on the GCD value, we define
+
+45
+00:08:36,159 --> 00:08:45,759
+that two integers a and b are relatively prime if their GCD value is 1. So, GCD value is 1. We say
+
+46
+00:08:45,759 --> 00:08:55,279
+they are relatively prime. This is an important concept. Are 8 and 15 relatively prime? Yes or
+
+47
+00:08:55,279 --> 00:09:06,240
+no? So, we say yes. The reason is because if we leave all positive divisors of 8 and 5,
+
+48
+00:09:07,199 --> 00:09:18,240
+8 and 15, we can find that the positive divisors of 8, we have 1, 2, 4, 8, and 15, we have 1,
+
+49
+00:09:19,039 --> 00:09:30,560
+3, 5, 15. So, the largest common divisor of 8 and 15 is 1. So, this shows GCD value,
+
+50
+00:09:31,519 --> 00:09:40,719
+8, 15 is 1. So, we say these two data, they are relatively prime. Okay?
+
+51
+00:09:44,719 --> 00:09:51,839
+So, how to calculate two integers, their GCD value, we have this Euclidean algorithm.
+
+52
+00:09:52,720 --> 00:10:02,320
+And this is a recursive algorithm. So, this one can quickly calculate the result. The GCD value,
+
+53
+00:10:03,120 --> 00:10:17,120
+the procedure is if q is 0, the result is p. And here, we suppose in this example,
+
+54
+00:10:17,919 --> 00:10:26,480
+in this representation, we suppose that q is bigger than or equal to 0, but smaller than p.
+
+55
+00:10:27,600 --> 00:10:36,240
+Okay? So, if q is 0, the result is p. This is easy to understand because GCD,
+
+56
+00:10:36,240 --> 00:10:50,480
+p0 is p. So, p is the largest common divisor of both p and 0. Otherwise,
+
+57
+00:10:51,919 --> 00:11:02,320
+we calculate it equals GCD q and p percent q. So, p percent q means the remainder R.
+
+58
+00:11:03,200 --> 00:11:11,840
+Because we can represent p to be q times n plus R. So, this GCD,
+
+59
+00:11:13,520 --> 00:11:28,800
+pq equals here means GCD q and R. Right? The reason is because, well, the GCD value means
+
+60
+00:11:28,879 --> 00:11:38,079
+the divisor of both p and q. So, p can be represented as, suppose p equals s times
+
+61
+00:11:39,039 --> 00:11:46,479
+the GCD value. Okay? No problem, right? GCD is the divisor of p. So, we represent p to be
+
+62
+00:11:46,479 --> 00:11:56,079
+s times GCD value. And q is also the model of this GCD. So, q can be represented as,
+
+63
+00:11:56,800 --> 00:12:06,160
+let's say, t times GCD value times n. And R, we have the remainder to be R.
+
+64
+00:12:08,639 --> 00:12:21,759
+And then this R equals s minus t times n times GCD value. Okay? R equals this one.
+
+65
+00:12:22,639 --> 00:12:29,039
+In other words, the GCD value is also a divisor of R.
+
+66
+00:12:31,039 --> 00:12:41,439
+That true? Okay. So, in other words, we want to calculate the GCD value of both p and q.
+
+67
+00:12:41,440 --> 00:12:54,400
+So, GCD value is a factor of p, is a factor of q. And also, we find that GCD is also a factor of
+
+68
+00:12:54,400 --> 00:13:05,840
+R from this equation. Right? GCD is also a factor of R. And this implies, well, if we want to calculate
+
+69
+00:13:05,840 --> 00:13:16,240
+GCD p, q, then this value can be calculated by the GCD of q and R. So, GCD must be the factor of
+
+70
+00:13:16,240 --> 00:13:28,639
+q and R simultaneously. So, because q and R are the values to be much smaller than q. Okay? So,
+
+71
+00:13:28,639 --> 00:13:37,360
+in this way, and finally, we recursively call this function. Otherwise, if q is not 0, we get
+
+72
+00:13:37,360 --> 00:13:46,000
+this q and R. And both q and R will be much smaller than t and q. We recursively call this function.
+
+73
+00:13:46,000 --> 00:13:53,200
+And finally, the R position can be 0. And we have t to be the output.
+
+74
+00:13:59,600 --> 00:14:09,199
+So, here is a flow to apply the Euclidean algorithm. So, suppose here we start, we want to get
+
+75
+00:14:10,399 --> 00:14:24,080
+the GCD a and b. And suppose a to be bigger than b. If yes, we divide a by b and put in the remainder.
+
+76
+00:14:24,879 --> 00:14:43,360
+So, this means a can be represented as a equals b times n plus R. And we look at R. If R is bigger
+
+77
+00:14:43,759 --> 00:14:59,200
+than 0, we replace a with b. So, this GCD a, b equals GCD b and R. Until R equals 0,
+
+78
+00:15:00,160 --> 00:15:19,840
+then the result, the GCD a, b, or we say it is b, R equals, if R is 0, the result is b at this moment.
+
+79
+00:15:20,639 --> 00:15:27,680
+Now, we look at this example. Suppose we want to get the GCD value
+
+80
+00:15:30,560 --> 00:15:49,759
+7, 10, and 3, 10. Yeah, here. We want to calculate this value. So, this one, well, this is p,
+
+81
+00:15:49,840 --> 00:16:00,960
+t is 7, 10, q is 3, 10, and this is R. According to the Euclidean algorithm, this one equals
+
+82
+00:16:03,519 --> 00:16:18,480
+the GCD value, q is 3, 10, R is 90, q and R. And here we continue this process. So, this is q,
+
+83
+00:16:20,560 --> 00:16:32,399
+this is R, and this is R1. So, this equals the GCD value, q is 90. Now, we have equals
+
+84
+00:16:33,440 --> 00:16:47,759
+this p, this is q, so this is q, this R equals R, R is 90, and R1, 40. So, this is
+
+85
+00:16:48,639 --> 00:16:57,759
+R, this is R1. So, every step you can see the p, r becomes smaller compared to the previous
+
+86
+00:16:57,759 --> 00:17:08,480
+p, q, and we continue this process. This is R, this is R1, we have R2, so this equals GCD,
+
+87
+00:17:09,360 --> 00:17:23,519
+R1, R2, 40, and R2 is 10. And we continue this process. So, we have R1 and R2 plus 0. 0 is R3,
+
+88
+00:17:23,519 --> 00:17:37,360
+right? And this equals GCD, R2, and R3. So, R2 is 10, R3 is 0. So, because the R value is 0,
+
+89
+00:17:38,000 --> 00:17:48,799
+and the output is this 10. So, after 1, 2, 3, 4, 5, 5 steps, we get the result to be 10.
+
+90
+00:17:51,359 --> 00:17:59,199
+And this is a positive to calculate the GCD value by applying the Euclidean algorithm.
+
+91
+00:17:59,920 --> 00:18:09,920
+Another example is suppose we have this a, b, a, b, both n, b are very large. And well, even no
+
+92
+00:18:09,920 --> 00:18:17,519
+matter how large it is, we can quickly get the result after a number of steps. So, this is a,
+
+93
+00:18:17,519 --> 00:18:39,119
+b, this is q, and R1. And GCD a, b equals GCD. So, here is a equals b times q1 plus R1. So, this
+
+94
+00:18:39,119 --> 00:18:59,439
+equals b, R1. So, b, R1. And we recursively call the calculation. So, this equals GCD,
+
+95
+00:19:00,320 --> 00:19:09,279
+R1, R2. So, R1 is here, R2 is a remainder. So, we continue to process until we have.
+
+96
+00:19:10,160 --> 00:19:28,799
+So, it equals GCD in this row, R7, and R8. And equals GCD, R8, R9. So, R8 is this one, R9.
+
+97
+00:19:29,440 --> 00:19:37,920
+Is this one. And continually, we have equals GCD, R9, R10.
+
+98
+00:19:40,960 --> 00:19:52,240
+R sub 10, okay? This one. Because R sub 10 is 0, so, this one equals R9. And this is an output.
+
+99
+00:19:52,880 --> 00:19:57,039
+To be the value of this, it needs to be 10b.
+
+100
+00:19:57,039 --> 00:20:22,000
+So, everything looks fine, right? At this moment. If, well, everything is fine,
+
+101
+00:20:22,000 --> 00:20:31,119
+can you do the calculation of this exercise one? I'll give you three minutes. You tell me what's
+
+102
+00:20:31,119 --> 00:20:45,919
+the result. The GCD is 93 and 16.
+
+103
+00:20:45,920 --> 00:21:11,279
+What's the result for this? One. Okay. So, we can repeat. We can use the Euclidean
+
+104
+00:21:11,279 --> 00:21:22,480
+algorithm to calculate. So, this 93 can be represented as 16 times 5 plus 13.
+
+105
+00:21:22,559 --> 00:21:50,480
+And 13, 16. So, next one, we look at 16 and 13. 16. 16 equals 13 times 1 plus 3. And we look at
+
+106
+00:21:51,279 --> 00:22:06,160
+13 and 3. 13 equals 3 times 4 plus 1, right? And we have 3 and 1. So, 3 equals 1 times 3 plus 0.
+
+107
+00:22:06,960 --> 00:22:22,160
+So, these three, this one is GCD 31. So, finally, this one equals GCD 31 and 10.
+
+108
+00:22:22,960 --> 00:22:38,960
+So, this one. So, this corresponds to this row. This corresponds to this row. Equals 10.
+
+109
+00:22:39,440 --> 00:22:54,960
+Okay. This is a very easy part. Part one, just an appetizer. Okay?
+
+110
+00:22:57,360 --> 00:23:03,840
+Now, we go to part two. Based on our understanding of the Euclidean algorithm,
+
+111
+00:23:03,839 --> 00:23:11,199
+how to calculate the GCD value. So, now we need to move to part two about the modular arithmetic.
+
+112
+00:23:11,759 --> 00:23:19,599
+And then we need to learn the expanded Euclidean algorithm to get the modular inverse.
+
+113
+00:23:20,159 --> 00:23:24,799
+So, modular inverse is an important concept in the cryptography.
+
+114
+00:23:24,799 --> 00:23:39,839
+Okay. First, we look at the modular arithmetic. The modulus was a modulus in this modular operation.
+
+115
+00:23:41,599 --> 00:23:50,960
+Suppose we have A to be an integer and N is a positive integer. We can define A mod N to be
+
+116
+00:23:50,960 --> 00:24:00,640
+the remainder value where A is divided by N. And this integer N is called the modulus.
+
+117
+00:24:03,360 --> 00:24:12,720
+Suppose for given integer A, A can be represented as Q times M plus R. We note that
+
+118
+00:24:12,799 --> 00:24:21,759
+Q is quotient, right? And R is the remainder. Then A can be represented as this is the Q
+
+119
+00:24:21,759 --> 00:24:34,400
+value times N plus this is R value. R value can be represented as A mod N. A mod N. A divided by N,
+
+120
+00:24:34,400 --> 00:24:40,960
+we want to know what the remainder value. So, for example, 11 mod 7 was our result.
+
+121
+00:24:42,320 --> 00:24:53,200
+4, right? 11 equals 7 plus 4. So, 4 is a remainder. How about minus 11 mod 7? What do we want?
+
+122
+00:24:53,200 --> 00:25:07,759
+So, minus 11 can be represented as 7 times minus 2 plus 3, right? Plus 3. So, normally,
+
+123
+00:25:07,759 --> 00:25:14,000
+we want to have our long negative value to be the remainder. So, this one is 3.
+
+124
+00:25:14,640 --> 00:25:23,119
+For the mod operation, we have this concept, congruent mod N. Two integers A and B are said
+
+125
+00:25:23,119 --> 00:25:38,960
+to be congruent mod N if A mod N equals B mod N. This is written as A is congruent to B mod N.
+
+126
+00:25:44,400 --> 00:25:51,440
+So, both of them divided by N have the same remainder.
+
+127
+00:25:54,720 --> 00:26:02,000
+For example, 73. So, 73 can be represented as
+
+128
+00:26:02,000 --> 00:26:20,400
+23 times 3 plus 4. And that 73 is congruent to 4 mod 23, right? So, 4 divided by 23,
+
+129
+00:26:20,400 --> 00:26:29,440
+the remainder is 4. And 73 divided by 23, the remainder is 4. So, they're the same. We say
+
+130
+00:26:29,440 --> 00:26:41,200
+they are congruent when we have mod 23 in this operation. And 21 is congruent to 1 when mod N.
+
+131
+00:26:41,200 --> 00:26:57,519
+Okay. Now, if A is congruent to 0 mod N, that means N is a factor of A.
+
+132
+00:26:58,559 --> 00:27:08,400
+N is a factor of A. First, A divided by N, the remainder will be 0. The remainder will be 0.
+
+133
+00:27:08,400 --> 00:27:20,160
+Okay. We look at this one. Actually, this is a very important zero. So, this one says that
+
+134
+00:27:21,120 --> 00:27:31,200
+if GCD value of U and Z is 1. So, U and Z is 1, means these two are relative prime.
+
+135
+00:27:39,360 --> 00:27:48,560
+So, these two numbers are relative prime. Then U times X is coming to U times Y mod Z
+
+136
+00:27:49,440 --> 00:27:59,919
+UZ are relative prime. This U can be cancelled. And we have X is congruent to Y mod Z.
+
+137
+00:28:04,559 --> 00:28:14,960
+So, this is a good problem. So, one example is 3 times 3 is 9 is congruent to 3 times 11.
+
+138
+00:28:14,960 --> 00:28:31,840
+This is congruent to 1 when we take the mod 8. Because 3 and 8 are relative prime,
+
+139
+00:28:32,720 --> 00:28:42,160
+so this implies this 3 can be cancelled. This implies 3 is congruent to 11 when we take mod 8.
+
+140
+00:28:44,960 --> 00:28:58,640
+However, although we have 3 times 4 is congruent to 5 times 4 is congruent to 4
+
+141
+00:28:59,840 --> 00:29:06,880
+when we have the mod 8 operation. Well, we cannot cancel this form.
+
+142
+00:29:06,880 --> 00:29:20,480
+So, the reason is because 4 and 8 are not relative prime. If we move 4 from both sides,
+
+143
+00:29:20,480 --> 00:29:31,280
+left hand side and right hand side, can we get 3 is congruent to 5 mod 8? Of course not, right?
+
+144
+00:29:31,680 --> 00:29:43,920
+So, the reason is because the common factor 4 is not relative prime to 8. So, it cannot be cancelled.
+
+145
+00:29:47,119 --> 00:29:57,119
+Only if the common divisor number 3 is relative prime to the mod 8, then 3 can be cancelled.
+
+146
+00:30:01,359 --> 00:30:02,879
+This is a good problem.
+
+147
+00:30:07,039 --> 00:30:14,639
+Some other good problem is if we want to calculate a plus b mod n, we can first
+
+148
+00:30:16,399 --> 00:30:25,839
+calculate a mod n and then plus b mod n. This will make the result to be much smaller and to have
+
+149
+00:30:25,839 --> 00:30:33,679
+an easier calculation and similar for the minus operation and the multiplication operation.
+
+150
+00:30:34,879 --> 00:30:41,039
+So, one example is suppose we want to calculate 2 1 1 mod 8.
+
+151
+00:30:42,959 --> 00:30:53,839
+So, 2 1 1 mod 8 should be 3, 1 to 5 mod 8 will be 5. So, these two, the sum
+
+152
+00:30:55,839 --> 00:31:07,279
+the sum mod 8 equals the mod result 3 plus 5 mod 8 and this should be 0.
+
+153
+00:31:16,799 --> 00:31:24,319
+For the minus also, we can have this equation to quickly get the result. So, 2 1 1 is 3,
+
+154
+00:31:25,039 --> 00:31:37,679
+minus 5, this mod 8, the result is what? The result is 6. Minus 2, we have 1, it should be 6.
+
+155
+00:31:38,559 --> 00:31:48,159
+And this multiplication equals 3 times 5, mod 8, the result is what? 7.
+
+156
+00:31:54,319 --> 00:32:05,200
+Okay, we look at this table. This table suppose this row represents
+
+157
+00:32:10,799 --> 00:32:18,799
+so this row we have a and this column we have b and we have in the table which shows
+
+158
+00:32:19,759 --> 00:32:25,519
+the result a plus b mod 8.
+
+159
+00:32:31,680 --> 00:32:40,000
+0 plus 0, the result mod 8 is 0. And also we can find in this diagonal line,
+
+160
+00:32:40,960 --> 00:32:52,240
+the result is 0. So, 1 plus 7 is 8, mod 8 is 0. So, everyone we can find a corresponding value here
+
+161
+00:32:53,039 --> 00:33:01,119
+such that the sum mod 8 is 0. This is the addition operation.
+
+162
+00:33:01,519 --> 00:33:17,679
+Well, here we show the result to be a times b mod 8 result. So, this is a, this is b plus for
+
+163
+00:33:17,679 --> 00:33:28,399
+number 1 times 1, mod 8 is 1. However, for 2 times something, if b is 2, the whole row
+
+164
+00:33:28,400 --> 00:33:40,480
+we cannot find any number to be 1. So, in the multiplication, we look at the result, the product
+
+165
+00:33:41,360 --> 00:33:51,680
+mod 8 to be 1. So, in the row for b plus 2 cannot find anyone, if b equals 3, we find a value such
+
+166
+00:33:51,759 --> 00:34:05,440
+that a equals 3, there mod 8 result is 1. So, the sum there can be 1 plus not all the a or b value
+
+167
+00:34:06,400 --> 00:34:11,920
+we can find ourselves for the product value mod 8 to be 1.
+
+168
+00:34:11,920 --> 00:34:21,039
+So, then we define the additive and the multiplicative inverse mod 8.
+
+169
+00:34:22,960 --> 00:34:36,400
+So, this is the definition of the inverse value mod given number 8. So, we define that the additive
+
+170
+00:34:36,400 --> 00:34:53,840
+inverse is your w plus minus w is coming to 0 mod 8. And this minus w is called the additive
+
+171
+00:34:53,840 --> 00:35:00,400
+inverse, additive inverse, because we have this addition, right, we add them together. This is
+
+172
+00:35:00,400 --> 00:35:14,880
+for the additive inverse of w mod 8. Well, if w is 0, so minus w will be 0. So, here is
+
+173
+00:35:14,880 --> 00:35:27,039
+additive inverse, 0 plus 0, mod 8 is 0. If w is 1, the additive inverse will be 7, 1 plus 7, mod 8
+
+174
+00:35:27,039 --> 00:35:40,320
+is 0. For every w, we have corresponding minus w to be the additive inverse of w mod 8. We have
+
+175
+00:35:40,320 --> 00:35:49,920
+all the values here. However, for multiplicative inverse, so multiplicative inverse defines as
+
+176
+00:35:50,000 --> 00:36:00,800
+w times the w to minus 1. And the result is coming to 1 when we have the mod 8
+
+177
+00:36:02,240 --> 00:36:12,400
+operation. This is the definition to be the multiplicative inverse of w. We denote this value
+
+178
+00:36:12,400 --> 00:36:24,880
+to be w to minus 1. If w is 1, this modular inverse should be 1. 1 times 1, here is multiplication.
+
+179
+00:36:24,880 --> 00:36:36,559
+1 times 1 is 1, so mod 8 is 1. However, for 2, 4, 6, we do not have the modular inverse,
+
+180
+00:36:36,559 --> 00:36:50,960
+the multiplicative inverse mod 8. For 3, w equals 3, the w to minus 1 is 3. 3 times 3 is 9.
+
+181
+00:36:51,679 --> 00:36:57,599
+This is congruent to 1. We have mod 8 operation. Check here.
+
+182
+00:36:57,599 --> 00:37:13,279
+For some w, we have the multiplicative inverse. This w to the minus 1 is called the multiplicative
+
+183
+00:37:13,360 --> 00:37:28,720
+inverse. Some properties for this modular operation are, for example, for this Zn,
+
+184
+00:37:29,600 --> 00:37:40,400
+so Zn is set with all integers from 0, 1 to a mass 1. We have 40 properties. The first one is
+
+185
+00:37:40,400 --> 00:37:46,960
+commutative loss. That means for addition and multiplication, we can swap the first and second
+
+186
+00:37:46,960 --> 00:37:57,760
+data to the result of the same. For solutive loss means, well, for this addition or multiplication,
+
+187
+00:37:58,320 --> 00:38:04,000
+we can first calculate the first two or the second two to the result of the same.
+
+188
+00:38:04,079 --> 00:38:15,119
+Then, distributive law means the w can be in this parenthesis, w times x plus y equals w times x
+
+189
+00:38:15,119 --> 00:38:29,119
+plus w times y. Identity means some data plus the w itself or times w itself equals itself.
+
+190
+00:38:30,079 --> 00:38:36,559
+So this identity in addition is 0. In multiplication is 1.
+
+191
+00:38:38,239 --> 00:38:42,559
+In two different scenarios, the identity value will be different.
+
+192
+00:38:44,639 --> 00:38:53,599
+A detailed inverse will be minus w. That means for each w in this set, there exists a z such that
+
+193
+00:38:53,679 --> 00:39:05,119
+w plus z is 0 mod m. So this z, we always can find this z. So this z, we call it to be
+
+194
+00:39:06,159 --> 00:39:09,039
+a detailed inverse, to be mass w.
+
+195
+00:39:09,039 --> 00:39:26,159
+For example, if w is 1, then z is a mass 1. If w is 2, then z is a mass 2.
+
+196
+00:39:28,480 --> 00:39:34,159
+We can always find this z to be a detailed inverse for a given w.
+
+197
+00:39:39,039 --> 00:39:48,320
+Will we care about the modular inverse for the multiplication? This is our equation.
+
+198
+00:39:49,279 --> 00:39:58,639
+Now, we said that x is a modular inverse of a mod d if a times x mod d equals 1.
+
+199
+00:39:59,519 --> 00:40:05,519
+Here is a definition of a modular inverse for the multiplication.
+
+200
+00:40:05,519 --> 00:40:19,920
+x is denoted as a to the mass 1 mod b. So between a times x mod b equals 1, x is denoted to be
+
+201
+00:40:20,079 --> 00:40:34,079
+the multiplicative inverse of a mod b. So x is a modular inverse.
+
+202
+00:40:34,319 --> 00:40:53,440
+So we have examples here. Because 3 times 5 is equal to 1 mod 7. 3 times 5 is 15.
+
+203
+00:40:55,119 --> 00:41:00,559
+So we say 3 is a modular inverse of 5 mod 7.
+
+204
+00:41:01,039 --> 00:41:12,000
+In other words, because this definition is 5 to the mass 1 times 5 mod 7 is 1.
+
+205
+00:41:14,000 --> 00:41:20,000
+So this 5 mod 1 modular inverse of 5 equals what?
+
+206
+00:41:20,079 --> 00:41:20,719
+Equals what?
+
+207
+00:41:24,320 --> 00:41:30,239
+This is a mass 1 to the mass 1 mod 7 equals what?
+
+208
+00:41:33,360 --> 00:41:35,679
+So which number is a modular inverse of 5?
+
+209
+00:41:38,639 --> 00:41:39,679
+Which number?
+
+210
+00:41:39,679 --> 00:41:52,079
+The definition is 5, modular inverse of 5 is 5 mass 1 times 5 mod 7 should be 1.
+
+211
+00:41:52,799 --> 00:42:05,359
+And we have 3 times 5 mod 7 is 1. So this modular inverse of 5 equals 3.
+
+212
+00:42:10,399 --> 00:42:25,919
+And similarly, because 7 times 7 is equal to 1 mod 16. So this 7 represents modular inverse of 7.
+
+213
+00:42:31,440 --> 00:42:36,719
+So this 7 to the mass 1 mod 16 is 7.
+
+214
+00:42:40,000 --> 00:42:53,199
+However, there is no modular inverse for 8 mod 14. So that means we don't have this 8 mass 1,
+
+215
+00:42:54,159 --> 00:43:02,000
+this value such that 8 mass 1 times 8 is equal to 1 mod 14.
+
+216
+00:43:04,799 --> 00:43:07,519
+No such modular inverse.
+
+217
+00:43:10,559 --> 00:43:19,359
+No such data such that the demand times 8 mod 14 equals 1.
+
+218
+00:43:21,279 --> 00:43:28,559
+In fact, we have this theorem. There exists a modular inverse for A mod B
+
+219
+00:43:28,559 --> 00:43:31,839
+even though only if A is relative prime to B.
+
+220
+00:43:31,840 --> 00:43:40,000
+So that means we have this A to the mass 1 modular inverse of A. So A times A mass 1 is
+
+221
+00:43:40,000 --> 00:43:50,800
+congruent to 1 mod B. And this implies GCD AB must be 1. So in this example, because the GCD
+
+222
+00:43:50,880 --> 00:43:56,960
+So in this example, because the GCD 814 is what?
+
+223
+00:43:59,600 --> 00:44:06,400
+The greatest common divisor of 8 and 14 is what? 8 and 14 is what?
+
+224
+00:44:07,039 --> 00:44:22,240
+2, right? It is not 1. The not relative prime. So we don't have the 8 to the mass 1.
+
+225
+00:44:23,119 --> 00:44:24,079
+Not 1.
+
+226
+00:44:37,919 --> 00:44:46,079
+So that means we don't have the modular inverse for 8 mod 14.
+
+227
+00:44:52,239 --> 00:45:06,799
+Well, the modular inverse is critical. The reason is because in the RSA algorithm,
+
+228
+00:45:09,279 --> 00:45:16,239
+we have public key, we have private key, E and D, right? So E is the public key
+
+229
+00:45:18,479 --> 00:45:20,079
+and D is the private key.
+
+230
+00:45:23,199 --> 00:45:35,359
+To get public key, we require that E times D is congruent to 1 mod some value. And this value is 5m.
+
+231
+00:45:36,399 --> 00:45:49,359
+You see? E times D. So E is the modular inverse of E mod 5m. This public key and private key,
+
+232
+00:45:50,320 --> 00:45:54,960
+that relationship is a modular inverse relationship.
+
+233
+00:45:57,680 --> 00:46:04,800
+In this public key scheme, in this RSA algorithm, that's the reason we need to
+
+234
+00:46:05,120 --> 00:46:08,160
+amplify the modular inverse scheme.
+
+235
+00:46:14,800 --> 00:46:23,280
+So in RSA algorithm, we need to decide the public key, even the public key.
+
+236
+00:46:23,280 --> 00:46:33,760
+The relationship should satisfy E times D with congruent to 1 mod 5m.
+
+237
+00:46:54,000 --> 00:47:04,240
+Okay, so now we want to have a formal way to calculate the modular inverse of A mod n
+
+238
+00:47:04,240 --> 00:47:12,240
+according to the calculation. To do the calculation, we can resort to this phase of identity.
+
+239
+00:47:12,799 --> 00:47:21,119
+So phase of identity states that for any given integer A and B,
+
+240
+00:47:22,959 --> 00:47:33,039
+we can find such integer x and y such that A times x plus
+
+241
+00:47:33,039 --> 00:47:46,400
+A times x plus B times y equals their GCD value, GCD AB. So this is a phase of identity
+
+242
+00:47:47,199 --> 00:47:57,759
+for any given integers and B. There exist x and y, integers x and y to satisfy this equation.
+
+243
+00:47:58,640 --> 00:48:05,600
+Okay, so this phase of identity tells you that if N, B are relative to 1,
+
+244
+00:48:05,839 --> 00:48:09,920
+or relative to 1, so if
+
+245
+00:48:12,400 --> 00:48:22,559
+GCD A and B equals 1, so AB relatively to 1,
+
+246
+00:48:25,599 --> 00:48:33,440
+then we are able to calculate the A's modular inverse mod B.
+
+247
+00:48:35,599 --> 00:48:44,000
+So what does it mean? If GCD AB equals 1, we can find such A x plus B y equals 1.
+
+248
+00:48:52,079 --> 00:49:02,960
+Well, at both sides, we have mod, for example, mod B. If A x plus B y mod B,
+
+249
+00:49:03,679 --> 00:49:12,559
+this equals 1 mod B. For such, we take the mod operation. So this implies your B times 1,
+
+250
+00:49:13,360 --> 00:49:28,639
+this multiple B, this part is 0. Okay, so that means, well, the left-hand side equals A x mod B
+
+251
+00:49:28,639 --> 00:49:50,799
+is 1. So this implies A x is relative to 1 mod B. So this x is what? x is the modular inverse of A.
+
+252
+00:49:51,280 --> 00:50:00,960
+So this x equals A to the mod 1 mod B.
+
+253
+00:50:03,440 --> 00:50:12,240
+x is the modular inverse of A mod B in this case. According to this phase of identity,
+
+254
+00:50:12,959 --> 00:50:26,639
+if A and B are with fun, then we can find this x and y. So x, we call it to be the modular inverse of A mod D.
+
+255
+00:50:28,079 --> 00:50:33,439
+We find the modular inverse of A successfully in this case.
+
+256
+00:50:33,440 --> 00:50:46,800
+And similarly, if at both sides with mod A, so this implies A x plus B y,
+
+257
+00:50:48,400 --> 00:50:57,760
+we take the mod A operation. So this equals 1 mod A, and this A times x mod A is 0.
+
+258
+00:50:58,720 --> 00:51:14,640
+So B y mod A equals 1. In other words, B y is coming to 1 mod A. So this y represents
+
+259
+00:51:16,480 --> 00:51:21,440
+modular inverse of B when it has a mod A operation.
+
+260
+00:51:27,760 --> 00:51:41,360
+So here, this is an implication of the modular inverse for this parameter A x and B y.
+
+261
+00:51:45,520 --> 00:51:51,840
+So this is an implication for this phase of identity in this equation.
+
+262
+00:51:52,640 --> 00:52:02,559
+Because the result is gcd value, how to calculate gcd value? We can use the Euclidean algorithm.
+
+263
+00:52:05,360 --> 00:52:14,720
+Euclidean algorithm can help you to calculate the gcd value. And we can use extended Euclidean
+
+264
+00:52:14,719 --> 00:52:30,480
+algorithm to solve the initial equation to find x1. Once you find x, you find the modular inverse
+
+265
+00:52:30,480 --> 00:52:43,199
+of A. So x is here, y is here. But we can use the extended Euclidean algorithm to find the modular
+
+266
+00:52:43,199 --> 00:52:54,719
+inverse of A, that's x. Modular inverse of B, that's y. Now let's look at how we can
+
+267
+00:52:55,759 --> 00:53:04,879
+use the extended Euclidean algorithm to find the modular inverse of 911 mod 999.
+
+268
+00:53:05,200 --> 00:53:18,079
+So we won't find the modular inverse of 911 mod 999 according to the Bezos identity. If this one is A,
+
+269
+00:53:19,840 --> 00:53:32,720
+this one is B. So we have A x plus B y equals gcd A B. Is that right?
+
+270
+00:53:35,200 --> 00:53:42,720
+A is 911, B is 999. First we need to guarantee that this gcd
+
+271
+00:53:42,719 --> 00:54:02,959
+911 999, it is 0, or it is 1. If it is 1, we can find some x. So x will be modular inverse of A
+
+272
+00:54:03,920 --> 00:54:09,440
+mod B according to the Bezos identity.
+
+273
+00:54:13,119 --> 00:54:20,639
+So here you can see we satisfied this equation. We say x is a modular inverse of A mod B.
+
+274
+00:54:20,719 --> 00:54:34,000
+That's exactly. x is a modular inverse of A mod B. A is here, B is here. If their gcd value is 1.
+
+275
+00:54:36,639 --> 00:54:41,599
+So now we look at how we can calculate this modular inverse.
+
+276
+00:54:41,599 --> 00:54:58,480
+So the first step is we still need to guarantee that the gcd A B is 1. We apply the Euclidean
+
+277
+00:54:58,480 --> 00:55:07,199
+algorithm to guarantee that this is true. So from the Euclidean algorithm, this is A, this is B,
+
+278
+00:55:07,199 --> 00:55:17,199
+this is R, this is B, this is R, this is R1, this is R, this is R1, R2, so on and so forth.
+
+279
+00:55:18,000 --> 00:55:30,159
+So this is R2, this is R1, this is R2, R3, so this is R2, this is R1,
+
+280
+00:55:30,159 --> 00:55:44,239
+this is R2, this is R3, this is R4, so R4 will be the result.
+
+281
+00:55:46,480 --> 00:55:53,279
+We finally have 1 to be the output of this gcd value of 999 and then 911.
+
+282
+00:55:54,080 --> 00:56:01,040
+So because their gcd value is 1, that means we can find the corresponding x and y.
+
+283
+00:56:02,080 --> 00:56:06,800
+How do we find this x and y? So you see, we go to the
+
+284
+00:56:06,800 --> 00:56:18,160
+reverse one. We trace it back. From this one here, one can be represented as R2 minus 5 times R3.
+
+285
+00:56:18,879 --> 00:56:31,519
+26 minus 5 times 5. So this is R2, this is R3. And R3,
+
+286
+00:56:33,119 --> 00:56:45,920
+from the second row, R3 equals 31 minus 1 times 26 from this row.
+
+287
+00:56:45,920 --> 00:56:57,840
+So we can substitute 5 from the second row. So then, one can be represented as, this is R2,
+
+288
+00:56:59,039 --> 00:57:12,159
+some value of R2 with R1. Because R3 can be represented as, this is R1, this is R2.
+
+289
+00:57:12,319 --> 00:57:18,319
+R3 can be represented as some combination of R1, R2.
+
+290
+00:57:19,679 --> 00:57:29,679
+So 1 equals some beta times R1 times R2. And R2, we can finally, we can, according to
+
+291
+00:57:30,319 --> 00:57:41,359
+this row, R2 can be represented as R minus R1. So this 26 can be represented as R
+
+292
+00:57:42,639 --> 00:57:52,879
+minus 2 times R1. So finally, one can be represented as R times R something
+
+293
+00:57:54,159 --> 00:58:04,319
+plus or minus something times R1. So 31 can be represented as, so one equals,
+
+294
+00:58:04,320 --> 00:58:15,440
+this R1 can be represented as, number one is B, and it is R. So finally, one can be represented as
+
+295
+00:58:16,559 --> 00:58:25,840
+B plus R, some combination. And R can be represented as A, B, some combination.
+
+296
+00:58:26,559 --> 00:58:40,559
+So R comes from here. So R, this 1 equals this B, some number times this A, this B.
+
+297
+00:58:41,280 --> 00:58:54,160
+And finally, one can be represented as this A, this is X, this is B, this is 1.
+
+298
+00:58:55,840 --> 00:59:08,880
+So finally, we have 1, we are putting the betas, and then A times X because B times 1 equals 1.
+
+299
+00:59:10,160 --> 00:59:20,400
+So in this example, because GCD value, so A is 999 times 176.
+
+300
+00:59:20,400 --> 00:59:43,760
+So this is A, this is X, plus B, 911 times minus 193. This equals GCD, A and B, is 1.
+
+301
+00:59:43,920 --> 01:00:02,080
+So this is, X is here, A is here, B is here, Y is here, then here, and this we will trace back.
+
+302
+01:00:02,080 --> 01:00:10,080
+This tracing back procedure is called the extended Euclidean algorithm.
+
+303
+01:00:14,640 --> 01:00:29,120
+So of course, X represents X equals A to the minus 1, the module inverse of A mod B.
+
+304
+01:00:33,280 --> 01:00:34,720
+So X is,
+
+305
+01:00:34,719 --> 01:00:51,039
+sorry, A is 911, right? So here is, change it, A is here, X is here,
+
+306
+01:00:51,039 --> 01:01:09,599
+B is here, Y is here. So X is equals mass 193 mod 999.
+
+307
+01:01:09,599 --> 01:01:16,159
+So we take the positive value, the positive should be,
+
+308
+01:01:16,159 --> 01:01:34,719
+R, X should be 806.
+
+309
+01:01:46,159 --> 01:02:00,000
+So in this example, the module inverse of 911, it is 806.
+
+310
+01:02:05,679 --> 01:02:12,559
+Because 806 times 911 mod 999, it is 1.
+
+311
+01:02:16,960 --> 01:02:30,879
+The result of 806 times 911 is coming to 1 mod 999.
+
+312
+01:02:36,239 --> 01:02:40,799
+So the basis of this equation implies this equation.
+
+313
+01:02:46,159 --> 01:03:03,599
+So here, this is here, this part is here, change it.
+
+314
+01:03:03,599 --> 01:03:19,039
+So A is here, this part is X, E is here, this part is 1.
+
+315
+01:03:33,599 --> 01:03:59,039
+This is A, this is B, this is X, 911 is B, sorry, this is 911 is X, so this is X.
+
+316
+01:04:03,599 --> 01:04:23,039
+So finally, we make it to be correct on the equation.
+
+317
+01:04:34,079 --> 01:04:42,000
+So the second page actually shows, because according to the basis equation, this GCD
+
+318
+01:04:45,119 --> 01:04:58,079
+A is 911, B is here, can be represented as, this is A, this is X, and this B, this is Y.
+
+319
+01:04:59,039 --> 01:05:08,960
+So we have 806 is a module inverse of A mod B, this is the module inverse.
+
+320
+01:05:11,440 --> 01:05:13,440
+In this example, what's the B mod 1?
+
+321
+01:05:15,599 --> 01:05:16,639
+B mod 1 is what?
+
+322
+01:05:16,639 --> 01:05:25,839
+B mod A, B mod 1 is what?
+
+323
+01:05:29,119 --> 01:05:29,839
+Is what, right?
+
+324
+01:05:34,559 --> 01:05:45,279
+176 is B mod 1, because B mod 1 times B mod A equals what?
+
+325
+01:05:46,639 --> 01:06:03,839
+Okay, previously, we have, in exercise one, we have the GCD 93, 16, equals what, right?
+
+326
+01:06:04,480 --> 01:06:10,960
+So this is how we can find the module inverse of 16, modular 93.
+
+327
+01:06:11,920 --> 01:06:15,760
+So can you use 10 minutes to solve this result?
+
+328
+01:06:17,039 --> 01:06:22,159
+Okay, this has a break, 10 minutes. Okay, after break, we continue.
+
