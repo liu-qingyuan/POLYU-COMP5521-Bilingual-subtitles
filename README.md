@@ -17,7 +17,7 @@ POLYU COMP5521 Bilingual subtitles
 ## 技术细节
 
 - 字幕识别使用 [Whisper](https://github.com/openai/whisper) 完成。
-- 翻译使用 [智谱AI](https://ai.zhiyuanjituan.com/) 进行。
+- 翻译使用 [智谱AI](https://www.zhipuai.cn/) 进行。
 - 如果发现翻译有问题，欢迎指出并帮助改进。
 
 ## 示例
